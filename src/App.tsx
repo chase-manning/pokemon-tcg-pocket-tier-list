@@ -1,0 +1,40 @@
+import { Outlet, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import LandingPage from "./pages/landing/LandingPage";
+import DeckPage from "./pages/deck/DeckPage";
+
+const StyledApp = styled.div`
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  padding: 6rem;
+`;
+
+const Layout = () => {
+  return (
+    <StyledApp>
+      <Outlet />
+    </StyledApp>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LandingPage />} />
+
+        <Route path="deck">
+          <Route path=":deckId" element={<DeckPage />} />
+        </Route>
+
+        <Route path="*" element={<LandingPage />} />
+      </Route>
+    </Routes>
+  );
+};
+
+export default App;
