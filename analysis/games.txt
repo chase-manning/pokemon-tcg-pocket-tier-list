@@ -1,0 +1,2403 @@
+Pikachu ex
+11/2
+2 Magnemite A1 97
+2 Magneton A1 98
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Lt. Surge A1 226
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+9/42
+Blitzle A1 105
+1 Zebstrika A1 106
+2 Pincurchin A1 112
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+9/32
+Blitzle A1 105
+2 Zebstrika A1 106
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+8/4
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pikachu A1 94
+1 Voltorb A1 99
+1 Electabuzz A1 101
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+8/4
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pikachu A1 94
+1 Voltorb A1 99
+1 Electabuzz A1 101
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Mewtwo ex
+10/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Mewtwo ex
+9/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Articuno ex
+8/3
+2 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 Hand Scope P-A 3
+2 Pokédex P-A 4
+2 Red Card P-A 6
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Meowth A1 196
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+8/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Electabuzz A1 101
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+7/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+1 Potion P-A 1
+
+Pikachu ex
+7/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Mewtwo ex
+7/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Meowth A1 196
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Greninja
+7/3
+2 Froakie A1 87
+2 Frogadier A1 88
+2 Greninja A1 89
+2 Bruxish A1 91
+1 Articuno ex A1 84
+1 Farfetch'd A1 198
+2 Professor's Research P-A 7
+2 Misty A1 220
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+6/4
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pincurchin A1 112
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+6/4
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+6/4
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Mewtwo ex
+6/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Articuno ex
+6/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+2 X Speed P-A 2
+2 Potion P-A 1
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Kangaskhan A1 203
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+1 Potion P-A 1
+
+Pikachu ex
+6/3
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Voltorb A1 99
+1 Electrode A1 100
+2 Professor's Research P-A 7
+2 Lt. Surge A1 226
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Meowth A1 196
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+
+Articuno ex
+6/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+1 Starmie A1 75
+1 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+1 Potion P-A 1
+1 Pokédex P-A 4
+
+Pikachu ex
+6/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pincurchin A1 112
+1 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Articuno ex
+6/3
+2 Articuno ex A1 84
+2 Farfetch'd A1 198
+1 Staryu A1 74
+1 Starmie ex A1 76
+2 Misty A1 220
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+2 X Speed P-A 2
+2 Potion P-A 1
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Charizard ex
+6/3
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 Helix Fossil A1 216
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Pikachu ex
+6/3
+2 Pincurchin A1 112
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Articuno ex
+5/4
+2 Articuno ex A1 84
+1 Staryu A1 74
+1 Starmie ex A1 76
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 Red Card P-A 6
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Golett A1 135
+1 Golurk A1 136
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+
+Pikachu ex
+6/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+1 Pincurchin A1 112
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Exeggutor ex
+5/3
+2 Bellsprout A1 18
+2 Weepinbell A1 19
+2 Victreebel A1 20
+2 Exeggcute A1 21
+2 Exeggutor ex A1 23
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+2 Erika A1 219
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Articuno ex
+5/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Misty A1 220
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Poison
+5/3
+2 Ekans A1 164
+2 Arbok A1 165
+2 Koffing A1 176
+2 Weezing A1 177
+1 Grimer A1 174
+1 Muk A1 175
+2 Professor's Research P-A 7
+2 Koga A1 222
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+1 Potion P-A 1
+
+Marowak ex
+5/3
+2 Kabuto A1 158
+1 Kabutops A1 159
+2 Cubone A1 151
+2 Marowak A1 152
+2 Marowak ex A1 153
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Dome Fossil A1 217
+2 Poké Ball P-A 5
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+5/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pincurchin A1 112
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+5/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Zapdos A1 103
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+5/3
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pikachu A1 94
+1 Raichu A1 95
+1 Blitzle A1 105
+1 Zebstrika A1 106
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+
+Lapras ex
+5/2
+2 Goldeen A1 72
+2 Seaking A1 73
+2 Lapras ex P-A 14
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Misty A1 220
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Articuno ex
+5/2
+2 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Hand Scope P-A 3
+2 Red Card P-A 6
+
+Pikachu ex
+5/2
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Lt. Surge A1 226
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Charizard ex
+9/2
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Mewtwo ex
+10/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Meowth A1 196
+1 Mewtwo ex A1 129
+1 Mewtwo A1 128
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Pikachu ex
+8/2
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Lt. Surge A1 226
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Pikachu ex
+8/2
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Red Card P-A 6
+
+Pikachu ex
+7/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Pincurchin A1 112
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+6/3
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Sabrina A1 225
+2 Lt. Surge A1 226
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Poison
+6/3
+2 Ekans A1 164
+2 Arbok A1 165
+2 Pidgey A1 186
+2 Pidgeotto A1 187
+2 Pidgeot A1 188
+1 Koffing A1 176
+1 Weezing A1 177
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Mewtwo ex
+9/0
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+1 Meowth A1 196
+1 Mewtwo ex A1 129
+1 Mewtwo A1 128
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+
+Mewtwo ex
+6/2
+2 Mewtwo ex A1 129
+1 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+1 Meowth A1 196
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Mewtwo ex
+6/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Meowth A1 196
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+6/1
+2 Magnemite A1 97
+2 Magneton A1 98
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Lt. Surge A1 226
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Charizard ex
+5/2
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+2 Red Card P-A 6
+
+Pikachu ex
+5/2
+2 Pikachu ex A1 96
+1 Pikachu A1 94
+1 Raichu A1 95
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+1 Lt. Surge A1 226
+1 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+1 Red Card P-A 6
+
+Pikachu ex
+5/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Articuno ex
+4/2
+2 Articuno ex A1 84
+1 Staryu A1 74
+1 Starmie ex A1 76
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Misty A1 220
+2 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+2 Potion P-A 1
+2 X Speed P-A 2
+
+Dragonite
+4/2
+2 Dratini A1 183
+2 Dragonair A1 184
+2 Dragonite A1 185
+2 Kangaskhan A1 203
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Pikachu ex
+4/2
+2 Tynamo A1 107
+2 Eelektrik A1 108
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Zapdos A1 103
+1 Blitzle A1 105
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Hand Scope P-A 3
+1 Potion P-A 1
+
+Dragonite
+7/3
+2 Koffing A1 176
+2 Weezing A1 177
+2 Dratini A1 183
+2 Dragonair A1 184
+2 Dragonite A1 185
+2 Professor's Research P-A 7
+2 Koga A1 222
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 Old Amber A1 218
+
+Marowak ex
+7/3
+2 Sandshrew A1 137
+2 Sandslash A1 138
+2 Cubone A1 151
+2 Marowak ex A1 153
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Articuno ex
+7/3
+2 Froakie A1 87
+2 Frogadier A1 88
+2 Greninja A1 89
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+
+Articuno ex
+7/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+2 X Speed P-A 2
+
+Mewtwo ex
+7/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Mewtwo ex
+7/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+1 Old Amber A1 218
+
+Articuno ex
+7/2
+2 Articuno ex A1 84
+1 Staryu A1 74
+2 Starmie ex A1 76
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Misty A1 220
+2 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 Red Card P-A 6
+1 X Speed P-A 2
+
+Wigglytuff ex
+7/2
+2 Jigglypuff A1 193
+2 Wigglytuff ex A1 195
+1 Wigglytuff A1 194
+2 Koffing A1 176
+2 Weezing A1 177
+2 Koga A1 222
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+8/3
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Greninja
+8/3
+2 Froakie A1 87
+2 Frogadier A1 88
+2 Greninja A1 89
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Bruxish A1 91
+2 Misty A1 220
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+
+Pikachu ex
+8/3
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Lt. Surge A1 226
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Jynx A1 127
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Exeggutor ex
+8/2
+2 Bellsprout A1 18
+2 Weepinbell A1 19
+2 Victreebel A1 20
+2 Exeggcute A1 21
+2 Exeggutor ex A1 23
+1 Exeggutor A1 22
+2 Professor's Research P-A 7
+2 Erika A1 219
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+
+Exeggutor ex
+8/2
+2 Bulbasaur A1 1
+2 Ivysaur A1 2
+2 Venusaur ex A1 4
+2 Exeggcute A1 21
+2 Exeggutor ex A1 23
+1 Exeggutor A1 22
+2 Erika A1 219
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Pikachu ex
+8/1
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Magnemite A1 97
+2 Magneton A1 98
+2 Pikachu ex A1 96
+1 Zapdos A1 103
+2 Lt. Surge A1 226
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+9/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Marowak ex
+8/3
+2 Cubone A1 151
+2 Marowak ex A1 153
+2 Pidgey A1 186
+2 Pidgeotto A1 187
+2 Pidgeot A1 188
+1 Hitmonlee A1 154
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Pikachu ex
+8/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Rapidash
+8/3
+2 Vulpix A1 37
+2 Ninetales A1 38
+2 Ponyta A1 42
+2 Rapidash A1 43
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+2 Blaine A1 221
+1 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Marowak ex
+8/3
+2 Machop A1 143
+2 Machoke A1 144
+2 Machamp ex A1 146
+2 Cubone A1 151
+2 Marowak ex A1 153
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Red Card P-A 6
+
+Mewtwo ex
+9/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Pikachu ex
+10/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+10/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Articuno ex
+9/3
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Hand Scope P-A 3
+2 Red Card P-A 6
+
+Pikachu ex
+9/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Electabuzz A1 101
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+9/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+10/3
+2 Blitzle A1 105
+1 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+1 Pincurchin A1 112
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Poké Ball P-A 5
+
+Pikachu ex
+10/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pincurchin A1 112
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Articuno ex
+11/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+11/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+1 Red Card P-A 6
+1 X Speed P-A 2
+
+Pikachu ex
+12/1
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+11/1
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Mewtwo ex
+10/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Pikachu ex
+10/1
+2 Pikachu ex A1 96
+2 Zapdos A1 103
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Red Card P-A 6
+2 X Speed P-A 2
+2 Potion P-A 1
+2 Poké Ball P-A 5
+
+Pikachu ex
+9/2
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Red Card P-A 6
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+
+Charizard ex
+8/2
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+2 X Speed P-A 2
+2 Potion P-A 1
+
+Pikachu ex
+8/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Marowak ex
+8/2
+2 Cubone A1 151
+2 Marowak ex A1 153
+2 Sandshrew A1 137
+2 Sandslash A1 138
+2 Hitmonlee A1 154
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Pikachu ex
+7/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Mewtwo ex
+8/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Jynx A1 127
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+7/2
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Zapdos ex A1 104
+2 Lt. Surge A1 226
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Charizard ex
+7/2
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Red Card P-A 6
+2 Potion P-A 1
+
+Pikachu ex
+7/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Potion P-A 1
+
+Pikachu ex
+7/2
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Pikachu A1 94
+1 Raichu A1 95
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+1 Lt. Surge A1 226
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Mewtwo ex
+7/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Mewtwo ex
+7/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Mewtwo ex
+7/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Pikachu ex
+13/1
+2 Zapdos ex A1 104
+2 Pincurchin A1 112
+2 Pikachu ex A1 96
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Pikachu ex
+12/2
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Zapdos A1 103
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 Red Card P-A 6
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+11/2
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Rapidash
+10/3
+2 Vulpix A1 37
+2 Ninetales A1 38
+2 Ponyta A1 42
+2 Rapidash A1 43
+1 Magmar A1 44
+2 Blaine A1 221
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Mewtwo ex
+11/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+9/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Zapdos A1 103
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+9/3
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Blitzle A1 105
+2 Pincurchin A1 112
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+9/3
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Electabuzz A1 101
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+1 Lt. Surge A1 226
+2 X Speed P-A 2
+2 Red Card P-A 6
+2 Poké Ball P-A 5
+
+Pikachu ex
+8/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Charizard ex
+8/3
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+1 Moltres A1 46
+1 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Pikachu ex
+8/3
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+1 Potion P-A 1
+
+Articuno ex
+8/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+1 Starmie A1 75
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+1 X Speed P-A 2
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+1 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Old Amber A1 218
+1 Potion P-A 1
+
+Mewtwo ex
+8/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Red Card P-A 6
+2 Poké Ball P-A 5
+
+Pikachu ex
+8/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Greninja
+7/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Froakie A1 87
+2 Frogadier A1 88
+2 Greninja A1 89
+2 Farfetch'd A1 198
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+1 Potion P-A 1
+
+Pikachu ex
+7/3
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Voltorb A1 99
+1 Electrode A1 100
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Lt. Surge A1 226
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+1 Red Card P-A 6
+
+Poison
+7/3
+2 Koffing A1 176
+2 Weezing A1 177
+2 Ekans A1 164
+2 Arbok A1 165
+1 Grimer A1 174
+1 Muk A1 175
+2 Professor's Research P-A 7
+2 Koga A1 222
+1 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+
+Pikachu ex
+7/0
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Magnemite A1 97
+2 Magneton A1 98
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Lt. Surge A1 226
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Pikachu ex
+6/1
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Lt. Surge A1 226
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+
+Articuno ex
+6/1
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 Potion P-A 1
+1 Red Card P-A 6
+1 X Speed P-A 2
+
+Mewtwo ex
+6/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Charizard ex
+6/1
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Pikachu ex
+6/1
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Lt. Surge A1 226
+1 Sabrina A1 225
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+
+Mewtwo ex
+6/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo A1 128
+2 Mewtwo ex A1 129
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Mewtwo ex
+12/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Jynx A1 127
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+11/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Charizard ex
+9/3
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Red Card P-A 6
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+
+Pikachu ex
+9/3
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Zapdos ex A1 104
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Giovanni A1 223
+1 Lt. Surge A1 226
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Pikachu ex
+9/2
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Pincurchin A1 112
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Voltorb A1 99
+1 Electrode A1 100
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Greninja
+9/2
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Froakie A1 87
+2 Frogadier A1 88
+2 Greninja A1 89
+1 Farfetch'd A1 198
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 X Speed P-A 2
+
+Pikachu ex
+8/2
+2 Pikachu A1 94
+1 Raichu A1 95
+2 Pikachu ex A1 96
+1 Voltorb A1 99
+1 Electrode A1 100
+1 Zapdos ex A1 104
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Lt. Surge A1 226
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Pikachu ex
+8/3
+2 Zapdos A1 103
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+
+Pikachu ex
+9/1
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+8/2
+2 Voltorb A1 99
+1 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Potion P-A 1
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Hand Scope P-A 3
+
+Pikachu ex
+8/2
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+1 Potion P-A 1
+1 X Speed P-A 2
+1 Red Card P-A 6
+
+Charizard ex
+7/3
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+1 Meowth A1 196
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Wigglytuff ex
+7/3
+2 Jigglypuff A1 193
+2 Wigglytuff ex A1 195
+2 Koffing A1 176
+2 Weezing A1 177
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Koga A1 222
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Articuno ex
+7/3
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Misty A1 220
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+7/3
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Magnemite A1 97
+1 Magneton A1 98
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Lt. Surge A1 226
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+
+Rapidash
+7/3
+2 Vulpix A1 37
+2 Ninetales A1 38
+2 Ponyta A1 42
+2 Rapidash A1 43
+2 Blaine A1 221
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+2 Potion P-A 1
+
+Mewtwo ex
+7/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Mew A1 283
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Red Card P-A 6
+1 Potion P-A 1
+1 X Speed P-A 2
+
+Mewtwo ex
+7/1
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Kangaskhan A1 203
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Red Card P-A 6
+
+Pikachu ex
+10/2
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+9/3
+2 Blitzle A1 105
+2 Zebstrika A1 106
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+2 Pincurchin A1 112
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+9/2
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Pikachu ex A1 96
+1 Magnemite A1 97
+1 Magneton A1 98
+1 Zapdos ex A1 104
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Lt. Surge A1 226
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Articuno ex
+8/2
+2 Staryu A1 74
+2 Starmie ex A1 76
+2 Articuno ex A1 84
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Misty A1 220
+2 Giovanni A1 223
+2 Potion P-A 1
+2 Poké Ball P-A 5
+1 X Speed P-A 2
+1 Red Card P-A 6
+
+Mewtwo ex
+7/2
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Meowth A1 196
+2 Professor's Research P-A 7
+1 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+7/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Pikachu ex A1 96
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Zapdos ex A1 104
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Giovanni A1 223
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+
+Poison
+7/3
+2 Ekans A1 164
+2 Arbok A1 165
+2 Koffing A1 176
+2 Weezing A1 177
+1 Grimer A1 174
+1 Muk A1 175
+2 Koga A1 222
+2 Professor's Research P-A 7
+1 Sabrina A1 225
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+
+Mewtwo ex
+6/3
+2 Ralts A1 130
+2 Kirlia A1 131
+2 Gardevoir A1 132
+2 Mewtwo ex A1 129
+1 Jynx A1 127
+2 Professor's Research P-A 7
+2 Giovanni A1 223
+1 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Articuno ex
+7/2
+2 Articuno ex A1 84
+1 Staryu A1 74
+2 Starmie ex A1 76
+2 Professor's Research P-A 7
+2 Misty A1 220
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+7/2
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Magnemite A1 97
+2 Magneton A1 98
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Professor's Research P-A 7
+2 Lt. Surge A1 226
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+
+Pikachu ex
+6/1
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+2 Zapdos A1 103
+1 Pincurchin A1 112
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Potion P-A 1
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Red Card P-A 6
+
+Pikachu ex
+6/3
+2 Voltorb A1 99
+1 Electrode A1 100
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Zapdos A1 103
+1 Pincurchin A1 112
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 X Speed P-A 2
+2 Poké Ball P-A 5
+1 Potion P-A 1
+
+Pikachu ex
+6/3
+2 Pikachu A1 94
+2 Raichu A1 95
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+1 Lt. Surge A1 226
+1 Giovanni A1 223
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Potion P-A 1
+
+Pikachu ex
+6/3
+2 Voltorb A1 99
+2 Electrode A1 100
+2 Zapdos ex A1 104
+2 Pikachu ex A1 96
+1 Pincurchin A1 112
+2 Giovanni A1 223
+2 Sabrina A1 225
+2 Professor's Research P-A 7
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+1 Red Card P-A 6
+
+Charizard ex
+6/3
+2 Charmander A1 33
+2 Charmeleon A1 34
+2 Charizard ex A1 36
+2 Moltres ex A1 47
+1 Meowth A1 196
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Poké Ball P-A 5
+2 X Speed P-A 2
+2 Potion P-A 1
+1 Dome Fossil A1 217
+
+Pikachu ex
+6/3
+2 Pikachu ex A1 96
+2 Zapdos ex A1 104
+1 Blitzle A1 105
+1 Zebstrika A1 106
+1 Zapdos A1 103
+2 Professor's Research P-A 7
+2 Sabrina A1 225
+2 Giovanni A1 223
+2 Poké Ball P-A 5
+2 Potion P-A 1
+2 X Speed P-A 2
+1 Red Card P-A 6
