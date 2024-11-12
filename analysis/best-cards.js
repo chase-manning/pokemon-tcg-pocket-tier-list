@@ -1,130 +1,10 @@
 const fs = require("fs");
+const getDeckName = require("./get-deck-name");
 
 const EXCLUDE = [];
 
 const WINRATE_IMPORTANCE = 0.75;
 const POPULARITY_IMPORTANCE = 0.25;
-
-const DECK_NAMES = [
-  {
-    mainCard: "2 Pikachu ex A1 96",
-    deckName: "Pikachu ex",
-  },
-  {
-    mainCard: "1 Pikachu ex A1 96",
-    deckName: "Pikachu ex",
-  },
-  {
-    mainCard: "2 Mewtwo ex A1 129",
-    deckName: "Mewtwo ex",
-  },
-  {
-    mainCard: "1 Mewtwo ex A1 129",
-    deckName: "Mewtwo ex",
-  },
-  {
-    mainCard: "2 Articuno ex A1 84",
-    deckName: "Articuno ex",
-  },
-  {
-    mainCard: "1 Articuno ex A1 84",
-    deckName: "Articuno ex",
-  },
-  {
-    mainCard: "2 Greninja A1 89",
-    deckName: "Greninja",
-  },
-  {
-    mainCard: "1 Greninja A1 89",
-    deckName: "Greninja",
-  },
-  {
-    mainCard: "2 Charizard ex A1 36",
-    deckName: "Charizard ex",
-  },
-  {
-    mainCard: "1 Charizard ex A1 36",
-    deckName: "Charizard ex",
-  },
-  {
-    mainCard: "2 Exeggutor ex A1 23",
-    deckName: "Exeggutor ex",
-  },
-  {
-    mainCard: "1 Exeggutor ex A1 23",
-    deckName: "Exeggutor ex",
-  },
-  {
-    mainCard: "2 Marowak ex A1 153",
-    deckName: "Marowak ex",
-  },
-  {
-    mainCard: "1 Marowak ex A1 153",
-    deckName: "Marowak ex",
-  },
-  {
-    mainCard: "2 Lapras ex P-A 14",
-    deckName: "Lapras ex",
-  },
-  {
-    mainCard: "2 Gengar ex A1 123",
-    deckName: "Gengar ex",
-  },
-  {
-    mainCard: "1 Gengar ex A1 123",
-    deckName: "Gengar ex",
-  },
-  {
-    mainCard: "2 Dragonite A1 185",
-    deckName: "Dragonite",
-  },
-  {
-    mainCard: "1 Dragonite A1 185",
-    deckName: "Dragonite",
-  },
-  {
-    mainCard: "2 Weezing A1 177",
-    deckName: "Poison",
-  },
-  {
-    mainCard: "2 Wigglytuff ex A1 195",
-    deckName: "Wigglytuff ex",
-  },
-  {
-    mainCard: "1 Weezing A1 177",
-    deckName: "Poison",
-  },
-  {
-    mainCard: "1 Wigglytuff ex A1 195",
-    deckName: "Wigglytuff ex",
-  },
-  {
-    mainCard: "2 Blaine A1 221",
-    deckName: "Blaine",
-  },
-  {
-    mainCard: "1 Blaine A1 221",
-    deckName: "Blaine",
-  },
-  {
-    mainCard: "2 Machamp ex A1 146",
-    deckName: "Machamp ex",
-  },
-  {
-    mainCard: "1 Machamp ex A1 146",
-    deckName: "Machamp ex",
-  },
-];
-
-const getDeckName = (deck) => {
-  const { cards } = deck;
-  for (const { mainCard, deckName } of DECK_NAMES) {
-    if (cards.includes(mainCard)) {
-      return deckName;
-    }
-  }
-  return null;
-};
 
 const decksWithoutNames = JSON.parse(fs.readFileSync("./data/decks.json"));
 
@@ -141,11 +21,6 @@ const deckScores = decksWithoutNames
 const uniqueDeckNames = deckScores
   .map((deck) => deck.name)
   .filter((value, index, self) => self.indexOf(value) === index);
-
-const totalDeckGames = deckScores.reduce(
-  (acc, deck) => acc + deck.totalGames,
-  0
-);
 
 const bestDecks = [];
 
