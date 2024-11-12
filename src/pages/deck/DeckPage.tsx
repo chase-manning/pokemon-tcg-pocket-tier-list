@@ -8,12 +8,11 @@ const StyledDeckPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+  padding: 4.8rem;
 
-const Header = styled.h1`
-  font-size: 3.6rem;
-  font-weight: 700;
-  margin-bottom: 2.4rem;
+  @media (max-width: 900px) {
+    padding: 2.4rem;
+  }
 `;
 
 const CardList = styled.div`
@@ -22,10 +21,42 @@ const CardList = styled.div`
   gap: 2.4rem;
   width: 100%;
   max-width: 120rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+const CardContainer = styled.div`
+  position: relative;
+  width: 100%;
 `;
 
 const CardImage = styled.img`
   width: 100%;
+`;
+
+const CardNumber = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--s);
+  color: var(--bg);
+  height: 4rem;
+  width: 4rem;
+  transform: translate(30%, 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  font-weight: 500;
+  border-radius: 50%;
+
+  @media (max-width: 900px) {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+  }
 `;
 
 const DeckPage = () => {
@@ -39,12 +70,20 @@ const DeckPage = () => {
 
   if (!deck) return <p>Deck not found</p>;
 
+  const uniqueCards = deck.cards.filter(
+    (card, index, self) => self.findIndex((c) => c.id === card.id) === index
+  );
+
   return (
     <StyledDeckPage>
-      <Header>{deck.name}</Header>
       <CardList>
-        {deck.cards.map((card) => (
-          <CardImage src={card.image} alt={card.name} key={card.id} />
+        {uniqueCards.map((card) => (
+          <CardContainer key={card.id}>
+            <CardImage src={card.image} alt={card.name} />
+            <CardNumber>
+              {deck.cards.filter((c) => c.id === card.id).length}
+            </CardNumber>
+          </CardContainer>
         ))}
       </CardList>
     </StyledDeckPage>
