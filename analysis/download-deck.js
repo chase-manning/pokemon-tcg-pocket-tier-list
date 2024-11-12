@@ -13,11 +13,17 @@ const TOURNAMENT_LINKS = [
   "https://play.limitlesstcg.com/tournament/6726f08e0947ec3b5d1936f4/standings",
   "https://play.limitlesstcg.com/tournament/6728d6730947ec3b5d1955e0/standings",
   "https://play.limitlesstcg.com/tournament/672d22260947ec3b5d199c1c/standings",
-]
+];
 
 const randomWait = async (minSeconds, maxSeconds) => {
-  await new Promise((resolve) => setTimeout(resolve, Math.random() * (maxSeconds * 1000 - minSeconds * 1000) + minSeconds * 1000));
-}
+  await new Promise((resolve) =>
+    setTimeout(
+      resolve,
+      Math.random() * (maxSeconds * 1000 - minSeconds * 1000) +
+        minSeconds * 1000
+    )
+  );
+};
 
 const getCardsFromHtml = (html) => {
   const start = html.indexOf(`const decklist = `);
@@ -26,11 +32,11 @@ const getCardsFromHtml = (html) => {
   const decklist = decklistStart.substring(0, endIndex);
   const cards = decklist.split("\r\n").filter((card) => card.length > 0);
   return cards;
-}
+};
 
 const getResultsFromHtml = (html) => {
-  const target = `<div class="details">`
-  const pointsTarget = ` points (`
+  const target = `<div class="details">`;
+  const pointsTarget = ` points (`;
   let start = html.indexOf(target) + target.length;
   const htmlStart = html.substring(start);
   start = htmlStart.indexOf(pointsTarget) + pointsTarget.length;
@@ -40,9 +46,9 @@ const getResultsFromHtml = (html) => {
   return {
     wins: Number(wins),
     losses: Number(losses),
-    draws: Number(draws)
-  }
-}
+    draws: Number(draws),
+  };
+};
 
 const downloadDeck = async (url) => {
   await randomWait(0.1, 1);
@@ -54,17 +60,16 @@ const downloadDeck = async (url) => {
     cards,
     wins: results.wins,
     losses: results.losses,
-    totalGames: results.wins + results.losses
-  }
-}
-
+    totalGames: results.wins + results.losses,
+  };
+};
 
 const getDeckLinks = async (url) => {
   await randomWait(0.1, 1);
   const res = await fetch(url);
   const html = await res.text();
   const tournamentId = url.split("/")[4];
-  const split = `href="/tournament/${tournamentId}/player/`
+  const split = `href="/tournament/${tournamentId}/player/`;
   const sections = html.split(split);
   const deckUrls = [];
   for (let i = 1; i < sections.length; i++) {
@@ -77,7 +82,7 @@ const getDeckLinks = async (url) => {
     deckUrls.push(playerUrl);
   }
   return deckUrls;
-}
+};
 
 const downloadAllDeckLinks = async () => {
   const deckLinks = [];
@@ -86,31 +91,45 @@ const downloadAllDeckLinks = async () => {
     const links = await getDeckLinks(url);
     deckLinks.push(...links);
     completeUrls++;
-    console.log(`URl Percent Complete: ${Math.round((completeUrls / TOURNAMENT_LINKS.length) * 100)}%`);
-    fs.writeFileSync("deck-links.json", JSON.stringify(deckLinks, null, 2));
+    console.log(
+      `URl Percent Complete: ${Math.round(
+        (completeUrls / TOURNAMENT_LINKS.length) * 100
+      )}%`
+    );
+    fs.writeFileSync(
+      "./data/deck-links.json",
+      JSON.stringify(deckLinks, null, 2)
+    );
   }
-}
+};
 
 // downloadAllDeckLinks();
 
 const downloadAllDecks = async () => {
-  const deckLinks = JSON.parse(fs.readFileSync("deck-links.json"));
-  const decks = JSON.parse(fs.readFileSync("decks.json"));
+  const deckLinks = JSON.parse(fs.readFileSync("./data/deck-links.json"));
+  const decks = JSON.parse(fs.readFileSync("./data/decks.json"));
   for (let i = 0; i < deckLinks.length; i++) {
     const deckLink = deckLinks[i];
     const deck = await downloadDeck(deckLink);
-    console.log(`Deck Percent Complete: ${Math.round((i / deckLinks.length) * 10000) / 100}%`);
+    console.log(
+      `Deck Percent Complete: ${
+        Math.round((i / deckLinks.length) * 10000) / 100
+      }%`
+    );
     decks.push(deck);
-    fs.writeFileSync("decks.json", JSON.stringify(decks, null, 2));
+    fs.writeFileSync("./data/decks.json", JSON.stringify(decks, null, 2));
     const newDecklinks = deckLinks.slice(i + 1);
-    fs.writeFileSync("deck-links.json", JSON.stringify(newDecklinks, null, 2));
+    fs.writeFileSync(
+      "./data/deck-links.json",
+      JSON.stringify(newDecklinks, null, 2)
+    );
   }
-}
+};
 
 // downloadAllDecks();
 
 const setDeckName = () => {
-  let decks = JSON.parse(fs.readFileSync("decks.json"));
+  let decks = JSON.parse(fs.readFileSync("./data/decks.json"));
   for (let i = 0; i < decks.length; i++) {
     const { cards } = decks[i];
     for (const { mainCard, deckName } of DECK_NAMES) {
@@ -121,8 +140,10 @@ const setDeckName = () => {
     }
   }
   const onlyNamed = decks.filter((deck) => deck.name);
-  fs.writeFileSync("named-decks.json", JSON.stringify(onlyNamed, null, 2));
-}
+  fs.writeFileSync(
+    "named-./data/decks.json",
+    JSON.stringify(onlyNamed, null, 2)
+  );
+};
 
 // setDeckName();
-

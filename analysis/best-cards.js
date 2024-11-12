@@ -126,7 +126,7 @@ const getDeckName = (deck) => {
   return null;
 };
 
-const decksWithoutNames = JSON.parse(fs.readFileSync("decks.json"));
+const decksWithoutNames = JSON.parse(fs.readFileSync("./data/decks.json"));
 
 const deckScores = decksWithoutNames
   .map((deck) => {
