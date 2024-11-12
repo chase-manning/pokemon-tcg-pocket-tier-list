@@ -5,12 +5,10 @@ import DeckPage from "./pages/deck/DeckPage";
 
 const StyledApp = styled.div`
   width: 100%;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: var(--bg);
-  padding: 6rem;
 `;
 
 const Layout = () => {
