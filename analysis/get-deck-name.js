@@ -40,6 +40,14 @@ const DECK_NAMES = [
     deckName: "Charizard ex",
   },
   {
+    mainCard: "2 Blastoise ex A1 56",
+    deckName: "Blastoise ex",
+  },
+  {
+    mainCard: "1 Blastoise ex A1 56",
+    deckName: "Blastoise ex",
+  },
+  {
     mainCard: "2 Exeggutor ex A1 23",
     deckName: "Exeggutor ex",
   },
