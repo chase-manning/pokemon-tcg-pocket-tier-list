@@ -2,10 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --bg: white;
-        --main: black;
-        --primary: #08A0E8;
-        --secondary: #99D9E9;
+        --bg: #1A1A17;
+        --border: #000;
+        --main: white;
+        --s: #FF7F7F;
+        --a: #FFBF7E;
+        --b: #FFDF80;
+        --c: #FFFF7F;
+        --d: #BFFF7F;
+        --e: #7FFF7F;
     }
 
     * {
@@ -13,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-size: 10px;
-        font-family: "Roboto", sans-serif;
     }
 
     div {
