@@ -1,0 +1,333 @@
+[
+  {
+    "name": "Pikachu ex",
+    "cards": [
+      "2 Zapdos ex A1 104",
+      "2 Pikachu ex A1 96",
+      "1 Voltorb A1 99",
+      "1 Electrode A1 100",
+      "1 Blitzle A1 105",
+      "1 Zebstrika A1 106",
+      "1 Pincurchin A1 112",
+      "2 Sabrina A1 225",
+      "2 Professor's Research P-A 7",
+      "1 Giovanni A1 223",
+      "2 Poké Ball P-A 5",
+      "2 X Speed P-A 2",
+      "1 Potion P-A 1",
+      "1 Red Card P-A 6"
+    ],
+    "score": 7.287103088922588
+  },
+  {
+    "name": "Mewtwo ex",
+    "cards": [
+      "2 Ralts A1 130",
+      "2 Kirlia A1 131",
+      "2 Gardevoir A1 132",
+      "2 Mewtwo ex A1 129",
+      "1 Jynx A1 127",
+      "1 Kangaskhan A1 203",
+      "2 Professor's Research P-A 7",
+      "1 Sabrina A1 225",
+      "1 Giovanni A1 223",
+      "2 X Speed P-A 2",
+      "2 Poké Ball P-A 5",
+      "1 Potion P-A 1",
+      "1 Red Card P-A 6"
+    ],
+    "score": 7.087103067776588
+  },
+  {
+    "name": "Blaine",
+    "cards": [
+      "2 Vulpix A1 37",
+      "2 Ninetales A1 38",
+      "2 Ponyta A1 42",
+      "2 Rapidash A1 43",
+      "1 Farfetch'd A1 198",
+      "2 Professor's Research P-A 7",
+      "2 Blaine A1 221",
+      "1 Giovanni A1 223",
+      "1 Sabrina A1 225",
+      "2 X Speed P-A 2",
+      "2 Poké Ball P-A 5",
+      "1 Potion P-A 1"
+    ],
+    "score": 6.907329730575773
+  },
+  {
+    "name": "Greninja",
+    "cards": [
+      "2 Tentacool A1 62",
+      "2 Tentacruel A1 63",
+      "2 Froakie A1 87",
+      "2 Frogadier A1 88",
+      "2 Greninja A1 89",
+      "1 Kangaskhan A1 203",
+      "1 Farfetch'd A1 198",
+      "2 Professor's Research P-A 7",
+      "1 Giovanni A1 223",
+      "1 Sabrina A1 225",
+      "2 Poké Ball P-A 5",
+      "1 Potion P-A 1",
+      "1 X Speed P-A 2"
+    ],
+    "score": 6.8236491568615545
+  },
+  {
+    "name": "Exeggutor ex",
+    "cards": [
+      "2 Bellsprout A1 18",
+      "2 Weepinbell A1 19",
+      "2 Victreebel A1 20",
+      "2 Exeggcute A1 21",
+      "2 Exeggutor ex A1 23",
+      "1 Exeggutor A1 22",
+      "2 Professor's Research P-A 7",
+      "2 Erika A1 219",
+      "1 Giovanni A1 223",
+      "1 Sabrina A1 225",
+      "2 Poké Ball P-A 5",
+      "1 X Speed P-A 2"
+    ],
+    "score": 6.77341916252683
+  },
+  {
+    "name": "Machamp ex",
+    "cards": [
+      "2 Machop A1 143",
+      "2 Machoke A1 144",
+      "2 Machamp ex A1 146",
+      "2 Kangaskhan A1 203",
+      "2 Sabrina A1 225",
+      "2 Professor's Research P-A 7",
+      "1 Giovanni A1 223",
+      "2 Poké Ball P-A 5",
+      "2 X Speed P-A 2",
+      "1 Old Amber A1 218",
+      "1 Red Card P-A 6",
+      "1 Potion P-A 1"
+    ],
+    "score": 6.542490838695433
+  },
+  {
+    "name": "Poison",
+    "cards": [
+      "2 Ekans A1 164",
+      "2 Arbok A1 165",
+      "2 Koffing A1 176",
+      "2 Weezing A1 177",
+      "1 Grimer A1 174",
+      "1 Muk A1 175",
+      "2 Professor's Research P-A 7",
+      "2 Koga A1 222",
+      "1 Giovanni A1 223",
+      "1 Sabrina A1 225",
+      "2 Poké Ball P-A 5",
+      "1 X Speed P-A 2",
+      "1 Potion P-A 1"
+    ],
+    "score": 6.440113586929918
+  },
+  {
+    "name": "Articuno ex",
+    "cards": [
+      "2 Staryu A1 74",
+      "2 Starmie ex A1 76",
+      "2 Articuno ex A1 84",
+      "1 Tentacool A1 62",
+      "1 Tentacruel A1 63",
+      "2 Professor's Research P-A 7",
+      "2 Misty A1 220",
+      "2 Sabrina A1 225",
+      "1 Giovanni A1 223",
+      "2 Poké Ball P-A 5",
+      "1 Red Card P-A 6",
+      "1 X Speed P-A 2",
+      "1 Potion P-A 1"
+    ],
+    "score": 6.401511489761774
+  },
+  {
+    "name": "Charizard ex",
+    "cards": [
+      "2 Charmander A1 33",
+      "2 Charmeleon A1 34",
+      "2 Charizard ex A1 36",
+      "1 Charizard A1 35",
+      "2 Moltres ex A1 47",
+      "2 Professor's Research P-A 7",
+      "2 Sabrina A1 225",
+      "2 X Speed P-A 2",
+      "2 Poké Ball P-A 5",
+      "1 Dome Fossil A1 217",
+      "1 Potion P-A 1",
+      "1 Red Card P-A 6"
+    ],
+    "score": 6.394233637245335
+  },
+  {
+    "name": "Marowak ex",
+    "cards": [
+      "2 Sandshrew A1 137",
+      "2 Sandslash A1 138",
+      "2 Cubone A1 151",
+      "2 Marowak ex A1 153",
+      "1 Hitmonlee A1 154",
+      "2 Professor's Research P-A 7",
+      "1 Sabrina A1 225",
+      "1 Giovanni A1 223",
+      "2 Potion P-A 1",
+      "2 Poké Ball P-A 5",
+      "2 X Speed P-A 2",
+      "1 Red Card P-A 6"
+    ],
+    "score": 6.047604451930438
+  },
+  {
+    "name": "Dragonite",
+    "cards": [
+      "2 Dratini A1 183",
+      "2 Dragonair A1 184",
+      "2 Dragonite A1 185",
+      "1 Koffing A1 176",
+      "1 Weezing A1 177",
+      "2 Professor's Research P-A 7",
+      "2 Giovanni A1 223",
+      "1 Koga A1 222",
+      "2 Potion P-A 1",
+      "2 Poké Ball P-A 5",
+      "2 X Speed P-A 2",
+      "1 Red Card P-A 6"
+    ],
+    "score": 6.027093528249892
+  },
+  {
+    "name": "Venusaur ex",
+    "cards": [
+      "2 Bulbasaur A1 1",
+      "2 Ivysaur A1 2",
+      "2 Venusaur ex A1 4",
+      "1 Exeggcute A1 21",
+      "1 Exeggutor A1 22",
+      "1 Exeggutor ex A1 23",
+      "2 Erika A1 219",
+      "2 Professor's Research P-A 7",
+      "1 Sabrina A1 225",
+      "1 Giovanni A1 223",
+      "2 Potion P-A 1",
+      "2 Poké Ball P-A 5",
+      "1 X Speed P-A 2"
+    ],
+    "score": 5.966296524674998
+  },
+  {
+    "name": "Gengar ex",
+    "cards": [
+      "2 Gastly A1 120",
+      "2 Haunter A1 121",
+      "2 Gengar ex A1 123",
+      "1 Drowzee A1 124",
+      "1 Hypno A1 125",
+      "1 Kangaskhan A1 203",
+      "1 Jynx A1 127",
+      "2 Sabrina A1 225",
+      "2 Professor's Research P-A 7",
+      "1 Giovanni A1 223",
+      "2 Potion P-A 1",
+      "2 Poké Ball P-A 5",
+      "1 X Speed P-A 2"
+    ],
+    "score": 5.96578190569614
+  },
+  {
+    "name": "Melmetal",
+    "cards": [
+      "2 Drowzee A1 124",
+      "2 Hypno A1 125",
+      "2 Meltan A1 181",
+      "2 Melmetal A1 182",
+      "2 Kangaskhan A1 203",
+      "2 Sabrina A1 225",
+      "2 Professor's Research P-A 7",
+      "2 Poké Ball P-A 5",
+      "2 X Speed P-A 2",
+      "1 Red Card P-A 6",
+      "1 Potion P-A 1"
+    ],
+    "score": 5.918918594484577
+  },
+  {
+    "name": "Blastoise ex",
+    "cards": [
+      "2 Squirtle A1 53",
+      "2 Wartortle A1 54",
+      "2 Blastoise ex A1 56",
+      "2 Mewtwo A1 128",
+      "1 Articuno A1 83",
+      "1 Snorlax A1 211",
+      "2 Professor's Research P-A 7",
+      "2 Misty A1 220",
+      "1 Sabrina A1 225",
+      "2 X Speed P-A 2",
+      "2 Poké Ball P-A 5",
+      "1 Red Card P-A 6"
+    ],
+    "score": 5.667153304660776
+  },
+  {
+    "name": "Lapras ex",
+    "cards": [
+      "2 Goldeen A1 72",
+      "2 Seaking A1 73",
+      "2 Lapras ex P-A 14",
+      "2 Professor's Research P-A 7",
+      "2 Giovanni A1 223",
+      "2 Misty A1 220",
+      "1 Sabrina A1 225",
+      "2 Poké Ball P-A 5",
+      "2 Potion P-A 1",
+      "2 X Speed P-A 2",
+      "1 Red Card P-A 6"
+    ],
+    "score": 5.388559929448993
+  },
+  {
+    "name": "Alakazam",
+    "cards": [
+      "2 Abra A1 115",
+      "2 Kadabra A1 116",
+      "2 Alakazam A1 117",
+      "2 Koffing A1 176",
+      "2 Weezing A1 177",
+      "2 Professor's Research P-A 7",
+      "2 Sabrina A1 225",
+      "1 Koga A1 222",
+      "1 Giovanni A1 223",
+      "2 Poké Ball P-A 5",
+      "1 Potion P-A 1",
+      "1 Red Card P-A 6"
+    ],
+    "score": 5.377344483577689
+  },
+  {
+    "name": "Wigglytuff ex",
+    "cards": [
+      "2 Tentacool A1 62",
+      "2 Tentacruel A1 63",
+      "2 Jigglypuff A1 193",
+      "2 Wigglytuff ex A1 195",
+      "1 Drowzee A1 124",
+      "1 Hypno A1 125",
+      "2 Professor's Research P-A 7",
+      "1 Sabrina A1 225",
+      "1 Misty A1 220",
+      "1 Giovanni A1 223",
+      "2 Poké Ball P-A 5",
+      "2 Potion P-A 1",
+      "1 X Speed P-A 2"
+    ],
+    "score": 4.890878787878787
+  }
+]
