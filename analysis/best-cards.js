@@ -3,6 +3,10 @@ const getDeckName = require("./get-deck-name");
 
 const EXCLUDE = [];
 
+const DEPENDENCIES = {
+  "Persian A1 197": ["Meowth A1 196"],
+};
+
 const WINRATE_IMPORTANCE = 0.75;
 const POPULARITY_IMPORTANCE = 0.25;
 
@@ -74,6 +78,10 @@ for (const deckName of uniqueDeckNames) {
       if (EXCLUDE.includes(cardName)) continue;
       if (EXCLUDE.includes(card.name)) continue;
       if (deck.some((c) => c.name.includes(cardName))) continue;
+      const dependency = DEPENDENCIES[cardName];
+      if (dependency && !deck.some((c) => c.name.includes(dependency))) {
+        continue;
+      }
       if (amount + cardsInDeck > 20) continue;
       if (cardsInDeck === 18 && forceDouble && amount === 1) continue;
       deck.push(card);
