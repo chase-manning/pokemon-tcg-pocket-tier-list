@@ -87,3 +87,5 @@ for (const deck of bestDecks) {
   console.log(`===== ${deck.name} (${Math.round(percentage)}%) =====`);
   console.log(deck.cards.join("\n"));
 }
+
+fs.writeFileSync("./data/best-decks.json", JSON.stringify(bestDecks, null, 2));
