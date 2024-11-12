@@ -18,6 +18,8 @@ const deckScores = decksWithoutNames
   })
   .filter((deck) => deck.name);
 
+const allGames = deckScores.reduce((acc, deck) => acc + deck.totalGames, 0);
+
 const uniqueDeckNames = deckScores
   .map((deck) => deck.name)
   .filter((value, index, self) => self.indexOf(value) === index);
@@ -59,11 +61,12 @@ for (const deckName of uniqueDeckNames) {
   };
 
   const deckScore = (deck) => {
+    const popularity = totalGames / allGames;
     const deckScore = deck.cards.reduce(
       (acc, card) => acc + cardScore(card),
       0
     );
-    return deckScore;
+    return deckScore * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
   };
 
   const sortedDecks = matchingGames.sort((a, b) => deckScore(b) - deckScore(a));
