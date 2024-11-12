@@ -62,31 +62,37 @@ for (const deckName of uniqueDeckNames) {
     return cardScore(b) - cardScore(a);
   });
 
-  const deck = [];
-  let cardsInDeck = 0;
-  for (const card of sortedCards) {
-    if (cardsInDeck === 20) break;
-    const amount = Number(card.name.split(" ")[0]);
+  const createDeck = (sortedCards, forceDouble) => {
+    const deck = [];
+    let cardsInDeck = 0;
+    for (const card of sortedCards) {
+      if (cardsInDeck === 20) break;
+      const amount = Number(card.name.split(" ")[0]);
+      const rawCardName = card.name.split(" ");
+      rawCardName.shift();
+      const cardName = rawCardName.join(" ");
+      if (EXCLUDE.includes(cardName)) continue;
+      if (EXCLUDE.includes(card.name)) continue;
+      if (deck.some((c) => c.name.includes(cardName))) continue;
+      if (amount + cardsInDeck > 20) continue;
+      if (cardsInDeck === 18 && forceDouble && amount === 1) continue;
+      deck.push(card);
+      cardsInDeck += amount;
+    }
 
-    // Everything after the first space
-    const rawCardName = card.name.split(" ");
-    rawCardName.shift();
-    const cardName = rawCardName.join(" ");
-    if (EXCLUDE.includes(cardName)) continue;
-    if (EXCLUDE.includes(card.name)) continue;
-    if (deck.some((c) => c.name.includes(cardName))) continue;
-    if (amount + cardsInDeck > 20) continue;
-    deck.push(card);
-    cardsInDeck += amount;
-  }
+    const deckScore = deck.reduce((acc, card) => acc + cardScore(card), 0);
 
-  const deckScore = deck.reduce((acc, card) => acc + cardScore(card), 0);
+    return {
+      name: deckName,
+      cards: deck.map((card) => card.name),
+      score: deckScore,
+    };
+  };
 
-  bestDecks.push({
-    name: deckName,
-    cards: deck.map((card) => card.name),
-    score: deckScore,
-  });
+  const deck = createDeck(sortedCards, false);
+  const doubleDeck = createDeck(sortedCards, true);
+  const bestDeck = deck.score > doubleDeck.score ? deck : doubleDeck;
+  bestDecks.push(bestDeck);
 }
 
 bestDecks.sort((a, b) => b.score - a.score);
