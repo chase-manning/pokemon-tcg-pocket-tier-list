@@ -48,8 +48,24 @@ const DECK_NAMES = [
     deckName: "Blastoise ex",
   },
   {
+    mainCard: "2 Melmetal A1 182",
+    deckName: "Melmetal",
+  },
+  {
+    mainCard: "2 Alakazam A1 117",
+    deckName: "Alakazam",
+  },
+  {
+    mainCard: "2 Venusaur ex A1 4",
+    deckName: "Venusaur ex",
+  },
+  {
     mainCard: "2 Exeggutor ex A1 23",
     deckName: "Exeggutor ex",
+  },
+  {
+    mainCard: "1 Venusaur ex A1 4",
+    deckName: "Venusaur ex",
   },
   {
     mainCard: "1 Exeggutor ex A1 23",
@@ -114,6 +130,14 @@ const DECK_NAMES = [
   {
     mainCard: "1 Machamp ex A1 146",
     deckName: "Machamp ex",
+  },
+  {
+    mainCard: "1 Alakazam A1 117",
+    deckName: "Alakazam",
+  },
+  {
+    mainCard: "1 Melmetal A1 182",
+    deckName: "Melmetal",
   },
 ];
 
