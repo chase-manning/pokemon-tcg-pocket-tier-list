@@ -31,22 +31,22 @@ const bestDecks = [];
 for (const deckName of uniqueDeckNames) {
   const matchingGames = deckScores.filter((game) => game.name === deckName);
 
-  const cards = [];
+  const cards = {};
 
   for (const game of matchingGames) {
     for (const card of game.cards) {
-      const existingCard = cards.find((c) => c.name === card);
+      const existingCard = cards[card];
       if (existingCard) {
-        existingCard.wins += game.wins;
-        existingCard.losses += game.losses;
-        existingCard.totalGames += game.totalGames;
+        cards[card].wins += game.wins;
+        cards[card].losses += game.losses;
+        cards[card].totalGames += game.totalGames;
       } else {
-        cards.push({
+        cards[card] = {
           name: card,
           wins: game.wins,
           losses: game.losses,
           totalGames: game.totalGames,
-        });
+        };
       }
     }
   }
@@ -56,50 +56,29 @@ for (const deckName of uniqueDeckNames) {
     0
   );
 
-  const cardScore = (card) => {
+  const cardScore = (cardName) => {
+    const card = cards[cardName];
     const aWinRate = card.wins / card.totalGames;
     const aPopularity = card.totalGames / totalGames;
     return aWinRate * WINRATE_IMPORTANCE + aPopularity * POPULARITY_IMPORTANCE;
   };
 
-  const sortedCards = cards.sort((a, b) => {
-    return cardScore(b) - cardScore(a);
-  });
-
-  const createDeck = (sortedCards, forceDouble) => {
-    const deck = [];
-    let cardsInDeck = 0;
-    for (const card of sortedCards) {
-      if (cardsInDeck === 20) break;
-      const amount = Number(card.name.split(" ")[0]);
-      const rawCardName = card.name.split(" ");
-      rawCardName.shift();
-      const cardName = rawCardName.join(" ");
-      if (EXCLUDE.includes(cardName)) continue;
-      if (EXCLUDE.includes(card.name)) continue;
-      if (deck.some((c) => c.name.includes(cardName))) continue;
-      const dependency = DEPENDENCIES[cardName];
-      if (dependency && !deck.some((c) => c.name.includes(dependency))) {
-        continue;
-      }
-      if (amount + cardsInDeck > 20) continue;
-      if (cardsInDeck === 18 && forceDouble && amount === 1) continue;
-      deck.push(card);
-      cardsInDeck += amount;
-    }
-
-    const deckScore = deck.reduce((acc, card) => acc + cardScore(card), 0);
-
-    return {
-      name: deckName,
-      cards: deck.map((card) => card.name),
-      score: deckScore,
-    };
+  const deckScore = (deck) => {
+    const deckScore = deck.cards.reduce(
+      (acc, card) => acc + cardScore(card),
+      0
+    );
+    return deckScore;
   };
 
-  const deck = createDeck(sortedCards, false);
-  const doubleDeck = createDeck(sortedCards, true);
-  const bestDeck = deck.score > doubleDeck.score ? deck : doubleDeck;
+  const sortedDecks = matchingGames.sort((a, b) => deckScore(b) - deckScore(a));
+
+  const bestDeck = {
+    name: deckName,
+    cards: sortedDecks[0].cards,
+    score: deckScore(sortedDecks[0]),
+  };
+
   bestDecks.push(bestDeck);
 }
 
