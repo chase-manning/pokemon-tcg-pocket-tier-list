@@ -103,7 +103,7 @@ const downloadAllDeckLinks = async () => {
   }
 };
 
-// downloadAllDeckLinks();
+downloadAllDeckLinks();
 
 const downloadAllDecks = async () => {
   const deckLinks = JSON.parse(fs.readFileSync("./data/deck-links.json"));
@@ -126,24 +126,4 @@ const downloadAllDecks = async () => {
   }
 };
 
-// downloadAllDecks();
-
-const setDeckName = () => {
-  let decks = JSON.parse(fs.readFileSync("./data/decks.json"));
-  for (let i = 0; i < decks.length; i++) {
-    const { cards } = decks[i];
-    for (const { mainCard, deckName } of DECK_NAMES) {
-      if (cards.includes(mainCard)) {
-        decks[i].name = deckName;
-        break;
-      }
-    }
-  }
-  const onlyNamed = decks.filter((deck) => deck.name);
-  fs.writeFileSync(
-    "named-./data/decks.json",
-    JSON.stringify(onlyNamed, null, 2)
-  );
-};
-
-// setDeckName();
+downloadAllDecks();
