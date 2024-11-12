@@ -3,12 +3,8 @@ const getDeckName = require("./get-deck-name");
 
 const EXCLUDE = [];
 
-const DEPENDENCIES = {
-  "Persian A1 197": ["Meowth A1 196"],
-};
-
-const WINRATE_IMPORTANCE = 0.75;
-const POPULARITY_IMPORTANCE = 0.25;
+const WINRATE_IMPORTANCE = 0.65;
+const POPULARITY_IMPORTANCE = 0.35;
 
 const decksWithoutNames = JSON.parse(fs.readFileSync("./data/decks.json"));
 
@@ -35,8 +31,7 @@ for (const deckName of uniqueDeckNames) {
 
   for (const game of matchingGames) {
     for (const card of game.cards) {
-      const existingCard = cards[card];
-      if (existingCard) {
+      if (cards[card]) {
         cards[card].wins += game.wins;
         cards[card].losses += game.losses;
         cards[card].totalGames += game.totalGames;
