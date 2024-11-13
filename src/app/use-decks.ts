@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DECKS from "./decks.json";
+import DECKS from "./best-decks.json";
 
 const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v1.json";
@@ -23,18 +23,18 @@ interface FullDeckType {
   score: number;
 }
 
-const cardNameToAmount = (name: string): number => {
-  const items = name.split(" ");
-  const amount = items[0];
-  return Number(amount);
-};
+interface BestDecksCardType {
+  count: number;
+  name: string;
+  set: string;
+  number: string;
+}
 
-const cardNameToId = (name: string): string => {
-  const items = name.split(" ");
-  const id = items[items.length - 1];
+const cardToId = (card: BestDecksCardType): string => {
+  const id = card.number;
   const padded = id.padStart(3, "0");
-  const a1 = name.includes("A1");
-  const pa = name.includes("P-A");
+  const a1 = card.set === "A1";
+  const pa = card.set === "P-A";
   return `${a1 ? "a1" : pa ? "pa" : ""}-${padded}`;
 };
 
@@ -51,9 +51,9 @@ const useDecks = (): FullDeckType[] | null => {
 
   return DECKS.map((oldDeck) => {
     const deckCards = [];
-    for (const cardName of oldDeck.cards) {
-      const amount = cardNameToAmount(cardName);
-      const id = cardNameToId(cardName);
+    for (const oldCard of oldDeck.cards) {
+      const amount = oldCard.count;
+      const id = cardToId(oldCard);
       const card = cards?.find((card) => card.id === id);
       if (!card) {
         throw new Error(`Card not found: ${id}`);

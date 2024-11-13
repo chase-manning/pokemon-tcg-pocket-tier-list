@@ -1,3 +1,5 @@
+const cardToString = require("./card-to-string");
+
 const DECK_NAMES = [
   {
     mainCard: "2 Pikachu ex A1 96",
@@ -144,7 +146,7 @@ const DECK_NAMES = [
 const getDeckName = (deck) => {
   const { cards } = deck;
   for (const { mainCard, deckName } of DECK_NAMES) {
-    if (cards.includes(mainCard)) {
+    if (cards.map((card) => cardToString(card)).includes(mainCard)) {
       return deckName;
     }
   }
