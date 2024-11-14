@@ -69,7 +69,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.479248302460883
+    "score": 0.47880528331377353
   },
   {
     "name": "Mewtwo ex",
@@ -141,7 +141,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.46624728718457364
+    "score": 0.4658840191569319
   },
   {
     "name": "Charizard ex",
@@ -207,7 +207,85 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.428879942587823
+    "score": 0.42875674317356405
+  },
+  {
+    "name": "Arcanine ex",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "39",
+        "name": "Growlithe"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "41",
+        "name": "Arcanine ex"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "47",
+        "name": "Moltres ex"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "210",
+        "name": "Aerodactyl"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "218",
+        "name": "Old Amber"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "6",
+        "name": "Red Card"
+      }
+    ],
+    "score": 0.41337203696331265
   },
   {
     "name": "Blaine",
@@ -279,7 +357,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.40590682604779377
+    "score": 0.40726964389888126
   },
   {
     "name": "Articuno ex",
@@ -345,7 +423,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.4024499721146394
+    "score": 0.4023278277362363
   },
   {
     "name": "Machamp ex",
@@ -417,7 +495,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.37428276899654894
+    "score": 0.3742743766658774
   },
   {
     "name": "Greninja",
@@ -501,7 +579,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.37251865291862296
+    "score": 0.3724937157074845
   },
   {
     "name": "Poison",
@@ -573,7 +651,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.36070108026157793
+    "score": 0.36063250293094723
   },
   {
     "name": "Melmetal",
@@ -645,7 +723,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.3520330547644631
+    "score": 0.3520294100951429
   },
   {
     "name": "Blastoise ex",
@@ -723,7 +801,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.35113391579186626
+    "score": 0.35112413273211196
   },
   {
     "name": "Venusaur ex",
@@ -795,7 +873,7 @@
         "name": "Potion"
       }
     ],
-    "score": 0.3484711422184642
+    "score": 0.3484261113698892
   },
   {
     "name": "Alakazam",
@@ -861,7 +939,7 @@
         "name": "Potion"
       }
     ],
-    "score": 0.3480084346078657
+    "score": 0.34798805323337756
   },
   {
     "name": "Marowak ex",
@@ -933,7 +1011,7 @@
         "name": "Potion"
       }
     ],
-    "score": 0.34240470027964925
+    "score": 0.34233075185738876
   },
   {
     "name": "Dragonite",
@@ -999,7 +1077,7 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.3415183629882608
+    "score": 0.3414889178966473
   },
   {
     "name": "Exeggutor ex",
@@ -1077,7 +1155,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.33965423302800785
+    "score": 0.3396372565419636
   },
   {
     "name": "Lapras ex",
@@ -1149,7 +1227,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.3359136973722425
+    "score": 0.33591082000172656
   },
   {
     "name": "Gengar ex",
@@ -1239,7 +1317,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.33215863558412057
+    "score": 0.33215427157217137
   },
   {
     "name": "Wigglytuff ex",
@@ -1311,6 +1389,6 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.301293457026327
+    "score": 0.3032982819422473
   }
 ]
