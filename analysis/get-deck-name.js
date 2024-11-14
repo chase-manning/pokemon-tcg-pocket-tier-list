@@ -18,6 +18,14 @@ const DECK_NAMES = [
     deckName: "Mewtwo ex",
   },
   {
+    mainCard: "2 Starmie ex A1 76",
+    deckName: "Starmie ex",
+  },
+  {
+    mainCard: "1 Starmie ex A1 76",
+    deckName: "Starmie ex",
+  },
+  {
     mainCard: "2 Articuno ex A1 84",
     deckName: "Articuno ex",
   },

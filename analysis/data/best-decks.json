@@ -69,7 +69,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.47880528331377353
+    "score": 0.4784191315410077
   },
   {
     "name": "Mewtwo ex",
@@ -141,7 +141,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.4658840191569319
+    "score": 0.4655673813913223
   },
   {
     "name": "Charizard ex",
@@ -207,7 +207,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.42875674317356405
+    "score": 0.4286493580356299
   },
   {
     "name": "Arcanine ex",
@@ -285,7 +285,79 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.41337203696331265
+    "score": 0.413364847300516
+  },
+  {
+    "name": "Starmie ex",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "74",
+        "name": "Staryu"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "76",
+        "name": "Starmie ex"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "84",
+        "name": "Articuno ex"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "220",
+        "name": "Misty"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "6",
+        "name": "Red Card"
+      }
+    ],
+    "score": 0.4101256383340421
   },
   {
     "name": "Blaine",
@@ -357,7 +429,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.40726964389888126
+    "score": 0.40722103007427346
   },
   {
     "name": "Articuno ex",
@@ -365,26 +437,8 @@
       {
         "count": 2,
         "set": "A1",
-        "number": "74",
-        "name": "Staryu"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "76",
-        "name": "Starmie ex"
-      },
-      {
-        "count": 2,
-        "set": "A1",
         "number": "84",
         "name": "Articuno ex"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
       },
       {
         "count": 2,
@@ -407,8 +461,26 @@
       {
         "count": 2,
         "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
         "number": "5",
         "name": "Poké Ball"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "6",
+        "name": "Red Card"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "3",
+        "name": "Hand Scope"
       },
       {
         "count": 2,
@@ -423,7 +495,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.4023278277362363
+    "score": 0.37699161774842854
   },
   {
     "name": "Machamp ex",
@@ -495,52 +567,28 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.3742743766658774
+    "score": 0.3742670616019854
   },
   {
-    "name": "Greninja",
+    "name": "Lapras ex",
     "cards": [
       {
         "count": 2,
         "set": "A1",
-        "number": "74",
-        "name": "Staryu"
+        "number": "72",
+        "name": "Goldeen"
       },
       {
         "count": 2,
         "set": "A1",
-        "number": "76",
-        "name": "Starmie ex"
+        "number": "73",
+        "name": "Seaking"
       },
       {
         "count": 2,
-        "set": "A1",
-        "number": "87",
-        "name": "Froakie"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "88",
-        "name": "Frogadier"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "89",
-        "name": "Greninja"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "198",
-        "name": "Farfetch'd"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "203",
-        "name": "Kangaskhan"
+        "set": "P-A",
+        "number": "14",
+        "name": "Lapras ex"
       },
       {
         "count": 2,
@@ -549,16 +597,22 @@
         "name": "Professor's Research"
       },
       {
-        "count": 1,
+        "count": 2,
         "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "220",
+        "name": "Misty"
       },
       {
         "count": 1,
         "set": "A1",
-        "number": "223",
-        "name": "Giovanni"
+        "number": "225",
+        "name": "Sabrina"
       },
       {
         "count": 2,
@@ -567,19 +621,25 @@
         "name": "Poké Ball"
       },
       {
-        "count": 1,
+        "count": 2,
         "set": "P-A",
         "number": "1",
         "name": "Potion"
       },
       {
-        "count": 1,
+        "count": 2,
         "set": "P-A",
         "number": "2",
         "name": "X Speed"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "6",
+        "name": "Red Card"
       }
     ],
-    "score": 0.3724937157074845
+    "score": 0.3644100043232403
   },
   {
     "name": "Poison",
@@ -651,79 +711,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.36063250293094723
-  },
-  {
-    "name": "Melmetal",
-    "cards": [
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "181",
-        "name": "Meltan"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "182",
-        "name": "Melmetal"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "186",
-        "name": "Pidgey"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "187",
-        "name": "Pidgeotto"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "188",
-        "name": "Pidgeot"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "196",
-        "name": "Meowth"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "223",
-        "name": "Giovanni"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
-      },
-      {
-        "count": 1,
-        "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
-      }
-    ],
-    "score": 0.3520294100951429
+    "score": 0.36115317185271173
   },
   {
     "name": "Blastoise ex",
@@ -801,7 +789,217 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.35112413273211196
+    "score": 0.3585015860277286
+  },
+  {
+    "name": "Greninja",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "74",
+        "name": "Staryu"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "75",
+        "name": "Starmie"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "87",
+        "name": "Froakie"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "88",
+        "name": "Frogadier"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "89",
+        "name": "Greninja"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "198",
+        "name": "Farfetch'd"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "79",
+        "name": "Lapras"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      }
+    ],
+    "score": 0.3564510210088897
+  },
+  {
+    "name": "Melmetal",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "181",
+        "name": "Meltan"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "182",
+        "name": "Melmetal"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "186",
+        "name": "Pidgey"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "187",
+        "name": "Pidgeotto"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "188",
+        "name": "Pidgeot"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "196",
+        "name": "Meowth"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      }
+    ],
+    "score": 0.3520262332673955
+  },
+  {
+    "name": "Alakazam",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "115",
+        "name": "Abra"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "116",
+        "name": "Kadabra"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "117",
+        "name": "Alakazam"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "176",
+        "name": "Koffing"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "177",
+        "name": "Weezing"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "222",
+        "name": "Koga"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      }
+    ],
+    "score": 0.3487630316853522
   },
   {
     "name": "Venusaur ex",
@@ -873,73 +1071,7 @@
         "name": "Potion"
       }
     ],
-    "score": 0.3484261113698892
-  },
-  {
-    "name": "Alakazam",
-    "cards": [
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "115",
-        "name": "Abra"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "116",
-        "name": "Kadabra"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "117",
-        "name": "Alakazam"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "176",
-        "name": "Koffing"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "177",
-        "name": "Weezing"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "222",
-        "name": "Koga"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
-      }
-    ],
-    "score": 0.34798805323337756
+    "score": 0.34838686082706316
   },
   {
     "name": "Marowak ex",
@@ -1011,7 +1143,7 @@
         "name": "Potion"
       }
     ],
-    "score": 0.34233075185738876
+    "score": 0.3422662956944092
   },
   {
     "name": "Dragonite",
@@ -1077,7 +1209,7 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.3414889178966473
+    "score": 0.3414632524724778
   },
   {
     "name": "Exeggutor ex",
@@ -1155,79 +1287,7 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.3396372565419636
-  },
-  {
-    "name": "Lapras ex",
-    "cards": [
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "72",
-        "name": "Goldeen"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "73",
-        "name": "Seaking"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "14",
-        "name": "Lapras ex"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "223",
-        "name": "Giovanni"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "220",
-        "name": "Misty"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
-      },
-      {
-        "count": 1,
-        "set": "P-A",
-        "number": "6",
-        "name": "Red Card"
-      }
-    ],
-    "score": 0.33591082000172656
+    "score": 0.3396224592127193
   },
   {
     "name": "Gengar ex",
@@ -1317,7 +1377,7 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.33215427157217137
+    "score": 0.3321504677389475
   },
   {
     "name": "Wigglytuff ex",
@@ -1389,6 +1449,6 @@
         "name": "Red Card"
       }
     ],
-    "score": 0.3032982819422473
+    "score": 0.309992793242375
   }
 ]
