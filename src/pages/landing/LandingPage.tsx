@@ -27,7 +27,7 @@ const DeckRow = styled.div`
 
 const RowHeader = styled.div<{ backgroundColor: string }>`
   height: 100%;
-  aspect-ratio: 1.3 / 1;
+  aspect-ratio: 1 / 1;
   background: ${(props) => props.backgroundColor};
   color: rgba(0, 0, 0, 0.7);
   display: flex;
@@ -45,9 +45,9 @@ const RowHeader = styled.div<{ backgroundColor: string }>`
 const RowContent = styled.div`
   height: 100%;
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @media (max-width: 900px) {
     display: grid;
