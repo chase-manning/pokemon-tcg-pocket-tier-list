@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import useDecks from "../../app/use-decks";
+import DeckCard from "../../components/DeckCard";
 
 const StyledLandingPage = styled.div`
   width: 100%;
@@ -56,30 +56,7 @@ const RowContent = styled.div`
   }
 `;
 
-const DeckCard = styled.button`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.2rem;
-  border-radius: 1.2rem;
-  color: var(--bg);
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-`;
-
-const DeckImage = styled.img`
-  position: absolute;
-  top: -32%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 280%;
-`;
-
 const LandingPage = () => {
-  const navigate = useNavigate();
   const decks = useDecks();
 
   if (!decks) return <p>Loading...</p>;
@@ -120,127 +97,49 @@ const LandingPage = () => {
       <DeckRow>
         <RowHeader backgroundColor="var(--s)">S</RowHeader>
         <RowContent>
-          {sTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {sTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
       <DeckRow>
         <RowHeader backgroundColor="var(--a)">A</RowHeader>
         <RowContent>
-          {aTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {aTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
       <DeckRow>
         <RowHeader backgroundColor="var(--b)">B</RowHeader>
         <RowContent>
-          {bTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {bTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
       <DeckRow>
         <RowHeader backgroundColor="var(--c)">C</RowHeader>
         <RowContent>
-          {cTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {cTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
       <DeckRow>
         <RowHeader backgroundColor="var(--d)">D</RowHeader>
         <RowContent>
-          {dTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {dTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
       <DeckRow>
         <RowHeader backgroundColor="var(--e)">E</RowHeader>
         <RowContent>
-          {eTier.map((deck) => {
-            let mainCard = deck.cards.find((card) =>
-              card.name.includes(deck.name)
-            );
-
-            mainCard = mainCard || deck.cards[0];
-
-            return (
-              <DeckCard
-                key={deck.id}
-                onClick={() => navigate(`/deck/${deck.id}`)}
-              >
-                <DeckImage src={mainCard.image} alt={deck.name} />
-              </DeckCard>
-            );
-          })}
+          {eTier.map((deck) => (
+            <DeckCard key={deck.id} deck={deck} />
+          ))}
         </RowContent>
       </DeckRow>
     </StyledLandingPage>
