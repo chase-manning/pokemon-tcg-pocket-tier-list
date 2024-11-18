@@ -34,14 +34,6 @@ const DECK_NAMES = [
     deckName: "Articuno ex",
   },
   {
-    mainCard: "2 Greninja A1 89",
-    deckName: "Greninja",
-  },
-  {
-    mainCard: "1 Greninja A1 89",
-    deckName: "Greninja",
-  },
-  {
     mainCard: "2 Charizard ex A1 36",
     deckName: "Charizard ex",
   },
@@ -102,6 +94,18 @@ const DECK_NAMES = [
     deckName: "Lapras ex",
   },
   {
+    mainCard: "2 Greninja A1 89",
+    deckName: "Greninja",
+  },
+  {
+    mainCard: "1 Lapras ex P-A 14",
+    deckName: "Lapras ex",
+  },
+  {
+    mainCard: "1 Greninja A1 89",
+    deckName: "Greninja",
+  },
+  {
     mainCard: "2 Gengar ex A1 123",
     deckName: "Gengar ex",
   },
@@ -119,7 +123,7 @@ const DECK_NAMES = [
   },
   {
     mainCard: "2 Weezing A1 177",
-    deckName: "Poison",
+    deckName: "Weezing",
   },
   {
     mainCard: "2 Wigglytuff ex A1 195",
@@ -127,7 +131,7 @@ const DECK_NAMES = [
   },
   {
     mainCard: "1 Weezing A1 177",
-    deckName: "Poison",
+    deckName: "Weezing",
   },
   {
     mainCard: "1 Wigglytuff ex A1 195",

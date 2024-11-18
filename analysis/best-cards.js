@@ -2,7 +2,24 @@ const fs = require("fs");
 const getDeckName = require("./get-deck-name");
 const cardToString = require("./card-to-string");
 
-// const EXCLUDE = [];
+const EXCLUDE = [
+  // "2 Zapdos ex A1 104",
+  // "1 Zapdos ex A1 104",
+  // "2 Moltres ex A1 47",
+  // "2 Charizard ex A1 36",
+  // "2 Articuno ex A1 84",
+  // "2 Starmie ex A1 76",
+  // "1 Starmie ex A1 76",
+  // "2 Rapidash A1 43",
+  // "2 Ninetales A1 38",
+  // "1 Ninetales A1 38",
+  // "2 Vulpix A1 37",
+  // "2 Blastoise ex A1 56",
+  // "2 Koga A1 222",
+  // "2 Misty A1 220",
+  // "2 Venusaur ex A1 4",
+  // "2 Exeggutor ex A1 23",
+];
 
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
@@ -108,8 +125,18 @@ for (const deckName of uniqueDeckNames) {
     return totalScore * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
   };
 
-  const sortedDecks = matchingGames.sort((a, b) => deckScore(b) - deckScore(a));
+  const sortedDecks = matchingGames
+    .filter(
+      (deck) =>
+        !EXCLUDE.some((exclude) =>
+          deck.cards.map((card) => cardToString(card)).includes(exclude)
+        )
+    )
+    .sort((a, b) => deckScore(b) - deckScore(a));
 
+  if (sortedDecks.length === 0) {
+    continue;
+  }
   const bestDeck = {
     name: deckName,
     cards: sortedDecks[0].cards,
