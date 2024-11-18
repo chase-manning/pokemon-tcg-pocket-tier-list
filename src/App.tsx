@@ -2,6 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import LandingPage from "./pages/landing/LandingPage";
 import DeckPage from "./pages/deck/DeckPage";
+import DeltasPage from "./pages/deltas/DeltasPage";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -28,6 +29,8 @@ const App = () => {
         <Route path="deck">
           <Route path=":deckId" element={<DeckPage />} />
         </Route>
+
+        <Route path="deltas" element={<DeltasPage />} />
 
         <Route path="*" element={<LandingPage />} />
       </Route>
