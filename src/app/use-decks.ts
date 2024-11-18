@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DECKS from "./best-decks.json";
+import OLD_DECKS from "./old.json";
 
 const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v1.json";
@@ -16,11 +17,12 @@ interface CardType {
   image: string;
 }
 
-interface FullDeckType {
+export interface FullDeckType {
   id: string;
   name: string;
   cards: CardType[];
   score: number;
+  place: number;
 }
 
 interface BestDecksCardType {
@@ -38,7 +40,7 @@ const cardToId = (card: BestDecksCardType): string => {
   return `${a1 ? "a1" : pa ? "pa" : ""}-${padded}`;
 };
 
-const useDecks = (): FullDeckType[] | null => {
+const useDecks = (old = false): FullDeckType[] | null => {
   const [cards, setCards] = useState<CardType[] | null>(null);
 
   useEffect(() => {
@@ -49,28 +51,33 @@ const useDecks = (): FullDeckType[] | null => {
 
   if (!cards) return null;
 
-  return DECKS.map((oldDeck) => {
-    const deckCards = [];
-    for (const oldCard of oldDeck.cards) {
-      const amount = oldCard.count;
-      const id = cardToId(oldCard);
-      const card = cards?.find((card) => card.id === id);
-      if (!card) {
-        throw new Error(`Card not found: ${id}`);
+  return (old ? OLD_DECKS : DECKS)
+    .sort((a, b) => {
+      return b.score - a.score;
+    })
+    .map((oldDeck, index) => {
+      const deckCards = [];
+      for (const oldCard of oldDeck.cards) {
+        const amount = oldCard.count;
+        const id = cardToId(oldCard);
+        const card = cards?.find((card) => card.id === id);
+        if (!card) {
+          throw new Error(`Card not found: ${id}`);
+        }
+        for (let i = 0; i < amount; i++) {
+          deckCards.push(card);
+        }
       }
-      for (let i = 0; i < amount; i++) {
-        deckCards.push(card);
-      }
-    }
 
-    const deck: FullDeckType = {
-      id: oldDeck.name.toLowerCase().replace(/\s/g, "-"),
-      name: oldDeck.name,
-      cards: deckCards,
-      score: oldDeck.score,
-    };
-    return deck;
-  });
+      const deck: FullDeckType = {
+        id: oldDeck.name.toLowerCase().replace(/\s/g, "-"),
+        name: oldDeck.name,
+        cards: deckCards,
+        score: oldDeck.score,
+        place: index + 1,
+      };
+      return deck;
+    });
 };
 
 export default useDecks;
