@@ -22,12 +22,20 @@ const DECK_NAMES = [
     deckName: "Starmie ex",
   },
   {
-    mainCard: "1 Starmie ex A1 76",
-    deckName: "Starmie ex",
+    mainCard: "2 Greninja A1 89",
+    deckName: "Greninja",
+  },
+  {
+    mainCard: "2 Lapras ex P-A 14",
+    deckName: "Lapras ex",
   },
   {
     mainCard: "2 Articuno ex A1 84",
     deckName: "Articuno ex",
+  },
+  {
+    mainCard: "1 Starmie ex A1 76",
+    deckName: "Starmie ex",
   },
   {
     mainCard: "1 Articuno ex A1 84",
@@ -88,14 +96,6 @@ const DECK_NAMES = [
   {
     mainCard: "1 Marowak ex A1 153",
     deckName: "Marowak ex",
-  },
-  {
-    mainCard: "2 Lapras ex P-A 14",
-    deckName: "Lapras ex",
-  },
-  {
-    mainCard: "2 Greninja A1 89",
-    deckName: "Greninja",
   },
   {
     mainCard: "1 Lapras ex P-A 14",
