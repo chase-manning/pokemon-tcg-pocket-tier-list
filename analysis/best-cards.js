@@ -1,6 +1,6 @@
 const fs = require("fs");
-const getDeckName = require("./get-deck-name");
-const cardToString = require("./card-to-string");
+const getDeckName = require("./utils/get-deck-name");
+const cardToString = require("./utils/card-to-string");
 
 const NOEX = true;
 
