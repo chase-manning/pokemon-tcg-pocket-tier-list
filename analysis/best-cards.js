@@ -2,6 +2,8 @@ const fs = require("fs");
 const getDeckName = require("./get-deck-name");
 const cardToString = require("./card-to-string");
 
+const NOEX = true;
+
 const EXCLUDE = [
   // "2 Zapdos ex A1 104",
   // "1 Zapdos ex A1 104",
@@ -10,13 +12,10 @@ const EXCLUDE = [
   // "2 Articuno ex A1 84",
   // "2 Starmie ex A1 76",
   // "1 Starmie ex A1 76",
-  // "2 Rapidash A1 43",
   // "2 Ninetales A1 38",
   // "1 Ninetales A1 38",
-  // "2 Vulpix A1 37",
   // "2 Blastoise ex A1 56",
   // "2 Koga A1 222",
-  // "2 Misty A1 220",
   // "2 Venusaur ex A1 4",
   // "2 Exeggutor ex A1 23",
 ];
@@ -24,7 +23,12 @@ const EXCLUDE = [
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
 
-const decksWithoutNames = JSON.parse(fs.readFileSync("./data/decks-2.json"));
+const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks-2.json"));
+
+// Exclude all cards that are ex (end with " ex")
+const decksWithoutNames = decksWithoutNames_.filter(
+  (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
+);
 
 const deckScores = decksWithoutNames
   .map((deck) => {
