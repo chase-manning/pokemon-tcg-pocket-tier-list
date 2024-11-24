@@ -23,7 +23,7 @@ const EXCLUDE = [
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
 
-const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks-2.json"));
+const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
 // Exclude all cards that are ex (end with " ex")
 const decksWithoutNames = decksWithoutNames_.filter(

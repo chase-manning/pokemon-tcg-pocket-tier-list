@@ -16,7 +16,7 @@ const processedTournaments = () => {
 };
 
 const _currentDecks = () => {
-  return JSON.parse(fs.readFileSync("./data/decks-2.json"));
+  return JSON.parse(fs.readFileSync("./data/decks.json"));
 };
 
 // {
@@ -86,7 +86,7 @@ const downloadDecks = async () => {
     const decks = await getDecks(tournament.id);
     const currentDecks = _currentDecks();
     const newDecks = [...currentDecks, ...decks];
-    fs.writeFileSync("./data/decks-2.json", JSON.stringify(newDecks));
+    fs.writeFileSync("./data/decks.json", JSON.stringify(newDecks));
     const processed = processedTournaments();
     processed.push(tournament.id);
     fs.writeFileSync(
