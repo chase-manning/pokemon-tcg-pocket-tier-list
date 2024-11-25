@@ -2,18 +2,18 @@ const fs = require("fs");
 const getDeckName = require("./utils/get-deck-name");
 const cardToString = require("./utils/card-to-string");
 
-const NOEX = true;
+const NOEX = false;
 
 const EXCLUDE = [
-  // "2 Zapdos ex A1 104",
   // "1 Zapdos ex A1 104",
+  // "2 Zapdos ex A1 104",
   // "2 Moltres ex A1 47",
   // "2 Charizard ex A1 36",
   // "2 Articuno ex A1 84",
-  // "2 Starmie ex A1 76",
   // "1 Starmie ex A1 76",
-  // "2 Ninetales A1 38",
+  // "2 Starmie ex A1 76",
   // "1 Ninetales A1 38",
+  // "2 Ninetales A1 38",
   // "2 Blastoise ex A1 56",
   // "2 Koga A1 222",
   // "2 Venusaur ex A1 4",
@@ -22,6 +22,8 @@ const EXCLUDE = [
 
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
+// const NEW_MULTIPLIER = 1;
+// const OLD_MULTIPLIER = 1;
 
 const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
@@ -29,6 +31,14 @@ const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 const decksWithoutNames = decksWithoutNames_.filter(
   (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
 );
+
+// const oldestDate = new Date(
+//   Math.min(...decksWithoutNames.map((deck) => new Date(deck.date)))
+// );
+
+// const newestDate = new Date(
+//   Math.max(...decksWithoutNames.map((deck) => new Date(deck.date)))
+// );
 
 const deckScores = decksWithoutNames
   .map((deck) => {
@@ -61,6 +71,9 @@ for (const deckName of uniqueDeckNames) {
   const differnetPokemons = {};
 
   for (const game of matchingGames) {
+    // const deckDate = new Date(game.date);
+    // const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
+    // const multiplier = datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
     for (const card of game.cards) {
       const cardName = cardToString(card);
       if (cards[cardName]) {

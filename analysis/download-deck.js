@@ -29,11 +29,14 @@ const _currentDecks = () => {
 //     organizerId: 281
 //   }
 const getTournaments = async () => {
-  const res = await fetch(`${BASE}/tournaments${append}&game=${GAME}`);
+  const res = await fetch(
+    `${BASE}/tournaments${append}&limit=10000&game=${GAME}`
+  );
   const tournaments = await res.json();
+  const processedTournamentIds = processedTournaments().map((t) => t.id);
   return tournaments
     .filter((tournament) => tournament.players >= MIN_GAMES)
-    .filter((tournament) => !processedTournaments().includes(tournament.id));
+    .filter((tournament) => !processedTournamentIds.includes(tournament.id));
 };
 
 // {
@@ -50,9 +53,9 @@ const getTournaments = async () => {
 //   record: { wins: 6, losses: 0, ties: 1 },
 //   drop: null
 // },
-const getDecks = async (tournamentId) => {
+const getDecks = async (tournament) => {
   const res = await fetch(
-    `${BASE}/tournaments/${tournamentId}/standings${append}`
+    `${BASE}/tournaments/${tournament.id}/standings${append}`
   );
   const decks = await res.json();
 
@@ -76,6 +79,7 @@ const getDecks = async (tournamentId) => {
         wins: deck.record.wins,
         losses: deck.record.losses,
         totalGames: deck.record.wins + deck.record.losses,
+        date: tournament.date,
       };
     });
 };
@@ -83,12 +87,16 @@ const getDecks = async (tournamentId) => {
 const downloadDecks = async () => {
   const tournaments = await getTournaments();
   for (const tournament of tournaments) {
-    const decks = await getDecks(tournament.id);
+    const t = {
+      id: tournament.id,
+      date: new Date(tournament.date),
+    };
+    const decks = await getDecks(t);
     const currentDecks = _currentDecks();
     const newDecks = [...currentDecks, ...decks];
     fs.writeFileSync("./data/decks.json", JSON.stringify(newDecks));
     const processed = processedTournaments();
-    processed.push(tournament.id);
+    processed.push(t);
     fs.writeFileSync(
       "./data/processed-tournaments.json",
       JSON.stringify(processed)
