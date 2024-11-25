@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import useDecks from "../../app/use-decks";
+import cardToString from "../../app/card-to-string";
 
 const StyledDeckPage = styled.div`
   width: 100%;
@@ -73,6 +74,11 @@ const DeckPage = () => {
   const uniqueCards = deck.cards.filter(
     (card, index, self) => self.findIndex((c) => c.id === card.id) === index
   );
+
+  console.log(uniqueCards);
+  for (const card of uniqueCards) {
+    console.log(cardToString(card));
+  }
 
   return (
     <StyledDeckPage>
