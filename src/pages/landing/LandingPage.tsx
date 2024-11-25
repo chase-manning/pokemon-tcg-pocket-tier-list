@@ -25,10 +25,10 @@ const DeckRow = styled.div`
   }
 `;
 
-const RowHeader = styled.div<{ backgroundColor: string }>`
+const RowHeader = styled.div<{ $backgroundColor: string }>`
   height: 100%;
   aspect-ratio: 1 / 1;
-  background: ${(props) => props.backgroundColor};
+  background: ${(props) => props.$backgroundColor};
   color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -95,7 +95,7 @@ const LandingPage = () => {
   return (
     <StyledLandingPage>
       <DeckRow>
-        <RowHeader backgroundColor="var(--s)">S</RowHeader>
+        <RowHeader $backgroundColor="var(--s)">S</RowHeader>
         <RowContent>
           {sTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
@@ -103,7 +103,7 @@ const LandingPage = () => {
         </RowContent>
       </DeckRow>
       <DeckRow>
-        <RowHeader backgroundColor="var(--a)">A</RowHeader>
+        <RowHeader $backgroundColor="var(--a)">A</RowHeader>
         <RowContent>
           {aTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
@@ -111,7 +111,7 @@ const LandingPage = () => {
         </RowContent>
       </DeckRow>
       <DeckRow>
-        <RowHeader backgroundColor="var(--b)">B</RowHeader>
+        <RowHeader $backgroundColor="var(--b)">B</RowHeader>
         <RowContent>
           {bTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
@@ -119,7 +119,7 @@ const LandingPage = () => {
         </RowContent>
       </DeckRow>
       <DeckRow>
-        <RowHeader backgroundColor="var(--c)">C</RowHeader>
+        <RowHeader $backgroundColor="var(--c)">C</RowHeader>
         <RowContent>
           {cTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
@@ -127,7 +127,7 @@ const LandingPage = () => {
         </RowContent>
       </DeckRow>
       <DeckRow>
-        <RowHeader backgroundColor="var(--d)">D</RowHeader>
+        <RowHeader $backgroundColor="var(--d)">D</RowHeader>
         <RowContent>
           {dTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
@@ -135,7 +135,7 @@ const LandingPage = () => {
         </RowContent>
       </DeckRow>
       <DeckRow>
-        <RowHeader backgroundColor="var(--e)">E</RowHeader>
+        <RowHeader $backgroundColor="var(--e)">E</RowHeader>
         <RowContent>
           {eTier.map((deck) => (
             <DeckCard key={deck.id} deck={deck} />
