@@ -14,10 +14,16 @@ const EXCLUDE = [
   // "2 Starmie ex A1 76",
   // "1 Ninetales A1 38",
   // "2 Ninetales A1 38",
-  // "2 Blastoise ex A1 56",
   // "2 Koga A1 222",
   // "2 Venusaur ex A1 4",
   // "2 Exeggutor ex A1 23",
+  // "1 Mewtwo A1 128",
+  // "2 Mewtwo A1 128",
+  // "2 Charizard A1 35",
+  // "1 Charizard A1 35",
+  // "2 Marowak ex A1 153",
+  // "2 Articuno A1 83",
+  // "2 Arcanine A1 40",
 ];
 
 const WINRATE_IMPORTANCE = 0.7;
