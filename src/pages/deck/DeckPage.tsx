@@ -75,7 +75,6 @@ const DeckPage = () => {
     (card, index, self) => self.findIndex((c) => c.id === card.id) === index
   );
 
-  console.log(uniqueCards);
   for (const card of uniqueCards) {
     console.log(cardToString(card));
   }
