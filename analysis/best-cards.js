@@ -57,6 +57,7 @@ const deckScores = decksWithoutNames
   .filter((deck) => deck.name);
 
 const allGames = deckScores.reduce((acc, deck) => acc + deck.totalGames, 0);
+console.log(allGames / 2);
 
 const uniqueDeckNames = deckScores
   .map((deck) => deck.name)
