@@ -10,25 +10,25 @@ const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
 
 // Global Variables
-const deckScores = getDecks(NOEX);
-const dates = deckScores.map((deck) => new Date(deck.date));
+const decks = getDecks(NOEX);
+const dates = decks.map((deck) => new Date(deck.date));
 const oldestDate = new Date(Math.min(...dates));
 const newestDate = new Date(Math.max(...dates));
-const totalGames = deckScores.reduce((acc, deck) => acc + deck.totalGames, 0);
+const totalGames = decks.reduce((acc, deck) => acc + deck.totalGames, 0);
 console.log("Sample Games:", (totalGames / 2).toLocaleString());
-const allGames = deckScores.reduce(
+const allGames = decks.reduce(
   (acc, deck) =>
     acc + deck.totalGames * getMultiplier(deck, oldestDate, newestDate),
   0
 );
-const uniqueDeckNames = deckScores
+const uniqueDeckNames = decks
   .map((deck) => deck.name)
   .filter((value, index, self) => self.indexOf(value) === index);
 
 // Calculate Best Decks
 const bestDecks = [];
 for (const deckName of uniqueDeckNames) {
-  const matchingGames = deckScores.filter((game) => game.name === deckName);
+  const matchingGames = decks.filter((game) => game.name === deckName);
 
   const totalGames = matchingGames.reduce(
     (acc, game) =>

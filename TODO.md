@@ -1,5 +1,6 @@
 # Today
 
+- Amount of each card doesn't matter currently
 - Lower red card score
 
 # Sorted
