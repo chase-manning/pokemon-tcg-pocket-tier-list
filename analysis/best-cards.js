@@ -26,25 +26,31 @@ const EXCLUDE = [
   // "2 Arcanine A1 40",
 ];
 
+const NOEX_PERCENT_CUTOFF = 0.2;
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
-// const NEW_MULTIPLIER = 1;
-// const OLD_MULTIPLIER = 1;
+const NEW_MULTIPLIER = 3;
+const OLD_MULTIPLIER = 1;
 
 const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
 // Exclude all cards that are ex (end with " ex")
-const decksWithoutNames = decksWithoutNames_.filter(
-  (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
+const decksWithoutNames = decksWithoutNames_
+  .filter(
+    (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
+  )
+  .filter((deck) => {
+    const isNoEx = deck.tournamentExPercent < NOEX_PERCENT_CUTOFF;
+    return isNoEx === NOEX;
+  });
+
+const oldestDate = new Date(
+  Math.min(...decksWithoutNames.map((deck) => new Date(deck.date)))
 );
 
-// const oldestDate = new Date(
-//   Math.min(...decksWithoutNames.map((deck) => new Date(deck.date)))
-// );
-
-// const newestDate = new Date(
-//   Math.max(...decksWithoutNames.map((deck) => new Date(deck.date)))
-// );
+const newestDate = new Date(
+  Math.max(...decksWithoutNames.map((deck) => new Date(deck.date)))
+);
 
 const deckScores = decksWithoutNames
   .map((deck) => {
@@ -78,37 +84,40 @@ for (const deckName of uniqueDeckNames) {
   const differnetPokemons = {};
 
   for (const game of matchingGames) {
-    // const deckDate = new Date(game.date);
-    // const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
-    // const multiplier = datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
+    const deckDate = new Date(game.date);
+    const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
+    const multiplier =
+      datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
+    const scaledWins = game.wins * multiplier;
+    const scaledTotalGames = game.totalGames * multiplier;
     for (const card of game.cards) {
       const cardName = cardToString(card);
       if (cards[cardName]) {
-        cards[cardName].wins += game.wins;
-        cards[cardName].totalGames += game.totalGames;
+        cards[cardName].wins += scaledWins;
+        cards[cardName].totalGames += scaledTotalGames;
       } else {
         cards[cardName] = {
-          wins: game.wins,
-          totalGames: game.totalGames,
+          wins: scaledWins,
+          totalGames: scaledTotalGames,
         };
       }
     }
     if (pokemons[game.pokemon]) {
-      pokemons[game.pokemon].wins += game.wins;
-      pokemons[game.pokemon].totalGames += game.totalGames;
+      pokemons[game.pokemon].wins += scaledWins;
+      pokemons[game.pokemon].totalGames += scaledTotalGames;
     } else {
       pokemons[game.pokemon] = {
-        wins: game.wins,
-        totalGames: game.totalGames,
+        wins: scaledWins,
+        totalGames: scaledTotalGames,
       };
     }
     if (differnetPokemons[game.differentPokemon]) {
-      differnetPokemons[game.differentPokemon].wins += game.wins;
-      differnetPokemons[game.differentPokemon].totalGames += game.totalGames;
+      differnetPokemons[game.differentPokemon].wins += scaledWins;
+      differnetPokemons[game.differentPokemon].totalGames += scaledTotalGames;
     } else {
       differnetPokemons[game.differentPokemon] = {
-        wins: game.wins,
-        totalGames: game.totalGames,
+        wins: scaledWins,
+        totalGames: scaledTotalGames,
       };
     }
   }
