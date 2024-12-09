@@ -1,6 +1,7 @@
 const fs = require("fs");
 const getDeckName = require("./utils/get-deck-name");
 const cardToString = require("./utils/card-to-string");
+const getMultiplier = require("./utils/get-multiplier");
 
 const NOEX = false;
 
@@ -29,8 +30,6 @@ const EXCLUDE = [
 const NOEX_PERCENT_CUTOFF = 0.2;
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
-const NEW_MULTIPLIER = 3;
-const OLD_MULTIPLIER = 1;
 
 const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
@@ -44,20 +43,6 @@ const decksWithoutNames = decksWithoutNames_
     return isNoEx === NOEX;
   });
 
-const oldestDate = new Date(
-  Math.min(...decksWithoutNames.map((deck) => new Date(deck.date)))
-);
-
-const newestDate = new Date(
-  Math.max(...decksWithoutNames.map((deck) => new Date(deck.date)))
-);
-
-const getMultiplier = (game) => {
-  const deckDate = new Date(game.date);
-  const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
-  return datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
-};
-
 const deckScores = decksWithoutNames
   .map((deck) => {
     const name = getDeckName(deck);
@@ -68,12 +53,21 @@ const deckScores = decksWithoutNames
   })
   .filter((deck) => deck.name);
 
+const oldestDate = new Date(
+  Math.min(...deckScores.map((deck) => new Date(deck.date)))
+);
+
+const newestDate = new Date(
+  Math.max(...deckScores.map((deck) => new Date(deck.date)))
+);
+
 console.log(
   "Sample Games",
   deckScores.reduce((acc, deck) => acc + deck.totalGames, 0).toLocaleString()
 );
 const allGames = deckScores.reduce(
-  (acc, deck) => acc + deck.totalGames * getMultiplier(deck),
+  (acc, deck) =>
+    acc + deck.totalGames * getMultiplier(deck, oldestDate, newestDate),
   0
 );
 
@@ -96,7 +90,7 @@ for (const deckName of uniqueDeckNames) {
   const differnetPokemons = {};
 
   for (const game of matchingGames) {
-    const multiplier = getMultiplier(game);
+    const multiplier = getMultiplier(game, oldestDate, newestDate);
     const scaledWins = game.wins * multiplier;
     const scaledTotalGames = game.totalGames * multiplier;
     for (const card of game.cards) {
