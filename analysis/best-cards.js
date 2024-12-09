@@ -52,6 +52,12 @@ const newestDate = new Date(
   Math.max(...decksWithoutNames.map((deck) => new Date(deck.date)))
 );
 
+const getMultiplier = (game) => {
+  const deckDate = new Date(game.date);
+  const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
+  return datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
+};
+
 const deckScores = decksWithoutNames
   .map((deck) => {
     const name = getDeckName(deck);
@@ -62,8 +68,14 @@ const deckScores = decksWithoutNames
   })
   .filter((deck) => deck.name);
 
-const allGames = deckScores.reduce((acc, deck) => acc + deck.totalGames, 0);
-console.log(allGames / 2);
+console.log(
+  "Sample Games",
+  deckScores.reduce((acc, deck) => acc + deck.totalGames, 0).toLocaleString()
+);
+const allGames = deckScores.reduce(
+  (acc, deck) => acc + deck.totalGames * getMultiplier(deck),
+  0
+);
 
 const uniqueDeckNames = deckScores
   .map((deck) => deck.name)
@@ -84,10 +96,7 @@ for (const deckName of uniqueDeckNames) {
   const differnetPokemons = {};
 
   for (const game of matchingGames) {
-    const deckDate = new Date(game.date);
-    const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
-    const multiplier =
-      datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
+    const multiplier = getMultiplier(game);
     const scaledWins = game.wins * multiplier;
     const scaledTotalGames = game.totalGames * multiplier;
     for (const card of game.cards) {
