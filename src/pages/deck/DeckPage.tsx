@@ -21,7 +21,7 @@ const CardList = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 2.4rem;
   width: 100%;
-  max-width: 120rem;
+  max-width: 140rem;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
