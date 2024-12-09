@@ -2,6 +2,14 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   {
+    mainCard: "1 Nidoqueen A1 168",
+    deckName: "Nidoqueen",
+  },
+  {
+    mainCard: "2 Nidoqueen A1 168",
+    deckName: "Nidoqueen",
+  },
+  {
     mainCard: "2 Pikachu ex A1 96",
     deckName: "Pikachu ex",
   },
@@ -160,6 +168,14 @@ const DECK_NAMES = [
   {
     mainCard: "1 Melmetal A1 182",
     deckName: "Melmetal",
+  },
+  {
+    mainCard: "2 Pidgeot A1 188",
+    deckName: "Pidgeot",
+  },
+  {
+    mainCard: "1 Pidgeot A1 188",
+    deckName: "Pidgeot",
   },
 ];
 
