@@ -31,9 +31,10 @@ interface Props {
 const DeckCard = ({ deck }: Props) => {
   const navigate = useNavigate();
 
+  const exactCard = deck.cards.find((card) => card.name === deck.name);
   let mainCard = deck.cards.find((card) => card.name.includes(deck.name));
 
-  mainCard = mainCard || deck.cards[0];
+  mainCard = exactCard || mainCard || deck.cards[0];
 
   return (
     <StyledDeckCard onClick={() => navigate(`/deck/${deck.id}`)}>
