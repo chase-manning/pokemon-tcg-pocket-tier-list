@@ -1,73 +1,42 @@
 const fs = require("fs");
-const getDeckName = require("./utils/get-deck-name");
 const cardToString = require("./utils/card-to-string");
 const getMultiplier = require("./utils/get-multiplier");
 const EXCLUDE = require("./utils/exclude-list");
+const getDecks = require("./utils/get-decks");
 
+// Settings
 const NOEX = false;
-
-const NOEX_PERCENT_CUTOFF = 0.2;
 const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
 
-const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
-
-// Exclude all cards that are ex (end with " ex")
-const decksWithoutNames = decksWithoutNames_
-  .filter(
-    (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
-  )
-  .filter((deck) => {
-    const isNoEx = deck.tournamentExPercent < NOEX_PERCENT_CUTOFF;
-    return isNoEx === NOEX;
-  });
-
-const deckScores = decksWithoutNames
-  .map((deck) => {
-    const name = getDeckName(deck);
-    return {
-      ...deck,
-      name,
-    };
-  })
-  .filter((deck) => deck.name);
-
-const oldestDate = new Date(
-  Math.min(...deckScores.map((deck) => new Date(deck.date)))
-);
-
-const newestDate = new Date(
-  Math.max(...deckScores.map((deck) => new Date(deck.date)))
-);
-
-console.log(
-  "Sample Games",
-  deckScores.reduce((acc, deck) => acc + deck.totalGames, 0).toLocaleString()
-);
+// Global Variables
+const deckScores = getDecks(NOEX);
+const dates = deckScores.map((deck) => new Date(deck.date));
+const oldestDate = new Date(Math.min(...dates));
+const newestDate = new Date(Math.max(...dates));
+const totalGames = deckScores.reduce((acc, deck) => acc + deck.totalGames, 0);
+console.log("Sample Games:", (totalGames / 2).toLocaleString());
 const allGames = deckScores.reduce(
   (acc, deck) =>
     acc + deck.totalGames * getMultiplier(deck, oldestDate, newestDate),
   0
 );
-
 const uniqueDeckNames = deckScores
   .map((deck) => deck.name)
   .filter((value, index, self) => self.indexOf(value) === index);
 
+// Calculate Best Decks
 const bestDecks = [];
-
 for (const deckName of uniqueDeckNames) {
   const matchingGames = deckScores.filter((game) => game.name === deckName);
 
   const totalGames = matchingGames.reduce(
-    (acc, game) => acc + game.totalGames,
+    (acc, game) =>
+      acc + game.totalGames * getMultiplier(game, oldestDate, newestDate),
     0
   );
 
   const cards = {};
-  const pokemons = {};
-  const differnetPokemons = {};
-
   for (const game of matchingGames) {
     const multiplier = getMultiplier(game, oldestDate, newestDate);
     const scaledWins = game.wins * multiplier;
@@ -84,44 +53,12 @@ for (const deckName of uniqueDeckNames) {
         };
       }
     }
-    if (pokemons[game.pokemon]) {
-      pokemons[game.pokemon].wins += scaledWins;
-      pokemons[game.pokemon].totalGames += scaledTotalGames;
-    } else {
-      pokemons[game.pokemon] = {
-        wins: scaledWins,
-        totalGames: scaledTotalGames,
-      };
-    }
-    if (differnetPokemons[game.differentPokemon]) {
-      differnetPokemons[game.differentPokemon].wins += scaledWins;
-      differnetPokemons[game.differentPokemon].totalGames += scaledTotalGames;
-    } else {
-      differnetPokemons[game.differentPokemon] = {
-        wins: scaledWins,
-        totalGames: scaledTotalGames,
-      };
-    }
   }
   for (const card in cards) {
     const cardData = cards[card];
     const winRate = cardData.wins / cardData.totalGames;
     const popularity = cardData.totalGames / totalGames;
     cards[card].score =
-      winRate * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
-  }
-  for (const pokemon in pokemons) {
-    const pokemonData = pokemons[pokemon];
-    const winRate = pokemonData.wins / pokemonData.totalGames;
-    const popularity = pokemonData.totalGames / totalGames;
-    pokemons[pokemon].score =
-      winRate * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
-  }
-  for (const differentPokemon in differnetPokemons) {
-    const differentPokemonData = differnetPokemons[differentPokemon];
-    const winRate = differentPokemonData.wins / differentPokemonData.totalGames;
-    const popularity = differentPokemonData.totalGames / totalGames;
-    differnetPokemons[differentPokemon].score =
       winRate * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
   }
 
@@ -133,10 +70,7 @@ for (const deckName of uniqueDeckNames) {
         (acc, card) => acc + cards[cardToString(card)].score * card.count,
         0
       ) / totalCards;
-    const pokemonScore = pokemons[deck.pokemon].score;
-    const differentPokemonScore =
-      differnetPokemons[deck.differentPokemon].score;
-    const totalScore = (deckScore + pokemonScore + differentPokemonScore) / 3;
+    const totalScore = deckScore;
     return totalScore * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
   };
 
@@ -149,15 +83,13 @@ for (const deckName of uniqueDeckNames) {
     )
     .sort((a, b) => deckScore(b) - deckScore(a));
 
-  if (sortedDecks.length === 0) {
-    continue;
-  }
+  if (sortedDecks.length === 0) continue;
+
   const bestDeck = {
     name: deckName,
     cards: sortedDecks[0].cards,
     score: deckScore(sortedDecks[0]),
   };
-
   bestDecks.push(bestDeck);
 }
 
