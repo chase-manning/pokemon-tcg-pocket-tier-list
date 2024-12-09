@@ -57,31 +57,37 @@ const getDecks = async (tournament) => {
   const res = await fetch(
     `${BASE}/tournaments/${tournament.id}/standings${append}`
   );
-  const decks = await res.json();
+  const decks_ = await res.json();
 
-  return decks
-    .filter(
-      (deck) =>
-        !!deck.decklist &&
-        !!deck.decklist.pokemon &&
-        !!deck.decklist.trainer &&
-        !!deck.record &&
-        !!deck.record.wins &&
-        !!deck.record.losses
-    )
-    .map((deck) => {
-      return {
-        cards: [...deck.decklist.pokemon, ...deck.decklist.trainer],
-        pokemon: deck.decklist.pokemon.reduce((acc, card) => {
-          return acc + card.count;
-        }, 0),
-        differentPokemon: deck.decklist.pokemon.length,
-        wins: deck.record.wins,
-        losses: deck.record.losses,
-        totalGames: deck.record.wins + deck.record.losses,
-        date: tournament.date,
-      };
-    });
+  const decks = decks_.filter(
+    (deck) =>
+      !!deck.decklist &&
+      !!deck.decklist.pokemon &&
+      !!deck.decklist.trainer &&
+      !!deck.record &&
+      !!deck.record.wins &&
+      !!deck.record.losses
+  );
+
+  const amountWithEx = decks.filter((deck) => {
+    return deck.decklist.pokemon.some((card) => card.name.endsWith(" ex"));
+  }).length;
+  const tournamentExPercent = amountWithEx / decks.length;
+
+  return decks.map((deck) => {
+    return {
+      cards: [...deck.decklist.pokemon, ...deck.decklist.trainer],
+      pokemon: deck.decklist.pokemon.reduce((acc, card) => {
+        return acc + card.count;
+      }, 0),
+      differentPokemon: deck.decklist.pokemon.length,
+      wins: deck.record.wins,
+      losses: deck.record.losses,
+      totalGames: deck.record.wins + deck.record.losses,
+      date: tournament.date,
+      tournamentExPercent,
+    };
+  });
 };
 
 const downloadDecks = async () => {
