@@ -172,15 +172,4 @@ for (const deckName of uniqueDeckNames) {
 
 bestDecks.sort((a, b) => b.score - a.score);
 
-const topScore = bestDecks[0].score;
-
-for (const deck of bestDecks) {
-  const percentage = (deck.score / topScore) * 100;
-  console.log("");
-  console.log(`===== ${deck.name} (${Math.round(percentage)}%) =====`);
-  console.log(
-    deck.cards.map((card) => `${card.count} ${card.name}`).join("\n")
-  );
-}
-
 fs.writeFileSync("./data/best-decks.json", JSON.stringify(bestDecks, null, 2));
