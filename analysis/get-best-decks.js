@@ -9,6 +9,7 @@ const WINRATE_IMPORTANCE = 0.7;
 const POPULARITY_IMPORTANCE = 0.3;
 const OLD_MULTIPLIER = 1;
 const NEW_MULTIPLIER = 3;
+const CARDS_IN_DECK = 20;
 
 // Global Variables
 const decks = getDecks(NOEX, OLD_MULTIPLIER, NEW_MULTIPLIER);
@@ -51,12 +52,11 @@ for (const deckName of uniqueDeckNames) {
 
   const deckScore = (deck) => {
     const popularity = matchingGames / allGames;
-    const totalCards = deck.cards.reduce((acc, card) => acc + card.count, 0);
     const deckScore =
       deck.cards.reduce(
         (acc, card) => acc + cards[cardToString(card)].score * card.count,
         0
-      ) / totalCards;
+      ) / CARDS_IN_DECK;
     return deckScore * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
   };
 
