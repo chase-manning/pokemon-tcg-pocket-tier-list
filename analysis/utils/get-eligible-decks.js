@@ -1,3 +1,5 @@
+const cardToString = require("./card-to-string");
+
 const EXCLUDE = [
   // "1 Zapdos ex A1 104",
   // "2 Zapdos ex A1 104",
@@ -20,4 +22,13 @@ const EXCLUDE = [
   // "2 Arcanine A1 40",
 ];
 
-module.exports = EXCLUDE;
+const getEligibleDecks = (decks) => {
+  return decks.filter(
+    (deck) =>
+      !EXCLUDE.some((exclude) =>
+        deck.cards.map((card) => cardToString(card)).includes(exclude)
+      )
+  );
+};
+
+module.exports = getEligibleDecks;
