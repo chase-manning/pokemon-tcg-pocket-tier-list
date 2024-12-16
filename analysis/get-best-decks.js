@@ -10,6 +10,7 @@ const POPULARITY_IMPORTANCE = 0.3;
 const OLD_MULTIPLIER = 1;
 const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
+const RED_CARD_MULTIPLIER = 0.8;
 
 // Global Variables
 const decks = getDecks(NOEX, OLD_MULTIPLIER, NEW_MULTIPLIER);
@@ -46,8 +47,11 @@ for (const deckName of uniqueDeckNames) {
     const cardData = cards[card];
     const winRate = cardData.wins / cardData.totalGames;
     const popularity = cardData.totalGames / matchingGames;
+    const isRedCard = card.toLowerCase().includes("red card");
+    const multiplier = isRedCard ? RED_CARD_MULTIPLIER : 1;
     cards[card].score =
-      winRate * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE;
+      (winRate * WINRATE_IMPORTANCE + popularity * POPULARITY_IMPORTANCE) *
+      multiplier;
   }
 
   const deckScore = (deck) => {
@@ -75,3 +79,7 @@ for (const deckName of uniqueDeckNames) {
 bestDecks.sort((a, b) => b.score - a.score);
 
 fs.writeFileSync("./data/best-decks.json", JSON.stringify(bestDecks, null, 2));
+fs.writeFileSync(
+  "../src/app/best-decks.json",
+  JSON.stringify(bestDecks, null, 2)
+);
