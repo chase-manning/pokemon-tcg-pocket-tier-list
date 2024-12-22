@@ -3,7 +3,7 @@ import DECKS from "./best-decks.json";
 import OLD_DECKS from "./old.json";
 
 const CARDS_URL =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v1.json";
+  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v2.json";
 
 interface CardType {
   id: string;
@@ -37,7 +37,9 @@ const cardToId = (card: BestDecksCardType): string => {
   const padded = id.padStart(3, "0");
   const a1 = card.set === "A1";
   const pa = card.set === "P-A";
-  return `${a1 ? "a1" : pa ? "pa" : ""}-${padded}`;
+  const a1a = card.set === "A1a";
+  const output = `${a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : ""}-${padded}`;
+  return output;
 };
 
 const useDecks = (old = false): FullDeckType[] | null => {
