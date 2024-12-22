@@ -2,6 +2,30 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   {
+    mainCard: "2 Celebi ex A1a 3",
+    deckName: "Celebi",
+  },
+  {
+    mainCard: "1 Celebi ex A1a 3",
+    deckName: "Celebi",
+  },
+  {
+    mainCard: "2 Gyarados ex A1a 18",
+    deckName: "Gyarados",
+  },
+  {
+    mainCard: "1 Gyarados ex A1a 18",
+    deckName: "Gyarados",
+  },
+  {
+    mainCard: "2 Pidgeot ex A1a 59",
+    deckName: "Pidgeot ex",
+  },
+  {
+    mainCard: "1 Pidgeot ex A1a 59",
+    deckName: "Pidgeot ex",
+  },
+  {
     mainCard: "1 Nidoqueen A1 168",
     deckName: "Nidoqueen",
   },
@@ -176,6 +200,14 @@ const DECK_NAMES = [
   {
     mainCard: "1 Pidgeot A1 188",
     deckName: "Pidgeot",
+  },
+  {
+    mainCard: "2 Aerodactyl ex A1a 46",
+    deckName: "Aerodactyl ex",
+  },
+  {
+    mainCard: "1 Aerodactyl ex A1a 46",
+    deckName: "Aerodactyl ex",
   },
 ];
 
