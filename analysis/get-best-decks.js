@@ -11,9 +11,15 @@ const OLD_MULTIPLIER = 1;
 const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
 const RED_CARD_MULTIPLIER = 0.8;
+const EXPANSION_RELEASE_DATE = new Date("2024-12-17");
 
 // Global Variables
-const decks = getDecks(NOEX, OLD_MULTIPLIER, NEW_MULTIPLIER);
+const decks = getDecks(
+  NOEX,
+  OLD_MULTIPLIER,
+  NEW_MULTIPLIER,
+  EXPANSION_RELEASE_DATE
+);
 const allGames = decks.reduce((acc, deck) => acc + deck.totalGames, 0);
 const uniqueDeckNames = decks
   .map((deck) => deck.name)

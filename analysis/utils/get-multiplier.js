@@ -3,11 +3,16 @@ const getMultiplier = (
   oldestDate,
   newestDate,
   oldMultiplier,
-  newMultiplier
+  newMultiplier,
+  expansionReleaseDate
 ) => {
   const deckDate = new Date(game.date);
+  const isAfterExpansion = deckDate > expansionReleaseDate;
   const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
-  return datePercentage * (newMultiplier - oldMultiplier) + oldMultiplier;
+  const recencyMultiplier =
+    datePercentage * (newMultiplier - oldMultiplier) + oldMultiplier;
+  const isAfterExpansionMultiplier = isAfterExpansion ? 10 : 1;
+  return recencyMultiplier * isAfterExpansionMultiplier;
 };
 
 module.exports = getMultiplier;

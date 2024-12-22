@@ -4,7 +4,7 @@ const getMultiplier = require("./get-multiplier");
 
 const NOEX_PERCENT_CUTOFF = 0.2;
 
-const getDecks = (noEx, oldMultiplier, newMultiplier) => {
+const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
   const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
   const decksWithoutNames = decksWithoutNames_
@@ -42,7 +42,8 @@ const getDecks = (noEx, oldMultiplier, newMultiplier) => {
       oldestDate,
       newestDate,
       oldMultiplier,
-      newMultiplier
+      newMultiplier,
+      expansionReleaseDate
     );
     return {
       ...deck,
