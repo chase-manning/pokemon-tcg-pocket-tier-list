@@ -11,7 +11,7 @@ const getMultiplier = (
   const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
   const recencyMultiplier =
     datePercentage * (newMultiplier - oldMultiplier) + oldMultiplier;
-  const isAfterExpansionMultiplier = isAfterExpansion ? 10 : 1;
+  const isAfterExpansionMultiplier = isAfterExpansion ? 20 : 1;
   return recencyMultiplier * isAfterExpansionMultiplier;
 };
 
