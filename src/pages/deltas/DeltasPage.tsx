@@ -6,7 +6,6 @@ const StyledDeckPage = styled.div`
   width: 100%;
   min-height: 100dvh;
   display: flex;
-  align-items: center;
   padding: 8rem;
   gap: 8rem;
 
@@ -63,6 +62,7 @@ const DeltasPage = () => {
       return { ...newDeck, increase };
     })
     .sort((a, b) => b.increase - a.increase)
+    .filter((deck) => deck.increase > 0)
     .slice(0, 4);
 
   const biggestDecreases = newDecks
@@ -76,6 +76,7 @@ const DeltasPage = () => {
     })
     .sort((a, b) => b.score - a.score)
     .sort((a, b) => b.decrease - a.decrease)
+    .filter((deck) => deck.decrease > 0)
     .slice(0, 4);
 
   const formatPlace = (place: number) =>
