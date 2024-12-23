@@ -3,6 +3,7 @@ import styled from "styled-components";
 import LandingPage from "./pages/landing/LandingPage";
 import DeckPage from "./pages/deck/DeckPage";
 import DeltasPage from "./pages/deltas/DeltasPage";
+import NewPage from "./pages/new/NewPage";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -31,6 +32,8 @@ const App = () => {
         </Route>
 
         <Route path="deltas" element={<DeltasPage />} />
+
+        <Route path="new" element={<NewPage />} />
 
         <Route path="*" element={<LandingPage />} />
       </Route>
