@@ -2,6 +2,22 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   {
+    mainCard: "2 Scolipede A1a 55",
+    deckName: "Scolipede",
+  },
+  {
+    mainCard: "1 Scolipede A1a 55",
+    deckName: "Scolipede",
+  },
+  {
+    mainCard: "2 Golem A1a 45",
+    deckName: "Golem",
+  },
+  {
+    mainCard: "1 Golem A1a 45",
+    deckName: "Golem",
+  },
+  {
     mainCard: "2 Celebi ex A1a 3",
     deckName: "Celebi",
   },
