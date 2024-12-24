@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import useDecks from "../../app/use-decks";
-import cardToString from "../../app/card-to-string";
 
 const StyledDeckPage = styled.div`
   width: 100%;
