@@ -31,7 +31,10 @@ interface Props {
 const DeckCard = ({ deck }: Props) => {
   const navigate = useNavigate();
 
-  const exactCard = deck.cards.find((card) => card.name === deck.name);
+  const exactCard = deck.cards.find(
+    (card) =>
+      `${card.name}-${card.id}`.toLowerCase() === deck.name.toLowerCase()
+  );
   let mainCard = deck.cards.find((card) => card.name.includes(deck.name));
 
   mainCard = exactCard || mainCard || deck.cards[0];
