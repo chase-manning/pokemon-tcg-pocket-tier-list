@@ -22,6 +22,7 @@ const DECK_NAMES = [
   "Machamp ex A1 146",
   "Gyarados A1 78",
   "Charizard A1 35",
+  "Scolipede A1 47",
 
   // Cards that could be a side card or a main card
   "Articuno ex A1 84",
@@ -38,15 +39,12 @@ const DECK_NAMES = [
   "Exeggutor A1a 2",
   "Articuno A1 83",
   "Tentacruel A1 63",
-
-  // Catch all
-  // "Professor's Research P-A 7",
 ];
 const getDeckName = (deck) => {
   const { cards } = deck;
   for (const mainCard of DECK_NAMES) {
     for (const card of cards) {
-      if (cardToString(card).includes(mainCard)) {
+      if (cardToString(card) === `2 ${mainCard}`) {
         const padded = card.number.padStart(3, "0");
         const set = card.set === "P-A" ? "PA" : card.set;
         return `${card.name}-${set}-${padded}`;
@@ -54,6 +52,8 @@ const getDeckName = (deck) => {
     }
   }
   return null;
+
+  return "Professor's Research-PA-007";
 };
 
 module.exports = getDeckName;
