@@ -12,6 +12,7 @@ const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
 const RED_CARD_MULTIPLIER = 0.8;
 const EXPANSION_RELEASE_DATE = new Date("2024-12-17");
+const MIN_GAMES_TO_QUALIFY = 2000;
 
 // Global Variables
 const decks = getDecks(
@@ -33,6 +34,7 @@ for (const deckName of uniqueDeckNames) {
     (acc, game) => acc + game.totalGames,
     0
   );
+  if (matchingGames < MIN_GAMES_TO_QUALIFY) continue;
 
   const cards = {};
   for (const deck of matchingDecks) {
