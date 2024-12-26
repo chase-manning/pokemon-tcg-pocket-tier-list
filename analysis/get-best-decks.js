@@ -12,7 +12,6 @@ const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
 const RED_CARD_MULTIPLIER = 0.8;
 const EXPANSION_RELEASE_DATE = new Date("2024-12-17");
-const MIN_PERCENT_TO_QUALIFY = 0.00125;
 
 // Global Variables
 const decks = getDecks(
@@ -35,7 +34,6 @@ for (const deckName of uniqueDeckNames) {
     0
   );
   const percentOfGames = matchingGames / allGames;
-  if (percentOfGames < MIN_PERCENT_TO_QUALIFY) continue;
 
   const cards = {};
   for (const deck of matchingDecks) {
@@ -81,6 +79,7 @@ for (const deckName of uniqueDeckNames) {
     name: deckName,
     cards: sortedDecks[0].cards,
     score: deckScore(sortedDecks[0]),
+    percentOfGames,
   };
   bestDecks.push(bestDeck);
 }
