@@ -56,10 +56,20 @@ const RowContent = styled.div`
   }
 `;
 
+const Loading = styled.div`
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+`;
+
 const LandingPage = () => {
   const decks = useDecks();
 
-  if (!decks) return <p>Loading...</p>;
+  if (!decks) return <Loading>Loading...</Loading>;
 
   const bestScore = decks.reduce(
     (best, deck) => (deck.score > best ? deck.score : best),
