@@ -23,6 +23,7 @@ export interface FullDeckType {
   cards: CardType[];
   score: number;
   place: number;
+  percentOfGames: number;
 }
 
 interface BestDecksCardType {
@@ -77,6 +78,7 @@ const useDecks = (old = false): FullDeckType[] | null => {
         cards: deckCards,
         score: oldDeck.score,
         place: index + 1,
+        percentOfGames: oldDeck.percentOfGames,
       };
       return deck;
     });
