@@ -56,9 +56,6 @@ const DeckCard = ({ deck }: Props) => {
   mainCard = exactCard || mainCard || deck.cards[0];
 
   const isAboveMin = deck.percentOfGames > MIN_PERCENT_TO_QUALIFY;
-  if (!isAboveMin && !DEBUG) {
-    return null;
-  }
 
   const round = (num: number, decimals = 2) => {
     return Math.round(num * 10 ** decimals) / 10 ** decimals;

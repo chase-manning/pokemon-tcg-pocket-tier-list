@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DECKS from "./best-decks.json";
 import OLD_DECKS from "./old.json";
+import { DEBUG, MIN_PERCENT_TO_QUALIFY } from "./config";
 
 const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v2.json";
@@ -81,6 +82,10 @@ const useDecks = (old = false): FullDeckType[] | null => {
         percentOfGames: oldDeck.percentOfGames,
       };
       return deck;
+    })
+    .filter((deck) => {
+      const isAboveMin = deck.percentOfGames > MIN_PERCENT_TO_QUALIFY;
+      return DEBUG || isAboveMin;
     });
 };
 
