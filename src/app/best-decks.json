@@ -40,9 +40,9 @@
       },
       {
         "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
+        "set": "A1a",
+        "number": "68",
+        "name": "Leaf"
       },
       {
         "count": 2,
@@ -52,9 +52,9 @@
       },
       {
         "count": 2,
-        "set": "A1a",
-        "number": "68",
-        "name": "Leaf"
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
       },
       {
         "count": 2,
@@ -63,8 +63,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.49785773690486135,
-    "percentOfGames": 0.14252101473494574
+    "score": 0.4983837423615148,
+    "percentOfGames": 0.14427436625712287
   },
   {
     "name": "Mewtwo ex-A1-129",
@@ -113,12 +113,6 @@
       },
       {
         "count": 1,
-        "set": "A1a",
-        "number": "67",
-        "name": "Blue"
-      },
-      {
-        "count": 1,
         "set": "A1",
         "number": "223",
         "name": "Giovanni"
@@ -130,10 +124,10 @@
         "name": "Sabrina"
       },
       {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
+        "count": 1,
+        "set": "A1a",
+        "number": "67",
+        "name": "Blue"
       },
       {
         "count": 2,
@@ -142,14 +136,20 @@
         "name": "Mythical Slab"
       },
       {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
         "count": 1,
         "set": "P-A",
         "number": "2",
         "name": "X Speed"
       }
     ],
-    "score": 0.48060709235675314,
-    "percentOfGames": 0.19538596146148834
+    "score": 0.48135191995929577,
+    "percentOfGames": 0.19773546980334786
   },
   {
     "name": "Pikachu ex-A1-096",
@@ -186,15 +186,15 @@
       },
       {
         "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
         "set": "A1",
         "number": "225",
         "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
       },
       {
         "count": 1,
@@ -211,18 +211,18 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "1",
-        "name": "Potion"
+        "number": "5",
+        "name": "Poké Ball"
       },
       {
         "count": 2,
         "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
+        "number": "1",
+        "name": "Potion"
       }
     ],
-    "score": 0.46965997071027576,
-    "percentOfGames": 0.16608268533174256
+    "score": 0.4704375601419367,
+    "percentOfGames": 0.16780537884452298
   },
   {
     "name": "Primeape-A1a-042",
@@ -247,21 +247,15 @@
       },
       {
         "count": 1,
-        "set": "A1",
-        "number": "154",
-        "name": "Hitmonlee"
-      },
-      {
-        "count": 1,
         "set": "A1a",
         "number": "47",
         "name": "Marshadow"
       },
       {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
+        "count": 1,
+        "set": "A1",
+        "number": "154",
+        "name": "Hitmonlee"
       },
       {
         "count": 2,
@@ -278,8 +272,14 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1a",
+        "number": "63",
+        "name": "Old Amber"
       },
       {
         "count": 2,
@@ -289,13 +289,13 @@
       },
       {
         "count": 2,
-        "set": "A1a",
-        "number": "63",
-        "name": "Old Amber"
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
       }
     ],
-    "score": 0.46854286667209644,
-    "percentOfGames": 0.01703344332191772
+    "score": 0.46860573237754777,
+    "percentOfGames": 0.017242995673421333
   },
   {
     "name": "Tauros-A1a-060",
@@ -338,15 +338,15 @@
       },
       {
         "count": 2,
-        "set": "A1a",
-        "number": "68",
-        "name": "Leaf"
-      },
-      {
-        "count": 2,
         "set": "A1",
         "number": "223",
         "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "A1a",
+        "number": "68",
+        "name": "Leaf"
       },
       {
         "count": 2,
@@ -373,8 +373,8 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.4518911634584449,
-    "percentOfGames": 0.010582991670160184
+    "score": 0.451930222339527,
+    "percentOfGames": 0.010713187940433485
   },
   {
     "name": "Charizard ex-A1-036",
@@ -423,21 +423,15 @@
       },
       {
         "count": 1,
-        "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
-      },
-      {
-        "count": 1,
         "set": "A1a",
         "number": "68",
         "name": "Leaf"
       },
       {
-        "count": 2,
-        "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "count": 1,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
       },
       {
         "count": 2,
@@ -446,14 +440,20 @@
         "name": "Poké Ball"
       },
       {
+        "count": 2,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      },
+      {
         "count": 1,
         "set": "P-A",
         "number": "1",
         "name": "Potion"
       }
     ],
-    "score": 0.4497699210150251,
-    "percentOfGames": 0.049750136739818124
+    "score": 0.4500764523819493,
+    "percentOfGames": 0.05030876470860753
   },
   {
     "name": "Arcanine ex-A1-041",
@@ -531,8 +531,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.4451534111414185,
-    "percentOfGames": 0.02879186977122808
+    "score": 0.4452596739310507,
+    "percentOfGames": 0.02914607907000106
   },
   {
     "name": "Celebi ex-A1a-003",
@@ -575,15 +575,15 @@
       },
       {
         "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
         "set": "A1",
         "number": "219",
         "name": "Erika"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
       },
       {
         "count": 1,
@@ -594,27 +594,27 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
+        "number": "2",
+        "name": "X Speed"
       },
       {
         "count": 2,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "5",
+        "name": "Poké Ball"
       }
     ],
-    "score": 0.4432565834725771,
-    "percentOfGames": 0.09719551909703555
+    "score": 0.44459007744205176,
+    "percentOfGames": 0.09697142589018382
   },
   {
     "name": "Hitmonlee-A1-154",
     "cards": [
       {
         "count": 2,
-        "set": "A1",
-        "number": "198",
-        "name": "Farfetch'd"
+        "set": "A1a",
+        "number": "47",
+        "name": "Marshadow"
       },
       {
         "count": 2,
@@ -624,9 +624,9 @@
       },
       {
         "count": 2,
-        "set": "A1a",
-        "number": "47",
-        "name": "Marshadow"
+        "set": "A1",
+        "number": "198",
+        "name": "Farfetch'd"
       },
       {
         "count": 1,
@@ -649,14 +649,14 @@
       {
         "count": 2,
         "set": "A1",
-        "number": "223",
-        "name": "Giovanni"
+        "number": "225",
+        "name": "Sabrina"
       },
       {
         "count": 2,
         "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
+        "number": "223",
+        "name": "Giovanni"
       },
       {
         "count": 1,
@@ -667,14 +667,14 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "5",
+        "name": "Poké Ball"
       },
       {
         "count": 2,
         "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
+        "number": "2",
+        "name": "X Speed"
       },
       {
         "count": 1,
@@ -683,12 +683,24 @@
         "name": "Potion"
       }
     ],
-    "score": 0.4403728401317923,
-    "percentOfGames": 0.018220888218162094
+    "score": 0.44044008836634635,
+    "percentOfGames": 0.01844504900000985
   },
   {
     "name": "Scolipede-A1a-055",
     "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "176",
+        "name": "Koffing"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "177",
+        "name": "Weezing"
+      },
       {
         "count": 2,
         "set": "A1a",
@@ -708,22 +720,16 @@
         "name": "Scolipede"
       },
       {
-        "count": 2,
-        "set": "A1",
-        "number": "176",
-        "name": "Koffing"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "177",
-        "name": "Weezing"
-      },
-      {
         "count": 1,
         "set": "A1a",
         "number": "60",
         "name": "Tauros"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
       },
       {
         "count": 2,
@@ -738,12 +744,6 @@
         "name": "Leaf"
       },
       {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
         "count": 1,
         "set": "A1",
         "number": "225",
@@ -756,8 +756,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.4388471390059904,
-    "percentOfGames": 0.04354163523462312
+    "score": 0.4390078390807663,
+    "percentOfGames": 0.04407730215054179
   },
   {
     "name": "Golem-A1a-045",
@@ -788,21 +788,15 @@
       },
       {
         "count": 1,
-        "set": "A1",
-        "number": "154",
-        "name": "Hitmonlee"
-      },
-      {
-        "count": 1,
         "set": "A1a",
         "number": "47",
         "name": "Marshadow"
       },
       {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
+        "count": 1,
+        "set": "A1",
+        "number": "154",
+        "name": "Hitmonlee"
       },
       {
         "count": 2,
@@ -817,89 +811,16 @@
         "name": "Brock"
       },
       {
-        "count": 1,
-        "set": "A1",
-        "number": "223",
-        "name": "Giovanni"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
-      },
-      {
-        "count": 1,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
-      }
-    ],
-    "score": 0.4376045739946486,
-    "percentOfGames": 0.03682253816526904
-  },
-  {
-    "name": "Kingler-A1-069",
-    "cards": [
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "22",
-        "name": "Jigglypuff"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "195",
-        "name": "Wigglytuff ex"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "68",
-        "name": "Krabby"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "69",
-        "name": "Kingler"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "203",
-        "name": "Kangaskhan"
-      },
-      {
         "count": 2,
         "set": "P-A",
         "number": "7",
         "name": "Professor's Research"
       },
       {
-        "count": 2,
-        "set": "A1",
-        "number": "220",
-        "name": "Misty"
-      },
-      {
-        "count": 1,
-        "set": "A1a",
-        "number": "68",
-        "name": "Leaf"
-      },
-      {
         "count": 1,
         "set": "A1",
         "number": "223",
         "name": "Giovanni"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
       },
       {
         "count": 2,
@@ -910,18 +831,12 @@
       {
         "count": 1,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
-      },
-      {
-        "count": 1,
-        "set": "P-A",
         "number": "1",
         "name": "Potion"
       }
     ],
-    "score": 0.4336320381338985,
-    "percentOfGames": 0.002288040507926066
+    "score": 0.43774047574947883,
+    "percentOfGames": 0.037275544014704974
   },
   {
     "name": "Gyarados-A1-078",
@@ -987,8 +902,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.4262025408250827,
-    "percentOfGames": 0.000836586955012234
+    "score": 0.4269846873075209,
+    "percentOfGames": 0.0008370273257426428
   },
   {
     "name": "Marowak-A1-152",
@@ -1060,8 +975,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.4237872500033323,
-    "percentOfGames": 0.0001336593482358971
+    "score": 0.4237326666731968,
+    "percentOfGames": 0.0001319560977405972
   },
   {
     "name": "Primeape-A1-142",
@@ -1139,8 +1054,8 @@
         "name": "Old Amber"
       }
     ],
-    "score": 0.42233328733724307,
-    "percentOfGames": 0.004009612836615569
+    "score": 0.4233348432552836,
+    "percentOfGames": 0.004020130816506039
   },
   {
     "name": "Machamp ex-A1-146",
@@ -1171,27 +1086,27 @@
       },
       {
         "count": 1,
-        "set": "A1a",
-        "number": "47",
-        "name": "Marshadow"
-      },
-      {
-        "count": 1,
         "set": "A1",
         "number": "154",
         "name": "Hitmonlee"
       },
       {
-        "count": 2,
+        "count": 1,
         "set": "A1a",
-        "number": "68",
-        "name": "Leaf"
+        "number": "47",
+        "name": "Marshadow"
       },
       {
         "count": 2,
         "set": "P-A",
         "number": "7",
         "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1a",
+        "number": "68",
+        "name": "Leaf"
       },
       {
         "count": 1,
@@ -1214,18 +1129,18 @@
       {
         "count": 1,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "1",
+        "name": "Potion"
       },
       {
         "count": 1,
         "set": "P-A",
-        "number": "1",
-        "name": "Potion"
+        "number": "2",
+        "name": "X Speed"
       }
     ],
-    "score": 0.4196659017857798,
-    "percentOfGames": 0.010560146164777818
+    "score": 0.4197317036754423,
+    "percentOfGames": 0.010617689300661445
   },
   {
     "name": "Charizard-A1-035",
@@ -1303,8 +1218,87 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.4168016134791261,
-    "percentOfGames": 0.00019553627230216563
+    "score": 0.4168023351491647,
+    "percentOfGames": 0.00019794183909748578
+  },
+  {
+    "name": "Kingler-A1-069",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "68",
+        "name": "Krabby"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "69",
+        "name": "Kingler"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "87",
+        "name": "Froakie"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "88",
+        "name": "Frogadier"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "89",
+        "name": "Greninja"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "220",
+        "name": "Misty"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      }
+    ],
+    "score": 0.40938570364659777,
+    "percentOfGames": 0.0006715652381859677
   },
   {
     "name": "Articuno ex-A1-084",
@@ -1335,12 +1329,6 @@
       },
       {
         "count": 2,
-        "set": "A1",
-        "number": "220",
-        "name": "Misty"
-      },
-      {
-        "count": 2,
         "set": "P-A",
         "number": "7",
         "name": "Professor's Research"
@@ -1348,8 +1336,20 @@
       {
         "count": 2,
         "set": "A1",
+        "number": "220",
+        "name": "Misty"
+      },
+      {
+        "count": 2,
+        "set": "A1",
         "number": "225",
         "name": "Sabrina"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
       },
       {
         "count": 2,
@@ -1362,16 +1362,10 @@
         "set": "P-A",
         "number": "5",
         "name": "Poké Ball"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
       }
     ],
-    "score": 0.40697138903215535,
-    "percentOfGames": 0.01352671859690279
+    "score": 0.4073897715413483,
+    "percentOfGames": 0.013659717698676936
   },
   {
     "name": "Starmie ex-A1-076",
@@ -1437,8 +1431,8 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.4024613926079648,
-    "percentOfGames": 0.02858944142075968
+    "score": 0.4033086053089429,
+    "percentOfGames": 0.028701412928701882
   },
   {
     "name": "Blaine-A1-221",
@@ -1450,9 +1444,15 @@
         "name": "Ponyta"
       },
       {
-        "count": 2,
+        "count": 1,
         "set": "A1a",
         "number": "11",
+        "name": "Rapidash"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "43",
         "name": "Rapidash"
       },
       {
@@ -1475,9 +1475,9 @@
       },
       {
         "count": 2,
-        "set": "A1",
-        "number": "221",
-        "name": "Blaine"
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
       },
       {
         "count": 2,
@@ -1487,9 +1487,9 @@
       },
       {
         "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
+        "set": "A1",
+        "number": "221",
+        "name": "Blaine"
       },
       {
         "count": 1,
@@ -1500,18 +1500,18 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
+        "number": "2",
+        "name": "X Speed"
       },
       {
         "count": 2,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "5",
+        "name": "Poké Ball"
       }
     ],
-    "score": 0.39965870072919196,
-    "percentOfGames": 0.024367007723239797
+    "score": 0.40169031862120325,
+    "percentOfGames": 0.02264373090841462
   },
   {
     "name": "Flareon-A1-045",
@@ -1589,8 +1589,8 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.39962980177993485,
-    "percentOfGames": 0.0019090310612034447
+    "score": 0.39963684748303335,
+    "percentOfGames": 0.0019325167381982955
   },
   {
     "name": "Victreebel-A1-020",
@@ -1627,15 +1627,15 @@
       },
       {
         "count": 2,
-        "set": "A1",
-        "number": "219",
-        "name": "Erika"
-      },
-      {
-        "count": 2,
         "set": "P-A",
         "number": "7",
         "name": "Professor's Research"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "219",
+        "name": "Erika"
       },
       {
         "count": 1,
@@ -1662,8 +1662,8 @@
         "name": "Pokémon Flute"
       }
     ],
-    "score": 0.39910370404518397,
-    "percentOfGames": 0.0009306906395683294
+    "score": 0.39929222042286355,
+    "percentOfGames": 0.0009342420058733552
   },
   {
     "name": "Venusaur ex-A1-004",
@@ -1741,8 +1741,8 @@
         "name": "Potion"
       }
     ],
-    "score": 0.3980893370962708,
-    "percentOfGames": 0.004258241495842377
+    "score": 0.3991258140800733,
+    "percentOfGames": 0.004249099795623842
   },
   {
     "name": "Gengar ex-A1-123",
@@ -1826,8 +1826,8 @@
         "name": "Mythical Slab"
       }
     ],
-    "score": 0.39188691429654166,
-    "percentOfGames": 0.003749557173952479
+    "score": 0.39190511852977145,
+    "percentOfGames": 0.0037862678555391376
   },
   {
     "name": "Exeggutor-A1a-002",
@@ -1899,8 +1899,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.3895505288320159,
-    "percentOfGames": 0.00244847133670955
+    "score": 0.38955956545925263,
+    "percentOfGames": 0.0024785934274988222
   },
   {
     "name": "Blastoise ex-A1-056",
@@ -1972,8 +1972,8 @@
         "name": "Potion"
       }
     ],
-    "score": 0.388986376837638,
-    "percentOfGames": 0.007468178939356125
+    "score": 0.3893661909942249,
+    "percentOfGames": 0.007539263444607164
   },
   {
     "name": "Lapras ex-PA-014",
@@ -2045,8 +2045,8 @@
         "name": "Potion"
       }
     ],
-    "score": 0.38594464990277205,
-    "percentOfGames": 0.00041963717598913423
+    "score": 0.3879965230239835,
+    "percentOfGames": 0.00041820159307762774
   },
   {
     "name": "Exeggutor ex-A1-023",
@@ -2065,14 +2065,14 @@
       },
       {
         "count": 1,
-        "set": "A1",
-        "number": "22",
+        "set": "A1a",
+        "number": "2",
         "name": "Exeggutor"
       },
       {
         "count": 1,
-        "set": "A1a",
-        "number": "2",
+        "set": "A1",
+        "number": "22",
         "name": "Exeggutor"
       },
       {
@@ -2102,14 +2102,14 @@
       {
         "count": 2,
         "set": "A1",
-        "number": "219",
-        "name": "Erika"
+        "number": "225",
+        "name": "Sabrina"
       },
       {
         "count": 2,
         "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
+        "number": "219",
+        "name": "Erika"
       },
       {
         "count": 2,
@@ -2130,24 +2130,12 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.3825059027088168,
-    "percentOfGames": 0.010922764162387594
+    "score": 0.38640404822555424,
+    "percentOfGames": 0.008970348299853244
   },
   {
     "name": "Weezing-A1-177",
     "cards": [
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "164",
-        "name": "Ekans"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "165",
-        "name": "Arbok"
-      },
       {
         "count": 2,
         "set": "A1",
@@ -2159,6 +2147,18 @@
         "set": "A1",
         "number": "177",
         "name": "Weezing"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "164",
+        "name": "Ekans"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "165",
+        "name": "Arbok"
       },
       {
         "count": 2,
@@ -2181,8 +2181,8 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
+        "number": "1",
+        "name": "Potion"
       },
       {
         "count": 2,
@@ -2193,12 +2193,12 @@
       {
         "count": 2,
         "set": "P-A",
-        "number": "1",
-        "name": "Potion"
+        "number": "2",
+        "name": "X Speed"
       }
     ],
-    "score": 0.38107061482456883,
-    "percentOfGames": 0.014327883428559365
+    "score": 0.38085746350956234,
+    "percentOfGames": 0.014313318962271145
   },
   {
     "name": "Marowak ex-A1-153",
@@ -2270,8 +2270,8 @@
         "name": "Poké Ball"
       }
     ],
-    "score": 0.3771961629356972,
-    "percentOfGames": 0.012963207352897419
+    "score": 0.37816825998919484,
+    "percentOfGames": 0.01150658983550782
   },
   {
     "name": "Melmetal-A1-182",
@@ -2343,8 +2343,8 @@
         "name": "Pokédex"
       }
     ],
-    "score": 0.3695211430655995,
-    "percentOfGames": 0.0029776755260861394
+    "score": 0.3693052282584136,
+    "percentOfGames": 0.002995374697132179
   },
   {
     "name": "Pidgeot ex-A1a-059",
@@ -2434,8 +2434,8 @@
         "name": "Pokémon Flute"
       }
     ],
-    "score": 0.3664513405096453,
-    "percentOfGames": 0.02149213562402611
+    "score": 0.3665306620092457,
+    "percentOfGames": 0.021756540622694463
   },
   {
     "name": "Tentacruel-A1-063",
@@ -2507,81 +2507,8 @@
         "name": "X Speed"
       }
     ],
-    "score": 0.35819554487899524,
-    "percentOfGames": 0.0007840661584432531
-  },
-  {
-    "name": "Wigglytuff ex-A1-195",
-    "cards": [
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "22",
-        "name": "Jigglypuff"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "195",
-        "name": "Wigglytuff ex"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "83",
-        "name": "Articuno"
-      },
-      {
-        "count": 1,
-        "set": "A1",
-        "number": "203",
-        "name": "Kangaskhan"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "7",
-        "name": "Professor's Research"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "225",
-        "name": "Sabrina"
-      },
-      {
-        "count": 2,
-        "set": "A1",
-        "number": "220",
-        "name": "Misty"
-      },
-      {
-        "count": 1,
-        "set": "A1a",
-        "number": "68",
-        "name": "Leaf"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "5",
-        "name": "Poké Ball"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "1",
-        "name": "Potion"
-      },
-      {
-        "count": 2,
-        "set": "P-A",
-        "number": "2",
-        "name": "X Speed"
-      }
-    ],
-    "score": 0.3508948531446456,
-    "percentOfGames": 0.003683333960608013
+    "score": 0.3525093791354056,
+    "percentOfGames": 0.0007536381072787102
   },
   {
     "name": "Volcarona-A1a-014",
@@ -2653,8 +2580,8 @@
         "name": "Pokémon Flute"
       }
     ],
-    "score": 0.34727265378934613,
-    "percentOfGames": 0.00044949081939878735
+    "score": 0.3472743127350403,
+    "percentOfGames": 0.0004550206383792579
   },
   {
     "name": "Alakazam-A1-117",
@@ -2720,8 +2647,8 @@
         "name": "Potion"
       }
     ],
-    "score": 0.33645122881283374,
-    "percentOfGames": 0.012995252173285895
+    "score": 0.33662543129689004,
+    "percentOfGames": 0.01311164749395189
   },
   {
     "name": "Dragonite-A1-185",
@@ -2787,8 +2714,8 @@
         "name": "Potion"
       }
     ],
-    "score": 0.3304785041652681,
-    "percentOfGames": 0.007086165410556101
+    "score": 0.32958817224497045,
+    "percentOfGames": 0.006974485233758612
   },
   {
     "name": "Nidoqueen-A1-168",
@@ -2872,7 +2799,92 @@
         "name": "Old Amber"
       }
     ],
-    "score": 0.3270768315265698,
-    "percentOfGames": 0.0006987839889534345
+    "score": 0.3282267671768698,
+    "percentOfGames": 0.0006948927643603722
+  },
+  {
+    "name": "Wigglytuff ex-A1-195",
+    "cards": [
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "21",
+        "name": "Exeggcute"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "22",
+        "name": "Exeggutor"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "23",
+        "name": "Exeggutor ex"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "22",
+        "name": "Jigglypuff"
+      },
+      {
+        "count": 2,
+        "set": "A1",
+        "number": "195",
+        "name": "Wigglytuff ex"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "194",
+        "name": "Wigglytuff"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "198",
+        "name": "Farfetch'd"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "7",
+        "name": "Professor's Research"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "225",
+        "name": "Sabrina"
+      },
+      {
+        "count": 1,
+        "set": "A1",
+        "number": "223",
+        "name": "Giovanni"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "2",
+        "name": "X Speed"
+      },
+      {
+        "count": 2,
+        "set": "P-A",
+        "number": "5",
+        "name": "Poké Ball"
+      },
+      {
+        "count": 1,
+        "set": "P-A",
+        "number": "1",
+        "name": "Potion"
+      }
+    ],
+    "score": 0.30465778696304696,
+    "percentOfGames": 0.001653222977828789
   }
 ]
