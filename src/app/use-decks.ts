@@ -79,7 +79,7 @@ const useDecks = (old = false): FullDeckType[] | null => {
         cards: deckCards,
         score: oldDeck.score,
         place: index + 1,
-        percentOfGames: (oldDeck as any).percentOfGames || 0,
+        percentOfGames: oldDeck.percentOfGames,
       };
       return deck;
     })
