@@ -1,8 +1,6 @@
 const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
-  "Victreebel A1 20",
-  "Primeape A1a 42",
   "Alakazam A1 117",
   "Golem A1a 45",
   "Celebi ex A1a 3",
@@ -22,29 +20,43 @@ const DECK_NAMES = [
   "Machamp ex A1 146",
   "Gyarados A1 78",
   "Charizard A1 35",
-  "Scolipede A1 47",
+  "Victreebel A1 20",
+  "Scolipede A1a 55",
 
   // Cards that could be a side card or a main card
+  "Weezing A1 177",
+  "Starmie ex A1 76",
   "Articuno ex A1 84",
   "Lapras ex P-A 14",
   "Arcanine ex A1 41",
+  "Volcarona A1a 14",
+  "Primeape A1a 42",
   "Primeape A1 142",
-  "Weezing A1 177",
-  "Starmie ex A1 76",
-  "Tauros A1a 60",
   "Marowak A1 152",
-  "Kingler A1 69",
   "Exeggutor ex A1 23",
   "Flareon A1 45",
   "Exeggutor A1a 2",
-  "Articuno A1 83",
+  "Kingler A1 69",
   "Tentacruel A1 63",
+  "Hitmonlee A1 154",
+  "Tauros A1a 60",
+  "Wigglytuff ex A1 195",
 ];
 const getDeckName = (deck) => {
   const { cards } = deck;
   for (const mainCard of DECK_NAMES) {
     for (const card of cards) {
       if (cardToString(card) === `2 ${mainCard}`) {
+        const padded = card.number.padStart(3, "0");
+        const set = card.set === "P-A" ? "PA" : card.set;
+        return `${card.name}-${set}-${padded}`;
+      }
+    }
+  }
+  // Unsure if we should include this
+  for (const mainCard of DECK_NAMES) {
+    for (const card of cards) {
+      if (cardToString(card) === `1 ${mainCard}`) {
         const padded = card.number.padStart(3, "0");
         const set = card.set === "P-A" ? "PA" : card.set;
         return `${card.name}-${set}-${padded}`;
