@@ -2,6 +2,7 @@ const fs = require("fs");
 const cardToString = require("./utils/card-to-string");
 const getEligibleDecks = require("./utils/get-eligible-decks");
 const getDecks = require("./utils/get-decks");
+const getId = require("./utils/get-id");
 
 // Settings
 const NOEX = false;
@@ -27,6 +28,7 @@ const uniqueDeckNames = decks
 
 // Calculate Best Decks
 const bestDecks = [];
+const idExists = {};
 for (const deckName of uniqueDeckNames) {
   const matchingDecks = decks.filter((game) => game.name === deckName);
   const matchingGames = matchingDecks.reduce(
@@ -72,16 +74,22 @@ for (const deckName of uniqueDeckNames) {
   };
 
   const eligibleDecks = getEligibleDecks(matchingDecks);
+  if (eligibleDecks.length === 0) continue;
   const sortedDecks = eligibleDecks.sort((a, b) => deckScore(b) - deckScore(a));
-  if (sortedDecks.length === 0) continue;
 
-  const bestDeck = {
-    name: deckName,
-    cards: sortedDecks[0].cards,
-    score: deckScore(sortedDecks[0]),
-    percentOfGames,
-  };
-  bestDecks.push(bestDeck);
+  for (const deck of sortedDecks) {
+    const id = getId(deck);
+    if (idExists[id]) continue;
+    const formattedDeck = {
+      name: deckName,
+      cards: deck.cards,
+      score: deckScore(deck),
+      percentOfGames,
+      id,
+    };
+    bestDecks.push(formattedDeck);
+    idExists[id] = true;
+  }
 }
 
 bestDecks.sort((a, b) => b.score - a.score);
