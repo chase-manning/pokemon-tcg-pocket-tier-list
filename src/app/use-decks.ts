@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DECKS from "./best-decks.json";
 import OLD_DECKS from "./old.json";
 import { DEBUG, MIN_PERCENT_TO_QUALIFY } from "./config";
+import useMissing from "./use-missing";
 
 const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v2.json";
@@ -45,6 +46,7 @@ const cardToId = (card: BestDecksCardType): string => {
 };
 
 const useDecks = (old = false): FullDeckType[] | null => {
+  const { missing } = useMissing();
   const [cards, setCards] = useState<CardType[] | null>(null);
 
   useEffect(() => {
@@ -55,10 +57,49 @@ const useDecks = (old = false): FullDeckType[] | null => {
 
   if (!cards) return null;
 
-  return (old ? OLD_DECKS : DECKS)
-    .sort((a, b) => {
-      return b.score - a.score;
+  const decks = (old ? OLD_DECKS : DECKS) as any[];
+
+  const uniqueDeckNames: string[] = decks.reduce((acc, deck) => {
+    if (!acc.includes(deck.name)) {
+      acc.push(deck.name);
+    }
+    return acc;
+  }, []);
+
+  const uniqueMissing = [...new Set(missing)];
+  console.log(missing);
+
+  return uniqueDeckNames
+    .map((name) => {
+      const matchingDecks = decks
+        .filter((deck) => deck.name === name)
+        .filter((deck) => {
+          for (const missingCard of uniqueMissing) {
+            const matchingCards = deck.cards.reduce(
+              (acc: number, card: any) => {
+                const id = cardToId(card);
+                if (id === missingCard) {
+                  acc += card.count;
+                }
+                return acc;
+              },
+              0
+            );
+            const missingCount = missing.filter(
+              (id) => id === missingCard
+            ).length;
+            if (matchingCards > 2 - missingCount) {
+              return false;
+            }
+          }
+          return true;
+        });
+      // sort by highest score
+      matchingDecks.sort((a, b) => b.score - a.score);
+      const bestDeck = matchingDecks[0];
+      return bestDeck;
     })
+    .filter((deck) => deck)
     .map((oldDeck, index) => {
       const deckCards = [];
       for (const oldCard of oldDeck.cards) {
@@ -84,6 +125,7 @@ const useDecks = (old = false): FullDeckType[] | null => {
       return deck;
     })
     .filter((deck) => {
+      if (missing.length > 0) return true;
       const isAboveMin = deck.percentOfGames > MIN_PERCENT_TO_QUALIFY;
       return DEBUG || isAboveMin;
     });

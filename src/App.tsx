@@ -28,6 +28,7 @@ const App = () => {
         <Route index element={<LandingPage />} />
 
         <Route path="deck">
+          <Route index element={<DeckPage />} />
           <Route path=":deckId" element={<DeckPage />} />
         </Route>
 

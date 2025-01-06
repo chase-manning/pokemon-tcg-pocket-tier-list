@@ -64,7 +64,7 @@ const DeckCard = ({ deck }: Props) => {
   return (
     <StyledDeckCard
       onClick={() => navigate(`/deck/${deck.id}`)}
-      $disabled={!isAboveMin}
+      $disabled={!isAboveMin && DEBUG}
     >
       <DeckImage src={mainCard.image} alt={deck.name} />
       {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}

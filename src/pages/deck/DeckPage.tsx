@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import useDecks from "../../app/use-decks";
+import useDecks, { FullDeckType } from "../../app/use-decks";
+import useMissing from "../../app/use-missing";
 
 const StyledDeckPage = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const CardList = styled.div`
   }
 `;
 
-const CardContainer = styled.div`
+const CardContainer = styled.button`
   position: relative;
   width: 100%;
 `;
@@ -59,29 +60,63 @@ const CardNumber = styled.div`
   }
 `;
 
+const Overlay = styled.div`
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+`;
+
+const Link = styled.button`
+  color: var(--main);
+  font-weight: 500;
+  font-size: 2rem;
+  margin-left: 5px;
+  text-decoration: underline;
+`;
+
 const DeckPage = () => {
   const deckId = useParams().deckId;
   const decks = useDecks();
+  const navigate = useNavigate();
+  const { addMissing } = useMissing();
 
-  if (!deckId) return <p>Deck not found</p>;
-  if (!decks) return <p>Loading...</p>;
+  if (!decks) return <Overlay>Loading...</Overlay>;
 
-  const deck = decks.find((deck) => deck.id === deckId);
+  let deck: FullDeckType | undefined = undefined;
 
-  if (!deck) return <p>Deck not found</p>;
+  if (deckId) {
+    deck = decks.find((deck) => deck.id === deckId);
+  } else {
+    deck = decks.sort((a, b) => b.score - a.score)[0];
+  }
 
-  const uniqueCards = deck.cards.filter(
-    (card, index, self) => self.findIndex((c) => c.id === card.id) === index
-  );
+  if (deck === undefined) {
+    return (
+      <Overlay>
+        Not enough cards,{" "}
+        <Link onClick={() => navigate("/")}>try another deck</Link>
+      </Overlay>
+    );
+  }
+
+  const uniqueCards =
+    deck &&
+    deck.cards.filter(
+      (card, index, self) => self.findIndex((c) => c.id === card.id) === index
+    );
 
   return (
     <StyledDeckPage>
       <CardList>
         {uniqueCards.map((card) => (
-          <CardContainer key={card.id}>
+          <CardContainer key={card.id} onClick={() => addMissing(card.id)}>
             <CardImage src={card.image} alt={card.name} />
             <CardNumber>
-              {deck.cards.filter((c) => c.id === card.id).length}
+              {deck && deck.cards.filter((c) => c.id === card.id).length}
             </CardNumber>
           </CardContainer>
         ))}
