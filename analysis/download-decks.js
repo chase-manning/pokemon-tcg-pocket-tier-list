@@ -97,9 +97,17 @@ const getDecks = async (tournament) => {
   });
 };
 
+const round = (num, places) => {
+  const factor = Math.pow(10, places);
+  return Math.round(num * factor) / factor;
+};
+
 const downloadDecks = async () => {
   const tournaments = await getTournaments();
-  for (const tournament of tournaments) {
+  console.log("Downloaded tournaments");
+  console.log(`${tournaments.length} to process`);
+  for (let i = 0; i < tournaments.length; i++) {
+    const tournament = tournaments[i];
     const t = {
       id: tournament.id,
       date: new Date(tournament.date),
@@ -114,6 +122,7 @@ const downloadDecks = async () => {
       "./data/processed-tournaments.json",
       JSON.stringify(processed)
     );
+    console.log(`${round((i / tournaments.length) * 100, 2)}%`);
   }
 };
 
