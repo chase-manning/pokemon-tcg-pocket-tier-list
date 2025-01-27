@@ -1,6 +1,7 @@
 const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
+  "Lt. Surge A1 226",
   "Alakazam A1 117",
   "Golem A1a 45",
   "Celebi ex A1a 3",
@@ -41,6 +42,25 @@ const DECK_NAMES = [
   "Hitmonlee A1 154",
   "Tauros A1a 60",
   "Wigglytuff ex A1 195",
+  "Mew ex A1a 32",
+  "Moltres A1 46",
+  "Kangaskhan A1 203",
+  "Golduck A1 58",
+  "Weezing A1a 50",
+  "Greninja A1 89",
+  "Moltres ex A1 47",
+  "Pidgeot A1 188",
+  "Nidoking A1 171",
+  "Raichu A1 95",
+  "Golem A1 149",
+  "Vaporeon A1 80",
+  "Florges A1a 38",
+  "Articuno A1 83",
+  "Frosmoth A1 93",
+  "Arbok A1 165",
+  "Poliwrath A1 61",
+  "Seaking A1 73",
+  "Zapdos ex A1 104",
 ];
 const getDeckName = (deck) => {
   const { cards } = deck;
@@ -63,7 +83,7 @@ const getDeckName = (deck) => {
       }
     }
   }
-  return null;
+  // return null;
 
   return "Professor's Research-PA-007";
 };
