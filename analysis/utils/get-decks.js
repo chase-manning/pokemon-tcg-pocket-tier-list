@@ -4,6 +4,7 @@ const getMultiplier = require("./get-multiplier");
 
 const NOEX_PERCENT_CUTOFF = 0.2;
 const WIGGLYTUFF_PERCENT_CUTOFF = 0.1;
+const NO_TRAINER_PERCENT_CUTOFF = 0.1;
 
 const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
   const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
@@ -16,7 +17,8 @@ const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
       const isNoEx = deck.tournamentExPercent < NOEX_PERCENT_CUTOFF;
       return isNoEx === noEx;
     })
-    .filter((deck) => deck.wigglytuffPercent < WIGGLYTUFF_PERCENT_CUTOFF);
+    .filter((deck) => deck.wigglytuffPercent < WIGGLYTUFF_PERCENT_CUTOFF)
+    .filter((deck) => deck.noTrainerPercent < NO_TRAINER_PERCENT_CUTOFF);
 
   const decksWithNames = decksWithoutNames
     .map((deck) => {

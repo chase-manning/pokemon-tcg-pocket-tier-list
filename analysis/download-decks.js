@@ -79,6 +79,9 @@ const getDecks = async (tournament) => {
     );
   });
   const wigglytuffPercent = amountWithWigglytuff.length / decks.length;
+  const noTrainerPercent =
+    decks.filter((deck) => deck.decklist.trainer.length === 0).length /
+    decks.length;
 
   return decks.map((deck) => {
     return {
@@ -93,6 +96,7 @@ const getDecks = async (tournament) => {
       date: tournament.date,
       tournamentExPercent,
       wigglytuffPercent,
+      noTrainerPercent,
     };
   });
 };
@@ -103,6 +107,11 @@ const round = (num, places) => {
 };
 
 const downloadDecks = async () => {
+  const API_KEY = process.env.API_KEY;
+  if (!API_KEY) {
+    console.error("API_KEY not set");
+    return;
+  }
   const tournaments = await getTournaments();
   console.log("Downloaded tournaments");
   console.log(`${tournaments.length} to process`);
