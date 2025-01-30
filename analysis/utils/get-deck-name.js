@@ -1,6 +1,7 @@
 const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
+  "Lumineon A1a 21",
   "Lt. Surge A1 226",
   "Alakazam A1 117",
   "Golem A1a 45",
