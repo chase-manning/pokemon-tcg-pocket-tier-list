@@ -1,5 +1,7 @@
 # Today
 
+- Add card pairs
+
 # Sorted
 
 - Get search console working
