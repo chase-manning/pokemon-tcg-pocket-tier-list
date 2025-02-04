@@ -22,16 +22,39 @@ const DECK_NAMES = [
   "Machamp ex A1 146",
   "Gyarados A1 78",
   "Scolipede A1a 55",
+  "Magnezone A2 53",
+  "Infernape ex A2 29",
+  "Luxray A2 60",
+  "Rampardos A2 89",
+  "Bastiodon A2 114",
+  "Garchomp A2 123",
+  "Togekiss A2 65",
+  "Gallade ex A2 95",
+  // "Manaphy A2 50",
 
   // Cards that could be a side card or a main card
+  // Stage 1
+  "Weavile ex A2 99",
+  "Vaporeon A1a 19",
+  "Yanmega ex A2 7",
   "Weezing A1 177",
   "Starmie ex A1 76",
   "Arcanine ex A1 41",
   "Primeape A1a 42",
   "Exeggutor ex A1 23",
-  "Hitmonlee A1 154",
-  "Tauros A1a 60",
+  "Lucario A2 92",
   "Wigglytuff ex A1 195",
+  "Marowak A1 152",
+
+  // Basic
+  "Dialga ex A2 119",
+  "Pachirisu ex A2 61",
+  "Darkrai ex A2 110",
+  "Hitmonlee A1 154",
+  "Articuno ex A1 84",
+  "Palkia ex A2 49",
+  "Zapdos ex A1 104",
+  "Tauros A1a 60",
 ];
 const getDeckName = (deck) => {
   const { cards } = deck;
