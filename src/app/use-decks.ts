@@ -5,7 +5,7 @@ import { DEBUG, MIN_PERCENT_TO_QUALIFY } from "./config";
 import useMissing from "./use-missing";
 
 const CARDS_URL =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v2.json";
+  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v3.json";
 
 interface CardType {
   id: string;
@@ -41,7 +41,10 @@ const cardToId = (card: BestDecksCardType): string => {
   const a1 = card.set === "A1";
   const pa = card.set === "P-A";
   const a1a = card.set === "A1a";
-  const output = `${a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : ""}-${padded}`;
+  const a2 = card.set === "A2";
+  const output = `${
+    a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : a2 ? "a2" : ""
+  }-${padded}`;
   return output;
 };
 
