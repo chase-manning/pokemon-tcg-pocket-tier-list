@@ -7,7 +7,7 @@ import useMissing from "./use-missing";
 const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v3.json";
 
-interface CardType {
+export interface CardType {
   id: string;
   name: string;
   rarity: string;
