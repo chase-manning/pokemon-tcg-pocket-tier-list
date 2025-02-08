@@ -47,7 +47,7 @@ const RowContent = styled.div`
   flex: 1;
   padding: 1.5rem 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 
   @media (max-width: 900px) {
     display: grid;

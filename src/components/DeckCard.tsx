@@ -3,30 +3,44 @@ import { useNavigate } from "react-router-dom";
 import { CardType, FullDeckType } from "../app/use-decks";
 import { DEBUG, MIN_PERCENT_TO_QUALIFY } from "../app/config";
 
+const Container = styled.div`
+  position: relative;
+  height: 100%;
+
+  @media (max-width: 900px) {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+`;
+
 const StyledDeckCard = styled.button<{ $disabled: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
   border-radius: 1.2rem;
   color: var(--bg);
   height: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  position: relative;
   cursor: pointer;
-  position: relative;
 
   filter: ${(props) => (props.$disabled ? "grayscale(1)" : "none")};
   opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 `;
 
-const Container = styled.div<{ $full?: boolean; $right?: boolean }>`
+const SubCard = styled.div<{ $disabled: boolean }>`
   position: absolute;
-  top: ${(props) => (props.$right ? "50%" : "0")};
-  left: 0;
-  width: 100%;
-  height: ${(props) => (props.$full ? "100%" : "50%")};
+  bottom: -1rem;
+  right: -1rem;
+  border-radius: 0.6rem;
+  color: var(--bg);
+  height: 50%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: solid 1px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
+
+  filter: ${(props) => (props.$disabled ? "grayscale(1)" : "none")};
+  opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 `;
 
 const DeckImage = styled.img`
@@ -35,7 +49,6 @@ const DeckImage = styled.img`
   left: 50%;
   transform: translateX(-50%);
   height: 280%;
-  aspect-ratio: 1 / 1;
 `;
 
 const Percent = styled.div`
@@ -74,23 +87,27 @@ const DeckCard = ({ deck }: Props) => {
   };
 
   return (
-    <StyledDeckCard
-      onClick={() => navigate(`/deck/${deck.id}`)}
-      $disabled={!isAboveMin && DEBUG}
-    >
-      {cards.map((card, index) => {
-        return (
-          <Container
-            $full={cards.length === 1}
-            key={card.id}
-            $right={index === 1}
-          >
-            <DeckImage key={card.id} src={card.image} alt={deck.name} />
-          </Container>
-        );
-      })}
-      {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}
-    </StyledDeckCard>
+    <Container>
+      <StyledDeckCard
+        onClick={() => navigate(`/deck/${deck.id}`)}
+        $disabled={!isAboveMin && DEBUG}
+      >
+        <DeckImage key={cards[0].id} src={cards[0].image} alt={cards[0].name} />
+        {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}
+      </StyledDeckCard>
+      {cards.length > 1 && (
+        <SubCard
+          onClick={() => navigate(`/deck/${deck.id}`)}
+          $disabled={!isAboveMin && DEBUG}
+        >
+          <DeckImage
+            key={cards[1].id}
+            src={cards[1].image}
+            alt={cards[1].name}
+          />
+        </SubCard>
+      )}
+    </Container>
   );
 };
 
