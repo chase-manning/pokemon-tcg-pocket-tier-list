@@ -6,7 +6,7 @@ const DECK_NAMES = [
   ["Palkia ex A2 49", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Greninja A1 89"],
   ["Palkia ex A2 49", "Manaphy A2 50"],
-  ["Lucario A2 92", "Gliscor A2 84"],
+  ["Gliscor A2 84", "Lucario A2 92"],
   ["Darkrai ex A2 110", "Weavile ex A2 99"],
   ["Magnezone A2 53", "Hitmonlee A1 154"],
   ["Yanmega ex A2 7", "Exeggutor ex A1 23"],
@@ -41,8 +41,8 @@ const DECK_NAMES = [
   ["Magnezone A2 53", "Palkia ex A2 49"],
   ["Aerodactyl ex A1a 46", "Lucario A2 92"],
   ["Aerodactyl ex A1a 46", "Hitmonlee A1 154"],
-  ["Mewtwo ex A1 129", "Togekiss A2 65"],
-  ["Wigglytuff ex A1 195", "Yanmega ex A2 7"],
+  ["Togekiss A2 65", "Mewtwo ex A1 129"],
+  ["Yanmega ex A2 7", "Wigglytuff ex A1 195"],
   ["Starmie ex A1 76", "Vaporeon A1a 19"],
   ["Weezing A1 177", "Arbok A1 165"],
   ["Pikachu ex A1 96", "Raichu A1 95"],
@@ -56,6 +56,7 @@ const DECK_NAMES = [
   ["Kangaskhan A1 203", "Greninja A1 89"],
   ["Kingler A1 69", "Seaking A1 73"],
   ["Lickilicky ex A2 125", "Greninja A1 89"],
+  ["Darkrai ex A2 110", "Druddigon A1a 56"],
 
   // Main Card (never side card)
   "Charizard ex A1 36",
