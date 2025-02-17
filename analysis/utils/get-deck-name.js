@@ -57,6 +57,7 @@ const DECK_NAMES = [
   ["Kingler A1 69", "Seaking A1 73"],
   ["Lickilicky ex A2 125", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Druddigon A1a 56"],
+  ["Wormadam A2 115", "Skarmory A2 111"],
 
   // Main Card (never side card)
   "Charizard ex A1 36",
@@ -80,6 +81,7 @@ const DECK_NAMES = [
   "Garchomp A2 123",
   "Togekiss A2 65",
   "Scolipede A1a 55",
+  "Rhyperior A2 82",
 
   // Stage 1 (can be side card)
   "Melmetal A1 182",
@@ -95,6 +97,8 @@ const DECK_NAMES = [
   "Lucario A2 92",
   "Wigglytuff ex A1 195",
   "Marowak A1 152",
+  "Mismagius ex A2 67",
+  "Golduck A1 58",
 
   // Basic ex (can be side card)
   "Pachirisu ex A2 61",
@@ -102,6 +106,7 @@ const DECK_NAMES = [
   "Articuno ex A1 84",
   "Dialga ex A2 119",
   "Zapdos ex A1 104",
+  "Palkia ex A2 49",
 
   // Basic (can be side card)
   "Lt. Surge A1 226",
