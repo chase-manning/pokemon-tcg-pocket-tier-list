@@ -11,7 +11,7 @@ const POPULARITY_IMPORTANCE = 0.3;
 const OLD_MULTIPLIER = 1;
 const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
-const RED_CARD_MULTIPLIER = 0.8;
+const RED_CARD_MULTIPLIER = 0.9;
 const EXPANSION_RELEASE_DATE = new Date("2025-1-31");
 
 // Global Variables
