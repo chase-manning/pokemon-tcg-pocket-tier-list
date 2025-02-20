@@ -72,7 +72,7 @@ const useDecks = (old = false): FullDeckType[] | null => {
   const uniqueMissing = [...new Set(missing)];
   console.log(missing);
 
-  return uniqueDeckNames
+  const bestDecks = uniqueDeckNames
     .map((name) => {
       const matchingDecks = decks
         .filter((deck) => deck.name === name)
@@ -128,10 +128,26 @@ const useDecks = (old = false): FullDeckType[] | null => {
       return deck;
     })
     .filter((deck) => {
-      if (missing.length > 0) return true;
       const isAboveMin = deck.percentOfGames > MIN_PERCENT_TO_QUALIFY;
       return DEBUG || isAboveMin;
     });
+
+  // Excluding the decks at the bottom that don't have a double
+  let includedDecks = [];
+  let hasOneDouble = false;
+  for (let i = bestDecks.length - 1; i >= 0; i--) {
+    const deck = bestDecks[i];
+    if (!hasOneDouble) {
+      if (!deck.name.includes("&")) {
+        continue;
+      } else {
+        hasOneDouble = true;
+      }
+    }
+    includedDecks.push(deck);
+  }
+
+  return includedDecks.sort((a, b) => a.place - b.place);
 };
 
 export default useDecks;
