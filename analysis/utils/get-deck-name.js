@@ -58,6 +58,13 @@ const DECK_NAMES = [
   ["Lickilicky ex A2 125", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Druddigon A1a 56"],
   ["Wormadam A2 115", "Skarmory A2 111"],
+  ["Magnezone A2 53", "Empoleon A2 37"],
+  ["Gallade ex A2 95", "Rampardos A2 89"],
+  ["Magnezone A2 53", "Togekiss A2 65"],
+  ["Rampardos A2 89", "Hitmonlee A1 154"],
+  ["Magnezone A2 53", "Golem A1a 45"],
+  ["Garchomp A2 123", "Kabutops A1 159"],
+  ["Garchomp A2 123", "Hitmonlee A1 154"],
 
   // Main Card (never side card)
   "Charizard ex A1 36",
