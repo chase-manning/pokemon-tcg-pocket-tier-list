@@ -2,13 +2,13 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   // Doubles
-  ["Magnezone A2 53", "Darkrai ex A2 110"],
+  ["Darkrai ex A2 110", "Magnezone A2 53"],
   ["Palkia ex A2 49", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Greninja A1 89"],
   ["Palkia ex A2 49", "Manaphy A2 50"],
   ["Gliscor A2 84", "Lucario A2 92"],
   ["Darkrai ex A2 110", "Weavile ex A2 99"],
-  ["Magnezone A2 53", "Hitmonlee A1 154"],
+  ["Hitmonlee A1 154", "Magnezone A2 53"],
   ["Yanmega ex A2 7", "Exeggutor ex A1 23"],
   ["Mew ex A1a 32", "Greninja A1 89"],
   ["Gyarados ex A1a 18", "Greninja A1 89"],
@@ -18,11 +18,11 @@ const DECK_NAMES = [
   ["Darkrai ex A2 110", "Weezing A1 177"],
   ["Celebi ex A1a 3", "Exeggutor ex A1 23"],
   ["Mewtwo ex A1 129", "Gardevoir A1 132"],
-  ["Magnezone A2 53", "Skarmory A2 111"],
+  ["Skarmory A2 111", "Magnezone A2 53"],
   ["Lucario A2 92", "Primeape A1a 42"],
   ["Starmie ex A1 76", "Articuno ex A1 84"],
-  ["Magnezone A2 53", "Dialga ex A2 119"],
-  ["Magnezone A2 53", "Articuno ex A1 84"],
+  ["Dialga ex A2 119", "Magnezone A2 53"],
+  ["Articuno ex A1 84", "Magnezone A2 53"],
   ["Aerodactyl ex A1a 46", "Primeape A1a 42"],
   ["Lucario A2 92", "Primeape A1 142"],
   ["Vaporeon A1a 19", "Articuno ex A1 84"],
@@ -36,9 +36,9 @@ const DECK_NAMES = [
   ["Pikachu ex A1 96", "Pachirisu ex A2 61"],
   ["Pikachu ex A1 96", "Zapdos ex A1 104"],
   ["Gallade ex A2 95", "Lucario A2 92"],
-  ["Magnezone A2 53", "Starmie ex A1 76"],
+  ["Starmie ex A1 76", "Magnezone A2 53"],
   ["Melmetal A1 182", "Dialga ex A2 119"],
-  ["Magnezone A2 53", "Palkia ex A2 49"],
+  ["Palkia ex A2 49", "Magnezone A2 53"],
   ["Aerodactyl ex A1a 46", "Lucario A2 92"],
   ["Aerodactyl ex A1a 46", "Hitmonlee A1 154"],
   ["Togekiss A2 65", "Mewtwo ex A1 129"],
@@ -58,11 +58,11 @@ const DECK_NAMES = [
   ["Lickilicky ex A2 125", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Druddigon A1a 56"],
   ["Wormadam A2 115", "Skarmory A2 111"],
-  ["Magnezone A2 53", "Empoleon A2 37"],
+  ["Empoleon A2 37", "Magnezone A2 53"],
   ["Gallade ex A2 95", "Rampardos A2 89"],
-  ["Magnezone A2 53", "Togekiss A2 65"],
+  ["Togekiss A2 65", "Magnezone A2 53"],
   ["Rampardos A2 89", "Hitmonlee A1 154"],
-  ["Magnezone A2 53", "Golem A1a 45"],
+  ["Golem A1a 45", "Magnezone A2 53"],
   ["Garchomp A2 123", "Kabutops A1 159"],
   ["Garchomp A2 123", "Hitmonlee A1 154"],
 
@@ -172,7 +172,7 @@ const getDeckName = (deck) => {
     });
     if (hasAll) return formatName(cards, match);
   }
-  return null;
+  // return null;
 
   return "Professor's Research-PA-007";
 };
