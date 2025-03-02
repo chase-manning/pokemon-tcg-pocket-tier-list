@@ -2,6 +2,26 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   // Doubles
+  ["Bronzong A2a 59", "Magnezone A2 53"],
+  ["Bronzong A2a 59", "Skarmory A2 111"],
+  ["Abomasnow A2a 21", "Arceus ex A2a 71"],
+  ["Probopass ex A2a 57", "Dialga ex A2 119"],
+  ["Glaceon ex A2a 22", "Manaphy A2 50"],
+  ["Leafeon ex A2a 10", "Yanmega ex A2 7"],
+  ["Arceus ex A2a 71", "Dialga ex A2 119"],
+  ["Crobat A2a 50", "Arceus ex A2a 71"],
+  ["Lapras ex P-A 14", "Greninja A1 89"],
+  ["Leafeon ex A2a 10", "Celebi ex A1a 3"],
+  ["Scolipede A1a 55", "Weezing A1 177"],
+  ["Articuno ex A1 84", "Greninja A1 89"],
+  ["Hitmonlee A1 154", "Greninja A1 89"],
+  ["Blastoise ex A1 56", "Weezing A1 177"],
+  ["Marowak ex A1 153", "Magnezone A2 53"],
+  ["Starmie ex A1 76", "Greninja A1 89"],
+  ["Pikachu ex A1 96", "Electrode A1 100"],
+  ["Marowak ex A1 153", "Primeape A1a 42"],
+  ["Venusaur ex A1 4", "Exeggutor ex A1 23"],
+  ["Alakazam A1 117", "Weezing A1 177"],
   ["Darkrai ex A2 110", "Magnezone A2 53"],
   ["Palkia ex A2 49", "Greninja A1 89"],
   ["Darkrai ex A2 110", "Greninja A1 89"],
@@ -67,6 +87,8 @@ const DECK_NAMES = [
   ["Garchomp A2 123", "Hitmonlee A1 154"],
 
   // Main Card (never side card)
+  "Bronzong A2a 59",
+  "Garchomp ex A2a 47",
   "Charizard ex A1 36",
   "Infernape ex A2 29",
   "Pikachu ex A1 96",
@@ -91,6 +113,10 @@ const DECK_NAMES = [
   "Rhyperior A2 82",
 
   // Stage 1 (can be side card)
+  "Abomasnow A2a 21",
+  "Probopass ex A2a 57",
+  "Leafeon ex A2a 10",
+  "Glaceon ex A2a 22",
   "Melmetal A1 182",
   "Starmie ex A1 76",
   "Marowak ex A1 153",
@@ -106,6 +132,7 @@ const DECK_NAMES = [
   "Marowak A1 152",
   "Mismagius ex A2 67",
   "Golduck A1 58",
+  "Golduck A1 58",
 
   // Basic ex (can be side card)
   "Pachirisu ex A2 61",
@@ -114,6 +141,7 @@ const DECK_NAMES = [
   "Dialga ex A2 119",
   "Zapdos ex A1 104",
   "Palkia ex A2 49",
+  "Arceus ex A2a 71",
 
   // Basic (can be side card)
   "Lt. Surge A1 226",
@@ -172,7 +200,7 @@ const getDeckName = (deck) => {
     });
     if (hasAll) return formatName(cards, match);
   }
-  // return null;
+  return null;
 
   return "Professor's Research-PA-007";
 };
