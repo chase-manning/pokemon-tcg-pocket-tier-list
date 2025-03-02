@@ -42,8 +42,9 @@ const cardToId = (card: BestDecksCardType): string => {
   const pa = card.set === "P-A";
   const a1a = card.set === "A1a";
   const a2 = card.set === "A2";
+  const a2a = card.set === "A2a";
   const output = `${
-    a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : a2 ? "a2" : ""
+    a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : a2 ? "a2" : a2a ? "a2a" : ""
   }-${padded}`;
   return output;
 };
