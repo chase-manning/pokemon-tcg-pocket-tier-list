@@ -2,6 +2,13 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   // Doubles
+  ["Kabutops A1 159", "Primeape A1 142"],
+  ["Garchomp ex A2a 47", "Lucario A2 92"],
+  ["Garchomp ex A2a 47", "Aerodactyl ex A1a 46"],
+  ["Heatran A2a 13", "Magnezone A2 53"],
+  ["Arceus ex A2a 71", "Magnezone A2 53"],
+  ["Arceus ex A2a 71", "Greninja A1 89"],
+  ["Infernape ex A2 29", "Heatran A2a 13"],
   ["Bronzong A2a 59", "Magnezone A2 53"],
   ["Bronzong A2a 59", "Skarmory A2 111"],
   ["Abomasnow A2a 21", "Arceus ex A2a 71"],
@@ -9,6 +16,8 @@ const DECK_NAMES = [
   ["Glaceon ex A2a 22", "Manaphy A2 50"],
   ["Leafeon ex A2a 10", "Yanmega ex A2 7"],
   ["Arceus ex A2a 71", "Dialga ex A2 119"],
+  ["Dialga ex A2 119", "Shaymin A2 22"],
+  ["Crobat A2a 50", "Darkrai ex A2 110"],
   ["Crobat A2a 50", "Arceus ex A2a 71"],
   ["Lapras ex P-A 14", "Greninja A1 89"],
   ["Leafeon ex A2a 10", "Celebi ex A1a 3"],
@@ -35,6 +44,7 @@ const DECK_NAMES = [
   ["Yanmega ex A2 7", "Dialga ex A2 119"],
   ["Celebi ex A1a 3", "Serperior A1a 6"],
   ["Rampardos A2 89", "Lucario A2 92"],
+  ["Rampardos A2 89", "Aerodactyl ex A1a 46"],
   ["Darkrai ex A2 110", "Weezing A1 177"],
   ["Celebi ex A1a 3", "Exeggutor ex A1 23"],
   ["Mewtwo ex A1 129", "Gardevoir A1 132"],
@@ -56,6 +66,7 @@ const DECK_NAMES = [
   ["Pikachu ex A1 96", "Pachirisu ex A2 61"],
   ["Pikachu ex A1 96", "Zapdos ex A1 104"],
   ["Gallade ex A2 95", "Lucario A2 92"],
+  ["Gallade ex A2 95", "Hitmonlee A1 154"],
   ["Starmie ex A1 76", "Magnezone A2 53"],
   ["Melmetal A1 182", "Dialga ex A2 119"],
   ["Palkia ex A2 49", "Magnezone A2 53"],
@@ -85,6 +96,8 @@ const DECK_NAMES = [
   ["Golem A1a 45", "Magnezone A2 53"],
   ["Garchomp A2 123", "Kabutops A1 159"],
   ["Garchomp A2 123", "Hitmonlee A1 154"],
+  ["Kangaskhan A1 203", "Magnezone A2 53"],
+  ["Heatran A2a 13", "Arceus ex A2a 71"],
 
   // Main Card (never side card)
   "Bronzong A2a 59",
