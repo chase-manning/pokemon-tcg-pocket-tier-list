@@ -2,6 +2,7 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   // Doubles
+  ["Leafeon ex A2a 10", "Irida A2a 72"],
   ["Kabutops A1 159", "Primeape A1 142"],
   ["Garchomp ex A2a 47", "Lucario A2 92"],
   ["Garchomp ex A2a 47", "Aerodactyl ex A1a 46"],
