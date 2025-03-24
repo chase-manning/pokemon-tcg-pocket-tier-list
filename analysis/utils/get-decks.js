@@ -36,9 +36,10 @@ const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
   );
   console.log("Sample Games:", (totalGames / 2).toLocaleString());
 
-  const dates = decksWithNames.map((deck) => new Date(deck.date));
-  const oldestDate = new Date(Math.min(...dates));
-  const newestDate = new Date(Math.max(...dates));
+  let dates = decksWithNames.map((deck) => new Date(deck.date));
+  dates = dates.filter((date, index) => dates.indexOf(date) === index);
+  const oldestDate = dates.reduce((acc, date) => (date < acc ? date : acc));
+  const newestDate = dates.reduce((acc, date) => (date > acc ? date : acc));
 
   return decksWithNames.map((deck) => {
     const multiplier = getMultiplier(
