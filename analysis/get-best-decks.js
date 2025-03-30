@@ -12,7 +12,7 @@ const OLD_MULTIPLIER = 1;
 const NEW_MULTIPLIER = 3;
 const CARDS_IN_DECK = 20;
 const RED_CARD_MULTIPLIER = 0.9;
-const EXPANSION_RELEASE_DATE = new Date("2025-2-28");
+const EXPANSION_RELEASE_DATE = new Date("2025-3-27");
 
 // Global Variables
 const decks = getDecks(
