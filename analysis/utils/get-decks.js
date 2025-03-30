@@ -41,7 +41,7 @@ const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
   const oldestDate = dates.reduce((acc, date) => (date < acc ? date : acc));
   const newestDate = dates.reduce((acc, date) => (date > acc ? date : acc));
 
-  return decksWithNames.map((deck) => {
+  let output = decksWithNames.map((deck) => {
     const multiplier = getMultiplier(
       deck,
       oldestDate,
@@ -54,6 +54,24 @@ const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
       ...deck,
       totalGames: deck.totalGames * multiplier,
       wins: deck.wins * multiplier,
+    };
+  });
+
+  // Fixing issue with double Poke Balls
+  return output.map((deck) => {
+    const cards = deck.cards.map((card) => {
+      if (card.name === "Poké Ball" && card.number === "111") {
+        return {
+          ...card,
+          set: "P-A",
+          number: "5",
+        };
+      }
+      return card;
+    });
+    return {
+      ...deck,
+      cards,
     };
   });
 };
