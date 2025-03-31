@@ -5,7 +5,7 @@ import { DEBUG, MIN_PERCENT_TO_QUALIFY } from "./config";
 import useMissing from "./use-missing";
 
 const CARDS_URL =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v3.json";
+  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v4.json";
 
 export interface CardType {
   id: string;
@@ -35,17 +35,20 @@ interface BestDecksCardType {
   number: string;
 }
 
+const setCode = (set: string): string => {
+  if (set === "A1") return "a1";
+  if (set === "A1a") return "a1a";
+  if (set === "A2") return "a2";
+  if (set === "A2a") return "a2a";
+  if (set === "A2b") return "a2b";
+  if (set === "P-A") return "pa";
+  throw new Error(`Unknown set code: ${set}`);
+};
+
 const cardToId = (card: BestDecksCardType): string => {
   const id = card.number;
   const padded = id.padStart(3, "0");
-  const a1 = card.set === "A1";
-  const pa = card.set === "P-A";
-  const a1a = card.set === "A1a";
-  const a2 = card.set === "A2";
-  const a2a = card.set === "A2a";
-  const output = `${
-    a1 ? "a1" : a1a ? "a1a" : pa ? "pa" : a2 ? "a2" : a2a ? "a2a" : ""
-  }-${padded}`;
+  const output = `${setCode(card.set)}-${padded}`;
   return output;
 };
 
