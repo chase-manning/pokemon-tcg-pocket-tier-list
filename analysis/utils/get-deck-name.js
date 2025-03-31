@@ -2,6 +2,7 @@ const cardToString = require("./card-to-string");
 
 const DECK_NAMES = [
   // Doubles
+  ["Giratina ex A2b 35", "Darkrai ex A2 110"],
   ["Leafeon ex A2a 10", "Irida A2a 72"],
   ["Kabutops A1 159", "Primeape A1 142"],
   ["Garchomp ex A2a 47", "Lucario A2 92"],
@@ -27,6 +28,7 @@ const DECK_NAMES = [
   ["Articuno ex A1 84", "Greninja A1 89"],
   ["Hitmonlee A1 154", "Greninja A1 89"],
   ["Blastoise ex A1 56", "Weezing A1 177"],
+  ["Blastoise ex A1 56", "Manaphy A2 50"],
   ["Marowak ex A1 153", "Magnezone A2 53"],
   ["Starmie ex A1 76", "Greninja A1 89"],
   ["Pikachu ex A1 96", "Electrode A1 100"],
@@ -101,6 +103,20 @@ const DECK_NAMES = [
   ["Garchomp A2 123", "Hitmonlee A1 154"],
   ["Kangaskhan A1 203", "Magnezone A2 53"],
   ["Heatran A2a 13", "Arceus ex A2a 71"],
+  ["Charizard ex A2b 10", "Moltres ex A1 47"],
+  ["Giratina ex A2b 35", "Mewtwo ex A1 129"],
+  ["Meowscarada A2b 7", "Carnivine A2a 9"],
+  ["Meowscarada A2b 7", "Exeggutor ex A1 23"],
+  ["Paldean Clodsire ex A2b 48", "Grafaiai A2b 51"],
+  ["Beedrill ex A2b 3", "Exeggutor ex A1 23"],
+  ["Wugtrio ex A2b 19", "Greninja A1 89"],
+  ["Wugtrio ex A2b 19", "Manaphy A2 50"],
+  ["Gholdengo A2b 57", "Dialga ex A2 119"],
+  ["Mesprit A2 76", "Uxie A2 75"],
+  ["Mesprit A2 76", "Uxie A2 75"],
+  ["Giratina ex A2b 35", "Dawn A2 154"],
+  ["Giratina ex A2b 35", "Red A2b 71"],
+  ["Gallade ex A2 95", "Sudowoodo A2a 36"],
 
   // Main Card (never side card)
   "Bronzong A2a 59",
@@ -127,6 +143,9 @@ const DECK_NAMES = [
   "Togekiss A2 65",
   "Scolipede A1a 55",
   "Rhyperior A2 82",
+  "Beedrill ex A2b 3",
+  "Meowscarada A2b 7",
+  "Charizard ex A2b 10",
 
   // Stage 1 (can be side card)
   "Abomasnow A2a 21",
@@ -149,6 +168,13 @@ const DECK_NAMES = [
   "Mismagius ex A2 67",
   "Golduck A1 58",
   "Golduck A1 58",
+  "Wugtrio ex A2b 19",
+  "Lucario ex A2b 43",
+  "Paldean Clodsire ex A2b 48",
+  "Tinkaton ex A2b 54",
+  "Gholdengo A2b 57",
+  "Wigglytuff A2b 61",
+  "Grafaiai A2b 51",
 
   // Basic ex (can be side card)
   "Pachirisu ex A2 61",
@@ -158,6 +184,8 @@ const DECK_NAMES = [
   "Zapdos ex A1 104",
   "Palkia ex A2 49",
   "Arceus ex A2a 71",
+  "Pikachu ex A2b 22",
+  "Giratina ex A2b 35",
 
   // Basic (can be side card)
   "Lt. Surge A1 226",
