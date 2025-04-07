@@ -117,6 +117,14 @@ const DECK_NAMES = [
   ["Giratina ex A2b 35", "Dawn A2 154"],
   ["Giratina ex A2b 35", "Red A2b 71"],
   ["Gallade ex A2 95", "Sudowoodo A2a 36"],
+  ["Honchkrow A2 97", "Greninja A1 89"],
+  ["Meowscarada A2b 7", "Magnezone A2 53"],
+  ["Tinkaton ex A2b 54", "Skarmory A2 111"],
+  ["Dragonite A1 185", "Giratina ex A2b 35"],
+  ["Exeggutor A1 22", "Carnivine A2a 9"],
+  ["Rampardos A2 89", "Pidgeot ex A1a 59"],
+  ["Lucario A2 92", "Sudowoodo A2a 36"],
+  ["Rotom A2a 35", "Carnivine A2a 9"],
 
   // Main Card (never side card)
   "Bronzong A2a 59",
