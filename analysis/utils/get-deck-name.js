@@ -125,6 +125,11 @@ const DECK_NAMES = [
   ["Rampardos A2 89", "Pidgeot ex A1a 59"],
   ["Lucario A2 92", "Sudowoodo A2a 36"],
   ["Rotom A2a 35", "Carnivine A2a 9"],
+  ["Arcanine ex A1 41", "Moltres ex A1 47"],
+  ["Wugtrio ex A2b 19", "Starmie ex A1 76"],
+  ["Marowak ex A1 153", "Aerodactyl ex A1a 46"],
+  ["Rampardos A2 89", "Magnezone A2 53"],
+  ["Lucario A2 92", "Marshadow A1a 47"],
 
   // Main Card (never side card)
   "Bronzong A2a 59",

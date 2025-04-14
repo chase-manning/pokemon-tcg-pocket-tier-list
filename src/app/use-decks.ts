@@ -136,6 +136,8 @@ const useDecks = (old = false): FullDeckType[] | null => {
       return DEBUG || isAboveMin;
     });
 
+  // return bestDecks;
+
   // Excluding the decks at the bottom that don't have a double
   let includedDecks = [];
   let hasOneDouble = false;
