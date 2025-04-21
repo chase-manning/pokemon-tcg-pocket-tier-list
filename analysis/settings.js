@@ -1,0 +1,12 @@
+export const NOEX = false;
+export const WINRATE_IMPORTANCE = 0.6;
+export const POPULARITY_IMPORTANCE = 1 - WINRATE_IMPORTANCE;
+export const OLD_MULTIPLIER = 1;
+export const NEW_MULTIPLIER = 3;
+export const CARDS_IN_DECK = 20;
+export const RED_CARD_MULTIPLIER = 0.9;
+export const EXPANSION_RELEASE_DATE = new Date("2025-03-27");
+export const POST_EXPANSION_PERCENT = 0.95;
+export const NOEX_PERCENT_CUTOFF = 0.2;
+export const WIGGLYTUFF_PERCENT_CUTOFF = 0.1;
+export const NO_TRAINER_PERCENT_CUTOFF = 0.1;

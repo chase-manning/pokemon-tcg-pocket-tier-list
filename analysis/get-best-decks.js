@@ -3,24 +3,15 @@ const cardToString = require("./utils/card-to-string");
 const getEligibleDecks = require("./utils/get-eligible-decks");
 const getDecks = require("./utils/get-decks");
 const getId = require("./utils/get-id");
-
-// Settings
-const NOEX = false;
-const WINRATE_IMPORTANCE = 0.7;
-const POPULARITY_IMPORTANCE = 0.3;
-const OLD_MULTIPLIER = 1;
-const NEW_MULTIPLIER = 3;
-const CARDS_IN_DECK = 20;
-const RED_CARD_MULTIPLIER = 0.9;
-const EXPANSION_RELEASE_DATE = new Date("2025-3-27");
+const {
+  WINRATE_IMPORTANCE,
+  POPULARITY_IMPORTANCE,
+  CARDS_IN_DECK,
+  RED_CARD_MULTIPLIER,
+} = require("./settings");
 
 // Global Variables
-const decks = getDecks(
-  NOEX,
-  OLD_MULTIPLIER,
-  NEW_MULTIPLIER,
-  EXPANSION_RELEASE_DATE
-);
+const decks = getDecks();
 const allGames = decks.reduce((acc, deck) => acc + deck.totalGames, 0);
 const uniqueDeckNames = decks
   .map((deck) => deck.name)

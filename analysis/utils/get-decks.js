@@ -2,20 +2,25 @@ const fs = require("fs");
 const getDeckName = require("./get-deck-name");
 const getMultiplier = require("./get-multiplier");
 
-const NOEX_PERCENT_CUTOFF = 0.2;
-const WIGGLYTUFF_PERCENT_CUTOFF = 0.1;
-const NO_TRAINER_PERCENT_CUTOFF = 0.1;
+const {
+  NOEX,
+  EXPANSION_RELEASE_DATE,
+  POST_EXPANSION_PERCENT,
+  NOEX_PERCENT_CUTOFF,
+  WIGGLYTUFF_PERCENT_CUTOFF,
+  NO_TRAINER_PERCENT_CUTOFF,
+} = require("../settings");
 
-const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
+const getDecks = () => {
   const decksWithoutNames_ = JSON.parse(fs.readFileSync("./data/decks.json"));
 
   const decksWithoutNames = decksWithoutNames_
     .filter(
-      (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !noEx
+      (deck) => !deck.cards.some((card) => card.name.endsWith(" ex")) || !NOEX
     )
     .filter((deck) => {
       const isNoEx = deck.tournamentExPercent < NOEX_PERCENT_CUTOFF;
-      return isNoEx === noEx;
+      return isNoEx === NOEX;
     })
     .filter((deck) => deck.wigglytuffPercent < WIGGLYTUFF_PERCENT_CUTOFF)
     .filter((deck) => deck.noTrainerPercent < NO_TRAINER_PERCENT_CUTOFF);
@@ -38,17 +43,28 @@ const getDecks = (noEx, oldMultiplier, newMultiplier, expansionReleaseDate) => {
 
   let dates = decksWithNames.map((deck) => new Date(deck.date));
   dates = dates.filter((date, index) => dates.indexOf(date) === index);
-  const oldestDate = dates.reduce((acc, date) => (date < acc ? date : acc));
   const newestDate = dates.reduce((acc, date) => (date > acc ? date : acc));
+  const totalDeckCount = decksWithNames.length;
+  const deckCountBeforeExpansion = decksWithNames.filter(
+    (deck) => new Date(deck.date) < EXPANSION_RELEASE_DATE
+  ).length;
+  const deckCountAfterExpansion = decksWithNames.filter(
+    (deck) => new Date(deck.date) >= EXPANSION_RELEASE_DATE
+  ).length;
+  const targetDeckCountAfterExpansion = totalDeckCount * POST_EXPANSION_PERCENT;
+  const targetDeckCountBeforeExpansion =
+    totalDeckCount * (1 - POST_EXPANSION_PERCENT);
+  const beforeExpansionMul =
+    targetDeckCountBeforeExpansion / deckCountBeforeExpansion;
+  const afterExpansionMul =
+    targetDeckCountAfterExpansion / deckCountAfterExpansion;
 
   let output = decksWithNames.map((deck) => {
     const multiplier = getMultiplier(
       deck,
-      oldestDate,
       newestDate,
-      oldMultiplier,
-      newMultiplier,
-      expansionReleaseDate
+      beforeExpansionMul,
+      afterExpansionMul
     );
     return {
       ...deck,

@@ -1,23 +1,27 @@
+const {
+  OLD_MULTIPLIER,
+  NEW_MULTIPLIER,
+  EXPANSION_RELEASE_DATE,
+} = require("../settings");
+
+const getRecencyMultiplier = (game, newestDate) => {
+  const deckDate = new Date(game.date);
+  const timePassed = deckDate - EXPANSION_RELEASE_DATE;
+  const totalTime = newestDate - EXPANSION_RELEASE_DATE;
+  const datePercentage = timePassed / totalTime;
+  return datePercentage * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
+};
+
 const getMultiplier = (
   game,
-  oldestDate,
   newestDate,
-  oldMultiplier,
-  newMultiplier,
-  expansionReleaseDate
+  beforeExpansionMul,
+  afterExpansionMul
 ) => {
   const deckDate = new Date(game.date);
-  const isAfterExpansion = deckDate > expansionReleaseDate;
-  const datePercentage = (deckDate - oldestDate) / (newestDate - oldestDate);
-  const recencyMultiplier =
-    datePercentage * (newMultiplier - oldMultiplier) + oldMultiplier;
-  const timeUntilExpansion = expansionReleaseDate - oldestDate;
-  const timeSinceExpansion = newestDate - expansionReleaseDate;
-  const newExpansionMultiplier = (timeUntilExpansion / timeSinceExpansion) * 4;
-  const isAfterExpansionMultiplier = isAfterExpansion
-    ? newExpansionMultiplier
-    : 1;
-  return recencyMultiplier * isAfterExpansionMultiplier;
+  const isAfterExpansion = deckDate > EXPANSION_RELEASE_DATE;
+  if (!isAfterExpansion) return beforeExpansionMul;
+  return getRecencyMultiplier(game, newestDate) * afterExpansionMul;
 };
 
 module.exports = getMultiplier;
