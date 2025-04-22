@@ -116,7 +116,6 @@ const DECK_NAMES = [
   ["Mesprit A2 76", "Uxie A2 75"],
   ["Mesprit A2 76", "Uxie A2 75"],
   ["Giratina ex A2b 35", "Dawn A2 154"],
-  ["Giratina ex A2b 35", "Red A2b 71"],
   ["Gallade ex A2 95", "Sudowoodo A2a 36"],
   ["Honchkrow A2 97", "Greninja A1 89"],
   ["Meowscarada A2b 7", "Magnezone A2 53"],
