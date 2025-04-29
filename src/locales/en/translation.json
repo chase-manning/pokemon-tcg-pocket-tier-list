@@ -1,0 +1,38 @@
+{
+  "infoModal": {
+    "title": "About Pokemon TCG Pocket Deck Tier List",
+    "whatIsThis": {
+      "title": "What is this website?",
+      "description": "This website shows the current best decks for the Pokemon TCG Pocket game based on tournament performance data from {{limitlessLink}}. The tier list is updated regularly to reflect the latest meta."
+    },
+    "howToUse": {
+      "title": "How to use this website",
+      "features": {
+        "deckLists": {
+          "title": "View Deck Lists",
+          "description": "Click on any deck in the tier list to view its complete card list."
+        },
+        "missingCards": {
+          "title": "Missing Cards Feature",
+          "description": "When viewing a deck list, you can click on cards you don't have. The website will then show you the next best deck that you can make without those cards."
+        },
+        "dynamicTierList": {
+          "title": "Dynamic Tier List",
+          "description": "As you mark cards as missing, the tier list will update to reflect the new ratings based on the cards you have available."
+        }
+      }
+    },
+    "dataSources": {
+      "title": "Data Sources",
+      "intro": "This project uses two main data sources:",
+      "sources": {
+        "tournament": "Tournament data from {{limitlessLink}}, a leading platform for Pokemon TCG tournaments.",
+        "cards": "Card data from {{cardsRepoLink}}, an open-source repository that provides comprehensive card information."
+      }
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "This website is open source. You can find the source code on {{githubLink}}. Contributions are welcome!"
+    }
+  }
+}
