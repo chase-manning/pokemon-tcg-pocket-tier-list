@@ -65,6 +65,18 @@ We welcome contributions to improve this project! Here's how you can help:
 - Keep commits focused and atomic
 - Provide clear descriptions in pull requests
 
+## Translations
+
+This project supports multiple languages to make it accessible to Pokemon TCG players worldwide. The translation system uses JSON files to manage localized content, making it easy to add new languages or update existing translations.
+
+If you'd like to contribute a new language translation:
+
+1. Check the `locales` directory for existing translations
+2. Create a new JSON file for your language following the existing format
+3. Submit a Pull Request with your translation
+
+We welcome translations for any language! If you spot any errors in existing translations or want to add a new language, feel free to raise a PR.
+
 ## Data Sources
 
 This project uses two main data sources:
