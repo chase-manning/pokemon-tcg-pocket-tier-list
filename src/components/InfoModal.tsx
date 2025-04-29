@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation, Trans } from "react-i18next";
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -103,93 +104,106 @@ const Section = styled.div`
 `;
 
 const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
   if (!isOpen) return null;
+
+  const limitlessLink = (
+    <Link
+      href="https://limitlesstcg.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Limitless Tournaments
+    </Link>
+  );
+
+  const cardsRepoLink = (
+    <Link
+      href="https://github.com/chase-manning/pokemon-tcg-pocket-cards"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      pokemon-tcg-pocket-cards
+    </Link>
+  );
+
+  const githubLink = (
+    <Link
+      href="https://github.com/chase-manning/pokemon-tcg-pocket-tier-list"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </Link>
+  );
 
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>×</CloseButton>
-        <Title>About Pokemon TCG Pocket Deck Tier List</Title>
+        <Title>{t("infoModal.title")}</Title>
 
         <Section>
-          <SectionHeading>What is this website?</SectionHeading>
+          <SectionHeading>{t("infoModal.whatIsThis.title")}</SectionHeading>
           <Paragraph>
-            This website shows the current best decks for the Pokemon TCG Pocket
-            game based on tournament performance data from{" "}
-            <Link
-              href="https://limitlesstcg.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Limitless Tournaments
-            </Link>
-            . The tier list is updated regularly to reflect the latest meta.
+            <Trans
+              i18nKey="infoModal.whatIsThis.description"
+              components={{ limitlessLink }}
+            />
           </Paragraph>
         </Section>
 
         <Section>
-          <SectionHeading>How to use this website</SectionHeading>
+          <SectionHeading>{t("infoModal.howToUse.title")}</SectionHeading>
           <List>
             <ListItem>
-              <StrongText>View Deck Lists:</StrongText> Click on any deck in the
-              tier list to view its complete card list.
+              <StrongText>
+                {t("infoModal.howToUse.features.deckLists.title")}:
+              </StrongText>{" "}
+              {t("infoModal.howToUse.features.deckLists.description")}
             </ListItem>
             <ListItem>
-              <StrongText>Missing Cards Feature:</StrongText> When viewing a
-              deck list, you can click on cards you don't have. The website will
-              then show you the next best deck that you can make without those
-              cards.
+              <StrongText>
+                {t("infoModal.howToUse.features.missingCards.title")}:
+              </StrongText>{" "}
+              {t("infoModal.howToUse.features.missingCards.description")}
             </ListItem>
             <ListItem>
-              <StrongText>Dynamic Tier List:</StrongText> As you mark cards as
-              missing, the tier list will update to reflect the new ratings
-              based on the cards you have available.
+              <StrongText>
+                {t("infoModal.howToUse.features.dynamicTierList.title")}:
+              </StrongText>{" "}
+              {t("infoModal.howToUse.features.dynamicTierList.description")}
             </ListItem>
           </List>
         </Section>
 
         <Section>
-          <SectionHeading>Data Sources</SectionHeading>
-          <Paragraph>This project uses two main data sources:</Paragraph>
+          <SectionHeading>{t("infoModal.dataSources.title")}</SectionHeading>
+          <Paragraph>{t("infoModal.dataSources.intro")}</Paragraph>
           <List>
             <ListItem>
-              Tournament data from{" "}
-              <Link
-                href="https://limitlesstcg.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Limitless
-              </Link>
-              , a leading platform for Pokemon TCG tournaments.
+              <Trans
+                i18nKey="infoModal.dataSources.sources.tournament"
+                components={{ limitlessLink }}
+              />
             </ListItem>
             <ListItem>
-              Card data from{" "}
-              <Link
-                href="https://github.com/chase-manning/pokemon-tcg-pocket-cards"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                pokemon-tcg-pocket-cards
-              </Link>
-              , an open-source repository that provides comprehensive card
-              information.
+              <Trans
+                i18nKey="infoModal.dataSources.sources.cards"
+                components={{ cardsRepoLink }}
+              />
             </ListItem>
           </List>
         </Section>
 
         <Section>
-          <SectionHeading>Open Source</SectionHeading>
+          <SectionHeading>{t("infoModal.openSource.title")}</SectionHeading>
           <Paragraph>
-            This website is open source. You can find the source code on{" "}
-            <Link
-              href="https://github.com/chase-manning/pokemon-tcg-pocket-tier-list"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Link>
-            . Contributions are welcome!
+            <Trans
+              i18nKey="infoModal.openSource.description"
+              components={{ githubLink }}
+            />
           </Paragraph>
         </Section>
       </ModalContent>
