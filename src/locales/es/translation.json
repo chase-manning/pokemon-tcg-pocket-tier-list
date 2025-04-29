@@ -1,0 +1,38 @@
+{
+  "infoModal": {
+    "title": "Acerca de la Lista de Mazos de Pokemon TCG Pocket",
+    "whatIsThis": {
+      "title": "¿Qué es este sitio web?",
+      "description": "Este sitio web muestra los mejores mazos actuales para el juego Pokemon TCG Pocket basado en datos de torneos de {{limitlessLink}}. La lista se actualiza regularmente para reflejar el meta actual."
+    },
+    "howToUse": {
+      "title": "Cómo usar este sitio web",
+      "features": {
+        "deckLists": {
+          "title": "Ver Listas de Mazos",
+          "description": "Haz clic en cualquier mazo de la lista para ver su lista completa de cartas."
+        },
+        "missingCards": {
+          "title": "Función de Cartas Faltantes",
+          "description": "Al ver una lista de mazo, puedes hacer clic en las cartas que no tienes. El sitio web te mostrará el siguiente mejor mazo que puedes armar sin esas cartas."
+        },
+        "dynamicTierList": {
+          "title": "Lista de Niveles Dinámica",
+          "description": "A medida que marcas las cartas como faltantes, la lista de niveles se actualizará para reflejar las nuevas calificaciones basadas en las cartas que tienes disponibles."
+        }
+      }
+    },
+    "dataSources": {
+      "title": "Fuentes de Datos",
+      "intro": "Este proyecto utiliza dos fuentes principales de datos:",
+      "sources": {
+        "tournament": "Datos de torneos de {{limitlessLink}}, una plataforma líder para torneos de Pokemon TCG.",
+        "cards": "Datos de cartas de {{cardsRepoLink}}, un repositorio de código abierto que proporciona información completa de las cartas."
+      }
+    },
+    "openSource": {
+      "title": "Código Abierto",
+      "description": "Este sitio web es de código abierto. Puedes encontrar el código fuente en {{githubLink}}. ¡Las contribuciones son bienvenidas!"
+    }
+  }
+}
