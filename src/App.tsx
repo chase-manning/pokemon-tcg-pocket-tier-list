@@ -4,6 +4,7 @@ import LandingPage from "./pages/landing/LandingPage";
 import DeckPage from "./pages/deck/DeckPage";
 import DeltasPage from "./pages/deltas/DeltasPage";
 import NewPage from "./pages/new/NewPage";
+import Footer from "./components/Footer";
 
 const StyledApp = styled.div`
   width: 100%;
@@ -17,6 +18,7 @@ const Layout = () => {
   return (
     <StyledApp>
       <Outlet />
+      <Footer />
     </StyledApp>
   );
 };
