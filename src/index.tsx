@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import GlobalStyles from "./styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
 import MissingContextProvider from "./components/MissingContext";
+import "./i18n";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
