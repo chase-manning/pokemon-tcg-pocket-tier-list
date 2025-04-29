@@ -1,0 +1,38 @@
+{
+  "infoModal": {
+    "title": "Über Pokemon TCG Pocket Deck-Rangliste",
+    "whatIsThis": {
+      "title": "Was ist diese Website?",
+      "description": "Diese Website zeigt die aktuell besten Decks für das Pokemon TCG Pocket-Spiel, basierend auf Turnierdaten von {{limitlessLink}}. Die Rangliste wird regelmäßig aktualisiert, um die aktuelle Meta widerzuspiegeln."
+    },
+    "howToUse": {
+      "title": "Wie nutzt man diese Website",
+      "features": {
+        "deckLists": {
+          "title": "Deck-Listen anzeigen",
+          "description": "Klicke auf ein Deck in der Rangliste, um die vollständige Kartenliste anzuzeigen."
+        },
+        "missingCards": {
+          "title": "Fehlende Karten Funktion",
+          "description": "Beim Betrachten einer Deck-Liste kannst du auf Karten klicken, die du nicht besitzt. Die Website zeigt dir dann das nächstbeste Deck, das du ohne diese Karten bauen kannst."
+        },
+        "dynamicTierList": {
+          "title": "Dynamische Rangliste",
+          "description": "Wenn du Karten als fehlend markierst, aktualisiert sich die Rangliste und zeigt die neuen Bewertungen basierend auf deinen verfügbaren Karten."
+        }
+      }
+    },
+    "dataSources": {
+      "title": "Datenquellen",
+      "intro": "Dieses Projekt verwendet zwei Hauptdatenquellen:",
+      "sources": {
+        "tournament": "Turnierdaten von {{limitlessLink}}, einer führenden Plattform für Pokemon TCG Turniere.",
+        "cards": "Kartendaten von {{cardsRepoLink}}, einem Open-Source-Repository mit umfassenden Karteninformationen."
+      }
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Diese Website ist Open Source. Den Quellcode findest du auf {{githubLink}}. Beiträge sind willkommen!"
+    }
+  }
+}
