@@ -108,36 +108,6 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const limitlessLink = (
-    <Link
-      href="https://limitlesstcg.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Limitless Tournaments
-    </Link>
-  );
-
-  const cardsRepoLink = (
-    <Link
-      href="https://github.com/chase-manning/pokemon-tcg-pocket-cards"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      pokemon-tcg-pocket-cards
-    </Link>
-  );
-
-  const githubLink = (
-    <Link
-      href="https://github.com/chase-manning/pokemon-tcg-pocket-tier-list"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      GitHub
-    </Link>
-  );
-
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
@@ -149,7 +119,15 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
           <Paragraph>
             <Trans
               i18nKey="infoModal.whatIsThis.description"
-              components={{ limitlessLink }}
+              components={[
+                <Link
+                  href="https://limitlesstcg.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Limitless Tournaments
+                </Link>,
+              ]}
             />
           </Paragraph>
         </Section>
@@ -185,13 +163,29 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
             <ListItem>
               <Trans
                 i18nKey="infoModal.dataSources.sources.tournament"
-                components={{ limitlessLink }}
+                components={[
+                  <Link
+                    href="https://limitlesstcg.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Limitless Tournaments
+                  </Link>,
+                ]}
               />
             </ListItem>
             <ListItem>
               <Trans
                 i18nKey="infoModal.dataSources.sources.cards"
-                components={{ cardsRepoLink }}
+                components={[
+                  <Link
+                    href="https://github.com/chase-manning/pokemon-tcg-pocket-cards"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    pokemon-tcg-pocket-cards
+                  </Link>,
+                ]}
               />
             </ListItem>
           </List>
@@ -202,7 +196,15 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
           <Paragraph>
             <Trans
               i18nKey="infoModal.openSource.description"
-              components={{ githubLink }}
+              components={[
+                <Link
+                  href="https://github.com/chase-manning/pokemon-tcg-pocket-tier-list"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </Link>,
+              ]}
             />
           </Paragraph>
         </Section>

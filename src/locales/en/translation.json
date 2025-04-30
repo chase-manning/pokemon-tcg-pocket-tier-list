@@ -3,7 +3,7 @@
     "title": "About Pokemon TCG Pocket Deck Tier List",
     "whatIsThis": {
       "title": "What is this website?",
-      "description": "This website shows the current best decks for the Pokemon TCG Pocket game based on tournament performance data from {{limitlessLink}}. The tier list is updated regularly to reflect the latest meta."
+      "description": "This website shows the current best decks for the Pokemon TCG Pocket game based on tournament performance data from <0>Limitless Tournaments</0>. The tier list is updated regularly to reflect the latest meta."
     },
     "howToUse": {
       "title": "How to use this website",
@@ -26,13 +26,13 @@
       "title": "Data Sources",
       "intro": "This project uses two main data sources:",
       "sources": {
-        "tournament": "Tournament data from {{limitlessLink}}, a leading platform for Pokemon TCG tournaments.",
-        "cards": "Card data from {{cardsRepoLink}}, an open-source repository that provides comprehensive card information."
+        "tournament": "Tournament data from <0>Limitless Tournaments</0>, a leading platform for Pokemon TCG tournaments.",
+        "cards": "Card data from <0>pokemon-tcg-pocket-cards</0>, an open-source repository that provides comprehensive card information."
       }
     },
     "openSource": {
       "title": "Open Source",
-      "description": "This website is open source. You can find the source code on {{githubLink}}. Contributions are welcome!"
+      "description": "This website is open source. You can find the source code on <0>GitHub</0>. Contributions are welcome!"
     }
   }
 }

@@ -1,16 +1,16 @@
 {
   "infoModal": {
-    "title": "Über Pokemon TCG Pocket Deck-Rangliste",
+    "title": "Über die Pokémon TCG Pocket Deck-Rangliste",
     "whatIsThis": {
       "title": "Was ist diese Website?",
-      "description": "Diese Website zeigt die aktuell besten Decks für das Pokemon TCG Pocket-Spiel, basierend auf Turnierdaten von {{limitlessLink}}. Die Rangliste wird regelmäßig aktualisiert, um die aktuelle Meta widerzuspiegeln."
+      "description": "Diese Website zeigt die aktuell besten Decks für das Pokémon TCG Pocket-Spiel, basierend auf Turnierdaten von <0>Limitless Tournaments</0>. Die Rangliste wird regelmäßig aktualisiert, um das aktuelle Meta widerzuspiegeln."
     },
     "howToUse": {
       "title": "Wie nutzt man diese Website",
       "features": {
         "deckLists": {
           "title": "Deck-Listen anzeigen",
-          "description": "Klicke auf ein Deck in der Rangliste, um die vollständige Kartenliste anzuzeigen."
+          "description": "Klicke auf ein beliebiges Deck in der Rangliste, um die vollständige Kartenliste anzuzeigen."
         },
         "missingCards": {
           "title": "Fehlende Karten Funktion",
@@ -18,7 +18,7 @@
         },
         "dynamicTierList": {
           "title": "Dynamische Rangliste",
-          "description": "Wenn du Karten als fehlend markierst, aktualisiert sich die Rangliste und zeigt die neuen Bewertungen basierend auf deinen verfügbaren Karten."
+          "description": "Wenn du Karten als fehlend markierst, aktualisiert sich die Rangliste, um die neuen Bewertungen basierend auf deinen verfügbaren Karten anzuzeigen."
         }
       }
     },
@@ -26,13 +26,13 @@
       "title": "Datenquellen",
       "intro": "Dieses Projekt verwendet zwei Hauptdatenquellen:",
       "sources": {
-        "tournament": "Turnierdaten von {{limitlessLink}}, einer führenden Plattform für Pokemon TCG Turniere.",
-        "cards": "Kartendaten von {{cardsRepoLink}}, einem Open-Source-Repository mit umfassenden Karteninformationen."
+        "tournament": "Turnierdaten von <0>Limitless Tournaments</0>, einer führenden Plattform für Pokémon TCG Turniere.",
+        "cards": "Kartendaten von <0>pokemon-tcg-pocket-cards</0>, einem Open-Source-Repository, das umfassende Karteninformationen bereitstellt."
       }
     },
     "openSource": {
       "title": "Open Source",
-      "description": "Diese Website ist Open Source. Den Quellcode findest du auf {{githubLink}}. Beiträge sind willkommen!"
+      "description": "Diese Website ist Open Source. Du findest den Quellcode auf <0>GitHub</0>. Beiträge sind willkommen!"
     }
   }
 }
