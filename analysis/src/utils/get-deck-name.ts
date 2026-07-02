@@ -13,7 +13,7 @@ const CHARIZARD = ["Mega Charizard X ex B2b 9", "Mega Charizard Y ex B1a 14", "C
 const BLASTOISE = ["Blastoise ex A1 56", "Mega Blastoise ex B1a 20", "Blastoise A1 55", "Blastoise B1a 19"]
 const GRENINJA = ["Greninja A1 89", "Greninja ex B1 73", "Juliana B3a 71"]
 const ALTARIA = ["Mega Altaria ex B1 102", "Altaria B1 197"]
-const MAGNEZONE = ["Magnezone ex B3 54", "Magnezone A2 53", "Magnezone B1a 26"]
+const MAGNEZONE = ["Magnezone ex B3 54", "Magnezone A2 53", "Magnezone B1a 26", "Magneton A1 98"]
 const ESPEON = ["Espeon ex A4 83", "Espeon A3b 28"]
 const GUZZLORD = ["Guzzlord ex A3a 43", "Guzzlord B2 109"]
 const BUZZWOLE = ["Buzzwole ex A3a 6", "Buzzwole B2 14"]
@@ -33,6 +33,7 @@ const MIRAIDON = ["Miraidon ex B3a 19", "Professor Turo B3a 73"];
 const BABY_ENERGY = ["Pichu A4 66", "Magby A4 22", "Mantyke A4a 23"];
 const FUTURE = ["Future Booster Energy Capsule B3a 70", "Iron Valiant B3a 27", "Iron Crown B3a 30"]
 const BLAZIKEN = ["Mega Blaziken ex B1 36", "Juliana B3a 71"]
+const DARK_SUPPORT = ["Mega Absol ex B1 151", "Mega Sableeye ex B3b 41", "Darkrai ex A2 110"]
 
 const ARCHITYPES: Architype[] = [
   // Outliers
@@ -93,6 +94,8 @@ const ARCHITYPES: Architype[] = [
   { primary: "Mega Steelix ex B1a 52", secondary: [] },
 
   // Stage 1 ex
+  { primary: "Hisuian Zoroark ex B3b 60", secondary: [] },
+  { primary: "Milotic ex B3b 15", secondary: [] },
   { primary: "Zoroark ex B3 106", secondary: [] },
   { primary: "Crustle ex B3 88", secondary: [] },
   { primary: "Lugia ex A4 149", secondary: ["Ho-Oh ex A4 34"] },
@@ -120,11 +123,14 @@ const ARCHITYPES: Architype[] = [
   { primary: "Naganadel A3a 45", secondary: [] },
 
   // Basic Mega
+  { primary: "Mega Sableye ex B3b 41", secondary: [] },
+  { primary: "Mega Diancie ex B3b 32", secondary: [] },
   { primary: MEGA_KANGASKHAN, secondary: [GRENINJA, POISON, ORICORIO] },
   { primary: MEGA_MAWILE, secondary: [] },
   { primary: "Mega Absol ex B1 151", secondary: [GRENINJA, ORICORIO] },
 
   // Basic ex
+  { primary: "Dedenne ex B3b 24", secondary: [] },
   { primary: "Iron Bundle ex B3a 13", secondary: [FUTURE] },
   { primary: "Flutter Mane ex B3a 26", secondary: [GRENINJA] },
   { primary: "Koraidon ex B3a 36", secondary: ["Great Tusk B3a 34"] },
@@ -144,7 +150,7 @@ const ARCHITYPES: Architype[] = [
   { primary: "Celesteela A3a 62", secondary: [] },
 
   // Tech Cards
-  { primary: GRENINJA, secondary: [ORICORIO, SLEEP] },
+  { primary: GRENINJA, secondary: [ORICORIO, SLEEP, DARK_SUPPORT] },
 
   // Fallback
   { primary: "Professor's Research PA 7", secondary: [] },
