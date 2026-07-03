@@ -28,7 +28,7 @@ const SCIZOR = ["Mega Scizor ex B2b 47", "Scizor A4 123"]
 const DRAGONITE = ["Dragonite ex A3b 53", "Dragonite B2b 53", "Dragonite A1 185"]
 const SLEEP = ["Darkrai B2b 40", "Igglybuff A4a 59"];
 const LUCARIO = ["Mega Lucario ex B3 81", "Lucario A2 92"]
-const SCEPTILE = ["Mega Sceptile ex B3 8", "Sceptile B3 7"]
+const SCEPTILE = ["Mega Sceptile ex B3 8", "Sceptile B3 7", "Juliana B3a 71"]
 const MIRAIDON = ["Miraidon ex B3a 19", "Professor Turo B3a 73"];
 const BABY_ENERGY = ["Pichu A4 66", "Magby A4 22", "Mantyke A4a 23"];
 const FUTURE = ["Future Booster Energy Capsule B3a 70", "Iron Valiant B3a 27", "Iron Crown B3a 30"]
@@ -40,7 +40,7 @@ const ARCHITYPES: Architype[] = [
   { primary: "Ditto B1a 55", secondary: ["Rampardos A2 89", "Liepard B1a 48", MAGNEZONE, "Maushold B2 143"] },
 
   // Stage 2 Mega
-  { primary: SCEPTILE, secondary: [POISON, "Leafeon ex A2a 10"] },
+  { primary: SCEPTILE, secondary: [POISON, "Leafeon ex A2a 10", GRENINJA] },
   { primary: "Mega Slowbro ex B2b 16", secondary: ["Suicune ex A4a 20"] },
   { primary: "Mega Manectric ex B2b 27", secondary: [] },
   { primary: "Mega Gengar ex B2b 39", secondary: [] },
@@ -68,6 +68,7 @@ const ARCHITYPES: Architype[] = [
   { primary: MAGNEZONE, secondary: [MIRAIDON] },
 
   // Stage 2
+  { primary: "Butterfree B3b 3", secondary: [] },
   { primary: "Kingambit B3a 43", secondary: ["Glimmora B3a 45"] },
   { primary: "Inteleon B3 50", secondary: [GRENINJA, "Vaporeon ex B3 37"] },
   { primary: "Vivillon B2 13", secondary: [SLEEP] },
