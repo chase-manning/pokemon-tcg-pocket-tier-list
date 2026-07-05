@@ -34,6 +34,7 @@ const BABY_ENERGY = ["Pichu A4 66", "Magby A4 22", "Mantyke A4a 23"];
 const FUTURE = ["Future Booster Energy Capsule B3a 70", "Iron Valiant B3a 27", "Iron Crown B3a 30"]
 const BLAZIKEN = ["Mega Blaziken ex B1 36", "Juliana B3a 71"]
 const DARK_SUPPORT = ["Mega Absol ex B1 151", "Mega Sableeye ex B3b 41", "Darkrai ex A2 110"]
+const GARDEVOIR = ["Mega Gardevoir ex B2 66", "Gardevoir A1 132", "Gardevoir B2 65"]
 
 const ARCHITYPES: Architype[] = [
   // Outliers
@@ -46,7 +47,7 @@ const ARCHITYPES: Architype[] = [
   { primary: "Mega Gengar ex B2b 39", secondary: [] },
   { primary: SCIZOR, secondary: ["Revavroom B2b 50"] },
   { primary: "Mega Swampert ex B2 36", secondary: [] },
-  { primary: "Mega Gardevoir ex B2 66", secondary: ["Latias A4a 36", "Sylveon ex A3b 34"] },
+  { primary: GARDEVOIR, secondary: ["Latias A4a 36", "Sylveon ex A3b 34"] },
   { primary: VENUSAUR, secondary: ["Exeggutor ex A1 23", "Dustox B1 7", "Lilligant B1 18"] },
   { primary: CHARIZARD, secondary: ["Skeledirge B2a 18"] },
   { primary: BLASTOISE, secondary: [] },
@@ -152,6 +153,7 @@ const ARCHITYPES: Architype[] = [
 
   // Tech Cards
   { primary: GRENINJA, secondary: [ORICORIO, SLEEP, DARK_SUPPORT] },
+  { primary: DARK_SUPPORT, secondary: [ORICORIO] },
 
   // Fallback
   { primary: "Professor's Research PA 7", secondary: [] },

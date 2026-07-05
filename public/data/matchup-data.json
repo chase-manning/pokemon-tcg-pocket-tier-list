@@ -2,4881 +2,4981 @@
   "mega-lucario-ex-b3-081": [
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.5039042862311323,
-      "totalGames": 26.048181840277778
+      "winRate": 0.50390620080181,
+      "totalGames": 26.053894359535484
     },
     {
       "name": "mega-lucario-ex-b3-081",
       "winRate": 0.5,
-      "totalGames": 34.89077368827161
+      "totalGames": 34.89850385089221
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.8446635269455025,
-      "totalGames": 9.71805449487434
+      "winRate": 0.8446571479297522,
+      "totalGames": 9.719983742865203
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.5533235712302976,
-      "totalGames": 30.86927195353836
+      "winRate": 0.5533275510060348,
+      "totalGames": 30.87556727437503
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5704026484129503,
-      "totalGames": 40.2481951532187
+      "winRate": 0.5704021419327258,
+      "totalGames": 40.25688880006632
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
       "winRate": 0,
-      "totalGames": 4.432357981150794
+      "totalGames": 4.433374654570161
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.441223516266433,
-      "totalGames": 72.53987502039243
-    },
-    {
-      "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5125758876184403,
-      "totalGames": 37.84331389467593
-    },
-    {
-      "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.3047751992117693,
-      "totalGames": 24.52291254574515
-    },
-    {
-      "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.4820346955884292,
-      "totalGames": 40.21585543237433
+      "winRate": 0.504952890326108,
+      "totalGames": 47.03013421470208
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.8153370920486378,
-      "totalGames": 21.4999834487985
+      "winRate": 0.5381377619675105,
+      "totalGames": 43.13726236526787
+    },
+    {
+      "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
+      "winRate": 0.5125728788072123,
+      "totalGames": 37.85101037080804
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
+      "winRate": 0.3047804420889161,
+      "totalGames": 24.52825223409271
+    },
+    {
+      "name": "greninja-a1-089&mega-absol-ex-b1-151",
+      "winRate": 0.4820343251310437,
+      "totalGames": 40.22381633477697
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.7237915150648734,
-      "totalGames": 44.78631070767196
+      "winRate": 0.7237940713403772,
+      "totalGames": 44.795386303577
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.5041111834951096,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.5041131319840788,
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.18767261661793508,
-      "totalGames": 8.043625849041007
+      "winRate": 0.18768373632384314,
+      "totalGames": 8.045076394300777
     },
     {
       "name": "ilima-a3-149",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.3624483544576165,
-      "totalGames": 19.971012979221783
+      "winRate": 0.3624509937760035,
+      "totalGames": 19.97525114472409
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.3428979672399788,
-      "totalGames": 4.402383374669313
+      "winRate": 0.3429025924713101,
+      "totalGames": 4.403378772411743
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.6531645470687192,
-      "totalGames": 4.281414427083334
+      "winRate": 0.6531578331885884,
+      "totalGames": 4.282323962272409
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 4.117624613095239
+      "totalGames": 4.118417891906763
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.25200785106818224,
-      "totalGames": 20.810077889660494
+      "winRate": 0.25200035281196637,
+      "totalGames": 20.8142018250402
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 0.5,
-      "totalGames": 3.0191366203703707
+      "totalGames": 3.0198599933862433
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 0,
-      "totalGames": 2.7964681150793655
+      "totalGames": 2.7970334402094172
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.15730831961356223,
-      "totalGames": 9.439718863260584
+      "winRate": 0.1573159244946389,
+      "totalGames": 9.441450551394169
     },
     {
       "name": "iron-bundle-ex-b3a-013&future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 0,
-      "totalGames": 2.5577417848875665
+      "totalGames": 2.558137664447724
     },
     {
       "name": "dragalge-ex-b1-160",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 0.6641882730165583,
+      "totalGames": 3.8902349312016473
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.34112078271693824,
-      "totalGames": 4.353139378306879
+      "winRate": 0.3411245911647344,
+      "totalGames": 4.354099823151483
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 0.5,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.4033073465539749,
-      "totalGames": 3.681922297453704
+      "winRate": 0.40334780938144255,
+      "totalGames": 3.6824063191040306
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.3158118451825834,
-      "totalGames": 8.18029578097443
+      "winRate": 0.31580272505366797,
+      "totalGames": 8.181843333189757
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 0,
-      "totalGames": 2.86069941468254
+      "totalGames": 2.861310330548886
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 0,
-      "totalGames": 2.6059152595899473
+      "totalGames": 2.6063453322023253
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 2.7044032523148154
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 2.4628221976962084
+      "totalGames": 2.463150704279397
     },
     {
       "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.5047879879999814,
-      "totalGames": 515.1299990737983
+      "winRate": 0.5047890377076145,
+      "totalGames": 515.2344304807643
     }
   ],
   "mega-blaziken-ex-b1-036&greninja-a1-089": [
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.42889434718155645,
-      "totalGames": 39.76338161072531
+      "winRate": 0.42890216298929756,
+      "totalGames": 39.77102135171893
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 1,
-      "totalGames": 6.013651242559524
+      "totalGames": 6.015080512142357
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6895221967061619,
-      "totalGames": 41.978423694885365
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.599558806447017,
+      "totalGames": 31.951848093725925
     },
     {
       "name": "armarouge-ex-b2a-020",
-      "winRate": 0.49588881650489036,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.49588686801592124,
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
       "winRate": 0.5,
-      "totalGames": 14.13792305665785
+      "totalGames": 14.140860113202688
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.43359551192468354,
-      "totalGames": 30.580587945877426
+      "winRate": 0.43360802223059225,
+      "totalGames": 30.58667836168264
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5617335442342707,
-      "totalGames": 52.198909688877876
+      "winRate": 0.5617306096363605,
+      "totalGames": 52.20969772349449
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.6952248007882307,
-      "totalGames": 24.52291254574515
+      "winRate": 0.6952195579110839,
+      "totalGames": 24.52825223409271
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
-      "winRate": 0.3279017122242697,
-      "totalGames": 4.160802320050706
+      "winRate": 0.3278989330387056,
+      "totalGames": 4.161626245968295
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.46018754798413175,
-      "totalGames": 2.7964681150793655
+      "winRate": 0.460167341946376,
+      "totalGames": 2.7970334402094172
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.15348787373997094,
-      "totalGames": 9.835098196373458
+      "winRate": 0.15349324311217546,
+      "totalGames": 9.837110520817124
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5605682903490707,
-      "totalGames": 38.72948175815697
+      "winRate": 0.5605627184669768,
+      "totalGames": 38.737097437373095
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.233512531608697,
-      "totalGames": 5.226817822420635
+      "winRate": 0.23350357725687979,
+      "totalGames": 5.22768860548386
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5907024343898667,
-      "totalGames": 44.91513014743167
+      "winRate": 0.5907008935707858,
+      "totalGames": 44.92429717809114
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.49588881650489036,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.49588686801592124,
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.5054356070490535,
-      "totalGames": 8.862574918981483
+      "winRate": 0.5054382184269656,
+      "totalGames": 8.864606746129006
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.5324101328477828,
-      "totalGames": 20.073558987544093
+      "winRate": 0.5324096432776704,
+      "totalGames": 20.077160149147623
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.8268386482253193,
-      "totalGames": 8.71769765432099
+      "winRate": 0.8268354761655885,
+      "totalGames": 8.719626649029982
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.49588881650489036,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.49588686801592124,
+      "totalGames": 2.9952205187561134
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.7257992531186295,
+      "totalGames": 25.60587885772133
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-lopunny-ex-b1a-042",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.3830633661134416,
-      "totalGames": 11.201930285218255
+      "winRate": 0.3830674526491189,
+      "totalGames": 11.204202983422537
     },
     {
       "name": "ilima-a3-149",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6169322895817454,
-      "totalGames": 14.246402584876545
+      "totalGames": 2.970581044125984
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.6731865701877687,
-      "totalGames": 4.232527271274251
+      "winRate": 0.6731898496512511,
+      "totalGames": 4.233402106847368
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "espeon-b3a-020",
-      "winRate": 0.5088003920446954,
-      "totalGames": 2.777555565751764
+      "winRate": 0.5088048889409733,
+      "totalGames": 2.778107466942796
     },
     {
       "name": "mega-diancie-ex-b3b-032",
-      "winRate": 0.5114794744884888,
-      "totalGames": 2.7044032523148154
+      "winRate": 1,
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 1,
-      "totalGames": 3.758286175870812
+      "totalGames": 3.7588243998409547
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.8008498799788917,
-      "totalGames": 6.633972893794093
+      "winRate": 0.8008503345563421,
+      "totalGames": 6.635132671469051
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.47368702624583875,
-      "totalGames": 2.4817347470238094
+      "winRate": 0.4736719770036535,
+      "totalGames": 2.4820766775460186
     },
     {
       "name": "glimmora-b3a-045",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "hydreigon-b1-157&poison-barb-a3-146",
       "winRate": 0,
-      "totalGames": 2.57379960978836
+      "totalGames": 2.5742068870325907
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5531905238757098,
-      "totalGames": 430.12618150049605
+      "winRate": 0.5531911552455097,
+      "totalGames": 430.21286544694976
     }
   ],
-  "professor's-research-pa-007": [
-    {
-      "name": "milotic-ex-b3b-015",
-      "winRate": 0.39790744373100695,
-      "totalGames": 123.33099889274698
-    },
-    {
-      "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.5587764837335671,
-      "totalGames": 72.53987502039243
-    },
+  "mega-gardevoir-ex-b2-066": [
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.30340209942661917,
-      "totalGames": 125.35839267939822
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.5,
-      "totalGames": 230.84211096340402
-    },
-    {
-      "name": "butterfree-b3b-003",
-      "winRate": 0.3747753554943539,
-      "totalGames": 134.05004097332463
-    },
-    {
-      "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.32757987927831395,
-      "totalGames": 46.64821341352513
+      "winRate": 0.48446507479833767,
+      "totalGames": 63.49759792574438
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.5232367968331328,
-      "totalGames": 46.37241713376322
+      "winRate": 0.45335227891371743,
+      "totalGames": 20.028732648943837
+    },
+    {
+      "name": "butterfree-b3b-003",
+      "winRate": 0.4831064081276949,
+      "totalGames": 53.0429349024471
+    },
+    {
+      "name": "milotic-ex-b3b-015",
+      "winRate": 0.3775738856828804,
+      "totalGames": 53.48185791625447
     },
     {
       "name": "mega-steelix-ex-b1a-052",
-      "winRate": 0.5,
-      "totalGames": 5.631475009920635
+      "winRate": 0.46386352784806334,
+      "totalGames": 2.8163165073112575
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.4954134989511346,
-      "totalGames": 102.43131255621702
+      "winRate": 0.4775425041365003,
+      "totalGames": 47.624338356506954
+    },
+    {
+      "name": "mega-lucario-ex-b3-081",
+      "winRate": 0.4618622380324894,
+      "totalGames": 43.13726236526787
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.5923503943478329,
-      "totalGames": 15.285430974702383
+      "winRate": 0.8782540555252933,
+      "totalGames": 12.199917857399903
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.3104778032938382,
-      "totalGames": 41.978423694885365
+      "winRate": 0.4004411935529831,
+      "totalGames": 31.951848093725925
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.3326187139580922,
-      "totalGames": 88.84055883735672
+      "winRate": 0.323717810433585,
+      "totalGames": 29.850707967295712
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.3371692940313306,
-      "totalGames": 74.4936185179674
-    },
-    {
-      "name": "dedenne-ex-b3b-024",
-      "winRate": 0.36199134184866133,
-      "totalGames": 17.252825714836863
-    },
-    {
-      "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.49582298318617063,
-      "totalGames": 27.123873505566582
-    },
-    {
-      "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.31801715370348316,
-      "totalGames": 8.200992533068783
+      "winRate": 0.34405242863648944,
+      "totalGames": 30.852850530307034
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.4406606656695015,
-      "totalGames": 150.74851070574312
+      "winRate": 0.3654603147204775,
+      "totalGames": 76.8225533157939
+    },
+    {
+      "name": "ilima-a3-149",
+      "winRate": 1,
+      "totalGames": 1.5099299966931217
+    },
+    {
+      "name": "mega-sceptile-ex-b3-008",
+      "winRate": 0.7274174641869,
+      "totalGames": 14.130284559532146
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.515817141937004,
+      "totalGames": 81.77599385582936
+    },
+    {
+      "name": "dedenne-ex-b3b-024",
+      "winRate": 0.2357467345273196,
+      "totalGames": 5.586925003714449
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
+      "winRate": 0.3405825391130895,
+      "totalGames": 4.433374654570161
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.41288583191900813,
-      "totalGames": 6.845579341931217
+      "winRate": 1,
+      "totalGames": 4.116275328895447
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
-      "winRate": 0.1657980449708859,
-      "totalGames": 8.627060153769841
+      "winRate": 0.4865205686874861,
+      "totalGames": 2.9405851619675647
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
-      "winRate": 0.5482242731423932,
-      "totalGames": 17.07226439484127
+      "winRate": 0.19973012246606728,
+      "totalGames": 6.61584960436721
     },
     {
       "name": "armarouge-ex-b2a-020",
-      "winRate": 0.6588441593314605,
-      "totalGames": 4.424864329530424
+      "winRate": 0,
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.540492792275062,
-      "totalGames": 70.00822406387786
-    },
-    {
-      "name": "dragalge-ex-b1-160",
-      "winRate": 0.7924591764454495,
-      "totalGames": 7.154960101686509
+      "winRate": 0.5,
+      "totalGames": 32.445983390606244
     },
     {
       "name": "tyrantrum-b2-090",
-      "winRate": 0.4,
-      "totalGames": 7.424731560019842
-    },
-    {
-      "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 4.825372199900794
+      "totalGames": 1.485290522062992
     },
     {
-      "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.35753419537243236,
-      "totalGames": 10.013651242559526
+      "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
+      "winRate": 0.4802466461600422,
+      "totalGames": 16.81219652341492
     },
     {
       "name": "mega-blaziken-ex-b1-036",
-      "winRate": 0.48886056008222545,
-      "totalGames": 5.67001378968254
+      "winRate": 0.5,
+      "totalGames": 2.970581044125984
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 0.6969021134943496,
+      "totalGames": 4.027358963925848
+    },
+    {
+      "name": "magnezone-b1a-026",
+      "winRate": 1,
+      "totalGames": 2.8688093010884907
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.7985071256718813,
-      "totalGames": 5.324235293485451
+      "winRate": 0,
+      "totalGames": 1.485290522062992
+    },
+    {
+      "name": "mega-altaria-ex-b1-102",
+      "winRate": 0,
+      "totalGames": 1.485290522062992
+    },
+    {
+      "name": "gyarados-a4-045",
+      "winRate": 1,
+      "totalGames": 1.485290522062992
     },
     {
       "name": "solgaleo-ex-a3-122",
-      "winRate": 0.27574298789068596,
-      "totalGames": 5.385255028108466
-    },
-    {
-      "name": "mega-lopunny-ex-b1a-042",
-      "winRate": 1,
-      "totalGames": 1.4849463120039683
-    },
-    {
-      "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.41216411896027083,
-      "totalGames": 9.025783821373457
+      "winRate": 0,
+      "totalGames": 1.485290522062992
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.554517543052169,
-      "totalGames": 13.841521326333774
+      "winRate": 0.44415636833283,
+      "totalGames": 8.592281411242737
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 1,
-      "totalGames": 5.125118264715609
-    },
-    {
-      "name": "magnezone-b1a-026",
-      "winRate": 0.41902549061757166,
-      "totalGames": 6.714618858851411
+      "totalGames": 2.7177586087907386
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5032516382681468,
-      "totalGames": 23.37499795359348
+      "winRate": 0.546142136172799,
+      "totalGames": 10.971515064245605
+    },
+    {
+      "name": "lucario-a2-092",
+      "winRate": 1,
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.6095934359850447,
-      "totalGames": 12.118562365244712
+      "winRate": 0.570351854984658,
+      "totalGames": 6.330531630027011
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 3.821090113260582
+      "totalGames": 2.6341986513494287
     },
     {
-      "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
+      "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 0,
-      "totalGames": 1.383246754298942
-    },
-    {
-      "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
-      "winRate": 0.33333333333333337,
-      "totalGames": 4.149740262896826
-    },
-    {
-      "name": "mega-venusaur-ex-b1a-004",
-      "winRate": 0,
-      "totalGames": 2.700121165674603
-    },
-    {
-      "name": "mega-diancie-ex-b3b-032",
-      "winRate": 0.7459864123326007,
-      "totalGames": 5.201125302579365
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.34285620260861777,
-      "totalGames": 4.034480764164463
+      "winRate": 0.34286122779636174,
+      "totalGames": 4.035215028300672
     },
     {
-      "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.6984919234073625,
-      "totalGames": 3.558098625440918
+      "name": "dragalge-ex-b1-160",
+      "winRate": 0.5,
+      "totalGames": 2.767037558050998
     },
     {
-      "name": "future-booster-energy-capsule-b3a-070",
-      "winRate": 0.7187300736247243,
-      "totalGames": 8.602570925099208
+      "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
+      "winRate": 1,
+      "totalGames": 1.383518779025499
     },
     {
       "name": "magnezone-ex-b3-054",
-      "winRate": 0.36096600738509654,
-      "totalGames": 9.325305815145505
+      "winRate": 0.7548585333011306,
+      "totalGames": 4.979508390006465
     },
     {
-      "name": "gourgeist-b2-072",
-      "winRate": 0.4408181349172565,
-      "totalGames": 8.204336867559524
-    },
-    {
-      "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
+      "name": "espeon-b3a-020",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3645928057588776
     },
     {
-      "name": "jolteon-ex-b1-081&jolteon-a3b-025",
-      "winRate": 0.5,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "lucario-a2-092",
-      "winRate": 0.33152192227470934,
-      "totalGames": 3.9399180175264554
-    },
-    {
-      "name": "espeon-ex-a4-083&sylveon-ex-a3b-034",
-      "winRate": 0.5,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "bellibolt-ex-b2a-042",
-      "winRate": 0.5,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "ilima-a3-149",
-      "winRate": 0,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "flygon-ex-b3-126",
-      "winRate": 0,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "annihilape-b2a-057",
-      "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "name": "future-booster-energy-capsule-b3a-070",
+      "winRate": 0.5955317789403426,
+      "totalGames": 5.9459415694958535
     },
     {
       "name": "buzzwole-ex-a3a-006",
-      "winRate": 1,
-      "totalGames": 2.415362404100529
+      "winRate": 0.4547656379048147,
+      "totalGames": 2.4156572241952334
     },
     {
-      "name": "glimmora-b3a-045",
+      "name": "bellibolt-ex-b2a-042",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
-    },
-    {
-      "name": "mega-altaria-ex-b1-102&greninja-a1-089",
-      "winRate": 0.3135719292839458,
-      "totalGames": 3.503145180224868
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "mega-gyarados-ex-b1-052",
-      "winRate": 0.6914996183541842,
-      "totalGames": 3.477452660383598
-    },
-    {
-      "name": "houndstone-b2a-053&gourgeist-b2-072",
-      "winRate": 1,
-      "totalGames": 1.28689980489418
-    },
-    {
-      "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 3.749365162037037
+      "totalGames": 2.379233653002868
     },
     {
-      "name": "hydreigon-b1-157&poison-barb-a3-146",
-      "winRate": 0,
-      "totalGames": 1.28689980489418
+      "name": "gourgeist-b2-072",
+      "winRate": 0.356546619658462,
+      "totalGames": 3.609916270554518
     },
     {
       "name": "mimikyu-ex-b2-073",
-      "winRate": 0.2991290747416102,
-      "totalGames": 3.6722876025132276
+      "winRate": 0,
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-absol-ex-b1-151&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
-      "name": "mega-sableye-ex-b3b-041",
+      "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2206839901655107
     },
     {
-      "name": "suicune-ex-a4a-020&greninja-a1-089",
-      "winRate": 0.24084613642380834,
-      "totalGames": 4.5609533498677255
+      "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
+      "winRate": 1,
+      "totalGames": 2.31924188868603
+    },
+    {
+      "name": "jolteon-ex-b1-081",
+      "winRate": 1,
+      "totalGames": 1.1756901669278823
+    },
+    {
+      "name": "jolteon-ex-b1-081&jolteon-a3b-025",
+      "winRate": 0,
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "galarian-obstagoon-b2-100",
       "winRate": 1,
-      "totalGames": 2.241937895171958
+      "totalGames": 1.1210548101393334
     },
     {
-      "name": "mega-swampert-ex-b2-036",
+      "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
+      "winRate": 0,
+      "totalGames": 1.1210548101393334
+    },
+    {
+      "name": "suicune-ex-a4a-020&greninja-a1-089",
+      "winRate": 0,
+      "totalGames": 1.1210548101393334
+    },
+    {
+      "name": "greninja-a1-089&oricorio-a3-066",
+      "winRate": 0.5,
+      "totalGames": 2.1971157970410387
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
+    },
+    {
+      "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
+      "winRate": 0,
+      "totalGames": 1.0985578985205193
+    },
+    {
+      "name": "houndstone-b2a-053&gourgeist-b2-072",
+      "winRate": 1,
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "espeon-ex-a4-083",
-      "winRate": 0,
-      "totalGames": 1.0984879927248679
-    },
-    {
-      "name": "dusknoir-a2-072",
-      "winRate": 0,
-      "totalGames": 1.072795472883598
-    },
-    {
-      "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.4364285596988954,
-      "totalGames": 1640.734480764993
+      "winRate": 0.465392659782216,
+      "totalGames": 738.4598971656466
     }
   ],
   "butterfree-b3b-003": [
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 0,
-      "totalGames": 2.9945146221891537
+      "totalGames": 2.9952205187561134
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6252246445056462,
-      "totalGames": 134.05004097332463
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.516893591872305,
+      "totalGames": 53.0429349024471
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.4109787681226037,
-      "totalGames": 58.0588954224537
+      "winRate": 0.4109819596346331,
+      "totalGames": 58.07029386637294
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.42959735158704965,
-      "totalGames": 40.2481951532187
+      "winRate": 0.42959785806727435,
+      "totalGames": 40.25688880006632
     },
     {
       "name": "armarouge-ex-b2a-020",
-      "winRate": 0.6703110634729865,
-      "totalGames": 4.504082932374339
+      "winRate": 0.6703127860058,
+      "totalGames": 4.505150515449236
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.5392294944800725,
-      "totalGames": 63.198287309303346
+      "winRate": 0.5392272998496577,
+      "totalGames": 63.21049448222809
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.4357334753031177,
-      "totalGames": 35.40868210069444
+      "winRate": 0.4357313376176683,
+      "totalGames": 35.416070079510966
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.6252824083724986,
+      "totalGames": 102.48194155847528
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5384962625285982,
-      "totalGames": 65.22527442184746
+      "winRate": 0.5384996279693577,
+      "totalGames": 65.23821053998914
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.43826645576572926,
-      "totalGames": 52.198909688877876
+      "winRate": 0.43826939036363954,
+      "totalGames": 52.20969772349449
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.4641431637930069,
-      "totalGames": 13.614081124338625
+      "winRate": 0.4641244728288058,
+      "totalGames": 13.616646363100795
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.767747582241878,
-      "totalGames": 5.670013789682541
+      "winRate": 0.7677564671754963,
+      "totalGames": 5.671199148826197
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.6443478550412985,
-      "totalGames": 30.45640743331129
+      "winRate": 0.6443519478434022,
+      "totalGames": 30.462409707026328
     },
     {
       "name": "butterfree-b3b-003",
       "winRate": 0.5,
-      "totalGames": 45.93917123401675
+      "totalGames": 45.94764553876644
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.3669379730404142,
-      "totalGames": 68.36943800540125
+      "winRate": 0.36693119404012503,
+      "totalGames": 68.38247644941774
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.6236501038885215,
-      "totalGames": 35.277987156635795
+      "winRate": 0.6236468561259215,
+      "totalGames": 35.283862789416695
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 6.81346369212963
+      "totalGames": 6.814750870584345
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.5658454038504155,
-      "totalGames": 6.954058870149913
+      "winRate": 0.5658279767921826,
+      "totalGames": 6.9554458416607385
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
-      "winRate": 0.46672021744687914,
-      "totalGames": 2.8307248082010585
+      "winRate": 0.46670353144579907,
+      "totalGames": 2.8313144483904673
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.6874744673802544,
-      "totalGames": 12.330392884424604
+      "winRate": 0.6874852453862287,
+      "totalGames": 12.332756764101472
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 1,
+      "totalGames": 4.316604970453459
     },
     {
       "name": "espeon-b3a-020",
-      "winRate": 0.32964322974492183,
-      "totalGames": 4.287123875936949
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.46523502389785937,
-      "totalGames": 25.760344283234126
+      "winRate": 0.32964139729911995,
+      "totalGames": 4.288037463635917
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 1,
-      "totalGames": 2.791115506779101
+      "totalGames": 2.791677032681128
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.5402318419830106,
-      "totalGames": 20.228784628251766
+      "winRate": 0.5402354721525358,
+      "totalGames": 20.232495967468008
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "tyrantrum-b2-090",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "solgaleo-ex-a3-122",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-lopunny-ex-b1a-042",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.39997846319885527,
-      "totalGames": 6.627549763833775
+      "winRate": 0.399978451668242,
+      "totalGames": 6.628704982435103
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 1,
-      "totalGames": 2.6508771693121695
+      "totalGames": 2.6513391554399535
     },
     {
       "name": "magnezone-b1a-026",
-      "winRate": 0.6819817385745939,
-      "totalGames": 3.929926482032628
+      "winRate": 0.6819900354167875,
+      "totalGames": 3.9305865345814253
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.42887824983643635,
-      "totalGames": 8.971900897817463
+      "winRate": 0.4288784197238403,
+      "totalGames": 8.973300533421702
     },
     {
       "name": "lucario-a2-092",
       "winRate": 0,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
-      "winRate": 0.5573709099885811,
-      "totalGames": 2.48173474702381
+      "winRate": 0.5574037222707227,
+      "totalGames": 2.4820766775460186
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.6717537018747123,
-      "totalGames": 7.388823433641976
+      "winRate": 0.6717566335283907,
+      "totalGames": 7.3898092066734105
     },
     {
       "name": "rampardos-a2-089",
-      "winRate": 0.5180415095705228,
-      "totalGames": 2.670146559193122
+      "winRate": 0.5180510996080605,
+      "totalGames": 2.6706222225417946
     },
     {
       "name": "magnezone-ex-b3-054",
-      "winRate": 0.6404616994463003,
-      "totalGames": 7.589367824625221
+      "winRate": 0.6404469968302641,
+      "totalGames": 7.5904959420666405
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
-      "winRate": 0.6792634286209003,
-      "totalGames": 3.8053891289131396
+      "winRate": 0.6792704762942143,
+      "totalGames": 3.8059607860898987
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
-      "winRate": 0.4716525049370693,
-      "totalGames": 2.4924399636243386
+      "winRate": 0.47163636176129864,
+      "totalGames": 2.4927894926025966
     },
     {
       "name": "ilima-a3-149",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "bellibolt-ex-b2a-042",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5121216492537911,
-      "totalGames": 5.063384848985891
+      "winRate": 0.5121284451373646,
+      "totalGames": 5.064139628953432
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 2.526696656746032
+      "totalGames": 2.5270705007836467
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 1,
-      "totalGames": 2.5559575821208114
+      "totalGames": 2.556352195271627
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.5279763537519883,
-      "totalGames": 819.5608722134039
+      "winRate": 0.527975253943408,
+      "totalGames": 819.7181339123059
     }
   ],
   "hydreigon-b1-157": [
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.6375516455423836,
-      "totalGames": 19.971012979221783
+      "winRate": 0.6375490062239966,
+      "totalGames": 19.97525114472409
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.35565214495870145,
-      "totalGames": 30.45640743331129
+      "winRate": 0.3556480521565978,
+      "totalGames": 30.462409707026328
     },
     {
       "name": "hydreigon-b1-157",
       "winRate": 0.5,
-      "totalGames": 20.748834083994712
+      "totalGames": 20.75220475909808
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6673812860419078,
-      "totalGames": 88.84055883735672
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.6762821895664151,
+      "totalGames": 29.850707967295712
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.6363124080329443,
-      "totalGames": 42.42737057897928
+      "winRate": 0.636312379755547,
+      "totalGames": 42.43406203265796
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.37628923338912157,
-      "totalGames": 39.52394159942681
+      "winRate": 0.3762876603036512,
+      "totalGames": 39.5314113882868
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.17316135177468067,
-      "totalGames": 8.71769765432099
+      "winRate": 0.17316452383441147,
+      "totalGames": 8.719626649029982
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.6589272435826979,
+      "totalGames": 69.17863055983041
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0,
-      "totalGames": 2.608056302910053
+      "totalGames": 2.608487895213641
     },
     {
       "name": "mega-steelix-ex-b1a-052",
-      "winRate": 0.4154315824584283,
-      "totalGames": 2.582363783068783
+      "winRate": 0.41538510084837504,
+      "totalGames": 2.5827771390778533
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.5791930521629636,
-      "totalGames": 30.481651811067024
+      "winRate": 0.5791907386766593,
+      "totalGames": 30.486252422922874
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.42034385888569786,
-      "totalGames": 32.23886746527778
+      "winRate": 0.420333041578089,
+      "totalGames": 32.24400554125817
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.39039574607445404,
-      "totalGames": 20.30670863839286
+      "winRate": 0.39040435493574116,
+      "totalGames": 20.309765497261406
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.23704396396191893,
-      "totalGames": 17.9352376223545
+      "winRate": 0.2370565712600958,
+      "totalGames": 17.93803081479814
     },
     {
       "name": "mimikyu-ex-b2-073",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.4865270728007295,
-      "totalGames": 2.9399180175264554
+      "winRate": 0.4865205686874861,
+      "totalGames": 2.9405851619675647
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.18809267588025058,
-      "totalGames": 13.194212562555116
+      "winRate": 0.18809638838106557,
+      "totalGames": 13.19576999276331
     },
     {
       "name": "solgaleo-ex-a3-122",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 0,
-      "totalGames": 5.486240904706791
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6750398434206764,
-      "totalGames": 11.392972750771605
+      "totalGames": 5.487295823688271
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.21263309336607403,
-      "totalGames": 10.543692233796298
+      "winRate": 0.2126272842010889,
+      "totalGames": 10.544787931158575
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 1,
-      "totalGames": 2.8264427215608467
+      "totalGames": 2.827029322367836
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.5030013960182618,
-      "totalGames": 4.993444100529102
+      "winRate": 0.5030031023036602,
+      "totalGames": 4.994149237250456
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.33724919386386654,
-      "totalGames": 3.705830614528219
+      "winRate": 0.33725144361300324,
+      "totalGames": 3.7063316060637215
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.5573709099885811,
-      "totalGames": 2.48173474702381
+      "winRate": 0.5574037222707227,
+      "totalGames": 2.4820766775460186
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.7563055213591844,
-      "totalGames": 9.76207865244709
+      "winRate": 0.7563091886296839,
+      "totalGames": 9.76332935831277
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 2.504215701884921
+      "totalGames": 2.504573589164832
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.43254638380758875,
-      "totalGames": 6.074090065586421
+      "winRate": 0.4325653975194975,
+      "totalGames": 6.074852444010011
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 2.4196444907407413
+      "totalGames": 2.419942350217865
     },
     {
       "name": "magnezone-ex-b3-054",
       "winRate": 0,
-      "totalGames": 2.4196444907407413
+      "totalGames": 2.419942350217865
     },
     {
       "name": "glimmora-b3a-045",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "lucario-a2-092",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 1,
-      "totalGames": 2.57379960978836
+      "totalGames": 2.5742068870325907
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "lunala-ex-a3-087",
       "winRate": 0,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.5093823381344957,
-      "totalGames": 2.3960930142195767
+      "winRate": 0.509387896106383,
+      "totalGames": 2.396374157093393
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 1,
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "greninja-a1-089&oricorio-a3-066",
       "winRate": 1,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "espeon-ex-a4-083",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 0,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5091050212660214,
-      "totalGames": 467.96710518408304
+      "winRate": 0.5091039260587036,
+      "totalGames": 468.0437391592841
     }
   ],
   "greninja-a1-089": [
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.3763498961114786,
-      "totalGames": 35.277987156635795
+      "winRate": 0.37635314387407853,
+      "totalGames": 35.283862789416695
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.7248244708929237,
-      "totalGames": 18.61323467372134
+      "winRate": 0.6559475713635106,
+      "totalGames": 30.852850530307034
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 0,
-      "totalGames": 5.190420085978837
+      "totalGames": 5.1912650342914946
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.20826432700906558,
-      "totalGames": 11.825463501432983
+      "winRate": 0.20825678823857388,
+      "totalGames": 11.8274689872662
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.7479921489318178,
-      "totalGames": 20.810077889660494
+      "winRate": 0.7479996471880337,
+      "totalGames": 20.8142018250402
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.3770678659452484,
-      "totalGames": 24.81971258460097
+      "winRate": 0.37707256348602103,
+      "totalGames": 24.823843358591127
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.6182771310951697,
-      "totalGames": 29.306799939925043
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6628307059686693,
-      "totalGames": 74.4936185179674
+      "winRate": 0.618282467583327,
+      "totalGames": 29.31127644366543
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.4208069478370363,
-      "totalGames": 30.481651811067024
+      "winRate": 0.4208092613233407,
+      "totalGames": 30.486252422922874
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.6630022379116692,
-      "totalGames": 4.479460934193122
+      "winRate": 0.6630004963859919,
+      "totalGames": 4.480511040819105
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.6903875245552218,
+      "totalGames": 59.85046132526391
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.4675898671522172,
-      "totalGames": 20.073558987544093
+      "winRate": 0.46759035672232957,
+      "totalGames": 20.077160149147623
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.2888339722506498,
-      "totalGames": 5.141176089616403
+      "winRate": 0.2888554145229605,
+      "totalGames": 5.141986085031235
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.32963326280329364,
-      "totalGames": 44.43937038828262
+      "winRate": 0.32963657695538795,
+      "totalGames": 44.44678014933982
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.8449598230327774,
-      "totalGames": 9.577816157407408
+      "winRate": 0.844953504242483,
+      "totalGames": 9.579645865624027
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.2942877210232024,
-      "totalGames": 5.045899661871694
+      "winRate": 0.29431263658709117,
+      "totalGames": 5.046642031027689
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.39331928895129087,
-      "totalGames": 50.650711297398594
+      "winRate": 0.39331853422355106,
+      "totalGames": 50.65969064619367
     },
     {
       "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.4511326162950406,
-      "totalGames": 2.7054737739748678
+      "winRate": 0.4511069799989423,
+      "totalGames": 2.7059745122285026
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.33250354321981995,
-      "totalGames": 3.870334109623016
+      "winRate": 0.3325030867609645,
+      "totalGames": 3.8709518640998066
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.23032727569253478,
-      "totalGames": 15.209423936838625
+      "winRate": 0.2303162603541959,
+      "totalGames": 15.211701953962141
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.46545352852114275,
-      "totalGames": 4.9270717576058205
+      "winRate": 0.4654336242307516,
+      "totalGames": 4.927729783899672
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.4900647815689252,
-      "totalGames": 7.614346663359789
+      "winRate": 0.49005922559023074,
+      "totalGames": 7.615492510531991
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 0,
-      "totalGames": 2.7044032523148154
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 5.114056207561729
+      "totalGames": 5.11484695355457
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.45750407873162846,
-      "totalGames": 16.363222215332893
+      "winRate": 0.4575018040628217,
+      "totalGames": 16.36560939694165
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 0.5460396408114361,
+      "totalGames": 2.419942350217865
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "magnezone-ex-b3-054",
-      "winRate": 0.6579831571146477,
-      "totalGames": 3.862840458002646
+      "winRate": 0.6579783711353396,
+      "totalGames": 3.8634528935602015
     },
     {
       "name": "greninja-a1-089",
       "winRate": 0.5,
-      "totalGames": 12.701996669973544
+      "totalGames": 12.703914520280334
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
       "winRate": 0,
-      "totalGames": 2.633748822751323
+      "totalGames": 2.6341986513494287
     },
     {
       "name": "mega-gyarados-ex-b1-052",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "rampardos-a2-089",
-      "winRate": 0.5037155567174282,
-      "totalGames": 2.5930689996693124
+      "winRate": 0.5037175904751627,
+      "totalGames": 2.5934899541344314
     },
     {
       "name": "houndstone-b2a-053&gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "espeon-ex-a4-083",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "hydreigon-b1-157&poison-barb-a3-146",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mimikyu-ex-b2-073",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "gyarados-a4-045&suicune-ex-a4a-020",
       "winRate": 0.5,
-      "totalGames": 2.499576774691358
+      "totalGames": 2.499931369306982
     },
     {
       "name": "greninja-a1-089&oricorio-a3-066",
-      "winRate": 0.5263127761824342,
-      "totalGames": 2.3190154546957675
+      "winRate": 0.5263288819162761,
+      "totalGames": 2.31924188868603
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0.5,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "guzzlord-ex-a3a-043",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.4937854913792469,
-      "totalGames": 499.07010770006616
+      "winRate": 0.49378780361434316,
+      "totalGames": 499.15320289572765
     }
   ],
   "baxcalibur-b2a-036&suicune-ex-a4a-020": [
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.4960957137688677,
-      "totalGames": 26.048181840277778
+      "winRate": 0.49609379919818986,
+      "totalGames": 26.053894359535484
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 0,
-      "totalGames": 2.9945146221891537
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.5082100389313291,
-      "totalGames": 22.044298062169318
+      "winRate": 0.5081984355857952,
+      "totalGames": 22.047878454659642
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5642665246968823,
-      "totalGames": 35.40868210069444
+      "winRate": 0.5642686623823318,
+      "totalGames": 35.416070079510966
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.21057249758447566,
-      "totalGames": 7.168876883267197
+      "winRate": 0.2105777303722724,
+      "totalGames": 7.17041633046274
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.672420120721686,
-      "totalGames": 46.64821341352513
+      "winRate": 0.6936886868863957,
+      "totalGames": 45.226535824072684
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0.5,
-      "totalGames": 11.318617146164023
+      "totalGames": 11.320972667539237
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.7629560360380812,
-      "totalGames": 17.9352376223545
+      "winRate": 0.7629434287399043,
+      "totalGames": 17.93803081479814
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
       "winRate": 0.5,
-      "totalGames": 3.0191366203703707
+      "totalGames": 3.0198599933862433
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.846512126260029,
-      "totalGames": 9.835098196373458
+      "winRate": 0.8465067568878245,
+      "totalGames": 9.837110520817124
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.7917356729909344,
-      "totalGames": 11.825463501432983
+      "winRate": 0.7917432117614261,
+      "totalGames": 11.8274689872662
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.5680847345202961,
-      "totalGames": 15.378433589616403
+      "winRate": 0.5197533538399579,
+      "totalGames": 16.81219652341492
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.39551182696620263,
-      "totalGames": 21.526389649746477
+      "winRate": 0.3955226463841067,
+      "totalGames": 21.53031222604088
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 0.5,
-      "totalGames": 5.736386132605821
+      "totalGames": 5.7376186021769815
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.7345455585205843,
-      "totalGames": 36.867222211750445
+      "winRate": 0.7345474484328942,
+      "totalGames": 36.87493565776774
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.5824484589320612,
-      "totalGames": 27.96374339864418
+      "winRate": 0.5824543318547855,
+      "totalGames": 27.968686194304112
     },
     {
       "name": "armarouge-ex-b2a-020",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.714296485143547,
-      "totalGames": 9.465768223655203
+      "winRate": 0.7142964907960665,
+      "totalGames": 9.467518401365176
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.48762581062905935,
-      "totalGames": 2.8981676727843917
+      "winRate": 0.4876197508383991,
+      "totalGames": 2.89880518324691
     },
     {
       "name": "slaking-b2-136",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.33835978333175754,
-      "totalGames": 3.9045908027447096
+      "winRate": 0.33836252405751904,
+      "totalGames": 3.905232872280857
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 0.5,
-      "totalGames": 2.86069941468254
+      "totalGames": 2.861310330548886
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 0,
-      "totalGames": 2.813596461640212
+      "totalGames": 2.814173944299942
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 0,
-      "totalGames": 2.8264427215608467
+      "totalGames": 2.827029322367836
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 2.719390555555556
+      "totalGames": 2.719901171802054
     },
     {
       "name": "lucario-a2-092",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 0,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 0.5,
-      "totalGames": 2.766493508597884
+      "totalGames": 2.767037558050998
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 1,
-      "totalGames": 2.766493508597884
+      "totalGames": 2.767037558050998
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "glimmora-b3a-045",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.6007911402006032,
-      "totalGames": 356.24654443975965
+      "winRate": 0.6007903531615396,
+      "totalGames": 356.31556906779156
     }
   ],
   "milotic-ex-b3b-015": [
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6158012460302327,
-      "totalGames": 29.269331681823193
+      "winRate": 0.6224261143171196,
+      "totalGames": 53.48185791625447
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.20507610544154287,
-      "totalGames": 18.811770790895064
+      "winRate": 0.20507897793901603,
+      "totalGames": 18.814476347812274
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.47192130653479664,
-      "totalGames": 55.191772877810855
+      "winRate": 0.47191972311105546,
+      "totalGames": 55.202555846790105
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5890212318773963,
-      "totalGames": 58.0588954224537
+      "winRate": 0.589018040365367,
+      "totalGames": 58.07029386637294
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.247231175860006,
-      "totalGames": 8.977253506117727
+      "winRate": 0.24720988041503295,
+      "totalGames": 8.97865694094999
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.602092556268993,
-      "totalGames": 123.33099889274698
+      "winRate": 0.5758899796826974,
+      "totalGames": 91.68608878041724
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.2768850511255348,
-      "totalGames": 67.20354861607146
+      "winRate": 0.2768786941856661,
+      "totalGames": 67.21433994335233
     },
     {
       "name": "milotic-ex-b3b-015",
       "winRate": 0.5,
-      "totalGames": 70.90282333112876
+      "totalGames": 70.91482078666652
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.7343972123389332,
-      "totalGames": 38.13690236855158
+      "winRate": 0.7344027487148557,
+      "totalGames": 38.14338765078948
     },
     {
       "name": "mega-steelix-ex-b1a-052",
-      "winRate": 0.5204984529274842,
-      "totalGames": 4.961328450727514
+      "winRate": 0.520510181719056,
+      "totalGames": 4.962010792080721
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5664044880753165,
-      "totalGames": 30.580587945877426
+      "winRate": 0.5663919777694078,
+      "totalGames": 30.58667836168264
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.44667642876970237,
-      "totalGames": 30.86927195353836
+      "winRate": 0.4466724489939652,
+      "totalGames": 30.87556727437503
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 3.0191366203703707
+      "totalGames": 3.0198599933862433
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.6008832669606452,
-      "totalGames": 9.665955774085099
+      "winRate": 0.6008984044084662,
+      "totalGames": 9.667848042923186
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.5796561411143022,
-      "totalGames": 32.23886746527778
+      "winRate": 0.579666958421911,
+      "totalGames": 32.24400554125817
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.4917899610686709,
-      "totalGames": 22.044298062169318
+      "winRate": 0.49180156441420475,
+      "totalGames": 22.047878454659642
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 0.8323755847156685,
+      "totalGames": 7.456942847694634
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.7575623914888929,
-      "totalGames": 10.310185742394179
+      "winRate": 0.7575665558030493,
+      "totalGames": 10.311825489209573
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.3817228689048303,
-      "totalGames": 29.306799939925043
+      "winRate": 0.3817175324166731,
+      "totalGames": 29.31127644366543
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.5429026610602858,
-      "totalGames": 16.632279992559525
+      "winRate": 0.542905124528197,
+      "totalGames": 16.634858148696978
     },
     {
       "name": "slaking-b2-136",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 1,
-      "totalGames": 2.791115506779101
+      "totalGames": 2.791677032681128
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.27692874127724904,
-      "totalGames": 3.9666810590277786
+      "winRate": 0.27689846773668536,
+      "totalGames": 3.96736719960901
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.3315622291740474,
-      "totalGames": 15.110935944113757
+      "winRate": 0.3315612310134456,
+      "totalGames": 15.113144055441621
     },
     {
       "name": "rampardos-a2-089",
-      "winRate": 0.6605485106974441,
-      "totalGames": 3.791115506779101
+      "winRate": 0.6605450747986905,
+      "totalGames": 3.7916770326811275
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.3578922056484719,
-      "totalGames": 3.8649815013227515
+      "winRate": 0.3579057339467624,
+      "totalGames": 3.8655954565715174
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.7010005117836448,
-      "totalGames": 8.787057491181658
+      "winRate": 0.7009930009185668,
+      "totalGames": 8.788325926778118
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.28401880624569065,
-      "totalGames": 3.7771987251984136
+      "winRate": 0.2839910095759472,
+      "totalGames": 3.777750373107576
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 1,
-      "totalGames": 2.6512340098655205
+      "totalGames": 2.6516962492751732
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.43466936284703367,
-      "totalGames": 8.134039278549384
+      "winRate": 0.4346730872909246,
+      "totalGames": 8.13484420832685
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 2.6230436061507936
+      "totalGames": 2.6234858362928506
     },
     {
       "name": "solgaleo-ex-a3-122",
       "winRate": 1,
-      "totalGames": 2.415362404100529
+      "totalGames": 2.4156572241952334
     },
     {
       "name": "ilima-a3-149",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "flygon-ex-b3-126",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "lucario-a2-092",
       "winRate": 0,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "buzzwole-ex-a3a-006",
-      "winRate": 0.6471621506129848,
-      "totalGames": 3.7322368154761905
+      "winRate": 0.6471510241618615,
+      "totalGames": 3.732756549869948
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 0,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
-      "winRate": 0.3135719292839458,
-      "totalGames": 3.503145180224868
+      "winRate": 0.31355991863310867,
+      "totalGames": 3.5035023076591747
     },
     {
       "name": "lunala-ex-a3-087",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 0,
-      "totalGames": 2.536688192239859
+      "totalGames": 2.5370691281697866
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 0,
-      "totalGames": 2.536688192239859
+      "totalGames": 2.5370691281697866
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-absol-ex-b1-151&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "hydreigon-b1-157&poison-barb-a3-146",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "gyarados-a4-045&suicune-ex-a4a-020",
       "winRate": 1,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 2.3190154546957675
+      "totalGames": 2.31924188868603
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 2.3190154546957675
+      "totalGames": 2.31924188868603
     },
     {
       "name": "dusknoir-a2-072",
-      "winRate": 0.5228544433514705,
-      "totalGames": 2.248361025132275
+      "winRate": 0.5228688721590726,
+      "totalGames": 2.248537309312614
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 3.317944933035715
+      "totalGames": 3.318170607180372
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0.5,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mimikyu-ex-b2-073",
       "winRate": 1,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "gyarados-a4-045",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "greninja-a1-089&oricorio-a3-066",
       "winRate": 0,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
-      "winRate": 0.49408356388094404,
-      "totalGames": 2.171283465608466
+      "winRate": 0.49407969594538,
+      "totalGames": 2.1714050409052508
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "magnezone-ex-b3-054",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "guzzlord-ex-a3a-043",
       "winRate": 0,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.503928723272657,
-      "totalGames": 772.8946090724205
+      "winRate": 0.5039299406265829,
+      "totalGames": 773.0230062630467
     }
   ],
   "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024": [
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0.5,
-      "totalGames": 3.0191366203703707
+      "totalGames": 3.0198599933862433
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5083791141866179,
-      "totalGames": 5.749232392526455
+      "winRate": 0.5083832511755055,
+      "totalGames": 5.750473980244876
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.8342019550291141,
-      "totalGames": 8.627060153769841
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.5134794313125138,
+      "totalGames": 2.9405851619675647
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5332797825531209,
-      "totalGames": 2.8307248082010585
+      "winRate": 0.533296468554201,
+      "totalGames": 2.8313144483904673
     },
     {
       "name": "mega-lucario-ex-b3-081",
       "winRate": 1,
-      "totalGames": 4.432357981150794
+      "totalGames": 4.433374654570161
     },
     {
       "name": "milotic-ex-b3b-015",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.43034970734127
+      "totalGames": 1.430655165274443
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.7990369143662402,
+      "totalGames": 7.118994818191165
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.6680079227765138,
-      "totalGames": 4.256792428902116
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0,
-      "totalGames": 1.43034970734127
+      "winRate": 0.668008593570854,
+      "totalGames": 4.25768448764228
     },
     {
       "name": "greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "Total",
-      "winRate": 0.6884441162727281,
-      "totalGames": 36.116296917989416
+      "winRate": 0.6884482641512298,
+      "totalGames": 36.12418715475079
     }
   ],
   "mega-charizard-x-ex-b2b-009": [
     {
       "name": "butterfree-b3b-003",
       "winRate": 1,
-      "totalGames": 2.9945146221891537
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.39911673303935485,
-      "totalGames": 9.665955774085099
+      "winRate": 0.3991015955915339,
+      "totalGames": 9.667848042923186
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.6571020327600211,
-      "totalGames": 4.402383374669313
+      "winRate": 0.6570974075286898,
+      "totalGames": 4.403378772411743
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.5134729271992705,
-      "totalGames": 2.9399180175264554
+      "winRate": 0.5134794313125138,
+      "totalGames": 2.9405851619675647
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.5332797825531209,
-      "totalGames": 2.8307248082010585
+      "winRate": 0.533296468554201,
+      "totalGames": 2.8313144483904673
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.4587911412343554,
-      "totalGames": 9.422947357253088
+      "winRate": 0.45880707257217207,
+      "totalGames": 9.424667141138864
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5041111834951096,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.5041131319840788,
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5332797825531209,
-      "totalGames": 2.8307248082010585
+      "winRate": 0.533296468554201,
+      "totalGames": 2.8313144483904673
     },
     {
       "name": "gyarados-a4-045",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.6424658046275676,
-      "totalGames": 10.013651242559526
+      "winRate": 0.6424757073370154,
+      "totalGames": 10.015080512142358
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
       "winRate": 1,
-      "totalGames": 2.7044032523148154
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "greninja-a1-089",
       "winRate": 1,
-      "totalGames": 2.7044032523148154
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.5712906926930628,
-      "totalGames": 62.75865974757497
+      "winRate": 0.5712938517437515,
+      "totalGames": 62.770554877237934
     }
   ],
   "mega-sceptile-ex-b3-008&greninja-a1-089": [
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6965979005733809,
-      "totalGames": 125.35839267939822
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.5155349252016623,
+      "totalGames": 63.49759792574438
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.6237107666108784,
-      "totalGames": 39.52394159942681
+      "winRate": 0.6237123396963488,
+      "totalGames": 39.5314113882868
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.5530716633190091,
-      "totalGames": 65.51574263227515
+      "winRate": 0.5530716023167114,
+      "totalGames": 65.52888492185762
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.4151380451129464,
-      "totalGames": 9.991751199294534
+      "winRate": 0.4151313666049835,
+      "totalGames": 9.993874714478384
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.7131440972615611,
+      "totalGames": 97.09748875933013
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.5280786934652034,
-      "totalGames": 55.191772877810855
+      "winRate": 0.5280802768889444,
+      "totalGames": 55.202555846790105
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.2762084849351267,
-      "totalGames": 44.78631070767196
+      "winRate": 0.2762059286596228,
+      "totalGames": 44.795386303577
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.7325614985216966,
-      "totalGames": 10.456490369268078
+      "winRate": 0.7325520302504048,
+      "totalGames": 10.458233961649476
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.40929756561013325,
-      "totalGames": 44.91513014743167
+      "winRate": 0.40929910642921424,
+      "totalGames": 44.92429717809114
     },
     {
       "name": "mimikyu-ex-b2-073",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.4615037374714018,
-      "totalGames": 65.22527442184746
+      "winRate": 0.4615003720306424,
+      "totalGames": 65.23821053998914
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
       "winRate": 0.5,
-      "totalGames": 72.14293555555558
+      "totalGames": 72.15723281045751
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.6605149358732946,
-      "totalGames": 79.8700438337743
+      "winRate": 0.6605176890614614,
+      "totalGames": 79.88556697291878
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.4205559813384123,
-      "totalGames": 7.0618247172619055
+      "winRate": 0.4205663096942081,
+      "totalGames": 7.063288179896959
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.6333885548030967,
-      "totalGames": 4.117624613095238
+      "winRate": 0.6333713488229705,
+      "totalGames": 4.118417891906763
     },
     {
       "name": "armarouge-ex-b2a-020",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.6800383914779901,
-      "totalGames": 4.323164771825398
+      "winRate": 0.680044976275995,
+      "totalGames": 4.324103940993064
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.46672021744687914,
-      "totalGames": 2.8307248082010585
+      "winRate": 0.46670353144579907,
+      "totalGames": 2.8313144483904673
     },
     {
       "name": "dragalge-ex-b1-160",
       "winRate": 1,
-      "totalGames": 2.8681930663029105
+      "totalGames": 2.8688093010884907
     },
     {
       "name": "tyrantrum-b2-090",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.40351700495781506,
-      "totalGames": 36.67573160411156
+      "name": "gardevoir-a1-132",
+      "winRate": 0.5320423905327323,
+      "totalGames": 2.791677032681128
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.2654544414794157,
-      "totalGames": 36.867222211750445
+      "winRate": 0.26545255156710584,
+      "totalGames": 36.87493565776774
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.2698615457345601,
-      "totalGames": 16.1310103166336
+      "winRate": 0.2698601589857983,
+      "totalGames": 16.134652256617926
     },
     {
       "name": "mega-lopunny-ex-b1a-042",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.6066807110487091,
-      "totalGames": 50.650711297398594
+      "winRate": 0.6066814657764489,
+      "totalGames": 50.65969064619367
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.6634215642515745,
-      "totalGames": 20.526389649746477
+      "winRate": 0.663419881368241,
+      "totalGames": 20.53031222604088
     },
     {
       "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.30546078380757763,
-      "totalGames": 4.276061818783069
+      "winRate": 0.30544690692569304,
+      "totalGames": 4.27696755474412
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.8414208219762888,
-      "totalGames": 9.364068665950178
+      "winRate": 0.8414124814338934,
+      "totalGames": 9.365746658327684
     },
     {
       "name": "slaking-b2-136",
       "winRate": 0,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 1,
-      "totalGames": 4.276061818783069
+      "totalGames": 4.27696755474412
     },
     {
       "name": "mega-sableye-ex-b3b-041",
-      "winRate": 0.4679738948827772,
-      "totalGames": 2.791115506779101
+      "winRate": 0.4679576094672677,
+      "totalGames": 2.791677032681128
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 0,
-      "totalGames": 2.849280516975309
+      "totalGames": 2.8498833278218694
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
-      "winRate": 0.33199207722348634,
-      "totalGames": 4.256792428902116
+      "winRate": 0.33199140642914593,
+      "totalGames": 4.25768448764228
     },
     {
       "name": "magnezone-b1a-026",
-      "winRate": 0.48330858019777184,
-      "totalGames": 5.40880650462963
+      "winRate": 0.4832998202515488,
+      "totalGames": 5.409806461445689
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
-      "winRate": 0.7391654382951177,
-      "totalGames": 5.483743020833334
+      "winRate": 0.739159829872357,
+      "totalGames": 5.484796166841736
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 1,
-      "totalGames": 3.8799688045634926
+      "totalGames": 2.5592089459533813
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.7981882417213684,
-      "totalGames": 6.854143515211641
+      "winRate": 0.7981873038061518,
+      "totalGames": 6.8554595677993415
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5633692602234749,
-      "totalGames": 11.792634170524693
+      "winRate": 0.5633734922227006,
+      "totalGames": 11.79461635442603
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
-      "winRate": 0.5058063915681209,
-      "totalGames": 5.346716248346562
+      "winRate": 0.5058094742693502,
+      "totalGames": 5.347672134117536
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "magnezone-ex-b3-054",
-      "winRate": 0.3492902867710988,
-      "totalGames": 3.9060181649581134
+      "winRate": 0.3492989842898725,
+      "totalGames": 3.9066612476217335
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.876224477327036,
-      "totalGames": 8.874840267305997
+      "winRate": 0.8762351584649605,
+      "totalGames": 8.876171010242059
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "hydreigon-b1-157&poison-barb-a3-146",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "galarian-obstagoon-b2-100",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "greninja-a1-089&oricorio-a3-066",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5466558190167975,
-      "totalGames": 901.2095006666116
+      "winRate": 0.5466546480135127,
+      "totalGames": 901.3849675063618
     }
   ],
   "gourgeist-b2-072": [
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5450229829049282,
-      "totalGames": 7.600786722332452
+      "winRate": 0.5450482056266854,
+      "totalGames": 7.6019229447936585
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.4341545961495844,
-      "totalGames": 6.954058870149913
+      "winRate": 0.4341720232078174,
+      "totalGames": 6.9554458416607385
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.766487468391303,
-      "totalGames": 5.226817822420635
+      "winRate": 0.7664964227431202,
+      "totalGames": 5.22768860548386
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.8123273833820649,
-      "totalGames": 8.043625849041007
+      "winRate": 0.8123162636761568,
+      "totalGames": 8.045076394300777
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.540828611933811,
-      "totalGames": 5.348857291666667
+      "winRate": 0.5408502797809955,
+      "totalGames": 5.349814697128851
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.2018117582786316,
-      "totalGames": 6.854143515211641
+      "winRate": 0.20181269619384828,
+      "totalGames": 6.8554595677993415
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.35582253716652207,
-      "totalGames": 3.8874624561838633
+      "winRate": 0.35583485370473394,
+      "totalGames": 3.888092368190331
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.48852052551151104,
-      "totalGames": 2.7044032523148154
+      "winRate": 0.48851450088446435,
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.7159811937543092,
-      "totalGames": 3.7771987251984136
+      "winRate": 0.7160089904240529,
+      "totalGames": 3.777750373107576
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 0,
-      "totalGames": 3.8649815013227515
+      "totalGames": 3.8655954565715174
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.5591818650827436,
-      "totalGames": 8.204336867559524
+      "winRate": 0.4928654776628556,
+      "totalGames": 7.1323445514803145
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5291564184631143,
-      "totalGames": 2.4967220502645504
+      "winRate": 0.5291729938069843,
+      "totalGames": 2.497074618625228
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.49268506518419747,
-      "totalGames": 2.536688192239859
+      "winRate": 0.643453380341538,
+      "totalGames": 3.609916270554518
     },
     {
       "name": "lunala-ex-a3-087",
       "winRate": 0,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.49061766186550426,
-      "totalGames": 2.3960930142195767
+      "winRate": 0.49061210389361687,
+      "totalGames": 2.396374157093393
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "mega-gyarados-ex-b1-052",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5571147190335224,
-      "totalGames": 86.51810774663801
+      "winRate": 0.5571173987207412,
+      "totalGames": 86.53196150498857
     }
   ],
   "mega-manectric-ex-b2b-027": [
     {
       "name": "hydreigon-b1-157",
       "winRate": 1,
-      "totalGames": 2.608056302910053
+      "totalGames": 2.608487895213641
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5794440186615877,
-      "totalGames": 7.0618247172619055
+      "winRate": 0.5794336903057918,
+      "totalGames": 7.063288179896959
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.2939904455084618,
-      "totalGames": 5.134752959656085
+      "winRate": 0.2940147653408008,
+      "totalGames": 5.135558395997287
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5358568362069932,
-      "totalGames": 13.614081124338625
+      "winRate": 0.5358755271711942,
+      "totalGames": 13.616646363100795
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 1,
-      "totalGames": 2.608056302910053
+      "totalGames": 2.608487895213641
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5041111834951096,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.5041131319840788,
+      "totalGames": 2.9952205187561134
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.4076496056521672,
-      "totalGames": 15.285430974702383
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.12174594447470675,
+      "totalGames": 12.199917857399903
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.1553364730544974,
-      "totalGames": 9.71805449487434
+      "winRate": 0.15534285207024767,
+      "totalGames": 9.719983742865203
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.752768824139994,
-      "totalGames": 8.977253506117727
+      "winRate": 0.7527901195849671,
+      "totalGames": 8.97865694094999
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.7894275024155243,
-      "totalGames": 7.168876883267197
+      "winRate": 0.7894222696277277,
+      "totalGames": 7.17041633046274
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
       "winRate": 1,
-      "totalGames": 5.065169051752647
+      "totalGames": 5.065925098129529
     },
     {
       "name": "slaking-b2-136",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0,
-      "totalGames": 6.2086189541997365
+      "totalGames": 1.485290522062992
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 2.6894159490740743
+      "totalGames": 2.689905289643635
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.5105430637754248,
+      "totalGames": 9.297321903351618
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.668925188664955,
-      "totalGames": 3.317944933035715
+      "winRate": 0.6689266380266014,
+      "totalGames": 3.318170607180372
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 0,
-      "totalGames": 4.413221360780424
+      "totalGames": 4.4135146611839176
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0.5,
-      "totalGames": 2.241937895171958
+      "totalGames": 2.242109620278667
     },
     {
       "name": "greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-gyarados-ex-b1-052",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.49023738258683275,
-      "totalGames": 104.96041579530426
+      "winRate": 0.4902421779318286,
+      "totalGames": 104.97742265963328
     }
   ],
   "mega-altaria-ex-b1-102&darkrai-b2b-040": [
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6819828462965168,
-      "totalGames": 8.200992533068783
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.6594174608869106,
+      "totalGames": 4.433374654570161
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5398124520158681,
-      "totalGames": 2.7964681150793655
+      "winRate": 0.5398326580536239,
+      "totalGames": 2.7970334402094172
     },
     {
       "name": "milotic-ex-b3b-015",
       "winRate": 1,
-      "totalGames": 3.0191366203703707
+      "totalGames": 3.0198599933862433
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.33699776208833065,
-      "totalGames": 4.479460934193122
+      "winRate": 0.3369995036140082,
+      "totalGames": 4.480511040819105
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.3468354529312808,
-      "totalGames": 4.281414427083334
+      "winRate": 0.34684216681141156,
+      "totalGames": 4.282323962272409
     },
     {
       "name": "hydreigon-b1-157",
       "winRate": 0,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.5123741893709407,
-      "totalGames": 2.8981676727843917
+      "winRate": 0.512380249161601,
+      "totalGames": 2.89880518324691
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.6956775732065202,
-      "totalGames": 8.253448094411375
+      "winRate": 0.6956925397967068,
+      "totalGames": 8.255047569409708
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "dragalge-ex-b1-160",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.7085419472575114,
+      "totalGames": 3.769180121062314
     },
     {
       "name": "butterfree-b3b-003",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.49337754963102975,
-      "totalGames": 51.99064757523148
+      "winRate": 0.4933877643090525,
+      "totalGames": 52.000577997442036
     }
   ],
   "greninja-a1-089&mega-absol-ex-b1-151": [
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.44692833668099086,
-      "totalGames": 65.51574263227515
+      "winRate": 0.4469283976832887,
+      "totalGames": 65.52888492185762
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.26560278766106676,
-      "totalGames": 38.13690236855158
+      "winRate": 0.2655972512851443,
+      "totalGames": 38.14338765078948
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.42804880016348207,
-      "totalGames": 69.03342697365521
+      "winRate": 0.42805145793802585,
+      "totalGames": 69.04551713035676
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
       "winRate": 0.5,
-      "totalGames": 63.86941308862432
+      "totalGames": 63.8806770398715
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.5045865010488653,
-      "totalGames": 102.43131255621702
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.5224574958634997,
+      "totalGames": 47.624338356506954
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 1,
+      "totalGames": 4.037000497476768
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.5179653044115708,
-      "totalGames": 40.21585543237433
+      "winRate": 0.5179656748689562,
+      "totalGames": 40.22381633477697
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5711056528184435,
-      "totalGames": 39.76338161072531
+      "winRate": 0.5710978370107025,
+      "totalGames": 39.77102135171893
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.6229321340547517,
-      "totalGames": 24.81971258460097
+      "winRate": 0.6229274365139789,
+      "totalGames": 24.823843358591127
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.4607705055199275,
-      "totalGames": 63.198287309303346
+      "winRate": 0.4607727001503424,
+      "totalGames": 63.21049448222809
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.5494724617430389,
+      "totalGames": 77.43032702333709
     },
     {
       "name": "mimikyu-ex-b2-073",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "armarouge-ex-b2a-020",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.609604253925546,
-      "totalGames": 20.30670863839286
+      "winRate": 0.6095956450642588,
+      "totalGames": 20.309765497261406
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.5333040590149495,
-      "totalGames": 5.480531455853175
+      "winRate": 0.533321308697813,
+      "totalGames": 5.481582322324764
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.45917138806618907,
-      "totalGames": 5.348857291666667
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.7420862379844899,
-      "totalGames": 26.637591132881393
+      "winRate": 0.4591497202190046,
+      "totalGames": 5.349814697128851
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.4207022478920681,
-      "totalGames": 26.955311994874343
+      "winRate": 0.4206978971208512,
+      "totalGames": 26.959539015974446
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0,
-      "totalGames": 5.065169051752647
+      "totalGames": 5.065925098129529
     },
     {
       "name": "iron-bundle-ex-b3a-013&future-booster-energy-capsule-b3a-070",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "solgaleo-ex-a3-122",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 0.5,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.4175515410679388,
-      "totalGames": 27.96374339864418
+      "winRate": 0.4175456681452145,
+      "totalGames": 27.968686194304112
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.6350031002761771,
-      "totalGames": 4.068380616732805
+      "winRate": 0.6349865308120979,
+      "totalGames": 4.069138942646504
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.4909755798877938,
-      "totalGames": 5.634686574900794
+      "winRate": 0.4909710336723883,
+      "totalGames": 5.635846859139489
     },
     {
       "name": "slaking-b2-136",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 1,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 5.331015263999119
+      "totalGames": 5.331960005367888
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
-      "winRate": 0.30255081030786846,
-      "totalGames": 4.034123923611111
+      "winRate": 0.30253456503103116,
+      "totalGames": 4.034857934465453
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.6857383679537395,
-      "totalGames": 11.332309856701942
+      "winRate": 0.6857491172482849,
+      "totalGames": 11.333965306993168
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.3767787263400389,
-      "totalGames": 10.758020636849647
+      "winRate": 0.37677966502017274,
+      "totalGames": 10.759978252409761
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 0.5,
-      "totalGames": 5.532987017195768
+      "totalGames": 5.534075116101996
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5800040888041813,
-      "totalGames": 8.524422843915344
+      "winRate": 0.5800090864809212,
+      "totalGames": 8.525504864056735
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.7522086153256893,
-      "totalGames": 5.331728945105821
+      "winRate": 0.7522097912108751,
+      "totalGames": 5.332674193038327
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 0.5,
-      "totalGames": 2.728668409942681
+      "totalGames": 2.7291856115177553
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 2.526696656746032
+      "totalGames": 2.5270705007836467
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "lunala-ex-a3-087",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 2.359695277777778
+      "totalGames": 2.359950585901027
     },
     {
       "name": "mega-absol-ex-b1-151&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
-      "winRate": 0.4736872238175657,
-      "totalGames": 2.3190154546957675
+      "winRate": 0.47367111808372386,
+      "totalGames": 2.31924188868603
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.7624985647112424,
-      "totalGames": 4.625184649470899
+      "winRate": 0.7625062361936001,
+      "totalGames": 4.625628399304166
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.6640474703743398,
-      "totalGames": 3.2697714583333335
+      "winRate": 0.6640457647775561,
+      "totalGames": 3.26996293942577
     },
     {
       "name": "buzzwole-ex-a3a-006",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 0.5,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-gyarados-ex-b1-052",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "houndstone-b2a-053&gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.5004824301407097,
-      "totalGames": 740.7308690919862
+      "winRate": 0.5004802915127196,
+      "totalGames": 740.8626990117739
     }
   ],
   "magnezone-b1a-026&miraidon-ex-b3a-019": [
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.4874241123815596,
-      "totalGames": 37.84331389467593
+      "winRate": 0.48742712119278786,
+      "totalGames": 37.85101037080804
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.571951199836518,
-      "totalGames": 69.03342697365521
+      "winRate": 0.5719485420619742,
+      "totalGames": 69.04551713035676
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
       "winRate": 0.5,
-      "totalGames": 92.6079900981041
+      "totalGames": 92.62403702415226
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6855645899992451,
-      "totalGames": 46.4447229965829
+      "winRate": 0.6345396852795225,
+      "totalGames": 76.8225533157939
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.5593393343304984,
-      "totalGames": 150.74851070574312
+      "name": "gardevoir-a1-132",
+      "winRate": 0.5529635473779227,
+      "totalGames": 2.730613986858632
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.4549770170950717,
-      "totalGames": 7.600786722332452
+      "winRate": 0.45495179437331457,
+      "totalGames": 7.6019229447936585
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.5602237769875896,
+      "totalGames": 117.67356368660197
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.4394317096509292,
-      "totalGames": 38.72948175815697
+      "winRate": 0.43943728153302325,
+      "totalGames": 38.737097437373095
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.36368759196705563,
-      "totalGames": 42.42737057897928
+      "winRate": 0.363687620244453,
+      "totalGames": 42.43406203265796
     },
     {
       "name": "espeon-b3a-020",
       "winRate": 1,
-      "totalGames": 2.8739025151565256
+      "totalGames": 2.8745228024519993
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.7231149488744651,
-      "totalGames": 67.20354861607146
+      "winRate": 0.7231213058143339,
+      "totalGames": 67.21433994335233
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.4823167864057072,
-      "totalGames": 18.397478908454588
+      "winRate": 0.48232584213818874,
+      "totalGames": 18.399890405122697
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.33948506412670537,
-      "totalGames": 79.8700438337743
+      "winRate": 0.3394823109385386,
+      "totalGames": 79.88556697291878
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.6330620269595858,
-      "totalGames": 68.36943800540125
+      "winRate": 0.6330688059598749,
+      "totalGames": 68.38247644941774
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
-      "winRate": 0.49162088581338226,
-      "totalGames": 5.749232392526455
+      "winRate": 0.49161674882449446,
+      "totalGames": 5.750473980244876
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0.5412088587656446,
-      "totalGames": 9.422947357253088
+      "winRate": 0.541192927427828,
+      "totalGames": 9.424667141138864
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 9.20705882247575
+      "totalGames": 9.208625370831204
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.3064159448775662,
-      "totalGames": 8.113209756944446
+      "winRate": 0.30640181816587037,
+      "totalGames": 8.114709692168535
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.7060095544915382,
-      "totalGames": 5.134752959656085
+      "winRate": 0.7059852346591993,
+      "totalGames": 5.135558395997287
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.6044881730337973,
-      "totalGames": 21.526389649746477
+      "winRate": 0.6044773536158933,
+      "totalGames": 21.53031222604088
     },
     {
       "name": "mega-sableye-ex-b3b-041",
       "winRate": 0,
-      "totalGames": 2.791115506779101
+      "totalGames": 2.791677032681128
     },
     {
       "name": "gyarados-a4-045",
       "winRate": 0.5,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 1,
-      "totalGames": 4.29104912202381
+      "totalGames": 4.291965495823329
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.6703667371967064,
-      "totalGames": 44.43937038828262
+      "winRate": 0.670363423044612,
+      "totalGames": 44.44678014933982
     },
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.4748496738907501,
-      "totalGames": 15.876715771604939
+      "winRate": 0.47483618367700525,
+      "totalGames": 15.879467425822181
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
-      "winRate": 0.6731865701877687,
-      "totalGames": 4.232527271274251
+      "winRate": 0.6731898496512511,
+      "totalGames": 4.233402106847368
     },
     {
       "name": "ilima-a3-149",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.7874080422017058,
-      "totalGames": 6.506580816247797
+      "winRate": 0.7874011751714336,
+      "totalGames": 6.5076501722957705
     },
     {
       "name": "armarouge-ex-b2a-020",
-      "winRate": 0.49527383588800494,
-      "totalGames": 5.775995434027779
+      "winRate": 0.4952715132738277,
+      "totalGames": 5.777256017886321
     },
     {
       "name": "mega-blaziken-ex-b1-036",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.5230727021601353,
-      "totalGames": 22.170395547012788
+      "winRate": 0.523085996581481,
+      "totalGames": 22.173355652207643
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
-      "winRate": 0.3043224267934798,
-      "totalGames": 8.253448094411375
+      "winRate": 0.30430746020329325,
+      "totalGames": 8.255047569409708
     },
     {
       "name": "slaking-b2-136",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-altaria-ex-b1-102",
-      "winRate": 0.2934157692857442,
-      "totalGames": 3.6562297776124346
+      "winRate": 0.29339252445556924,
+      "totalGames": 3.6566955629682427
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.5286044233276375,
-      "totalGames": 15.658462122464728
+      "winRate": 0.5285986153940705,
+      "totalGames": 15.660349072383582
     },
     {
       "name": "lucario-a2-092",
       "winRate": 0,
-      "totalGames": 1.4132213607804234
+      "totalGames": 1.413514661183918
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 1,
-      "totalGames": 5.177573826058201
+      "totalGames": 5.1784096562236
     },
     {
       "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
       "winRate": 0.5,
-      "totalGames": 2.766493508597884
+      "totalGames": 2.767037558050998
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
-      "winRate": 0.6931788683063952,
-      "totalGames": 3.5802227397486774
+      "winRate": 0.6931946348662793,
+      "totalGames": 3.580634576066538
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.4143663027024809,
-      "totalGames": 7.945270625826721
+      "winRate": 0.4143574203571045,
+      "totalGames": 7.9459415694958535
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0.2842155887030562,
-      "totalGames": 3.8649815013227515
+      "winRate": 0.2841885321064752,
+      "totalGames": 3.8655954565715174
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 2.558812306547619
+      "totalGames": 2.5592089459533813
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.5539718645737302,
-      "totalGames": 2.4628221976962084
+      "winRate": 0.5540029700123825,
+      "totalGames": 2.463150704279397
     },
     {
       "name": "magnezone-ex-b3-054",
-      "winRate": 0.370405834643091,
-      "totalGames": 3.6833496596671083
+      "winRate": 0.3704272636925417,
+      "totalGames": 3.683834694444908
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
-      "winRate": 0.3603041833926361,
-      "totalGames": 3.6251846494709
+      "winRate": 0.3603200236595838,
+      "totalGames": 3.625628399304166
     },
     {
       "name": "mega-altaria-ex-b1-102&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "houndstone-b2a-053&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "lunala-ex-a3-087",
-      "winRate": 0.6601326383920108,
-      "totalGames": 3.786476579585538
+      "winRate": 0.660128964445208,
+      "totalGames": 3.7870348128232774
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "rampardos-a2-089",
-      "winRate": 0.5344559596816248,
-      "totalGames": 2.4078687524801587
+      "winRate": 0.5344762710517253,
+      "totalGames": 2.4081582536556287
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 1,
-      "totalGames": 3.6465950826719578
+      "totalGames": 3.6470540294173226
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "greninja-a1-089&oricorio-a3-066",
       "winRate": 1,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0.5,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "espeon-ex-a4-083",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "guzzlord-ex-a3a-043",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "mega-gyarados-ex-b1-052",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5495930771654438,
-      "totalGames": 986.6949282231046
+      "winRate": 0.5495924267025014,
+      "totalGames": 986.8643515041945
     }
   ],
   "dedenne-ex-b3b-024": [
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5848619548870536,
-      "totalGames": 9.991751199294534
+      "winRate": 0.5848686333950165,
+      "totalGames": 9.993874714478384
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6769382362795123,
-      "totalGames": 4.076231108906526
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.6380086581513387,
-      "totalGames": 17.252825714836863
+      "winRate": 0.7642532654726804,
+      "totalGames": 5.586925003714449
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.49588881650489036,
-      "totalGames": 2.9945146221891537
+      "winRate": 0.49588686801592124,
+      "totalGames": 2.9952205187561134
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.3125255326197456,
-      "totalGames": 12.330392884424604
+      "winRate": 0.3125147546137714,
+      "totalGames": 12.332756764101472
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.2424376085111071,
-      "totalGames": 10.310185742394179
+      "winRate": 0.24243344419695062,
+      "totalGames": 10.311825489209573
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0,
-      "totalGames": 2.608056302910053
+      "totalGames": 2.608487895213641
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.5691032275907267,
+      "totalGames": 14.49594864679668
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.4835179810641435,
-      "totalGames": 2.9227896709656087
+      "winRate": 0.4835099776475298,
+      "totalGames": 2.92344465787704
     },
     {
       "name": "mimikyu-ex-b2-073",
-      "winRate": 0.42119029083044784,
-      "totalGames": 2.608056302910053
+      "winRate": 0.4211474013493725,
+      "totalGames": 2.608487895213641
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5251503261092499,
-      "totalGames": 15.876715771604939
+      "winRate": 0.5251638163229947,
+      "totalGames": 15.879467425822181
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.15504017696722258,
-      "totalGames": 9.577816157407408
+      "winRate": 0.1550464957575171,
+      "totalGames": 9.579645865624027
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0.5,
-      "totalGames": 5.736386132605821
+      "totalGames": 5.7376186021769815
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 1,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.3268134298122312,
-      "totalGames": 4.232527271274251
+      "winRate": 0.32681015034874894,
+      "totalGames": 4.233402106847368
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.47660816901624437,
-      "totalGames": 2.700121165674603
+      "winRate": 0.4765958730989002,
+      "totalGames": 2.7006181047002134
     },
     {
       "name": "mega-lucario-ex-b3-081&donphan-ex-a4-100",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.6627508061361335,
-      "totalGames": 3.705830614528219
+      "winRate": 0.6627485563869968,
+      "totalGames": 3.7063316060637215
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.6232212736599612,
-      "totalGames": 10.758020636849647
+      "winRate": 0.6232203349798272,
+      "totalGames": 10.759978252409761
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 3.8649815013227515
+      "totalGames": 3.8655954565715174
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 0,
-      "totalGames": 3.7022622089947097
+      "totalGames": 3.702760667711529
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "houndstone-b2a-053&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "espeon-ex-a4-083",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
+    },
+    {
+      "name": "gardevoir-a1-132",
+      "winRate": 1,
+      "totalGames": 1.249965684653491
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-steelix-ex-b1a-052",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5019816987101733,
-      "totalGames": 139.2826097125772
+      "winRate": 0.5019827487986376,
+      "totalGames": 139.3076529573056
     }
   ],
-  "mega-gardevoir-ex-b2-066": [
-    {
-      "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.31443541000075487,
-      "totalGames": 46.4447229965829
-    },
+  "professor's-research-pa-007": [
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.38419875396976727,
-      "totalGames": 29.269331681823193
-    },
-    {
-      "name": "ilima-a3-149",
-      "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "winRate": 0.4241100203173026,
+      "totalGames": 91.68608878041724
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.18466290795136217,
-      "totalGames": 21.4999834487985
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.4595072077249381,
-      "totalGames": 70.00822406387786
-    },
-    {
-      "name": "greninja-a1-089",
-      "winRate": 0.2751755291070764,
-      "totalGames": 18.61323467372134
-    },
-    {
-      "name": "dedenne-ex-b3b-024",
-      "winRate": 0.3230617637204876,
-      "totalGames": 4.076231108906526
-    },
-    {
-      "name": "butterfree-b3b-003",
-      "winRate": 0.5347649761021407,
-      "totalGames": 25.760344283234126
+      "winRate": 0.495047109673892,
+      "totalGames": 47.03013421470208
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.5964829950421848,
-      "totalGames": 36.67573160411156
+      "winRate": 0.28685590273843886,
+      "totalGames": 97.09748875933013
     },
     {
-      "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.3830677104182546,
-      "totalGames": 14.246402584876545
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
+      "name": "professor's-research-pa-007",
       "winRate": 0.5,
-      "totalGames": 8.59708554728836
+      "totalGames": 168.69084252323623
+    },
+    {
+      "name": "butterfree-b3b-003",
+      "winRate": 0.3747175916275014,
+      "totalGames": 102.48194155847528
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.4319152654797039,
-      "totalGames": 15.378433589616403
-    },
-    {
-      "name": "mega-blaziken-ex-b1-036",
-      "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "winRate": 0.3063113131136044,
+      "totalGames": 45.226535824072684
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.2579137620155101,
-      "totalGames": 26.637591132881393
-    },
-    {
-      "name": "magnezone-b1a-026",
-      "winRate": 1,
-      "totalGames": 2.8681930663029105
-    },
-    {
-      "name": "espeon-b3a-020&swablu-b1-196",
-      "winRate": 0,
-      "totalGames": 1.4849463120039683
-    },
-    {
-      "name": "mega-sceptile-ex-b3-008",
-      "winRate": 1,
-      "totalGames": 4.879968804563492
-    },
-    {
-      "name": "mega-manectric-ex-b2b-027",
-      "winRate": 1,
-      "totalGames": 6.2086189541997365
-    },
-    {
-      "name": "mega-altaria-ex-b1-102",
-      "winRate": 0,
-      "totalGames": 1.4849463120039683
-    },
-    {
-      "name": "gyarados-a4-045",
-      "winRate": 1,
-      "totalGames": 1.4849463120039683
-    },
-    {
-      "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.6575292892527299,
-      "totalGames": 7.407022301862876
+      "winRate": 0.4505275382569611,
+      "totalGames": 77.43032702333709
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.32496015657932376,
-      "totalGames": 11.392972750771605
+      "winRate": 0.3410727564173021,
+      "totalGames": 69.17863055983041
     },
     {
-      "name": "great-tusk-b3a-034",
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.484182858062996,
+      "totalGames": 81.77599385582936
+    },
+    {
+      "name": "dedenne-ex-b3b-024",
+      "winRate": 0.4308967724092733,
+      "totalGames": 14.49594864679668
+    },
+    {
+      "name": "mega-steelix-ex-b1a-052",
+      "winRate": 0.5361364721519367,
+      "totalGames": 2.8163165073112575
+    },
+    {
+      "name": "greninja-a1-089",
+      "winRate": 0.30961247544477816,
+      "totalGames": 59.85046132526391
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
+      "winRate": 0.2742007468813706,
+      "totalGames": 25.60587885772133
+    },
+    {
+      "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
+      "winRate": 0.4397762230124103,
+      "totalGames": 117.67356368660197
+    },
+    {
+      "name": "mega-charizard-y-ex-b1a-014",
+      "winRate": 0.6572036877807454,
+      "totalGames": 14.243840399131876
+    },
+    {
+      "name": "dragalge-ex-b1-160",
+      "winRate": 0.7924554369015885,
+      "totalGames": 7.156489670889189
+    },
+    {
+      "name": "tyrantrum-b2-090",
+      "winRate": 0.5,
+      "totalGames": 5.941162088251968
+    },
+    {
+      "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
+      "winRate": 0,
+      "totalGames": 3.7049032307228447
+    },
+    {
+      "name": "mega-charizard-x-ex-b2b-009",
+      "winRate": 0.3575242926629846,
+      "totalGames": 10.015080512142358
+    },
+    {
+      "name": "espeon-b3a-020&swablu-b1-196",
+      "winRate": 0.7985329876372929,
+      "totalGames": 5.325175222498721
+    },
+    {
+      "name": "zoroark-ex-b3-106",
+      "winRate": 0.576891413781416,
+      "totalGames": 34.93440518612306
+    },
+    {
+      "name": "mega-sceptile-ex-b3-008",
+      "winRate": 0.45041039033828817,
+      "totalGames": 17.877819218032123
+    },
+    {
+      "name": "armarouge-ex-b2a-020",
       "winRate": 1,
-      "totalGames": 2.6059152595899473
+      "totalGames": 2.9159456873374348
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036",
+      "winRate": 0.3074848397996591,
+      "totalGames": 4.185908626763205
+    },
+    {
+      "name": "mega-lopunny-ex-b1a-042",
+      "winRate": 1,
+      "totalGames": 1.485290522062992
+    },
+    {
+      "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
+      "winRate": 0.4121550884726467,
+      "totalGames": 9.027221702539812
+    },
+    {
+      "name": "solgaleo-ex-a3-122",
+      "winRate": 0.38075119654901224,
+      "totalGames": 3.9009477462582254
+    },
+    {
+      "name": "magnezone-b1a-026",
+      "winRate": 0.4190355445437447,
+      "totalGames": 6.7158358782286065
     },
     {
       "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
-      "winRate": 1,
-      "totalGames": 1.43034970734127
+      "winRate": 0.20096308563375975,
+      "totalGames": 7.118994818191165
     },
     {
-      "name": "lucario-a2-092",
-      "winRate": 1,
-      "totalGames": 1.4132213607804234
+      "name": "meowscarada-ex-b2a-003",
+      "winRate": 0.5371836556286287,
+      "totalGames": 19.81389942152787
+    },
+    {
+      "name": "great-tusk-b3a-034",
+      "winRate": 0.2467883390024526,
+      "totalGames": 5.336959319060958
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
-      "winRate": 0.7343222512233498,
-      "totalGames": 4.916366541005292
+      "winRate": 0.6900803562905917,
+      "totalGames": 10.706551438512907
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 2.633748822751323
-    },
-    {
-      "name": "mega-charizard-x-ex-b2b-009",
-      "winRate": 0,
-      "totalGames": 2.7044032523148154
-    },
-    {
-      "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.34285620260861777,
-      "totalGames": 4.034480764164463
-    },
-    {
-      "name": "dragalge-ex-b1-160",
-      "winRate": 0.5,
-      "totalGames": 2.766493508597884
+      "totalGames": 3.8216729148395467
     },
     {
       "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
-      "winRate": 1,
-      "totalGames": 1.383246754298942
-    },
-    {
-      "name": "mega-charizard-y-ex-b1a-014",
-      "winRate": 0.3491448034612292,
-      "totalGames": 3.7839786957120816
-    },
-    {
-      "name": "magnezone-ex-b3-054",
-      "winRate": 1,
-      "totalGames": 2.685490702987214
-    },
-    {
-      "name": "zoroark-ex-b3-106",
-      "winRate": 0.6837508286327605,
-      "totalGames": 7.2617881966490305
-    },
-    {
-      "name": "espeon-b3a-020",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.383518779025499
+    },
+    {
+      "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
+      "winRate": 0.3333333333333333,
+      "totalGames": 4.150556337076497
+    },
+    {
+      "name": "mega-manectric-ex-b2b-027",
+      "winRate": 0.4894569362245752,
+      "totalGames": 9.297321903351618
+    },
+    {
+      "name": "mega-venusaur-ex-b1a-004",
+      "winRate": 0,
+      "totalGames": 2.7006181047002134
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 2.5592089459533813
     },
     {
-      "name": "buzzwole-ex-a3a-006",
-      "winRate": 0,
-      "totalGames": 1.3168744113756614
+      "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
+      "winRate": 0.29145805274248854,
+      "totalGames": 3.769180121062314
     },
     {
-      "name": "bellibolt-ex-b2a-042",
-      "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
+      "winRate": 0.34286122779636174,
+      "totalGames": 4.035215028300672
+    },
+    {
+      "name": "mega-altaria-ex-b1-102",
+      "winRate": 0.6985109673444044,
+      "totalGames": 3.5584947582829427
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.33311739257761785,
-      "totalGames": 7.160802320050706
-    },
-    {
-      "name": "mega-gyarados-ex-b1-052",
-      "winRate": 0,
-      "totalGames": 1.3061691947751324
+      "winRate": 0.5031788641405889,
+      "totalGames": 12.412883044576628
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
-      "winRate": 0.3135719292839458,
-      "totalGames": 3.503145180224868
+      "winRate": 0.6072331380978441,
+      "totalGames": 6.161269152133076
     },
     {
-      "name": "mega-kangaskhan-ex-b2-127",
-      "winRate": 1,
-      "totalGames": 1.28689980489418
+      "name": "magnezone-ex-b3-054",
+      "winRate": 0.3261231276129429,
+      "totalGames": 7.032715371454137
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.5073149348158025,
-      "totalGames": 2.536688192239859
+      "winRate": 0.5071345223371444,
+      "totalGames": 7.1323445514803145
     },
     {
-      "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 1,
-      "totalGames": 1.2205274619708995
+      "name": "gardevoir-a1-132",
+      "winRate": 0.8202676641142289,
+      "totalGames": 7.351957260140167
     },
     {
-      "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
-      "winRate": 1,
-      "totalGames": 2.3190154546957675
-    },
-    {
-      "name": "jolteon-ex-b1-081",
-      "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
+      "winRate": 0,
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
-      "winRate": 0,
-      "totalGames": 1.1755655522486772
-    },
-    {
-      "name": "greninja-a1-089&oricorio-a3-066",
       "winRate": 0.5,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.6341986513494287
     },
     {
-      "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
+      "name": "lucario-a2-092",
+      "winRate": 0.33152094344431,
+      "totalGames": 3.9405851619675647
+    },
+    {
+      "name": "espeon-ex-a4-083&sylveon-ex-a3b-034",
+      "winRate": 0.5,
+      "totalGames": 2.6341986513494287
+    },
+    {
+      "name": "bellibolt-ex-b2a-042",
+      "winRate": 0.5,
+      "totalGames": 2.6341986513494287
+    },
+    {
+      "name": "ilima-a3-149",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 2.6341986513494287
+    },
+    {
+      "name": "flygon-ex-b3-126",
+      "winRate": 0,
+      "totalGames": 2.6341986513494287
+    },
+    {
+      "name": "annihilape-b2a-057",
+      "winRate": 1,
+      "totalGames": 1.3170993256747143
+    },
+    {
+      "name": "buzzwole-ex-a3a-006",
+      "winRate": 1,
+      "totalGames": 1.3170993256747143
+    },
+    {
+      "name": "glimmora-b3a-045",
+      "winRate": 1,
+      "totalGames": 1.306386510618136
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&greninja-a1-089",
+      "winRate": 0,
+      "totalGames": 1.306386510618136
+    },
+    {
+      "name": "mega-gyarados-ex-b1-052",
+      "winRate": 1,
+      "totalGames": 2.4049444091386554
     },
     {
       "name": "houndstone-b2a-053&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.2871034435162954
+    },
+    {
+      "name": "mega-kangaskhan-ex-b2-127",
+      "winRate": 1,
+      "totalGames": 3.695261697171924
+    },
+    {
+      "name": "jolteon-ex-b1-081",
+      "winRate": 0,
+      "totalGames": 3.7498970539604732
+    },
+    {
+      "name": "hydreigon-b1-157&poison-barb-a3-146",
+      "winRate": 0,
+      "totalGames": 1.2871034435162954
+    },
+    {
+      "name": "mega-sableye-ex-b3b-041",
+      "winRate": 1,
+      "totalGames": 1.2871034435162954
+    },
+    {
+      "name": "mimikyu-ex-b2-073",
+      "winRate": 0.46048358967103,
+      "totalGames": 2.3856613420368147
+    },
+    {
+      "name": "suicune-ex-a4a-020&greninja-a1-089",
+      "winRate": 0.3193206850140586,
+      "totalGames": 3.4402966988253634
+    },
+    {
+      "name": "galarian-obstagoon-b2-100",
+      "winRate": 1,
+      "totalGames": 1.1210548101393334
+    },
+    {
+      "name": "mega-swampert-ex-b2-036",
+      "winRate": 1,
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "espeon-ex-a4-083",
+      "winRate": 0,
+      "totalGames": 1.0985578985205193
+    },
+    {
+      "name": "dusknoir-a2-072",
+      "winRate": 0,
+      "totalGames": 1.0728471423847317
+    },
+    {
+      "name": "vaporeon-ex-b3-037",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.45468988389698967,
-      "totalGames": 427.52898792052474
+      "winRate": 0.43292785408626755,
+      "totalGames": 1295.4947100502077
     }
   ],
   "zoroark-ex-b3-106": [
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.8426916803864377,
-      "totalGames": 9.439718863260584
+      "winRate": 0.842684075505361,
+      "totalGames": 9.441450551394169
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.47676320316686704,
-      "totalGames": 46.37241713376322
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.5466477210862827,
+      "totalGames": 20.028732648943837
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.6169366338865584,
-      "totalGames": 11.201930285218255
+      "winRate": 0.616932547350881,
+      "totalGames": 11.204202983422537
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.33657843574842544,
-      "totalGames": 20.526389649746477
+      "winRate": 0.33658011863175896,
+      "totalGames": 20.53031222604088
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.5792977521079318,
-      "totalGames": 26.955311994874343
+      "winRate": 0.5793021028791487,
+      "totalGames": 26.959539015974446
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.4597681580169894,
-      "totalGames": 20.228784628251766
+      "winRate": 0.4597645278474643,
+      "totalGames": 20.232495967468008
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.47692729783986476,
-      "totalGames": 22.170395547012788
+      "winRate": 0.47691400341851903,
+      "totalGames": 22.173355652207643
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.285703514856453,
-      "totalGames": 9.465768223655203
+      "winRate": 0.28570350920393345,
+      "totalGames": 9.467518401365176
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.4570973389397141,
-      "totalGames": 16.632279992559525
+      "winRate": 0.45709487547180316,
+      "totalGames": 16.634858148696978
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.423108586218584,
+      "totalGames": 34.93440518612306
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.6973955395148987,
-      "totalGames": 3.7044032523148154
+      "winRate": 0.6974132007435427,
+      "totalGames": 3.7049032307228447
     },
     {
       "name": "mega-lopunny-ex-b1a-042",
       "winRate": 0,
-      "totalGames": 1.4849463120039683
+      "totalGames": 1.485290522062992
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 5.131541394675927
+      "totalGames": 5.1323445514803145
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.5114794744884888,
-      "totalGames": 2.7044032523148154
+      "winRate": 0.5114854991155356,
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 2.766493508597884
+      "totalGames": 2.767037558050998
     },
     {
       "name": "great-tusk-b3a-034",
-      "winRate": 0.5114794744884888,
-      "totalGames": 2.7044032523148154
+      "winRate": 0.5114854991155356,
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 0.5,
-      "totalGames": 7.2054073892195785
+      "totalGames": 7.206262975370703
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.2436944786408157,
-      "totalGames": 9.76207865244709
+      "winRate": 0.24369081137031623,
+      "totalGames": 9.76332935831277
     },
     {
       "name": "mega-venusaur-ex-b1a-004",
-      "winRate": 0.672174293917779,
-      "totalGames": 4.016995577050265
+      "winRate": 0.6721772129326167,
+      "totalGames": 4.017717430374928
     },
     {
       "name": "mega-lucario-ex-b3-081&donphan-ex-a4-100",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.5424959212683715,
-      "totalGames": 16.363222215332893
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.31624917136723946,
-      "totalGames": 7.2617881966490305
+      "winRate": 0.5424981959371782,
+      "totalGames": 16.36560939694165
     },
     {
       "name": "future-booster-energy-capsule-b3a-070",
-      "winRate": 0.5409863364698202,
-      "totalGames": 2.442125445601852
-    },
-    {
-      "name": "mega-diancie-ex-b3b-032",
-      "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "winRate": 0.5410101583053016,
+      "totalGames": 2.442439261836679
     },
     {
       "name": "koraidon-ex-b3a-036&great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
       "winRate": 1,
-      "totalGames": 3.809314375
+      "totalGames": 3.8098888182773107
     },
     {
       "name": "solgaleo-ex-a3-122",
       "winRate": 0.5,
-      "totalGames": 2.633748822751323
+      "totalGames": 2.6341986513494287
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 1,
-      "totalGames": 3.7022622089947097
+      "totalGames": 3.702760667711529
     },
     {
       "name": "dragalge-ex-b1-160",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "annihilape-b2a-057",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "crobat-ex-a4-109&poison-barb-a3-146",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "ilima-a3-149",
       "winRate": 0,
-      "totalGames": 2.633748822751323
+      "totalGames": 2.6341986513494287
     },
     {
       "name": "lucario-a2-092",
       "winRate": 1,
-      "totalGames": 1.3061691947751324
+      "totalGames": 1.306386510618136
     },
     {
       "name": "mega-absol-ex-b1-151&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
-      "winRate": 0.6495645373708051,
-      "totalGames": 3.6722876025132276
+      "winRate": 0.6495546220168683,
+      "totalGames": 3.67276478555311
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.6118033826209249,
-      "totalGames": 5.659441342592594
+      "winRate": 0.6118107837317399,
+      "totalGames": 5.659909407485216
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 0,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 1,
-      "totalGames": 4.413221360780424
+      "totalGames": 4.4135146611839176
     },
     {
       "name": "galarian-obstagoon-b2-100",
       "winRate": 0,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 2.1969759854497357
+      "totalGames": 2.1971157970410387
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 0,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5186414603438317,
-      "totalGames": 295.95653237709433
+      "winRate": 0.5186398413108416,
+      "totalGames": 296.0019280863503
     }
   ],
   "mega-scizor-ex-b2b-047&revavroom-b2b-050": [
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
-      "winRate": 0.6616402166682425,
-      "totalGames": 3.9045908027447096
+      "winRate": 0.6616374759424809,
+      "totalGames": 3.905232872280857
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 2.7054737739748678
+      "totalGames": 2.7059745122285026
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
-      "winRate": 0.5805692821604522,
-      "totalGames": 2.5577417848875665
+      "winRate": 0.5806139922433187,
+      "totalGames": 2.558137664447724
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.1585791780237111,
-      "totalGames": 9.364068665950178
+      "winRate": 0.15858751856610656,
+      "totalGames": 9.365746658327684
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.36499689972382293,
-      "totalGames": 4.068380616732805
+      "winRate": 0.36501346918790206,
+      "totalGames": 4.069138942646504
     },
     {
       "name": "mega-lucario-ex-b3-081",
       "winRate": 0,
-      "totalGames": 2.9698926240079366
+      "totalGames": 2.970581044125984
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.5711217501635636,
-      "totalGames": 8.971900897817463
+      "winRate": 0.5711215802761598,
+      "totalGames": 8.973300533421702
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.5345464714788573,
-      "totalGames": 4.9270717576058205
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.3904065640149554,
-      "totalGames": 12.118562365244712
-    },
-    {
-      "name": "hydreigon-b1-157",
-      "winRate": 0.4969986039817382,
-      "totalGames": 4.993444100529102
+      "winRate": 0.5345663757692483,
+      "totalGames": 4.927729783899672
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.2656777487766501,
-      "totalGames": 4.916366541005292
+      "winRate": 0.42964814501534193,
+      "totalGames": 6.330531630027011
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.3099196437094082,
+      "totalGames": 10.706551438512907
+    },
+    {
+      "name": "hydreigon-b1-157",
+      "winRate": 0.49699689769633987,
+      "totalGames": 4.994149237250456
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.585633697297519,
-      "totalGames": 7.945270625826721
+      "winRate": 0.5856425796428955,
+      "totalGames": 7.9459415694958535
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.5653306371529664,
-      "totalGames": 8.134039278549384
+      "winRate": 0.5653269127090753,
+      "totalGames": 8.13484420832685
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 1,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "gyarados-a4-045",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-charizard-x-ex-b2b-009",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 1,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "guzzlord-ex-a3a-043",
       "winRate": 0,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.4485941124389217,
-      "totalGames": 91.13655389357366
+      "winRate": 0.44859563844527484,
+      "totalGames": 91.14871724873514
     }
   ],
   "meowscarada-ex-b2a-003": [
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.4713955766723625,
-      "totalGames": 15.658462122464728
+      "winRate": 0.4714013846059295,
+      "totalGames": 15.660349072383582
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.787366906633926,
-      "totalGames": 10.543692233796298
+      "winRate": 0.7873727157989111,
+      "totalGames": 10.544787931158575
     },
     {
       "name": "mega-lucario-ex-b3-081",
       "winRate": 1,
-      "totalGames": 2.6059152595899473
+      "totalGames": 2.6063453322023253
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.7696727243074653,
-      "totalGames": 15.209423936838625
+      "winRate": 0.769683739645804,
+      "totalGames": 15.211701953962141
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.4967483617318532,
-      "totalGames": 23.37499795359348
+      "winRate": 0.4628163443713712,
+      "totalGames": 19.81389942152787
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.34247071074727004,
-      "totalGames": 7.407022301862876
+      "winRate": 0.45385786382720095,
+      "totalGames": 10.971515064245605
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.6684377708259526,
-      "totalGames": 15.110935944113757
+      "winRate": 0.6684387689865544,
+      "totalGames": 15.113144055441621
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 1,
-      "totalGames": 2.45604222718254
+      "totalGames": 2.4563659214102307
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.436630739776525,
-      "totalGames": 11.792634170524693
+      "winRate": 0.43662650777729933,
+      "totalGames": 11.79461635442603
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0.5,
-      "totalGames": 2.766493508597884
+      "totalGames": 2.767037558050998
     },
     {
       "name": "mega-gyarados-ex-b1-052&jellicent-b1-069",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.41999591119581875,
-      "totalGames": 8.524422843915344
+      "winRate": 0.4199909135190788,
+      "totalGames": 8.525504864056735
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.47084358153688566,
-      "totalGames": 2.4967220502645504
+      "winRate": 0.4708270061930156,
+      "totalGames": 2.497074618625228
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.5263129737541613,
-      "totalGames": 2.4817347470238094
+      "winRate": 0.5263280229963464,
+      "totalGames": 2.4820766775460186
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.4878783507462089,
-      "totalGames": 5.063384848985891
+      "winRate": 0.48787155486263556,
+      "totalGames": 5.064139628953432
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.388196617379075,
-      "totalGames": 5.659441342592594
+      "winRate": 0.38818921626826014,
+      "totalGames": 5.659909407485216
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.478740408488655,
-      "totalGames": 2.3414964095568784
+      "winRate": 0.4787275207608108,
+      "totalGames": 2.341738800304844
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
-      "winRate": 0.478740408488655,
-      "totalGames": 2.3414964095568784
+      "winRate": 0.4787275207608108,
+      "totalGames": 2.341738800304844
     },
     {
       "name": "jolteon-ex-b1-081&jolteon-a3b-025",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 0.5,
-      "totalGames": 4.483875790343916
+      "totalGames": 4.484219240557334
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "mega-manectric-ex-b2b-027",
-      "winRate": 0.33107481133504496,
-      "totalGames": 3.317944933035715
+      "winRate": 0.33107336197339865,
+      "totalGames": 3.318170607180372
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.7461822773198962,
-      "totalGames": 4.416432925760582
+      "winRate": 0.746179823212513,
+      "totalGames": 4.416728505700892
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-swampert-ex-b2-036",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.5573039808344983,
-      "totalGames": 161.55902000633824
+      "winRate": 0.5573045142531908,
+      "totalGames": 161.5792909141041
     }
   ],
   "magnezone-ex-b3-054": [
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.35953830055369973,
-      "totalGames": 7.589367824625221
+      "winRate": 0.35955300316973604,
+      "totalGames": 7.5904959420666405
     },
     {
       "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
       "winRate": 1,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.6295941653569089,
-      "totalGames": 3.6833496596671083
+      "winRate": 0.6295727363074582,
+      "totalGames": 3.683834694444908
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0,
-      "totalGames": 2.685490702987214
+      "winRate": 0.24514146669886938,
+      "totalGames": 4.979508390006465
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.6507097132289011,
-      "totalGames": 3.9060181649581134
+      "winRate": 0.6507010157101275,
+      "totalGames": 3.9066612476217335
     },
     {
       "name": "hydreigon-b1-157",
       "winRate": 1,
-      "totalGames": 2.4196444907407413
+      "totalGames": 2.419942350217865
     },
     {
       "name": "professor's-research-pa-007",
-      "winRate": 0.6390339926149033,
-      "totalGames": 9.325305815145505
+      "winRate": 0.6738768723870572,
+      "totalGames": 7.032715371454137
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.3420168428853523,
-      "totalGames": 3.862840458002646
+      "winRate": 0.3420216288646604,
+      "totalGames": 3.8634528935602015
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 1,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "suicune-ex-a4a-020&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "milotic-ex-b3b-015",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "guzzlord-ex-a3a-043",
       "winRate": 0,
-      "totalGames": 1.072795472883598
+      "totalGames": 1.0728471423847317
     },
     {
       "name": "Total",
-      "winRate": 0.5591082421950931,
-      "totalGames": 42.13418041363536
+      "winRate": 0.5591084052454389,
+      "totalGames": 42.139953973823324
     }
   ],
   "mega-sceptile-ex-b3-008": [
     {
       "name": "espeon-b3a-020",
       "winRate": 1,
-      "totalGames": 1.5095683101851853
+      "totalGames": 1.5099299966931217
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.5041770168138294,
-      "totalGames": 27.123873505566582
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.2725825358131,
+      "totalGames": 14.130284559532146
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
       "winRate": 0,
-      "totalGames": 6.013651242559524
+      "totalGames": 6.015080512142357
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.7949238945584571,
-      "totalGames": 18.811770790895064
+      "winRate": 0.7949210220609839,
+      "totalGames": 18.814476347812274
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.5176832135942929,
-      "totalGames": 18.397478908454588
+      "winRate": 0.5176741578618114,
+      "totalGames": 18.399890405122697
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.26743850147830334,
-      "totalGames": 10.456490369268078
+      "winRate": 0.2674479697495951,
+      "totalGames": 10.458233961649476
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.8119073241197494,
-      "totalGames": 13.194212562555116
+      "winRate": 0.8119036116189344,
+      "totalGames": 13.19576999276331
     },
     {
       "name": "mega-lucario-ex-b3-081",
-      "winRate": 0.6841881548174166,
-      "totalGames": 8.18029578097443
+      "winRate": 0.684197274946332,
+      "totalGames": 8.181843333189757
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.3026044604851012,
-      "totalGames": 3.7044032523148154
+      "winRate": 0.30258679925645726,
+      "totalGames": 3.7049032307228447
     },
     {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0,
-      "totalGames": 4.879968804563492
+      "name": "professor's-research-pa-007",
+      "winRate": 0.5495896096617118,
+      "totalGames": 17.877819218032123
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.31426163204626045,
-      "totalGames": 11.332309856701942
+      "winRate": 0.3142508827517151,
+      "totalGames": 11.333965306993168
     },
     {
       "name": "greninja-a1-089",
-      "winRate": 0.5099352184310748,
-      "totalGames": 7.614346663359789
+      "winRate": 0.5099407744097693,
+      "totalGames": 7.615492510531991
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.32824629812528777,
-      "totalGames": 7.388823433641976
+      "winRate": 0.3282433664716094,
+      "totalGames": 7.3898092066734105
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "gourgeist-b2-072",
-      "winRate": 0.6441774628334779,
-      "totalGames": 3.8874624561838633
+      "winRate": 0.6441651462952661,
+      "totalGames": 3.888092368190331
     },
     {
       "name": "magnezone-b1a-026",
       "winRate": 0,
-      "totalGames": 2.633035141644621
+      "totalGames": 2.63348446367899
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0,
-      "totalGames": 1.3643342049713405
+      "totalGames": 1.3645928057588776
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 0,
-      "totalGames": 1.28689980489418
+      "totalGames": 1.2871034435162954
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 0.5,
-      "totalGames": 2.499576774691358
+      "totalGames": 2.499931369306982
     },
     {
       "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
       "winRate": 1,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 1,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "magnezone-ex-b3-054",
       "winRate": 0,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 0,
-      "totalGames": 1.2205274619708995
+      "totalGames": 1.2206839901655107
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
-      "winRate": 0.34078126283429144,
-      "totalGames": 3.449619097222222
+      "winRate": 0.34078585984366405,
+      "totalGames": 3.449938232376284
     },
     {
       "name": "mega-diancie-ex-b3b-032",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.25381772268010383,
-      "totalGames": 4.416432925760582
+      "winRate": 0.2538201767874869,
+      "totalGames": 4.416728505700892
     },
     {
       "name": "mega-lucario-ex-b3-081&darkrai-b2b-040",
       "winRate": 1,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "rampardos-a2-089",
       "winRate": 0,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "mega-kangaskhan-ex-b2-127",
       "winRate": 0,
-      "totalGames": 1.120968947585979
+      "totalGames": 1.1210548101393334
     },
     {
       "name": "espeon-b3a-020&swablu-b1-196",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.4704438255797871,
-      "totalGames": 173.44867333939592
+      "winRate": 0.4704413365998371,
+      "totalGames": 173.47312466439814
     }
   ],
   "great-tusk-b3a-034": [
     {
       "name": "dedenne-ex-b3b-024",
-      "winRate": 0.5164820189358565,
-      "totalGames": 2.9227896709656087
+      "winRate": 0.5164900223524701,
+      "totalGames": 2.92344465787704
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.23225241775812192,
-      "totalGames": 5.670013789682541
+      "winRate": 0.2322435328245037,
+      "totalGames": 5.671199148826197
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.31996160852200983,
-      "totalGames": 4.323164771825398
-    },
-    {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.5871141680809919,
-      "totalGames": 6.845579341931217
+      "winRate": 0.3199550237240049,
+      "totalGames": 4.324103940993064
     },
     {
       "name": "mega-gardevoir-ex-b2-066",
       "winRate": 0,
-      "totalGames": 2.6059152595899473
+      "totalGames": 4.116275328895447
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.7532116609975473,
+      "totalGames": 5.336959319060958
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0,
-      "totalGames": 2.719390555555556
+      "totalGames": 2.719901171802054
     },
     {
       "name": "mega-sceptile-ex-b3-008",
       "winRate": 1,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 1,
-      "totalGames": 2.6894159490740743
+      "totalGames": 2.689905289643635
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
       "winRate": 1,
-      "totalGames": 2.558812306547619
+      "totalGames": 2.5592089459533813
     },
     {
       "name": "zoroark-ex-b3-106",
-      "winRate": 0.48852052551151104,
-      "totalGames": 2.7044032523148154
+      "winRate": 0.48851450088446435,
+      "totalGames": 2.7049032307228447
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.24779138467431067,
-      "totalGames": 5.331728945105821
+      "winRate": 0.247790208789125,
+      "totalGames": 5.332674193038327
     },
     {
       "name": "gourgeist-b2-072",
       "winRate": 0,
-      "totalGames": 1.383246754298942
+      "totalGames": 1.383518779025499
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "hisuian-zoroark-ex-b3b-060",
       "winRate": 1,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "mega-altaria-ex-b1-102",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "dragalge-ex-b1-160",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "espeon-ex-a4-083&sylveon-ex-a3b-034",
       "winRate": 1,
-      "totalGames": 1.3168744113756614
+      "totalGames": 1.3170993256747143
     },
     {
       "name": "milotic-ex-b3b-015",
       "winRate": 0,
-      "totalGames": 2.6230436061507936
+      "totalGames": 2.6234858362928506
     },
     {
       "name": "meowscarada-ex-b2a-003",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "greninja-a1-089",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "Total",
-      "winRate": 0.4678008107370613,
-      "totalGames": 54.030256876653446
+      "winRate": 0.4677970284332722,
+      "totalGames": 54.04021541315137
     }
   ],
   "hisuian-zoroark-ex-b3b-060": [
     {
       "name": "greninja-a1-089",
-      "winRate": 0.7057122789767976,
-      "totalGames": 5.045899661871694
+      "winRate": 0.7056873634129087,
+      "totalGames": 5.046642031027689
     },
     {
       "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
       "winRate": 0,
-      "totalGames": 2.7054737739748678
+      "totalGames": 2.7059745122285026
     },
     {
       "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
-      "winRate": 0.21259195779829415,
-      "totalGames": 6.506580816247797
+      "winRate": 0.21259882482856649,
+      "totalGames": 6.5076501722957705
     },
     {
       "name": "butterfree-b3b-003",
-      "winRate": 0.6000215368011447,
-      "totalGames": 6.627549763833775
+      "winRate": 0.600021548331758,
+      "totalGames": 6.628704982435103
     },
     {
-      "name": "professor's-research-pa-007",
-      "winRate": 0.44548245694783095,
-      "totalGames": 13.841521326333774
+      "name": "mega-gardevoir-ex-b2-066",
+      "winRate": 0.5558436316671699,
+      "totalGames": 8.592281411242737
     },
     {
       "name": "zoroark-ex-b3-106",
       "winRate": 0,
-      "totalGames": 5.131541394675927
+      "totalGames": 5.1323445514803145
     },
     {
       "name": "milotic-ex-b3b-015",
-      "winRate": 0.2989994882163552,
-      "totalGames": 8.787057491181658
+      "winRate": 0.29900699908143336,
+      "totalGames": 8.788325926778118
     },
     {
       "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
-      "winRate": 0.19915012002110838,
-      "totalGames": 6.633972893794093
+      "winRate": 0.19914966544365792,
+      "totalGames": 6.635132671469051
+    },
+    {
+      "name": "professor's-research-pa-007",
+      "winRate": 0.496821135859411,
+      "totalGames": 12.412883044576628
     },
     {
       "name": "great-tusk-b3a-034",
       "winRate": 0,
-      "totalGames": 1.3211564980158732
+      "totalGames": 1.3213844516973456
     },
     {
       "name": "hydreigon-b1-157",
-      "winRate": 0.5674536161924113,
-      "totalGames": 6.074090065586421
+      "winRate": 0.5674346024805026,
+      "totalGames": 6.074852444010011
     },
     {
       "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
-      "winRate": 0.12377552267296406,
-      "totalGames": 8.874840267305997
+      "winRate": 0.12376484153503943,
+      "totalGames": 8.876171010242059
     },
     {
       "name": "vaporeon-ex-b3-037",
       "winRate": 0,
-      "totalGames": 1.3061691947751324
-    },
-    {
-      "name": "mega-gardevoir-ex-b2-066",
-      "winRate": 0.6668826074223821,
-      "totalGames": 7.160802320050706
+      "totalGames": 1.306386510618136
     },
     {
       "name": "gyarados-a4-045&suicune-ex-a4a-020",
       "winRate": 1,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "lunala-ex-a3-087",
       "winRate": 0,
-      "totalGames": 1.249788387345679
+      "totalGames": 1.249965684653491
     },
     {
       "name": "meowscarada-ex-b2a-003",
-      "winRate": 0.521259591511345,
-      "totalGames": 2.3414964095568784
+      "winRate": 0.5212724792391892,
+      "totalGames": 2.341738800304844
     },
     {
       "name": "mega-charizard-y-ex-b1a-014",
       "winRate": 1,
-      "totalGames": 2.3511311044973544
+      "totalGames": 2.3513803338557646
     },
     {
       "name": "mega-lucario-ex-b3-081",
       "winRate": 0,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "greninja-a1-089&mega-absol-ex-b1-151",
-      "winRate": 0.2375014352887576,
-      "totalGames": 4.625184649470899
+      "winRate": 0.23749376380639994,
+      "totalGames": 4.625628399304166
     },
     {
       "name": "dusknoir-a2-072",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "mega-sceptile-ex-b3-008",
-      "winRate": 0.6592187371657086,
-      "totalGames": 3.449619097222222
+      "winRate": 0.659214140156336,
+      "totalGames": 3.449938232376284
     },
     {
       "name": "jolteon-ex-b1-081",
       "winRate": 1,
-      "totalGames": 1.1755655522486772
+      "totalGames": 1.1756901669278823
     },
     {
       "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
       "winRate": 1,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-kangaskhan-ex-b2-127&pichu-a4-066",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "mega-manectric-ex-b2b-027",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "dedenne-ex-b3b-024",
       "winRate": 0,
-      "totalGames": 1.0984879927248679
+      "totalGames": 1.0985578985205193
     },
     {
       "name": "Total",
-      "winRate": 0.38349674454748434,
-      "totalGames": 104.30280012345682
+      "winRate": 0.3834913946243075,
+      "totalGames": 104.31721084863572
     }
   ]
 }
