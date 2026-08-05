@@ -11,10 +11,10 @@ export interface AdsState {
   useReal: boolean;
 }
 
-// Single source of truth for ad gating. Ads are hidden for Premium users
-// (ad-free is a Premium benefit) and never rendered until premium status is
-// known. In development we show placeholders; in production we only show real
-// ads when the build flag is enabled.
+// Single source of truth for ad gating. Nothing renders unless ADS_ENABLED is
+// on; beyond that, ads are hidden for Premium users (ad-free is a Premium
+// benefit) and never rendered until premium status is known. Development shows
+// placeholders in place of real AdSense units.
 const useAdsState = (): AdsState => {
   const isPremium = useIsPremium();
   const contentReady = useContentReady();
@@ -23,8 +23,8 @@ const useAdsState = (): AdsState => {
 
   // Only show ads once the current page has rendered real content, so ads never
   // appear on loading, error, or content-less screens (AdSense policy).
-  const showAds = isFree && contentReady && (IS_DEV || ADS_ENABLED);
-  const useReal = showAds && !IS_DEV && ADS_ENABLED;
+  const showAds = ADS_ENABLED && isFree && contentReady;
+  const useReal = showAds && !IS_DEV;
 
   return { resolved, showAds, useReal };
 };

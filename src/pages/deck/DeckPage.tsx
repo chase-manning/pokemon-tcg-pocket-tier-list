@@ -421,7 +421,7 @@ const DeckPage = () => {
       </CardSection>
       {!isDeckFinderMode && (
         <PannelSection>
-          <UserAccount showUpsell hideIfPremium />
+          <UserAccount hideIfPremium />
           <Matchups>
             <MatchupSection>
               <SubHeader $backgroundColor="var(--c)">

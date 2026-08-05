@@ -211,7 +211,7 @@ const CardsListPage = () => {
     <>
       <StyledCardsListPage>
         <FilterContainer>
-          <UserAccount showUpsell />
+          <UserAccount />
           <Dropdown
             value={expansion ?? ""}
             onChange={(e) => {

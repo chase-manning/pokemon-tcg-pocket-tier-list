@@ -86,16 +86,35 @@
       "description": "Ce site est open source, vous pouvez trouver le code source sur <0>GitHub</0>"
     }
   },
+  "farewell": {
+    "banner": "Top Pocket Decks s'arrête — lire le message complet",
+    "title": "Merci pour ces deux superbes années ! 🎉",
+    "intro": "J'ai lancé Top Pocket Decks le 2 novembre 2024 comme projet personnel. Je voulais simplement un moyen d'analyser la méta pour moi-même. Puis je l'ai mis en ligne, et je l'ai tenu à jour depuis. Bientôt deux ans !",
+    "enjoyed": "C'était un vrai plaisir. Pokemon TCG Pocket est un excellent jeu, et le mode classé a toujours été ma partie préférée : chercher de bons decks et comprendre ce qui gagne vraiment. Ce site m'a permis de faire exactement ça et de le partager avec tout le monde.",
+    "why": "Mais la vie est devenue bien chargée. Je me suis fiancé, je prépare un mariage, et mon travail principal m'occupe beaucoup. Je n'ai tout simplement plus le temps pour Pokemon Pocket ni pour maintenir Top Pocket Decks en ce moment. Plutôt que de le laisser vieillir ici en laissant tout le monde se demander ce qui s'est passé, je préférais l'arrêter proprement et vous dire merci.",
+    "thanks": "Et merci, sincèrement. Je suis vraiment heureux que ce site ait été utile à autant de monde, et ça me faisait toujours plaisir de voir des gens revenir chaque semaine pour suivre la méta. Un merci tout particulier à celles et ceux qui ont pris Premium. Je n'aurais jamais imaginé qu'un petit projet personnel comme celui-ci obtienne des abonnements. Ça n'a jamais rapporté beaucoup plus que les frais de fonctionnement, mais savoir que des gens y tenaient assez pour payer m'a beaucoup touché.",
+    "takeover": {
+      "title": "Envie de reprendre le projet ? 🚀",
+      "body": "J'aimerais vraiment que ça continue. Si vous avez de l'expérience en développement logiciel, en particulier React et TypeScript, écrivez-moi à <0>chase@manning.dev</0> avec un lien vers votre profil GitHub. Je serais ravi de tout transmettre à quelqu'un de compétent pour que le site reste en vie. Cela inclut l'<1>API de cartes</1> Pokemon TCG Pocket que nous maintenons, qui reste la seule API de cartes open source et publique disponible."
+    },
+    "premium": {
+      "title": "Pour les abonnés Premium 💛",
+      "status": "Le site reste en ligne, mais il n'est plus mis à jour. Les nouveaux abonnements Premium sont fermés, et les publicités ont été désactivées pour tout le monde.",
+      "cancel": "Les abonnements en cours continuent de se renouveler tant que vous ne les annulez pas. Si vous ne souhaitez plus être débité, annulez via le <0>portail de facturation</0>.",
+      "refund": "Si vous préférez un remboursement, écrivez-moi à <0>chase@manning.dev</0> en indiquant l'adresse e-mail de votre compte. J'annulerai votre abonnement et vous rembourserai votre dernier paiement. Stripe ne me permet de rembourser que les paiements des 180 derniers jours ; si le vôtre est plus ancien, je ferai de mon mieux."
+    },
+    "signOff": "Bonne continuation à tous ceux qui jouent encore, amusez-vous bien ! 😃",
+    "signature": "— Chase"
+  },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "Obtenez Premium pour débloquer toutes les fonctionnalités et soutenir le projet.",
-    "signIn": "Connectez-vous pour obtenir Premium",
-    "getPremium": "Obtenir Premium",
-    "getPremiumMonthly": "ou 3€/mois",
-    "getPremiumYearly": "Obtenir Premium — 18€/an (économisez 50%)",
-    "freeTrial": "Essai gratuit de 7 jours inclus · Annulez à tout moment",
-    "headline": "Supprimez les publicités et débloquez tout",
     "manageSubscription": "Gérer l'abonnement",
+    "windDown": {
+      "headline": "Premium s'arrête 💛",
+      "status": "Top Pocket Decks n'est plus mis à jour, les nouveaux abonnements sont donc fermés et les publicités ont été désactivées pour tout le monde.",
+      "active": "Votre abonnement reste actif et continue de se renouveler tant que vous ne l'annulez pas. Vous pouvez l'annuler à tout moment via le portail de facturation.",
+      "refund": "Vous préférez un remboursement ? Écrivez-moi à <0>chase@manning.dev</0> avec l'adresse e-mail de votre compte : j'annulerai votre abonnement et vous rembourserai votre dernier paiement. Stripe ne me permet de rembourser que les paiements des 180 derniers jours ; si le vôtre est plus ancien, je ferai de mon mieux."
+    },
     "features": {
       "title": "Fonctionnalités",
       "free": "Gratuit",

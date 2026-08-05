@@ -86,16 +86,35 @@
       "description": "Este sitio web es de código abierto, puedes encontrar el código fuente en <0>GitHub</0>"
     }
   },
+  "farewell": {
+    "banner": "Top Pocket Decks se está despidiendo — lee el mensaje completo",
+    "title": "¡Gracias por dos años increíbles! 🎉",
+    "intro": "Empecé Top Pocket Decks el 2 de noviembre de 2024 como un proyecto personal. Solo quería una forma de analizar el meta para mí mismo. Luego lo publiqué, y lo he mantenido actualizado desde entonces. ¡Ya casi dos años!",
+    "enjoyed": "Ha sido genial. Pokemon TCG Pocket es un juego realmente bueno, y el modo clasificatoria siempre fue mi parte favorita: buscar buenos mazos y descubrir qué gana de verdad. Esta web me permitió hacer justo eso y compartirlo con todos los demás.",
+    "why": "Pero la vida se ha vuelto más ajetreada. Me he comprometido y estoy organizando una boda, y mi trabajo principal me tiene a tope. Ahora mismo no tengo tiempo ni para Pokemon Pocket ni para mantener Top Pocket Decks. Así que en lugar de dejar esto aquí quedándose obsoleto y con todo el mundo preguntándose qué pasó, prefería cerrarlo como es debido y dar las gracias.",
+    "thanks": "Y gracias, de verdad. Me alegra muchísimo que esto le haya resultado útil a tanta gente, y siempre me alegraba el día ver a gente entrando cada semana para mirar el meta. Un agradecimiento especial a todos los que os hicisteis Premium. Nunca pensé que un proyecto personal hecho por diversión llegaría a tener suscripciones. Nunca dio para mucho más que cubrir los costes de funcionamiento, pero que la gente lo valorara lo suficiente como para pagar por ello significó mucho.",
+    "takeover": {
+      "title": "¿Quieres continuarlo tú? 🚀",
+      "body": "Me encantaría que esto siguiera adelante. Si tienes experiencia en desarrollo de software, en particular con React y TypeScript, escríbeme a <0>chase@manning.dev</0> con un enlace a tu perfil de GitHub. Estaré encantado de trabajar con alguien competente para entregarlo todo y que pueda mantenerlo vivo. Eso incluye la <1>API de cartas</1> de Pokemon TCG Pocket que mantenemos, que sigue siendo la única API de cartas pública y de código abierto que existe."
+    },
+    "premium": {
+      "title": "Para suscriptores Premium 💛",
+      "status": "La web seguirá online, pero ya no se actualizará. Las nuevas suscripciones a Premium están cerradas y los anuncios se han desactivado para todo el mundo.",
+      "cancel": "Las suscripciones existentes se seguirán renovando hasta que las canceles, así que si no quieres que se te vuelva a cobrar, cancélala desde el <0>portal de facturación</0>.",
+      "refund": "Si prefieres un reembolso, escríbeme a <0>chase@manning.dev</0> e incluye la dirección de correo de tu cuenta. Cancelaré tu suscripción y te devolveré tu último pago. Stripe solo me permite reembolsar pagos de los últimos 180 días, así que si el tuyo es más antiguo haré lo que pueda."
+    },
+    "signOff": "Mucha suerte a todos los que seguís jugando, ¡disfrutad del juego! 😃",
+    "signature": "— Chase"
+  },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "Obtén Premium para desbloquear todas las funciones y apoyar el proyecto.",
-    "signIn": "Inicia sesión para obtener Premium",
-    "getPremium": "Obtener Premium",
-    "getPremiumMonthly": "o $3/mes",
-    "getPremiumYearly": "Obtener Premium — $18/año (¡Ahorra 50%!)",
-    "freeTrial": "Incluye 7 días de prueba gratis · Cancela cuando quieras",
-    "headline": "Elimina los anuncios y desbloquea todo",
     "manageSubscription": "Gestionar Suscripción",
+    "windDown": {
+      "headline": "Premium se está despidiendo 💛",
+      "status": "Top Pocket Decks ya no se actualiza, así que las nuevas suscripciones están cerradas y los anuncios se han desactivado para todo el mundo.",
+      "active": "Tu suscripción sigue activa y se renovará hasta que la canceles. Puedes cancelarla cuando quieras desde el portal de facturación.",
+      "refund": "¿Prefieres un reembolso? Escríbeme a <0>chase@manning.dev</0> con la dirección de correo de tu cuenta y cancelaré tu suscripción y te devolveré tu último pago. Stripe solo me permite reembolsar pagos de los últimos 180 días, así que si el tuyo es más antiguo haré lo que pueda."
+    },
     "features": {
       "title": "Características",
       "free": "Gratis",

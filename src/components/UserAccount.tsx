@@ -94,11 +94,10 @@ const EmailText = styled(ContactText)`
 `;
 
 interface Props {
-  showUpsell?: boolean;
   hideIfPremium?: boolean;
 }
 
-const UserAccount = ({ showUpsell = false, hideIfPremium = false }: Props) => {
+const UserAccount = ({ hideIfPremium = false }: Props) => {
   const { t } = useTranslation();
   const { user, signOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
@@ -117,7 +116,7 @@ const UserAccount = ({ showUpsell = false, hideIfPremium = false }: Props) => {
             <ContactIcon src={contactIcon} alt="Contact" />
           </ContactButton>
         )}
-        {!(showUpsell && !isPremium) && user && (
+        {user && (
           <UserInfo onClick={() => setIsOpen(true)}>
             <UserAvatar
               src={user.photoURL || undefined}
@@ -125,7 +124,7 @@ const UserAccount = ({ showUpsell = false, hideIfPremium = false }: Props) => {
             />
           </UserInfo>
         )}
-        <Premium showUpsell={showUpsell} />
+        <Premium />
       </StyledUserAccount>
       {user && (
         <Popup
