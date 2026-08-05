@@ -86,16 +86,36 @@
       "description": "Diese Website ist Open Source, du findest den Quellcode auf <0>GitHub</0>"
     }
   },
+  "farewell": {
+    "banner": "Top Pocket Decks wird eingestellt — die ganze Nachricht lesen",
+    "title": "Danke für zwei großartige Jahre! 🎉",
+    "intro": "Ich habe Top Pocket Decks am 2. November 2024 als privates Projekt gestartet. Ich wollte einfach eine Möglichkeit haben, das Meta für mich selbst zu analysieren. Dann habe ich es online gestellt und seitdem laufend aktualisiert. Inzwischen sind es fast zwei Jahre!",
+    "enjoyed": "Es hat riesigen Spaß gemacht. Pokemon TCG Pocket ist ein richtig gutes Spiel, und der Ranked-Modus war immer mein Lieblingsteil: gute Decks grinden und herausfinden, was tatsächlich gewinnt. Mit dieser Seite konnte ich genau das tun und es mit allen anderen teilen.",
+    "why": "Das Leben ist allerdings voller geworden. Ich habe mich verlobt, plane gerade eine Hochzeit, und mein Hauptjob hält mich auf Trab. Im Moment habe ich einfach keine Zeit mehr für Pokemon Pocket oder für die Pflege von Top Pocket Decks. Statt die Seite hier veralten zu lassen und alle im Unklaren zu lassen, wollte ich sie ordentlich einstellen und Danke sagen.",
+    "thanks": "Und danke, wirklich von Herzen. Es freut mich sehr, dass die Seite für so viele Leute nützlich war, und es hat mir jedes Mal den Tag versüßt, wenn Leute jede Woche vorbeigeschaut haben, um das Meta zu checken. Ein besonderer Dank geht an alle, die Premium abonniert haben. Ich hätte nie gedacht, dass ein kleines Hobbyprojekt wie dieses Abonnenten bekommt. Es kam nie viel mehr dabei heraus als die laufenden Kosten, aber dass Leute die Seite genug schätzten, um dafür zu bezahlen, hat mir viel bedeutet.",
+    "takeover": {
+      "title": "Willst du es übernehmen? 🚀",
+      "body": "Ich würde mich sehr freuen, wenn es weitergeht. Wenn du Erfahrung in der Softwareentwicklung hast, besonders mit React und TypeScript, schreib mir an <0>chase@manning.dev</0> mit einem Link zu deinem GitHub-Profil. Ich übergebe alles gerne an jemanden, der es kann, damit die Seite am Leben bleibt. Dazu gehört auch die Pokemon TCG Pocket <1>Karten-API</1>, die wir pflegen und die nach wie vor die einzige quelloffene, öffentlich verfügbare Karten-API ist."
+    },
+    "premium": {
+      "title": "Für Premium-Abonnenten 💛",
+      "status": "Die Seite bleibt online, wird aber nicht mehr aktualisiert. Neue Premium-Anmeldungen sind geschlossen, und die Werbung ist für alle abgeschaltet.",
+      "cancel": "Bestehende Abonnements verlängern sich weiter, bis du sie kündigst. Wenn du nicht erneut belastet werden möchtest, kündige über das <0>Abrechnungsportal</0>.",
+      "refund": "Wenn du stattdessen eine Rückerstattung möchtest, schreib mir an <0>chase@manning.dev</0> und nenne die E-Mail-Adresse deines Kontos. Ich kündige dann dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
+    },
+    "signOff": "Alles Gute an alle, die weiterspielen, viel Spaß mit dem Spiel! 😃",
+    "signature": "— Chase"
+  },
   "premium": {
     "title": "Top Pocket Decks Premium",
     "description": "Holen Sie sich Premium, um alle Funktionen freizuschalten und das Projekt zu unterstützen.",
-    "signIn": "Anmelden für Premium",
-    "getPremium": "Premium erhalten",
-    "getPremiumMonthly": "oder 3€/Monat",
-    "getPremiumYearly": "Premium für 18€/Jahr (50% sparen)",
-    "freeTrial": "7 Tage kostenlos testen · Jederzeit kündbar",
-    "headline": "Werbung entfernen & alles freischalten",
     "manageSubscription": "Abonnement verwalten",
+    "windDown": {
+      "headline": "Premium wird eingestellt 💛",
+      "status": "Top Pocket Decks wird nicht mehr aktualisiert, daher sind neue Anmeldungen geschlossen und die Werbung ist für alle abgeschaltet.",
+      "active": "Dein Abonnement bleibt aktiv und verlängert sich weiter, bis du es kündigst. Du kannst jederzeit über das Abrechnungsportal kündigen.",
+      "refund": "Lieber eine Rückerstattung? Schreib mir an <0>chase@manning.dev</0> mit der E-Mail-Adresse deines Kontos, dann kündige ich dein Abonnement und erstatte deine letzte Zahlung."
+    },
     "features": {
       "title": "Funktionen",
       "free": "Kostenlos",

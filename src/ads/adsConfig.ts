@@ -5,10 +5,9 @@
 // Google AdSense; swapping networks later only touches `adsense.ts`, `AdSlot`,
 // and this file, not the placement call sites.
 
-// Flip this to true once the AdSense account is approved and all ADSENSE_SLOTS
-// below have their slot IDs filled in. Controls whether real ads are served in
-// production; dev always shows placeholders regardless of this flag.
-export const ADS_ENABLED = true;
+// Master switch for the whole ads layer, dev placeholders included. Turned off
+// while the site is wound down; flip back to true to serve ads again.
+export const ADS_ENABLED = false;
 
 // In local development we render labelled placeholder boxes instead of loading
 // the real ad network, so the layout/spacing can be verified without third

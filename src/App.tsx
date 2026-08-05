@@ -12,6 +12,7 @@ import PrivacyPage from "./pages/legal/PrivacyPage";
 import AboutPage from "./pages/legal/AboutPage";
 import AdAnchor from "./ads/AdAnchor";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
+import FarewellNotice from "./components/FarewellNotice";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,6 +34,7 @@ const StyledApp = styled.div`
 const Layout = () => {
   return (
     <StyledApp>
+      <FarewellNotice />
       <Outlet />
       <AdAnchor />
     </StyledApp>

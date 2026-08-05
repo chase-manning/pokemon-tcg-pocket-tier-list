@@ -279,7 +279,7 @@ const LandingPage = () => {
     <>
       <StyledTierListPage>
         <FilterContainer>
-          <UserAccount showUpsell />
+          <UserAccount />
           {isPremium && (
             <>
               <Dropdown

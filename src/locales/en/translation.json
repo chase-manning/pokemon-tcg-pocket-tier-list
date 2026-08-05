@@ -1,14 +1,34 @@
 {
+  "farewell": {
+    "banner": "Top Pocket Decks is winding down — read the full note",
+    "title": "Thanks for two amazing years! 🎉",
+    "intro": "I started Top Pocket Decks on November 2, 2024 as a personal project. I just wanted a way to analyse the meta for myself. Then I put it online, and I've kept it updated ever since. Almost two years now!",
+    "enjoyed": "It's been a blast. Pokemon TCG Pocket is a genuinely great game, and ranked was always my favourite part of it, grinding for good decks and working out what actually wins. Building this site let me do that and share it with everyone else.",
+    "why": "Life has gotten busy though. I got engaged and I'm in the middle of planning a wedding, and my main job is keeping me full. I just don't have the time for Pokemon Pocket or for maintaining Top Pocket Decks at the moment. So rather than leave it sitting here going stale with everyone wondering what happened, I wanted to wind it down properly and say thank you.",
+    "thanks": "And thank you, genuinely. I'm so glad this turned out to be useful to so many people, and it always made my day seeing people log in every week to check the meta. A special thanks to everyone who went Premium. I never thought a fun personal project like this would get subscriptions. It never amounted to much beyond covering the running costs, but the fact that people cared enough about it to pay for it meant a lot.",
+    "takeover": {
+      "title": "Want to take it over? 🚀",
+      "body": "I'd really love for this to keep going. If you have software development experience, React and TypeScript in particular, email me at <0>chase@manning.dev</0> with a link to your GitHub profile. I'd be happy to work with a competent party to hand everything over so they can keep it alive. That includes the Pokemon TCG Pocket <1>card API</1> we maintain, which is still the only open source, public card API available."
+    },
+    "premium": {
+      "title": "For Premium subscribers 💛",
+      "status": "The site stays online, but it's no longer being updated. New Premium signups are closed, and ads have been switched off for everyone.",
+      "cancel": "Existing subscriptions keep renewing until you cancel them, so if you don't want to be billed again, cancel through the <0>billing portal</0>.",
+      "refund": "If you'd like a refund instead, email me at <0>chase@manning.dev</0> and include the email address on your account. I'll cancel your subscription and refund your most recent payment. Stripe only lets me refund payments made in the last 180 days, so if yours is older than that I'll do whatever I can."
+    },
+    "signOff": "All the best to everyone still playing, enjoy the game! 😃",
+    "signature": "— Chase"
+  },
   "premium": {
     "title": "Top Pocket Decks Premium",
     "description": "Get Premium to unlock all features and support the project.",
-    "signIn": "Sign in to get Premium",
-    "getPremium": "Get Premium",
-    "getPremiumMonthly": "or $3/month",
-    "getPremiumYearly": "Get Premium — $18/year (Save 50%)",
-    "freeTrial": "7-day free trial included · Cancel anytime",
-    "headline": "Remove ads & unlock everything",
     "manageSubscription": "Manage Subscription",
+    "windDown": {
+      "headline": "Premium is winding down 💛",
+      "status": "Top Pocket Decks is no longer being updated, so new signups are closed and ads have been switched off for everyone.",
+      "active": "Your subscription stays active and keeps renewing until you cancel it. You can cancel any time through the billing portal.",
+      "refund": "Would rather have a refund? Email me at <0>chase@manning.dev</0> with the email address on your account and I'll cancel your subscription and refund your most recent payment."
+    },
     "features": {
       "title": "Features",
       "free": "Free",
