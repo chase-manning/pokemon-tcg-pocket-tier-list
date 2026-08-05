@@ -108,13 +108,12 @@
   },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "Obtén Premium para desbloquear todas las funciones y apoyar el proyecto.",
     "manageSubscription": "Gestionar Suscripción",
     "windDown": {
       "headline": "Premium se está despidiendo 💛",
       "status": "Top Pocket Decks ya no se actualiza, así que las nuevas suscripciones están cerradas y los anuncios se han desactivado para todo el mundo.",
       "active": "Tu suscripción sigue activa y se renovará hasta que la canceles. Puedes cancelarla cuando quieras desde el portal de facturación.",
-      "refund": "¿Prefieres un reembolso? Escríbeme a <0>chase@manning.dev</0> con la dirección de correo de tu cuenta y cancelaré tu suscripción y te devolveré tu último pago."
+      "refund": "¿Prefieres un reembolso? Escríbeme a <0>chase@manning.dev</0> con la dirección de correo de tu cuenta y cancelaré tu suscripción y te devolveré tu último pago. Stripe solo me permite reembolsar pagos de los últimos 180 días, así que si el tuyo es más antiguo haré lo que pueda."
     },
     "features": {
       "title": "Características",

@@ -21,13 +21,12 @@
   },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "Get Premium to unlock all features and support the project.",
     "manageSubscription": "Manage Subscription",
     "windDown": {
       "headline": "Premium is winding down 💛",
       "status": "Top Pocket Decks is no longer being updated, so new signups are closed and ads have been switched off for everyone.",
       "active": "Your subscription stays active and keeps renewing until you cancel it. You can cancel any time through the billing portal.",
-      "refund": "Would rather have a refund? Email me at <0>chase@manning.dev</0> with the email address on your account and I'll cancel your subscription and refund your most recent payment."
+      "refund": "Would you rather have a refund? Email me at <0>chase@manning.dev</0> with the email address on your account and I'll cancel your subscription and refund your most recent payment. Stripe only lets me refund payments made in the last 180 days, so if yours is older than that I'll do whatever I can."
     },
     "features": {
       "title": "Features",

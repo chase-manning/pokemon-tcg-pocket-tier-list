@@ -37,18 +37,6 @@ const PremiumIcon = styled.img`
   }
 `;
 
-const Headline = styled.h2`
-  margin: 0 0 0.5rem;
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--main);
-
-  @media (max-width: 900px) {
-    font-size: 2.2rem;
-  }
-`;
-
 const Text = styled.p`
   margin: 0;
   font-size: 1.7rem;
@@ -115,12 +103,11 @@ const Premium = ({ variant = "default", linkLabel }: Props) => {
       <Popup
         width="60rem"
         isOpen={isOpen}
-        header=""
+        header="premium.windDown.headline"
         close={() => {
           setIsOpen(false);
         }}
       >
-        <Headline>{t("premium.windDown.headline")}</Headline>
         <Text>{t("premium.windDown.status")}</Text>
         <Text>{t("premium.windDown.active")}</Text>
         <Text>

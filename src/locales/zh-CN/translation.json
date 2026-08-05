@@ -108,13 +108,12 @@
   },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "获取高级会员以解锁所有功能并支持项目发展。",
     "manageSubscription": "管理订阅",
     "windDown": {
       "headline": "高级会员即将结束 💛",
       "status": "Top Pocket Decks 已不再更新，因此已停止新用户订阅，广告也已对所有人关闭。",
       "active": "你的订阅仍然有效，在你主动取消之前会继续续费。你可以随时通过账单门户取消。",
-      "refund": "更希望退款？请发邮件到 <0>chase@manning.dev</0>，并附上你账号所用的邮箱地址，我会为你取消订阅并退还最近一笔款项。"
+      "refund": "更希望退款？请发邮件到 <0>chase@manning.dev</0>，并附上你账号所用的邮箱地址，我会为你取消订阅并退还最近一笔款项。Stripe 只允许退还最近 180 天内的付款，如果你的付款早于这个期限，我会尽力想办法。"
     },
     "features": {
       "title": "功能",

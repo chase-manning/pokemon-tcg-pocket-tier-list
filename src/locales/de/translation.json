@@ -108,13 +108,12 @@
   },
   "premium": {
     "title": "Top Pocket Decks Premium",
-    "description": "Holen Sie sich Premium, um alle Funktionen freizuschalten und das Projekt zu unterstützen.",
     "manageSubscription": "Abonnement verwalten",
     "windDown": {
       "headline": "Premium wird eingestellt 💛",
       "status": "Top Pocket Decks wird nicht mehr aktualisiert, daher sind neue Anmeldungen geschlossen und die Werbung ist für alle abgeschaltet.",
       "active": "Dein Abonnement bleibt aktiv und verlängert sich weiter, bis du es kündigst. Du kannst jederzeit über das Abrechnungsportal kündigen.",
-      "refund": "Lieber eine Rückerstattung? Schreib mir an <0>chase@manning.dev</0> mit der E-Mail-Adresse deines Kontos, dann kündige ich dein Abonnement und erstatte deine letzte Zahlung."
+      "refund": "Lieber eine Rückerstattung? Schreib mir an <0>chase@manning.dev</0> mit der E-Mail-Adresse deines Kontos, dann kündige ich dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
     },
     "features": {
       "title": "Funktionen",
