@@ -61,7 +61,7 @@ yarn start
 
 `yarn download` only fetches tournaments not already listed in `processed-tournaments.json`. If `API_KEY` is missing, it logs an error and returns instead of failing hard — check that tournaments were actually processed.
 
-`yarn start` updates:
+`yarn start` updates these paths relative to the repository root:
 
 - `public/data/best-decks.json`
 - `public/data/card-scores.json`
