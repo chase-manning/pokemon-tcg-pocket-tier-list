@@ -16,7 +16,7 @@ A comprehensive web application that tracks and displays the current best decks 
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js 18 or higher (the analysis pipeline uses global `fetch`)
 - npm or yarn
 
 ### Installation
@@ -49,6 +49,8 @@ The site is powered by a small analysis pipeline under `analysis/`. Once tournam
 
 ### Routine refresh
 
+`analysis/data/` is gitignored (and large). You need a local copy of `decks.json` and `processed-tournaments.json` before running the pipeline — usually handed off from the previous maintainer. Starting from empty `[]` files redownloads everything from scratch.
+
 From `analysis/`, set a Limitless `API_KEY`, then run:
 
 ```bash
@@ -57,7 +59,7 @@ yarn download
 yarn start
 ```
 
-If `API_KEY` is missing, `yarn download` logs an error and returns instead of failing hard — check that tournaments were actually processed.
+`yarn download` only fetches tournaments not already listed in `processed-tournaments.json`. If `API_KEY` is missing, it logs an error and returns instead of failing hard — check that tournaments were actually processed.
 
 `yarn start` updates:
 
@@ -77,9 +79,9 @@ plus copies under `analysis/data/`. Card IDs are checked against [pokemon-tcg-po
 
 Only decks named by `get-deck-name.ts` appear in rankings. Unmatched decks are dropped in `populate-deck-names.ts`.
 
-Names come from the ordered `ARCHITYPES` list. Each entry has a `primary` card and an optional `secondary` list of alternative pairings. A value can be one card string, or an array of related cards that count toward the same slot.
+Names come from the ordered `ARCHITYPES` list. Each entry has a `primary` card and an optional `secondary` list of alternative pairings. `primary` (and each secondary pairing) can be one card string, or an array of related cards that count toward that same slot — do not flatten several pairings into one array when you meant separate alternatives.
 
-Criteria use `"Name Set Number"` (for example `"Mega Lucario ex B3 81"`). The matcher prefixes `1` or `2` when comparing against deck lists (`cardToString` stores cards as `"count Name Set Number"`).
+Criteria use `"Name Set Number"` (for example `"Mega Lucario ex B3 81"`). Use `PA` / `PB` for promo sets, not `P-A` / `P-B` (`cardToString` normalizes those). The matcher prefixes `1` or `2` when comparing against deck lists.
 
 Matching runs in two passes:
 
