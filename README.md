@@ -24,8 +24,8 @@ A comprehensive web application that tracks and displays the current best decks 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/chase-manning/pokemon-tcg-pocket-best-decks.git
-cd pokemon-tcg-pocket-best-decks
+git clone https://github.com/chase-mew/pokemon-tcg-pocket-tier-list.git
+cd pokemon-tcg-pocket-tier-list
 ```
 
 2. Install frontend dependencies at the repo root, and analysis dependencies separately:
