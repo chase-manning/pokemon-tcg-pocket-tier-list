@@ -16,7 +16,7 @@ A comprehensive web application that tracks and displays the current best decks 
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js 18 or higher (the analysis pipeline uses global `fetch`)
 - npm or yarn
 
 ### Installation
@@ -24,27 +24,73 @@ A comprehensive web application that tracks and displays the current best decks 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/pokemon-tcg-pocket-best-decks.git
-cd pokemon-tcg-pocket-best-decks
+git clone https://github.com/chase-mew/pokemon-tcg-pocket-tier-list.git
+cd pokemon-tcg-pocket-tier-list
 ```
 
-2. Install dependencies:
+2. Install frontend dependencies at the repo root, and analysis dependencies separately:
 
 ```bash
-npm install
-# or
 yarn install
+cd analysis && yarn install && cd ..
 ```
 
 3. Start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn start
 ```
 
 4. Open your browser and navigate to `http://localhost:3000`
+
+## Maintaining deck data
+
+The site is powered by a small analysis pipeline under `analysis/`. Once tournaments are downloaded from Limitless, that pipeline names decks, scores them, and writes JSON the frontend loads from `public/data/`.
+
+### Routine refresh
+
+`analysis/data/` is gitignored (and large). You need a local copy of `decks.json` and `processed-tournaments.json` before running the pipeline — usually handed off from the previous maintainer. Starting from empty `[]` files redownloads everything from scratch.
+
+From `analysis/`, set a Limitless `API_KEY`, then run:
+
+```bash
+export API_KEY=your_limitless_api_key
+yarn download
+yarn start
+```
+
+`yarn download` only fetches tournaments not already listed in `processed-tournaments.json`. If `API_KEY` is missing, it logs an error and returns instead of failing hard — check that tournaments were actually processed.
+
+`yarn start` updates these paths relative to the repository root:
+
+- `public/data/best-decks.json`
+- `public/data/card-scores.json`
+- `public/data/matchup-data.json`
+- `src/app/last-updated.ts`
+
+plus copies under `analysis/data/`. Card IDs are checked against [pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards); a missing card makes `yarn start` throw.
+
+### New expansion checklist
+
+1. Update `EXPANSION_RELEASE_DATE` in `analysis/src/settings.ts` (filters out older decks and resets recency weighting).
+2. Update archetypes in `analysis/src/utils/get-deck-name.ts` — this is where most ongoing maintenance happens.
+
+### Archetype naming
+
+Only decks named by `get-deck-name.ts` appear in rankings. Unmatched decks are dropped in `populate-deck-names.ts`.
+
+Names come from the ordered `ARCHITYPES` list. Each entry has a `primary` card and an optional `secondary` list of alternative pairings. `primary` (and each secondary pairing) can be one card string, or an array of related cards that count toward that same slot — do not flatten several pairings into one array when you meant separate alternatives.
+
+Criteria use `"Name Set Number"` (for example `"Mega Lucario ex B3 81"`). Use `PA` / `PB` for promo sets, not `P-A` / `P-B` (`cardToString` normalizes those). The matcher prefixes `1` or `2` when comparing against deck lists.
+
+Matching runs in two passes:
+
+1. Walk the full list requiring at least two copies toward the primary. For each archetype, try each secondary pairing one at a time (also needing at least two) before primary-only.
+2. Walk again allowing a single primary copy; any secondary pairing still needs at least two.
+
+Alias arrays can accumulate copies across their entries. Within a pass, earlier entries win. Because the stricter pass finishes first, a later archetype with two copies can beat an earlier one that would only match on the looser pass.
+
+If a popular deck is missing after a refresh, check whether it failed naming or simply had fewer than `MIN_ARCHETYPE_QUALIFIED_GAMES` qualified games (currently `25` in `settings.ts`). Add or adjust `ARCHITYPES` entries as needed, reuse existing named constants for shared printings, and keep list order intentional. For ambiguous or precedence-sensitive cases, add a focused test in `analysis/src/__tests__/get-deck-name.test.ts`.
 
 ## Contributing
 
