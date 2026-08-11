@@ -12,7 +12,6 @@ import PrivacyPage from "./pages/legal/PrivacyPage";
 import AboutPage from "./pages/legal/AboutPage";
 import AdAnchor from "./ads/AdAnchor";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
-import FarewellNotice from "./components/FarewellNotice";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,40 +32,38 @@ const StyledApp = styled.div`
 
 const Layout = () => {
   return (
-    <StyledApp>
-      <FarewellNotice />
-      <Outlet />
-      <AdAnchor />
-    </StyledApp>
+      <StyledApp>
+        <Outlet />
+        <AdAnchor />
+      </StyledApp>
   );
 };
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <DecksProvider>
-          <ContentReadyProvider>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<LandingPage />} />
-                <Route path="tier-list" element={<TierListPage />} />
-                <Route path="cards-list" element={<CardsListPage />} />
-                <Route path="expansion-list" element={<ExpansionListPage />} />
-                <Route path="privacy" element={<PrivacyPage />} />
-                <Route path="about" element={<AboutPage />} />
-                <Route path="deck">
-                  <Route index element={<DeckPage />} />
-                  <Route path=":deckId" element={<DeckPage />} />
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <DecksProvider>
+            <ContentReadyProvider>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<LandingPage />} />
+                  <Route path="tier-list" element={<TierListPage />} />
+                  <Route path="cards-list" element={<CardsListPage />} />
+                  <Route path="expansion-list" element={<ExpansionListPage />} />
+                  <Route path="privacy" element={<PrivacyPage />} />
+                  <Route path="about" element={<AboutPage />} />
+                  <Route path="deck">
+                    <Route index element={<DeckPage />} />
+                    <Route path=":deckId" element={<DeckPage />} />
+                  </Route>
+                  <Route path="*" element={<LandingPage />} />
                 </Route>
-
-                <Route path="*" element={<LandingPage />} />
-              </Route>
-            </Routes>
-          </ContentReadyProvider>
-        </DecksProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+              </Routes>
+            </ContentReadyProvider>
+          </DecksProvider>
+        </AuthProvider>
+      </QueryClientProvider>
   );
 };
 
