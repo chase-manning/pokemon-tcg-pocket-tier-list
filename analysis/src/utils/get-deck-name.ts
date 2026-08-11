@@ -8,39 +8,52 @@ interface Architype {
   primary: CardNameType;
   secondary: CardNameType[];
 }
-const VENUSAUR = ["Mega Venusaur ex B1a 4", "Venusaur ex A1 4", "Venusaur B1a 3", "Venusaur A1 3"];
-const CHARIZARD = ["Mega Charizard X ex B2b 9", "Mega Charizard Y ex B1a 14", "Charizard ex A2b 10", "Charizard ex A1 36", "Charizard B1a 13", "Charizard A1 35"]
-const BLASTOISE = ["Blastoise ex A1 56", "Mega Blastoise ex B1a 20", "Blastoise A1 55", "Blastoise B1a 19"]
-const GRENINJA = ["Greninja A1 89", "Greninja ex B1 73", "Juliana B3a 71"]
-const ALTARIA = ["Mega Altaria ex B1 102", "Altaria B1 197"]
-const MAGNEZONE = ["Magnezone ex B3 54", "Magnezone A2 53", "Magnezone B1a 26", "Magneton A1 98"]
-const ESPEON = ["Espeon ex A4 83", "Espeon A3b 28"]
-const GUZZLORD = ["Guzzlord ex A3a 43", "Guzzlord B2 109"]
-const BUZZWOLE = ["Buzzwole ex A3a 6", "Buzzwole B2 14"]
-const DECIDUEYE = ["Decidueye ex A3 12", "Decidueye A3a 5"]
-const ALOLAN_NINETALES = ["Alolan Ninetales ex B2 29", "Alolan Ninetales A3 41"]
-const POISON = ["Poison Barb A3 146", "Nihilego A3a 42"]
-const ORICORIO = ["Oricorio A3 66", "Pichu A4 66"]
-const MEGA_KANGASKHAN = ["Mega Kangaskhan ex B2 127", "Serena B1a 69", "Ilima A3 149"]
-const MEGA_MAWILE = ["Mega Mawile ex B2 113", "Serena B1a 69"]
-const MEOWSCARADA = ["Meowscarada ex B2a 3", "Meowscarada A2b 7"]
-const SCIZOR = ["Mega Scizor ex B2b 47", "Scizor A4 123"]
-const DRAGONITE = ["Dragonite ex A3b 53", "Dragonite B2b 53", "Dragonite A1 185"]
-const SLEEP = ["Darkrai B2b 40", "Igglybuff A4a 59"];
-const LUCARIO = ["Mega Lucario ex B3 81", "Lucario A2 92"]
-const SCEPTILE = ["Mega Sceptile ex B3 8", "Sceptile B3 7", "Juliana B3a 71"]
-const MIRAIDON = ["Miraidon ex B3a 19", "Professor Turo B3a 73"];
+const ALOLAN_NINETALES = ["Alolan Ninetales ex B2 29", "Alolan Ninetales A3 41"];
+const ALTARIA = ["Mega Altaria ex B1 102", "Altaria B1 197"];
 const BABY_ENERGY = ["Pichu A4 66", "Magby A4 22", "Mantyke A4a 23"];
-const FUTURE = ["Future Booster Energy Capsule B3a 70", "Iron Valiant B3a 27", "Iron Crown B3a 30"]
-const BLAZIKEN = ["Mega Blaziken ex B1 36", "Juliana B3a 71"]
-const DARK_SUPPORT = ["Mega Absol ex B1 151", "Mega Sableeye ex B3b 41", "Darkrai ex A2 110"]
-const GARDEVOIR = ["Mega Gardevoir ex B2 66", "Gardevoir A1 132", "Gardevoir B2 65"]
+const BLASTOISE = ["Blastoise ex A1 56", "Mega Blastoise ex B1a 20", "Blastoise A1 55", "Blastoise B1a 19"];
+const BLAZIKEN = ["Mega Blaziken ex B1 36", "Juliana B3a 71"];
+const BUZZWOLE = ["Buzzwole ex A3a 6", "Buzzwole B2 14"];
+const CHARIZARD = ["Mega Charizard X ex B2b 9", "Mega Charizard Y ex B1a 14", "Charizard ex A2b 10", "Charizard ex A1 36", "Charizard B1a 13", "Charizard A1 35"];
+const DARK_SUPPORT = ["Mega Absol ex B1 151", "Mega Sableye ex B3b 41", "Darkrai ex A2 110"];
+const DECIDUEYE = ["Decidueye ex A3 12", "Decidueye A3a 5"];
+const DRAGONITE = ["Dragonite ex A3b 53", "Dragonite B2b 53", "Dragonite A1 185"];
+const ESPEON = ["Espeon ex A4 83", "Espeon A3b 28"];
+const FUTURE = ["Future Booster Energy Capsule B3a 70", "Iron Valiant B3a 27", "Iron Crown B3a 30"];
+const GARDEVOIR = ["Mega Gardevoir ex B2 66", "Gardevoir A1 132", "Gardevoir B2 65"];
+const GRENINJA = ["Greninja A1 89", "Greninja ex B1 73", "Juliana B3a 71"];
+const GUZZLORD = ["Guzzlord ex A3a 43", "Guzzlord B2 109"];
+const LUCARIO = ["Mega Lucario ex B3 81", "Lucario A2 92"];
+const MAGNEZONE = ["Magnezone ex B3 54", "Magnezone A2 53", "Magnezone B1a 26", "Magneton A1 98"];
+const MEGA_KANGASKHAN = ["Mega Kangaskhan ex B2 127", "Serena B1a 69", "Ilima A3 149"];
+const MEGA_MAWILE = ["Mega Mawile ex B2 113", "Serena B1a 69"];
+const MEOWSCARADA = ["Meowscarada ex B2a 3", "Meowscarada A2b 7"];
+const MIRAIDON = ["Miraidon ex B3a 19", "Professor Turo B3a 73"];
+const ORICORIO = ["Oricorio A3 66", "Pichu A4 66"];
+const POISON = ["Poison Barb A3 146", "Nihilego A3a 42"];
+const SCEPTILE = ["Mega Sceptile ex B3 8", "Sceptile B3 7", "Juliana B3a 71"];
+const SCIZOR = ["Mega Scizor ex B2b 47", "Scizor A4 123"];
+const SLEEP = ["Darkrai B2b 40", "Igglybuff A4a 59"];
+const VENUSAUR = ["Mega Venusaur ex B1a 4", "Venusaur ex A1 4", "Venusaur B1a 3", "Venusaur A1 3"];
+// B4 | Ruler of the Skies
+const DRAGONAIR = ["Dragonair B4 117"];
+const HELIOLISK = ["Heliolisk B4 61"];
+const HOOPA = ["Hoopa ex B4 103"];
+const MEGA_METAGROSS = ["Mega Metagross ex B4 109"];
+const MEGA_GALLADE = ["Mega Gallade ex B4 84"];
+const MEGA_RAYQUAZA = ["Mega Rayquaza ex B4 120"];
+const MEGA_SHARPEDO = ["Mega Sharpedo ex B4 35"];
+const VESPIQUEN = ["Vespiquen ex B4 11"];
+const WAILORD = ["Wailord ex B4 37"];
+const ROTOM = ["Rotom ex B4 55"];
+const TYPHLOSION = ["Typhlosion ex B4 26"];
+
 
 const ARCHITYPES: Architype[] = [
   // Outliers
   { primary: "Ditto B1a 55", secondary: ["Rampardos A2 89", "Liepard B1a 48", MAGNEZONE, "Maushold B2 143"] },
 
-  // Stage 2 Mega
+  // Stage 2 Mega ex
   { primary: SCEPTILE, secondary: [POISON, "Leafeon ex A2a 10", GRENINJA] },
   { primary: "Mega Slowbro ex B2b 16", secondary: ["Suicune ex A4a 20"] },
   { primary: "Mega Manectric ex B2b 27", secondary: [] },
@@ -67,6 +80,7 @@ const ARCHITYPES: Architype[] = [
   { primary: MEOWSCARADA, secondary: [] },
   { primary: DRAGONITE, secondary: ["Rampardos A2 89"] },
   { primary: MAGNEZONE, secondary: [MIRAIDON] },
+  { primary: TYPHLOSION, secondary: ["Entei ex A4a 14", "Skeledirge B2a 18", "Castform Sunny Form B3 24"] },
 
   // Stage 2
   { primary: "Butterfree B3b 3", secondary: [] },
@@ -83,24 +97,27 @@ const ARCHITYPES: Architype[] = [
   { primary: "Slaking B2 136", secondary: [] },
   { primary: "Baxcalibur B2a 36", secondary: ["Suicune ex A4a 20", ALOLAN_NINETALES] },
   { primary: "Annihilape B2a 57", secondary: ["Mega Lopunny ex B1a 42"] },
+  { primary: "Luxray B4 53", secondary: ["Zeraora A3a 20", ORICORIO] },
 
-  // Stage 1 Mega
-  { primary: "Mega Audino ex B3 141", secondary: [] },
+  // Stage 1 Mega ex
   { primary: LUCARIO, secondary: ["Rampardos A2 89", GRENINJA, "Donphan ex A4 100", SLEEP] },
   { primary: "Mega Camerupt ex B3 23", secondary: [] },
   { primary: "Mega Medicham ex PB 29", secondary: [] },
-  { primary: "Espeon B3a 20", secondary: ["Swablu B1 196"] },
   { primary: ALTARIA, secondary: ["Sylveon ex A3b 34", FUTURE, "Gourgeist B2 72", "Aegislash B1 172", GRENINJA, SLEEP] },
   { primary: "Mega Gyarados ex B1 52", secondary: ["Jellicent B1 69"] },
   { primary: "Mega Lopunny ex B1a 42", secondary: [LUCARIO, GRENINJA, SLEEP] },
   { primary: "Mega Steelix ex B1a 52", secondary: [] },
+  { primary: MEGA_SHARPEDO, secondary: ["Gyarados A4 45", "Chien-Pao ex B2a 37", "Suicune ex A4a 20", "Mega Gyarados ex B1 52", "Walrein B4 40"] },
+  { primary: MEGA_GALLADE, secondary: ["Gallade B3 80", GRENINJA, "Hitmontop A4 85", "Hitmonchan ex B1 155"] },
+  { primary: MEGA_METAGROSS, secondary: ["Orthworm B2a 75", "Dialga ex A2 119", "Probopass B1a 118"] },
 
   // Stage 1 ex
   { primary: "Hisuian Zoroark ex B3b 60", secondary: [] },
   { primary: "Milotic ex B3b 15", secondary: [] },
   { primary: "Zoroark ex B3 106", secondary: [] },
   { primary: "Crustle ex B3 88", secondary: [] },
-  { primary: "Lugia ex A4 149", secondary: ["Ho-Oh ex A4 34"] },
+  { primary: ESPEON, secondary: ["Sylveon ex A3b 34"] },
+  { primary: "Vaporeon ex B3 37", secondary: [] },
   { primary: "Jolteon ex B1 81", secondary: ["Jolteon A3b 25"] },
   { primary: "Leafeon ex A2a 10", secondary: [] },
   { primary: ALOLAN_NINETALES, secondary: ["Crawdaunt A4 61"] },
@@ -108,14 +125,15 @@ const ARCHITYPES: Architype[] = [
   { primary: "Armarouge ex B2a 20", secondary: [] },
   { primary: "Bellibolt ex B2a 42", secondary: [] },
   { primary: "Gholdengo ex B2a 78", secondary: [] },
+  { primary: VESPIQUEN, secondary: ["Shuckle ex A4 12", "Teal Mask Ogerpon ex B2 1", "Serperior A1a 6"] },
+  { primary: WAILORD, secondary: ["Indeedee ex B1 93", "Mantyke A4a 23"] },
 
   // Stage 1
   { primary: "Altaria A4a 55", secondary: [] },
+  { primary: "Espeon B3a 20", secondary: ["Swablu B1 196"] },
   { primary: "Glimmora B3a 45", secondary: [] },
-  { primary: "Vaporeon ex B3 37", secondary: [] },
   { primary: "Gyarados A4 45", secondary: ["Suicune ex A4a 20"] },
   { primary: "Hydreigon B1 157", secondary: [POISON] },
-  { primary: ESPEON, secondary: ["Sylveon ex A3b 34"] },
   { primary: "Crobat A2a 50", secondary: [] },
   { primary: "Silvally A3a 61", secondary: [ORICORIO] },
   { primary: "Ariados B1a 6", secondary: ["Whimsicott ex B1 16"] },
@@ -123,15 +141,19 @@ const ARCHITYPES: Architype[] = [
   { primary: "Houndstone B2a 53", secondary: ["Gourgeist B2 72"] },
   { primary: "Gourgeist B2 72", secondary: [] },
   { primary: "Naganadel A3a 45", secondary: [] },
+  { primary: "Mega Manectric ex B2b 27", secondary: [HELIOLISK] },
 
-  // Basic Mega
+  // Basic Mega ex
+  { primary: "Mega Audino ex B3 141", secondary: [] },
   { primary: "Mega Sableye ex B3b 41", secondary: [] },
   { primary: "Mega Diancie ex B3b 32", secondary: [] },
   { primary: MEGA_KANGASKHAN, secondary: [GRENINJA, POISON, ORICORIO] },
   { primary: MEGA_MAWILE, secondary: [] },
   { primary: "Mega Absol ex B1 151", secondary: [GRENINJA, ORICORIO] },
+  { primary: MEGA_RAYQUAZA, secondary: [DRAGONAIR, "Gouging Fire B3a 14", "Igglybuff A4a 59"] },
 
   // Basic ex
+  { primary: "Lugia ex A4 149", secondary: ["Ho-Oh ex A4 34"] },
   { primary: "Dedenne ex B3b 24", secondary: [] },
   { primary: "Iron Bundle ex B3a 13", secondary: [FUTURE] },
   { primary: "Flutter Mane ex B3a 26", secondary: [GRENINJA] },
@@ -145,11 +167,14 @@ const ARCHITYPES: Architype[] = [
   { primary: "Mimikyu ex B2 73", secondary: [GRENINJA, "Giratina ex A2b 35"] },
   { primary: "Chien-Pao ex B2a 37", secondary: [] },
   { primary: MIRAIDON, secondary: [] },
+  { primary: HOOPA, secondary: ["Mega Absol ex B1 151", GRENINJA, "Mega Sableye ex B3b 41", "Hydreigon B1 157", "Darkrai ex A2 110"] },
+  { primary: ROTOM, secondary: ["Pachirisu B4 54", "Oricorio A3 66", "Raikou ex A4a 19"] },
 
   // Basic
   { primary: FUTURE, secondary: [] },
   { primary: "Great Tusk B3a 34", secondary: [] },
   { primary: "Celesteela A3a 62", secondary: [] },
+  { primary: "Gouging Fire B3a 14", secondary: [DRAGONAIR] },
 
   // Tech Cards
   { primary: GRENINJA, secondary: [ORICORIO, SLEEP, DARK_SUPPORT] },
