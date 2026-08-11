@@ -123,7 +123,7 @@ const Tooltip = ({ text }: Props) => {
         role="button"
         aria-label="Show tooltip"
         tabIndex={0}
-        onKeyDown={(e) => {
+        onKeyDown={(e: React.KeyboardEvent) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             handleToggle();

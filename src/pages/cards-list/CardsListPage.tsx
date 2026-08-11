@@ -214,7 +214,7 @@ const CardsListPage = () => {
           <UserAccount />
           <Dropdown
             value={expansion ?? ""}
-            onChange={(e) => {
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
               const value = e.target.value;
               setExpansion(value === "" ? null : value);
             }}

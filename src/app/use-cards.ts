@@ -42,7 +42,7 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     queryKey: ["cards"],
     queryFn: async () => {
       const response = await fetch(CARDS_URL);
-      return response.json() as Promise<CardType[]>;
+      return (await response.json()) as CardType[];
     },
   });
 
@@ -50,20 +50,20 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     queryKey: ["card-scores"],
     queryFn: async () => {
       const response = await fetch("/data/card-scores.json");
-      return response.json() as Promise<CardScoreType[]>;
+      return (await response.json()) as CardScoreType[];
     },
   });
 
   if (!cardData || !cards) return null;
 
   const sortedCards = cards
-    .filter((card) => {
-      const id = cardNameToId(card.name);
-      const count = cardNameToCount(card.name);
-      const collectedCount = collected.filter((m) => m === id).length;
-      return count - collectedCount > 0;
-    })
-    .sort((a, b) => b.score - a.score);
+      .filter((card: CardScoreType) => {
+        const id = cardNameToId(card.name);
+        const count = cardNameToCount(card.name);
+        const collectedCount = collected.filter((m) => m === id).length;
+        return count - collectedCount > 0;
+      })
+      .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
 
   const outputCards: CardScoreType[] = [];
   for (const card of sortedCards) {
@@ -74,8 +74,10 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     if (outputCards.find((c) => c.id === id)) continue;
     const cardInfo = cardData.find((c: CardType) => c.id === id);
     if (!cardInfo) throw new Error(`Card not found: ${id}`);
-    // Square root of score
+
+    // fast Square root of score, precision loss irrelevant for sorting
     const score = Math.pow(card.score, 1 / 2);
+
     outputCards.push({
       ...cardInfo,
       score,
@@ -86,9 +88,9 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
   }
 
   return outputCards
-    .sort((a, b) => b.popularity - a.popularity)
-    .slice(0, amount)
-    .sort((a, b) => b.score - a.score);
+      .sort((a: CardScoreType, b: CardScoreType) => b.popularity - a.popularity)
+      .slice(0, amount)
+      .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
 };
 
 export default useCards;
