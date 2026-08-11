@@ -35,18 +35,7 @@ const SCEPTILE = ["Mega Sceptile ex B3 8", "Sceptile B3 7", "Juliana B3a 71"];
 const SCIZOR = ["Mega Scizor ex B2b 47", "Scizor A4 123"];
 const SLEEP = ["Darkrai B2b 40", "Igglybuff A4a 59"];
 const VENUSAUR = ["Mega Venusaur ex B1a 4", "Venusaur ex A1 4", "Venusaur B1a 3", "Venusaur A1 3"];
-// B4 | Ruler of the Skies
-const DRAGONAIR = ["Dragonair B4 117"];
-const HELIOLISK = ["Heliolisk B4 61"];
-const HOOPA = ["Hoopa ex B4 103"];
-const MEGA_METAGROSS = ["Mega Metagross ex B4 109"];
-const MEGA_GALLADE = ["Mega Gallade ex B4 84"];
-const MEGA_RAYQUAZA = ["Mega Rayquaza ex B4 120"];
-const MEGA_SHARPEDO = ["Mega Sharpedo ex B4 35"];
-const VESPIQUEN = ["Vespiquen ex B4 11"];
-const WAILORD = ["Wailord ex B4 37"];
-const ROTOM = ["Rotom ex B4 55"];
-const TYPHLOSION = ["Typhlosion ex B4 26"];
+const HELIOLISK = ["Heliolisk B4 61"]; // B4 | Ruler of the Skies
 
 
 const ARCHITYPES: Architype[] = [
@@ -80,7 +69,7 @@ const ARCHITYPES: Architype[] = [
   { primary: MEOWSCARADA, secondary: [] },
   { primary: DRAGONITE, secondary: ["Rampardos A2 89"] },
   { primary: MAGNEZONE, secondary: [MIRAIDON] },
-  { primary: TYPHLOSION, secondary: ["Entei ex A4a 14", "Skeledirge B2a 18", "Castform Sunny Form B3 24"] },
+  { primary: "Typhlosion ex B4 26", secondary: ["Entei ex A4a 14", "Skeledirge B2a 18", "Castform Sunny Form B3 24"] },
 
   // Stage 2
   { primary: "Butterfree B3b 3", secondary: [] },
@@ -107,9 +96,9 @@ const ARCHITYPES: Architype[] = [
   { primary: "Mega Gyarados ex B1 52", secondary: ["Jellicent B1 69"] },
   { primary: "Mega Lopunny ex B1a 42", secondary: [LUCARIO, GRENINJA, SLEEP] },
   { primary: "Mega Steelix ex B1a 52", secondary: [] },
-  { primary: MEGA_SHARPEDO, secondary: ["Gyarados A4 45", "Chien-Pao ex B2a 37", "Suicune ex A4a 20", "Mega Gyarados ex B1 52", "Walrein B4 40"] },
-  { primary: MEGA_GALLADE, secondary: ["Gallade B3 80", GRENINJA, "Hitmontop A4 85", "Hitmonchan ex B1 155"] },
-  { primary: MEGA_METAGROSS, secondary: ["Orthworm B2a 75", "Dialga ex A2 119", "Probopass B1a 118"] },
+  { primary: "Mega Sharpedo ex B4 35", secondary: ["Gyarados A4 45", "Chien-Pao ex B2a 37", "Suicune ex A4a 20", "Mega Gyarados ex B1 52", "Walrein B4 40"] },
+  { primary: "Mega Gallade ex B4 84", secondary: ["Gallade B3 80", GRENINJA, "Hitmontop A4 85", "Hitmonchan ex B1 155"] },
+  { primary: "Mega Metagross ex B4 109", secondary: ["Orthworm B2a 75", "Dialga ex A2 119", "Probopass B1a 53"] },
 
   // Stage 1 ex
   { primary: "Hisuian Zoroark ex B3b 60", secondary: [] },
@@ -125,8 +114,8 @@ const ARCHITYPES: Architype[] = [
   { primary: "Armarouge ex B2a 20", secondary: [] },
   { primary: "Bellibolt ex B2a 42", secondary: [] },
   { primary: "Gholdengo ex B2a 78", secondary: [] },
-  { primary: VESPIQUEN, secondary: ["Shuckle ex A4 12", "Teal Mask Ogerpon ex B2 1", "Serperior A1a 6"] },
-  { primary: WAILORD, secondary: ["Indeedee ex B1 93", "Mantyke A4a 23"] },
+  { primary: "Vespiquen ex B4 11", secondary: ["Shuckle ex A4 12", "Teal Mask Ogerpon ex B2 1", "Serperior A1a 6"] },
+  { primary: "Wailord ex B4 37", secondary: ["Indeedee ex B1 93", "Mantyke A4a 23"] },
 
   // Stage 1
   { primary: "Altaria A4a 55", secondary: [] },
@@ -150,7 +139,7 @@ const ARCHITYPES: Architype[] = [
   { primary: MEGA_KANGASKHAN, secondary: [GRENINJA, POISON, ORICORIO] },
   { primary: MEGA_MAWILE, secondary: [] },
   { primary: "Mega Absol ex B1 151", secondary: [GRENINJA, ORICORIO] },
-  { primary: MEGA_RAYQUAZA, secondary: [DRAGONAIR, "Gouging Fire B3a 14", "Igglybuff A4a 59"] },
+  { primary: "Mega Rayquaza ex B4 120", secondary: ["Dragonair B4 117", "Gouging Fire B3a 14", "Igglybuff A4a 59"] },
 
   // Basic ex
   { primary: "Lugia ex A4 149", secondary: ["Ho-Oh ex A4 34"] },
@@ -167,14 +156,14 @@ const ARCHITYPES: Architype[] = [
   { primary: "Mimikyu ex B2 73", secondary: [GRENINJA, "Giratina ex A2b 35"] },
   { primary: "Chien-Pao ex B2a 37", secondary: [] },
   { primary: MIRAIDON, secondary: [] },
-  { primary: HOOPA, secondary: ["Mega Absol ex B1 151", GRENINJA, "Mega Sableye ex B3b 41", "Hydreigon B1 157", "Darkrai ex A2 110"] },
-  { primary: ROTOM, secondary: ["Pachirisu B4 54", "Oricorio A3 66", "Raikou ex A4a 19"] },
+  { primary: "Hoopa ex B4 103", secondary: ["Mega Absol ex B1 151", GRENINJA, "Mega Sableye ex B3b 41", "Hydreigon B1 157", "Darkrai ex A2 110"] },
+  { primary: "Rotom ex B4 55", secondary: ["Pachirisu B4 54", "Oricorio A3 66", "Raikou ex A4a 19"] },
 
   // Basic
   { primary: FUTURE, secondary: [] },
   { primary: "Great Tusk B3a 34", secondary: [] },
   { primary: "Celesteela A3a 62", secondary: [] },
-  { primary: "Gouging Fire B3a 14", secondary: [DRAGONAIR] },
+  { primary: "Gouging Fire B3a 54", secondary: ["Dragonair B4 117"] },
 
   // Tech Cards
   { primary: GRENINJA, secondary: [ORICORIO, SLEEP, DARK_SUPPORT] },
@@ -247,7 +236,7 @@ const getMatchedCard = (cards: Deck["cards"], match: CardNameType): string => {
 const getDeckName = (deck: Deck): string | null => {
   const { cards } = deck;
 
-  // First try matching with exactly 2 copies of each card
+// Pass 1a: Try 2 copies primary + 2 copies secondary across all archetypes
   for (const criteria of ARCHITYPES) {
     const { primary, secondary } = criteria;
     for (const secondaryCard of secondary) {
@@ -256,12 +245,17 @@ const getDeckName = (deck: Deck): string | null => {
         return formatName(cards, match);
       }
     }
+  }
+
+  // Pass 1b: Try 2 copies primary standalone across all archetypes
+  for (const criteria of ARCHITYPES) {
+    const { primary } = criteria;
     if (hasAllCards(cards, primary, true)) {
       return formatName(cards, [getMatchedCard(cards, primary)]);
     }
   }
 
-  // Then try matching with at least 1 copy of the primary card; secondary-card matches still require 2 copies
+  // Pass 2a: Try 1 copy primary + 2 copies secondary across all archetypes
   for (const criteria of ARCHITYPES) {
     const { primary, secondary } = criteria;
     for (const secondaryCard of secondary) {
@@ -270,6 +264,11 @@ const getDeckName = (deck: Deck): string | null => {
         return formatName(cards, match);
       }
     }
+  }
+
+  // Pass 2b: Try 1 copy primary standalone across all archetypes
+  for (const criteria of ARCHITYPES) {
+    const { primary } = criteria;
     if (hasAllCards(cards, primary, false)) {
       return formatName(cards, [getMatchedCard(cards, primary)]);
     }

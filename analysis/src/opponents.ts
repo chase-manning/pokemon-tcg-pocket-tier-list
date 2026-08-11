@@ -1,6 +1,6 @@
-export type Oponent = string | string[];
+export type Opponent = string | string[];
 
-const OPPONENTS: Oponent[] = [
+const OPPONENTS: Opponent[] = [
   ["Rampardos A2 89", "Silvally A3a 61"],
   ["Rampardos A2 89", "Silvally A3a 61"],
   ["Rampardos A2 89", "Silvally A3a 61"],
@@ -17,7 +17,7 @@ const OPPONENTS: Oponent[] = [
   ["Buzzwole ex A3a 6", "Celesteela A3a 62"],
   ["Buzzwole ex A3a 6", "Celesteela A3a 62"],
   ["Silvally A3a 61", "Blacephalon A3a 9"],
-  ["Solgaleo ex A3 122", "Silvally A3a 617"],
+  ["Solgaleo ex A3 122", "Silvally A3a 61"],
   ["Solgaleo ex A3 122", "Shiinotic A3a 27"],
   ["Buzzwole ex A3a 6", "Celesteela A3a 62"],
   ["Buzzwole ex A3a 6", "Celesteela A3a 62"],

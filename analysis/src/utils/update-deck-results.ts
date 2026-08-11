@@ -1,5 +1,5 @@
 import { Deck } from "./types";
-import OPPONENTS, { Oponent } from "../opponents";
+import OPPONENTS, { Opponent } from "../opponents";
 import { OPPONENT_BATTLE } from "../settings";
 import { formatMatch } from "./format-name";
 
@@ -13,7 +13,7 @@ export const updateDeckResults = (
 ): Deck[] => {
   // If it's an opponent battle, we update the winCount and lossCount to only match the local opponents
   if (OPPONENT_BATTLE) {
-    const opponents = OPPONENTS.slice(0, 100).map((opponent: Oponent) => {
+    const opponents = OPPONENTS.slice(0, 100).map((opponent: Opponent) => {
       const match = Array.isArray(opponent) ? opponent : [opponent];
       return formatMatch(match);
     });
