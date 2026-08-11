@@ -49,7 +49,6 @@ const ARCHITYPES: Architype[] = [
   { primary: GARDEVOIR, secondary: ["Latias A4a 36", "Sylveon ex A3b 34"] },
   { primary: "Mega Ampharos ex B1 85", secondary: ["Alolan Raichu B2 50"] },
   { primary: "Mega Gengar ex B2b 39", secondary: [] },
-  { primary: "Mega Manectric ex B2b 27", secondary: [] },
   { primary: "Mega Slowbro ex B2b 16", secondary: ["Suicune ex A4a 20"] },
   { primary: "Mega Swampert ex B2 36", secondary: [] },
   { primary: SCEPTILE, secondary: [GRENINJA, "Leafeon ex A2a 10", POISON] },
