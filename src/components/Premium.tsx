@@ -100,35 +100,6 @@ const Premium = ({ variant = "default", linkLabel }: Props) => {
           <PremiumIcon src={premiumIcon} alt="Premium" />
         </ButtonContainer>
       )}
-      <Popup
-        width="60rem"
-        isOpen={isOpen}
-        header="premium.windDown.headline"
-        close={() => {
-          setIsOpen(false);
-        }}
-      >
-        <Text>{t("premium.windDown.status")}</Text>
-        <Text>{t("premium.windDown.active")}</Text>
-        <Text>
-          <Trans
-            i18nKey="premium.windDown.refund"
-            components={[
-              <InlineLink href={`mailto:${CONTACT_EMAIL}`} key="email" />,
-            ]}
-          />
-        </Text>
-        <ButtonWrapper>
-          <Button
-            wide
-            action={() => {
-              window.open(MANAGE_SUBSCRIPTION_URL, "_blank")?.focus();
-            }}
-          >
-            {t("premium.manageSubscription")}
-          </Button>
-        </ButtonWrapper>
-      </Popup>
     </>
   );
 };
