@@ -123,7 +123,7 @@ const Popup: React.FC<Props> = ({ isOpen, header, close, children, width }) => {
 
   return (
     <ModalOverlay onClick={close}>
-      <ModalContent onClick={(e) => e.stopPropagation()} $width={width}>
+      <ModalContent onClick={(e: React.MouseEvent) => e.stopPropagation()} $width={width}>
         <CloseButton onClick={close} aria-label="Close">
           ×
         </CloseButton>

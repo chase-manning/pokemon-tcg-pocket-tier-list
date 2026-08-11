@@ -284,7 +284,7 @@ const LandingPage = () => {
             <>
               <Dropdown
                 value={energy ?? ""}
-                onChange={(e) => {
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                   const value = e.target.value;
                   setEnergy(value === "" ? null : value);
                 }}
@@ -301,14 +301,14 @@ const LandingPage = () => {
                 <IncludeExCheckbox
                   type="checkbox"
                   checked={includeEx}
-                  onChange={(e) => setIncludeEx(e.target.checked)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIncludeEx(e.target.checked)}
                 />
               </IncludeExContainer>
               <DeckAmountContainer>
                 {t("filter.deckAmount")}
                 <DeckAmountSelect
                   value={deckAmount}
-                  onChange={(e) => setDeckAmount(Number(e.target.value))}
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setDeckAmount(Number(e.target.value))}
                 >
                   {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((amount) => (
                     <option key={amount} value={amount}>
@@ -321,7 +321,7 @@ const LandingPage = () => {
                 {t("filter.sortBy")}
                 <DeckAmountSelect
                   value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as SortBy)}
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as SortBy)}
                 >
                   {[SortBy.SCORE, SortBy.POPULARITY, SortBy.STRENGTH].map(
                     (sortByOption) => (
@@ -336,7 +336,7 @@ const LandingPage = () => {
                 {t("filter.latestExpansionCards")}
                 <DeckAmountSelect
                   value={latestExpansionCards ?? ""}
-                  onChange={(e) => {
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     const value = e.target.value;
                     setLatestExpansionCards(value === "" ? null : Number(value));
                   }}

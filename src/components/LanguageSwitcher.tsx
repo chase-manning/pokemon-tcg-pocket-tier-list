@@ -37,7 +37,7 @@ const LanguageSwitcher = () => {
     <Container>
       <LanguageDropdown
         value={i18n.language}
-        onChange={(e) => i18n.changeLanguage(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => i18n.changeLanguage(e.target.value)}
         aria-label="Select language"
       >
         {languages.map((lang) => (
