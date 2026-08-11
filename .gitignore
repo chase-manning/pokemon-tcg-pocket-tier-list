@@ -10,20 +10,32 @@
 # production
 /build
 
-# misc
+# IDEs and editors
+.idea/
+.vscode/
+.cursor/
+*.swp
+*.swo
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# logs and environment
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-analysis/data
 /analysis/.env
-.env
 
+# project specific
+analysis/data
 update-decks.sh
-.cursor/settings.json
