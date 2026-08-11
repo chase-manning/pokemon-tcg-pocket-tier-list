@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Button from "./Button";
 import { CONTACT_EMAIL, MANAGE_SUBSCRIPTION_URL } from "../app/constants";
 import useIsPremium from "../app/use-is-premium";
