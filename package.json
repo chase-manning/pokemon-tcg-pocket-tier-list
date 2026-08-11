@@ -34,7 +34,6 @@
     "eject": "react-scripts eject"
   },
   "resolutions": {
-    "@babel/core": "^7.26.0",
     "@tootallnate/once": "^2.0.0",
     "body-parser": "^1.20.3",
     "brace-expansion": "^2.1.3",
