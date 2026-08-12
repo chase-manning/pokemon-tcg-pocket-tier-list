@@ -21,7 +21,7 @@ const downloadDecks = async () => {
       currentDecks.push(...decks);
       processed.push({id: tournament.id, date: tournament.date});
 
-      console.log(`${round((i / tournaments.length) * 100, 2)}%`);
+      console.log(`${round(((i + 1) / tournaments.length) * 100, 2)}%`);
     }
   } finally {
       fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
