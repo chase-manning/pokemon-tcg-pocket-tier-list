@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
 import Popup from "./Popup";
@@ -11,14 +11,6 @@ import {
 // The full note opens by itself on a visitor's first load. After that the
 // banner is the way back in, so returning visitors aren't interrupted.
 const SEEN_KEY = "farewell-notice-seen";
-
-const hasSeenNotice = (): boolean => {
-  try {
-    return window.localStorage.getItem(SEEN_KEY) === "true";
-  } catch {
-    return false;
-  }
-};
 
 const Banner = styled.button`
   position: sticky;
@@ -89,14 +81,24 @@ const Signature = styled(Text)`
 
 const FarewellNotice = () => {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(() => !hasSeenNotice());
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem(SEEN_KEY) === "true") {
+        setIsOpen(false);
+      }
+    } catch {
+      // Blocked storage just means the note greets them again next visit.
+    }
+  }, []);
 
   const close = () => {
     setIsOpen(false);
     try {
       window.localStorage.setItem(SEEN_KEY, "true");
     } catch {
-      // Blocked storage just means the note greets them again next visit.
+      // Ignore
     }
   };
 

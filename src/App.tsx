@@ -1,17 +1,19 @@
+import { Suspense, lazy } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import TierListPage from "./pages/tier-list/TierListPage";
-import DeckPage from "./pages/deck/DeckPage";
-import LandingPage from "./pages/landing/LandingPage";
 import { AuthProvider } from "./contexts/AuthContext";
 import { DecksProvider } from "./contexts/DecksContext";
-import CardsListPage from "./pages/cards-list/CardsListPage";
-import ExpansionListPage from "./pages/expansion-list/ExpansionListPage";
-import PrivacyPage from "./pages/legal/PrivacyPage";
-import AboutPage from "./pages/legal/AboutPage";
 import AdAnchor from "./ads/AdAnchor";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
+
+const LandingPage = lazy(() => import("./pages/landing/LandingPage"));
+const TierListPage = lazy(() => import("./pages/tier-list/TierListPage"));
+const DeckPage = lazy(() => import("./pages/deck/DeckPage"));
+const CardsListPage = lazy(() => import("./pages/cards-list/CardsListPage"));
+const ExpansionListPage = lazy(() => import("./pages/expansion-list/ExpansionListPage"));
+const PrivacyPage = lazy(() => import("./pages/legal/PrivacyPage"));
+const AboutPage = lazy(() => import("./pages/legal/AboutPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,21 +47,23 @@ const App = () => {
         <AuthProvider>
           <DecksProvider>
             <ContentReadyProvider>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<LandingPage />} />
-                  <Route path="tier-list" element={<TierListPage />} />
-                  <Route path="cards-list" element={<CardsListPage />} />
-                  <Route path="expansion-list" element={<ExpansionListPage />} />
-                  <Route path="privacy" element={<PrivacyPage />} />
-                  <Route path="about" element={<AboutPage />} />
-                  <Route path="deck">
-                    <Route index element={<DeckPage />} />
-                    <Route path=":deckId" element={<DeckPage />} />
+              <Suspense fallback={<div role="alert" aria-busy="true">Loading...</div>}>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<LandingPage />} />
+                    <Route path="tier-list" element={<TierListPage />} />
+                    <Route path="cards-list" element={<CardsListPage />} />
+                    <Route path="expansion-list" element={<ExpansionListPage />} />
+                    <Route path="privacy" element={<PrivacyPage />} />
+                    <Route path="about" element={<AboutPage />} />
+                    <Route path="deck">
+                      <Route index element={<DeckPage />} />
+                      <Route path=":deckId" element={<DeckPage />} />
+                    </Route>
+                    <Route path="*" element={<LandingPage />} />
                   </Route>
-                  <Route path="*" element={<LandingPage />} />
-                </Route>
-              </Routes>
+                </Routes>
+              </Suspense>
             </ContentReadyProvider>
           </DecksProvider>
         </AuthProvider>

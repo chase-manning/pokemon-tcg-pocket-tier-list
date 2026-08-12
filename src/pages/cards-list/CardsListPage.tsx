@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import UserAccount from "../../components/UserAccount";
 import useCards from "../../app/use-cards";
-import CardIcon from "../../components/CardIcon";
 import useFilters from "../../app/use-filters";
+import { buildTiers } from "../../app/tier-helper";
+import CardIcon from "../../components/CardIcon";
 import LastUpdated from "../../components/LastUpdated";
 import useExpansions, { ExpansionType } from "../../app/use-expansions";
 import Dropdown from "../../components/Dropdown";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+import React, { type ChangeEvent } from "react";
 
 const StyledCardsListPage = styled.div`
   width: 100%;
@@ -126,84 +128,22 @@ const CardsListPage = () => {
     if (!cards) return <Loading>Loading...</Loading>;
     if (cards.length === 0) return <Loading>No cards found</Loading>;
 
-    const bestScore = cards[0].score;
-    const worstScore = cards[cards.length - 1].score;
-    const steps = (bestScore - worstScore) / 6;
-
-    const sTier = cards.filter((card) => card.score >= bestScore - steps);
-    const aTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps && card.score >= bestScore - steps * 2
-    );
-    const bTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 2 &&
-        card.score >= bestScore - steps * 3
-    );
-    const cTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 3 &&
-        card.score >= bestScore - steps * 4
-    );
-    const dTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 4 &&
-        card.score >= bestScore - steps * 5
-    );
-    const eTier = cards.filter((card) => card.score < bestScore - steps * 5);
+    const tiers = buildTiers(cards, (c) => c.score);
 
     return (
-      <>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--s)">S</RowHeader>
-          <RowContent>
-            {sTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--a)">A</RowHeader>
-          <RowContent>
-            {aTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--b)">B</RowHeader>
-          <RowContent>
-            {bTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--c)">C</RowHeader>
-          <RowContent>
-            {cTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--d)">D</RowHeader>
-          <RowContent>
-            {dTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--e)">E</RowHeader>
-          <RowContent>
-            {eTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <LastUpdated />
-      </>
+        <>
+          {tiers.map((tier) => (
+              <DeckRow key={tier.label}>
+                <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
+                <RowContent>
+                  {tier.data.map((card) => (
+                      <CardIcon key={card.id} card={card} />
+                  ))}
+                </RowContent>
+              </DeckRow>
+          ))}
+          <LastUpdated />
+        </>
     );
   };
 
@@ -214,7 +154,7 @@ const CardsListPage = () => {
           <UserAccount />
           <Dropdown
             value={expansion ?? ""}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => {
               const value = e.target.value;
               setExpansion(value === "" ? null : value);
             }}

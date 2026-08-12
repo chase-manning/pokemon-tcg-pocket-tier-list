@@ -128,6 +128,8 @@ const CardContainer = styled.button`
 
 const CardImage = styled.img`
   width: 100%;
+  aspect-ratio: 63 / 88;
+  display: block;
 `;
 
 const CardNumber = styled.div`
@@ -248,7 +250,7 @@ const MatchupLabel = styled.div<{ $winRate: number }>`
   font-size: 2.4rem;
   font-weight: 500;
   color: ${(props) =>
-    props.$winRate > WINRATE_THRESHOLD ? "var(--e)" : "var(--s)"};
+      props.$winRate > WINRATE_THRESHOLD ? "var(--e)" : "var(--s)"};
 
   @media (max-width: 900px) {
     font-size: 2rem;
@@ -282,6 +284,8 @@ const AlternativeContainer = styled.div`
 
 const AlternativeCard = styled.img`
   width: calc(50% - 2.4rem);
+  aspect-ratio: 63 / 88;
+  display: block;
 `;
 
 const ArrowRight = styled.img`
@@ -327,36 +331,31 @@ const DeckPage = () => {
 
   if (!deck) {
     return (
-      <Overlay>
-        {t("deckPage.notEnoughCards")},{" "}
-        <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
-      </Overlay>
+        <Overlay>
+          {t("deckPage.notEnoughCards")},{" "}
+          <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
+        </Overlay>
     );
   }
 
-  const uniqueCards =
-    deck &&
-    deck.bestList.cards.filter(
+  const uniqueCards = deck.bestList.cards.filter(
       (card, index, self) => self.findIndex((c) => c.id === card.id) === index
-    );
+  );
 
   const isDeckFinderMode = !deckId;
 
   const listsWithOneCardDifferenceFromBestList = deck.lists.filter((list) => {
-    if (!deck) return false;
     let differenceCount = 0;
 
     const uniqueListCards = list.cards.filter(
-      (card, index, self) => self.findIndex((c) => c.id === card.id) === index
+        (card, index, self) => self.findIndex((c) => c.id === card.id) === index
     );
 
     const uniqueTotalCards = new Set([...uniqueListCards, ...uniqueCards]);
 
     for (const card of uniqueTotalCards) {
       const thisListCount = list.cards.filter((c) => c.id === card.id).length;
-      const bestListCount = deck.bestList.cards.filter(
-        (c) => c.id === card.id
-      ).length;
+      const bestListCount = deck!.bestList.cards.filter((c) => c.id === card.id).length;
 
       if (thisListCount !== bestListCount) {
         if (differenceCount === 2) return false;
@@ -368,258 +367,234 @@ const DeckPage = () => {
   });
 
   const sortedAlternatives = listsWithOneCardDifferenceFromBestList
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
 
   const deckDisplayName =
-    [deck.iconPrimary?.name, deck.iconSecondary?.name]
-      .filter(Boolean)
-      .join(" / ") || "This deck";
+      [deck.iconPrimary?.name, deck.iconSecondary?.name]
+          .filter(Boolean)
+          .join(" / ") || "This deck";
+
   const totalMatchup = deck.matchups?.find((m) => m.name === "Total");
   const winRatePct = totalMatchup ? Math.round(totalMatchup.winRate * 100) : null;
 
+  const deckMap = new Map(decks.map((d) => [d.name, d]));
+
+  const validMatchups =
+      deck.matchups?.filter(
+          (m) =>
+              m &&
+              m.totalGames > MIN_MATCHUP_GAMES &&
+              m.name !== deck?.name &&
+              deckMap.has(m.name)
+      ) || [];
+
+  const strongAgainst = validMatchups
+      .filter((m) => m.winRate > WINRATE_THRESHOLD)
+      .sort((a, b) => {
+        const scoreDiff = deckMap.get(b.name)!.score - deckMap.get(a.name)!.score;
+        return scoreDiff !== 0 ? scoreDiff : b.winRate - a.winRate;
+      })
+      .slice(0, 6);
+
+  const weakAgainst = validMatchups
+      .filter((m) => m.winRate <= WINRATE_THRESHOLD)
+      .sort((a, b) => a.winRate - b.winRate)
+      .slice(0, 6);
+
   return (
-    <>
-    <StyledDeckPage>
-      <CardSection>
-        {isDeckFinderMode && (
-          <>
-            <DeckFinderHeader>
-              {t("deckPage.deckFinderHeader")}
-            </DeckFinderHeader>
-            <RelativeStrength $relativeScore={relativeScore}>
-              {t("deckPage.relativeStrength")}{" "}
-              {`${(relativeScore * 100).toFixed(0)}%`}
-            </RelativeStrength>
-          </>
-        )}
-        <CardList>
-          {uniqueCards.map((card) => (
-            <CardContainer
-              key={card.id}
-              onClick={() => {
-                if (!deck) return;
-                const count = deck.bestList.cards.filter(
-                  (c) => c.id === card.id
-                ).length;
-                if (count === 1) {
-                  addMissing([card.id, card.id]);
-                } else {
-                  addMissing([card.id]);
-                }
-              }}
-            >
-              <CardImage src={card.image} alt={card.name} />
-              <CardNumber>
-                {deck &&
-                  deck.bestList.cards.filter((c) => c.id === card.id).length}
-              </CardNumber>
-            </CardContainer>
-          ))}
-        </CardList>
-        <AdInContent placement="deck" />
-      </CardSection>
-      {!isDeckFinderMode && (
-        <PannelSection>
-          <UserAccount hideIfPremium />
-          <Matchups>
-            <MatchupSection>
-              <SubHeader $backgroundColor="var(--c)">
-                {t("deckPage.keyStats")}
-              </SubHeader>
-              <KeyStats>
-                <KeyStat>
-                  {t("deckPage.strength")}:{" "}
-                  <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
-                </KeyStat>
-                <KeyStat>
-                  {t("deckPage.popularity")}:{" "}
-                  <KeyStatValue>
-                    {(deck.popularity * 10).toFixed(1)}
-                  </KeyStatValue>
-                </KeyStat>
-                <KeyStat>
-                  {t("deckPage.winRate")}:{" "}
-                  <KeyStatValue>
-                    {(
-                      deck.matchups.find((matchup) => matchup.name === "Total")!
-                        .winRate * 100
-                    ).toFixed(0)}
-                    %
-                  </KeyStatValue>
-                </KeyStat>
-              </KeyStats>
-            </MatchupSection>
-            {sortedAlternatives.length > 0 && (
-              <MatchupSection>
-                <SubHeader $backgroundColor="var(--c)">
-                  {t("deckPage.alternatives")}
-                </SubHeader>
-                {sortedAlternatives.map((list) => {
-                  if (!deck) return null;
-                  const missingCards = [];
-                  const newCards = [];
-
-                  const uniqueListCards = list.cards.filter(
-                    (card, index, self) =>
-                      self.findIndex((c) => c.id === card.id) === index
-                  );
-
-                  const uniqueTotalCards = new Set([
-                    ...uniqueListCards,
-                    ...uniqueCards,
-                  ]);
-
-                  for (const card of uniqueTotalCards) {
-                    const thisListCount = list.cards.filter(
-                      (c) => c.id === card.id
-                    ).length;
-                    const bestListCount = deck.bestList.cards.filter(
-                      (c) => c.id === card.id
-                    ).length;
-
-                    if (thisListCount === bestListCount) continue;
-
-                    if (thisListCount < bestListCount) {
-                      missingCards.push(card);
-                    } else {
-                      newCards.push(card);
-                    }
-                  }
-
-                  if (missingCards.length !== 1) {
-                    throw new Error("Missing cards");
-                  }
-
-                  if (newCards.length !== 1) {
-                    throw new Error("New cards");
-                  }
-
-                  const missingCard = missingCards[0];
-                  const newCard = newCards[0];
-
-                  return (
-                    <AlternativeContainer key={list.cards.join(",")}>
-                      <AlternativeCard src={missingCard.image} />
-                      <AlternativeCard src={newCard.image} />
-                      <ArrowRight src={arrowRight} />
-                    </AlternativeContainer>
-                  );
-                })}
-              </MatchupSection>
+      <>
+        <StyledDeckPage>
+          <CardSection>
+            {isDeckFinderMode && (
+                <>
+                  <DeckFinderHeader>
+                    {t("deckPage.deckFinderHeader")}
+                  </DeckFinderHeader>
+                  <RelativeStrength $relativeScore={relativeScore}>
+                    {t("deckPage.relativeStrength")}{" "}
+                    {`${(relativeScore * 100).toFixed(0)}%`}
+                  </RelativeStrength>
+                </>
             )}
-            <MatchupSection>
-              <SubHeader $backgroundColor="var(--e)">
-                {t("deckPage.strongAgainst")}
-              </SubHeader>
-              <MatchupList $blur={!isPremium}>
-                {deck.matchups
-                  .filter((matchup) => matchup.totalGames > MIN_MATCHUP_GAMES)
-                  .filter((matchup) => matchup.winRate > WINRATE_THRESHOLD)
-                  .filter((matchup) => deck && matchup.name !== deck.name)
-                  .filter((matchup) =>
-                    decks.some((deck) => deck.name === matchup.name)
-                  )
-                  .sort((a, b) => b.winRate - a.winRate)
-                  .sort(
-                    (a, b) =>
-                      decks.find((deck) => deck.name === b.name)!.score -
-                      decks.find((deck) => deck.name === a.name)!.score
-                  )
-                  .slice(0, 6)
-                  .map((matchup: MatchupType) => (
-                    <MatchupContainer key={matchup.name}>
-                      <DeckCardContainer>
-                        <DeckCard
-                          deck={
-                            decks.find((deck) => deck.name === matchup.name)!
-                          }
-                        />
-                      </DeckCardContainer>
-                      <MatchupLabel $winRate={matchup.winRate}>
-                        {`${(matchup.winRate * 100).toFixed(0)}%`}
-                      </MatchupLabel>
-                    </MatchupContainer>
-                  ))}
-              </MatchupList>
-            </MatchupSection>
-            <MatchupSection>
-              <SubHeader $backgroundColor="var(--s)">
-                {t("deckPage.weakAgainst")}
-              </SubHeader>
-              <MatchupList $blur={!isPremium}>
-                {deck.matchups
-                  .filter((matchup) => !!matchup)
-                  .filter((matchup) => matchup.totalGames > MIN_MATCHUP_GAMES)
-                  .filter((matchup) => matchup.winRate <= WINRATE_THRESHOLD)
-                  .filter((matchup) => deck && matchup.name !== deck.name)
-                  .filter((matchup) =>
-                    decks.some((deck) => deck.name === matchup.name)
-                  )
-                  .sort((a, b) => a.winRate - b.winRate)
-                  .slice(0, 6)
-                  .map((matchup: MatchupType) => (
-                    <MatchupContainer key={matchup.name}>
-                      <DeckCardContainer>
-                        <DeckCard
-                          deck={
-                            decks.find((deck) => deck.name === matchup.name)!
-                          }
-                        />
-                      </DeckCardContainer>
-                      <MatchupLabel $winRate={matchup.winRate}>
-                        {`${(matchup.winRate * 100).toFixed(0)}%`}
-                      </MatchupLabel>
-                    </MatchupContainer>
-                  ))}
-              </MatchupList>
-            </MatchupSection>
-          </Matchups>
-        </PannelSection>
-      )}
-    </StyledDeckPage>
+            <CardList>
+              {uniqueCards.map((card) => (
+                  <CardContainer
+                      key={card.id}
+                      onClick={() => {
+                        const count = deck!.bestList.cards.filter(
+                            (c) => c.id === card.id
+                        ).length;
+                        if (count === 1) {
+                          addMissing([card.id, card.id]);
+                        } else {
+                          addMissing([card.id]);
+                        }
+                      }}
+                  >
+                    <CardImage src={card.image} alt={card.name} />
+                    <CardNumber>
+                      {deck!.bestList.cards.filter((c) => c.id === card.id).length}
+                    </CardNumber>
+                  </CardContainer>
+              ))}
+            </CardList>
+            <AdInContent placement="deck" />
+          </CardSection>
+          {!isDeckFinderMode && (
+              <PannelSection>
+                <UserAccount hideIfPremium />
+                <Matchups>
+                  <MatchupSection>
+                    <SubHeader $backgroundColor="var(--c)">
+                      {t("deckPage.keyStats")}
+                    </SubHeader>
+                    <KeyStats>
+                      <KeyStat>
+                        {t("deckPage.strength")}:{" "}
+                        <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
+                      </KeyStat>
+                      <KeyStat>
+                        {t("deckPage.popularity")}:{" "}
+                        <KeyStatValue>
+                          {(deck.popularity * 10).toFixed(1)}
+                        </KeyStatValue>
+                      </KeyStat>
+                      <KeyStat>
+                        {t("deckPage.winRate")}:{" "}
+                        <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
+                      </KeyStat>
+                    </KeyStats>
+                  </MatchupSection>
 
-      {isDeckFinderMode ? (
-        <SeoContent>
-          <h2>Best Deck Finder</h2>
-          <p>
-            The Best Deck Finder helps you build the strongest possible deck from
-            the cards you actually own. It starts with the top-rated deck in
-            Pokémon TCG Pocket, then lets you click any cards you don't have. Each
-            time you remove a card, it recalculates and shows you the next best
-            deck that doesn't rely on it.
-          </p>
-          <p>
-            Keep tapping the cards you're missing until you reach a deck you can
-            fully build. The relative strength indicator tells you how your deck
-            compares to the best deck in the current meta, so you can see exactly
-            how competitive your collection is and which cards are worth crafting
-            next.
-          </p>
-        </SeoContent>
-      ) : (
-        <SeoContent>
-          <h2>{deckDisplayName} deck</h2>
-          <p>
-            {deckDisplayName} is a Pokémon TCG Pocket deck ranked on our{" "}
-            <a href="/tier-list">tier list</a> using results from recent
-            tournaments.
-            {winRatePct !== null
-              ? ` Across tracked matches it holds an overall win rate of about ${winRatePct}%.`
-              : ""}{" "}
-            Above you'll find its recommended decklist, one-card alternatives you
-            can swap in, and its key strengths and weaknesses.
-          </p>
-          <p>
-            Use the matchup sections to see which popular decks this build beats
-            and which ones to watch out for. Don't have every card? Tap the ones
-            you're missing to have the deck rebuild around your collection, or
-            head back to the <a href="/tier-list">tier list</a> to explore other
-            top decks in the meta.
-          </p>
-        </SeoContent>
-      )}
-    </>
+                  {sortedAlternatives.length > 0 && (
+                      <MatchupSection>
+                        <SubHeader $backgroundColor="var(--c)">
+                          {t("deckPage.alternatives")}
+                        </SubHeader>
+                        {sortedAlternatives.map((list) => {
+                          const missingCards = [];
+                          const newCards = [];
+
+                          const uniqueListCards = list.cards.filter(
+                              (card, index, self) =>
+                                  self.findIndex((c) => c.id === card.id) === index
+                          );
+
+                          const uniqueTotalCards = new Set([
+                            ...uniqueListCards,
+                            ...uniqueCards,
+                          ]);
+
+                          for (const card of uniqueTotalCards) {
+                            const thisListCount = list.cards.filter((c) => c.id === card.id).length;
+                            const bestListCount = deck!.bestList.cards.filter((c) => c.id === card.id).length;
+
+                            if (thisListCount === bestListCount) continue;
+
+                            if (thisListCount < bestListCount) {
+                              missingCards.push(card);
+                            } else {
+                              newCards.push(card);
+                            }
+                          }
+
+                          if (missingCards.length !== 1 || newCards.length !== 1) {
+                            return null;
+                          }
+
+                          return (
+                              <AlternativeContainer key={list.cards.join(",")}>
+                                <AlternativeCard src={missingCards[0].image} />
+                                <AlternativeCard src={newCards[0].image} />
+                                <ArrowRight src={arrowRight} />
+                              </AlternativeContainer>
+                          );
+                        })}
+                      </MatchupSection>
+                  )}
+
+                  <MatchupSection>
+                    <SubHeader $backgroundColor="var(--e)">
+                      {t("deckPage.strongAgainst")}
+                    </SubHeader>
+                    <MatchupList $blur={!isPremium}>
+                      {strongAgainst.map((matchup: MatchupType) => (
+                          <MatchupContainer key={matchup.name}>
+                            <DeckCardContainer>
+                              <DeckCard deck={deckMap.get(matchup.name)!} />
+                            </DeckCardContainer>
+                            <MatchupLabel $winRate={matchup.winRate}>
+                              {`${(matchup.winRate * 100).toFixed(0)}%`}
+                            </MatchupLabel>
+                          </MatchupContainer>
+                      ))}
+                    </MatchupList>
+                  </MatchupSection>
+
+                  <MatchupSection>
+                    <SubHeader $backgroundColor="var(--s)">
+                      {t("deckPage.weakAgainst")}
+                    </SubHeader>
+                    <MatchupList $blur={!isPremium}>
+                      {weakAgainst.map((matchup: MatchupType) => (
+                          <MatchupContainer key={matchup.name}>
+                            <DeckCardContainer>
+                              <DeckCard deck={deckMap.get(matchup.name)!} />
+                            </DeckCardContainer>
+                            <MatchupLabel $winRate={matchup.winRate}>
+                              {`${(matchup.winRate * 100).toFixed(0)}%`}
+                            </MatchupLabel>
+                          </MatchupContainer>
+                      ))}
+                    </MatchupList>
+                  </MatchupSection>
+                </Matchups>
+              </PannelSection>
+          )}
+        </StyledDeckPage>
+
+        {isDeckFinderMode ? (
+            <SeoContent>
+              <h2>Best Deck Finder</h2>
+              <p>
+                The Best Deck Finder helps you build the strongest possible deck from
+                the cards you actually own. It starts with the top-rated deck in
+                Pokémon TCG Pocket, then lets you click any cards you don't have. Each
+                time you remove a card, it recalculates and shows you the next best
+                deck that doesn't rely on it.
+              </p>
+              <p>
+                Keep tapping the cards you're missing until you reach a deck you can
+                fully build. The relative strength indicator tells you how your deck
+                compares to the best deck in the current meta, so you can see exactly
+                how competitive your collection is and which cards are worth crafting
+                next.
+              </p>
+            </SeoContent>
+        ) : (
+            <SeoContent>
+              <h2>{deckDisplayName} deck</h2>
+              <p>
+                {deckDisplayName} is a Pokémon TCG Pocket deck ranked on our{" "}
+                <a href="/tier-list">tier list</a> using results from recent
+                tournaments.
+                {winRatePct !== null
+                    ? ` Across tracked matches it holds an overall win rate of about ${winRatePct}%.`
+                    : ""}{" "}
+                Above you'll find its recommended decklist, one-card alternatives you
+                can swap in, and its key strengths and weaknesses.
+              </p>
+              <p>
+                Use the matchup sections to see which popular decks this build beats
+                and which ones to watch out for. Don't have every card? Tap the ones
+                you're missing to have the deck rebuild around your collection, or
+                head back to the <a href="/tier-list">tier list</a> to explore other
+                top decks in the meta.
+              </p>
+            </SeoContent>
+        )}
+      </>
   );
 };
 
