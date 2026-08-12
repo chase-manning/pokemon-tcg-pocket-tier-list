@@ -94,10 +94,10 @@ const Header = ({ footer }: Props) => {
       <Logo />
       <Nav>
         <NavItem to="/tier-list" $active={location.pathname === "/tier-list"}>
-          {t("header.tierList")}
+            {t("header.tierList")}
         </NavItem>
-        <NavItem to="/deck" $active={location.pathname.startsWith("/deck")}>
-          {t("header.bestDeckFinder")}
+        <NavItem to="/deck" $active={location.pathname === "/deck" || location.pathname.startsWith("/deck/")}>
+            {t("header.bestDeckFinder")}
         </NavItem>
         <NavItem to="/cards-list" $active={location.pathname === "/cards-list"}>
           {t("header.bestCards")}

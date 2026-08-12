@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 
 const rainbowAnimation = keyframes`
   0% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
   50% {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
 `;
 
@@ -100,6 +100,7 @@ const ImageSection = styled.div`
 const ImageContainer = styled(Link)<{ $rotateX: number; $rotateY: number }>`
   padding: 4px;
   border-radius: 16px;
+  min-height: 65dvh;
   background: linear-gradient(
     45deg,
     var(--s),

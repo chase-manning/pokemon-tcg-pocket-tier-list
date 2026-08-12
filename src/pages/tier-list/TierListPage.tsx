@@ -1,18 +1,19 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import { useDecks } from "../../contexts/DecksContext";
 import DeckCard from "../../components/DeckCard";
 import useFilters from "../../app/use-filters";
-import { useTranslation } from "react-i18next";
 import useIsPremium from "../../app/use-is-premium";
+import { getSortValue } from "../../app/sorting-helper";
+import { buildTiers } from "../../app/tier-helper";
 import UserAccount from "../../components/UserAccount";
 import { SortBy } from "../../components/FilterContext";
-import { getSortValue } from "../../app/sorting-helper";
 import LastUpdated from "../../components/LastUpdated";
 import Dropdown from "../../components/Dropdown";
-import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
+import AdInContent from "../../ads/AdInContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
-import React from "react";
+import React, { type ChangeEvent } from "react";
 
 const StyledTierListPage = styled.div`
   width: 100%;
@@ -188,18 +189,7 @@ const LandingPage = () => {
     if (loading || !decks) return <Loading>Loading...</Loading>;
     if (decks.length === 0) return <Loading>No decks found</Loading>;
 
-    const bestScore = getSortValue(decks[0], sortBy);
-    const worstScore = getSortValue(decks[decks.length - 1], sortBy);
-    const steps = (bestScore - worstScore) / 6;
-
-    const tiers = [
-      { label: "S", color: "var(--s)", data: decks.filter((d) => getSortValue(d, sortBy) >= bestScore - steps) },
-      { label: "A", color: "var(--a)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps && getSortValue(d, sortBy) >= bestScore - steps * 2) },
-      { label: "B", color: "var(--b)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 2 && getSortValue(d, sortBy) >= bestScore - steps * 3) },
-      { label: "C", color: "var(--c)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 3 && getSortValue(d, sortBy) >= bestScore - steps * 4) },
-      { label: "D", color: "var(--d)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 4 && getSortValue(d, sortBy) >= bestScore - steps * 5) },
-      { label: "E", color: "var(--e)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 5) },
-    ];
+    const tiers = buildTiers(decks, (d) => getSortValue(d, sortBy));
 
     return (
         <>
@@ -228,7 +218,7 @@ const LandingPage = () => {
             <>
               <Dropdown
                 value={energy ?? ""}
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                   const value = e.target.value;
                   setEnergy(value === "" ? null : value);
                 }}

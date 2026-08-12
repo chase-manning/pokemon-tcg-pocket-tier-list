@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import UserAccount from "../../components/UserAccount";
 import useCards from "../../app/use-cards";
-import CardIcon from "../../components/CardIcon";
 import useFilters from "../../app/use-filters";
+import { buildTiers } from "../../app/tier-helper";
+import CardIcon from "../../components/CardIcon";
 import LastUpdated from "../../components/LastUpdated";
 import useExpansions, { ExpansionType } from "../../app/use-expansions";
 import Dropdown from "../../components/Dropdown";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
-import React from "react";
+import React, { type ChangeEvent } from "react";
 
 const StyledCardsListPage = styled.div`
   width: 100%;
@@ -127,18 +128,7 @@ const CardsListPage = () => {
     if (!cards) return <Loading>Loading...</Loading>;
     if (cards.length === 0) return <Loading>No cards found</Loading>;
 
-    const bestScore = cards[0].score;
-    const worstScore = cards[cards.length - 1].score;
-    const steps = (bestScore - worstScore) / 6;
-
-    const tiers = [
-      { label: "S", color: "var(--s)", data: cards.filter((c) => c.score >= bestScore - steps) },
-      { label: "A", color: "var(--a)", data: cards.filter((c) => c.score < bestScore - steps && c.score >= bestScore - steps * 2) },
-      { label: "B", color: "var(--b)", data: cards.filter((c) => c.score < bestScore - steps * 2 && c.score >= bestScore - steps * 3) },
-      { label: "C", color: "var(--c)", data: cards.filter((c) => c.score < bestScore - steps * 3 && c.score >= bestScore - steps * 4) },
-      { label: "D", color: "var(--d)", data: cards.filter((c) => c.score < bestScore - steps * 4 && c.score >= bestScore - steps * 5) },
-      { label: "E", color: "var(--e)", data: cards.filter((c) => c.score < bestScore - steps * 5) },
-    ];
+    const tiers = buildTiers(cards, (c) => c.score);
 
     return (
         <>
@@ -164,7 +154,7 @@ const CardsListPage = () => {
           <UserAccount />
           <Dropdown
             value={expansion ?? ""}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => {
               const value = e.target.value;
               setExpansion(value === "" ? null : value);
             }}

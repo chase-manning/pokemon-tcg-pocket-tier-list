@@ -47,7 +47,7 @@ const App = () => {
         <AuthProvider>
           <DecksProvider>
             <ContentReadyProvider>
-              <Suspense fallback={null}>
+              <Suspense fallback={<div role="alert" aria-busy="true">Loading...</div>}>
                 <Routes>
                   <Route path="/" element={<Layout />}>
                     <Route index element={<LandingPage />} />

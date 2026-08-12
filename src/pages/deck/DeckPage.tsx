@@ -128,6 +128,8 @@ const CardContainer = styled.button`
 
 const CardImage = styled.img`
   width: 100%;
+  aspect-ratio: 63 / 88;
+  display: block;
 `;
 
 const CardNumber = styled.div`
@@ -282,6 +284,8 @@ const AlternativeContainer = styled.div`
 
 const AlternativeCard = styled.img`
   width: calc(50% - 2.4rem);
+  aspect-ratio: 63 / 88;
+  display: block;
 `;
 
 const ArrowRight = styled.img`
@@ -458,13 +462,7 @@ const DeckPage = () => {
                       </KeyStat>
                       <KeyStat>
                         {t("deckPage.winRate")}:{" "}
-                        <KeyStatValue>
-                          {(
-                              deck.matchups.find((matchup) => matchup.name === "Total")!
-                                  .winRate * 100
-                          ).toFixed(0)}
-                          %
-                        </KeyStatValue>
+                        <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
                       </KeyStat>
                     </KeyStats>
                   </MatchupSection>

@@ -272,12 +272,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 getSortValue(b, sortBy) - getSortValue(a, sortBy)
         );
 
-    if (energy !== null) {
-      return fullDecks.sort(
-          (a: FullDeckType, b: FullDeckType) =>
-              getSortValue(b, sortBy) - getSortValue(a, sortBy)
-      );
-    }
+    if (energy !== null) return fullDecks;
 
     const includedDecks = [];
     let hasOneDouble = false;
@@ -293,10 +288,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
       includedDecks.push(deck);
     }
 
-    return includedDecks.sort(
-        (a: FullDeckType, b: FullDeckType) =>
-            getSortValue(b, sortBy) - getSortValue(a, sortBy)
-    );
+    return includedDecks.reverse();
   }, [
     cards,
     decksData,

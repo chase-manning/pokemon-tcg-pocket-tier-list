@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import useCards from "../../app/use-cards";
-import ExpansionIcon from "../../components/ExpansionIcon";
 import useExpansions from "../../app/use-expansions";
+import { buildTiers } from "../../app/tier-helper";
+import ExpansionIcon from "../../components/ExpansionIcon";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+
 
 const StyledExpansionListPage = styled.div`
   width: 100%;
@@ -132,19 +134,7 @@ const ExpansionListPage = () => {
       )
       .sort((a, b) => b.totalScore - a.totalScore);
 
-  // Define Tiers
-  const bestScore = expansionData[0]?.totalScore || 1;
-  const worstScore = expansionData[expansionData.length - 1]?.totalScore || 0;
-  const steps = (bestScore - worstScore) / 6;
-
-  const tiers = [
-    { label: "S", color: "var(--s)", data: expansionData.filter((d) => d.totalScore >= bestScore - steps) },
-    { label: "A", color: "var(--a)", data: expansionData.filter((d) => d.totalScore < bestScore - steps && d.totalScore >= bestScore - steps * 2) },
-    { label: "B", color: "var(--b)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 2 && d.totalScore >= bestScore - steps * 3) },
-    { label: "C", color: "var(--c)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 3 && d.totalScore >= bestScore - steps * 4) },
-    { label: "D", color: "var(--d)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 4 && d.totalScore >= bestScore - steps * 5) },
-    { label: "E", color: "var(--e)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 5) },
-  ];
+  const tiers = buildTiers(expansionData, (d) => d.totalScore);
 
   return (
       <StyledExpansionListPage>
