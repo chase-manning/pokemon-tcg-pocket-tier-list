@@ -13,6 +13,7 @@ import {
 const SEEN_KEY = "farewell-notice-seen";
 
 const hasSeenNotice = (): boolean => {
+  if (typeof window === "undefined") return false;
   try {
     return window.localStorage.getItem(SEEN_KEY) === "true";
   } catch {

@@ -67,28 +67,28 @@ interface Props {
   deck: FullDeckType;
 }
 
-const DeckCard = ({ deck }: Props) => {
-  const round = (num: number, decimals = 2) => {
+const round = (num: number, decimals = 2) => {
     return Math.round(num * 10 ** decimals) / 10 ** decimals;
-  };
+};
 
-  return (
-    <Container>
-      <StyledDeckCard to={`/deck/${deck.id}`} $disabled={false}>
-        <DeckImage key={deck.iconPrimary.id} src={deck.iconPrimary.image} alt={deck.iconPrimary.name} />
-        {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}
-      </StyledDeckCard>
-      {deck.iconSecondary && (
-        <SubCard to={`/deck/${deck.id}`} $disabled={false}>
-          <DeckImage
-            key={deck.iconSecondary.id}
-            src={deck.iconSecondary.image}
-            alt={deck.iconSecondary.name}
-          />
-        </SubCard>
-      )}
-    </Container>
-  );
+const DeckCard = ({ deck }: Props) => {
+    return (
+        <Container>
+            <StyledDeckCard to={`/deck/${deck.id}`} $disabled={false}>
+                <DeckImage key={deck.iconPrimary.id} src={deck.iconPrimary.image} alt={deck.iconPrimary.name} />
+                {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}
+            </StyledDeckCard>
+            {deck.iconSecondary && (
+                <SubCard to={`/deck/${deck.id}`} $disabled={false}>
+                    <DeckImage
+                        key={deck.iconSecondary.id}
+                        src={deck.iconSecondary.image}
+                        alt={deck.iconSecondary.name}
+                    />
+                </SubCard>
+            )}
+        </Container>
+    );
 };
 
 export default DeckCard;
