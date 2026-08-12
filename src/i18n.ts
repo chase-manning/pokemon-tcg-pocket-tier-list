@@ -7,6 +7,7 @@ import esTranslation from "./locales/es/translation.json";
 import frTranslation from "./locales/fr/translation.json";
 import jaTranslation from "./locales/ja/translation.json";
 import koTranslation from "./locales/ko/translation.json";
+import roTranslation from "./locales/ro/translation.json";
 import zhCNTranslation from "./locales/zh-CN/translation.json";
 
 i18n
@@ -31,6 +32,9 @@ i18n
       },
       ko: {
         translation: koTranslation,
+      },
+      ro: {
+        translation: roTranslation,
       },
       "zh-CN": {
         translation: zhCNTranslation,

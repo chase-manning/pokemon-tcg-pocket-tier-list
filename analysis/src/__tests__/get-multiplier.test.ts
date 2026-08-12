@@ -86,4 +86,17 @@ describe("getMultiplier", () => {
       0.25 * (NEW_MULTIPLIER - OLD_MULTIPLIER) + OLD_MULTIPLIER;
     expect(result).toBeCloseTo(expectedMultiplier, 1);
   });
+
+  it("prevents zero division NaN cascading if newest game is on release day", () => {
+    const deck: Deck = {
+      ...mockDeck,
+      date: EXPANSION_RELEASE_DATE.toISOString(),
+    };
+
+    // totalTime evaluates to 0 here
+    const result = getMultiplier(deck, EXPANSION_RELEASE_DATE);
+
+    expect(result).not.toBeNaN();
+    expect(result).toBeDefined();
+  });
 });

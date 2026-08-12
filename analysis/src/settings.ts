@@ -1,4 +1,4 @@
-export const DEBUG: boolean = false;
+// export const DEBUG: boolean = false;
 export const NOEX: boolean = false;
 export const OPPONENT_BATTLE: boolean = false;
 export const OLD_MULTIPLIER: number = 1;

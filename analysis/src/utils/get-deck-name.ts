@@ -174,21 +174,22 @@ const ARCHITYPES: Architype[] = [
 /**
  * Checks if a deck contains all cards in a given match criteria
  * @param cards The deck's cards
- * @param match The card names to match against
- * @param requireTwo Whether to require exactly 2 copies of each card
+ * @param primary The primary card name(s) to match against
+ * @param requireTwo Whether to require exactly 2 copies of the primary card
+ * @param secondary Optional secondary card name(s) to match against
  * @returns Whether all cards in the match criteria are found in the deck
- */
+ * */
 const hasAllCards = (
-  cards: Deck["cards"],
-  primary: CardNameType,
-  requireTwo: boolean,
-  secondary?: CardNameType,
+    cards: Deck["cards"],
+    primary: CardNameType,
+    requireTwo: boolean,
+    secondary?: CardNameType,
 ): boolean => {
   // Create a Set of card strings for O(1) lookup
   const cardStrings = new Set(cards.map((card) => cardToString(card)));
 
   const primaryMatch = Array.isArray(primary) ? primary : [primary];
-  const secondaryMatch = Array.isArray(secondary) ? secondary : [secondary];
+  const secondaryMatch = secondary ? (Array.isArray(secondary) ? secondary : [secondary]) : [];
 
   let primaryMatches = primaryMatch.reduce((acc, cardName) => {
     const twoCopies = `2 ${cardName}`;
