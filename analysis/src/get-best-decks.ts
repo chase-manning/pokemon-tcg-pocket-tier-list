@@ -233,4 +233,4 @@ const run = async () => {
   );
 };
 
-run();
+run().catch(console.error);
