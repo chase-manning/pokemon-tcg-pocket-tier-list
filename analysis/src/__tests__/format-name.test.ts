@@ -67,4 +67,11 @@ describe("formatName", () => {
     const result = formatName(cards, match);
     expect(result).toBe("charizard-base-004");
   });
+
+  it("should parse formatMatch identically to prevent opponent battle logic failure", () => {
+    // prevents regression of the strict equality bug
+    const match = ["Mewtwo ex A1 129", "Charizard ex A2b 10"];
+    const result = formatMatch(match);
+    expect(result).toBe("mewtwo-ex-a1-129&charizard-ex-a2b-010");
+  });
 });
