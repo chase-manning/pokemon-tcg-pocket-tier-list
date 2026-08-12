@@ -35,7 +35,9 @@ const StyledApp = styled.div`
 const Layout = () => {
   return (
       <StyledApp>
-        <Outlet />
+        <Suspense fallback={<div role="alert" aria-busy="true">Loading...</div>}>
+          <Outlet />
+        </Suspense>
         <AdAnchor />
       </StyledApp>
   );
@@ -47,23 +49,21 @@ const App = () => {
         <AuthProvider>
           <DecksProvider>
             <ContentReadyProvider>
-              <Suspense fallback={<div role="alert" aria-busy="true">Loading...</div>}>
-                <Routes>
-                  <Route path="/" element={<Layout />}>
-                    <Route index element={<LandingPage />} />
-                    <Route path="tier-list" element={<TierListPage />} />
-                    <Route path="cards-list" element={<CardsListPage />} />
-                    <Route path="expansion-list" element={<ExpansionListPage />} />
-                    <Route path="privacy" element={<PrivacyPage />} />
-                    <Route path="about" element={<AboutPage />} />
-                    <Route path="deck">
-                      <Route index element={<DeckPage />} />
-                      <Route path=":deckId" element={<DeckPage />} />
-                    </Route>
-                    <Route path="*" element={<LandingPage />} />
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<LandingPage />} />
+                  <Route path="tier-list" element={<TierListPage />} />
+                  <Route path="cards-list" element={<CardsListPage />} />
+                  <Route path="expansion-list" element={<ExpansionListPage />} />
+                  <Route path="privacy" element={<PrivacyPage />} />
+                  <Route path="about" element={<AboutPage />} />
+                  <Route path="deck">
+                    <Route index element={<DeckPage />} />
+                    <Route path=":deckId" element={<DeckPage />} />
                   </Route>
-                </Routes>
-              </Suspense>
+                  <Route path="*" element={<LandingPage />} />
+                </Route>
+              </Routes>
             </ContentReadyProvider>
           </DecksProvider>
         </AuthProvider>

@@ -556,41 +556,38 @@ const DeckPage = () => {
 
         {isDeckFinderMode ? (
             <SeoContent>
-              <h2>Best Deck Finder</h2>
+              <h2>Pokémon TCG Pocket | Best Deck Finder</h2>
               <p>
-                The Best Deck Finder helps you build the strongest possible deck from
-                the cards you actually own. It starts with the top-rated deck in
-                Pokémon TCG Pocket, then lets you click any cards you don't have. Each
-                time you remove a card, it recalculates and shows you the next best
-                deck that doesn't rely on it.
+                Find the strongest Pokémon TCG Pocket decks you can build with the cards you actually own.
+                The Best Deck Finder starts with the top-rated list in the current meta. If you are missing a card,
+                simply tap it. The tool recalculates instantly to show you the most competitive alternative
+                that does not rely on that card.
               </p>
               <p>
-                Keep tapping the cards you're missing until you reach a deck you can
-                fully build. The relative strength indicator tells you how your deck
-                compares to the best deck in the current meta, so you can see exactly
-                how competitive your collection is and which cards are worth crafting
-                next.
+                Keep removing missing cards until you find a decklist you can complete today. The relative
+                strength indicator shows how your build compares to tournament-winning decks, helping you
+                decide which cards to craft next.
               </p>
             </SeoContent>
         ) : (
             <SeoContent>
-              <h2>{deckDisplayName} deck</h2>
+              <h2>{deckDisplayName} Deck Guide</h2>
               <p>
-                {deckDisplayName} is a Pokémon TCG Pocket deck ranked on our{" "}
-                <a href="/tier-list">tier list</a> using results from recent
-                tournaments.
+                {deckDisplayName} is a top-rated Pokémon TCG Pocket deck, ranked on our{" "}
+                <a href="/tier-list">tier list</a> using recent tournament data.
                 {winRatePct !== null
-                    ? ` Across tracked matches it holds an overall win rate of about ${winRatePct}%.`
-                    : ""}{" "}
-                Above you'll find its recommended decklist, one-card alternatives you
-                can swap in, and its key strengths and weaknesses.
+                    ? ` It currently holds a ${winRatePct}% win rate across tracked matches.`
+                    : ""}
               </p>
               <p>
-                Use the matchup sections to see which popular decks this build beats
-                and which ones to watch out for. Don't have every card? Tap the ones
-                you're missing to have the deck rebuild around your collection, or
-                head back to the <a href="/tier-list">tier list</a> to explore other
-                top decks in the meta.
+                The recommended decklist above includes standard card counts, alternative swap options,
+                and a breakdown of the deck's strengths and weaknesses. Check the matchup data to see
+                which decks it counters and which ones to avoid.
+              </p>
+              <p>
+                If you are missing cards for this build, tap them to rebuild the deck around your
+                collection. You can also browse the <a href="/tier-list">tier list</a> to find other
+                competitive Pokémon TCG Pocket decks.
               </p>
             </SeoContent>
         )}
