@@ -11,11 +11,13 @@
 /build
 
 # IDEs and editors
+.agents/
 .idea/
 .vscode/
 .cursor/
 *.swp
 *.swo
+skills-lock.json
 
 # OS generated files
 .DS_Store
@@ -39,3 +41,4 @@ yarn-error.log*
 # project specific
 analysis/data
 update-decks.sh
+private/
