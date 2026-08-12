@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import React from "react";
 import Dropdown from "./Dropdown";
 
 const Container = styled.div`
@@ -22,8 +23,8 @@ const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   const languages = [
+    { code: "en", name: "English" },
     { code: "de", name: "Deutsch" },
-    { code: "en", name: "English (Traditional)" },
     { code: "es", name: "Español" },
     { code: "fr", name: "Français" },
     { code: "ja", name: "日本語" },
