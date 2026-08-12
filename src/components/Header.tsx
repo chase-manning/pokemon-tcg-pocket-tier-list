@@ -96,7 +96,7 @@ const Header = ({ footer }: Props) => {
         <NavItem to="/tier-list" $active={location.pathname === "/tier-list"}>
           {t("header.tierList")}
         </NavItem>
-        <NavItem to="/deck" $active={location.pathname === "/deck"}>
+        <NavItem to="/deck" $active={location.pathname.startsWith("/deck")}>
           {t("header.bestDeckFinder")}
         </NavItem>
         <NavItem to="/cards-list" $active={location.pathname === "/cards-list"}>

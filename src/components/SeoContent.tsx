@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 // A readable text section used to give tool pages substantive, original
@@ -61,7 +62,7 @@ const Section = styled.section`
 `;
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const SeoContent = ({ children }: Props) => {
