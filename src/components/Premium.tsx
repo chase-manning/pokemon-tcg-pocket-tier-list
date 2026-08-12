@@ -6,7 +6,7 @@ import { useState } from "react";
 import Popup from "./Popup";
 import { Trans, useTranslation } from "react-i18next";
 import styled from "styled-components";
-import premiumIcon from "../assets/premium.png";
+import premiumIcon from "../assets/premium.webp";
 
 const ButtonContainer = styled.button`
   cursor: pointer;

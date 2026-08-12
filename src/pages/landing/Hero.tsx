@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import Header from "../../components/Header";
-import tierList from "../../assets/tier-list.jpeg";
+import tierList from "../../assets/tier-list.webp";
 import Button from "../../components/Button";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";

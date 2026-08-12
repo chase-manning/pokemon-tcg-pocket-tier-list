@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import bestDeck from "../../assets/best-deck.jpg";
+import bestDeck from "../../assets/best-deck.webp";
 import Button from "../../components/Button";
 import { useTranslation } from "react-i18next";
 

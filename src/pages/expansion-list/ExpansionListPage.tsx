@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import useCards from "../../app/use-cards";
 import ExpansionIcon from "../../components/ExpansionIcon";
-import useExpansions, {
-  ExpansionType,
-  PackType,
-} from "../../app/use-expansions";
+import useExpansions from "../../app/use-expansions";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 
 const StyledExpansionListPage = styled.div`
@@ -107,124 +104,61 @@ const ExpansionListPage = () => {
     totalScore: number;
   }
 
+  // Tally all scores in a single O(N) pass
+  const packScores = new Map<string, number>();
+  const sharedScores = new Map<string, number>();
+
+  for (const card of cards) {
+    if (card.pack.toLowerCase().includes("shared")) {
+      sharedScores.set(card.set, (sharedScores.get(card.set) || 0) + card.score);
+    } else {
+      const key = `${card.set}-${card.pack}`;
+      packScores.set(key, (packScores.get(key) || 0) + card.score);
+    }
+  }
+
+  // Assemble data
   const expansionData: PackData[] = expansions
-    .reduce(
-      (
-        acc: { expansionId: string; pack: PackType }[],
-        expansion: ExpansionType
-      ) => {
-        return [
-          ...acc,
-          ...expansion.packs.map((pack) => ({
+      .flatMap((expansion) =>
+          expansion.packs.map((pack) => ({
             expansionId: expansion.id,
-            pack: pack,
-          })),
-        ];
-      },
-      []
-    )
-    .map((data: { expansionId: string; pack: PackType }) => {
-      return {
-        expansionId: data.expansionId,
-        packId: data.pack.id,
-        packName: data.pack.name,
-        packImage: data.pack.image,
-        totalScore: cards
-          .filter((card) => {
-            return (
-              card.set === data.expansionId &&
-              (card.pack === data.pack.name ||
-                card.pack.toLowerCase().includes("shared"))
-            );
-          })
-          .reduce((acc, card) => acc + card.score, 0),
-      };
-    })
-    .sort((a, b) => b.totalScore - a.totalScore);
-  const bestScore = expansionData[0].totalScore;
+            packId: pack.id,
+            packName: pack.name,
+            packImage: pack.image,
+            totalScore:
+                (packScores.get(`${expansion.id}-${pack.name}`) || 0) +
+                (sharedScores.get(expansion.id) || 0),
+          }))
+      )
+      .sort((a, b) => b.totalScore - a.totalScore);
 
-  const worstScore = expansionData[expansionData.length - 1].totalScore;
-
+  // Define Tiers
+  const bestScore = expansionData[0]?.totalScore || 1;
+  const worstScore = expansionData[expansionData.length - 1]?.totalScore || 0;
   const steps = (bestScore - worstScore) / 6;
 
-  const sTier = expansionData.filter(
-    (data) => data.totalScore >= bestScore - steps
-  );
-  const aTier = expansionData.filter(
-    (data) =>
-      data.totalScore < bestScore - steps &&
-      data.totalScore >= bestScore - steps * 2
-  );
-  const bTier = expansionData.filter(
-    (data) =>
-      data.totalScore < bestScore - steps * 2 &&
-      data.totalScore >= bestScore - steps * 3
-  );
-  const cTier = expansionData.filter(
-    (data) =>
-      data.totalScore < bestScore - steps * 3 &&
-      data.totalScore >= bestScore - steps * 4
-  );
-  const dTier = expansionData.filter(
-    (data) =>
-      data.totalScore < bestScore - steps * 4 &&
-      data.totalScore >= bestScore - steps * 5
-  );
-  const eTier = expansionData.filter(
-    (data) => data.totalScore < bestScore - steps * 5
-  );
+  const tiers = [
+    { label: "S", color: "var(--s)", data: expansionData.filter((d) => d.totalScore >= bestScore - steps) },
+    { label: "A", color: "var(--a)", data: expansionData.filter((d) => d.totalScore < bestScore - steps && d.totalScore >= bestScore - steps * 2) },
+    { label: "B", color: "var(--b)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 2 && d.totalScore >= bestScore - steps * 3) },
+    { label: "C", color: "var(--c)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 3 && d.totalScore >= bestScore - steps * 4) },
+    { label: "D", color: "var(--d)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 4 && d.totalScore >= bestScore - steps * 5) },
+    { label: "E", color: "var(--e)", data: expansionData.filter((d) => d.totalScore < bestScore - steps * 5) },
+  ];
 
   return (
-    <StyledExpansionListPage>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--s)">S</RowHeader>
-        <RowContent>
-          {sTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--a)">A</RowHeader>
-        <RowContent>
-          {aTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--b)">B</RowHeader>
-        <RowContent>
-          {bTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--c)">C</RowHeader>
-        <RowContent>
-          {cTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--d)">D</RowHeader>
-        <RowContent>
-          {dTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-      <DeckRow>
-        <RowHeader $backgroundColor="var(--e)">E</RowHeader>
-        <RowContent>
-          {eTier.map((data) => (
-            <ExpansionIcon key={data.packId} image={data.packImage} />
-          ))}
-        </RowContent>
-      </DeckRow>
-    </StyledExpansionListPage>
+      <StyledExpansionListPage>
+        {tiers.map((tier) => (
+            <DeckRow key={tier.label}>
+              <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
+              <RowContent>
+                {tier.data.map((data) => (
+                    <ExpansionIcon key={data.packId} image={data.packImage} />
+                ))}
+              </RowContent>
+            </DeckRow>
+        ))}
+      </StyledExpansionListPage>
   );
 };
 

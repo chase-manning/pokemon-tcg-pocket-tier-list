@@ -12,6 +12,7 @@ import Dropdown from "../../components/Dropdown";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+import React from "react";
 
 const StyledTierListPage = styled.div`
   width: 100%;
@@ -183,7 +184,6 @@ const LandingPage = () => {
 
   const ready = !loading && !!decks && decks.length > 0;
   useMarkContentReady(ready);
-
   const renderTiers = () => {
     if (loading || !decks) return <Loading>Loading...</Loading>;
     if (decks.length === 0) return <Loading>No decks found</Loading>;
@@ -192,86 +192,30 @@ const LandingPage = () => {
     const worstScore = getSortValue(decks[decks.length - 1], sortBy);
     const steps = (bestScore - worstScore) / 6;
 
-    const sTier = decks.filter(
-      (deck) => getSortValue(deck, sortBy) >= bestScore - steps
-    );
-    const aTier = decks.filter(
-      (deck) =>
-        getSortValue(deck, sortBy) < bestScore - steps &&
-        getSortValue(deck, sortBy) >= bestScore - steps * 2
-    );
-    const bTier = decks.filter(
-      (deck) =>
-        getSortValue(deck, sortBy) < bestScore - steps * 2 &&
-        getSortValue(deck, sortBy) >= bestScore - steps * 3
-    );
-    const cTier = decks.filter(
-      (deck) =>
-        getSortValue(deck, sortBy) < bestScore - steps * 3 &&
-        getSortValue(deck, sortBy) >= bestScore - steps * 4
-    );
-    const dTier = decks.filter(
-      (deck) =>
-        getSortValue(deck, sortBy) < bestScore - steps * 4 &&
-        getSortValue(deck, sortBy) >= bestScore - steps * 5
-    );
-    const eTier = decks.filter(
-      (deck) => getSortValue(deck, sortBy) < bestScore - steps * 5
-    );
+    const tiers = [
+      { label: "S", color: "var(--s)", data: decks.filter((d) => getSortValue(d, sortBy) >= bestScore - steps) },
+      { label: "A", color: "var(--a)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps && getSortValue(d, sortBy) >= bestScore - steps * 2) },
+      { label: "B", color: "var(--b)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 2 && getSortValue(d, sortBy) >= bestScore - steps * 3) },
+      { label: "C", color: "var(--c)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 3 && getSortValue(d, sortBy) >= bestScore - steps * 4) },
+      { label: "D", color: "var(--d)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 4 && getSortValue(d, sortBy) >= bestScore - steps * 5) },
+      { label: "E", color: "var(--e)", data: decks.filter((d) => getSortValue(d, sortBy) < bestScore - steps * 5) },
+    ];
 
     return (
-      <>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--s)">S</RowHeader>
-          <RowContent>
-            {sTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--a)">A</RowHeader>
-          <RowContent>
-            {aTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--b)">B</RowHeader>
-          <RowContent>
-            {bTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--c)">C</RowHeader>
-          <RowContent>
-            {cTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--d)">D</RowHeader>
-          <RowContent>
-            {dTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--e)">E</RowHeader>
-          <RowContent>
-            {eTier.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <AdInContent placement="tierList" mobileOnly />
-        <LastUpdated />
-      </>
+        <>
+          {tiers.map((tier) => (
+              <DeckRow key={tier.label}>
+                <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
+                <RowContent>
+                  {tier.data.map((deck) => (
+                      <DeckCard key={deck.id} deck={deck} />
+                  ))}
+                </RowContent>
+              </DeckRow>
+          ))}
+          <AdInContent placement="tierList" mobileOnly />
+          <LastUpdated />
+        </>
     );
   };
 

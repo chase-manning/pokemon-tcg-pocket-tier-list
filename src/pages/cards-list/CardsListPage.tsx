@@ -8,6 +8,7 @@ import useExpansions, { ExpansionType } from "../../app/use-expansions";
 import Dropdown from "../../components/Dropdown";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+import React from "react";
 
 const StyledCardsListPage = styled.div`
   width: 100%;
@@ -130,80 +131,29 @@ const CardsListPage = () => {
     const worstScore = cards[cards.length - 1].score;
     const steps = (bestScore - worstScore) / 6;
 
-    const sTier = cards.filter((card) => card.score >= bestScore - steps);
-    const aTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps && card.score >= bestScore - steps * 2
-    );
-    const bTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 2 &&
-        card.score >= bestScore - steps * 3
-    );
-    const cTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 3 &&
-        card.score >= bestScore - steps * 4
-    );
-    const dTier = cards.filter(
-      (card) =>
-        card.score < bestScore - steps * 4 &&
-        card.score >= bestScore - steps * 5
-    );
-    const eTier = cards.filter((card) => card.score < bestScore - steps * 5);
+    const tiers = [
+      { label: "S", color: "var(--s)", data: cards.filter((c) => c.score >= bestScore - steps) },
+      { label: "A", color: "var(--a)", data: cards.filter((c) => c.score < bestScore - steps && c.score >= bestScore - steps * 2) },
+      { label: "B", color: "var(--b)", data: cards.filter((c) => c.score < bestScore - steps * 2 && c.score >= bestScore - steps * 3) },
+      { label: "C", color: "var(--c)", data: cards.filter((c) => c.score < bestScore - steps * 3 && c.score >= bestScore - steps * 4) },
+      { label: "D", color: "var(--d)", data: cards.filter((c) => c.score < bestScore - steps * 4 && c.score >= bestScore - steps * 5) },
+      { label: "E", color: "var(--e)", data: cards.filter((c) => c.score < bestScore - steps * 5) },
+    ];
 
     return (
-      <>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--s)">S</RowHeader>
-          <RowContent>
-            {sTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--a)">A</RowHeader>
-          <RowContent>
-            {aTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--b)">B</RowHeader>
-          <RowContent>
-            {bTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--c)">C</RowHeader>
-          <RowContent>
-            {cTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--d)">D</RowHeader>
-          <RowContent>
-            {dTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <DeckRow>
-          <RowHeader $backgroundColor="var(--e)">E</RowHeader>
-          <RowContent>
-            {eTier.map((card) => (
-              <CardIcon key={card.id} card={card} />
-            ))}
-          </RowContent>
-        </DeckRow>
-        <LastUpdated />
-      </>
+        <>
+          {tiers.map((tier) => (
+              <DeckRow key={tier.label}>
+                <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
+                <RowContent>
+                  {tier.data.map((card) => (
+                      <CardIcon key={card.id} card={card} />
+                  ))}
+                </RowContent>
+              </DeckRow>
+          ))}
+          <LastUpdated />
+        </>
     );
   };
 
