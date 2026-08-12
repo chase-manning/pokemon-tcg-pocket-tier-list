@@ -12,10 +12,7 @@ const setCode = (set: string): string => {
 };
 
 const cardToId = (card: LimitlessCardType): string => {
-  const id = card.number;
-  const padded = id.padStart(3, "0");
-  const output = `${card.count}:${setCode(card.set)}-${padded}`;
-  return output;
+  return `${card.count}:${setCode(card.set)}-${card.number.padStart(3, "0")}`;
 };
 
 export const convertCardsToIds = (cards: LimitlessCardType[]): string[] => {
