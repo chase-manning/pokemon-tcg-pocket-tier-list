@@ -2,7 +2,7 @@
 
 <img width="1677" alt="image" src="https://github.com/user-attachments/assets/76cb84ed-d0b0-44a6-a914-a3586c30449b" />
 
-A web application that tracks and displays the current best decks for the Pokemon TCG Pocket game. This project aims to help players stay informed about the competitive meta by analysing tournament data from [Limitless](https://limitlesstcg.com/) Tournaments.
+A web application that tracks and displays the current best decks for the Pokémon TCG Pocket game. This project aims to help players stay informed about the competitive meta by analysing tournament data from [Limitless](https://limitlesstcg.com/) Tournaments.
 
 ## ✨ Features
 
@@ -65,7 +65,7 @@ Ensure your code follows the existing style and conventions. Add appropriate tes
 **Accessibility matters.** This project supports multiple languages. The translation system uses JSON files to manage localised content.
 
 To contribute a new language translation:
-1. Check the `locales` directory for existing translations
+1. Check the `src/locales/` directory for existing translations
 2. Create a new JSON file for your language following the existing format
 3. Submit a Pull Request with your translation
 
@@ -73,9 +73,9 @@ To contribute a new language translation:
 
 This project uses two data sources:
 
-1. Tournament data from **[Limitless](https://limitlesstcg.com/)**, a platform for Pokemon TCG tournaments.    
+1. Tournament data from **[Limitless](https://limitlesstcg.com/)**, a platform for Pokémon TCG tournaments.    
 The deck rankings and statistics are based on tournament participation rates, win rates, top cut appearances, and overall performance.
-2. Card data from **[pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards)**, an open-source repository that provides card information for Pokemon TCG Pocket.   
+2. Card data from **[pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards)**, an open-source repository that provides card information for Pokémon TCG Pocket.   
 _This data is used to display detailed card information and deck compositions._
 
 ## 📜 License
@@ -86,5 +86,5 @@ This project is licensed under the **[MIT License](https://mit-license.org/)**. 
 
 - [Limitless](https://limitlesstcg.com/) for providing tournament data
 - [pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards) for maintaining the card database
-- The Pokemon TCG community for their support and feedback
+- The Pokémon TCG community for their support and feedback
 - All contributors who help improve this project

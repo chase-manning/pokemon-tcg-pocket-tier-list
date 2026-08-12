@@ -1,6 +1,6 @@
 # Explanation: Statistical scoring and recency weighting
 
-The Pokemon TCG Pocket tier list ranks decks based on tournament performance. Raw win rates create a false picture when sample sizes are small. Thus, a deck that goes 5-0 may look stronger than a deck that goes 55-45, even though the second deck has proven itself over a much larger sample. The analysis pipeline's purpose is correct this mathematically.
+The Pokemon TCG Pocket tier list ranks decks based on tournament performance. Raw win rates create a false picture when sample sizes are small. Thus, a deck that goes 5-0 may look stronger than a deck that goes 55-45, even though the second deck has proven itself over a much larger sample. The analysis pipeline's purpose is to correct this mathematically.
 
 ## The Wilson shrinkage estimator
 

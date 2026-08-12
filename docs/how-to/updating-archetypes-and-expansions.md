@@ -5,12 +5,11 @@ The meta shifts when players discover new decks or new cards are released. You m
 ## Adding a new archetype
 
 The `get-deck-name.ts` file contains the `ARCHITYPES` array. Every ranked deck needs an entry here. Unmatched decks are dropped during the naming phase.   
-Each entry requires a `primary` card and an optional array of `secondary` cards.    
+Each entry requires a `primary` card and an optional array of `secondary` cards.
 ```TypeScript
 { primary: "Charizard ex A2b 10", secondary: ["Skeledirge B2a 18"] }
 ```
-
-Card names must perfectly match the database string format: count, name, set, and number. Use `PA` or `PB` for promo sets, not `P-A` or `P-B`.  
+Card names must match the database string format using only the name, set, and number (without a count). The matcher automatically prepends `"1 "` or `"2 "` during comparison. Use `PA` or `PB` for promo sets, not `P-A` or `P-B`.
 
 ## How the matching passes work
 
