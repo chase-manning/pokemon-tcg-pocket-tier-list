@@ -188,7 +188,7 @@ const hasAllCards = (
   const cardStrings = new Set(cards.map((card) => cardToString(card)));
 
   const primaryMatch = Array.isArray(primary) ? primary : [primary];
-  const secondaryMatch = Array.isArray(secondary) ? secondary : [secondary];
+  const secondaryMatch = secondary ? (Array.isArray(secondary) ? secondary : [secondary]) : [];
 
   let primaryMatches = primaryMatch.reduce((acc, cardName) => {
     const twoCopies = `2 ${cardName}`;

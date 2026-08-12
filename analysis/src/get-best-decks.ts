@@ -135,29 +135,24 @@ const run = async () => {
   }
 
   const matchupData: Record<string, MatchupData[]> = {};
-  for (const deckName of Object.keys(matchupResults)) {
-    matchupData[deckName] = Object.keys(matchupResults[deckName]).map(
-      (opponent: string) => {
-        const { wins, losses } = matchupResults[deckName][opponent];
-        const totalGames = wins + losses;
-        const winRate = wins / totalGames;
-        return {
-          name: opponent,
-          winRate,
-          totalGames,
-        };
-      }
+  for (const [deckName, matchups] of Object.entries(matchupResults)) {
+    let totalWins = 0;
+    let totalLosses = 0;
+    matchupData[deckName] = Object.entries(matchups).map(
+        ([opponent, { wins, losses }]) => {
+          totalWins += wins;
+          totalLosses += losses;
+          const totalGames = wins + losses;
+          return {
+            name: opponent,
+            winRate: totalGames > 0 ? wins / totalGames : 0,
+            totalGames,
+          };
+        }
     );
-    const totalWinRate = Object.values(matchupResults[deckName]).reduce(
-      (acc, matchup) => acc + matchup.wins,
-      0
-    );
-    const totalLosses = Object.values(matchupResults[deckName]).reduce(
-      (acc, matchup) => acc + matchup.losses,
-      0
-    );
-    const totalGames = totalWinRate + totalLosses;
-    const winRate = totalWinRate / totalGames;
+
+    const totalGames = totalWins + totalLosses;
+    const winRate = totalGames > 0 ? totalWins / totalGames : 0;
     matchupData[deckName].push({
       name: "Total",
       winRate,
