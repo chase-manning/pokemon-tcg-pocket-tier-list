@@ -1,7 +1,10 @@
+
 export const buildTiers = <T,>(items: T[], getScore: (item: T) => number) => {
     if (!items || items.length === 0) return [];
-    const bestScore = getScore(items[0]);
-    const worstScore = getScore(items[items.length - 1]);
+
+    const scores = items.map(getScore);
+    const bestScore = Math.max(...scores);
+    const worstScore = Math.min(...scores);
     const steps = (bestScore - worstScore) / 6;
 
     return [

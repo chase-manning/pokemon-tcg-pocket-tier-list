@@ -100,7 +100,6 @@ const ImageSection = styled.div`
 const ImageContainer = styled(Link)<{ $rotateX: number; $rotateY: number }>`
   padding: 4px;
   border-radius: 16px;
-  min-height: 65dvh;
   background: linear-gradient(
     45deg,
     var(--s),

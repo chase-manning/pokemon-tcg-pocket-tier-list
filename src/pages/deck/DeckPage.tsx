@@ -500,7 +500,7 @@ const DeckPage = () => {
                           }
 
                           if (missingCards.length !== 1 || newCards.length !== 1) {
-                            throw new Error("Invalid alternative card mapping");
+                            return null;
                           }
 
                           return (
