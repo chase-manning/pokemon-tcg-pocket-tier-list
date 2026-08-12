@@ -10,22 +10,23 @@ const downloadDecks = async () => {
   const tournaments = await getTournaments();
   console.log(`Downloaded tournaments\n${tournaments.length} to process`);
 
-  // read once, memory is fast
   const currentDecks = JSON.parse(fs.readFileSync("./data/decks.json", "utf-8"));
   const processed = JSON.parse(fs.readFileSync("./data/processed-tournaments.json", "utf-8"));
 
-  for (let i = 0; i < tournaments.length; i++) {
-    const t = { id: tournaments[i].id, date: new Date(tournaments[i].date) };
-    const decks = await getTournamentDecks(t as any);
+  try {
+    for (let i = 0; i < tournaments.length; i++) {
+      const tournament = tournaments[i];
+      const decks = await getTournamentDecks(tournament);
 
-    currentDecks.push(...decks);
-    processed.push(t);
+      currentDecks.push(...decks);
+      processed.push({id: tournament.id, date: tournament.date});
 
-    console.log(`${round((i / tournaments.length) * 100, 2)}%`);
+      console.log(`${round((i / tournaments.length) * 100, 2)}%`);
     }
-
-    fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
-    fs.writeFileSync("./data/processed-tournaments.json", JSON.stringify(processed));
+  } finally {
+      fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
+      fs.writeFileSync("./data/processed-tournaments.json", JSON.stringify(processed));
+  }
 };
 
-downloadDecks();
+downloadDecks().catch(console.error);
