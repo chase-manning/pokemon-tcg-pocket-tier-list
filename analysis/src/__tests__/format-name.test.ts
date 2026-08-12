@@ -1,4 +1,4 @@
-import formatName from "../utils/format-name";
+import formatName, { formatMatch } from "../utils/format-name";
 import { Card } from "../utils/types";
 
 describe("formatName", () => {
