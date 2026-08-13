@@ -207,6 +207,38 @@ const run = async () => {
     }
   }
 
+  const trendData: Record<string, any> = {};
+  const top6Names = bestDecks.slice(0, 6).map((d) => d.name);
+
+  for (const deck of qualifiedDecks) {
+    const dateStr = deck.date.split("T")[0];
+
+    if (!trendData[dateStr]) {
+      trendData[dateStr] = { date: dateStr, totalGames: 0 };
+      top6Names.forEach((name) => (trendData[dateStr][name] = 0));
+    }
+
+    trendData[dateStr].totalGames += deck.totalGames;
+    if (top6Names.includes(deck.name)) {
+      trendData[dateStr][deck.name] += deck.totalGames;
+    }
+  }
+
+  const trends = Object.values(trendData)
+      .map((day) => {
+        const result: any = { date: day.date };
+        top6Names.forEach((name) => {
+          result[name] = day.totalGames > 0 ? (day[name] / day.totalGames) * 100 : 0;
+        });
+        return result;
+      })
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  fs.writeFileSync(
+      "../public/data/historical-trends.json",
+      JSON.stringify(trends, null, 2)
+  );
+
   fs.writeFileSync(
     "./data/card-scores.json",
     JSON.stringify(cardScoresList, null, 2)

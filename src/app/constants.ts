@@ -1,6 +1,8 @@
 import github from "../assets/github.svg";
 import twitter from "../assets/twitter.svg";
 
+export const EXPANSION_NAME = "Ruler of the Skies (B4)"
+
 export const FREE_DECK_AMOUNT = 30;
 export const CARDS_URL =
   "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v4.json";

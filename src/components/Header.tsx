@@ -29,7 +29,7 @@ const Nav = styled.nav`
   display: flex;
   gap: 4rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -100,8 +100,12 @@ const Header = ({ footer }: Props) => {
             {t("header.bestDeckFinder")}
         </NavItem>
         <NavItem to="/cards-list" $active={location.pathname === "/cards-list"}>
-          {t("header.bestCards")}
+            {t("header.bestCards")}
         </NavItem>
+        <NavItem to="/statistics" $active={location.pathname === "/statistics"}>
+            {t("header.statistics", "Statistics")}
+        </NavItem>
+
       </Nav>
       <RightSection>
         {footer && (

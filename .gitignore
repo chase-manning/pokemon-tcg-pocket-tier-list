@@ -41,4 +41,4 @@ yarn-error.log*
 # project specific
 analysis/data
 update-decks.sh
-private/
+private/analysis/dist/
