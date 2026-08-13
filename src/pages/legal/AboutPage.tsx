@@ -1,5 +1,5 @@
 import LegalPage from "./LegalPage";
-import { GITHUB_URL } from "../../app/constants";
+import { GITHUB_URL, CONTACT_EMAIL } from "../../app/constants";
 
 const AboutPage = () => {
   return (
@@ -80,7 +80,7 @@ const AboutPage = () => {
           <h2>Contact</h2>
           <p>
               Send questions, feedback, or feature requests to{" "}
-              <a href="mailto:chase@manning.dev">chase@manning.dev</a>.
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
           </p>
 
           <p>

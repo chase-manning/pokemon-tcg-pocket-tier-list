@@ -116,31 +116,49 @@ const Hero = () => {
   const requestRef = useRef<number>();
 
   useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!sectionRef.current) return;
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
 
       requestRef.current = requestAnimationFrame(() => {
-        if (!sectionRef.current) return;
-        const rect = sectionRef.current.getBoundingClientRect();
+        const rect = element.getBoundingClientRect();
+
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
-        const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
-        const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 8;
+        let rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
+        let rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 8;
+
+        // Clamp rotation
+        rotateY = Math.max(-8, Math.min(8, rotateY));
+        rotateX = Math.max(-8, Math.min(8, rotateX));
 
         // Target the anchor tag directly to bypass any ref-forwarding limits in styled-components
-        const tiltElement = sectionRef.current.querySelector('a');
+        const tiltElement = element.querySelector('a');
         if (tiltElement && window.innerWidth > 1024) {
-          tiltElement.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+          tiltElement.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
       });
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    const handleMouseLeave = () => {
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      const tiltElement = element.querySelector('a');
+      if (tiltElement) {
+        tiltElement.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      }
+    };
+
+    element.addEventListener("mousemove", handleMouseMove, { passive: true });
+    element.addEventListener("mouseleave", handleMouseLeave);
+
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      element.removeEventListener("mousemove", handleMouseMove);
+      element.removeEventListener("mouseleave", handleMouseLeave);
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
   }, []);

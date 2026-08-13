@@ -334,7 +334,7 @@ const LandingPage = () => {
         <h3>Tier list updates</h3>
         <p>
           The rankings update automatically as fresh tournament results come in. The
-          fastest updates go to Premium members. The date shown above the rankings
+          fastest updates go to Premium members. The date shown in the lower-right corner
           always reflects the most recent refresh.
         </p>
       </SeoContent>

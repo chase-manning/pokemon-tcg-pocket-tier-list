@@ -101,12 +101,17 @@ interface ActionButtonProps extends ButtonProps {
 }
 
 interface LinkButtonProps extends ButtonProps {
-  to?: string;
-  action?: () => void;
-  children: ReactNode;
+  to: string;
+  action?: never;
 }
 
-type Props = ActionButtonProps | LinkButtonProps;
+interface PlainButtonProps extends ButtonProps {
+  to?: never;
+  action?: never;
+}
+
+type Props = ActionButtonProps | LinkButtonProps | PlainButtonProps;
+
 
 const Button = ({
   action,

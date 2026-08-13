@@ -11,7 +11,7 @@ i18n
             namespace: string,
             callback: (errorValue: unknown, ret: unknown) => void
         ) {
-            import(`./locales/${language}/${namespace}.json`)
+            import(`./locales/${language}_${namespace}.json`)
                 .then((resources) => callback(null, resources.default || resources))
                 .catch((error) => callback(error, null));
         },
