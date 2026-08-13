@@ -1,14 +1,11 @@
 import LegalPage from "./LegalPage";
+import {CONTACT_EMAIL} from "../../app/constants";
 
-// Privacy policy. Written to satisfy Google AdSense's disclosure requirements
-// (third-party ad cookies, personalization, EEA consent) as well as GDPR.
-// Kept in English; legal pages are conventionally provided in a single
-// language even on localized sites.
 const PrivacyPage = () => {
   return (
     <LegalPage>
       <h1>Privacy Policy</h1>
-      <p className="updated">Last updated: May 30, 2026</p>
+      <p className="updated">Last updated: August 13, 2026</p>
 
       <p>
         This Privacy Policy explains how Top Pocket Decks ("we", "us", or the
@@ -28,8 +25,8 @@ const PrivacyPage = () => {
         <li>
           <strong>Account information.</strong> If you sign in with Google, we
           receive basic profile information (your name, email address, and
-          profile photo) through Firebase Authentication so we can provide your
-          account and Premium features.
+          profile photo) through Firebase Authentication so we can manage your
+          account and legacy & Premium subscriptions.
         </li>
         <li>
           <strong>Payment information.</strong> Premium subscriptions are
@@ -38,11 +35,12 @@ const PrivacyPage = () => {
         </li>
       </ul>
 
-      <h2>Cookies and advertising</h2>
+      <h2>Cookies and tracking</h2>
       <p>
         The site uses cookies and similar technologies for essential
-        functionality, analytics, and advertising. We display ads through Google
-        AdSense for visitors on the free tier.
+        functionality, analytics, and advertising. While we previously displayed ads through
+        Google AdSense, advertisements are currently disabled for all users
+        during our maintainer transition.
       </p>
       <ul>
         <li>
@@ -79,15 +77,15 @@ const PrivacyPage = () => {
       <h2>Consent for users in the EEA, UK, and Switzerland</h2>
       <p>
         If you are located in the European Economic Area, the United Kingdom, or
-        Switzerland, we present a consent message before serving personalized
-        ads or setting non-essential cookies, in line with applicable laws. You
-        can change or withdraw your consent at any time.
+        Switzerland, we present a consent message before setting non-essential
+        cookies, in line with applicable laws. You can change or withdraw your
+        consent at any time.
       </p>
 
       <h2>How we use information</h2>
       <ul>
         <li>To provide and improve the site and its features.</li>
-        <li>To operate accounts and Premium subscriptions.</li>
+        <li>To operate accounts and manage Premium & legacy subscriptions.</li>
         <li>To understand usage and measure performance.</li>
         <li>To display advertising to free-tier visitors.</li>
       </ul>
@@ -122,7 +120,7 @@ const PrivacyPage = () => {
       <h2>Contact</h2>
       <p>
         If you have any questions about this Privacy Policy, contact us at{" "}
-        <a href="mailto:chase@manning.dev">chase@manning.dev</a>.
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
 
       <p>

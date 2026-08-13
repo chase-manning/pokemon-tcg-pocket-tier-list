@@ -105,7 +105,13 @@ interface LinkButtonProps extends ButtonProps {
   action?: never;
 }
 
-type Props = ActionButtonProps | LinkButtonProps;
+interface PlainButtonProps extends ButtonProps {
+  to?: never;
+  action?: never;
+}
+
+type Props = ActionButtonProps | LinkButtonProps | PlainButtonProps;
+
 
 const Button = ({
   action,

@@ -12,7 +12,7 @@
     },
     "premium": {
       "title": "For Premium subscribers 💛",
-      "status": "The site stays online, but it's no longer being updated. New Premium signups are closed, and ads have been switched off for everyone.",
+      "status": "The site stays online, and will continue to receive updates! New Premium signups are temporarily paused and ads have been switched off for everyone.",
       "cancel": "Existing subscriptions keep renewing until you cancel them, so if you don't want to be billed again, cancel through the <0>billing portal</0>.",
       "refund": "If you'd like a refund instead, email me at <0>chase@manning.dev</0> and include the email address on your account. I'll cancel your subscription and refund your most recent payment. Stripe only lets me refund payments made in the last 180 days, so if yours is older than that I'll do whatever I can."
     },
@@ -23,8 +23,8 @@
     "title": "Top Pocket Decks Premium",
     "manageSubscription": "Manage Subscription",
     "windDown": {
-      "headline": "Premium is winding down 💛",
-      "status": "Top Pocket Decks is no longer being updated, so new signups are closed and ads have been switched off for everyone.",
+      "headline": "Premium is temporarily halted 💛",
+      "status": "Top Pocket Decks has a new maintainer and will continue to receive updates! During this transition, new Premium signups are temporarily paused and ads have been switched off for everyone.",
       "active": "Your subscription stays active and keeps renewing until you cancel it. You can cancel any time through the billing portal.",
       "refund": "Would you rather have a refund? Email me at <0>chase@manning.dev</0> with the email address on your account and I'll cancel your subscription and refund your most recent payment. Stripe only lets me refund payments made in the last 180 days, so if yours is older than that I'll do whatever I can."
     },
@@ -34,49 +34,49 @@
       "premium": "Premium",
       "removeAds": {
         "title": "Remove Ads",
-        "description": "Enjoy a completely ad-free, faster experience across the whole site.",
+        "description": "Enjoy an experience without ads across the whole site.",
         "free": "🚫",
         "premium": "✅"
       },
       "bestDeckFinder": {
         "title": "Best Deck Finder",
-        "description": "Find the strongest deck you can build with your cards",
+        "description": "Find the strongest deck you can build with your cards. It doubles as a complete PTCGP collection tracker.",
         "free": "✅",
         "premium": "✅"
       },
       "exclude": {
         "title": "Exclude Cards You Don't Have",
-        "description": "Filter out cards you don't own to live update the tier list with what you have",
+        "description": "Filter out cards you do not own to live update the tier list with what you have.",
         "free": "✅",
         "premium": "✅"
       },
       "matchups": {
-        "title": "Deck Strengths/Weaknesses",
-        "description": "For each deck, see which decks it is strong against and weak against, including winrate percentates",
+        "title": "Deck Strengths and Weaknesses",
+        "description": "See which decks your build beats and loses to, including win rate percentages.",
         "free": "🚫",
         "premium": "✅"
       },
       "filters": {
         "title": "Deck Filters",
-        "description": "Filter decks by Energy or no Ex cards, useful for helping beat some of those Solo Battles",
+        "description": "Filter decks by Energy or ban EX cards entirely to beat solo battles.",
         "free": "🚫",
         "premium": "✅"
       },
       "sortBy": {
         "title": "Alternative Rankings",
-        "description": "Change the tier list to be ranked by Popularity or Strength",
+        "description": "Change the tier list to rank by popularity or strength.",
         "free": "🚫",
         "premium": "✅"
       },
       "contact": {
         "title": "Contact Developers",
-        "description": "Contact the developers via email to give any feedback on the site, request new features to be added, or report any bugs. Feature requests are not gauranteed to be completed, but all will be considered.",
+        "description": "Email the developers to give feedback on the site, request new features, or report bugs. Feature requests are not guaranteed, but we read them all.",
         "free": "🚫",
         "premium": "✅"
       },
       "updated": {
         "title": "Tier List Updated",
-        "description": "How often the tier list is updated with new data. Faster updates help you stay ahead of the meta.",
+        "description": "How often the tier list pulls in new data. Faster updates help you stay ahead of the meta.",
         "free": "Weekly",
         "premium": "Daily"
       },
@@ -102,7 +102,7 @@
     "matchups": "Matchups",
     "strongAgainst": "Strong Against",
     "weakAgainst": "Weak Against",
-    "deckFinderHeader": "Click on cards you don't have. The deck will update to show the best with your available cards.",
+    "deckFinderHeader": "Click on cards you do not have. The deck will update to show the best options with your available cards.",
     "relativeStrength": "Relative Strength",
     "keyStats": "Key Stats",
     "popularity": "Popularity",
@@ -138,7 +138,7 @@
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",
-    "description1": "Discover the strongest deck you can build with your collection. The Best Deck Finder starts by showing you the top deck in the game, but you can click any cards you don't have. It will then show you the next best deck that doesn't use those cards.",
+    "description1": "Find the strongest deck you can build with your collection. The Best Deck Finder starts by showing you the top deck in the game. Click any cards you do not have, and it shows you the next best deck that skips those cards.",
     "description2": "Keep removing cards until you find a deck where you have everything. The relative strength indicator shows you how powerful your deck is compared to the best deck in the game.",
     "button": "Try Best Deck Finder"
   },
@@ -155,18 +155,18 @@
   },
   "hero": {
     "title": "Pokemon TCG Pocket Best Decks and Tier List",
-    "subtitle": "Stay ahead of the Pokemon TCG Pocket meta with a data driven deck tier list. Built from tournament results, find full lists, mark the cards you're missing, and uncover the strongest builds you can craft right now.",
+    "subtitle": "Find the strongest Pokemon TCG Pocket decks using real tournament data. You can filter full lists, mark the cards you lack, and see exactly what to build next. Dominate the meta.",
     "button": "View Tier List"
   },
   "features": {
     "title": "Features",
     "tournamentResults": {
       "title": "Tournament Results",
-      "description": "The tier list is based on tournament results, with an algorithm to determine the tier and decklist"
+      "description": "The tier list relies on tournament results. An algorithm determines the tier and decklist."
     },
     "weeklyUpdates": {
       "title": "Weekly Updates",
-      "description": "The tier list is updated weekly, with new decks and matchups added every Monday"
+      "description": "The tier list updates weekly, bringing new decks and matchups every Monday."
     },
     "filters": {
       "title": "Filters",
@@ -174,15 +174,15 @@
     },
     "missingCards": {
       "title": "Missing Cards",
-      "description": "Click on any cards that you are missing, and the tier list will update automatically for what you have"
+      "description": "Click on any cards you lack, and the tier list updates automatically for what you own."
     },
     "matchups": {
       "title": "Matchups",
-      "description": "See matchup data for which decks are strong against others, and their winrates"
+      "description": "See matchup data for which decks beat others, alongside their win rates."
     },
     "openSource": {
       "title": "Open Source",
-      "description": "This website is open source, you can find the source code on <0>GitHub</0>"
+      "description": "This website is open source. You can find the source code on <0>GitHub</0>."
     }
   }
 }
