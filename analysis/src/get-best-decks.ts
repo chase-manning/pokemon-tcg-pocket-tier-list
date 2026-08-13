@@ -131,6 +131,7 @@ const run = async () => {
       lists,
       popularity: deckScore.popularity,
       percentOfGames,
+      score: lists[0]?.score ?? 0
     });
   }
 
@@ -208,7 +209,10 @@ const run = async () => {
   }
 
   const trendData: Record<string, any> = {};
-  const top6Names = bestDecks.slice(0, 6).map((d) => d.name);
+  const top6Names = [...bestDecks]
+      .sort((a, b) => b.lists[0].score - a.lists[0].score)
+      .slice(0, 6)
+      .map((d) => d.name);
 
   for (const deck of qualifiedDecks) {
     const dateStr = deck.date.split("T")[0];

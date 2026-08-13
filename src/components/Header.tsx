@@ -29,7 +29,7 @@ const Nav = styled.nav`
   display: flex;
   gap: 4rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

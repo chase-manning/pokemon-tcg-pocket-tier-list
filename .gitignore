@@ -39,6 +39,7 @@ yarn-error.log*
 /analysis/.env
 
 # project specific
-analysis/data
+analysis/data/
+analysis/dist/
+private/
 update-decks.sh
-private/analysis/dist/
