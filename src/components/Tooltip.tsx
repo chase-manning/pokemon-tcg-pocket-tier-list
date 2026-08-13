@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, KeyboardEvent } from "react";
 
 const TooltipContainer = styled.div`
   position: relative;
@@ -102,11 +102,11 @@ const Tooltip = ({ text }: Props) => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("scroll", handleScroll, true);
+    document.addEventListener("scroll", handleScroll, { capture: true, passive: true });
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("scroll", handleScroll, true);
+      document.removeEventListener("scroll", handleScroll, { capture: true });
     };
   }, [isVisible]);
 
@@ -123,7 +123,7 @@ const Tooltip = ({ text }: Props) => {
         role="button"
         aria-label="Show tooltip"
         tabIndex={0}
-        onKeyDown={(e) => {
+        onKeyDown={(e: KeyboardEvent) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             handleToggle();

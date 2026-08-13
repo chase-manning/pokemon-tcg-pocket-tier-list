@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { Deck } from "./types";
 
 const getId = (deck: Deck) => {
@@ -5,8 +6,7 @@ const getId = (deck: Deck) => {
     (card) => `${card.count}-${card.name}-${card.set}-${card.number}`
   );
   const deckString = cards.sort().join(",");
-  const hash = require("crypto").createHash("sha256");
-  return hash.update(deckString).digest("hex");
+  return crypto.createHash("sha256").update(deckString).digest("hex");
 };
 
 export default getId;

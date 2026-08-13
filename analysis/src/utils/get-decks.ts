@@ -7,20 +7,23 @@ import { fixPokeballCards } from "./fix-pokeball-cards";
 import { Deck } from "./types";
 
 const readDecksFromFile = (): Deck[] => {
+  let decks: unknown;
   try {
     const fileContent = fs.readFileSync("./data/decks.json", "utf-8");
-    const decks = JSON.parse(fileContent);
-    if (!Array.isArray(decks)) {
-      throw new Error("Decks data is not an array");
-    }
-    return decks;
+    decks = JSON.parse(fileContent);
   } catch (error) {
     throw new Error(
-      `Failed to read decks file: ${
-        error instanceof Error ? error.message : String(error)
-      }`
+        `Failed to read decks file: ${
+            error instanceof Error ? error.message : String(error)
+        }`
     );
   }
+
+  if (!Array.isArray(decks)) {
+    throw new Error("Failed to read decks file: Decks data is not an array");
+  }
+
+  return decks;
 };
 
 const calculateTotalGames = (decks: Deck[]): number => {

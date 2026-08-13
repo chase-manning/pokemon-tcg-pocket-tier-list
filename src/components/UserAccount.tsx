@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CONTACT_EMAIL } from "../app/constants";
 import { useAuth } from "../contexts/AuthContext";
 import Popup from "./Popup";
 import { useState } from "react";
@@ -161,7 +162,7 @@ const UserAccount = ({ hideIfPremium = false }: Props) => {
         }}
       >
         <ContactText>{t("premium.features.contact.description")}</ContactText>
-        <EmailText>chase@manning.dev</EmailText>
+        <EmailText>{CONTACT_EMAIL}</EmailText>
       </Popup>
     </>
   );

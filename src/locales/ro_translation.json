@@ -1,0 +1,188 @@
+{
+  "farewell": {
+    "banner": "Top Pocket Decks își încheie activitatea: citește nota completă",
+    "title": "Mulțumim pentru doi ani minunați!",
+    "intro": "Am lansat Top Pocket Decks pe 2 noiembrie 2024 ca proiect personal. Voiam doar o modalitate de a analiza meta-ul pentru mine. Apoi l-am pus online și l-am ținut la zi de atunci. Au trecut aproape doi ani!",
+    "enjoyed": "A fost o experiență extraordinară. Pokemon TCG Pocket este un joc grozav, iar modul de clasament a fost mereu partea mea preferată. Căutam mereu deck-uri bune și încercam să îmi dau seama ce anume câștigă. Crearea acestui site mi-a permis să fac asta și să împărtășesc experiența cu toată lumea.",
+    "why": "Viața a devenit însă foarte aglomerată. M-am logodit, organizez nunta, iar jobul principal îmi ocupă tot timpul. Pur și simplu nu mai am timp pentru Pokemon Pocket sau pentru întreținerea site-ului în acest moment. În loc să îl las să se învechiască, am decis să îl închid cum se cuvine și să vă mulțumesc.",
+    "thanks": "Și vă mulțumesc, sincer. Mă bucur foarte mult că acest proiect s-a dovedit util. Faptul că vedeam oameni care se logau în fiecare săptămână pentru a verifica meta-ul îmi făcea mereu ziua mai bună. Mulțumiri speciale celor care au optat pentru abonamentul Premium. Nu m-am gândit niciodată că un proiect personal ar atrage abonați. Nu a adus niciodată mult peste acoperirea costurilor de funcționare, dar faptul că ați ținut suficient de mult la el încât să plătiți a însemnat enorm pentru mine.",
+    "takeover": {
+      "title": "Vrei să preiei proiectul? ",
+      "body": "Mi-ar plăcea ca acest proiect să continue. Dacă ai experiență în dezvoltare software, în special cu React și TypeScript, trimite-mi un e-mail la <0>chase@manning.dev</0> cu un link către profilul tău de GitHub. Aș fi fericit să predau proiectul cuiva competent. Asta include și <1>API-ul pentru cărți</1> Pokemon TCG Pocket pe care îl întreținem. Rămâne în continuare singurul API public și open source disponibil pentru cărți."
+    },
+    "premium": {
+      "title": "Pentru abonații Premium <3",
+      "status": "Site-ul rămâne online, dar nu mai primește actualizări. Înscrierile noi la Premium sunt închise, iar reclamele au fost dezactivate pentru toată lumea.",
+      "cancel": "Abonamentele existente se reînnoiesc până când le anulezi. Dacă nu dorești să mai plătești, anulează-le prin <0>portalul de facturare</0>.",
+      "refund": "Dacă dorești o rambursare, trimite-mi un e-mail la <0>chase@manning.dev</0> cu adresa asociată contului tău. Îți voi anula abonamentul și voi rambursa cea mai recentă plată. Stripe îmi permite să rambursez doar plățile efectuate în ultimele 180 de zile, deci voi face tot ce pot pentru plățile mai vechi."
+    },
+    "signOff": "Toate cele bune celor care încă joacă, bucurați-vă de joc! ^^",
+    "signature": "- Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "manageSubscription": "Gestionare abonament",
+    "windDown": {
+      "headline": "Serviciul Premium se apropie de final <3",
+      "status": "Top Pocket Decks nu mai primește actualizări, așa că înscrierile noi sunt închise, iar reclamele au fost dezactivate pentru toți utilizatorii.",
+      "active": "Abonamentul tău rămâne activ și se reînnoiește până când îl anulezi. Îl poți anula oricând prin portalul de facturare.",
+      "refund": "Dorești o rambursare? Trimite-mi un e-mail la <0>chase@manning.dev</0> cu adresa asociată contului tău. Îți voi anula abonamentul și voi rambursa cea mai recentă plată. Stripe îmi permite să rambursez doar plățile efectuate în ultimele 180 de zile, deci voi face tot ce pot pentru plățile mai vechi."
+    },
+    "features": {
+      "title": "Funcționalități",
+      "free": "Gratuit",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Fără reclame",
+        "description": "Bucură-te de o experiență rapidă și complet lipsită de reclame pe tot site-ul.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Best Deck Finder",
+        "description": "Găsește cel mai puternic deck pe care îl poți construi cu cărțile tale.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Exclude cărțile pe care nu le ai",
+        "description": "Filtrează cărțile pe care nu le deții pentru a vedea clasamentul real cu colecția ta.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Puncte forte și slabe",
+        "description": "Pentru fiecare deck, vezi împotriva cărora este puternic și împotriva cărora este slab, inclusiv procentajele de victorie.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Filtre pentru deck-uri",
+        "description": "Filtrează deck-urile după Energie sau elimină cărțile EX. Util pentru bătăliile solo.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Clasamente alternative",
+        "description": "Ordonează clasamentul în funcție de popularitate sau de puterea brută a deck-urilor.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Contactează dezvoltatorii",
+        "description": "Scrie-ne prin e-mail pentru feedback, cereri de funcționalități noi sau raportarea erorilor. Nu garantăm implementarea tuturor ideilor, dar le analizăm pe toate.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Clasament actualizat",
+        "description": "Frecvența cu care clasamentul primește date noi. Actualizările rapide te ajută să fii mereu cu un pas înaintea meta-ului.",
+        "free": "Săptămânal",
+        "premium": "Zilnic"
+      },
+      "decks": {
+        "title": "Deck-uri în clasament",
+        "description": "Numărul de deck-uri afișat. Un număr mai mare înseamnă mai multe opțiuni. Descoperă deck-uri puternice care încă nu au devenit populare.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Reclamă",
+    "removeAds": "Elimină reclamele",
+    "close": "Închide"
+  },
+  "userAccount": {
+    "title": "Cont utilizator",
+    "signOut": "Deloghează-te"
+  },
+  "lastUpdated": "Ultima actualizare:",
+  "deckPage": {
+    "matchups": "Matchup-uri",
+    "strongAgainst": "Puternic vs.",
+    "weakAgainst": "Slab vs.",
+    "deckFinderHeader": "Apasă pe cărțile pe care nu le ai. Deck-ul se va schimba pentru a arăta cea mai bună variantă cu cărțile disponibile.",
+    "relativeStrength": "Putere relativă",
+    "keyStats": "Statistici cheie",
+    "popularity": "Popularitate",
+    "strength": "Putere",
+    "winRate": "Rata de victorie (%)",
+    "notEnoughCards": "Nu sunt suficiente cărți",
+    "tryAnotherDeck": "Încearcă alt deck",
+    "alternatives": "Alternative"
+  },
+  "energyDropdown": {
+    "all": "Toate tipurile de energie",
+    "Grass": "Grass",
+    "Fire": "Fire",
+    "Water": "Water",
+    "Lightning": "Lightning",
+    "Psychic": "Psychic",
+    "Fighting": "Fighting",
+    "Darkness": "Darkness",
+    "Metal": "Metal",
+    "Dragon": "Dragon",
+    "Colorless": "Colorless"
+  },
+  "filter": {
+    "includeEx": "Include cărți EX",
+    "deckAmount": "Numărul de deck-uri",
+    "sortBy": "Sortează după",
+    "score": "Cel mai bun în general",
+    "popularity": "Popularitate",
+    "strength": "Putere",
+    "winRate": "Rata de victorie (%)",
+    "latestExpansionCards": "Cărți din cel mai recent set",
+    "latestExpansionCardsAny": "Oricare"
+  },
+  "bestDeckFinder": {
+    "title": "Găsește-ți cel mai bun deck",
+    "description1": "Descoperă cel mai puternic deck pe care îl poți construi cu colecția ta. Instrumentul îți arată inițial cel mai bun deck din joc. Dacă apeși pe o carte pe care nu o deții, sistemul îți va sugera următorul deck de top care nu folosește cartea respectivă.",
+    "description2": "Continuă să elimini cărți până găsești un deck complet. Indicatorul de putere relativă îți arată cât de puternic este pachetul tău față de cel mai bun deck din joc.",
+    "button": "Încearcă Best Deck Finder"
+  },
+  "header": {
+    "tierList": "Clasament",
+    "bestDeckFinder": "Best Deck Finder",
+    "signIn": "Conectează-te cu Google",
+    "signOut": "Deloghează-te",
+    "bestCards": "Cele mai bune cărți"
+  },
+  "footer": {
+    "about": "Despre",
+    "privacy": "Politica de confidențialitate"
+  },
+  "hero": {
+    "title": "Cele mai bune deck-uri și clasamente pentru Pokemon TCG Pocket",
+    "subtitle": "Rămâi la curent cu meta-ul prin intermediul unui clasament bazat pe date. Găsește liste complete extrase din rezultatele turneelor, marchează cărțile care îți lipsesc și descoperă cele mai bune combinații pe care le poți crea chiar acum.",
+    "button": "Vezi clasamentul"
+  },
+  "features": {
+    "title": "Caracteristici",
+    "tournamentResults": {
+      "title": "Rezultate turnee",
+      "description": "Algoritmul stabilește clasamentul și listele de cărți exclusiv pe baza rezultatelor din turnee."
+    },
+    "weeklyUpdates": {
+      "title": "Actualizări săptămânale",
+      "description": "Clasamentul se actualizează săptămânal. Adăugăm noi deck-uri și statistici în fiecare luni."
+    },
+    "filters": {
+      "title": "Filtre",
+      "description": "Filtrează deck-urile după tipul de energie sau exclude cărțile EX. Te ajută să câștigi bătăliile solo."
+    },
+    "missingCards": {
+      "title": "Cărți lipsă",
+      "description": "Selectează cărțile care îți lipsesc, iar clasamentul se adaptează automat pentru colecția ta."
+    },
+    "matchups": {
+      "title": "Matchup-uri",
+      "description": "Vezi ratele de victorie pentru fiecare deck și află împotriva căror adversari are un avantaj."
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Acest site este open source. Găsești codul sursă pe <0>GitHub</0>."
+    }
+  }
+}

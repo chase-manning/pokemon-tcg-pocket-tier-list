@@ -1,15 +1,16 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactNode } from "react";
 
 const rainbowAnimation = keyframes`
   0% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
   50% {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
 `;
 
@@ -38,7 +39,7 @@ const Icon = styled.img`
   margin-right: -0.4rem;
 `;
 
-const StyledButton = styled.button<{ $isLoading: boolean; $wide: boolean }>`
+const buttonBase = css<{ $isLoading: boolean; $wide: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -47,14 +48,14 @@ const StyledButton = styled.button<{ $isLoading: boolean; $wide: boolean }>`
   padding: 0 3.2rem;
   border-radius: 0.8rem;
   background: linear-gradient(
-    45deg,
-    var(--s),
-    var(--a),
-    var(--b),
-    var(--c),
-    var(--d),
-    var(--e),
-    var(--s)
+      45deg,
+      var(--s),
+      var(--a),
+      var(--b),
+      var(--c),
+      var(--d),
+      var(--e),
+      var(--s)
   );
   background-size: 300% 300%;
   animation: ${rainbowAnimation} 8s ease infinite;
@@ -71,57 +72,24 @@ const StyledButton = styled.button<{ $isLoading: boolean; $wide: boolean }>`
   &:hover {
     transform: ${(props) => (props.$isLoading ? "none" : "scale(1.02)")};
     box-shadow: ${(props) =>
-      props.$isLoading ? "none" : "0 0 15px rgba(255, 255, 255, 0.3)"};
+        props.$isLoading ? "none" : "0 0 15px rgba(255, 255, 255, 0.3)"};
   }
 
   &:disabled {
     opacity: 0.7;
   }
+`;
+
+const StyledButton = styled.button<{ $isLoading: boolean; $wide: boolean }>`
+  ${buttonBase}
 `;
 
 const StyledLink = styled(Link)<{ $isLoading: boolean; $wide: boolean }>`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  height: 5.4rem;
-  padding: 0 3.2rem;
-  border-radius: 0.8rem;
-  background: linear-gradient(
-    45deg,
-    var(--s),
-    var(--a),
-    var(--b),
-    var(--c),
-    var(--d),
-    var(--e),
-    var(--s)
-  );
-  background-size: 300% 300%;
-  animation: ${rainbowAnimation} 8s ease infinite;
-  color: var(--bg);
-  font-size: 2.1rem;
-  font-weight: 600;
-  cursor: ${(props) => (props.$isLoading ? "not-allowed" : "pointer")};
-  transition: all 0.2s ease;
-  border: 2px solid transparent;
-  position: relative;
-  width: ${(props) => (props.$wide ? "100%" : "auto")};
-  text-decoration: none;
-
-  &:hover {
-    transform: ${(props) => (props.$isLoading ? "none" : "scale(1.02)")};
-    box-shadow: ${(props) =>
-      props.$isLoading ? "none" : "0 0 15px rgba(255, 255, 255, 0.3)"};
-  }
-
-  &:disabled {
-    opacity: 0.7;
-  }
+  ${buttonBase}
 `;
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   isLoading?: boolean;
   wide?: boolean;
   icon?: string;
@@ -137,7 +105,13 @@ interface LinkButtonProps extends ButtonProps {
   action?: never;
 }
 
-type Props = ActionButtonProps | LinkButtonProps;
+interface PlainButtonProps extends ButtonProps {
+  to?: never;
+  action?: never;
+}
+
+type Props = ActionButtonProps | LinkButtonProps | PlainButtonProps;
+
 
 const Button = ({
   action,

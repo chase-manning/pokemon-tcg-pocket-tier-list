@@ -18,14 +18,14 @@ const useExpansions = (): ExpansionType[] | null => {
     queryKey: ["expansions"],
     queryFn: async () => {
       const response = await fetch(EXPANSIONS_URL);
-      return response.json() as Promise<ExpansionType[]>;
+      return (await response.json()) as ExpansionType[];
     },
   });
 
   if (!expansions) return null;
 
   return expansions.filter(
-    (expansion) => expansion.id !== "promo" && expansion.id !== "a4b"
+      (expansion: ExpansionType) => expansion.id !== "promo" && expansion.id !== "a4b"
   );
 };
 

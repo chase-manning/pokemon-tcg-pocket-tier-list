@@ -22,7 +22,7 @@ const ModalOverlay = styled.div`
 
 const ModalContent = styled.div<{ $width?: string }>`
   background: var(--bg);
-  color: var(--text);
+  color: var(--main);
   padding: 3rem;
   border-radius: 12px;
   max-width: ${(props) => props.$width || "70rem"};
@@ -71,7 +71,7 @@ const CloseButton = styled.button`
   right: 2rem;
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--main);
   font-size: 2.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -123,7 +123,7 @@ const Popup: React.FC<Props> = ({ isOpen, header, close, children, width }) => {
 
   return (
     <ModalOverlay onClick={close}>
-      <ModalContent onClick={(e) => e.stopPropagation()} $width={width}>
+      <ModalContent onClick={(e: React.MouseEvent) => e.stopPropagation()} $width={width}>
         <CloseButton onClick={close} aria-label="Close">
           ×
         </CloseButton>

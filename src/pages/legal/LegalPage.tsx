@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "../../components/Header";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+import { ReactNode } from "react";
 
 const StyledLegalPage = styled.div`
   width: 100%;
@@ -75,7 +76,7 @@ const Content = styled.article`
 `;
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 // Shared layout for static informational pages (Privacy, About). Mirrors the

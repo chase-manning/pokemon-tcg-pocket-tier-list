@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Button from "./Button";
 import { CONTACT_EMAIL, MANAGE_SUBSCRIPTION_URL } from "../app/constants";
 import useIsPremium from "../app/use-is-premium";
@@ -5,7 +6,7 @@ import { useState } from "react";
 import Popup from "./Popup";
 import { Trans, useTranslation } from "react-i18next";
 import styled from "styled-components";
-import premiumIcon from "../assets/premium.png";
+import premiumIcon from "../assets/premium.webp";
 
 const ButtonContainer = styled.button`
   cursor: pointer;
@@ -100,35 +101,6 @@ const Premium = ({ variant = "default", linkLabel }: Props) => {
           <PremiumIcon src={premiumIcon} alt="Premium" />
         </ButtonContainer>
       )}
-      <Popup
-        width="60rem"
-        isOpen={isOpen}
-        header="premium.windDown.headline"
-        close={() => {
-          setIsOpen(false);
-        }}
-      >
-        <Text>{t("premium.windDown.status")}</Text>
-        <Text>{t("premium.windDown.active")}</Text>
-        <Text>
-          <Trans
-            i18nKey="premium.windDown.refund"
-            components={[
-              <InlineLink href={`mailto:${CONTACT_EMAIL}`} key="email" />,
-            ]}
-          />
-        </Text>
-        <ButtonWrapper>
-          <Button
-            wide
-            action={() => {
-              window.open(MANAGE_SUBSCRIPTION_URL, "_blank")?.focus();
-            }}
-          >
-            {t("premium.manageSubscription")}
-          </Button>
-        </ButtonWrapper>
-      </Popup>
     </>
   );
 };

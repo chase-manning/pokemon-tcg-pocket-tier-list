@@ -12,6 +12,7 @@ export interface CardScoreType extends CardType {
 
 export const setCode = (set: string): string => {
   if (set === "P-A") return "pa";
+  if (set === "P-B") return "pb";
   return set.toLowerCase();
 };
 
@@ -42,7 +43,7 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     queryKey: ["cards"],
     queryFn: async () => {
       const response = await fetch(CARDS_URL);
-      return response.json() as Promise<CardType[]>;
+      return (await response.json()) as CardType[];
     },
   });
 
@@ -50,32 +51,43 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     queryKey: ["card-scores"],
     queryFn: async () => {
       const response = await fetch("/data/card-scores.json");
-      return response.json() as Promise<CardScoreType[]>;
+      return (await response.json()) as CardScoreType[];
     },
   });
 
   if (!cardData || !cards) return null;
 
-  const sortedCards = cards
-    .filter((card) => {
-      const id = cardNameToId(card.name);
-      const count = cardNameToCount(card.name);
-      const collectedCount = collected.filter((m) => m === id).length;
-      return count - collectedCount > 0;
-    })
-    .sort((a, b) => b.score - a.score);
+  const collectedCounts = collected.reduce<Record<string, number>>((acc, id) => {
+    acc[id] = (acc[id] || 0) + 1;
+    return acc;
+  }, {});
 
+  const sortedCards = cards
+      .filter((card: CardScoreType) => {
+        const id = cardNameToId(card.name);
+        const count = cardNameToCount(card.name);
+        const collectedCount = collectedCounts[id] || 0;
+        return count - collectedCount > 0;
+      })
+      .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
+
+  const seenIds = new Set<string>();
   const outputCards: CardScoreType[] = [];
+
   for (const card of sortedCards) {
     const set = cardNameToSet(card.name);
     if (expansion && set !== expansion) continue;
+
     const id = cardNameToId(card.name);
+    if (seenIds.has(id)) continue;
+    seenIds.add(id);
+
     const count = cardNameToCount(card.name);
-    if (outputCards.find((c) => c.id === id)) continue;
     const cardInfo = cardData.find((c: CardType) => c.id === id);
     if (!cardInfo) throw new Error(`Card not found: ${id}`);
-    // Square root of score
-    const score = Math.pow(card.score, 1 / 2);
+
+    const score = Math.sqrt(card.score);
+
     outputCards.push({
       ...cardInfo,
       score,
@@ -86,9 +98,9 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
   }
 
   return outputCards
-    .sort((a, b) => b.popularity - a.popularity)
-    .slice(0, amount)
-    .sort((a, b) => b.score - a.score);
+      .sort((a: CardScoreType, b: CardScoreType) => b.popularity - a.popularity)
+      .slice(0, amount)
+      .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
 };
 
 export default useCards;

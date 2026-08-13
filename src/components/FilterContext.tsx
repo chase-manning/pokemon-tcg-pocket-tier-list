@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 import { FREE_DECK_AMOUNT } from "../app/constants";
 
 export enum SortBy {
@@ -31,15 +31,15 @@ export const FilterContext = createContext<FilterContextType>({
   deckAmount: FREE_DECK_AMOUNT,
   setDeckAmount: () => { },
   sortBy: SortBy.SCORE,
-  setSortBy: (sortBy: SortBy) => { },
+  setSortBy: () => { },
   expansion: null,
-  setExpansion: (expansion: string | null) => { },
+  setExpansion: () => { },
   latestExpansionCards: null,
   setLatestExpansionCards: () => { },
 });
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const FilterContextProvider = ({ children }: Props) => {

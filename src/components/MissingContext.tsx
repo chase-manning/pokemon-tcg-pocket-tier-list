@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 
 interface MissingContextType {
   missing: string[];
@@ -11,7 +11,7 @@ export const MissingContext = createContext<MissingContextType>({
 });
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const MissingContextProvider = ({ children }: Props) => {
