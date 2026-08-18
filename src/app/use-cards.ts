@@ -68,6 +68,7 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
       .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
 
   const seenIds = new Set<string>();
+  const unresolvedIds = new Set<string>();
   const outputCards: CardScoreType[] = [];
 
   for (const card of sortedCards) {
@@ -80,7 +81,10 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
 
     const count = cardNameToCount(card.name);
     const cardInfo = cardData.find((c: CardType) => c.id === id);
-    if (!cardInfo) throw new Error(`Card not found: ${id}`);
+    if (!cardInfo) {
+      unresolvedIds.add(id);
+      continue;
+    }
 
     const score = Math.sqrt(card.score);
 
@@ -91,6 +95,14 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
       set,
       count,
     });
+  }
+
+  if (unresolvedIds.size > 0) {
+    console.warn(
+        `Skipped ${unresolvedIds.size} scored card id(s) missing from the card data: ${Array.from(
+            unresolvedIds
+        ).join(", ")}`
+    );
   }
 
   return outputCards
