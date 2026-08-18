@@ -245,6 +245,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
           });
 
           const cardIds = deckNameToIconIds(oldDeck.name);
+          const iconSecondary = cardIds[1]
+            ? cardsMapping[cardIds[1]] ?? null
+            : null;
 
           const deck: FullDeckType = {
             id: oldDeck.name.toLowerCase().replace(/\s/g, "-"),
@@ -259,8 +262,8 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             percentOfGames: oldDeck.percentOfGames,
             matchups,
             iconPrimary: cardsMapping[cardIds[0]],
-            iconSecondary: cardsMapping[cardIds[1]],
-          };
+            iconSecondary,
+              };
           return deck;
         })
         .sort(
