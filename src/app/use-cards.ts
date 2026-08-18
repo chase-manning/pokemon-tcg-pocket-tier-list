@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { CARDS_URL } from "./constants";
-import { CardType } from "../contexts/DecksContext";
+import { CardType, fetchCards } from "./cards-api";
 import useFilters from "./use-filters";
 import useMissing from "./use-missing";
 
@@ -39,12 +38,9 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
   const { expansion } = useFilters();
   const { missing: collected } = useMissing();
 
-  const { data: cardData } = useQuery({
+  const { data: cardData } = useQuery<CardType[]>({
     queryKey: ["cards"],
-    queryFn: async () => {
-      const response = await fetch(CARDS_URL);
-      return (await response.json()) as CardType[];
-    },
+    queryFn: fetchCards,
   });
 
   const { data: cards } = useQuery({

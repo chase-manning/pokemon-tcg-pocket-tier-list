@@ -4,22 +4,10 @@ import useMissing from "../app/use-missing";
 import useFilters from "../app/use-filters";
 import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
-import { CARDS_URL } from "../app/constants";
+import { CardType, fetchCards } from "../app/cards-api";
 import useExpansions from "../app/use-expansions";
 
-export interface CardType {
-  id: string;
-  name: string;
-  rarity: string;
-  pack: string;
-  type: string;
-  health: number | null;
-  stage: string | null;
-  craftingCost: number | null;
-  image: string;
-  ex: string;
-  set: string;
-}
+export type { CardType };
 
 export interface MatchupType {
   name: string;
@@ -97,12 +85,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const isPremium = useIsPremium();
   const expansions = useExpansions();
 
-  const { data: cards, isLoading: cardsLoading } = useQuery({
+  const { data: cards, isLoading: cardsLoading } = useQuery<CardType[]>({
     queryKey: ["cards"],
-    queryFn: async () => {
-      const response = await fetch(CARDS_URL);
-      return response.json();
-    },
+    queryFn: fetchCards,
   });
 
   const cardsMapping: Record<string, CardType> = useMemo(() => {
@@ -168,7 +153,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                   const id = cardToId(card);
                   const cardData = cardsMapping[id];
                   if (!cardData) throw new Error(`Card not found: ${id}`);
-                  return cardData.type === energy || cardData.type === "Trainer";
+                  return cardData.type === energy || cardData.supertype === "Trainer";
                 });
               })
               .filter((list: PartialList) => {
@@ -177,7 +162,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                   const id = cardToId(card);
                   const cardData = cardsMapping[id];
                   if (!cardData) throw new Error(`Card not found: ${id}`);
-                  return cardData.type === "Trainer" || cardData.ex === "No";
+                  return cardData.supertype === "Trainer" || !cardData.ex;
                 });
               })
               .filter((list: PartialList) => {

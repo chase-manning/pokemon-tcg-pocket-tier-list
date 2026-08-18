@@ -1,0 +1,41 @@
+[
+  {
+    "id": "a1-001",
+    "name": "Bulbasaur",
+    "set_code": "a1",
+    "pack": "Mewtwo",
+    "type": "Pokémon",
+    "subtype": "Grass",
+    "stage": "Basic",
+    "rarity": "◊",
+    "ex": false,
+    "health": 70,
+    "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/001.webp"
+  },
+  {
+    "id": "a1-219",
+    "name": "Erika",
+    "set_code": "a1",
+    "pack": "Charizard",
+    "type": "Trainer",
+    "subtype": "Supporter",
+    "stage": null,
+    "rarity": "◊◊",
+    "ex": false,
+    "health": null,
+    "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/219.webp"
+  },
+  {
+    "id": "a1-004",
+    "name": "Venusaur ex",
+    "set_code": "a1",
+    "pack": "Mewtwo",
+    "type": "Pokémon",
+    "subtype": "Grass",
+    "stage": "Stage 2",
+    "rarity": "◊◊◊◊",
+    "ex": true,
+    "health": 190,
+    "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/004.webp"
+  }
+]
