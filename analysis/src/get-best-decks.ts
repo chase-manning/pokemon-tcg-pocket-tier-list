@@ -13,7 +13,7 @@ import {
 } from "./settings";
 
 const CARDS_API =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v4.json";
+  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/cards.min.json";
 
 const run = async () => {
   const cardsPromise = fetch(CARDS_API);

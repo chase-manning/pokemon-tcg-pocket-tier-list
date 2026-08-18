@@ -17,7 +17,6 @@ import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useDecks } from "../../contexts/DecksContext";
-import UserAccount from "../../components/UserAccount";
 import { buildTiers } from "../../app/tier-helper";
 import { EXPANSION_NAME } from "../../app/constants";
 
@@ -244,6 +243,15 @@ const HeaderRow = styled.div`
     width: 100%;
 `;
 
+const Loading = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40rem;
+    font-size: 2rem;
+    font-weight: 500;
+`;
+
 const COLOR_PALETTE = [
     "var(--s)",
     "var(--a)",
@@ -331,23 +339,20 @@ const StatisticsPage = () => {
             .replace(/\b\w/g, (char) => char.toUpperCase());
     };
 
-    if (loading || !decks) {
-        return <PageContainer>Loading...</PageContainer>;
-    }
-
     const topArchetypeNames =
         trendData.length > 0
             ? Object.keys(trendData[0]).filter((key) => key !== "date")
             : [];
 
-    return (
-        <PageContainer>
-            <HeaderRow>
-                <Header />
-            </HeaderRow>
+    // The static shell (header + SEO copy) renders even while deck data is in
+    // flight. react-snap prerenders this route with no network data available,
+    // so returning early here would ship a page whose only content is
+    // "Loading..." to crawlers.
+    const renderContent = () => {
+        if (loading || !decks) return <Loading>Loading...</Loading>;
 
-            <UserAccount />
-
+        return (
+            <>
             <Section>
                 <SectionHeader>
                     <SectionTitle>{t("statistics.trends", "Meta Trends")}</SectionTitle>
@@ -403,7 +408,9 @@ const StatisticsPage = () => {
                                     type="monotone"
                                     dataKey={name}
                                     name={getDisplayName(
-                                        decks.find((d) => d.name === name) || { name }
+                                        decks.find((d) => d.name === name) || {
+                                            name: formatDeckName(name),
+                                        }
                                     )}
                                     stroke={COLOR_PALETTE[idx % COLOR_PALETTE.length]}
                                     strokeWidth={3}
@@ -487,6 +494,17 @@ const StatisticsPage = () => {
                     </MatrixTable>
                 </MatrixWrapper>
             </Section>
+            </>
+        );
+    };
+
+    return (
+        <PageContainer>
+            <HeaderRow>
+                <Header />
+            </HeaderRow>
+
+            {renderContent()}
 
             <SeoContent>
                 <h2>Pokémon TCG Pocket statistics and meta trends</h2>

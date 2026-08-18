@@ -5,9 +5,9 @@ export const EXPANSION_NAME = "Ruler of the Skies (B4)"
 
 export const FREE_DECK_AMOUNT = 30;
 export const CARDS_URL =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v4.json";
+  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/cards.min.json";
 export const EXPANSIONS_URL =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/expansions.json";
+  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/expansions.min.json";
 export const GITHUB_URL =
   "https://github.com/chase-manning/pokemon-tcg-pocket-tier-list";
 export const CARDS_REPO_URL =
