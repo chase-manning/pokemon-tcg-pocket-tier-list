@@ -23,7 +23,7 @@ jobs:
       # legacy react-snap/puppeteer in the build step needs the default Node.
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 24.16.0
+          node-version: 24.19.0
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"

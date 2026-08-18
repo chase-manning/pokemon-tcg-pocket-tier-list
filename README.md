@@ -16,7 +16,7 @@ A web application that tracks and displays the current best decks for the Pokém
 
 ### Prerequisites
 
-- Node.js 18 or higher (the analysis pipeline uses global `fetch`)
+- Node.js 24.19.0, the version the CI workflows pin. The analysis pipeline needs at least Node 18 for global `fetch`.
 - npm or yarn
 
 ### Installation
@@ -46,6 +46,8 @@ Detailed documentation for maintaining the project is available in the `docs/` d
 - **[How-to guide: Updating archetypes and expansions](docs/how-to/updating-archetypes-and-expansions.md)**: Instructions for modifying the archetype matcher and rolling over the pipeline for a new set release.
 - **[Explanation: Statistical scoring and recency weighting](docs/explanation/statistical-scoring.md)**: The math behind the tier list, including the Wilson shrinkage estimator and recency multipliers.
 - **[Reference: Analysis pipeline](docs/reference/analysis-pipeline.md)**: A technical overview of the backend data flow and scripting architecture.
+- **[How-to guide: Running the frontend checks](docs/how-to/running-frontend-checks.md)**: Running the type, lint and test checks locally, and what CI runs on a pull request.
+- **[Reference: Card data](docs/reference/card-data-contract.md)**: How the upstream card payload is normalised, what each field means, and how the app handles ids that fall out of step.
 
 ## 🙌 Contributing
 

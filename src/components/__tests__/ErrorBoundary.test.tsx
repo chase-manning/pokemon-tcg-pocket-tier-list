@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "../ErrorBoundary";
 
 const Boom = (): JSX.Element => {
   throw new Error("kaboom");
@@ -9,7 +9,7 @@ describe("ErrorBoundary", () => {
   let consoleError: jest.SpyInstance;
 
   beforeEach(() => {
-    // React logs the caught error itself; silence it so the run stays readable.
+    // React logs the caught error too, which clutters the run.
     consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
   });
 

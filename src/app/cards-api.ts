@@ -1,9 +1,6 @@
 import { CARDS_URL } from "./constants";
 
-/**
- * The shape the cards dataset actually ships (v5).
- * Only the fields the app consumes are declared.
- */
+/** The field names the v5 dataset ships. Only what the app reads is declared. */
 export interface RawCardType {
   id: string;
   name: string;
