@@ -6,6 +6,16 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import { CardType, fetchCards } from "../app/cards-api";
 import useExpansions from "../app/use-expansions";
+import {
+  cardToCount,
+  cardToId,
+  deckNameToIconIds,
+  findUnresolvedCardIds,
+  hasEnoughLatestExpansionCards,
+  isAffordable,
+  matchesEnergy,
+  matchesExFilter,
+} from "../app/deck-filters";
 
 export type { CardType };
 
@@ -55,24 +65,6 @@ interface DecksContextType {
 
 const DecksContext = createContext<DecksContextType | undefined>(undefined);
 
-const cardToId = (card: string): string => {
-  return card.split(":")[1];
-};
-
-const cardToCount = (card: string): number => {
-  return parseInt(card.split(":")[0]);
-};
-
-const deckNameToIconIds = (name: string): string[] => {
-  return name.split("&").map((cardName: string) => {
-    const cardNameParts = cardName.split("-");
-    return [
-      cardNameParts[cardNameParts.length - 2],
-      cardNameParts[cardNameParts.length - 1],
-    ].join("-");
-  });
-};
-
 const maxStrength = (deck: PartialDeckType): number => {
   return deck.lists.reduce((curr: number, list: PartialList) => {
     if (list.strength > curr) return list.strength;
@@ -101,7 +93,8 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   });
 
   const cardsMapping: Record<string, CardType> = useMemo(() => {
-    return cards?.reduce((acc: Record<string, CardType>, card: CardType) => {
+    // `cards` is undefined until the query resolves.
+    return (cards ?? []).reduce((acc: Record<string, CardType>, card: CardType) => {
       acc[card.id] = card;
       return acc;
     }, {});
@@ -136,7 +129,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     const { decks, matchupData } = decksData;
 
     const unresolvedCardIds = new Set<string>();
-    const canResolve = (id: string): boolean => {
+    const canResolveIcon = (id: string): boolean => {
       if (cardsMapping[id]) return true;
       unresolvedCardIds.add(id);
       return false;
@@ -152,58 +145,36 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
         .map((deck: PartialDeckType) => {
           const filteredLists = deck.lists
               .filter((list: PartialList) => {
-                return list.cards.every((card: string) =>
-                    canResolve(cardToId(card))
+                const unresolved = findUnresolvedCardIds(
+                    list.cards,
+                    cardsMapping
                 );
+                unresolved.forEach((id: string) => unresolvedCardIds.add(id));
+                return unresolved.length === 0;
               })
-              .filter((list: PartialList) => {
-                // A single O(N) pass
-                for (const card of list.cards) {
-                  const id = cardToId(card);
-                  if (missingCounts[id]) {
-                    const countNeeded = cardToCount(card);
-                    if (countNeeded > 2 - missingCounts[id]) {
-                      return false;
-                    }
-                  }
-                }
-                return true;
-              })
-              .filter((list: PartialList) => {
-                if (energy === null) return true;
-                return list.cards.every((card: string) => {
-                  const id = cardToId(card);
-                  const cardData = cardsMapping[id];
-                  return cardData.type === energy || cardData.supertype === "Trainer";
-                });
-              })
-              .filter((list: PartialList) => {
-                if (includeEx) return true;
-                return list.cards.every((card: string) => {
-                  const id = cardToId(card);
-                  const cardData = cardsMapping[id];
-                  return cardData.supertype === "Trainer" || !cardData.ex;
-                });
-              })
-              .filter((list: PartialList) => {
-                if (latestExpansionCards === null || latestExpansionId === null) return true;
-
-                let cardsFromLatestExpansion = 0;
-                for (const card of list.cards) {
-                  const id = cardToId(card);
-                  const cardData = cardsMapping[id];
-                  if (cardData.id.split("-")[0] === latestExpansionId) {
-                    cardsFromLatestExpansion += cardToCount(card);
-                  }
-                }
-                return cardsFromLatestExpansion >= latestExpansionCards;
-              });
+              .filter((list: PartialList) =>
+                  isAffordable(list.cards, missingCounts)
+              )
+              .filter((list: PartialList) =>
+                  matchesEnergy(list.cards, cardsMapping, energy)
+              )
+              .filter((list: PartialList) =>
+                  matchesExFilter(list.cards, cardsMapping, includeEx)
+              )
+              .filter((list: PartialList) =>
+                  hasEnoughLatestExpansionCards(
+                      list.cards,
+                      cardsMapping,
+                      latestExpansionId,
+                      latestExpansionCards
+                  )
+              );
 
           return { ...deck, lists: filteredLists };
         })
         .filter((deck: PartialDeckType) => deck.lists.length > 0)
         .filter((deck: PartialDeckType) =>
-            canResolve(deckNameToIconIds(deck.name)[0])
+            canResolveIcon(deckNameToIconIds(deck.name)[0])
         )
         .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
         .slice(0, deckAmount);

@@ -1,22 +1,20 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { DecksProvider, useDecks } from "./DecksContext";
-import rawCards from "../app/__fixtures__/cards.json";
+import { DecksProvider, useDecks } from "../DecksContext";
+import rawCards from "../../app/__fixtures__/cards.json";
 
-// Premium status is the only dependency that reaches for Firebase; the card
-// resolution under test doesn't care what it returns.
-jest.mock("../app/use-is-premium", () => ({
+// The only dependency that reaches for Firebase.
+jest.mock("../../app/use-is-premium", () => ({
   __esModule: true,
   default: () => true,
 }));
 
-jest.mock("../app/use-expansions", () => ({
+jest.mock("../../app/use-expansions", () => ({
   __esModule: true,
   default: () => [],
 }));
 
-// "venusaur-a1-004" and "bulbasaur-a1-001" both resolve against the fixture.
-// "missingno-a1-999" does not
+// a1-999 is the drifted id: it has no entry in the fixture.
 const GOOD_DECK = "venusaur-a1-004&bulbasaur-a1-001";
 const DRIFTED_DECK = "missingno-a1-999";
 
@@ -83,17 +81,13 @@ describe("DecksProvider with a drifted card id", () => {
   it("still mounts and renders the decks it could resolve", async () => {
     renderProvider();
 
-    await waitFor(() =>
-      expect(screen.getByText(GOOD_DECK)).toBeInTheDocument()
-    );
+    expect(await screen.findByText(GOOD_DECK)).toBeInTheDocument();
   });
 
   it("drops the deck referencing the unresolvable card", async () => {
     renderProvider();
 
-    await waitFor(() =>
-      expect(screen.getByText(GOOD_DECK)).toBeInTheDocument()
-    );
+    await screen.findByText(GOOD_DECK);
     expect(screen.queryByText(DRIFTED_DECK)).not.toBeInTheDocument();
   });
 

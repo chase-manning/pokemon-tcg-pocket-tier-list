@@ -1,8 +1,7 @@
-import { RawCardType, normaliseCard, normaliseMultipleCards } from "./cards-api";
-import fixture from "./__fixtures__/cards.json";
+import { RawCardType, normaliseCard, normaliseMultipleCards } from "../cards-api";
+import fixture from "../__fixtures__/cards.json";
 
-// Three records copied verbatim (minus unused fields) from the live
-// v5.1.0 payload: a plain Pokémon, a Trainer, and an ex Pokémon.
+// Copied from the live v5.1.0 payload: a Pokémon, a Trainer, an ex Pokémon.
 const [bulbasaur, erika, venusaurEx] = fixture as RawCardType[];
 
 describe("normaliseCard", () => {
