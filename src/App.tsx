@@ -6,6 +6,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { DecksProvider } from "./contexts/DecksContext";
 import AdAnchor from "./ads/AdAnchor";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
+import ErrorBoundary, { LoadingNotice } from "./components/ErrorBoundary";
 
 const LandingPage = lazy(() => import("./pages/landing/LandingPage"));
 const TierListPage = lazy(() => import("./pages/tier-list/TierListPage"));
@@ -36,9 +37,12 @@ const StyledApp = styled.div`
 const Layout = () => {
   return (
       <StyledApp>
-        <Suspense fallback={<div role="alert" aria-busy="true">Loading...</div>}>
-          <Outlet />
-        </Suspense>
+        {/* Inner boundary: contains a page-level crash to the routed view. */}
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingNotice />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
         <AdAnchor />
       </StyledApp>
   );
@@ -46,30 +50,32 @@ const Layout = () => {
 
 const App = () => {
   return (
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <DecksProvider>
-            <ContentReadyProvider>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<LandingPage />} />
-                  <Route path="tier-list" element={<TierListPage />} />
-                  <Route path="cards-list" element={<CardsListPage />} />
-                  <Route path="expansion-list" element={<ExpansionListPage />} />
-                  <Route path="statistics" element={<StatisticsPage />} />
-                  <Route path="privacy" element={<PrivacyPage />} />
-                  <Route path="about" element={<AboutPage />} />
-                  <Route path="deck">
-                    <Route index element={<DeckPage />} />
-                    <Route path=":deckId" element={<DeckPage />} />
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <DecksProvider>
+              <ContentReadyProvider>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<LandingPage />} />
+                    <Route path="tier-list" element={<TierListPage />} />
+                    <Route path="cards-list" element={<CardsListPage />} />
+                    <Route path="expansion-list" element={<ExpansionListPage />} />
+                    <Route path="statistics" element={<StatisticsPage />} />
+                    <Route path="privacy" element={<PrivacyPage />} />
+                    <Route path="about" element={<AboutPage />} />
+                    <Route path="deck">
+                      <Route index element={<DeckPage />} />
+                      <Route path=":deckId" element={<DeckPage />} />
+                    </Route>
+                    <Route path="*" element={<LandingPage />} />
                   </Route>
-                  <Route path="*" element={<LandingPage />} />
-                </Route>
-              </Routes>
-            </ContentReadyProvider>
-          </DecksProvider>
-        </AuthProvider>
-      </QueryClientProvider>
+                </Routes>
+              </ContentReadyProvider>
+            </DecksProvider>
+          </AuthProvider>
+        </QueryClientProvider>
+      </ErrorBoundary>
   );
 };
 

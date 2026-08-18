@@ -63,6 +63,16 @@ const cardToCount = (card: string): number => {
   return parseInt(card.split(":")[0]);
 };
 
+const deckNameToIconIds = (name: string): string[] => {
+  return name.split("&").map((cardName: string) => {
+    const cardNameParts = cardName.split("-");
+    return [
+      cardNameParts[cardNameParts.length - 2],
+      cardNameParts[cardNameParts.length - 1],
+    ].join("-");
+  });
+};
+
 const maxStrength = (deck: PartialDeckType): number => {
   return deck.lists.reduce((curr: number, list: PartialList) => {
     if (list.strength > curr) return list.strength;
@@ -125,6 +135,13 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
     const { decks, matchupData } = decksData;
 
+    const unresolvedCardIds = new Set<string>();
+    const canResolve = (id: string): boolean => {
+      if (cardsMapping[id]) return true;
+      unresolvedCardIds.add(id);
+      return false;
+    };
+
     // Pre-calculate missing cards map for O(1) lookups
     const missingCounts: Record<string, number> = {};
     for (const id of missing) {
@@ -134,6 +151,11 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     const decksFiltered = decks
         .map((deck: PartialDeckType) => {
           const filteredLists = deck.lists
+              .filter((list: PartialList) => {
+                return list.cards.every((card: string) =>
+                    canResolve(cardToId(card))
+                );
+              })
               .filter((list: PartialList) => {
                 // A single O(N) pass
                 for (const card of list.cards) {
@@ -152,7 +174,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 return list.cards.every((card: string) => {
                   const id = cardToId(card);
                   const cardData = cardsMapping[id];
-                  if (!cardData) throw new Error(`Card not found: ${id}`);
                   return cardData.type === energy || cardData.supertype === "Trainer";
                 });
               })
@@ -161,7 +182,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 return list.cards.every((card: string) => {
                   const id = cardToId(card);
                   const cardData = cardsMapping[id];
-                  if (!cardData) throw new Error(`Card not found: ${id}`);
                   return cardData.supertype === "Trainer" || !cardData.ex;
                 });
               })
@@ -172,7 +192,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 for (const card of list.cards) {
                   const id = cardToId(card);
                   const cardData = cardsMapping[id];
-                  if (!cardData) throw new Error(`Card not found: ${id}`);
                   if (cardData.id.split("-")[0] === latestExpansionId) {
                     cardsFromLatestExpansion += cardToCount(card);
                   }
@@ -183,6 +202,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
           return { ...deck, lists: filteredLists };
         })
         .filter((deck: PartialDeckType) => deck.lists.length > 0)
+        .filter((deck: PartialDeckType) =>
+            canResolve(deckNameToIconIds(deck.name)[0])
+        )
         .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
         .slice(0, deckAmount);
 
@@ -211,9 +233,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
               const amount = cardToCount(oldCard);
               const id = cardToId(oldCard);
               const card = cardsMapping[id];
-              if (!card) {
-                throw new Error(`Card not found: ${id}`);
-              }
               for (let i = 0; i < amount; i++) {
                 newCards.push(card);
               }
@@ -225,15 +244,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             };
           });
 
-          const cardNames = oldDeck.name.split("&");
-          const cardIds = cardNames.map((cardName) => {
-            const cardNameParts = cardName.split("-");
-            const cardIdParts = [
-              cardNameParts[cardNameParts.length - 2],
-              cardNameParts[cardNameParts.length - 1],
-            ];
-            return cardIdParts.join("-");
-          });
+          const cardIds = deckNameToIconIds(oldDeck.name);
 
           const deck: FullDeckType = {
             id: oldDeck.name.toLowerCase().replace(/\s/g, "-"),
@@ -256,6 +267,14 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             (a: FullDeckType, b: FullDeckType) =>
                 getSortValue(b, sortBy) - getSortValue(a, sortBy)
         );
+
+    if (unresolvedCardIds.size > 0) {
+      console.warn(
+          `Skipped decks referencing ${unresolvedCardIds.size} card id(s) missing from the card data: ${Array.from(
+              unresolvedCardIds
+          ).join(", ")}`
+      );
+    }
 
     if (energy !== null) return fullDecks;
 
