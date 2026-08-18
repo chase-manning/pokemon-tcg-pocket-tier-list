@@ -27,6 +27,7 @@ export const ADSENSE_SLOTS = {
   landing: "2452157107",
   tierList: "9572403149",
   deck: "8781910120",
+  statistics: "",
 } as const;
 
 export type AdPlacement = keyof typeof ADSENSE_SLOTS;

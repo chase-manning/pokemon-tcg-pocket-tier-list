@@ -13,7 +13,7 @@ import {
 } from "./settings";
 
 const CARDS_API =
-  "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/v4.json";
+  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/cards.min.json";
 
 const run = async () => {
   const cardsPromise = fetch(CARDS_API);
@@ -131,6 +131,7 @@ const run = async () => {
       lists,
       popularity: deckScore.popularity,
       percentOfGames,
+      score: lists[0]?.score ?? 0
     });
   }
 
@@ -206,6 +207,41 @@ const run = async () => {
       }
     }
   }
+
+  const trendData: Record<string, any> = {};
+  const top6Names = [...bestDecks]
+      .sort((a, b) => b.lists[0].score - a.lists[0].score)
+      .slice(0, 6)
+      .map((d) => d.name);
+
+  for (const deck of qualifiedDecks) {
+    const dateStr = deck.date.split("T")[0];
+
+    if (!trendData[dateStr]) {
+      trendData[dateStr] = { date: dateStr, totalGames: 0 };
+      top6Names.forEach((name) => (trendData[dateStr][name] = 0));
+    }
+
+    trendData[dateStr].totalGames += deck.totalGames;
+    if (top6Names.includes(deck.name)) {
+      trendData[dateStr][deck.name] += deck.totalGames;
+    }
+  }
+
+  const trends = Object.values(trendData)
+      .map((day) => {
+        const result: any = { date: day.date };
+        top6Names.forEach((name) => {
+          result[name] = day.totalGames > 0 ? (day[name] / day.totalGames) * 100 : 0;
+        });
+        return result;
+      })
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  fs.writeFileSync(
+      "../public/data/historical-trends.json",
+      JSON.stringify(trends, null, 2)
+  );
 
   fs.writeFileSync(
     "./data/card-scores.json",

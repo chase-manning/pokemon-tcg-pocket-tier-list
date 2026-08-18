@@ -127,6 +127,6 @@ describe("getDeckName", () => {
     };
 
     const result = getDeckName(deck);
-    expect(result).toBeNull();
+    expect(result).toBe("professor's-research-pa-007");
   });
 });

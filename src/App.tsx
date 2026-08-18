@@ -12,6 +12,7 @@ const TierListPage = lazy(() => import("./pages/tier-list/TierListPage"));
 const DeckPage = lazy(() => import("./pages/deck/DeckPage"));
 const CardsListPage = lazy(() => import("./pages/cards-list/CardsListPage"));
 const ExpansionListPage = lazy(() => import("./pages/expansion-list/ExpansionListPage"));
+const StatisticsPage = lazy(() => import("./pages/stats/StatisticsPage"));
 const PrivacyPage = lazy(() => import("./pages/legal/PrivacyPage"));
 const AboutPage = lazy(() => import("./pages/legal/AboutPage"));
 
@@ -55,6 +56,7 @@ const App = () => {
                   <Route path="tier-list" element={<TierListPage />} />
                   <Route path="cards-list" element={<CardsListPage />} />
                   <Route path="expansion-list" element={<ExpansionListPage />} />
+                  <Route path="statistics" element={<StatisticsPage />} />
                   <Route path="privacy" element={<PrivacyPage />} />
                   <Route path="about" element={<AboutPage />} />
                   <Route path="deck">
