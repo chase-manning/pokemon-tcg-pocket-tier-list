@@ -4,6 +4,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@c15t/react": "2.2.1",
+    "@c15t/scripts": "2.2.0",
     "@invertase/firestore-stripe-payments": "^0.0.8",
     "@tanstack/react-query": "^5.76.0",
     "@testing-library/jest-dom": "^5.17.0",

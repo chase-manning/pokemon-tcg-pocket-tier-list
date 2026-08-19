@@ -1,3 +1,4 @@
+import { useConsentManager } from "@c15t/react";
 import useIsPremium from "../app/use-is-premium";
 import { ADS_ENABLED, IS_DEV } from "./adsConfig";
 import { useContentReady } from "./ContentReadyContext";
@@ -13,17 +14,25 @@ export interface AdsState {
 
 // Single source of truth for ad gating. Nothing renders unless ADS_ENABLED is
 // on; beyond that, ads are hidden for Premium users (ad-free is a Premium
-// benefit) and never rendered until premium status is known. Development shows
-// placeholders in place of real AdSense units.
+// benefit) and never rendered until premium status is known. Real ads also
+// require the visitor's marketing consent. Development shows placeholders in
+// place of real AdSense units.
 const useAdsState = (): AdsState => {
   const isPremium = useIsPremium();
   const contentReady = useContentReady();
+  const { has } = useConsentManager();
   const resolved = isPremium !== null;
   const isFree = resolved && !isPremium;
 
+  // In production a slot renders only after the visitor consents to marketing,
+  // so no ad script or cookie loads beforehand. Development still shows the
+  // placeholder without a consent choice, so the layout can be checked.
+  const marketingConsent = has("marketing");
+
   // Only show ads once the current page has rendered real content, so ads never
   // appear on loading, error, or content-less screens (AdSense policy).
-  const showAds = ADS_ENABLED && isFree && contentReady;
+  const showAds =
+    ADS_ENABLED && isFree && contentReady && (IS_DEV || marketingConsent);
   const useReal = showAds && !IS_DEV;
 
   return { resolved, showAds, useReal };

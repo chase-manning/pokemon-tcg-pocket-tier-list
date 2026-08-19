@@ -11,13 +11,16 @@
 /build
 
 # IDEs and editors
-.agents/
 .idea/
 .vscode/
 .cursor/
 *.swp
 *.swo
 skills-lock.json
+
+# Local skill symlink mirror. .claude/skills/* are per-machine symlinks into
+# .agents/skills; the real skill content is tracked under .agents/ instead.
+.claude/skills/
 
 # OS generated files
 .DS_Store
@@ -43,3 +46,4 @@ analysis/data/
 analysis/dist/
 private/
 update-decks.sh
+.aider*

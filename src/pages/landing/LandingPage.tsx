@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Hero from "./Hero";
+import HomeBanner from "../../components/HomeBanner";
 import Header from "../../components/Header";
 import Features from "./Features";
 import BestDeckFinder from "./BestDeckFinder";
@@ -22,6 +23,7 @@ const LandingPage = () => {
 
   return (
     <StyledLandingPage>
+      <HomeBanner />
       <Hero />
       <Features />
       <AdInContent placement="landing" />

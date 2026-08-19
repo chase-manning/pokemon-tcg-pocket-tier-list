@@ -1,0 +1,77 @@
+/*
+ * c15t ships its component styles inside an @layer, which loses the cascade to
+ * the app's unlayered styled-components globals, so the banner collapses to the
+ * 10px root font size. These unlayered rules win that cascade and restyle the
+ * banner to the app's scale and palette. Buttons are targeted by their stable
+ * data-testid; text and layout by the stable c15t-ui-* class prefixes.
+ */
+
+@keyframes c15t-accent-drift {
+  0% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+[class*="c15t-ui-card"] {
+  padding: 2.4rem !important;
+  max-width: 46rem !important;
+}
+
+[class*="c15t-ui-title"] {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  margin-bottom: 0.6rem !important;
+}
+
+[class*="c15t-ui-description"] {
+  font-size: 1.5rem !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+[class*="c15t-ui-footer"] {
+  gap: 1rem !important;
+}
+
+[class*="c15t-ui-button"] {
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  padding: 1rem 2rem !important;
+  border-radius: 1rem !important;
+  min-height: 4.2rem !important;
+  white-space: nowrap !important;
+}
+
+/* Give the banner more room on wider screens so the button labels sit on one
+   line rather than wrapping inside each button. */
+@media (min-width: 768px) {
+  [class*="c15t-ui-card"] {
+    min-width: 48rem !important;
+    max-width: 54rem !important;
+  }
+}
+
+[data-testid="consent-banner-accept-button"] {
+  background: linear-gradient(
+    45deg,
+    var(--s),
+    var(--a),
+    var(--b),
+    var(--c),
+    var(--d),
+    var(--e),
+    var(--s)
+  ) !important;
+  background-size: 300% 300% !important;
+  animation: c15t-accent-drift 8s ease infinite !important;
+  color: var(--bg) !important;
+  border: none !important;
+}
+
+[data-testid="consent-banner-reject-button"],
+[data-testid="consent-banner-customize-button"] {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
