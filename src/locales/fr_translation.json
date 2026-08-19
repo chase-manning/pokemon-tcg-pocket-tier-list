@@ -1,4 +1,7 @@
 {
+  "home": {
+    "banner": "Top Pocket Decks is alive and well, with a new maintainer keeping it updated. Rankings are current for {{expansion}} as of {{date}}."
+  },
   "deckPage": {
     "matchups": "Matchups",
     "strongAgainst": "Fort Contre",

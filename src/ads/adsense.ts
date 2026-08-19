@@ -13,15 +13,15 @@ declare global {
 
 let injected = false;
 
-// Ensures the AdSense script is present. In production it ships in index.html's
-// <head> (for verification/review), so this is normally a no-op — it detects
-// the existing tag and skips. Kept as a fallback so AdSlot works even if the
-// head tag is ever absent. No-op without a publisher ID.
+// Injects the AdSense loader on demand. AdSlot calls this the first time a slot
+// renders, which only happens once the visitor has consented to marketing, so
+// the script never loads without consent. It is a no-op if the loader is
+// already present or no publisher ID is set.
 export const ensureAdSenseScript = (client: string): void => {
   if (injected || typeof window === "undefined" || !client) return;
   injected = true;
 
-  // Already loaded via index.html (or a previous call)? Don't add a duplicate.
+  // A previous call may already have added it; don't add a duplicate.
   if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
 
   const script = document.createElement("script");

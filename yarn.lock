@@ -1110,6 +1110,40 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@c15t/react@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@c15t/react/-/react-2.2.1.tgz#2e0a4cf0557f3d9338fcea760f21f7dae16bbd2f"
+  integrity sha512-Xl/KPHGBDekRwH+k09fAyNXUI2GirDAWz/R87Yr+htsp+b66A51yMN2hzJCcH1gxm4MLjOzDqHP1nAE/fRJ09Q==
+  dependencies:
+    "@c15t/ui" "2.2.1"
+    "@types/google.maps" "3.65.3"
+    c15t "2.2.1"
+
+"@c15t/schema@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@c15t/schema/-/schema-2.2.0.tgz#21e3376e176f9c134135c51caa04bacb3eaddf46"
+  integrity sha512-rj6H1AlbbSnioNaw9Cvoc3vCchVAV/55Jd/6wrzhzW+2z2ByUyf+pDvZXQnAm0KMfsuQ8oDgqNqmPdqD1aJNFw==
+  dependencies:
+    valibot "1.4.2"
+
+"@c15t/scripts@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@c15t/scripts/-/scripts-2.2.0.tgz#e05bc60d60c9e17ca9988f8ba0348b66d393969b"
+  integrity sha512-FgmnIW0JL5nalY6QKG5+gzukzALMqq6LpXzn5+iwRA8OVukjoXBdgakdO/eytwSrv/QtxgLyFaiM0nBIZZbk0A==
+
+"@c15t/translations@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@c15t/translations/-/translations-2.2.1.tgz#20e1972aa89303b831f0bf1f7c388d635c5052d4"
+  integrity sha512-JgYXn+bTyys/7e7SMfu19zVBlW1cED6/CqJ5mbOmmfMr9MSkaAq0/UK/6/29FhcfCJKmHq+kQqKa0igX86mJeA==
+
+"@c15t/ui@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@c15t/ui/-/ui-2.2.1.tgz#8b7d679c4e6858f0be3aa630cfc0eea5df208617"
+  integrity sha512-OlmEhScePX3xF+sPNWemLZaiJv80KuxsuxTf+Ip0ImREGeXdaOIG7Hp6IBU+8IOeJ723Q4LlD74gyV2NgTbXIQ==
+  dependencies:
+    "@c15t/translations" "2.2.1"
+    c15t "2.2.1"
+
 "@csstools/normalize.css@*":
   version "12.1.1"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-12.1.1.tgz#f0ad221b7280f3fc814689786fd9ee092776ef8f"
@@ -2688,6 +2722,11 @@
     "@types/qs" "*"
     "@types/serve-static" "^1"
 
+"@types/google.maps@3.65.3":
+  version "3.65.3"
+  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.65.3.tgz#e1af9f97435df25a2bdc4db807f82a8064e30a5d"
+  integrity sha512-tqbbx7MUtoDk+RwpZMymPDj6Skez0FhqDZNhLhS5UDmCx4D1dgP+BJOHTebiO/rhjJLa1f8te2p6mJJeFKVFOQ==
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.9"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.9.tgz#2a06bc0f68a20ab37b3e36aa238be6abdf49e8b4"
@@ -3773,6 +3812,15 @@ bytes@3.1.2, bytes@~3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
+
+c15t@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/c15t/-/c15t-2.2.1.tgz#cba0c1e6b05d1005d48b0a22628d66e997af09c2"
+  integrity sha512-6/yePflfCveo6Q1qMsX3DaKyE2OEuy41PBIl61Z7wScvJkIos3fky2RvBe8p+cScIGM0AbGoXvSEkOxbBda75g==
+  dependencies:
+    "@c15t/schema" "2.2.0"
+    "@c15t/translations" "2.2.1"
+    zustand "5.0.14"
 
 call-bind-apply-helpers@^1.0.1, call-bind-apply-helpers@^1.0.2:
   version "1.0.2"
@@ -10614,6 +10662,11 @@ v8-to-istanbul@^8.1.0:
     convert-source-map "^1.6.0"
     source-map "^0.7.3"
 
+valibot@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.4.2.tgz#da857781187f170aeaf4498d463d25028615b0d6"
+  integrity sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -11197,3 +11250,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zustand@5.0.14:
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.14.tgz#18216c24fcb980cf36898f9c57520e67b1f77855"
+  integrity sha512-/8tAspM5LMPr28b3fwLYrtdj77ECpfZviaP75CMTnwO8ISyaE4GDIG/9rDDYq/cH9D2Xw2A2RXglLInmVBQB/g==

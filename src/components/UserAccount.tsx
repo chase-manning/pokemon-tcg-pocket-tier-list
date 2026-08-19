@@ -19,6 +19,21 @@ const StyledUserAccount = styled.div`
   }
 `;
 
+const SignInButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: var(--main);
+  cursor: pointer;
+  white-space: nowrap;
+`;
+
 const UserInfo = styled.button`
   display: flex;
   align-items: center;
@@ -100,7 +115,7 @@ interface Props {
 
 const UserAccount = ({ hideIfPremium = false }: Props) => {
   const { t } = useTranslation();
-  const { user, signOut } = useAuth();
+  const { user, signOut, signInWithGoogle } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const isPremium = useIsPremium();
@@ -124,6 +139,11 @@ const UserAccount = ({ hideIfPremium = false }: Props) => {
               alt={user.displayName || "User"}
             />
           </UserInfo>
+        )}
+        {!user && (
+          <SignInButton onClick={() => signInWithGoogle()}>
+            {t("header.signIn", "Sign in with Google")}
+          </SignInButton>
         )}
         <Premium />
       </StyledUserAccount>
