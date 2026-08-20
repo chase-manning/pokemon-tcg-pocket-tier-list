@@ -49,6 +49,7 @@ export interface FullDeckType {
 interface DecksContextType {
   decks: FullDeckType[] | null;
   loading: boolean;
+  error: Error | null;
 }
 
 const DecksContext = createContext<DecksContextType | undefined>(undefined);
@@ -88,22 +89,29 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     }, {});
   }, [cards]);
 
-  const { data: decksData, isLoading: decksLoading } = useQuery({
-    queryKey: ["decks"],
-    queryFn: async () => {
-      const [decksResponse, matchupDataResponse] = await Promise.all([
-        fetch("/data/best-decks.json"),
-        fetch("/data/matchup-data.json"),
-      ]);
+  const { data: decksData, isLoading: decksLoading, isError: decksError } = useQuery({
+      queryKey: ["decks"],
+      queryFn: async () => {
+        const [decksResponse, matchupDataResponse] = await Promise.all([
+          fetch("/data/best-decks.json"),
+          fetch("/data/matchup-data.json"),
+        ]);
 
-      const [decksData, matchupData] = await Promise.all([
-        decksResponse.json(),
-        matchupDataResponse.json(),
-      ]);
+        if (!decksResponse.ok) {
+          throw new Error(`Failed to fetch best-decks.json: ${decksResponse.status} ${decksResponse.statusText}`);
+        }
+        if (!matchupDataResponse.ok) {
+          throw new Error(`Failed to fetch matchup-data.json: ${matchupDataResponse.status} ${matchupDataResponse.statusText}`);
+        }
 
-      return { decks: decksData, matchupData };
-    },
-  });
+        const [decksData, matchupData] = await Promise.all([
+          decksResponse.json(),
+          matchupDataResponse.json(),
+        ]);
+
+        return { decks: decksData, matchupData };
+      },
+    });
 
   const latestExpansionId = useMemo(() => {
     return expansions && expansions.length > 0
@@ -270,9 +278,10 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   ]);
 
   const value = {
-    decks,
-    loading: cardsLoading || decksLoading,
-  };
+          decks,
+          loading: cardsLoading || decksLoading,
+          error: (decksError as unknown as Error) ?? null,
+        };
 
   return (
       <DecksContext.Provider value={value}>{children}</DecksContext.Provider>
