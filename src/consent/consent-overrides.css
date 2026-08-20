@@ -12,6 +12,16 @@
   100% { background-position: 0 50%; }
 }
 
+/* The banner is position:fixed;bottom:0, which ignores the body's
+   padding-bottom that reserves space for the sticky AdAnchor bar. Offset it by
+   the same --ad-anchor-h so its buttons never sit under the ad bar on mobile
+   (where both occupy the bottom strip). Without this the AdAnchor intercepts
+   the tap on Accept/Reject/Customize. z-index keeps it above the ad layer. */
+[class*="c15t-ui-root"] {
+  bottom: var(--ad-anchor-h, 0px) !important;
+  z-index: 1001 !important;
+}
+
 [class*="c15t-ui-card"] {
   padding: 2.4rem !important;
   max-width: 46rem !important;

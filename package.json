@@ -1,7 +1,8 @@
 {
   "name": "pokemon-tcg-pocket-deck-tier-list",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
+  "author": "Leonid Dalin & Chase Manning",
   "private": false,
   "dependencies": {
     "@c15t/react": "2.2.1",

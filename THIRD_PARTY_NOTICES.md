@@ -1,6 +1,6 @@
 # Third-party notices
 
-Top Pocket Decks is licensed under the MIT Licence (see [LICENSE](LICENSE)). The
+Top Pocket Decks is licensed under the AGPL-3.0-or-later (see [LICENSE](LICENSE)). The
 production build bundles third-party code, redistributed here under the licences
 listed below.
 

@@ -1,49 +1,59 @@
 # dependencies
-/node_modules
-/analysis/node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 
-# testing
-/coverage
+# build
+build/
+analysis/dist/
+analysis/data/
+out/
+.cache/
+*.tsbuildinfo
 
-# production
-/build
+# test and lint cache
+coverage/
+.jest-cache/
+.eslintcache
 
-# IDEs and editors
-.idea/
+# environment
+.env
+.env*.local
+*.env
+!.env.example
+!.env.template
+
+# hosting and cloud cli cache
+.firebase/
+
+# logs
+*.log*
+firebase-debug.log*
+
+# ides and llm artifacts
 .vscode/
+.idea/
 .cursor/
+.aider*
+.hermes/
+skills-lock.json
 *.swp
 *.swo
-skills-lock.json
+*~
 
-# Local skill symlink mirror. .claude/skills/* are per-machine symlinks into
-# .agents/skills; the real skill content is tracked under .agents/ instead.
-.claude/skills/
-
-# OS generated files
+# os files
 .DS_Store
-.DS_Store?
 ._*
 Thumbs.db
 ehthumbs.db
-
-# logs and environment
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-/analysis/.env
+Desktop.ini
+ehthumbs.db
 
 # project specific
-analysis/data/
-analysis/dist/
 private/
 update-decks.sh
-.aider*
+c15t/docs

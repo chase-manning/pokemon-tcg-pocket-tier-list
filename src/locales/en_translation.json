@@ -113,6 +113,9 @@
     "winRate": "Win Rate",
     "notEnoughCards": "Not enough cards",
     "tryAnotherDeck": "try another deck",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
+    "undo": "Undo",
     "alternatives": "Alternatives"
   },
   "energyDropdown": {
