@@ -9,17 +9,20 @@ const getTournamentDecks = async (tournament: Tournament) => {
   const res = await fetch(
     `${BASE}/tournaments/${tournament.id}/standings${append}`
   );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch tournament decks: ${res.status} ${res.statusText}`);
+  }
   const decks_: any = await res.json();
 
   const decks = decks_.filter(
-    (deck: any) =>
-      !!deck.decklist &&
-      !!deck.decklist.pokemon &&
-      !!deck.decklist.trainer &&
-      !!deck.record &&
-      !!deck.record.wins &&
-      !!deck.record.losses
-  );
+      (deck: any) =>
+        !!deck.decklist &&
+        !!deck.decklist.pokemon &&
+        !!deck.decklist.trainer &&
+        !!deck.record &&
+        typeof deck.record.wins === "number" &&
+        typeof deck.record.losses === "number"
+    );
 
   const amountWithEx = decks.filter((deck: any) => {
     return deck.decklist.pokemon.some((card: any) => card.name.endsWith(" ex"));

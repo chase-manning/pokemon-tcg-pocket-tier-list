@@ -13,6 +13,7 @@ const downloadDecks = async () => {
   const currentDecks = JSON.parse(fs.readFileSync("./data/decks.json", "utf-8"));
   const processed = JSON.parse(fs.readFileSync("./data/processed-tournaments.json", "utf-8"));
 
+  let hasError = false;
   try {
     for (let i = 0; i < tournaments.length; i++) {
       const tournament = tournaments[i];
@@ -23,10 +24,20 @@ const downloadDecks = async () => {
 
       console.log(`${round(((i + 1) / tournaments.length) * 100, 2)}%`);
     }
+  } catch (error) {
+    hasError = true;
+    console.error("Pipeline failed:", error);
+    throw error;
   } finally {
-      fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
-      fs.writeFileSync("./data/processed-tournaments.json", JSON.stringify(processed));
+    fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
+    fs.writeFileSync("./data/processed-tournaments.json", JSON.stringify(processed));
+    if (hasError) {
+      process.exit(1);
+    }
   }
 };
 
-downloadDecks().catch(console.error);
+downloadDecks().catch((error) => {
+  console.error("Fatal error:", error);
+  process.exit(1);
+});

@@ -17,6 +17,9 @@ export const getTournaments = async () => {
   const res = await fetch(
     `${BASE}/tournaments${append}&limit=10000&game=${GAME}`
   );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch tournaments: ${res.status} ${res.statusText}`);
+  }
   const tournaments: Tournament[] = (await res.json()) as Tournament[];
   const processedTournamentIds = processedTournaments().map(
     (t: Tournament) => t.id
