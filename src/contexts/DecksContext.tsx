@@ -6,6 +6,7 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import { CardType, fetchCards } from "../app/cards-api";
 import useExpansions from "../app/use-expansions";
+import { PipelineMatchupEntry } from "../types/pipeline-data";
 import {
   cardToCount,
   cardToId,
@@ -19,11 +20,7 @@ import {
 
 export type { CardType };
 
-export interface MatchupType {
-  name: string;
-  winRate: number;
-  totalGames: number;
-}
+export type MatchupType = PipelineMatchupEntry;
 
 interface PartialList {
   cards: string[];

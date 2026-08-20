@@ -12,6 +12,7 @@ import {
     Legend,
 } from "recharts";
 import useIsPremium from "../../app/use-is-premium";
+import { PipelineTrendRow } from "../../types/pipeline-data";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
@@ -266,7 +267,7 @@ const StatisticsPage = () => {
     const { decks, loading } = useDecks();
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
-    const [trendData, setTrendData] = useState<any[]>([]);
+    const [trendData, setTrendData] = useState<PipelineTrendRow[]>([]);
 
     useMarkContentReady(!loading && !!decks);
 
