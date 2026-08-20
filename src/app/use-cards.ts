@@ -80,6 +80,7 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
     seenIds.add(id);
 
     const count = cardNameToCount(card.name);
+    const collectedCount = collectedCounts[id] || 0;
     const cardInfo = cardData.find((c: CardType) => c.id === id);
     if (!cardInfo) {
       unresolvedIds.add(id);
@@ -93,7 +94,7 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
       score,
       popularity: card.popularity,
       set,
-      count,
+      count: Math.max(0, count - collectedCount),
     });
   }
 
