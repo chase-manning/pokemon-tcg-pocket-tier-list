@@ -96,6 +96,12 @@
     "removeAds": "Remove ads",
     "close": "Close"
   },
+  "adblocker": {
+    "lead": "Does your ad blocker respect your privacy?",
+    "respect": "If you're not sure, I and many others can recommend",
+    "recommend": "by Raymond Hill.",
+    "footer": "Obviously, not sponsored. Just a genuine concern from a fellow like-minded individual."
+  },
   "userAccount": {
     "title": "User Account",
     "signOut": "Sign out"

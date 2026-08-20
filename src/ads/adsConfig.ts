@@ -18,6 +18,9 @@ export const IS_DEV = process.env.NODE_ENV !== "production";
 // index.html's verification snippet and in every served page.
 export const ADSENSE_CLIENT = "ca-pub-3547629432918335";
 
+// Full URL of the AdSense loader, also used by the ad-block probe.
+export const ADSENSE_SCRIPT_URL = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
+
 // AdSense ad unit slot IDs, one per on-screen position. Create these as
 // "Display" ad units in the AdSense dashboard (https://adsense.google.com)
 // once approved, then paste the numeric slot IDs here. Filling these plus
