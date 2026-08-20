@@ -1,49 +1,34 @@
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import Socials from "./Socials";
+import Navbar from "./Navbar";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserAccount from "./UserAccount";
-import { useAuth } from "../contexts/AuthContext";
+import { useUI } from "../contexts/UIContext";
+import useIsMobile from "../ads/useIsMobile";
+import menuIcon from "../assets/menu.svg";
+import closeIcon from "../assets/close.svg";
 
 const StyledHeader = styled.div<{ $footer?: boolean }>`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 2rem;
+  gap: 1.5rem;
+  padding: 2rem;
   position: relative;
   margin-bottom: ${(props) => (props.$footer ? "2rem" : "0")};
 
-  @media (max-width: 768px) {
-    padding: ${(props) => (props.$footer ? "0 2rem" : "0")};
-    margin-bottom: ${(props) => (props.$footer ? "2rem" : "5rem")};
-  }
-`;
-
-const Nav = styled.nav`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 4rem;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavItem = styled(Link)<{ $active: boolean }>`
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: var(--main);
-  text-decoration: none;
-  opacity: ${(props) => (props.$active ? 1 : 0.7)};
-  transition: opacity 0.2s ease;
-
-  &:hover {
-    opacity: 1;
+  @media (max-width: 900px) {
+    gap: 1rem;
+    padding: ${(props) => (props.$footer ? "2rem" : "0.75rem 1rem")};
+    margin-bottom: ${(props) => (props.$footer ? "2rem" : "1rem")};
+    /* On mobile the nav is absolutely positioned, so a grid middle column
+       would overflow: flex keeps the logo and actions at opposite edges. */
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -54,18 +39,59 @@ const RightSection = styled.div`
 
   @media (max-width: 900px) {
     gap: 1rem;
-    flex-direction: column;
   }
 `;
 
-const FooterLinks = styled.div`
-  display: flex;
+const MenuButton = styled.button`
+  display: none;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  color: var(--main);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 150ms ease-in-out;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
 
   @media (max-width: 900px) {
-    gap: 1.6rem;
+    display: flex;
   }
+`;
+
+const MenuIcon = styled.img`
+  width: 2.4rem;
+  height: 2.4rem;
+`;
+
+const FooterBar = styled.footer`
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 4rem;
+  padding: 0 2rem;
+`;
+
+const FooterBarInner = styled.div`
+  width: 100%;
+  max-width: 150rem;
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+`;
+
+const FooterLinks = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
 `;
 
 const FooterLink = styled(Link)`
@@ -80,45 +106,63 @@ const FooterLink = styled(Link)`
   }
 `;
 
+const FooterTools = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 900px) {
+    gap: 1.6rem;
+  }
+`;
+
 interface Props {
   footer?: boolean;
 }
 
 const Header = ({ footer }: Props) => {
-  const location = useLocation();
   const { t } = useTranslation();
-  const { user } = useAuth();
+  const { isNavOpen, toggleNav } = useUI();
+  const isMobile = useIsMobile();
 
   return (
-    <StyledHeader $footer={footer}>
-      <Logo />
-      <Nav>
-        <NavItem to="/tier-list" $active={location.pathname === "/tier-list"}>
-            {t("header.tierList")}
-        </NavItem>
-        <NavItem to="/deck" $active={location.pathname === "/deck" || location.pathname.startsWith("/deck/")}>
-            {t("header.bestDeckFinder")}
-        </NavItem>
-        <NavItem to="/cards-list" $active={location.pathname === "/cards-list"}>
-            {t("header.bestCards")}
-        </NavItem>
-        <NavItem to="/statistics" $active={location.pathname === "/statistics"}>
-            {t("header.statistics", "Statistics")}
-        </NavItem>
-
-      </Nav>
-      <RightSection>
-        {footer && (
-          <FooterLinks>
-            <FooterLink to="/about">{t("footer.about")}</FooterLink>
-            <FooterLink to="/privacy">{t("footer.privacy")}</FooterLink>
-          </FooterLinks>
+    <>
+      <StyledHeader $footer={footer}>
+        <Logo />
+        <Navbar />
+        {!footer && (
+          <RightSection>
+            <UserAccount />
+            {isMobile && (
+              <MenuButton
+                onClick={toggleNav}
+                aria-expanded={isNavOpen}
+                aria-label={isNavOpen ? "Close menu" : "Open menu"}
+              >
+                <MenuIcon
+                  src={isNavOpen ? closeIcon : menuIcon}
+                  alt=""
+                />
+              </MenuButton>
+            )}
+          </RightSection>
         )}
-        {footer && <LanguageSwitcher />}
-        {(!user || footer) && <Socials />}
-        {!footer && <UserAccount />}
-      </RightSection>
-    </StyledHeader>
+      </StyledHeader>
+      {footer && (
+        <FooterBar>
+          <FooterBarInner>
+            <FooterLinks>
+              <FooterLink to="/about">{t("footer.about")}</FooterLink>
+              <FooterLink to="/privacy">{t("footer.privacy")}</FooterLink>
+            </FooterLinks>
+            <FooterTools>
+              <LanguageSwitcher />
+              <Socials />
+            </FooterTools>
+          </FooterBarInner>
+        </FooterBar>
+      )}
+    </>
   );
 };
 

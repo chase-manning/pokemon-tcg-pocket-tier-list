@@ -6,6 +6,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import { BrowserRouter } from "react-router-dom";
 import MissingContextProvider from "./components/MissingContext";
 import FilterContextProvider from "./components/FilterContext";
+import { UIProvider } from "./contexts/UIContext";
 import ConsentProvider from "./consent/ConsentProvider";
 import "./i18n";
 
@@ -14,14 +15,16 @@ const rootElement = document.getElementById("root") as HTMLElement;
 const app = (
   <React.StrictMode>
     <BrowserRouter>
-      <MissingContextProvider>
-        <FilterContextProvider>
-          <GlobalStyles />
-          <ConsentProvider>
-            <App />
-          </ConsentProvider>
-        </FilterContextProvider>
-      </MissingContextProvider>
+      <UIProvider>
+        <MissingContextProvider>
+          <FilterContextProvider>
+            <GlobalStyles />
+            <ConsentProvider>
+              <App />
+            </ConsentProvider>
+          </FilterContextProvider>
+        </MissingContextProvider>
+      </UIProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

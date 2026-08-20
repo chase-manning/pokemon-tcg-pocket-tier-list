@@ -26,10 +26,6 @@ const StyledText = styled.p`
     display: none;
     font-size: 2rem;
   }
-  @media (max-width: 900px) {
-    font-size: 2rem;
-    display: flex;
-  }
 `;
 
 const Logo = () => {
