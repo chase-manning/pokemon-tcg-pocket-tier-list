@@ -17,6 +17,9 @@ describe("getTournaments", () => {
     ];
 
     global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: "OK",
       json: () => Promise.resolve(mockTournaments),
     });
 
@@ -41,6 +44,9 @@ describe("getTournaments", () => {
     );
 
     global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: "OK",
       json: () => Promise.resolve(mockTournaments),
     });
 
