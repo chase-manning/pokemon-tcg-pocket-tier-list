@@ -1,9 +1,6 @@
-export interface Card {
-  name: string;
-  count: number;
-  set: string;
-  number: string;
-}
+import { PipelineCard, PipelineMatchupEntry } from "../../../src/types/pipeline-data";
+
+export type Card = PipelineCard;
 
 export interface Deck {
   id: string;
@@ -42,16 +39,5 @@ export interface MatchupResult {
   losses: number;
 }
 
-export interface MatchupData {
-  name: string;
-  winRate: number;
-  totalGames: number;
-}
+export type MatchupData = PipelineMatchupEntry;
 
-export interface BestDeck {
-  name: string;
-  cards: Card[];
-  score: number;
-  percentOfGames: number;
-  id: string;
-}
