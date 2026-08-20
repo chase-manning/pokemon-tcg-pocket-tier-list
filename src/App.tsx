@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
 import { DecksProvider } from "./contexts/DecksContext";
 import AdAnchor from "./ads/AdAnchor";
+import AdBlockerNotice from "./components/AdBlockerNotice";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
 import ErrorBoundary, { LoadingNotice } from "./components/ErrorBoundary";
 
@@ -44,6 +45,7 @@ const Layout = () => {
             <Outlet />
           </Suspense>
         </ErrorBoundary>
+        <AdBlockerNotice />
         <AdAnchor />
       </StyledApp>
   );
