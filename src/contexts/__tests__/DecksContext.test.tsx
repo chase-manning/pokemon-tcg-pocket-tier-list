@@ -36,7 +36,10 @@ const decks = [
 const matchupData = { [GOOD_DECK]: [], [DRIFTED_DECK]: [] };
 
 const jsonResponse = (body: unknown) =>
-  Promise.resolve({ json: () => Promise.resolve(body) } as Response);
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve(body),
+  } as unknown as Response);
 
 const DeckNames = () => {
   const { decks, loading } = useDecks();
