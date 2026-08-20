@@ -385,7 +385,7 @@ const DeckPage = () => {
   useEffect(() => {
       if (deckId) return;
       if (bestScore) return;
-      if (!decks) return;
+      if (!decks || decks.length === 0) return;
       const sortedDecks = [...decks].sort((a, b) => b.score - a.score);
       const bestDeck = sortedDecks[0];
       setBestScore(bestDeck.score);
@@ -602,7 +602,7 @@ const DeckPage = () => {
                           }
 
                           return (
-                                                        <AlternativeContainer key={list.score}>
+                                                        <AlternativeContainer key={`${list.score}-${list.cards.map((c) => c.id).join("-")}`}>
                                                           <AlternativeCard src={missingCards[0].image} />
                                                           <AlternativeCard src={newCards[0].image} />
                                                           <ArrowRight src={arrowRight} />
