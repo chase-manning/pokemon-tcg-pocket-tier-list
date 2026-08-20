@@ -14,6 +14,9 @@
     "winRate": "胜率",
     "notEnoughCards": "卡牌不足",
     "tryAnotherDeck": "请尝试其他卡组",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
+    "undo": "Undo",
     "alternatives": "替代方案"
   },
   "energyDropdown": {

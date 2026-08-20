@@ -14,6 +14,9 @@
     "winRate": "Tasa de Victoria",
     "notEnoughCards": "No hay suficientes cartas",
     "tryAnotherDeck": "prueba otro mazo",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
+    "undo": "Undo",
     "alternatives": "Alternativas"
   },
   "energyDropdown": {

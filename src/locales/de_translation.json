@@ -14,6 +14,9 @@
     "winRate": "Gewinnrate",
     "notEnoughCards": "Nicht genug Karten",
     "tryAnotherDeck": "versuchen Sie ein anderes Deck",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
+    "undo": "Undo",
     "alternatives": "Alternativen"
   },
   "energyDropdown": {

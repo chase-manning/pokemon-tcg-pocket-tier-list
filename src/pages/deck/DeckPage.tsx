@@ -10,8 +10,10 @@ import useMissing from "../../app/use-missing";
 import DeckCard from "../../components/DeckCard";
 import { MIN_MATCHUP_GAMES, WINRATE_THRESHOLD } from "../../app/config";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import useIsPremium from "../../app/use-is-premium";
 import UserAccount from "../../components/UserAccount";
+import { CardType, fetchCards } from "../../app/cards-api";
 import arrowRight from "../../assets/arrow-right.svg";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
@@ -159,10 +161,74 @@ const Overlay = styled.div`
   height: 100dvh;
   width: 100dvw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2.4rem;
   font-size: 2rem;
   font-weight: 500;
+`;
+
+const Shrug = styled.div`
+  font-size: 5rem;
+  font-weight: 400;
+  color: var(--main);
+  line-height: 1.2;
+  max-width: 60rem;
+  text-align: center;
+
+  @media (max-width: 900px) {
+    font-size: 3.4rem;
+  }
+`;
+
+const EmptyMessage = styled.p`
+  font-size: 2rem;
+  font-weight: 500;
+  max-width: 60rem;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--main);
+
+  strong,
+  em {
+    font-size: inherit;
+  }
+`;
+
+const EmptyActions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+`;
+
+const Or = styled.span`
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.6);
+`;
+
+const UndoButton = styled.button<{ $disabled?: boolean }>`
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--main);
+  background: transparent;
+  border: 1px solid var(--main);
+  border-radius: 1.2rem;
+  padding: 1rem 2.4rem;
+  cursor: ${(props) => (props.$disabled ? "default" : "pointer")};
+  opacity: ${(props) => (props.$disabled ? 0.4 : 1)};
+  transition: opacity 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--main);
+    outline-offset: 2px;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -298,11 +364,23 @@ const ArrowRight = styled.img`
 
 const DeckPage = () => {
   const deckId = useParams().deckId;
-  const { decks, loading } = useDecks();
-  const { addMissing } = useMissing();
-  const { t } = useTranslation();
-  const [bestScore, setBestScore] = useState<number | null>(null);
-  const isPremium = useIsPremium();
+    const { decks, loading } = useDecks();
+    const { addMissing, undoMissing, canUndo, lastRemovedId } = useMissing();
+    const { t } = useTranslation();
+    const [bestScore, setBestScore] = useState<number | null>(null);
+    const isPremium = useIsPremium();
+
+    // Card data for resolving a removed card's name in the empty-deck notice.
+    // React Query dedupes this against the same queryKey used elsewhere, so it is
+    // a cache read, not a second network fetch.
+    const { data: cardsData } = useQuery<CardType[]>({
+      queryKey: ["cards"],
+      queryFn: fetchCards,
+    });
+    const cardsById = new Map(
+        (cardsData ?? []).map((card) => [card.id, card] as [string, CardType])
+    );
+    const lastCutName = lastRemovedId ? (cardsById.get(lastRemovedId)?.name ?? null) : null;
 
   useEffect(() => {
     if (deckId) return;
@@ -330,13 +408,29 @@ const DeckPage = () => {
   const relativeScore = deck ? deck.score / (bestScore ?? 1) : 0;
 
   if (!deck) {
-    return (
-        <Overlay>
-          {t("deckPage.notEnoughCards")},{" "}
-          <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
-        </Overlay>
-    );
-  }
+      return (
+          <Overlay>
+            <Shrug>{t("deckPage.notEnoughShrug")}</Shrug>
+            {lastCutName ? (
+                <EmptyMessage>
+                  {t("deckPage.notEnoughBody", { card: lastCutName })}
+                </EmptyMessage>
+            ) : (
+                <EmptyMessage>{t("deckPage.notEnoughCards")}</EmptyMessage>
+            )}
+            <EmptyActions>
+                            <UndoButton
+                              $disabled={!canUndo}
+                              onClick={undoMissing}
+                            >
+                              {t("deckPage.undo")}
+                            </UndoButton>
+                            <Or>or</Or>
+                            <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
+                          </EmptyActions>
+          </Overlay>
+      );
+    }
 
   const uniqueCards = deck.bestList.cards.filter(
       (card, index, self) => self.findIndex((c) => c.id === card.id) === index
