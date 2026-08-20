@@ -5,7 +5,7 @@ import getId from "./utils/get-id";
 import { calculateDeckScore } from "./utils/calculate-deck-score";
 import { calculateCardScores } from "./utils/calculate-card-scores";
 import { calculateMatchupResults } from "./utils/calculate-matchup-results";
-import { Deck, MatchupData } from "./utils/types";
+import { Deck, MatchupData, DeckList, PartialDeck } from "./utils/types";
 import { convertCardsToIds } from "./utils/convert-cards";
 import {
   MIN_WINRATE_THRESHOLD,
@@ -55,7 +55,7 @@ const run = async () => {
   );
 
   // Calculate Best Decks
-  const bestDecks = [];
+  const bestDecks: PartialDeck[] = [];
   const idExists: Record<string, boolean> = {};
   let matchupResults: Record<
     string,
@@ -101,7 +101,7 @@ const run = async () => {
     matchupResults[deckName] = calculateMatchupResults(allDecks, deckName);
 
     // Build lists from qualified decks only
-    const lists: any = [];
+    const lists: DeckList[] = [];
     for (const deck of matchingQualifiedDecks) {
       const id = getId(deck);
       if (idExists[id]) continue;
@@ -111,7 +111,7 @@ const run = async () => {
         matchingQualifiedGames,
         allQualifiedGames
       );
-      const formattedList = {
+      const formattedList: DeckList = {
         cards: convertCardsToIds(deck.cards),
         score: deckScore.score,
         strength: deckScore.strength,

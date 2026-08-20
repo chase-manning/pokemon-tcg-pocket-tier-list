@@ -6,7 +6,7 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import { CardType, fetchCards } from "../app/cards-api";
 import useExpansions from "../app/use-expansions";
-import { PipelineMatchupEntry } from "../types/pipeline-data";
+import { PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
 import {
   cardToCount,
   cardToId,
@@ -22,18 +22,9 @@ export type { CardType };
 
 export type MatchupType = PipelineMatchupEntry;
 
-interface PartialList {
-  cards: string[];
-  score: number;
-  strength: number;
-}
+type PartialList = PipelineDeckList;
 
-interface PartialDeckType {
-  name: string;
-  lists: PartialList[];
-  percentOfGames: number;
-  popularity: number;
-}
+type PartialDeckType = PipelinePartialDeck;
 
 interface FullList {
   cards: CardType[];

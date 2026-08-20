@@ -1,4 +1,4 @@
-import { PipelineCard, PipelineMatchupEntry } from "../../../src/types/pipeline-data";
+import { PipelineCard, PipelineMatchupEntry, PipelineDeckList, PipelinePartialDeck } from "../../../src/types/pipeline-data";
 
 export type Card = PipelineCard;
 
@@ -40,4 +40,8 @@ export interface MatchupResult {
 }
 
 export type MatchupData = PipelineMatchupEntry;
+
+export type DeckList = PipelineDeckList;
+
+export type PartialDeck = PipelinePartialDeck;
 
