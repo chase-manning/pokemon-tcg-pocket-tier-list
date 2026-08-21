@@ -384,7 +384,7 @@ const DeckPage = () => {
 
   useEffect(() => {
       if (deckId) return;
-      if (bestScore) return;
+      if (bestScore !== null) return;
       if (!decks || decks.length === 0) return;
       const sortedDecks = [...decks].sort((a, b) => b.score - a.score);
       const bestDeck = sortedDecks[0];
@@ -409,7 +409,7 @@ const DeckPage = () => {
     if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
     if (!decks) return <Overlay>Loading...</Overlay>;
 
-    const relativeScore = deck ? deck.score / (bestScore ?? 1) : 0;
+    const relativeScore = deck && bestScore ? deck.score / bestScore : 0;
 
   if (!deck) {
       return (

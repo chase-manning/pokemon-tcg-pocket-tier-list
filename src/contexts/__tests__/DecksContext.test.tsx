@@ -54,7 +54,7 @@ const errorResponse = (status: number, statusText: string) =>
 const ErrorProbe = () => {
   const { loading, error } = useDecks();
   if (loading) return <p>loading</p>;
-  if (error) return <p>errored</p>;
+  if (error) return <p>{error.message}</p>;
   return <p>loaded</p>;
 };
 
@@ -122,6 +122,10 @@ describe("DecksProvider with a drifted card id", () => {
 });
 
 describe("DecksProvider with a failed fetch", () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it("ends loading and exposes the error on a non-OK response", async () => {
     jest.spyOn(console, "error").mockImplementation(() => {});
     jest.spyOn(global, "fetch").mockImplementation((input) =>
@@ -138,8 +142,6 @@ describe("DecksProvider with a failed fetch", () => {
       </QueryClientProvider>
     );
 
-    expect(await screen.findByText("errored")).toBeInTheDocument();
-
-    jest.restoreAllMocks();
+    expect(await screen.findByText("Failed to fetch best-decks.json: 500 Internal Server Error")).toBeInTheDocument();
   });
 });

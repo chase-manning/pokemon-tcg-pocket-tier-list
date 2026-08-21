@@ -89,7 +89,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     }, {});
   }, [cards]);
 
-  const { data: decksData, isLoading: decksLoading, isError: decksError } = useQuery({
+  const { data: decksData, isLoading: decksLoading, error: decksError } = useQuery({
       queryKey: ["decks"],
       queryFn: async () => {
         const [decksResponse, matchupDataResponse] = await Promise.all([
@@ -280,7 +280,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const value = {
           decks,
           loading: cardsLoading || decksLoading,
-          error: (decksError as unknown as Error) ?? null,
+          error: decksError ?? null,
         };
 
   return (
