@@ -15,8 +15,13 @@ const GlobalStyle = createGlobalStyle`
         --ad-anchor-h: 0px;
     }
 
+    html {
+        background-color: var(--bg);
+    }
+
     body {
         padding-bottom: var(--ad-anchor-h, 0px);
+        background-color: var(--bg);
     }
 
     * {
