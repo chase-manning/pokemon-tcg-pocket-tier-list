@@ -15,11 +15,14 @@
 /* The banner is position:fixed;bottom:0, which ignores the body's
    padding-bottom that reserves space for the sticky AdAnchor bar. Offset it by
    the same --ad-anchor-h so its buttons never sit under the ad bar on mobile
-   (where both occupy the bottom strip). Without this the AdAnchor intercepts
-   the tap on Accept/Reject/Customize. z-index keeps it above the ad layer. */
+   (where both occupy the bottom strip). The banner is portaled to <body> while
+   the AdAnchor lives inside #root, so a modest z-index on the banner can still
+   lose a stacking-context comparison against the anchor; pin it to the maximum
+   so it unambiguously wins regardless of context. Do NOT downgrade c15t's own
+   banner z-index (it ships 999999998) — that only weakens the stack. */
 [class*="c15t-ui-root"] {
   bottom: var(--ad-anchor-h, 0px) !important;
-  z-index: 1001 !important;
+  z-index: 2147483647 !important;
 }
 
 [class*="c15t-ui-card"] {

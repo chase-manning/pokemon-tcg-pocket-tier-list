@@ -264,7 +264,7 @@ const COLOR_PALETTE = [
 
 const StatisticsPage = () => {
     const { t } = useTranslation();
-    const { decks, loading } = useDecks();
+    const { decks, loading, error } = useDecks();
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
     const [trendData, setTrendData] = useState<PipelineTrendRow[]>([]);
@@ -350,9 +350,11 @@ const StatisticsPage = () => {
     // so returning early here would ship a page whose only content is
     // "Loading..." to crawlers.
     const renderContent = () => {
-        if (loading || !decks) return <Loading>Loading...</Loading>;
+            if (loading) return <Loading>Loading...</Loading>;
+            if (error) return <Loading>Error loading data: {error.message}</Loading>;
+            if (!decks) return <Loading>Loading...</Loading>;
 
-        return (
+            return (
             <>
             <Section>
                 <SectionHeader>

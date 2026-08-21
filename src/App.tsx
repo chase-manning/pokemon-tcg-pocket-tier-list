@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
 import { DecksProvider } from "./contexts/DecksContext";
 import AdAnchor from "./ads/AdAnchor";
+import AdBlockerNotice from "./components/AdBlockerNotice";
 import { ContentReadyProvider } from "./ads/ContentReadyContext";
 import ErrorBoundary, { LoadingNotice } from "./components/ErrorBoundary";
 
@@ -21,8 +22,8 @@ const NotFoundPage = lazy(() => import("./pages/not-found/NotFoundPage"));
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5, // 5 minutes
-      gcTime: 1000 * 60 * 30, // 30 minutes
+      staleTime: 1000 * 60 * 60, // 1 hour
+      gcTime: 1000 * 60 * 60 * 24, // 24 hours
     },
   },
 });
@@ -44,6 +45,7 @@ const Layout = () => {
             <Outlet />
           </Suspense>
         </ErrorBoundary>
+        <AdBlockerNotice />
         <AdAnchor />
       </StyledApp>
   );

@@ -167,7 +167,7 @@ const ENERGY_TYPES = [
 ];
 
 const LandingPage = () => {
-  const { decks, loading } = useDecks();
+  const { decks, loading, error } = useDecks();
   const {
     energy,
     setEnergy,
@@ -185,9 +185,12 @@ const LandingPage = () => {
 
   const ready = !loading && !!decks && decks.length > 0;
   useMarkContentReady(ready);
+  
+  if (loading) return <Loading>Loading...</Loading>;
+  if (error) return <Loading>Error loading data: {error.message}</Loading>;
+  if (!decks || decks.length === 0) return <Loading>No decks found</Loading>;
+
   const renderTiers = () => {
-    if (loading || !decks) return <Loading>Loading...</Loading>;
-    if (decks.length === 0) return <Loading>No decks found</Loading>;
 
     const tiers = buildTiers(decks, (d) => getSortValue(d, sortBy));
 

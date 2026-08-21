@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tournament-deck-123",
+    "name": "Test Deck",
+    "cards": [
+      { "name": "Bulbasaur", "count": 2, "set": "A1", "number": "1" },
+      { "name": "Venusaur ex", "count": 2, "set": "A1", "number": "4" },
+      { "name": "Erika", "count": 2, "set": "A1", "number": "219" },
+      { "name": "Pikachu", "count": 1, "set": "A2", "number": "25" }
+    ],
+    "pokemon": 5,
+    "differentPokemon": 3,
+    "winCount": 60,
+    "lossCount": 40,
+    "totalGames": 100,
+    "date": "2026-08-10",
+    "tournamentExPercent": 0.5,
+    "wigglytuffPercent": 0,
+    "noTrainerPercent": 0,
+    "wins": ["tournament-deck-123"],
+    "losses": []
+  }
+]

@@ -36,7 +36,27 @@ const decks = [
 const matchupData = { [GOOD_DECK]: [], [DRIFTED_DECK]: [] };
 
 const jsonResponse = (body: unknown) =>
-  Promise.resolve({ json: () => Promise.resolve(body) } as Response);
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve(body),
+  } as unknown as Response);
+
+// A non-OK response exercises DecksContext's `!response.ok` guard (it throws,
+// which react-query surfaces as an error rather than a hanging loader).
+const errorResponse = (status: number, statusText: string) =>
+  Promise.resolve({
+    ok: false,
+    status,
+    statusText,
+    json: () => Promise.resolve({}),
+  } as unknown as Response);
+
+const ErrorProbe = () => {
+  const { loading, error } = useDecks();
+  if (loading) return <p>loading</p>;
+  if (error) return <p>{error.message}</p>;
+  return <p>loaded</p>;
+};
 
 const DeckNames = () => {
   const { decks, loading } = useDecks();
@@ -98,5 +118,30 @@ describe("DecksProvider with a drifted card id", () => {
     expect(consoleWarn).toHaveBeenCalledWith(
       expect.stringContaining("a1-999")
     );
+  });
+});
+
+describe("DecksProvider with a failed fetch", () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it("ends loading and exposes the error on a non-OK response", async () => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(global, "fetch").mockImplementation((input) =>
+      errorResponse(500, "Internal Server Error")
+    );
+
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <DecksProvider>
+          <ErrorProbe />
+        </DecksProvider>
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByText("Failed to fetch best-decks.json: 500 Internal Server Error")).toBeInTheDocument();
   });
 });

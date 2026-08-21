@@ -36,6 +36,9 @@ describe("getDecks", () => {
     ];
 
     global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: "OK",
       json: () => Promise.resolve(mockDecks),
     });
 

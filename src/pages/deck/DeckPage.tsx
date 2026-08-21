@@ -364,7 +364,7 @@ const ArrowRight = styled.img`
 
 const DeckPage = () => {
   const deckId = useParams().deckId;
-    const { decks, loading } = useDecks();
+    const { decks, loading, error } = useDecks();
     const { addMissing, undoMissing, canUndo, lastRemovedId } = useMissing();
     const { t } = useTranslation();
     const [bestScore, setBestScore] = useState<number | null>(null);
@@ -383,29 +383,33 @@ const DeckPage = () => {
     const lastCutName = lastRemovedId ? (cardsById.get(lastRemovedId)?.name ?? null) : null;
 
   useEffect(() => {
-    if (deckId) return;
-    if (bestScore) return;
-    if (!decks) return;
-    const bestDeck = decks.sort((a, b) => b.score - a.score)[0];
-    setBestScore(bestDeck.score);
-  }, [deckId, decks, bestScore]);
+      if (deckId) return;
+      if (bestScore !== null) return;
+      if (!decks || decks.length === 0) return;
+      const sortedDecks = [...decks].sort((a, b) => b.score - a.score);
+      const bestDeck = sortedDecks[0];
+      setBestScore(bestDeck.score);
+    }, [deckId, decks, bestScore]);
 
-  let deck: FullDeckType | undefined = undefined;
-  if (decks) {
-    if (deckId) {
-      deck = decks.find((d) => d.id === deckId);
-    } else {
-      deck = decks.sort((a, b) => b.score - a.score)[0];
+    let deck: FullDeckType | undefined = undefined;
+    if (decks) {
+      if (deckId) {
+        deck = decks.find((d) => d.id === deckId);
+      } else {
+        const sortedDecks = [...decks].sort((a, b) => b.score - a.score);
+        deck = sortedDecks[0];
+      }
     }
-  }
 
-  // Ready (for showing ads) only once a real deck is resolved — never on the
+  // Ready (for showing ads) only once a real deck is resolved, never on the
   // loading or "not enough cards" screens.
   useMarkContentReady(!loading && !!decks && !!deck);
 
-  if (loading || !decks) return <Overlay>Loading...</Overlay>;
+    if (loading) return <Overlay>Loading...</Overlay>;
+    if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
+    if (!decks) return <Overlay>Loading...</Overlay>;
 
-  const relativeScore = deck ? deck.score / (bestScore ?? 1) : 0;
+    const relativeScore = deck && bestScore ? deck.score / bestScore : 0;
 
   if (!deck) {
       return (
@@ -598,12 +602,12 @@ const DeckPage = () => {
                           }
 
                           return (
-                              <AlternativeContainer key={list.cards.join(",")}>
-                                <AlternativeCard src={missingCards[0].image} />
-                                <AlternativeCard src={newCards[0].image} />
-                                <ArrowRight src={arrowRight} />
-                              </AlternativeContainer>
-                          );
+                                                        <AlternativeContainer key={`${list.score}-${list.cards.map((c) => c.id).join("-")}`}>
+                                                          <AlternativeCard src={missingCards[0].image} />
+                                                          <AlternativeCard src={newCards[0].image} />
+                                                          <ArrowRight src={arrowRight} />
+                                                        </AlternativeContainer>
+                                                    );
                         })}
                       </MatchupSection>
                   )}
