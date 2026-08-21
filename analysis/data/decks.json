@@ -8,8 +8,8 @@
       { "name": "Erika", "count": 2, "set": "A1", "number": "219" },
       { "name": "Pikachu", "count": 1, "set": "A2", "number": "25" }
     ],
-    "pokemon": 2,
-    "differentPokemon": 2,
+    "pokemon": 5,
+    "differentPokemon": 3,
     "winCount": 60,
     "lossCount": 40,
     "totalGames": 100,

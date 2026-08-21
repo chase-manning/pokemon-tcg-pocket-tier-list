@@ -41,6 +41,23 @@ const jsonResponse = (body: unknown) =>
     json: () => Promise.resolve(body),
   } as unknown as Response);
 
+// A non-OK response exercises DecksContext's `!response.ok` guard (it throws,
+// which react-query surfaces as an error rather than a hanging loader).
+const errorResponse = (status: number, statusText: string) =>
+  Promise.resolve({
+    ok: false,
+    status,
+    statusText,
+    json: () => Promise.resolve({}),
+  } as unknown as Response);
+
+const ErrorProbe = () => {
+  const { loading, error } = useDecks();
+  if (loading) return <p>loading</p>;
+  if (error) return <p>errored</p>;
+  return <p>loaded</p>;
+};
+
 const DeckNames = () => {
   const { decks, loading } = useDecks();
   if (loading || !decks) return <p>loading</p>;
@@ -101,5 +118,28 @@ describe("DecksProvider with a drifted card id", () => {
     expect(consoleWarn).toHaveBeenCalledWith(
       expect.stringContaining("a1-999")
     );
+  });
+});
+
+describe("DecksProvider with a failed fetch", () => {
+  it("ends loading and exposes the error on a non-OK response", async () => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(global, "fetch").mockImplementation((input) =>
+      errorResponse(500, "Internal Server Error")
+    );
+
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <DecksProvider>
+          <ErrorProbe />
+        </DecksProvider>
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByText("errored")).toBeInTheDocument();
+
+    jest.restoreAllMocks();
   });
 });
