@@ -5,6 +5,7 @@ import getId from "./utils/get-id";
 import { calculateDeckScore } from "./utils/calculate-deck-score";
 import { calculateCardScores } from "./utils/calculate-card-scores";
 import { calculateMatchupResults } from "./utils/calculate-matchup-results";
+import { generateOgImages } from "./utils/generate-og-images";
 import { Deck, MatchupData, DeckList, PartialDeck } from "./utils/types";
 import { convertCardsToIds } from "./utils/convert-cards";
 import {
@@ -201,7 +202,7 @@ const run = async () => {
         return acc;
       },
       {}
-    );
+    ) as Record<string, boolean>;
 
     for (const deck of bestDecks) {
       for (const list of deck.lists) {
@@ -213,6 +214,33 @@ const run = async () => {
           }
         }
       }
+    }
+
+    const deckIconIds = (name: string): string[] =>
+      name.split("&").map((part: string) => {
+        const segments = part.split("-");
+        return [segments[segments.length - 2], segments[segments.length - 1]].join(
+          "-"
+        );
+      });
+
+    const cardsById = new Map(cards.map((card: any) => [card.id, card] as [string, any]));
+
+    try {
+      await generateOgImages(
+        bestDecks.map((deck) => ({
+          slug: deck.name.toLowerCase().replace(/\s/g, "-"),
+          name: deckIconIds(deck.name)
+            .map((id: string) => cardsById.get(id)?.name)
+            .filter((name: string | undefined): name is string => !!name)
+            .join(" & "),
+          iconUrls: deckIconIds(deck.name)
+            .map((id: string) => cardsById.get(id)?.image)
+            .filter((url: string | undefined): url is string => !!url),
+        }))
+      );
+    } catch (error) {
+      console.error("OG image generation failed; continuing without images:", error);
     }
 
     const trendData: Record<string, any> = {};
