@@ -44,6 +44,11 @@ export const generateOgImages = async (decks: OgDeckInput[]): Promise<void> => {
       const logoHeight = 56;
       const logoWidth = Math.round(logoHeight * (logo.width / logo.height));
       ctx.drawImage(logo, 40, 40, logoWidth, logoHeight);
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "30px sans-serif";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "middle";
+      ctx.fillText("Top Pocket Decks", 40 + logoWidth + 18, 40 + logoHeight / 2);
     }
 
     const cardWidth = 260;
@@ -52,7 +57,7 @@ export const generateOgImages = async (decks: OgDeckInput[]): Promise<void> => {
     const totalWidth =
       deck.iconUrls.length * cardWidth + (deck.iconUrls.length - 1) * gap;
     let x = (WIDTH - totalWidth) / 2;
-    const cardY = 110;
+    const cardY = 120;
 
     for (const url of deck.iconUrls) {
       const pngUrl = url.replace(/webp/g, "png");
@@ -68,18 +73,15 @@ export const generateOgImages = async (decks: OgDeckInput[]): Promise<void> => {
       x += cardWidth + gap;
     }
 
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
     ctx.fillStyle = "#ffffff";
     ctx.font = "bold 56px sans-serif";
-    ctx.textAlign = "center";
     ctx.fillText(deck.name, WIDTH / 2, cardY + cardHeight + 70, WIDTH - 80);
 
     ctx.fillStyle = "#999999";
-    ctx.font = "32px sans-serif";
-    ctx.fillText("Top Pocket Decks", WIDTH / 2, cardY + cardHeight + 120);
-
-    ctx.fillStyle = "#ffffff";
     ctx.font = "bold 26px sans-serif";
-    ctx.fillText("Deck Profile", WIDTH / 2, cardY + cardHeight + 165);
+    ctx.fillText("Deck Profile", WIDTH / 2, cardY + cardHeight + 115);
 
     const buffer = canvas.toBuffer("image/png");
     fs.writeFileSync(path.join(OUTPUT_DIR, `${deck.slug}.png`), buffer);

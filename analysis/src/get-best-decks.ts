@@ -226,18 +226,24 @@ const run = async () => {
 
     const cardsById = new Map(cards.map((card: any) => [card.id, card] as [string, any]));
 
+    const iconCards = (name: string) =>
+      deckIconIds(name)
+        .map((id: string) => cardsById.get(id))
+        .filter((card: any): card is any => !!card)
+        .sort((a: any, b: any) => Number(!!b.ex) - Number(!!a.ex));
+
     try {
       await generateOgImages(
-        bestDecks.map((deck) => ({
-          slug: deck.name.toLowerCase().replace(/\s/g, "-"),
-          name: deckIconIds(deck.name)
-            .map((id: string) => cardsById.get(id)?.name)
-            .filter((name: string | undefined): name is string => !!name)
-            .join(" & "),
-          iconUrls: deckIconIds(deck.name)
-            .map((id: string) => cardsById.get(id)?.image)
-            .filter((url: string | undefined): url is string => !!url),
-        }))
+        bestDecks.map((deck) => {
+          const icons = iconCards(deck.name);
+          return {
+            slug: deck.name.toLowerCase().replace(/\s/g, "-"),
+            name: icons.map((card: any) => card.name).join(" & "),
+            iconUrls: icons
+              .map((card: any) => card.image)
+              .filter((url: string | undefined): url is string => !!url),
+          };
+        })
       );
     } catch (error) {
       console.error("OG image generation failed; continuing without images:", error);
