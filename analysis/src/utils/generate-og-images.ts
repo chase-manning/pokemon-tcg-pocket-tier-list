@@ -18,11 +18,22 @@ export const generateOgImages = async (decks: OgDeckInput[]): Promise<void> => {
   const LOGO_PATH = path.join(OUTPUT_DIR, "..", "..", "logo.png");
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
+  for (const deck of decks) {
+    if (
+      deck.slug.includes("/") ||
+      deck.slug.includes("\\") ||
+      deck.slug.includes("..")
+    ) {
+      throw new Error(`Invalid OG image slug: "${deck.slug}"`);
+    }
+  }
+
   const currentSlugs = new Set(decks.map((d) => d.slug));
-  for (const file of fs.readdirSync(OUTPUT_DIR)) {
-    const slug = file.replace(/\.png$/, "");
+  for (const entry of fs.readdirSync(OUTPUT_DIR, { withFileTypes: true })) {
+    if (entry.isDirectory() || !entry.name.endsWith(".png")) continue;
+    const slug = entry.name.replace(/\.png$/, "");
     if (!currentSlugs.has(slug)) {
-      fs.unlinkSync(path.join(OUTPUT_DIR, file));
+      fs.unlinkSync(path.join(OUTPUT_DIR, entry.name));
     }
   }
 

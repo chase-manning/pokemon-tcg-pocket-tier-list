@@ -42,4 +42,24 @@ describe("generateOgImages", () => {
     expect(fs.existsSync(path.join(outputDir, "deck-b.png"))).toBe(false);
     expect(fs.existsSync(path.join(outputDir, "deck-c.png"))).toBe(true);
   });
+
+  it("rejects slugs containing path separators", async () => {
+    await expect(
+      generateOgImages([{ slug: "../outside", name: "Evil", iconUrls: [] }])
+    ).rejects.toThrow('Invalid OG image slug: "../outside"');
+  });
+
+  it("preserves unrelated files when pruning stale images", async () => {
+    fs.mkdirSync(outputDir, { recursive: true });
+    fs.writeFileSync(path.join(outputDir, "notes.txt"), "keep me");
+    fs.mkdirSync(path.join(outputDir, "subdir"));
+
+    await generateOgImages([
+      { slug: "deck-a", name: "Charizard ex & Pikachu", iconUrls: [] },
+    ]);
+
+    expect(fs.existsSync(path.join(outputDir, "notes.txt"))).toBe(true);
+    expect(fs.existsSync(path.join(outputDir, "subdir"))).toBe(true);
+    expect(fs.existsSync(path.join(outputDir, "deck-a.png"))).toBe(true);
+  });
 });
