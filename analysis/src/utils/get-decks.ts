@@ -6,10 +6,12 @@ import { updateDeckResults } from "./update-deck-results";
 import { fixPokeballCards } from "./fix-pokeball-cards";
 import { Deck } from "./types";
 
+const deckFilePath = () => process.env.DECKS_FILE || "./data/decks.json";
+
 const readDecksFromFile = (): Deck[] => {
   let decks: unknown;
   try {
-    const fileContent = fs.readFileSync("./data/decks.json", "utf-8");
+    const fileContent = fs.readFileSync(deckFilePath(), "utf-8");
     decks = JSON.parse(fileContent);
   } catch (error) {
     throw new Error(

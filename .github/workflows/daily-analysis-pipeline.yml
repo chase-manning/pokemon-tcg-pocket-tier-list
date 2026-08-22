@@ -1,4 +1,4 @@
-name: Daily Analysis Pipeline
+name: Update best decks
 
 on:
   schedule:
@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Record run date
+        run: echo "DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v4
 
       - name: Install canvas native dependencies
@@ -22,9 +25,9 @@ jobs:
           sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "24.x"
+          node-version: "24.19.0"
           cache: "yarn"
           cache-dependency-path: "analysis/yarn.lock"
 
@@ -35,7 +38,7 @@ jobs:
 
       - name: Run pipeline
         env:
-          API_KEY: ${{ secrets.API_KEY }}
+          LIMITLESS_API_KEY: ${{ secrets.LIMITLESS_API_KEY }}
         run: |
           cd analysis
           yarn download
@@ -45,13 +48,14 @@ jobs:
         run: node scripts/generate-sitemap.js
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
-          commit-message: "chore(data): daily pipeline update"
-          title: "chore(data): daily pipeline update"
-          body: >-
-            Automated daily update of deck data, OG images, sitemap,
-            and last-updated timestamp from the analysis pipeline.
+          commit-message: "chore(data): update best decks from daily pipeline run"
+          title: "Update best decks ($DATE)"
+          body: |
+            Automated run of the analysis pipeline on $DATE.
+
+            Updates deck data, OG images, the sitemap, and the last-updated timestamp.
           branch: automated/daily-pipeline-update
           delete-branch: true
           labels: automated

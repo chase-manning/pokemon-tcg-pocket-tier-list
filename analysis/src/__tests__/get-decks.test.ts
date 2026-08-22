@@ -1,14 +1,15 @@
 import getDecks from "../utils/get-decks";
-import fs from "fs";
 
 describe("getDecks", () => {
-  it("should return decks", () => {
-    // The test needs decks.json on disk, so fail clearly if the pipeline hasn't run yet.
-    const decksPath = "./data/decks.json";
-    if (!fs.existsSync(decksPath)) {
-      throw new Error("decks.json not found - run the pipeline to generate test data");
-    }
+  beforeEach(() => {
+    process.env.DECKS_FILE = "./src/__fixtures__/decks.json";
+  });
 
+  afterEach(() => {
+    delete process.env.DECKS_FILE;
+  });
+
+  it("should return decks", () => {
     const decks = getDecks();
     expect(decks.length).toBeGreaterThan(0);
 
