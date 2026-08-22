@@ -35,7 +35,7 @@
     "start": "react-scripts start",
     "prebuild": "node scripts/generate-sitemap.js",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap && node scripts/prerender-decks.js",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false",
     "typecheck": "tsc --noEmit",
