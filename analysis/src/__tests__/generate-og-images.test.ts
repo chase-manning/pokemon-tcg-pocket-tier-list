@@ -7,6 +7,7 @@ import { generateOgImages } from "../utils/generate-og-images";
 describe("generateOgImages", () => {
   const outputDir = path.join(os.tmpdir(), "og-images-test");
   const fixtureImage = path.join(os.tmpdir(), "og-test-fixture.png");
+  const previousOutputDir = process.env.OG_OUTPUT_DIR;
 
   beforeEach(() => {
     fs.rmSync(outputDir, { recursive: true, force: true });
@@ -22,7 +23,11 @@ describe("generateOgImages", () => {
 
   afterAll(() => {
     fs.rmSync(outputDir, { recursive: true, force: true });
-    delete process.env.OG_OUTPUT_DIR;
+    if (previousOutputDir === undefined) {
+      delete process.env.OG_OUTPUT_DIR;
+    } else {
+      process.env.OG_OUTPUT_DIR = previousOutputDir;
+    }
   });
 
   it("writes one PNG per deck and removes stale files from a prior run", async () => {

@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - name: Record run date
-        run: echo "DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+        id: run-date
+        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
 
@@ -51,9 +52,9 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "chore(data): update best decks from daily pipeline run"
-          title: "Update best decks ($DATE)"
+          title: "Update best decks (${{ steps.run-date.outputs.date }})"
           body: |
-            Automated run of the analysis pipeline on $DATE.
+            Automated run of the analysis pipeline on ${{ steps.run-date.outputs.date }}.
 
             Updates deck data, OG images, the sitemap, and the last-updated timestamp.
           branch: automated/daily-pipeline-update

@@ -1,12 +1,18 @@
 import getDecks from "../utils/get-decks";
 
 describe("getDecks", () => {
+  const previousDecksFile = process.env.DECKS_FILE;
+
   beforeEach(() => {
     process.env.DECKS_FILE = "./src/__fixtures__/decks.json";
   });
 
   afterEach(() => {
-    delete process.env.DECKS_FILE;
+    if (previousDecksFile === undefined) {
+      delete process.env.DECKS_FILE;
+    } else {
+      process.env.DECKS_FILE = previousDecksFile;
+    }
   });
 
   it("should return decks", () => {

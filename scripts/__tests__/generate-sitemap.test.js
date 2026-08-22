@@ -3,24 +3,18 @@ const test = require("node:test");
 const assert = require("node:assert");
 
 const { buildSitemap, escapeXml } = require("../generate-sitemap");
-
-// Deck route IDs come from src/contexts/DecksContext.tsx:
-//   id: oldDeck.name.toLowerCase().replace(/\s/g, "-")
-// If that formula ever changes, update both this copy and scripts/deck-slug.js.
-const decksContextId = (name) => name.toLowerCase().replace(/\s/g, "-");
 const { deckSlug } = require("../deck-slug");
 
 const FIXTURE_DECKS = [
   { name: "venusaur-ex-a1-004" },
   { name: "butterfree-b3b-003" },
   { name: "suicune-ex-a4a-020&baxcalibur-b2a-036" },
+  { name: "Greninja ex & Oricorio" },
 ];
 const LASTMOD = "2026-08-22";
 
-test("shared helper matches the DecksContext route id formula", () => {
-  for (const deck of FIXTURE_DECKS) {
-    assert.strictEqual(deckSlug(deck.name), decksContextId(deck.name));
-  }
+test("shared helper normalizes whitespace and casing", () => {
+  assert.strictEqual(deckSlug("Greninja ex & Oricorio"), "greninja-ex-&-oricorio");
 });
 
 test("every fixture deck gets a route, single- and double-card alike", () => {
@@ -28,7 +22,7 @@ test("every fixture deck gets a route, single- and double-card alike", () => {
   for (const deck of FIXTURE_DECKS) {
     assert.ok(
       xml.includes(
-        `<loc>https://pocketdecks.top/deck/${escapeXml(deck.name)}</loc>`
+        `<loc>https://pocketdecks.top/deck/${escapeXml(deckSlug(deck.name))}</loc>`
       ),
       `missing route for "${deck.name}"`
     );

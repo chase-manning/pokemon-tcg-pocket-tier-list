@@ -17,6 +17,7 @@ import {
   matchesEnergy,
   matchesExFilter,
 } from "../app/deck-filters";
+import { deckSlug } from "../app/deck-slug";
 
 export type { CardType };
 
@@ -217,7 +218,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             : null;
 
           const deck: FullDeckType = {
-            id: oldDeck.name.toLowerCase().replace(/\s/g, "-"),
+            id: deckSlug(oldDeck.name),
             name: oldDeck.name,
             lists,
             bestList: lists.sort(

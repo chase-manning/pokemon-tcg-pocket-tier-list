@@ -1,13 +1,17 @@
 import { Tournament } from "./types";
 import { getPairings } from "./get-pairings";
 
-const API_KEY = process.env.API_KEY;
-const append = `?key=${API_KEY}`;
 const BASE = "https://play.limitlesstcg.com/api";
+
+const apiKey = () => {
+  const key = process.env.LIMITLESS_API_KEY;
+  if (!key) throw new Error("LIMITLESS_API_KEY not set");
+  return key;
+};
 
 const getTournamentDecks = async (tournament: Tournament) => {
   const res = await fetch(
-    `${BASE}/tournaments/${tournament.id}/standings${append}`
+    `${BASE}/tournaments/${tournament.id}/standings?key=${apiKey()}`
   );
   if (!res.ok) {
     throw new Error(`Failed to fetch tournament decks: ${res.status} ${res.statusText}`);
