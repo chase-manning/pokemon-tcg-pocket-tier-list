@@ -1,12 +1,16 @@
 import { Pairing, Tournament } from "./types";
 
-const API_KEY = process.env.API_KEY;
-const append = `?key=${API_KEY}`;
 const BASE = "https://play.limitlesstcg.com/api";
+
+const apiKey = () => {
+  const key = process.env.LIMITLESS_API_KEY;
+  if (!key) throw new Error("LIMITLESS_API_KEY not set");
+  return key;
+};
 
 export const getPairings = async (tournament: Tournament) => {
   const res = await fetch(
-    `${BASE}/tournaments/${tournament.id}/pairings${append}`
+    `${BASE}/tournaments/${tournament.id}/pairings?key=${apiKey()}`
   );
   const pairings: Pairing[] = (await res.json()) as Pairing[];
   return pairings.map((pairing) => {

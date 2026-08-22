@@ -39,7 +39,6 @@ const StyledApp = styled.div`
 const Layout = () => {
   return (
       <StyledApp>
-        {/* Keeps a page crash inside the routed view. */}
         <ErrorBoundary>
           <Suspense fallback={<LoadingNotice />}>
             <Outlet />

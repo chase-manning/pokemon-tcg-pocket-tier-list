@@ -6,6 +6,7 @@ jest.mock("fs");
 describe("getTournaments", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (fs.existsSync as jest.Mock).mockReturnValue(true);
     (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify([]));
   });
 

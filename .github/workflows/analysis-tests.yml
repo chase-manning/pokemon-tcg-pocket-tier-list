@@ -33,6 +33,8 @@ jobs:
           yarn install
 
       - name: Run tests
+        env:
+          LIMITLESS_API_KEY: ${{ secrets.LIMITLESS_API_KEY }}
         run: |
           cd analysis
           yarn test

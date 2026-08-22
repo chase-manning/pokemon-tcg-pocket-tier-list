@@ -40,3 +40,6 @@ jobs:
         run: yarn test:ci
         env:
           CI: true
+
+      - name: Run script tests
+        run: yarn test:scripts

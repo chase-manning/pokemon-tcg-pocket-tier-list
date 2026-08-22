@@ -30,6 +30,7 @@ const Link = styled.a`
   color: var(--e);
   text-decoration: underline;
   font-weight: 500;
+  font-size: inherit;
 
   &:hover {
     opacity: 0.8;
@@ -47,15 +48,22 @@ const AdBlockerNotice = () => {
   return (
     <Notice>
       <Card>
-        {t("adblocker.lead")}{" "}
+        {t("adblocker.lead", "Does your ad blocker")}{" "}
         <Link href={PRIVACY_URL} target="_blank" rel="noopener noreferrer">
-          {t("adblocker.respect")}
-        </Link>
-        {t("adblocker.recommend")}{" "}
-        <Link href={UBLOCK_URL} target="_blank" rel="noopener noreferrer">
-          uBlock Origin
+          {t("adblocker.respect", "respect")}
         </Link>{" "}
-        {t("adblocker.footer")}
+        {t(
+          "adblocker.middle",
+          "your privacy? If you're not sure, I and many others can recommend"
+        )}{" "}
+        <Link href={UBLOCK_URL} target="_blank" rel="noopener noreferrer">
+          {t("adblocker.recommend", "uBlock Origin by Raymond Hill")}
+        </Link>
+        .{" "}
+        {t(
+          "adblocker.footer",
+          "Obviously not sponsored. Just a genuine concern from a fellow like-minded individual."
+        )}
       </Card>
     </Notice>
   );

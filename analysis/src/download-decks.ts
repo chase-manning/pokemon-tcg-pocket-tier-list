@@ -1,17 +1,26 @@
+import "dotenv/config";
 import fs from "fs";
 import { getTournaments } from "./utils/get-tournaments";
 import getTournamentDecks from "./utils/get-tournament-decks";
 import { round } from "./utils/round";
 
+const DECKS_FILE = "./data/decks.json";
+const PROCESSED_FILE = "./data/processed-tournaments.json";
+
+const readJsonArray = (filePath: string): unknown[] => {
+  if (!fs.existsSync(filePath)) return [];
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+};
+
 const downloadDecks = async () => {
-  const API_KEY = process.env.API_KEY;
-  if (!API_KEY) throw new Error("API_KEY not set");
+  const apiKey = process.env.LIMITLESS_API_KEY;
+  if (!apiKey) throw new Error("LIMITLESS_API_KEY not set");
 
   const tournaments = await getTournaments();
   console.log(`Downloaded tournaments\n${tournaments.length} to process`);
 
-  const currentDecks = JSON.parse(fs.readFileSync("./data/decks.json", "utf-8"));
-  const processed = JSON.parse(fs.readFileSync("./data/processed-tournaments.json", "utf-8"));
+  const currentDecks = readJsonArray(DECKS_FILE);
+  const processed = readJsonArray(PROCESSED_FILE);
 
   let hasError = false;
   try {
@@ -29,8 +38,9 @@ const downloadDecks = async () => {
     console.error("Pipeline failed:", error);
     throw error;
   } finally {
-    fs.writeFileSync("./data/decks.json", JSON.stringify(currentDecks));
-    fs.writeFileSync("./data/processed-tournaments.json", JSON.stringify(processed));
+    fs.mkdirSync("./data", { recursive: true });
+    fs.writeFileSync(DECKS_FILE, JSON.stringify(currentDecks));
+    fs.writeFileSync(PROCESSED_FILE, JSON.stringify(processed));
     if (hasError) {
       process.exit(1);
     }

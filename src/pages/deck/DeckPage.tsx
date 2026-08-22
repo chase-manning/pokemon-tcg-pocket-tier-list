@@ -18,6 +18,7 @@ import arrowRight from "../../assets/arrow-right.svg";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
+import { Helmet } from "react-helmet-async";
 
 const StyledDeckPage = styled.div`
   width: 100%;
@@ -468,11 +469,6 @@ const DeckPage = () => {
       .sort((a, b) => b.score - a.score)
       .slice(0, 3);
 
-  const deckDisplayName =
-      [deck.iconPrimary?.name, deck.iconSecondary?.name]
-          .filter(Boolean)
-          .join(" / ") || "This deck";
-
   const totalMatchup = deck.matchups?.find((m) => m.name === "Total");
   const winRatePct = totalMatchup ? Math.round(totalMatchup.winRate * 100) : null;
 
@@ -500,8 +496,42 @@ const DeckPage = () => {
       .sort((a, b) => a.winRate - b.winRate)
       .slice(0, 6);
 
+  const deckDisplayName =
+    [deck.iconPrimary?.name, deck.iconSecondary?.name]
+      .filter(Boolean)
+      .join(" / ") || "This deck";
+
   return (
       <>
+        <Helmet>
+          <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
+          <meta
+            name="description"
+            content={`${deckDisplayName} ${t(
+              "deckPage.ogDescription",
+              "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
+            )}`}
+          />
+          <meta
+            property="og:title"
+            content={`${deckDisplayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
+          />
+          <meta
+            property="og:description"
+            content={`${deckDisplayName} ${t(
+              "deckPage.ogDescriptionShort",
+              "deck list, matchups, and win rate for Pokémon TCG Pocket."
+            )}`}
+          />
+          <meta
+            property="og:image"
+            content={`https://pocketdecks.top/og/deck/${deck.id}.png`}
+          />
+          <meta
+            property="og:url"
+            content={`https://pocketdecks.top/deck/${deck.id}`}
+          />
+        </Helmet>
         <StyledDeckPage>
           <CardSection>
             {isDeckFinderMode && (
