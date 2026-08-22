@@ -14,6 +14,7 @@ export interface RawCardType {
   ex: boolean;
   set_code: string;
   deckBuilderNr?: number | null;
+  attacks?: Record<string, { cost: string | null }>;
 }
 
 export interface CardType {
