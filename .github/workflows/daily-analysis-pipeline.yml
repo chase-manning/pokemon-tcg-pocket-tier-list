@@ -1,0 +1,57 @@
+name: Daily Analysis Pipeline
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install canvas native dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          cache: "yarn"
+          cache-dependency-path: "analysis/yarn.lock"
+
+      - name: Install analysis dependencies
+        run: |
+          cd analysis
+          yarn install --frozen-lockfile
+
+      - name: Run pipeline
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          cd analysis
+          yarn download
+          yarn start
+
+      - name: Regenerate sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(data): daily pipeline update"
+          title: "chore(data): daily pipeline update"
+          body: >-
+            Automated daily update of deck data, OG images, sitemap,
+            and last-updated timestamp from the analysis pipeline.
+          branch: automated/daily-pipeline-update
+          delete-branch: true
+          labels: automated
