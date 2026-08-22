@@ -1,4 +1,4 @@
-import { render, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -101,6 +101,8 @@ describe("DeckPage Helmet tags", () => {
     );
 
     await waitFor(() => expect(document.title).toContain("Venusaur ex"));
+
+    expect(await screen.findByText(/Scan to import/i)).toBeInTheDocument();
 
     expect(document.title).not.toContain("a1-004");
 
