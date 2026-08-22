@@ -51,6 +51,7 @@ const jsonResponse = (body: unknown) =>
   } as unknown as Response);
 
 const metaContent = (selector: string, match?: string): string | null => {
+  // eslint-disable-next-line testing-library/no-node-access -- asserting real head output requires querying document.head directly
   const nodes = Array.from(document.head.querySelectorAll(selector));
   const node = match
     ? nodes.find((n) => n.getAttribute("content")?.includes(match))
