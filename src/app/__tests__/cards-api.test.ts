@@ -41,11 +41,18 @@ describe("normaliseCard", () => {
       image: venusaurEx.image,
       ex: true,
       set: "a1",
+      deckBuilderNr: 4,
     });
   });
 
   it("normalises every record in a payload", () => {
     expect(normaliseMultipleCards(fixture as RawCardType[])).toHaveLength(fixture.length);
+  });
+
+  it("carries deckBuilderNr through from the payload", () => {
+    expect(normaliseCard(bulbasaur).deckBuilderNr).toBe(1);
+    expect(normaliseCard(erika).deckBuilderNr).toBe(1000011);
+    expect(normaliseCard(venusaurEx).deckBuilderNr).toBe(4);
   });
 });
 

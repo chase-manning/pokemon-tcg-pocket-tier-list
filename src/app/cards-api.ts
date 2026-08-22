@@ -13,6 +13,7 @@ export interface RawCardType {
   image: string;
   ex: boolean;
   set_code: string;
+  deckBuilderNr?: number | null;
 }
 
 export interface CardType {
@@ -27,6 +28,7 @@ export interface CardType {
   image: string;
   ex: boolean;
   set: string;
+  deckBuilderNr: number | null;
 }
 
 export const normaliseCard = (card: RawCardType): CardType => ({
@@ -41,6 +43,7 @@ export const normaliseCard = (card: RawCardType): CardType => ({
   image: card.image,
   ex: card.ex,
   set: card.set_code,
+  deckBuilderNr: card.deckBuilderNr ?? null,
 });
 
 export const normaliseMultipleCards = (cards: RawCardType[]): CardType[] =>
