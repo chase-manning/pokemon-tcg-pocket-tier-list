@@ -8,12 +8,14 @@ import MissingContextProvider from "./components/MissingContext";
 import FilterContextProvider from "./components/FilterContext";
 import { UIProvider } from "./contexts/UIContext";
 import ConsentProvider from "./consent/ConsentProvider";
+import { HelmetProvider } from "react-helmet-async";
 import "./i18n";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 
 const app = (
   <React.StrictMode>
+    <HelmetProvider>
     <BrowserRouter>
       <UIProvider>
         <MissingContextProvider>
@@ -26,6 +28,7 @@ const app = (
         </MissingContextProvider>
       </UIProvider>
     </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
 
