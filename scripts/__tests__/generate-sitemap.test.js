@@ -13,7 +13,7 @@ const FIXTURE_DECKS = [
 ];
 const LASTMOD = "2026-08-22";
 
-test("shared helper normalizes whitespace and casing", () => {
+test("shared helper turns names into route slugs", () => {
   assert.strictEqual(deckSlug("Greninja ex & Oricorio"), "greninja-ex-&-oricorio");
 });
 

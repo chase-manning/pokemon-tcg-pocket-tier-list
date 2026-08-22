@@ -18,7 +18,7 @@ jobs:
         id: run-date
         run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install canvas native dependencies
         run: |
