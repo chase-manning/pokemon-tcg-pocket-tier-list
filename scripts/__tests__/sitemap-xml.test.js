@@ -1,32 +1,29 @@
 // scripts/__tests__/sitemap-xml.test.js
 const test = require("node:test");
 const assert = require("node:assert");
-const fs = require("fs");
-const path = require("path");
 
-// Runs the generator as a side effect (it reads public/data/best-decks.json
-// and writes public/sitemap.xml). Coupled to real data on purpose: a hand-made
-// fixture would never carry the "&" compound-slug decks that exercise the
-// XML-escaping branch.
-require("../generate-sitemap.js");
+const { buildSitemap } = require("../generate-sitemap");
 
-const sitemap = fs.readFileSync(
-  path.join(__dirname, "..", "..", "public", "sitemap.xml"),
-  "utf8"
-);
+const FIXTURE_DECKS = [
+  { name: "venusaur-ex-a1-004" },
+  { name: "suicune-ex-a4a-020&baxcalibur-b2a-036" },
+];
+const LASTMOD = "2026-08-22";
 
 test("sitemap is well-formed XML with balanced url/loc tags", () => {
-  const urlOpen = (sitemap.match(/<url>/g) || []).length;
-  const urlClose = (sitemap.match(/<\/url>/g) || []).length;
-  const locOpen = (sitemap.match(/<loc>/g) || []).length;
-  const locClose = (sitemap.match(/<\/loc>/g) || []).length;
+  const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
+  const urlOpen = (xml.match(/<url>/g) || []).length;
+  const urlClose = (xml.match(/<\/url>/g) || []).length;
+  const locOpen = (xml.match(/<loc>/g) || []).length;
+  const locClose = (xml.match(/<\/loc>/g) || []).length;
   assert.strictEqual(urlOpen, urlClose);
   assert.strictEqual(locOpen, locClose);
-  assert.ok(urlOpen > 8);
+  assert.strictEqual(urlOpen, locOpen);
 });
 
 test("deck slugs with '&' are XML-escaped and no raw ampersands remain", () => {
-  const rawAmp = sitemap.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g) || [];
+  const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
+  const rawAmp = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g) || [];
   assert.strictEqual(rawAmp.length, 0);
-  assert.ok(sitemap.includes("&amp;"));
+  assert.ok(xml.includes("&amp;"));
 });

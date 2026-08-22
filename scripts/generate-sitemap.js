@@ -8,6 +8,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { deckSlug } = require("./deck-slug");
+
 const SITE_URL = "https://pocketdecks.top";
 const STATIC_ROUTES = [
   "/",
@@ -31,29 +33,38 @@ const escapeXml = (value) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
-const bestDecksPath = path.join(__dirname, "..", "public", "data", "best-decks.json");
-const bestDecks = JSON.parse(fs.readFileSync(bestDecksPath, "utf8"));
+const buildSitemap = ({ decks, siteUrl = SITE_URL, staticRoutes = STATIC_ROUTES, lastmod }) => {
+  const deckRoutes = decks.map((deck) => `/deck/${deckSlug(deck.name)}`);
+  const allRoutes = [...staticRoutes, ...deckRoutes];
 
-const deckRoutes = bestDecks.map(
-  (deck) => `/deck/${deck.name.toLowerCase().replace(/\s/g, "-")}`
-);
+  const urlEntries = allRoutes
+    .map(
+      (route) =>
+        `  <url>\n    <loc>${escapeXml(siteUrl + route)}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`
+    )
+    .join("\n");
 
-const allRoutes = [...STATIC_ROUTES, ...deckRoutes];
-const today = new Date().toISOString().split("T")[0];
-
-const urlEntries = allRoutes
-  .map(
-    (route) =>
-      `  <url>\n    <loc>${escapeXml(SITE_URL + route)}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`
-  )
-  .join("\n");
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urlEntries}
 </urlset>
 `;
+};
 
-const outPath = path.join(__dirname, "..", "public", "sitemap.xml");
-fs.writeFileSync(outPath, sitemap);
-console.log(`Wrote ${allRoutes.length} routes to ${outPath}`);
+const main = () => {
+  const bestDecksPath = path.join(__dirname, "..", "public", "data", "best-decks.json");
+  const bestDecks = JSON.parse(fs.readFileSync(bestDecksPath, "utf8"));
+  const today = new Date().toISOString().split("T")[0];
+
+  const sitemap = buildSitemap({ decks: bestDecks, lastmod: today });
+
+  const outPath = path.join(__dirname, "..", "public", "sitemap.xml");
+  fs.writeFileSync(outPath, sitemap);
+  console.log(`Wrote ${STATIC_ROUTES.length + bestDecks.length} routes to ${outPath}`);
+};
+
+if (require.main === module) {
+  main();
+}
+
+module.exports = { buildSitemap, escapeXml };

@@ -1,50 +1,49 @@
 // scripts/__tests__/generate-sitemap.test.js
 const test = require("node:test");
 const assert = require("node:assert");
-const fs = require("fs");
-const path = require("path");
 
-const SITE_URL = "https://pocketdecks.top";
+const { buildSitemap, escapeXml } = require("../generate-sitemap");
 
-// Canonical deck-route id formula, copied verbatim from
-// src/contexts/DecksContext.tsx: `id: oldDeck.name.toLowerCase().replace(/\s/g, "-")`.
-// The sitemap generator must produce exactly this slug for each deck, or the
-// sitemap <loc> won't match the client route `/deck/<id>` and crawlers hit 404s.
-// Unlike a duplicated-and-compared copy, this compares the generator's REAL
-// output against the canonical formula, so a change to the generator's slug
-// logic fails the test instead of silently staying in sync with itself.
-const decksContextSlug = (name) => name.toLowerCase().replace(/\s/g, "-");
+// Deck route IDs come from src/contexts/DecksContext.tsx:
+//   id: oldDeck.name.toLowerCase().replace(/\s/g, "-")
+// If that formula ever changes, update both this copy and scripts/deck-slug.js.
+const decksContextId = (name) => name.toLowerCase().replace(/\s/g, "-");
+const { deckSlug } = require("../deck-slug");
 
-require("../generate-sitemap.js");
+const FIXTURE_DECKS = [
+  { name: "venusaur-ex-a1-004" },
+  { name: "butterfree-b3b-003" },
+  { name: "suicune-ex-a4a-020&baxcalibur-b2a-036" },
+];
+const LASTMOD = "2026-08-22";
 
-const sitemap = fs.readFileSync(
-  path.join(__dirname, "..", "..", "public", "sitemap.xml"),
-  "utf8"
-);
-const deckNames = JSON.parse(
-  fs.readFileSync(
-    path.join(__dirname, "..", "..", "public", "data", "best-decks.json"),
-    "utf8"
-  )
-).map((d) => d.name);
+test("shared helper matches the DecksContext route id formula", () => {
+  for (const deck of FIXTURE_DECKS) {
+    assert.strictEqual(deckSlug(deck.name), decksContextId(deck.name));
+  }
+});
 
-const expectedLoc = (name) =>
-  `${SITE_URL}/deck/${decksContextSlug(name)}`.replace(/&/g, "&amp;");
-
-test("every deck's sitemap slug matches the DecksContext route id formula", () => {
-  for (const name of deckNames) {
+test("every fixture deck gets a route, single- and double-card alike", () => {
+  const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
+  for (const deck of FIXTURE_DECKS) {
     assert.ok(
-      sitemap.includes(`<loc>${expectedLoc(name)}</loc>`),
-      `sitemap missing deck route for "${name}" (expected slug "${decksContextSlug(name)}")`
+      xml.includes(
+        `<loc>https://pocketdecks.top/deck/${escapeXml(deck.name)}</loc>`
+      ),
+      `missing route for "${deck.name}"`
     );
   }
 });
 
 test("compound deck names retain '&' in the slug before XML escaping", () => {
-  const compound = deckNames.find((n) => n.includes("&"));
-  assert.ok(compound, "expected at least one compound deck name with '&'");
+  const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
   assert.ok(
-    decksContextSlug(compound).includes("&"),
-    "compound slug should retain '&' (it is escaped to &amp; in the XML only)"
+    xml.includes("<loc>https://pocketdecks.top/deck/suicune-ex-a4a-020&amp;baxcalibur-b2a-036</loc>"),
+    "compound '&' should be escaped to &amp; inside <loc>"
   );
+});
+
+test("no raw ampersands remain anywhere in the XML output", () => {
+  const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
+  assert.doesNotMatch(xml, /&(?!amp;|lt;|gt;|quot;|apos;|#)/);
 });

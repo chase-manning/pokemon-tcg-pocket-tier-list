@@ -25,7 +25,9 @@ const friendlyName = (deckName) => {
   return names.join(" & ");
 };
 
-const slugFor = (deckName) => deckName.toLowerCase().replace(/\s/g, "-");
+const { deckSlug } = require("./deck-slug");
+
+const slugFor = deckSlug;
 
 const escapeXml = (s) =>
   String(s)
@@ -65,7 +67,6 @@ const renderDeckHtml = (deck, templateHtml) => {
   }
 
   const meta = [
-    `<title>${eTitle}</title>`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:title" content="${eTitle}" />`,
     `<meta property="og:description" content="${eDesc}" />`,
