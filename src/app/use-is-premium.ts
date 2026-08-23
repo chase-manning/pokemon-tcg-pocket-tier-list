@@ -8,7 +8,7 @@ const useIsPremium = () => {
   const { user, loading } = useAuth();
 
   useEffect(() => {
-    // During react-snap prerendering, leave premium status unresolved (null) so
+    // During build-time prerendering, leave premium status unresolved (null) so
     // the prerendered HTML matches the client's initial hydration render and
     // avoids hydration mismatches on premium-dependent UI.
     const isPrerender =

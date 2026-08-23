@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { inferEnergyIds, EXCLUDED_DECK_BUILDER_NR, FORCED_LIGHTNING_NR } from "../deck-energy";
 import cases from "../__fixtures__/energy-inference.json";
 

@@ -51,7 +51,7 @@ Detailed documentation for maintaining the project is available in the `docs/` d
 
 ## 🙌 Contributing
 
-We welcome contributions to improve this project! Here is how you can help:
+We welcome contributions to improve this project:
 
 1. Fork the repository
 2. Create a new branch for your feature (`git checkout -b feature/AmazingFeature`)
@@ -64,14 +64,14 @@ Ensure your code follows the existing style and conventions. Add appropriate tes
 
 ## 🌐 Translations
 
-**Accessibility matters.** This project supports multiple languages. The translation system uses JSON files to manage localised content.
+Accessibility matters. This project supports multiple languages. The translation system uses JSON files to manage localised content.
 
 To contribute a new language translation:
 1. Check the `src/locales/` directory for existing translations
 2. Create a new JSON file for your language following the existing format
 3. Submit a Pull Request with your translation
 
-## 💾 Data Sources
+## 💾 Data sources
 
 This project uses two data sources:
 
@@ -80,11 +80,11 @@ The deck rankings and statistics are based on tournament participation rates, wi
 2. Card data from **[pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards)**, an open-source repository that provides card information for Pokémon TCG Pocket.   
 _This data is used to display detailed card information and deck compositions._
 
-## 📜 License
+## 📜 Licence
 
 This project is licensed under the **[AGPL-3.0 License](https://www.gnu.org/licenses/agpl-3.0.html)**. See the **[LICENSE](LICENSE)** file for details.
 
-## 🙏🏻 Acknowledgments
+## 🙏🏻 Acknowledgements
 
 - [Limitless](https://limitlesstcg.com/) for providing tournament data
 - [pokemon-tcg-pocket-cards](https://github.com/chase-manning/pokemon-tcg-pocket-cards) for maintaining the card database

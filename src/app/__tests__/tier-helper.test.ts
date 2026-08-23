@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { buildTiers } from "../tier-helper";
 
 const score = (item: { score: number }) => item.score;

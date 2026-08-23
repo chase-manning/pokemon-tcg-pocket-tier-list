@@ -11,7 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: yarn
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.19.0
+          cache: "yarn"
+          cache-dependency-path: "yarn.lock"
+      # Node is pinned for the whole job: firebase-tools still hits a
+      # node-fetch@v2 premature-close bug on newer runner defaults.
+      - run: yarn install --frozen-lockfile
       - run: yarn build
         env:
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
@@ -20,12 +27,6 @@ jobs:
           REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
           REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
-      # Pin Node for the firebase-tools subprocess only: the runner default
-      # Node breaks node-fetch@v2 (premature close on every request), but the
-      # legacy react-snap/puppeteer in the build step needs the default Node.
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: 24.19.0
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"

@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { createDeckCode, ENERGY_IDS } from "../deck-code";
 
 // Expected strings are scan-proven against game-generated codes.

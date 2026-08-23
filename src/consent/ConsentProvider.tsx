@@ -9,7 +9,7 @@ import "./consent-overrides.css";
 import { GOOGLE_GTAG } from "../app/constants";
 import { consentTheme } from "./consent-theme";
 
-// During the react-snap postbuild prerender, c15t portals <ConsentBanner/> to
+// During the postbuild route prerender, c15t portals <ConsentBanner/> to
 // document.body — outside #root. The client uses createRoot (not hydrateRoot),
 // so it never adopts that prerendered markup and a second, handler-less banner
 // is frozen on screen forever (and on reload-with-consent-stored it is the ONLY

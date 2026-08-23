@@ -1,9 +1,10 @@
+import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ShareDeckCode from "../ShareDeckCode";
 
 // jsdom lacks canvas; stand in a labelled image.
-jest.mock("qrcode.react", () => ({
+vi.mock("qrcode.react", () => ({
   QRCodeCanvas: (props: { title?: string }) => (
     <img aria-label={props.title ?? ""} alt="" />
   ),
@@ -21,7 +22,7 @@ describe("ShareDeckCode", () => {
   });
 
   it("copies the raw code when the code itself is tapped", async () => {
-    const writeText = jest.fn().mockResolvedValue(undefined);
+    const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
     render(<ShareDeckCode deckName="tap-deck" code={CODE} energyCount={1} />);
     await userEvent.click(screen.getByRole("button", { name: CODE }));
@@ -29,7 +30,7 @@ describe("ShareDeckCode", () => {
   });
 
   it("copies the raw code to the clipboard", async () => {
-    const writeText = jest.fn().mockResolvedValue(undefined);
+    const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
     render(<ShareDeckCode deckName="test-deck" code={CODE} energyCount={1} />);
     await userEvent.click(screen.getByRole("button", { name: /copy/i }));
@@ -42,7 +43,7 @@ describe("ShareDeckCode", () => {
   });
 
   it("clears the copied flag when a regenerated code arrives", async () => {
-    const writeText = jest.fn().mockResolvedValue(undefined);
+    const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
     const { rerender } = render(
       <ShareDeckCode deckName="regen-deck" code={CODE} energyCount={1} />
@@ -55,7 +56,7 @@ describe("ShareDeckCode", () => {
 
   it("does not mark copied when the code changes before the write resolves", async () => {
     let resolveWrite!: () => void;
-    const writeText = jest.fn(
+    const writeText = vi.fn(
       () => new Promise<void>((resolve) => { resolveWrite = resolve; })
     );
     Object.assign(navigator, { clipboard: { writeText } });
