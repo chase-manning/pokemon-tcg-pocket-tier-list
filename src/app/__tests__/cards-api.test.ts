@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { RawCardType, normaliseCard, normaliseMultipleCards } from "../cards-api";
 import fixture from "../__fixtures__/cards.json";
 

@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -10,25 +11,25 @@ import { ContentReadyProvider } from "../../../ads/ContentReadyContext";
 import DeckPage from "../DeckPage";
 import rawCards from "../../../app/__fixtures__/cards.json";
 
-jest.mock("../../../app/use-is-premium", () => ({
+vi.mock("../../../app/use-is-premium", () => ({
   __esModule: true,
   default: () => true,
 }));
 
-jest.mock("../../../app/use-expansions", () => ({
+vi.mock("../../../app/use-expansions", () => ({
   __esModule: true,
   default: () => [],
 }));
 
 // The c15t consent/ads chain resolves under webpack but not Jest's resolver;
 // the ad slot is irrelevant to Helmet output, so stub it.
-jest.mock("../../../ads/AdInContent", () => ({
+vi.mock("../../../ads/AdInContent", () => ({
   __esModule: true,
   default: () => null,
 }));
 
 // UserAccount pulls in Firebase auth; irrelevant to Helmet output, so stub it.
-jest.mock("../../../components/UserAccount", () => ({
+vi.mock("../../../components/UserAccount", () => ({
   __esModule: true,
   default: () => null,
 }));
@@ -61,7 +62,7 @@ const metaContent = (selector: string, match?: string): string | null => {
 
 describe("DeckPage Helmet tags", () => {
   beforeEach(() => {
-    jest.spyOn(global, "fetch").mockImplementation((input) => {
+    vi.spyOn(global, "fetch").mockImplementation((input) => {
       const url = String(input);
       if (url.endsWith("best-decks.json")) return jsonResponse(DECKS_JSON);
       if (url.endsWith("matchup-data.json")) return jsonResponse(MATCHUP_JSON);
@@ -70,7 +71,7 @@ describe("DeckPage Helmet tags", () => {
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it("sets a per-deck title and OG tags from the friendly card names", async () => {

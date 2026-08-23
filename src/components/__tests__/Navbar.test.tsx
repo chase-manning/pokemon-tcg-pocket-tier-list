@@ -1,10 +1,11 @@
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Navbar from "../Navbar";
 import { UIProvider, useUI } from "../../contexts/UIContext";
 
-jest.mock("react-i18next", () => ({
+vi.mock("react-i18next", () => ({
   useTranslation: () => ({
     t: (key: string, fallback?: string) => {
       const labels: Record<string, string> = {

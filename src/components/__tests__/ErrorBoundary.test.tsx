@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from "vitest";
 import { render, screen } from "@testing-library/react";
 import ErrorBoundary from "../ErrorBoundary";
 
@@ -6,11 +7,11 @@ const Boom = (): JSX.Element => {
 };
 
 describe("ErrorBoundary", () => {
-  let consoleError: jest.SpyInstance;
+  let consoleError: MockInstance;
 
   beforeEach(() => {
     // React logs the caught error too, which clutters the run.
-    consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
+    consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
   });
 
   afterEach(() => {
