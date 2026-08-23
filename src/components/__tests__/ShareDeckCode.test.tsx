@@ -6,7 +6,7 @@ import ShareDeckCode from "../ShareDeckCode";
 // jsdom lacks canvas; stand in a labelled image.
 vi.mock("qrcode.react", () => ({
   QRCodeCanvas: (props: { title?: string }) => (
-    <img aria-label={props.title ?? ""} alt="" />
+    <img aria-label={props.title ?? ""} alt={props.title ?? ""} />
   ),
 }));
 

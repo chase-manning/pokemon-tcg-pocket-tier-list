@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import { ADSENSE_CLIENT, ADSENSE_SLOTS, AdPlacement } from "./adsConfig";
 import { ensureAdSenseScript, pushAd } from "./adsense";
 import useAdsState from "./useAdsState";

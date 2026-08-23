@@ -1,8 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { MemoryRouter, Route, Routes } from "react-router";
 import { DecksProvider } from "../../../contexts/DecksContext";
 import MissingContextProvider from "../../../components/MissingContext";
 import FilterContextProvider from "../../../components/FilterContext";
@@ -21,8 +20,7 @@ vi.mock("../../../app/use-expansions", () => ({
   default: () => [],
 }));
 
-// The c15t consent/ads chain resolves under webpack but not Jest's resolver;
-// the ad slot is irrelevant to Helmet output, so stub it.
+// The ad slot is irrelevant to head-tag output, so stub it.
 vi.mock("../../../ads/AdInContent", () => ({
   __esModule: true,
   default: () => null,
@@ -60,7 +58,7 @@ const metaContent = (selector: string, match?: string): string | null => {
   return node?.getAttribute("content") ?? null;
 };
 
-describe("DeckPage Helmet tags", () => {
+describe("DeckPage head tags", () => {
   beforeEach(() => {
     vi.spyOn(global, "fetch").mockImplementation((input) => {
       const url = String(input);
@@ -80,8 +78,7 @@ describe("DeckPage Helmet tags", () => {
     });
 
     render(
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
           <UIProvider>
             <MissingContextProvider>
               <FilterContextProvider>
@@ -98,7 +95,6 @@ describe("DeckPage Helmet tags", () => {
             </MissingContextProvider>
           </UIProvider>
         </QueryClientProvider>
-      </HelmetProvider>
     );
 
     await waitFor(() => expect(document.title).toContain("Venusaur ex"));

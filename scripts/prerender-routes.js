@@ -76,6 +76,7 @@ const main = async () => {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
+  await page.setUserAgent("prerender-routes");
   const pageErrors = [];
 
   page.on("pageerror", (err) =>

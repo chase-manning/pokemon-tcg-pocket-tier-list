@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import AdSlot from "./AdSlot";
 import useAdsState from "./useAdsState";
 import Premium from "../components/Premium";

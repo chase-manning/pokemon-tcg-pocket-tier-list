@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useUI } from "../contexts/UIContext";
 import useIsMobile from "../ads/useIsMobile";

@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const GlobalStyles = (): JSX.Element => {
+const GlobalStyles = (): React.JSX.Element => {
   return <GlobalStyle />;
 };
 

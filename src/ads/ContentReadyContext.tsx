@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 
 // Tracks whether the *current* route has finished rendering meaningful
 // publisher content. Ads must never show on loading, error, or otherwise
