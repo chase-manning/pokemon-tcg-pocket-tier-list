@@ -112,7 +112,7 @@ const main = () => {
     fs.writeFileSync(path.join(outDir, "index.html"), html);
     count += 1;
   }
-  console.log(`Prerendered ${count} deck pages into build/deck/`);
+  console.log(`Prerendered ${count} deck pages into ${BUILD_DIR}/deck/`);
 };
 
 if (require.main === module) {

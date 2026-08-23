@@ -32,10 +32,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "prebuild": "node scripts/generate-sitemap.js",
-    "build": "react-scripts build",
-    "postbuild": "react-snap && node scripts/prerender-decks.js",
+    "build": "yarn typecheck && yarn lint && vite build",
+    "postbuild": "node scripts/prerender-routes.js && node scripts/prerender-decks.js",
     "test": "vitest",
     "test:ci": "vitest run",
     "typecheck": "tsc --noEmit",
@@ -83,41 +83,10 @@
     "ws": "^8.18.0",
     "yaml": "^2.3.4"
   },
-  "reactSnap": {
-    "include": [
-      "/",
-      "/tier-list",
-      "/cards-list",
-      "/expansion-list",
-      "/statistics",
-      "/about",
-      "/privacy"
-    ],
-    "crawl": false,
-    "skipThirdPartyRequests": true,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ],
-    "inlineCss": false
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "chrome >= 78"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
     ]
   },
   "devDependencies": {
