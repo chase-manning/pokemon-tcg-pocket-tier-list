@@ -113,7 +113,7 @@ const Image = styled.img`
 const Hero = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const element = sectionRef.current;

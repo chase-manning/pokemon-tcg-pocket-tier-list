@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } fr
 import { render, screen } from "@testing-library/react";
 import ErrorBoundary from "../ErrorBoundary";
 
-const Boom = (): JSX.Element => {
+const Boom = (): React.JSX.Element => {
   throw new Error("kaboom");
 };
 
