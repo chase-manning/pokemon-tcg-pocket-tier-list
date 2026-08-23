@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyles from "./styles/GlobalStyles";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import MissingContextProvider from "./components/MissingContext";
 import FilterContextProvider from "./components/FilterContext";
 import { UIProvider } from "./contexts/UIContext";

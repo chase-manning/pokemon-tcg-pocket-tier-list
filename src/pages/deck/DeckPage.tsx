@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import {

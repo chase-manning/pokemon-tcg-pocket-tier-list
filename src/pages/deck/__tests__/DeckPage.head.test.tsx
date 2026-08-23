@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router";
 import { DecksProvider } from "../../../contexts/DecksContext";
 import MissingContextProvider from "../../../components/MissingContext";
 import FilterContextProvider from "../../../components/FilterContext";
