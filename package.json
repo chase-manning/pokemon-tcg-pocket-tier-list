@@ -9,7 +9,7 @@
     "@c15t/scripts": "2.2.0",
     "@invertase/firestore-stripe-payments": "^0.0.8",
     "@tanstack/react-query": "^5.76.0",
-    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/jest-dom": "6",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
@@ -124,6 +124,9 @@
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.29.7",
     "@types/dateformat": "^5.0.3",
-    "react-snap": "^1.23.0"
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^30.0.1",
+    "react-snap": "^1.23.0",
+    "vitest": "^4.1.11"
   }
 }

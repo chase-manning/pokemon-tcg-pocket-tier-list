@@ -1,1 +1,4 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
+
+// RTL needs this flag outside Jest or act() warns on every render.
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
