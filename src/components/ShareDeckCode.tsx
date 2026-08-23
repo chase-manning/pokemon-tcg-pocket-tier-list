@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type KeyboardEvent } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { QRCodeCanvas } from "qrcode.react";
 import { deckSlug } from "../app/deck-slug";
+import logo from "../assets/logo.webp";
 
 const Wrapper = styled.section`
   display: flex;
@@ -31,11 +32,19 @@ const RawCode = styled.code`
   line-height: 1.5;
   word-break: break-all;
   text-align: center;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 1rem;
   border-radius: 0.8rem;
   background: var(--card, rgba(255, 255, 255, 0.08));
   user-select: all;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--main);
+    outline-offset: 2px;
+  }
 `;
 
 const Actions = styled.div`
@@ -99,6 +108,13 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
     link.click();
   };
 
+  const handleCodeActivation = (event: KeyboardEvent) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleCopy();
+    }
+  };
+
   return (
     <Wrapper aria-label={`${deckName} ${t("deckPage.shareQrTitle", "share QR")}`}>
       <Title>{t("deckPage.shareQrHeading", "Scan to import this deck")}</Title>
@@ -106,13 +122,27 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
         <QRCodeCanvas
           value={code}
           size={220}
-          level="M"
+          level="H"
           bgColor="#ffffff"
           fgColor="#111111"
           title={`${deckName} ${t("deckPage.shareQrTitle", "share QR")}`}
+          imageSettings={{
+            src: logo,
+            width: 44,
+            height: 44,
+            excavate: true,
+          }}
         />
       </QRTile>
-      <RawCode>{code}</RawCode>
+      <RawCode
+        onClick={handleCopy}
+        role="button"
+        tabIndex={0}
+        onKeyDown={handleCodeActivation}
+        title={t("deckPage.shareQrCopyTitle", "Tap to copy deck code")}
+      >
+        {code}
+      </RawCode>
       <Actions>
         <ActionButton onClick={handleCopy}>
           {copied
@@ -120,7 +150,7 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
             : t("deckPage.shareQrCopy", "Copy deck code")}
         </ActionButton>
         <ActionButton onClick={handleDownload}>
-          {t("deckPage.shareQrDownload", "Download PNG")}
+          {t("deckPage.shareQrDownload", "Download QR")}
         </ActionButton>
       </Actions>
       {energyCount === 0 && (

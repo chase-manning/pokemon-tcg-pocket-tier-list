@@ -17,7 +17,15 @@ describe("ShareDeckCode", () => {
     expect(screen.getByRole("img")).toHaveAttribute("aria-label", expect.stringContaining("hoopa"));
     expect(screen.getByText(CODE)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /copy/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /png/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /qr/i })).toBeInTheDocument();
+  });
+
+  it("copies the raw code when the code itself is tapped", async () => {
+    const writeText = jest.fn().mockResolvedValue(undefined);
+    Object.assign(navigator, { clipboard: { writeText } });
+    render(<ShareDeckCode deckName="tap-deck" code={CODE} energyCount={1} />);
+    await userEvent.click(screen.getByRole("button", { name: CODE }));
+    expect(writeText).toHaveBeenCalledWith(CODE);
   });
 
   it("copies the raw code to the clipboard", async () => {
