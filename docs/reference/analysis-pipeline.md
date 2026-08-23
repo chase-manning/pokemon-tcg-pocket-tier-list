@@ -4,7 +4,7 @@ The `analysis` module is the data backend for the Pokémon TCG Pocket tier list.
 
 ## Core data flow
 
-The pipeline downloads data from the Limitless API and assigns standardized names to the decklists. The scoring scripts then calculate the tier rankings and write JSON files to the public directory for the frontend application.  
+The pipeline downloads data from the Limitless API and assigns standardised names to the decklists. The scoring scripts then calculate the tier rankings and write JSON files to the public directory for the frontend application.  
 
 ## Data acquisition
 

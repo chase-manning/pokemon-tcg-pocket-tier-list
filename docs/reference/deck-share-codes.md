@@ -21,8 +21,8 @@ Whole byte array: base64, standard padding.
 
 Constants:
 
-- `TRAINER_OFFSET = 1_000_000` — trainer `deckBuilderNr`s live above this.
-- `SPECIAL_THRESHOLD = 100_000` — values ≥ this go in the trainer segment.
+- `TRAINER_OFFSET = 1_000_000`: trainer `deckBuilderNr`s live above this.
+- `SPECIAL_THRESHOLD = 100_000`: values ≥ this go in the trainer segment.
 - Energy ids: Grass 1, Fire 2, Water 3, Lightning 4, Psychic 5, Fighting 6,
   Darkness 7, Metal 8.
 
@@ -31,7 +31,7 @@ Behaviour locked in by the golden fixtures:
 - Both segments store `(nr × 10)` as big-endian three-byte values.
 - Repeated numbers stay as separate entries; zeros are stored like any other
   number.
-- Each segment is sorted ascending. Energy ids must also be ascending — a
+- Each segment is sorted ascending. Energy ids must also be ascending: a
   live scan accepted `[2, 4]` and rejected `[4, 2]` for the same deck
   (2026-08-22).
 - An empty input list returns `null`.
@@ -75,7 +75,7 @@ When `CARDS_URL` is bumped to a new payload version:
    `src/app/deck-code.ts`, and write
    `{ "<deck-slug>": [nrs, energyIds, expectedBase64] }`. Work deck by deck
    against real output rather than scripting the whole loop blind.
-4. Run the golden suite. Any mismatch means the encoder deviated — fix the
+4. Run the golden suite. Any mismatch means the encoder deviated: fix the
    encoder, never edit the fixture to make it pass.
 
 ## Manual scan log
