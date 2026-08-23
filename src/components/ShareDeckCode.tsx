@@ -90,6 +90,8 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const tileRef = useRef<HTMLDivElement>(null);
+  const codeRef = useRef(code);
+  codeRef.current = code;
 
   useEffect(() => {
     setCopied(false);
@@ -99,8 +101,11 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
 
   const handleCopy = async () => {
     if (!navigator.clipboard) return;
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
+    const target = code;
+    await navigator.clipboard.writeText(target);
+    if (codeRef.current === target) {
+      setCopied(true);
+    }
   };
 
   const handleDownload = () => {

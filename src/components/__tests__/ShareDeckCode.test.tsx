@@ -53,6 +53,22 @@ describe("ShareDeckCode", () => {
     expect(screen.getByRole("button", { name: /copy/i })).toBeInTheDocument();
   });
 
+  it("does not mark copied when the code changes before the write resolves", async () => {
+    let resolveWrite!: () => void;
+    const writeText = jest.fn(
+      () => new Promise<void>((resolve) => { resolveWrite = resolve; })
+    );
+    Object.assign(navigator, { clipboard: { writeText } });
+    const { rerender } = render(
+      <ShareDeckCode deckName="race-deck" code={CODE} energyCount={1} />
+    );
+    await userEvent.click(screen.getByRole("button", { name: /copy/i }));
+    rerender(<ShareDeckCode deckName="race-deck" code={CODE + "A"} energyCount={1} />);
+    resolveWrite();
+    await new Promise((r) => setTimeout(r));
+    expect(screen.queryByRole("button", { name: /copied/i })).not.toBeInTheDocument();
+  });
+
   it("renders nothing without a code", () => {
     const { container } = render(<ShareDeckCode deckName="x" code={null} energyCount={0} />);
     expect(container).toBeEmptyDOMElement();
