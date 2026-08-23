@@ -1,4 +1,4 @@
-import { useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { QRCodeCanvas } from "qrcode.react";
@@ -91,6 +91,10 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
   const [copied, setCopied] = useState(false);
   const tileRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    setCopied(false);
+  }, [code]);
+
   if (!code) return null;
 
   const handleCopy = async () => {
@@ -123,6 +127,7 @@ const ShareDeckCode = ({ deckName, code, energyCount }: ShareDeckCodeProps) => {
           value={code}
           size={220}
           level="H"
+          marginSize={4}
           bgColor="#ffffff"
           fgColor="#111111"
           title={`${deckName} ${t("deckPage.shareQrTitle", "share QR")}`}

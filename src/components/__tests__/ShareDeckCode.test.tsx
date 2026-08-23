@@ -41,6 +41,18 @@ describe("ShareDeckCode", () => {
     expect(screen.getByText(/energy/i)).toBeInTheDocument();
   });
 
+  it("clears the copied flag when a regenerated code arrives", async () => {
+    const writeText = jest.fn().mockResolvedValue(undefined);
+    Object.assign(navigator, { clipboard: { writeText } });
+    const { rerender } = render(
+      <ShareDeckCode deckName="regen-deck" code={CODE} energyCount={1} />
+    );
+    await userEvent.click(screen.getByRole("button", { name: /copy/i }));
+    expect(await screen.findByRole("button", { name: /copied/i })).toBeInTheDocument();
+    rerender(<ShareDeckCode deckName="regen-deck" code={CODE + "A"} energyCount={1} />);
+    expect(screen.getByRole("button", { name: /copy/i })).toBeInTheDocument();
+  });
+
   it("renders nothing without a code", () => {
     const { container } = render(<ShareDeckCode deckName="x" code={null} energyCount={0} />);
     expect(container).toBeEmptyDOMElement();

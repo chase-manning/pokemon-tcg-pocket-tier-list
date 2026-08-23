@@ -8,7 +8,7 @@ the fixtures honest when the card data moves on.
 Layout before base64. Ground truth: byte-decoded game-generated QR codes,
 cross-checked byte-for-byte against every current deck list.
 
-```
+```text
 [trainer segment][pokémon segment][energy block]
 
 Trainer segment:  1 byte count N, then N × 3-byte big-endian values of (nr × 10)
@@ -62,7 +62,7 @@ When `CARDS_URL` is bumped to a new payload version:
 
 1. Refresh `src/app/__fixtures__/cards-full-v510.json`:
 
-   ```
+   ```sh
    curl -sL "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v<VERSION>/data/v5/cards.min.json" \
      -o src/app/__fixtures__/cards-full-v510.json
    ```
