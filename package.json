@@ -125,6 +125,7 @@
     "@types/dateformat": "^5.0.3",
     "@vitejs/plugin-react": "^6.1.0",
     "jsdom": "^30.0.1",
+    "puppeteer": "^25.8.0",
     "react-snap": "^1.23.0",
     "vitest": "^4.1.11"
   }

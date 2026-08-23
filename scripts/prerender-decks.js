@@ -4,7 +4,9 @@ const path = require("path");
 
 const SITE_URL = "https://pocketdecks.top";
 const ROOT = path.join(__dirname, "..");
-const BUILD_DIR = path.join(ROOT, "build");
+const BUILD_DIR = process.env.BUILD_DIR
+  ? path.resolve(process.env.BUILD_DIR)
+  : path.join(ROOT, "dist");
 const DATA_FILE = path.join(ROOT, "public", "data", "best-decks.json");
 
 const isEx = (name) => /\bex$/i.test(name.trim());
@@ -86,7 +88,7 @@ const renderDeckHtml = (deck, templateHtml) => {
 
 const main = () => {
   if (!fs.existsSync(BUILD_DIR)) {
-    console.error("build/ not found; run `yarn build` first.");
+    console.error("Build output not found; run `yarn build` first.");
     process.exit(1);
   }
   const template = fs.readFileSync(path.join(BUILD_DIR, "index.html"), "utf8");
