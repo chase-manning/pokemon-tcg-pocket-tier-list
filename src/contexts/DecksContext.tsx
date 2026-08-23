@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useRef } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useMissing from "../app/use-missing";
 import useFilters from "../app/use-filters";
@@ -6,10 +6,9 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import {
   CardType,
-  RawCardType,
-  normaliseMultipleCards,
+  fetchCards,
+  getAttacksByDeckBuilderNr,
 } from "../app/cards-api";
-import { CARDS_URL } from "../app/constants";
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
@@ -86,24 +85,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const isPremium = useIsPremium();
   const expansions = useExpansions();
 
-  const attacksByDeckBuilderNr = useRef(
-    new Map<number, Record<string, { cost: string | null }> | undefined>()
-  );
-
   const { data: cards, isLoading: cardsLoading } = useQuery<CardType[]>({
     queryKey: ["cards"],
-    queryFn: async () => {
-      const response = await fetch(CARDS_URL);
-      const raw = (await response.json()) as RawCardType[];
-      // Attack costs stay off CardType; inference reads them here.
-      attacksByDeckBuilderNr.current = new Map();
-      for (const record of raw) {
-        if (record.deckBuilderNr != null) {
-          attacksByDeckBuilderNr.current.set(record.deckBuilderNr, record.attacks);
-        }
-      }
-      return normaliseMultipleCards(raw);
-    },
+    queryFn: fetchCards,
   });
 
   const cardsMapping: Record<string, CardType> = useMemo(() => {
@@ -250,20 +234,21 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             // sort reorders the array in place; pick before augmenting.
             bestList: (() => {
               const bestList = lists.sort((a: FullList, b: FullList) => b.score - a.score)[0];
+              const deckBuilderNrs = bestList.cards.map((card) => card.deckBuilderNr);
+              if (deckBuilderNrs.some((nr) => nr == null)) {
+                return { ...bestList, energyIds: [], deckCode: null };
+              }
               const energyIds = inferEnergyIds(
                 bestList.cards.map((card) => ({
                   supertype: card.supertype,
-                  deckBuilderNr: card.deckBuilderNr ?? 0,
-                  attacks: attacksByDeckBuilderNr.current.get(card.deckBuilderNr ?? 0),
+                  deckBuilderNr: card.deckBuilderNr as number,
+                  attacks: getAttacksByDeckBuilderNr().get(card.deckBuilderNr as number),
                 }))
               );
               return {
                 ...bestList,
                 energyIds,
-                deckCode: createDeckCode(
-                  bestList.cards.map((card) => card.deckBuilderNr ?? 0),
-                  energyIds
-                ),
+                deckCode: createDeckCode(deckBuilderNrs as number[], energyIds),
               };
             })(),
             score: maxScore(oldDeck),

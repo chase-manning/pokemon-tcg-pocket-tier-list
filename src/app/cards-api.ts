@@ -50,8 +50,26 @@ export const normaliseCard = (card: RawCardType): CardType => ({
 export const normaliseMultipleCards = (cards: RawCardType[]): CardType[] =>
   cards.map(normaliseCard);
 
+const attacksByDeckBuilderNr = new Map<
+  number,
+  Record<string, { cost: string | null }> | undefined
+>();
+
+export const indexCardAttacks = (raw: RawCardType[]): void => {
+  attacksByDeckBuilderNr.clear();
+  for (const record of raw) {
+    if (record.deckBuilderNr != null) {
+      attacksByDeckBuilderNr.set(record.deckBuilderNr, record.attacks);
+    }
+  }
+};
+
+export const getAttacksByDeckBuilderNr = (): typeof attacksByDeckBuilderNr =>
+  attacksByDeckBuilderNr;
+
 export const fetchCards = async (): Promise<CardType[]> => {
   const response = await fetch(CARDS_URL);
   const raw = (await response.json()) as RawCardType[];
+  indexCardAttacks(raw);
   return normaliseMultipleCards(raw);
 };
