@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useIsPremium from "../../app/use-is-premium";
 import UserAccount from "../../components/UserAccount";
+import ShareDeckCode from "../../components/ShareDeckCode";
 import { CardType, fetchCards } from "../../app/cards-api";
 import arrowRight from "../../assets/arrow-right.svg";
 import AdInContent from "../../ads/AdInContent";
@@ -568,6 +569,13 @@ const DeckPage = () => {
               ))}
             </CardList>
             <AdInContent placement="deck" />
+            {isDeckFinderMode && (
+              <ShareDeckCode
+                deckName={deck.name}
+                code={deck.bestList.deckCode}
+                energyCount={deck.bestList.energyIds.length}
+              />
+            )}
           </CardSection>
           {!isDeckFinderMode && (
               <PannelSection>
@@ -593,6 +601,17 @@ const DeckPage = () => {
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
                       </KeyStat>
                     </KeyStats>
+                  </MatchupSection>
+
+                  <MatchupSection>
+                    <SubHeader $backgroundColor="var(--c)">
+                      {t("deckPage.shareQrPanel", "Deck Share")}
+                    </SubHeader>
+                    <ShareDeckCode
+                      deckName={deck.name}
+                      code={deck.bestList.deckCode}
+                      energyCount={deck.bestList.energyIds.length}
+                    />
                   </MatchupSection>
 
                   {sortedAlternatives.length > 0 && (

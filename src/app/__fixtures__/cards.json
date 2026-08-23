@@ -10,6 +10,7 @@
     "rarity": "◊",
     "ex": false,
     "health": 70,
+    "deckBuilderNr": 1,
     "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/001.webp"
   },
   {
@@ -23,6 +24,7 @@
     "rarity": "◊◊",
     "ex": false,
     "health": null,
+    "deckBuilderNr": 1000011,
     "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/219.webp"
   },
   {
@@ -36,6 +38,7 @@
     "rarity": "◊◊◊◊",
     "ex": true,
     "health": 190,
+    "deckBuilderNr": 4,
     "image": "https://raw.githubusercontent.com/chase-manning/pokemon-tcg-pocket-cards/refs/heads/main/images/webp/cards/a1/004.webp"
   }
 ]

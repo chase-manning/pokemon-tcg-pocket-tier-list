@@ -4,7 +4,13 @@ import useMissing from "../app/use-missing";
 import useFilters from "../app/use-filters";
 import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
-import { CardType, fetchCards } from "../app/cards-api";
+import {
+  CardType,
+  fetchCards,
+  getAttacksByDeckBuilderNr,
+} from "../app/cards-api";
+import { createDeckCode } from "../app/deck-code";
+import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
 import { PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
 import {
@@ -31,6 +37,8 @@ interface FullList {
   cards: CardType[];
   score: number;
   strength: number;
+  energyIds: number[];
+  deckCode: string | null;
 }
 
 export interface FullDeckType {
@@ -209,6 +217,8 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
               score: oldList.score,
               strength: oldList.strength,
               cards: newCards,
+              energyIds: [],
+              deckCode: null,
             };
           });
 
@@ -221,9 +231,26 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
             id: deckSlug(oldDeck.name),
             name: oldDeck.name,
             lists,
-            bestList: lists.sort(
-                (a: FullList, b: FullList) => b.score - a.score
-            )[0],
+            // sort reorders the array in place; pick before augmenting.
+            bestList: (() => {
+              const bestList = lists.sort((a: FullList, b: FullList) => b.score - a.score)[0];
+              const deckBuilderNrs = bestList.cards.map((card) => card.deckBuilderNr);
+              if (deckBuilderNrs.some((nr) => nr == null)) {
+                return { ...bestList, energyIds: [], deckCode: null };
+              }
+              const energyIds = inferEnergyIds(
+                bestList.cards.map((card) => ({
+                  supertype: card.supertype,
+                  deckBuilderNr: card.deckBuilderNr as number,
+                  attacks: getAttacksByDeckBuilderNr().get(card.deckBuilderNr as number),
+                }))
+              );
+              return {
+                ...bestList,
+                energyIds,
+                deckCode: createDeckCode(deckBuilderNrs as number[], energyIds),
+              };
+            })(),
             score: maxScore(oldDeck),
             popularity: oldDeck.popularity / highestPopularity,
             strength: maxStrength(oldDeck) / highestStrength,

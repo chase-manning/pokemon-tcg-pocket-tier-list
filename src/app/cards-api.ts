@@ -13,6 +13,8 @@ export interface RawCardType {
   image: string;
   ex: boolean;
   set_code: string;
+  deckBuilderNr?: number | null;
+  attacks?: Record<string, { cost: string | null }>;
 }
 
 export interface CardType {
@@ -27,6 +29,7 @@ export interface CardType {
   image: string;
   ex: boolean;
   set: string;
+  deckBuilderNr: number | null;
 }
 
 export const normaliseCard = (card: RawCardType): CardType => ({
@@ -41,13 +44,32 @@ export const normaliseCard = (card: RawCardType): CardType => ({
   image: card.image,
   ex: card.ex,
   set: card.set_code,
+  deckBuilderNr: card.deckBuilderNr ?? null,
 });
 
 export const normaliseMultipleCards = (cards: RawCardType[]): CardType[] =>
   cards.map(normaliseCard);
 
+const attacksByDeckBuilderNr = new Map<
+  number,
+  Record<string, { cost: string | null }> | undefined
+>();
+
+export const indexCardAttacks = (raw: RawCardType[]): void => {
+  attacksByDeckBuilderNr.clear();
+  for (const record of raw) {
+    if (record.deckBuilderNr != null) {
+      attacksByDeckBuilderNr.set(record.deckBuilderNr, record.attacks);
+    }
+  }
+};
+
+export const getAttacksByDeckBuilderNr = (): typeof attacksByDeckBuilderNr =>
+  attacksByDeckBuilderNr;
+
 export const fetchCards = async (): Promise<CardType[]> => {
   const response = await fetch(CARDS_URL);
   const raw = (await response.json()) as RawCardType[];
+  indexCardAttacks(raw);
   return normaliseMultipleCards(raw);
 };
