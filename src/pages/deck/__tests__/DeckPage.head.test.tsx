@@ -2,7 +2,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import { DecksProvider } from "../../../contexts/DecksContext";
 import MissingContextProvider from "../../../components/MissingContext";
 import FilterContextProvider from "../../../components/FilterContext";
@@ -60,7 +59,7 @@ const metaContent = (selector: string, match?: string): string | null => {
   return node?.getAttribute("content") ?? null;
 };
 
-describe("DeckPage Helmet tags", () => {
+describe("DeckPage head tags", () => {
   beforeEach(() => {
     vi.spyOn(global, "fetch").mockImplementation((input) => {
       const url = String(input);
@@ -80,8 +79,7 @@ describe("DeckPage Helmet tags", () => {
     });
 
     render(
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
           <UIProvider>
             <MissingContextProvider>
               <FilterContextProvider>
@@ -98,7 +96,6 @@ describe("DeckPage Helmet tags", () => {
             </MissingContextProvider>
           </UIProvider>
         </QueryClientProvider>
-      </HelmetProvider>
     );
 
     await waitFor(() => expect(document.title).toContain("Venusaur ex"));

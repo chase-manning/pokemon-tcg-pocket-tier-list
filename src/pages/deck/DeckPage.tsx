@@ -19,7 +19,6 @@ import arrowRight from "../../assets/arrow-right.svg";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
-import { Helmet } from "react-helmet-async";
 
 const StyledDeckPage = styled.div`
   width: 100%;
@@ -504,8 +503,7 @@ const DeckPage = () => {
 
   return (
       <>
-        <Helmet>
-          <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
+        <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
           <meta
             name="description"
             content={`${deckDisplayName} ${t(
@@ -532,7 +530,6 @@ const DeckPage = () => {
             property="og:url"
             content={`https://pocketdecks.top/deck/${deck.id}`}
           />
-        </Helmet>
         <StyledDeckPage>
           <CardSection>
             {isDeckFinderMode && (
