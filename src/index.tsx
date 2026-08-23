@@ -32,7 +32,7 @@ const app = (
   </React.StrictMode>
 );
 
-// react-snap prerenders each route to static HTML at build time so crawlers
+// The build pipeline prerenders each route to static HTML so crawlers
 // (and the AdSense review) receive real content. We render fresh rather than
 // hydrate: this app is heavily client-driven (i18n with per-user language
 // detection, auth, async data), so the prerendered markup and the client's
