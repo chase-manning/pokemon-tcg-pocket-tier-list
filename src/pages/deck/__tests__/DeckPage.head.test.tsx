@@ -20,8 +20,7 @@ vi.mock("../../../app/use-expansions", () => ({
   default: () => [],
 }));
 
-// The c15t consent/ads chain resolves under webpack but not Jest's resolver;
-// the ad slot is irrelevant to Helmet output, so stub it.
+// The ad slot is irrelevant to head-tag output, so stub it.
 vi.mock("../../../ads/AdInContent", () => ({
   __esModule: true,
   default: () => null,

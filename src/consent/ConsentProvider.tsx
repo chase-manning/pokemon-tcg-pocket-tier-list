@@ -13,10 +13,11 @@ import { consentTheme } from "./consent-theme";
 // document.body — outside #root. The client uses createRoot (not hydrateRoot),
 // so it never adopts that prerendered markup and a second, handler-less banner
 // is frozen on screen forever (and on reload-with-consent-stored it is the ONLY
-// copy, so Accept/Reject/Personalise do nothing). Skip the banner while snapping
-// so it is not baked into the static HTML; the live client still renders it.
+// copy, so Accept/Reject/Personalise do nothing). Skip the banner while the
+// prerenderer drives the page so it stays out of the static HTML; the live
+// client still renders it.
 const isPrerender =
-  typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap";
+  typeof navigator !== "undefined" && navigator.userAgent === "prerender-routes";
 
 // c15t injects gtag, sets Consent Mode v2 to denied by default and pushes the
 // update when a visitor chooses. Registering both categories lets one gtag

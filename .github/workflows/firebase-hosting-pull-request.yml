@@ -3,6 +3,10 @@
 
 name: Deploy to Firebase Hosting on PR
 "on": pull_request
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
 jobs:
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
@@ -25,6 +29,5 @@ jobs:
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_POKEMON_TCG_POCKET_TIER_LIST }}"
           projectId: pokemon-tcg-pocket-tier-list
