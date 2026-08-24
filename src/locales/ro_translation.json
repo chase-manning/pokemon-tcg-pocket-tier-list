@@ -96,6 +96,13 @@
     "removeAds": "Elimină reclamele",
     "close": "Închide"
   },
+  "adblocker": {
+    "lead": "Blocatorul tău de reclame",
+    "respect": "respectă",
+    "middle": "confidențialitatea ta? Dacă nu ești sigur, eu și mulți alții recomandăm",
+    "recommend": "uBlock Origin de Raymond Hill",
+    "footer": "Evident, nu este sponsorizat. Doar o recomandare sinceră de la o persoană cu aceeași grijă."
+  },
   "userAccount": {
     "title": "Cont utilizator",
     "signOut": "Deloghează-te"
@@ -113,9 +120,9 @@
     "winRate": "Rata de victorie (%)",
     "notEnoughCards": "Nu sunt suficiente cărți",
     "tryAnotherDeck": "Încearcă alt deck",
-        "notEnoughShrug": "¯\\_(ツ)_/¯",
-        "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
-        "undo": "Undo",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
+    "undo": "Undo",
     "alternatives": "Alternative"
   },
   "energyDropdown": {
@@ -142,6 +149,10 @@
     "latestExpansionCards": "Cărți din cel mai recent set",
     "latestExpansionCardsAny": "Oricare"
   },
+  "statistics": {
+    "trends": "Tendințe meta",
+    "matrix": "Matrice de meciuri"
+  },
   "bestDeckFinder": {
     "title": "Găsește-ți cel mai bun deck",
     "description1": "Descoperă cel mai puternic deck pe care îl poți construi cu colecția ta. Instrumentul îți arată inițial cel mai bun deck din joc. Dacă apeși pe o carte pe care nu o deții, sistemul îți va sugera următorul deck de top care nu folosește cartea respectivă.",
@@ -153,7 +164,9 @@
     "bestDeckFinder": "Best Deck Finder",
     "signIn": "Conectează-te cu Google",
     "signOut": "Deloghează-te",
-    "bestCards": "Cele mai bune cărți"
+    "bestCards": "Cele mai bune cărți",
+    "bestExpansions": "Cele mai bune expansiuni",
+    "statistics": "Statistici"
   },
   "footer": {
     "about": "Despre",

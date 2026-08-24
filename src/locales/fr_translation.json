@@ -43,6 +43,10 @@
     "latestExpansionCards": "Cartes de la dernière extension",
     "latestExpansionCardsAny": "Tous"
   },
+  "statistics": {
+    "trends": "Tendances du méta",
+    "matrix": "Matrice des confrontations"
+  },
   "bestDeckFinder": {
     "title": "Trouver votre meilleur deck",
     "description1": "Découvrez le deck le plus puissant que vous pouvez construire avec votre collection. L'outil \"Trouver votre meilleur deck\" commence par vous montrer le meilleur deck du jeu, mais vous pouvez cliquer sur les cartes que vous n'avez pas. Il vous montrera ensuite le meilleur deck qui n'utilise pas ces cartes.",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "Trouver votre meilleur deck",
     "signIn": "Se connecter avec Google",
     "signOut": "Se déconnecter",
-    "bestCards": "Meilleures cartes"
+    "bestCards": "Meilleures cartes",
+    "bestExpansions": "Meilleures extensions",
+    "statistics": "Statistiques"
   },
   "footer": {
     "about": "À propos",
@@ -185,6 +191,13 @@
     "advertisement": "Publicité",
     "removeAds": "Supprimer les publicités",
     "close": "Fermer"
+  },
+  "adblocker": {
+    "lead": "Est-ce que votre bloqueur de publicités",
+    "respect": "respecte",
+    "middle": "votre vie privée ? Si vous n'êtes pas sûr, je et beaucoup d'autres recommandons",
+    "recommend": "uBlock Origin de Raymond Hill",
+    "footer": "Évidemment non sponsorisé. Juste une recommandation sincère d'une personne partageant la même préoccupation."
   },
   "userAccount": {
     "title": "Compte utilisateur",

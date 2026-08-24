@@ -43,6 +43,10 @@
     "latestExpansionCards": "最新扩展包卡牌",
     "latestExpansionCardsAny": "任意"
   },
+  "statistics": {
+    "trends": "meta 趋势",
+    "matrix": "对战矩阵"
+  },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",
     "description1": "探索您能用收藏卡牌组建的最强卡组。最佳卡组搜索器首先会显示游戏中最强的卡组，但您可以点击您没有的卡牌。它会随后显示不使用这些卡牌的次佳卡组。",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "最佳卡组查找器",
     "signIn": "使用谷歌登录",
     "signOut": "退出登录",
-    "bestCards": "最佳卡牌"
+    "bestCards": "最佳卡牌",
+    "bestExpansions": "最佳扩展包",
+    "statistics": "统计"
   },
   "footer": {
     "about": "关于",
@@ -185,6 +191,13 @@
     "advertisement": "广告",
     "removeAds": "去除广告",
     "close": "关闭"
+  },
+  "adblocker": {
+    "lead": "你的广告拦截器",
+    "respect": "尊重",
+    "middle": "你的隐私吗？如果不确定，我和许多其他人都在使用",
+    "recommend": "Raymond Hill 的 uBlock Origin",
+    "footer": "显然这不是赞助。只是志同道合者的一份真心推荐。"
   },
   "userAccount": {
     "title": "用户账户",

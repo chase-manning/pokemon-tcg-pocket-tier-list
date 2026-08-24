@@ -43,6 +43,10 @@
     "latestExpansionCards": "Cartas de la expansión más reciente",
     "latestExpansionCardsAny": "Cualquiera"
   },
+  "statistics": {
+    "trends": "Tendencias del meta",
+    "matrix": "Matriz de enfrentamientos"
+  },
   "bestDeckFinder": {
     "title": "Encuentra Tu Mejor Mazo",
     "description1": "Descubre el mazo más fuerte que puedes construir con tu colección. El Buscador de Mejores Mazos comienza mostrándote el mejor mazo del juego, pero puedes hacer clic en las cartas que no tienes. Luego te mostrará el siguiente mejor mazo que no usa esas cartas.",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "Buscador de Mejores Mazos",
     "signIn": "Iniciar sesión con Google",
     "signOut": "Cerrar sesión",
-    "bestCards": "Mejores Cartas"
+    "bestCards": "Mejores Cartas",
+    "bestExpansions": "Mejores expansiones",
+    "statistics": "Estadísticas"
   },
   "footer": {
     "about": "Acerca de",
@@ -185,6 +191,13 @@
     "advertisement": "Anuncio",
     "removeAds": "Eliminar anuncios",
     "close": "Cerrar"
+  },
+  "adblocker": {
+    "lead": "¿Tu bloqueador de anuncios",
+    "respect": "respeta",
+    "middle": "tu privacidad? Si no estás seguro, yo y muchos otros recomendamos",
+    "recommend": "uBlock Origin de Raymond Hill",
+    "footer": "Obviamente no está patrocinado. Solo una recomendación sincera de alguien con la misma inquietud."
   },
   "userAccount": {
     "title": "Cuenta de Usuario",

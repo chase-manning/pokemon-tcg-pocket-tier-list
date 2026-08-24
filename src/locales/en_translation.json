@@ -149,6 +149,10 @@
     "latestExpansionCards": "Cards from latest expansion",
     "latestExpansionCardsAny": "Any"
   },
+  "statistics": {
+    "trends": "Meta Trends",
+    "matrix": "Matchup Matrix"
+  },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",
     "description1": "Find the strongest deck you can build with your collection. The Best Deck Finder starts by showing you the top deck in the game. Click any cards you do not have, and it shows you the next best deck that skips those cards.",
@@ -160,7 +164,9 @@
     "bestDeckFinder": "Best Deck Finder",
     "signIn": "Sign in with Google",
     "signOut": "Sign out",
-    "bestCards": "Best Cards"
+    "bestCards": "Best Cards",
+    "bestExpansions": "Best Expansions",
+    "statistics": "Statistics"
   },
   "footer": {
     "about": "About",
