@@ -12,7 +12,7 @@ import {
     Legend,
 } from "recharts";
 import useIsPremium from "../../app/use-is-premium";
-import { PipelineTrendRow, PipelineMetaShare, MetaShareEntry } from "../../types/pipeline-data";
+import { PipelineTrendRow, PipelineMetaShare } from "../../types/pipeline-data";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
@@ -264,7 +264,7 @@ const COLOR_PALETTE = [
 
 const StatisticsPage = () => {
     const { t } = useTranslation();
-    const { decks, metaShareBySlug, loading, error } = useDecks();
+    const { decks, loading, error } = useDecks();
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
     const [trendData, setTrendData] = useState<PipelineTrendRow[]>([]);
