@@ -14,6 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 import useIsPremium from "../../app/use-is-premium";
 import UserAccount from "../../components/UserAccount";
 import ShareDeckCode from "../../components/ShareDeckCode";
+import Tooltip from "../../components/Tooltip";
 import { CardType, fetchCards } from "../../app/cards-api";
 import type { MetaShareEntry } from "../../types/pipeline-data";
 import arrowRight from "../../assets/arrow-right.svg";
@@ -586,22 +587,25 @@ const DeckPage = () => {
                       {t("deckPage.keyStats")}
                     </SubHeader>
                     <KeyStats>
-                      <KeyStat title={t("deckPage.strengthTooltip")}>
+                      <KeyStat>
                         {t("deckPage.strength")}:{" "}
                         <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
+                        <Tooltip text={t("deckPage.strengthTooltip")} />
                       </KeyStat>
-                      <KeyStat title={t("deckPage.popularityTooltip")}>
+                      <KeyStat>
                         {t("deckPage.popularity")}:{" "}
                         <KeyStatValue>
                           {(deck.popularity * 10).toFixed(1)}
                         </KeyStatValue>
+                        <Tooltip text={t("deckPage.popularityTooltip")} />
                       </KeyStat>
-                      <KeyStat title={t("deckPage.winRateTooltip")}>
+                      <KeyStat>
                         {t("deckPage.winRate")}:{" "}
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
+                        <Tooltip text={t("deckPage.winRateTooltip")} />
                       </KeyStat>
                       {shareEntry && (
-                        <KeyStat title={t("deckPage.metaShareTooltip")}>
+                        <KeyStat>
                           {t("deckPage.metaShare")}:{" "}
                           <KeyStatValue>
                             {(shareEntry.share * 100).toFixed(1)}%
@@ -611,6 +615,7 @@ const DeckPage = () => {
                                 ? ` ▼${(Math.abs(shareEntry.delta) * 100).toFixed(1)}`
                                 : ""}
                           </KeyStatValue>
+                          <Tooltip text={t("deckPage.metaShareTooltip")} />
                         </KeyStat>
                       )}
                     </KeyStats>
