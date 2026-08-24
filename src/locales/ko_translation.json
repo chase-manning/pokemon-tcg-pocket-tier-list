@@ -18,7 +18,11 @@
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
     "alternatives": "대안",
-    "metaShare": "메타 점유율"
+    "metaShare": "메타 점유율",
+    "strengthTooltip": "필드 대비 평균 매치업 점수 (0–10)",
+    "popularityTooltip": "최근 7일간 예선 통과 게임 점유율 (0–10)",
+    "winRateTooltip": "현재 윈도우 승률",
+    "metaShareTooltip": "예선 통과 게임 점유율 ± 주간 변화"
   },
   "energyDropdown": {
     "all": "모든 에너지 타입",

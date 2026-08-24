@@ -56,9 +56,9 @@ const ShareBadge = styled.div<{ $delta: number | null }>`
   font-size: 1.4rem;
   font-weight: 700;
   position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0.5rem;
+  left: 0.5rem;
+  text-align: left;
   padding: 0.3rem 0.8rem;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 0.4rem;

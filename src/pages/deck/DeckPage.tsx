@@ -586,22 +586,22 @@ const DeckPage = () => {
                       {t("deckPage.keyStats")}
                     </SubHeader>
                     <KeyStats>
-                      <KeyStat>
+                      <KeyStat title={t("deckPage.strengthTooltip")}>
                         {t("deckPage.strength")}:{" "}
                         <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
                       </KeyStat>
-                      <KeyStat>
+                      <KeyStat title={t("deckPage.popularityTooltip")}>
                         {t("deckPage.popularity")}:{" "}
                         <KeyStatValue>
                           {(deck.popularity * 10).toFixed(1)}
                         </KeyStatValue>
                       </KeyStat>
-                      <KeyStat>
+                      <KeyStat title={t("deckPage.winRateTooltip")}>
                         {t("deckPage.winRate")}:{" "}
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
                       </KeyStat>
                       {shareEntry && (
-                        <KeyStat>
+                        <KeyStat title={t("deckPage.metaShareTooltip")}>
                           {t("deckPage.metaShare")}:{" "}
                           <KeyStatValue>
                             {(shareEntry.share * 100).toFixed(1)}%

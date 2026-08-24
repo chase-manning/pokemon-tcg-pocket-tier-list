@@ -62,3 +62,14 @@ After all tasks complete and verified:
 - Reference skills when plan says to
 - Stop when blocked, don't guess
 - Never start implementation on main/master branch without explicit user consent
+
+## V&V discipline (added 2026-08-24)
+
+Every plan with a dedicated V&V task must encode four explicit validation layers:
+
+1. **Data truth** — independent verification of the produced artifact against source-of-truth inputs (checksums, schema, arithmetic invariants). Never trust the generator's self-report.
+2. **Browser truth** — manual or automated checks against the running dev server at viewport widths matching the design spec (375px minimum for mobile). Visual regressions caught here, not in CI.
+3. **Crawler truth** — prerendered HTML must carry the semantic content (not loading shells), loopback gates must still pass, and new JSON artifacts must be present in the output directory.
+4. **Regression gates** — the full gate suite runs with counts recorded into the PR body; a dropped test count is a blocker.
+
+If a V&V task only checks one layer, it is incomplete. The plan author must list concrete commands for each layer that the executor runs verbatim and pastes outputs from.

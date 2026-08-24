@@ -18,7 +18,11 @@
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
     "alternatives": "Alternativen",
-    "metaShare": "Meta-Anteil"
+    "metaShare": "Meta-Anteil",
+    "strengthTooltip": "Ø. Matchup-Score gegen das Feld (0–10)",
+    "popularityTooltip": "Anteil qualifizierter Spiele in den letzten 7 Tagen (0–10)",
+    "winRateTooltip": "Sieg-% im aktuellen Fenster",
+    "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung"
   },
   "energyDropdown": {
     "all": "Alle Energietypen",

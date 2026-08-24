@@ -124,7 +124,11 @@
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
     "alternatives": "Alternatives",
-    "metaShare": "Meta share"
+    "metaShare": "Meta share",
+    "strengthTooltip": "Avg. matchup score vs the field (0–10)",
+    "popularityTooltip": "Share of qualified games in last 7 days (0–10)",
+    "winRateTooltip": "Win % in the current window",
+    "metaShareTooltip": "Share of qualified games ± weekly change"
   },
   "energyDropdown": {
     "all": "All Energy Types",
