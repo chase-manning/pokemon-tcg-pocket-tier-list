@@ -42,3 +42,21 @@ test("HTML template ships no canonical tag", () => {
   );
   assert.ok(!tpl.includes('rel="canonical"'));
 });
+
+const { renderDeckHtml } = require("../prerender-decks");
+
+test("deck pages get self-canonical and breadcrumb JSON-LD", () => {
+  const out = renderDeckHtml(
+    {
+      slug: "hoopa-ex-b4-103",
+      title: "Hoopa ex | Pokémon TCG Pocket Deck Stats and Matchups",
+      ogImage: "https://pocketdecks.top/og/deck/hoopa-ex-b4-103.png",
+      ogUrl: "https://pocketdecks.top/deck/hoopa-ex-b4-103",
+      description: "Pokémon TCG Pocket deck profile for Hoopa ex.",
+    },
+    TEMPLATE
+  );
+  assert.ok(out.includes('rel="canonical" href="https://pocketdecks.top/deck/hoopa-ex-b4-103/"'));
+  assert.ok(out.includes('"BreadcrumbList"'));
+  assert.ok(out.includes("Hoopa ex"));
+});

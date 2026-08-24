@@ -1,6 +1,7 @@
 // scripts/prerender-decks.js
 const fs = require("fs");
 const path = require("path");
+const { stampHead } = require("./meta-stamp");
 
 const SITE_URL = "https://pocketdecks.top";
 const ROOT = path.join(__dirname, "..");
@@ -83,6 +84,18 @@ const renderDeckHtml = (deck, templateHtml) => {
 
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${eTitle}</title>`);
   html = html.replace(/<\/head>/i, `    ${meta}\n  </head>`);
+  html = stampHead(html, {
+    canonical: `${SITE_URL}/deck/${slug}/`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Tier List", item: `${SITE_URL}/tier-list/` },
+        { "@type": "ListItem", position: 3, name: title.split(" | ")[0] },
+      ],
+    },
+  });
   return html;
 };
 
