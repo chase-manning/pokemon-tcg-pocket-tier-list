@@ -359,7 +359,7 @@ const StatisticsPage = () => {
             <>
             <Section>
                 <SectionHeader>
-                    <SectionTitle>{t("statistics.trends", "Meta Trends")}</SectionTitle>
+                    <SectionTitle>{t("statistics.trends")}</SectionTitle>
                     <ToggleContainer>
                         <ToggleButton
                             $active={range === "14-day"}
@@ -431,7 +431,7 @@ const StatisticsPage = () => {
             <Section>
                 <SectionHeader>
                     <SectionTitle>
-                        {t("statistics.matrix", "Matchup Matrix")}
+                        {t("statistics.matrix")}
                     </SectionTitle>
                 </SectionHeader>
 

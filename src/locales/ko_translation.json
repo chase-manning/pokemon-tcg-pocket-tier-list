@@ -43,6 +43,10 @@
     "latestExpansionCards": "최신 확장팩 카드",
     "latestExpansionCardsAny": "모두"
   },
+  "statistics": {
+    "trends": "메타 트렌드",
+    "matrix": "상성 매트릭스"
+  },
   "bestDeckFinder": {
     "title": "최고의 덱 찾기",
     "description1": "당신의 컬렉션으로 만들 수 있는 가장 강력한 덱을 발견하세요. 베스트 덱 파인더는 먼저 게임에서 가장 강력한 덱을 보여주고, 가지고 있지 않은 카드를 클릭하면 해당 카드를 사용하지 않는 다음으로 좋은 덱을 보여줍니다.",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "최고의 덱 찾기",
     "signIn": "Google로 로그인",
     "signOut": "로그아웃",
-    "bestCards": "최고의 카드"
+    "bestCards": "최고의 카드",
+    "bestExpansions": "베스트 확장팩",
+    "statistics": "통계"
   },
   "footer": {
     "about": "소개",
@@ -90,12 +96,6 @@
     "openSource": {
       "title": "오픈소스",
       "description": "이 웹사이트는 오픈소스입니다. 소스 코드는 <0>GitHub</0>에서 찾을 수 있습니다"
-    },
-    "sortBy": {
-      "title": "대체 순위",
-      "description": "티어 리스트를 인기도나 강도로 정렬할 수 있습니다",
-      "free": "🚫",
-      "premium": "✅"
     }
   },
   "farewell": {
@@ -191,6 +191,13 @@
     "advertisement": "광고",
     "removeAds": "광고 제거",
     "close": "닫기"
+  },
+  "adblocker": {
+    "lead": "당신의 광고 차단기는",
+    "respect": "개인정보를 존중하나요",
+    "middle": "잘 모르겠다면 저를 비롯한 많은 사람이",
+    "recommend": "Raymond Hill의 uBlock Origin을 추천합니다",
+    "footer": "물론 후원이 아닙니다. 같은 생각을 가진 한 사람으로서의 순수한 추천입니다."
   },
   "userAccount": {
     "title": "사용자 계정",

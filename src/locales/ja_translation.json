@@ -43,6 +43,10 @@
     "latestExpansionCards": "最新拡張パックのカード",
     "latestExpansionCardsAny": "任意"
   },
+  "statistics": {
+    "trends": "メタトレンド",
+    "matrix": "対戦マトリクス"
+  },
   "bestDeckFinder": {
     "title": "最適なデッキを見つけよう",
     "description1": "あなたのコレクションで作れる最強のデッキを発見しましょう。ベストデッキファインダーは、まずゲーム内の最強デッキを表示し、持っていないカードをクリックすると、それらのカードを使用しない次善のデッキを表示します。",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "ベストデッキファインダー",
     "signIn": "Googleでログイン",
     "signOut": "ログアウト",
-    "bestCards": "ベストカード"
+    "bestCards": "ベストカード",
+    "bestExpansions": "おすすめの拡張パック",
+    "statistics": "統計"
   },
   "footer": {
     "about": "概要",
@@ -90,12 +96,6 @@
     "openSource": {
       "title": "オープンソース",
       "description": "このウェブサイトはオープンソースです。ソースコードは<0>GitHub</0>で見つけることができます"
-    },
-    "sortBy": {
-      "title": "代替ランキング",
-      "description": "ティアリストを人気度や強さで並び替えることができます",
-      "free": "🚫",
-      "premium": "✅"
     }
   },
   "farewell": {
@@ -191,6 +191,13 @@
     "advertisement": "広告",
     "removeAds": "広告を非表示",
     "close": "閉じる"
+  },
+  "adblocker": {
+    "lead": "あなたの広告ブロッカーは",
+    "respect": "プライバシーを尊重しますか",
+    "middle": "迷っているなら、私をはじめ多くの人が",
+    "recommend": "uBlock Origin（Raymond Hill 氏）をおすすめしています",
+    "footer": "もちろん宣伝ではありません。同じ考えを持つ一人としての純粋なおすすめです。"
   },
   "userAccount": {
     "title": "ユーザーアカウント",

@@ -6,9 +6,8 @@ import { PipelinePartialDeck, PipelineTrendRow } from "../../../src/types/pipeli
  * Builds the daily meta-share trend series for the top 6 highest-scoring
  * archetypes, as a percentage of that day's total qualified games.
  *
- * Assumes bestDecks is pre-sorted by score descending — get-best-decks.ts
- * sorts it before calling. This function does not re-sort; it trusts the
- * caller so the first six entries are the top six archetypes.
+ * Assumes bestDecks is pre-sorted by score descending; get-best-decks.ts
+ * sorts it before calling, so the first six entries are the top six.
  */
 export const buildTrends = (
   qualifiedDecks: Deck[],

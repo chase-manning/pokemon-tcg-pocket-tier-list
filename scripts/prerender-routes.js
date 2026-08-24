@@ -36,14 +36,20 @@ const ROUTE_META = {
     title: "Pokemon TCG Pocket Deck Tier List | Top Pocket Decks",
     description: "Pokemon TCG Pocket tier list built from real tournament results. See best deck rankings, win rates and matchups for the current expansion.",
     canonical: "https://pocketdecks.top/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Top Pocket Decks",
+      url: "https://pocketdecks.top/",
+    },
   },
   "/tier-list": {
-    title: "Pokemon TCG Pocket Tier List — Best Decks | Top Pocket Decks",
+    title: "Pokemon TCG Pocket Tier List: Best Decks | Top Pocket Decks",
     description: "Every Pokemon TCG Pocket archetype ranked from tournament data, updated daily. Filter the tier list by expansion, energy type and win rate.",
     canonical: "https://pocketdecks.top/tier-list/",
   },
   "/cards-list": {
-    title: "Pokemon TCG Pocket Card Tier List — Best Cards | Top Pocket Decks",
+    title: "Pokemon TCG Pocket Card Tier List: Best Cards | Top Pocket Decks",
     description: "Which Pokemon TCG Pocket cards actually win games. Card rankings scored from tournament deck lists, refreshed with every pipeline run.",
     canonical: "https://pocketdecks.top/cards-list/",
   },
@@ -63,7 +69,7 @@ const ROUTE_META = {
     canonical: "https://pocketdecks.top/deck/",
   },
   "/about": {
-    title: "About Top Pocket Decks — Methodology & Data Sources",
+    title: "About Top Pocket Decks: Methodology & Data Sources",
     description: "How Top Pocket Decks ranks Pokemon TCG Pocket decks from Limitless tournament data, and who maintains the project.",
     canonical: "https://pocketdecks.top/about/",
   },
@@ -146,7 +152,7 @@ const main = async () => {
   // Only the tier list paints deck anchors; other routes render their own
   // content without them. Waiting there would burn the full timeout per route,
   // and letting it fail silently would ship a "Loading..." snapshot if this
-  // route's render ever regressed — so failure propagates instead.
+  // route's render ever regressed, so failure propagates instead.
   const DECK_ANCHOR_ROUTES = new Set(["/tier-list"]);
   for (const route of ROUTES) {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: "networkidle0" });
@@ -166,13 +172,7 @@ const main = async () => {
     ).split(ORIGIN).join("");
     const meta = ROUTE_META[route];
     if (meta) {
-      const webSiteLd = route === "/" ? {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "Top Pocket Decks",
-        url: "https://pocketdecks.top/",
-      } : undefined;
-      html = stampHead(html, { ...meta, jsonLd: webSiteLd });
+      html = stampHead(html, meta);
     }
     const outFile =
       route === "/"

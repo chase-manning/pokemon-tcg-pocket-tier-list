@@ -29,6 +29,22 @@ test("injects JSON-LD as single script block", () => {
   assert.ok(out.includes('"@type":"WebSite"'));
 });
 
+test("metas replace stale og/twitter tags and inject fresh ones", () => {
+  const withStale = TEMPLATE.replace(
+    "</head>",
+    '<meta property="og:title" content="stale">\n  </head>'
+  );
+  const out = stampHead(withStale, {
+    canonical: "https://pocketdecks.top/",
+    metas: [
+      '<meta property="og:title" content="Fresh">',
+      '<meta property="og:url" content="https://pocketdecks.top/">',
+    ],
+  });
+  assert.ok(!out.includes("stale"));
+  assert.ok(out.includes('content="Fresh"'));
+});
+
 test("JSON-LD values cannot close the script tag early", () => {
   const out = stampHead(TEMPLATE.replace(/<link[^>]*canonical[^>]*>/, ""), {
     canonical: "https://pocketdecks.top/",

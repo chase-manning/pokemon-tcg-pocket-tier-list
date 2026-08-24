@@ -43,6 +43,10 @@
     "latestExpansionCards": "Karten aus neuester Erweiterung",
     "latestExpansionCardsAny": "Beliebig"
   },
+  "statistics": {
+    "trends": "Meta-Trends",
+    "matrix": "Matchup-Matrix"
+  },
   "bestDeckFinder": {
     "title": "Finde Dein Bestes Deck",
     "description1": "Entdecke das stärkste Deck, das du mit deiner Sammlung bauen kannst. Der Beste Deck Finder zeigt dir zunächst das beste Deck im Spiel, aber du kannst auf Karten klicken, die du nicht hast. Es zeigt dir dann das nächstbeste Deck, das diese Karten nicht verwendet.",
@@ -54,7 +58,9 @@
     "bestDeckFinder": "Bester Deck-Finder",
     "signIn": "Mit Google anmelden",
     "signOut": "Abmelden",
-    "bestCards": "Beste Karten"
+    "bestCards": "Beste Karten",
+    "bestExpansions": "Beste Erweiterungen",
+    "statistics": "Statistiken"
   },
   "footer": {
     "about": "Über uns",
@@ -185,6 +191,13 @@
     "advertisement": "Werbung",
     "removeAds": "Werbung entfernen",
     "close": "Schließen"
+  },
+  "adblocker": {
+    "lead": "Blockiert dein Werbeblocker und",
+    "respect": "respektiert er",
+    "middle": "deine Privatsphäre? Falls du unsicher bist, können dir ich und viele andere",
+    "recommend": "uBlock Origin von Raymond Hill empfehlen",
+    "footer": "Offenbar nicht gesponsert. Nur eine echte Empfehlung von einem gleichgesinnten Nutzer."
   },
   "userAccount": {
     "title": "Benutzerkonto",
