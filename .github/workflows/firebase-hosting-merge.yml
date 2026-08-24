@@ -12,10 +12,12 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v8
+      - uses: actions/setup-node@v8
         with:
-          node-version: 24.19.0
+          # 24.19.0 broke the deploy action's preview-link posting; this is
+          # the documented-good build for it.
+          node-version: 24.18.0
           cache: "yarn"
           cache-dependency-path: "yarn.lock"
       # Node is pinned for the whole job: firebase-tools still hits a
