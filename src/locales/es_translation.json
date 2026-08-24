@@ -50,7 +50,10 @@
     "rising": "En ascenso",
     "falling": "En descenso",
     "newDecks": "Mazos nuevos",
-    "metaMovement": "Movimiento del meta"
+    "metaMovement": "Movimiento del meta",
+    "deckColumn": "Mazo",
+    "shareColumn": "Cuota",
+    "deltaColumn": "Cambio"
   },
   "bestDeckFinder": {
     "title": "Encuentra Tu Mejor Mazo",
@@ -208,5 +211,8 @@
     "title": "Cuenta de Usuario",
     "signOut": "Cerrar sesión"
   },
-  "lastUpdated": "Última actualización:"
+  "lastUpdated": "Última actualización:",
+  "tierList": {
+    "metaShare": "Cuota del meta"
+  }
 }

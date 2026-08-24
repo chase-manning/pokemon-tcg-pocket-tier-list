@@ -50,7 +50,10 @@
     "rising": "Steigend",
     "falling": "Fallend",
     "newDecks": "Neue Decks",
-    "metaMovement": "Meta-Bewegung"
+    "metaMovement": "Meta-Bewegung",
+    "deckColumn": "Deck",
+    "shareColumn": "Anteil",
+    "deltaColumn": "Veränderung"
   },
   "bestDeckFinder": {
     "title": "Finde Dein Bestes Deck",
@@ -208,5 +211,8 @@
     "title": "Benutzerkonto",
     "signOut": "Abmelden"
   },
-  "lastUpdated": "Zuletzt aktualisiert:"
+  "lastUpdated": "Zuletzt aktualisiert:",
+  "tierList": {
+    "metaShare": "Meta-Anteil"
+  }
 }

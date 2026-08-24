@@ -205,6 +205,7 @@ const LandingPage = () => {
                         key={deck.id}
                         deck={deck}
                         metaShare={metaShareBySlug?.[deck.id] ?? null}
+                        metaShareLabel={t("tierList.metaShare")}
                       />
                   ))}
                 </RowContent>

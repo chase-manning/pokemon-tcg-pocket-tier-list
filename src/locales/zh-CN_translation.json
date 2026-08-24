@@ -50,7 +50,10 @@
     "rising": "上升",
     "falling": "下降",
     "newDecks": "新卡组",
-    "metaMovement": "环境动向"
+    "metaMovement": "环境动向",
+    "deckColumn": "卡组",
+    "shareColumn": "占比",
+    "deltaColumn": "变化"
   },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",
@@ -208,5 +211,8 @@
     "title": "用户账户",
     "signOut": "退出登录"
   },
-  "lastUpdated": "最后更新："
+  "lastUpdated": "最后更新：",
+  "tierList": {
+    "metaShare": "环境占比"
+  }
 }

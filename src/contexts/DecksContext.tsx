@@ -78,6 +78,27 @@ const maxScore = (deck: PartialDeckType): number => {
   }, 0);
 };
 
+// Share data is optional: any failure (network, 404, malformed JSON, wrong
+// shape) degrades to null so deck pages and statistics keep loading.
+const loadMetaShare = async (): Promise<PipelineMetaShare | null> => {
+  try {
+    const res = await fetch("/data/meta-share.json");
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (
+      data &&
+      typeof data === "object" &&
+      !Array.isArray(data) &&
+      Array.isArray((data as PipelineMetaShare).decks)
+    ) {
+      return data as PipelineMetaShare;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+};
+
 export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                                                                          children,
                                                                        }) => {
@@ -102,10 +123,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const { data: decksData, isLoading: decksLoading, error: decksError } = useQuery({
       queryKey: ["decks"],
       queryFn: async () => {
-        const [decksResponse, matchupDataResponse, metaShareResponse] = await Promise.all([
+        const [decksResponse, matchupDataResponse] = await Promise.all([
           fetch("/data/best-decks.json"),
           fetch("/data/matchup-data.json"),
-          fetch("/data/meta-share.json"),
         ]);
 
         if (!decksResponse.ok) {
@@ -120,13 +140,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
           matchupDataResponse.json(),
         ]);
 
-        // Share data is optional: a failed or missing file leaves the badge
-        // layer empty instead of failing the whole page.
-        const metaShare = metaShareResponse.ok
-          ? ((await metaShareResponse.json()) as PipelineMetaShare)
-          : null;
-
-        return { decks: decksData, matchupData, metaShare };
+        return { decks: decksData, matchupData, metaShare: await loadMetaShare() };
       },
     });
 

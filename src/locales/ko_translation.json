@@ -50,7 +50,10 @@
     "rising": "상승 중",
     "falling": "하락 중",
     "newDecks": "새로운 덱",
-    "metaMovement": "메타 동향"
+    "metaMovement": "메타 동향",
+    "deckColumn": "덱",
+    "shareColumn": "점유율",
+    "deltaColumn": "변화"
   },
   "bestDeckFinder": {
     "title": "최고의 덱 찾기",
@@ -208,5 +211,8 @@
     "title": "사용자 계정",
     "signOut": "로그아웃"
   },
-  "lastUpdated": "마지막 업데이트:"
+  "lastUpdated": "마지막 업데이트:",
+  "tierList": {
+    "metaShare": "메타 점유율"
+  }
 }

@@ -460,6 +460,7 @@ const StatisticsPage = () => {
                             <ToggleButton
                                 key={view}
                                 $active={movementView === view}
+                                aria-pressed={movementView === view}
                                 onClick={() => setMovementView(view)}
                             >
                                 {view === "rising"
@@ -474,6 +475,14 @@ const StatisticsPage = () => {
 
                 {movementDecks.length > 0 && (
                     <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{t("statistics.deckColumn")}</th>
+                                <th>{t("statistics.shareColumn")}</th>
+                                <th>{t("statistics.deltaColumn")}</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {movementDecks.map((entry, index) => (
                                 <tr key={entry.name}>
@@ -486,8 +495,8 @@ const StatisticsPage = () => {
                                     <td>{(entry.share * 100).toFixed(1)}%</td>
                                     <td>
                                         {entry.delta > 0
-                                            ? `+${(entry.delta * 100).toFixed(1)}`
-                                            : (entry.delta * 100).toFixed(1)}
+                                            ? `+${(entry.delta * 100).toFixed(1)} pp`
+                                            : `${(entry.delta * 100).toFixed(1)} pp`}
                                     </td>
                                 </tr>
                             ))}

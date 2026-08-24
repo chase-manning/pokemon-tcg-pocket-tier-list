@@ -18,7 +18,7 @@
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
     "alternatives": "Alternatives",
-    "metaShare": "Part du meta"
+    "metaShare": "Part du méta"
   },
   "energyDropdown": {
     "all": "Tous les types d'énergie",
@@ -50,7 +50,10 @@
     "rising": "En hausse",
     "falling": "En baisse",
     "newDecks": "Nouveaux decks",
-    "metaMovement": "Mouvement du méta"
+    "metaMovement": "Mouvement du méta",
+    "deckColumn": "Deck",
+    "shareColumn": "Part",
+    "deltaColumn": "Changement"
   },
   "bestDeckFinder": {
     "title": "Trouver votre meilleur deck",
@@ -208,5 +211,8 @@
     "title": "Compte utilisateur",
     "signOut": "Se déconnecter"
   },
-  "lastUpdated": "Dernière mise à jour :"
+  "lastUpdated": "Dernière mise à jour :",
+  "tierList": {
+    "metaShare": "Part du méta"
+  }
 }

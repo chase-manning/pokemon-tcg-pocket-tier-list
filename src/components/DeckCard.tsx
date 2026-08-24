@@ -84,11 +84,13 @@ const NewTag = styled.div`
   background: #f2b64c;
   color: #1a1a17;
   border-radius: 0.4rem;
+  pointer-events: none;
 `;
 
 interface Props {
   deck: FullDeckType;
   metaShare?: MetaShareEntry | null;
+  metaShareLabel?: string;
 }
 
 const formatShare = (share: number): string => `${(share * 100).toFixed(1)}%`;
@@ -98,7 +100,7 @@ const deltaArrow = (delta: number | null): string => {
   return delta > 0 ? " ▲" : " ▼";
 };
 
-const DeckCard = ({ deck, metaShare }: Props) => {
+const DeckCard = ({ deck, metaShare, metaShareLabel }: Props) => {
     const share = metaShare?.share ?? null;
     const delta = metaShare?.delta ?? null;
 
@@ -107,7 +109,7 @@ const DeckCard = ({ deck, metaShare }: Props) => {
             <StyledDeckCard to={`/deck/${deck.id}`} $disabled={false}>
                 <DeckImage key={deck.iconPrimary.id} src={deck.iconPrimary.image} alt={deck.iconPrimary.name} />
                 {metaShare && share !== null && (
-                    <ShareBadge $delta={delta} title="Meta share">
+                    <ShareBadge $delta={delta} title={metaShareLabel ?? "Meta share"}>
                         {formatShare(share)}
                         {deltaArrow(delta)}
                     </ShareBadge>

@@ -50,7 +50,10 @@
     "rising": "上昇中",
     "falling": "下降中",
     "newDecks": "新しいデッキ",
-    "metaMovement": "メタの動向"
+    "metaMovement": "メタの動向",
+    "deckColumn": "デッキ",
+    "shareColumn": "シェア",
+    "deltaColumn": "変化"
   },
   "bestDeckFinder": {
     "title": "最適なデッキを見つけよう",
@@ -208,5 +211,8 @@
     "title": "ユーザーアカウント",
     "signOut": "サインアウト"
   },
-  "lastUpdated": "最終更新："
+  "lastUpdated": "最終更新：",
+  "tierList": {
+    "metaShare": "メタシェア"
+  }
 }

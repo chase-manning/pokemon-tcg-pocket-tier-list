@@ -156,7 +156,10 @@
     "rising": "Rising",
     "falling": "Falling",
     "newDecks": "New decks",
-    "metaMovement": "Meta movement"
+    "metaMovement": "Meta movement",
+    "deckColumn": "Deck",
+    "shareColumn": "Share",
+    "deltaColumn": "Change"
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",
@@ -208,5 +211,8 @@
       "title": "Open Source",
       "description": "This website is open source. You can find the source code on <0>GitHub</0>."
     }
+  },
+  "tierList": {
+    "metaShare": "Meta share"
   }
 }
