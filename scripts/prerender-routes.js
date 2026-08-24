@@ -95,9 +95,13 @@ const main = async () => {
   for (const route of ROUTES) {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: "networkidle0" });
     await page.waitForSelector("#root > *");
-    const html = await page.evaluate(
-      () => `<!doctype html>\n${document.documentElement.outerHTML}`
-    );
+    // Vite stamps lazy-chunk hrefs with the preview origin while the page
+    // boots; captured markup must stay root-relative.
+    const html = (
+      await page.evaluate(
+        () => `<!doctype html>\n${document.documentElement.outerHTML}`
+      )
+    ).split(ORIGIN).join("");
     const outFile =
       route === "/"
         ? path.join(DIST_DIR, "index.html")
