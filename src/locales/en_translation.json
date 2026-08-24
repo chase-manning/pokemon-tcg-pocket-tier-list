@@ -123,7 +123,8 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternatives"
+    "alternatives": "Alternatives",
+    "metaShare": "Meta share"
   },
   "energyDropdown": {
     "all": "All Energy Types",
@@ -151,7 +152,10 @@
   },
   "statistics": {
     "trends": "Meta Trends",
-    "matrix": "Matchup Matrix"
+    "matrix": "Matchup Matrix",
+    "rising": "Rising",
+    "falling": "Falling",
+    "newDecks": "New decks"
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",

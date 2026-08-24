@@ -17,7 +17,8 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternatives"
+    "alternatives": "Alternatives",
+    "metaShare": "Part du meta"
   },
   "energyDropdown": {
     "all": "Tous les types d'énergie",
@@ -45,7 +46,10 @@
   },
   "statistics": {
     "trends": "Tendances du méta",
-    "matrix": "Matrice des confrontations"
+    "matrix": "Matrice des confrontations",
+    "rising": "En hausse",
+    "falling": "En baisse",
+    "newDecks": "Nouveaux decks"
   },
   "bestDeckFinder": {
     "title": "Trouver votre meilleur deck",

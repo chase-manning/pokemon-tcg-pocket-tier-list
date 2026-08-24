@@ -17,7 +17,8 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "替代方案"
+    "alternatives": "替代方案",
+    "metaShare": "环境占比"
   },
   "energyDropdown": {
     "all": "所有能量类型",
@@ -45,7 +46,10 @@
   },
   "statistics": {
     "trends": "meta 趋势",
-    "matrix": "对战矩阵"
+    "matrix": "对战矩阵",
+    "rising": "上升",
+    "falling": "下降",
+    "newDecks": "新卡组"
   },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",

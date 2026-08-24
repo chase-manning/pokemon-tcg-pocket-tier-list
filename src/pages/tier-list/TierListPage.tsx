@@ -167,7 +167,7 @@ const ENERGY_TYPES = [
 ];
 
 const LandingPage = () => {
-  const { decks, loading, error } = useDecks();
+  const { decks, metaShareBySlug, loading, error } = useDecks();
   const {
     energy,
     setEnergy,
@@ -201,7 +201,11 @@ const LandingPage = () => {
                 <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
                 <RowContent>
                   {tier.data.map((deck) => (
-                      <DeckCard key={deck.id} deck={deck} />
+                      <DeckCard
+                        key={deck.id}
+                        deck={deck}
+                        metaShare={metaShareBySlug?.[deck.id] ?? null}
+                      />
                   ))}
                 </RowContent>
               </DeckRow>

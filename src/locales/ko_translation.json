@@ -17,7 +17,8 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "대안"
+    "alternatives": "대안",
+    "metaShare": "메타 점유율"
   },
   "energyDropdown": {
     "all": "모든 에너지 타입",
@@ -45,7 +46,10 @@
   },
   "statistics": {
     "trends": "메타 트렌드",
-    "matrix": "상성 매트릭스"
+    "matrix": "상성 매트릭스",
+    "rising": "상승 중",
+    "falling": "하락 중",
+    "newDecks": "새로운 덱"
   },
   "bestDeckFinder": {
     "title": "최고의 덱 찾기",

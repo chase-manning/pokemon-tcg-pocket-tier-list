@@ -15,6 +15,7 @@ import useIsPremium from "../../app/use-is-premium";
 import UserAccount from "../../components/UserAccount";
 import ShareDeckCode from "../../components/ShareDeckCode";
 import { CardType, fetchCards } from "../../app/cards-api";
+import type { MetaShareEntry } from "../../types/pipeline-data";
 import arrowRight from "../../assets/arrow-right.svg";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
@@ -365,7 +366,7 @@ const ArrowRight = styled.img`
 
 const DeckPage = () => {
   const deckId = useParams().deckId;
-    const { decks, loading, error } = useDecks();
+    const { decks, metaShareBySlug, loading, error } = useDecks();
     const { addMissing, undoMissing, canUndo, lastRemovedId } = useMissing();
     const { t } = useTranslation();
     const [bestScore, setBestScore] = useState<number | null>(null);
@@ -393,9 +394,11 @@ const DeckPage = () => {
     }, [deckId, decks, bestScore]);
 
     let deck: FullDeckType | undefined = undefined;
+    let shareEntry: MetaShareEntry | null = null;
     if (decks) {
       if (deckId) {
         deck = decks.find((d) => d.id === deckId);
+        shareEntry = metaShareBySlug?.[deckId] ?? null;
       } else {
         const sortedDecks = [...decks].sort((a, b) => b.score - a.score);
         deck = sortedDecks[0];
@@ -597,6 +600,19 @@ const DeckPage = () => {
                         {t("deckPage.winRate")}:{" "}
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
                       </KeyStat>
+                      {shareEntry && (
+                        <KeyStat>
+                          {t("deckPage.metaShare")}:{" "}
+                          <KeyStatValue>
+                            {(shareEntry.share * 100).toFixed(1)}%
+                            {shareEntry.delta > 0.001
+                              ? ` ▲${(shareEntry.delta * 100).toFixed(1)}`
+                              : shareEntry.delta < -0.001
+                                ? ` ▼${(Math.abs(shareEntry.delta) * 100).toFixed(1)}`
+                                : ""}
+                          </KeyStatValue>
+                        </KeyStat>
+                      )}
                     </KeyStats>
                   </MatchupSection>
 

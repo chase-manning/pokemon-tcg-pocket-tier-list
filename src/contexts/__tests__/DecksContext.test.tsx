@@ -91,6 +91,12 @@ describe("DecksProvider with a drifted card id", () => {
       const url = String(input);
       if (url.endsWith("best-decks.json")) return jsonResponse(decks);
       if (url.endsWith("matchup-data.json")) return jsonResponse(matchupData);
+      if (url.endsWith("meta-share.json"))
+        return jsonResponse({
+          generatedAt: "2026-08-24T00:00:00Z",
+          windowDays: 7,
+          decks: [],
+        });
       return jsonResponse(rawCards);
     });
   });

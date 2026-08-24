@@ -12,7 +12,7 @@ import {
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
-import { PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
+import { MetaShareEntry, PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
 import {
   cardToCount,
   cardToId,
@@ -57,6 +57,7 @@ export interface FullDeckType {
 
 interface DecksContextType {
   decks: FullDeckType[] | null;
+  metaShareBySlug: Record<string, MetaShareEntry> | null;
   loading: boolean;
   error: Error | null;
 }
@@ -101,9 +102,10 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const { data: decksData, isLoading: decksLoading, error: decksError } = useQuery({
       queryKey: ["decks"],
       queryFn: async () => {
-        const [decksResponse, matchupDataResponse] = await Promise.all([
+        const [decksResponse, matchupDataResponse, metaShareResponse] = await Promise.all([
           fetch("/data/best-decks.json"),
           fetch("/data/matchup-data.json"),
+          fetch("/data/meta-share.json"),
         ]);
 
         if (!decksResponse.ok) {
@@ -118,9 +120,21 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
           matchupDataResponse.json(),
         ]);
 
-        return { decks: decksData, matchupData };
+        // Share data is optional: a failed or missing file leaves the badge
+        // layer empty instead of failing the whole page.
+        const metaShare = metaShareResponse.ok
+          ? ((await metaShareResponse.json()) as PipelineMetaShare)
+          : null;
+
+        return { decks: decksData, matchupData, metaShare };
       },
     });
+
+  const metaShareBySlug = useMemo(() => {
+    const share = decksData?.metaShare;
+    if (!share) return null;
+    return Object.fromEntries(share.decks.map((d) => [d.name, d]));
+  }, [decksData]);
 
   const latestExpansionId = useMemo(() => {
     return expansions && expansions.length > 0
@@ -307,6 +321,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const value = {
           decks,
+          metaShareBySlug,
           loading: cardsLoading || decksLoading,
           error: decksError ?? null,
         };
