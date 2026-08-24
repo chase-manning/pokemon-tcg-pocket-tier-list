@@ -22,7 +22,7 @@ test("every fixture deck gets a route, single- and double-card alike", () => {
   for (const deck of FIXTURE_DECKS) {
     assert.ok(
       xml.includes(
-        `<loc>https://pocketdecks.top/deck/${escapeXml(deckSlug(deck.name))}</loc>`
+        `<loc>https://pocketdecks.top/deck/${escapeXml(deckSlug(deck.name))}/</loc>`
       ),
       `missing route for "${deck.name}"`
     );
@@ -32,7 +32,7 @@ test("every fixture deck gets a route, single- and double-card alike", () => {
 test("compound deck names retain '&' in the slug before XML escaping", () => {
   const xml = buildSitemap({ decks: FIXTURE_DECKS, lastmod: LASTMOD });
   assert.ok(
-    xml.includes("<loc>https://pocketdecks.top/deck/suicune-ex-a4a-020&amp;baxcalibur-b2a-036</loc>"),
+    xml.includes("<loc>https://pocketdecks.top/deck/suicune-ex-a4a-020&amp;baxcalibur-b2a-036/</loc>"),
     "compound '&' should be escaped to &amp; inside <loc>"
   );
 });

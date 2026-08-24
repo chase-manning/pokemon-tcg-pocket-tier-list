@@ -9,6 +9,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const puppeteer = require("puppeteer");
+const { stampHead } = require("./meta-stamp");
 
 const ROOT = path.join(__dirname, "..");
 // BUILD_DIR lets this run against CRA's build/ before the Vite cutover.
@@ -23,9 +24,55 @@ const ROUTES = [
   "/cards-list",
   "/expansion-list",
   "/statistics",
+  "/deck",
   "/about",
   "/privacy",
 ];
+
+// Titles/descriptions are build-time constants: unique per route, keyword-led,
+// en-UK. Canonicals always carry the trailing slash the server 301s to.
+const ROUTE_META = {
+  "/": {
+    title: "Pokemon TCG Pocket Deck Tier List | Top Pocket Decks",
+    description: "Pokemon TCG Pocket tier list built from real tournament results. See best deck rankings, win rates and matchups for the current expansion.",
+    canonical: "https://pocketdecks.top/",
+  },
+  "/tier-list": {
+    title: "Pokemon TCG Pocket Tier List — Best Decks | Top Pocket Decks",
+    description: "Every Pokemon TCG Pocket archetype ranked from tournament data, updated daily. Filter the tier list by expansion, energy type and win rate.",
+    canonical: "https://pocketdecks.top/tier-list/",
+  },
+  "/cards-list": {
+    title: "Pokemon TCG Pocket Card Tier List — Best Cards | Top Pocket Decks",
+    description: "Which Pokemon TCG Pocket cards actually win games. Card rankings scored from tournament deck lists, refreshed with every pipeline run.",
+    canonical: "https://pocketdecks.top/cards-list/",
+  },
+  "/expansion-list": {
+    title: "Pokemon TCG Pocket Expansions & Set List | Top Pocket Decks",
+    description: "All Pokemon TCG Pocket expansions with card counts and meta impact, tracked since Genetic Apex.",
+    canonical: "https://pocketdecks.top/expansion-list/",
+  },
+  "/statistics": {
+    title: "Pokemon TCG Pocket Meta Statistics & Trends | Top Pocket Decks",
+    description: "Pokemon TCG Pocket meta share, win-rate trends and matchup statistics computed from tournament results.",
+    canonical: "https://pocketdecks.top/statistics/",
+  },
+  "/deck": {
+    title: "Browse Pokemon TCG Pocket Deck Profiles | Top Pocket Decks",
+    description: "Every ranked Pokemon TCG Pocket deck with card lists, matchups and win rates. Pick an archetype to see its full profile.",
+    canonical: "https://pocketdecks.top/deck/",
+  },
+  "/about": {
+    title: "About Top Pocket Decks — Methodology & Data Sources",
+    description: "How Top Pocket Decks ranks Pokemon TCG Pocket decks from Limitless tournament data, and who maintains the project.",
+    canonical: "https://pocketdecks.top/about/",
+  },
+  "/privacy": {
+    title: "Privacy Policy | Top Pocket Decks",
+    description: "How Top Pocket Decks handles analytics, advertising and your account data.",
+    canonical: "https://pocketdecks.top/privacy/",
+  },
+};
 
 const MIME = {
   ".html": "text/html",
@@ -85,23 +132,48 @@ const main = async () => {
 
   // Third-party traffic (ads, Firebase, fonts) must neither hang the render
   // nor leak into the snapshot; this mirrors react-snap's
-  // skipThirdPartyRequests.
+  // skipThirdPartyRequests. The external card DB is exempt: DecksContext gates
+  // rendering on cardsLoading || decksLoading, so blocking it leaves every
+  // route captured as "Loading..." forever.
   await page.setRequestInterception(true);
+  const CARD_DB_ORIGIN = "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards";
   page.on("request", (req) => {
-    if (req.url().startsWith(ORIGIN)) req.continue();
+    const url = req.url();
+    if (url.startsWith(ORIGIN) || url.startsWith(CARD_DB_ORIGIN)) req.continue();
     else req.abort();
   });
 
+  // Only the tier list paints deck anchors; other routes render their own
+  // content without them. Waiting there would burn the full timeout per route,
+  // and letting it fail silently would ship a "Loading..." snapshot if this
+  // route's render ever regressed — so failure propagates instead.
+  const DECK_ANCHOR_ROUTES = new Set(["/tier-list"]);
   for (const route of ROUTES) {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: "networkidle0" });
     await page.waitForSelector("#root > *");
+    if (DECK_ANCHOR_ROUTES.has(route)) {
+      await page.waitForFunction(
+        () => document.querySelectorAll('a[href^="/deck/"]').length > 10,
+        { timeout: 20000 }
+      );
+    }
     // Vite stamps lazy-chunk hrefs with the preview origin while the page
     // boots; captured markup must stay root-relative.
-    const html = (
+    let html = (
       await page.evaluate(
         () => `<!doctype html>\n${document.documentElement.outerHTML}`
       )
     ).split(ORIGIN).join("");
+    const meta = ROUTE_META[route];
+    if (meta) {
+      const webSiteLd = route === "/" ? {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Top Pocket Decks",
+        url: "https://pocketdecks.top/",
+      } : undefined;
+      html = stampHead(html, { ...meta, jsonLd: webSiteLd });
+    }
     const outFile =
       route === "/"
         ? path.join(DIST_DIR, "index.html")
@@ -121,4 +193,6 @@ const main = async () => {
   console.log(`Prerendered ${ROUTES.length} routes into ${DIST_DIR}`);
 };
 
-main();
+if (require.main === module) main();
+
+module.exports = { ROUTE_META, ROUTES };

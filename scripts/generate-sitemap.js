@@ -34,8 +34,13 @@ const escapeXml = (value) =>
     .replace(/'/g, "&apos;");
 
 const buildSitemap = ({ decks, siteUrl = SITE_URL, staticRoutes = STATIC_ROUTES, lastmod }) => {
-  const deckRoutes = decks.map((deck) => `/deck/${deckSlug(deck.name)}`);
-  const allRoutes = [...staticRoutes, ...deckRoutes];
+  // Trailing slashes match the canonical form stamped by the prerenderers;
+  // the server 301s slashless paths, and sitemap/canonical must agree.
+  const deckRoutes = decks.map((deck) => `/deck/${deckSlug(deck.name)}/`);
+  const allRoutes = [
+    ...staticRoutes.map((r) => (r === "/" ? "/" : `${r}/`)),
+    ...deckRoutes,
+  ];
 
   const urlEntries = allRoutes
     .map(
