@@ -5,8 +5,10 @@ import getId from "./utils/get-id";
 import { calculateDeckScore } from "./utils/calculate-deck-score";
 import { calculateCardScores } from "./utils/calculate-card-scores";
 import { calculateMatchupResults } from "./utils/calculate-matchup-results";
+import { buildTrends } from "./utils/build-trends";
+import { buildMatchupData } from "./utils/build-matchup-data";
 import { generateOgImages } from "./utils/generate-og-images";
-import { Deck, MatchupData, DeckList, PartialDeck } from "./utils/types";
+import { Deck, DeckList, PartialDeck } from "./utils/types";
 import { convertCardsToIds } from "./utils/convert-cards";
 import {
   MIN_WINRATE_THRESHOLD,
@@ -143,31 +145,7 @@ const run = async () => {
     // Sort bestDecks by score descending to ensure deterministic ordering
     bestDecks.sort((a, b) => b.score - a.score);
 
-    const matchupData: Record<string, MatchupData[]> = {};
-    for (const [deckName, matchups] of Object.entries(matchupResults)) {
-      let totalWins = 0;
-      let totalLosses = 0;
-      matchupData[deckName] = Object.entries(matchups).map(
-          ([opponent, { wins, losses }]) => {
-            totalWins += wins;
-            totalLosses += losses;
-            const totalGames = wins + losses;
-            return {
-              name: opponent,
-              winRate: totalGames > 0 ? wins / totalGames : 0,
-              totalGames,
-            };
-          }
-      );
-
-      const totalGames = totalWins + totalLosses;
-      const winRate = totalGames > 0 ? totalWins / totalGames : 0;
-      matchupData[deckName].push({
-        name: "Total",
-        winRate,
-        totalGames,
-      });
-    }
+    const matchupData = buildMatchupData(matchupResults);
 
     const allCards: Record<string, { winCount: number; totalGames: number }> = {};
     for (const deck of qualifiedDecks) {
@@ -249,35 +227,7 @@ const run = async () => {
       console.error("OG image generation failed; continuing without images:", error);
     }
 
-    const trendData: Record<string, any> = {};
-    // Take the top six decks from the sorted array so the trend line stays stable between runs.
-    const top6Names = bestDecks
-        .slice(0, 6)
-        .map((d) => d.name);
-
-    for (const deck of qualifiedDecks) {
-      const dateStr = deck.date.split("T")[0];
-
-      if (!trendData[dateStr]) {
-        trendData[dateStr] = { date: dateStr, totalGames: 0 };
-        top6Names.forEach((name) => (trendData[dateStr][name] = 0));
-      }
-
-      trendData[dateStr].totalGames += deck.totalGames;
-      if (top6Names.includes(deck.name)) {
-        trendData[dateStr][deck.name] += deck.totalGames;
-      }
-    }
-
-    const trends = Object.values(trendData)
-        .map((day) => {
-          const result: any = { date: day.date };
-          top6Names.forEach((name) => {
-            result[name] = day.totalGames > 0 ? (day[name] / day.totalGames) * 100 : 0;
-          });
-          return result;
-        })
-        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const trends = buildTrends(qualifiedDecks, bestDecks);
 
     fs.writeFileSync(
         "../public/data/historical-trends.json",
