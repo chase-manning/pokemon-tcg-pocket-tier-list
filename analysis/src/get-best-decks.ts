@@ -7,6 +7,7 @@ import { calculateCardScores } from "./utils/calculate-card-scores";
 import { calculateMatchupResults } from "./utils/calculate-matchup-results";
 import { buildTrends } from "./utils/build-trends";
 import { buildMatchupData } from "./utils/build-matchup-data";
+import { buildMetaShare } from "./utils/build-meta-share";
 import { generateOgImages } from "./utils/generate-og-images";
 import { Deck, DeckList, PartialDeck } from "./utils/types";
 import { convertCardsToIds } from "./utils/convert-cards";
@@ -232,6 +233,12 @@ const run = async () => {
     fs.writeFileSync(
         "../public/data/historical-trends.json",
         JSON.stringify(trends, null, 2)
+    );
+
+    const metaShare = buildMetaShare(qualifiedDecks, bestDecks, new Date());
+    fs.writeFileSync(
+        "../public/data/meta-share.json",
+        JSON.stringify(metaShare, null, 2)
     );
 
     fs.writeFileSync(
