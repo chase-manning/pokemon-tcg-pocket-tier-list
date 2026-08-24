@@ -2,6 +2,8 @@
 //
 // Shared per-route <head> surgery for both prerenderers. The template ships
 // without a canonical tag; anything stamped here is authoritative for the page.
+const SITE_URL = "https://pocketdecks.top";
+
 const escapeXml = (s) =>
   String(s)
     .replace(/&/g, "&amp;")
@@ -10,13 +12,35 @@ const escapeXml = (s) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
-const stampHead = (html, { title, description, canonical, jsonLd } = {}) => {
+const stampHead = (
+  html,
+  { title, description, canonical, jsonLd, metas } = {}
+) => {
   if (!/<\/head>/i.test(html)) throw new Error("No </head> in template");
   let out = html;
   if (title) out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeXml(title)}</title>`);
   if (description) {
     out = out.replace(/<meta[^>]+name="description"[^>]*>/gi, "");
     out = out.replace(/<\/head>/i, `  <meta name="description" content="${escapeXml(description)}">\n  </head>`);
+  }
+  if (metas) {
+    for (const attr of [
+      "og:title",
+      "og:description",
+      "og:image",
+      "og:url",
+      "twitter:title",
+      "twitter:description",
+      "twitter:image",
+      "twitter:card",
+    ]) {
+      out = out.replace(
+        new RegExp(`<meta[^>]+(?:property|name)="${attr}"[^>]*>`, "gi"),
+        ""
+      );
+    }
+    const metaLines = metas.map((m) => `    ${m}`).join("\n");
+    out = out.replace(/<\/head>/i, `${metaLines}\n  </head>`);
   }
   if (canonical) {
     out = out.replace(/<link[^>]+rel="canonical"[^>]*>/gi, "");
@@ -36,4 +60,4 @@ const stampHead = (html, { title, description, canonical, jsonLd } = {}) => {
   return out;
 };
 
-module.exports = { stampHead, escapeXml };
+module.exports = { stampHead, escapeXml, SITE_URL };

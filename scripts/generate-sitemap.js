@@ -9,8 +9,8 @@ const fs = require("fs");
 const path = require("path");
 
 const { deckSlug } = require("./deck-slug");
+const { escapeXml, SITE_URL } = require("./meta-stamp");
 
-const SITE_URL = "https://pocketdecks.top";
 const STATIC_ROUTES = [
   "/",
   "/tier-list",
@@ -21,17 +21,6 @@ const STATIC_ROUTES = [
   "/about",
   "/privacy",
 ];
-
-// Deck names are the raw compound slugs (e.g. "greninja-a1-089&oricorio-a3-066"),
-// so the route contains an unescaped "&". XML requires "&" to be escaped, and
-// leaving it raw makes the <loc> invalid and breaks any crawler that follows it.
-const escapeXml = (value) =>
-  value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
 
 const buildSitemap = ({ decks, siteUrl = SITE_URL, staticRoutes = STATIC_ROUTES, lastmod }) => {
   // Trailing slashes match the canonical form stamped by the prerenderers;

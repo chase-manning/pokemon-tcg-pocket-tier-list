@@ -1,7 +1,7 @@
 // scripts/prerender-decks.js
 const fs = require("fs");
 const path = require("path");
-const { stampHead } = require("./meta-stamp");
+const { stampHead, escapeXml } = require("./meta-stamp");
 
 const SITE_URL = "https://pocketdecks.top";
 const ROOT = path.join(__dirname, "..");
@@ -32,60 +32,29 @@ const { deckSlug } = require("./deck-slug");
 
 const slugFor = deckSlug;
 
-const escapeXml = (s) =>
-  String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-
-const stripMeta = (html, attr) =>
-  html.replace(
-    new RegExp(`<meta[^>]+(?:property|name)="${attr}"[^>]*>`, "gi"),
-    ""
-  );
 
 const renderDeckHtml = (deck, templateHtml) => {
   const { slug, title, ogImage, ogUrl, description } = deck;
 
   const eTitle = escapeXml(title);
   const eDesc = escapeXml(description);
-  const eImage = escapeXml(ogImage);
-  const eUrl = escapeXml(ogUrl);
 
   let html = templateHtml;
-  for (const attr of [
-    "og:title",
-    "og:description",
-    "og:image",
-    "og:url",
-    "twitter:title",
-    "twitter:description",
-    "twitter:image",
-    "twitter:card",
-    "description",
-  ]) {
-    html = stripMeta(html, attr);
-  }
-
-  const meta = [
-    `<meta property="og:type" content="website" />`,
-    `<meta property="og:title" content="${eTitle}" />`,
-    `<meta property="og:description" content="${eDesc}" />`,
-    `<meta property="og:image" content="${eImage}" />`,
-    `<meta property="og:url" content="${eUrl}" />`,
-    `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${eTitle}" />`,
-    `<meta name="twitter:description" content="${eDesc}" />`,
-    `<meta name="twitter:image" content="${eImage}" />`,
-    `<meta name="description" content="${eDesc}" />`,
-  ].join("\n    ");
-
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${eTitle}</title>`);
-  html = html.replace(/<\/head>/i, `    ${meta}\n  </head>`);
   html = stampHead(html, {
+    description,
     canonical: `${SITE_URL}/deck/${slug}/`,
+    metas: [
+      `<meta property="og:type" content="website" />`,
+      `<meta property="og:title" content="${eTitle}" />`,
+      `<meta property="og:description" content="${eDesc}" />`,
+      `<meta property="og:image" content="${escapeXml(ogImage)}" />`,
+      `<meta property="og:url" content="${escapeXml(ogUrl)}/" />`,
+      `<meta name="twitter:card" content="summary_large_image" />`,
+      `<meta name="twitter:title" content="${eTitle}" />`,
+      `<meta name="twitter:description" content="${eDesc}" />`,
+      `<meta name="twitter:image" content="${escapeXml(ogImage)}" />`,
+    ],
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

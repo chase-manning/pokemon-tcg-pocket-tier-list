@@ -36,6 +36,12 @@ const ROUTE_META = {
     title: "Pokemon TCG Pocket Deck Tier List | Top Pocket Decks",
     description: "Pokemon TCG Pocket tier list built from real tournament results. See best deck rankings, win rates and matchups for the current expansion.",
     canonical: "https://pocketdecks.top/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Top Pocket Decks",
+      url: "https://pocketdecks.top/",
+    },
   },
   "/tier-list": {
     title: "Pokemon TCG Pocket Tier List: Best Decks | Top Pocket Decks",
@@ -166,13 +172,7 @@ const main = async () => {
     ).split(ORIGIN).join("");
     const meta = ROUTE_META[route];
     if (meta) {
-      const webSiteLd = route === "/" ? {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "Top Pocket Decks",
-        url: "https://pocketdecks.top/",
-      } : undefined;
-      html = stampHead(html, { ...meta, jsonLd: webSiteLd });
+      html = stampHead(html, meta);
     }
     const outFile =
       route === "/"
