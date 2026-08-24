@@ -14,7 +14,7 @@ yarn test:ci
 ```
 `yarn typecheck` runs `tsc --noEmit` over `src/`. `yarn lint` runs ESLint with
 `--max-warnings 0`, so a warning fails the run exactly as an error does.
-`yarn test:ci` runs the Jest suites once instead of staying in watch mode.
+`yarn test:ci` runs the Vitest suites once instead of staying in watch mode.
 
 Use `yarn test` while you are working. It watches your files and re-runs only
 the affected suites.
@@ -26,9 +26,9 @@ runs typecheck, lint and tests against Node 24.19.0. It triggers on pull
 requests to `main` and on pushes to `main`. The analysis pipeline has its own
 workflow in `analysis-tests.yml`, which does not cover `src/`.
 
-The deploy workflows run `yarn build` separately. That build fails on lint
-warnings through Create React App's `CI=true` behaviour, so a warning you
-ignore locally will stop a deployment.
+The deploy workflows run `yarn build` separately. That script chains
+typecheck and lint ahead of `vite build`, so a warning you ignore locally
+will still stop a deployment.
 
 ## Adding a test
 
@@ -56,10 +56,9 @@ shows the pattern.
 
 ## Troubleshooting
 
-**The build reports a type error that `yarn typecheck` does not.** Create React
-App's checker only reports files matching `**/src/**/*.{ts,tsx}` and skips
-`__tests__` directories, so the two commands cover different sets of files.
-Trust whichever one reports the error and fix it.
+**The build reports a type error that `yarn typecheck` does not.** These
+should no longer diverge: `yarn build` runs the same `tsc --noEmit` first.
+If you still see a difference, check for a stray `tsconfig` override.
 
 **Lint passes locally but the deploy fails.** Check that you ran `yarn lint`
 and not just the editor's ESLint integration. The `--max-warnings 0` flag is

@@ -1,15 +1,16 @@
+import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DecksProvider, useDecks } from "../DecksContext";
 import rawCards from "../../app/__fixtures__/cards.json";
 
 // The only dependency that reaches for Firebase.
-jest.mock("../../app/use-is-premium", () => ({
+vi.mock("../../app/use-is-premium", () => ({
   __esModule: true,
   default: () => true,
 }));
 
-jest.mock("../../app/use-expansions", () => ({
+vi.mock("../../app/use-expansions", () => ({
   __esModule: true,
   default: () => [],
 }));
@@ -82,11 +83,11 @@ const renderProvider = () =>
   );
 
 describe("DecksProvider with a drifted card id", () => {
-  let consoleWarn: jest.SpyInstance;
+  let consoleWarn: MockInstance;
 
   beforeEach(() => {
-    consoleWarn = jest.spyOn(console, "warn").mockImplementation(() => {});
-    jest.spyOn(global, "fetch").mockImplementation((input) => {
+    consoleWarn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    vi.spyOn(global, "fetch").mockImplementation((input) => {
       const url = String(input);
       if (url.endsWith("best-decks.json")) return jsonResponse(decks);
       if (url.endsWith("matchup-data.json")) return jsonResponse(matchupData);
@@ -95,7 +96,7 @@ describe("DecksProvider with a drifted card id", () => {
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it("still mounts and renders the decks it could resolve", async () => {
@@ -123,12 +124,12 @@ describe("DecksProvider with a drifted card id", () => {
 
 describe("DecksProvider with a failed fetch", () => {
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it("ends loading and exposes the error on a non-OK response", async () => {
-    jest.spyOn(console, "error").mockImplementation(() => {});
-    jest.spyOn(global, "fetch").mockImplementation((input) =>
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.spyOn(global, "fetch").mockImplementation((input) =>
       errorResponse(500, "Internal Server Error")
     );
 

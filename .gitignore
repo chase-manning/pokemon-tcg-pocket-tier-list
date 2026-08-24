@@ -8,7 +8,7 @@ node_modules/
 .yarn/install-state.gz
 
 # build
-build/
+/dist/
 analysis/dist/
 analysis/data/
 out/

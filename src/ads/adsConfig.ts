@@ -12,7 +12,7 @@ export const ADS_ENABLED = true;
 // In local development we render labelled placeholder boxes instead of loading
 // the real ad network, so the layout/spacing can be verified without third
 // party scripts or console noise.
-export const IS_DEV = process.env.NODE_ENV !== "production";
+export const IS_DEV = import.meta.env.DEV;
 
 // AdSense publisher ID. Public by design — it already ships verbatim in
 // index.html's verification snippet and in every served page.

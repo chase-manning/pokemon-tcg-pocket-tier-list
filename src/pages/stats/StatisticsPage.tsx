@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import {
     ResponsiveContainer,
     LineChart,
@@ -346,7 +346,8 @@ const StatisticsPage = () => {
             : [];
 
     // The static shell (header + SEO copy) renders even while deck data is in
-    // flight. react-snap prerenders this route with no network data available,
+    // flight. The build-time prerender snapshots this route with no network
+    // data available,
     // so returning early here would ship a page whose only content is
     // "Loading..." to crawlers.
     const renderContent = () => {
