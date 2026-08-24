@@ -194,9 +194,9 @@
   },
   "adblocker": {
     "lead": "당신의 광고 차단기는",
-    "respect": "존중하나요",
-    "middle": "개인정보를? 잘 모르겠다면 저와 많은 사람들이 추천합니다",
-    "recommend": "Raymond Hill의 uBlock Origin",
+    "respect": "개인정보를 존중하나요",
+    "middle": "잘 모르겠다면 저를 비롯한 많은 사람이",
+    "recommend": "Raymond Hill의 uBlock Origin을 추천합니다",
     "footer": "물론 후원이 아닙니다. 같은 생각을 가진 한 사람으로서의 순수한 추천입니다."
   },
   "userAccount": {

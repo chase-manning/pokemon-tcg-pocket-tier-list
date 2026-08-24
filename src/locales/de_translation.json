@@ -193,10 +193,10 @@
     "close": "Schließen"
   },
   "adblocker": {
-    "lead": "Blockiert dein Werbeblocker",
-    "respect": "respektiert",
-    "middle": "deine Privatsphäre? Falls du unsicher bist, empfehle ich dir und vielen anderen",
-    "recommend": "uBlock Origin von Raymond Hill",
+    "lead": "Blockiert dein Werbeblocker und",
+    "respect": "respektiert er",
+    "middle": "deine Privatsphäre? Falls du unsicher bist, können dir ich und viele andere",
+    "recommend": "uBlock Origin von Raymond Hill empfehlen",
     "footer": "Offenbar nicht gesponsert. Nur eine echte Empfehlung von einem gleichgesinnten Nutzer."
   },
   "userAccount": {

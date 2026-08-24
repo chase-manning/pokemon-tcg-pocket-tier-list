@@ -194,9 +194,9 @@
   },
   "adblocker": {
     "lead": "あなたの広告ブロッカーは",
-    "respect": "尊重しますか",
-    "middle": "プライバシーを？迷っているなら、私をはじめ多くの人が",
-    "recommend": "Raymond Hill の uBlock Origin",
+    "respect": "プライバシーを尊重しますか",
+    "middle": "迷っているなら、私をはじめ多くの人が",
+    "recommend": "uBlock Origin（Raymond Hill 氏）をおすすめしています",
     "footer": "もちろん宣伝ではありません。同じ考えを持つ一人としての純粋なおすすめです。"
   },
   "userAccount": {
