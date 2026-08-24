@@ -71,8 +71,8 @@ const Navbar = () => {
     { to: "/tier-list", label: t("header.tierList") },
     { to: "/deck", label: t("header.bestDeckFinder") },
     { to: "/cards-list", label: t("header.bestCards") },
-    { to: "/expansion-list", label: t("header.bestExpansions", "Best Expansions") },
-    { to: "/statistics", label: t("header.statistics", "Statistics") },
+    { to: "/expansion-list", label: t("header.bestExpansions") },
+    { to: "/statistics", label: t("header.statistics") },
   ];
 
   // On desktop the nav stays in the header row. On mobile it is the animated
