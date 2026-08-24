@@ -1,4 +1,3 @@
-// scripts/__tests__/verify-dist-html.test.js
 const test = require("node:test");
 const assert = require("node:assert");
 const fs = require("node:fs");

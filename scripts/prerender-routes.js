@@ -96,8 +96,7 @@ const main = async () => {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: "networkidle0" });
     await page.waitForSelector("#root > *");
     // Vite stamps lazy-chunk hrefs with the preview origin while the page
-    // boots. Strip it here so captured markup stays root-relative. The build
-    // gate in verify-dist-html.js fails if any loopback URL survives.
+    // boots; captured markup must stay root-relative.
     const html = (
       await page.evaluate(
         () => `<!doctype html>\n${document.documentElement.outerHTML}`

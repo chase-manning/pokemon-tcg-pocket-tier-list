@@ -1,8 +1,3 @@
-// scripts/verify-dist-html.js
-//
-// Build gate: shipped HTML must not reference the prerender host. Runtime asset
-// URLs once leaked the preview origin into production pages. Fail the build if
-// any loopback URL survives in dist.
 const fs = require("fs");
 const path = require("path");
 
