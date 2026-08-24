@@ -60,3 +60,12 @@ test("deck pages get self-canonical and breadcrumb JSON-LD", () => {
   assert.ok(out.includes('"BreadcrumbList"'));
   assert.ok(out.includes("Hoopa ex"));
 });
+
+const { buildSitemap } = require("../generate-sitemap");
+
+test("sitemap URLs carry trailing slashes and match canonical form", () => {
+  const xml = buildSitemap({ decks: [{ name: "hoopa-ex-b4-103" }], lastmod: "2026-08-24" });
+  assert.ok(xml.includes("<loc>https://pocketdecks.top/tier-list/</loc>"));
+  assert.ok(xml.includes("<loc>https://pocketdecks.top/deck/hoopa-ex-b4-103/</loc>"));
+  assert.ok(!xml.includes("<loc>https://pocketdecks.top/tier-list<"));
+});
