@@ -4,7 +4,7 @@ import { PipelineMatchupData } from "../../../src/types/pipeline-data";
 /**
  * Converts per-opponent win/loss tallies into the winRate-bearing rows
  * matchup-data.json stores, and appends a synthetic "Total" row summing
- * every opponent, the row StatisticsPage.tsx's SortBy.WIN_RATE reads via
+ * every opponent — the row StatisticsPage.tsx's SortBy.WIN_RATE reads via
  * sorting-helper.ts's getSortValue.
  */
 export const buildMatchupData = (
