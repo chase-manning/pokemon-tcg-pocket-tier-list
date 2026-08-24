@@ -32,3 +32,13 @@ test("injects JSON-LD as single script block", () => {
 test("throws when head closing tag missing", () => {
   assert.throws(() => stampHead("<html><body></body></html>", { canonical: "x" }));
 });
+
+const fs = require("node:fs");
+const path = require("node:path");
+
+test("HTML template ships no canonical tag", () => {
+  const tpl = fs.readFileSync(
+    path.join(__dirname, "..", "..", "index.html"), "utf8"
+  );
+  assert.ok(!tpl.includes('rel="canonical"'));
+});
