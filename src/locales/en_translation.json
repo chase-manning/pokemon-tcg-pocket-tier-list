@@ -155,7 +155,8 @@
     "matrix": "Matchup Matrix",
     "rising": "Rising",
     "falling": "Falling",
-    "newDecks": "New decks"
+    "newDecks": "New decks",
+    "metaMovement": "Meta movement"
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",

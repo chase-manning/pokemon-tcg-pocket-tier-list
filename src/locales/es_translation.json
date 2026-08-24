@@ -49,7 +49,8 @@
     "matrix": "Matriz de enfrentamientos",
     "rising": "En ascenso",
     "falling": "En descenso",
-    "newDecks": "Mazos nuevos"
+    "newDecks": "Mazos nuevos",
+    "metaMovement": "Movimiento del meta"
   },
   "bestDeckFinder": {
     "title": "Encuentra Tu Mejor Mazo",

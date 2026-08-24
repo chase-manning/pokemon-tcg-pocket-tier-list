@@ -49,7 +49,8 @@
     "matrix": "Matrice des confrontations",
     "rising": "En hausse",
     "falling": "En baisse",
-    "newDecks": "Nouveaux decks"
+    "newDecks": "Nouveaux decks",
+    "metaMovement": "Mouvement du méta"
   },
   "bestDeckFinder": {
     "title": "Trouver votre meilleur deck",

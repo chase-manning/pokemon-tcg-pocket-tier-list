@@ -49,7 +49,8 @@
     "matrix": "对战矩阵",
     "rising": "上升",
     "falling": "下降",
-    "newDecks": "新卡组"
+    "newDecks": "新卡组",
+    "metaMovement": "环境动向"
   },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",

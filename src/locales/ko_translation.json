@@ -49,7 +49,8 @@
     "matrix": "상성 매트릭스",
     "rising": "상승 중",
     "falling": "하락 중",
-    "newDecks": "새로운 덱"
+    "newDecks": "새로운 덱",
+    "metaMovement": "메타 동향"
   },
   "bestDeckFinder": {
     "title": "최고의 덱 찾기",

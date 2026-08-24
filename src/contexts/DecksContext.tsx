@@ -12,7 +12,7 @@ import {
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
-import { MetaShareEntry, PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
+import { MetaShareEntry, PipelineMatchupEntry, PipelineMetaShare, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
 import {
   cardToCount,
   cardToId,
@@ -131,9 +131,11 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     });
 
   const metaShareBySlug = useMemo(() => {
-    const share = decksData?.metaShare;
+    const share: PipelineMetaShare | null | undefined = decksData?.metaShare;
     if (!share) return null;
-    return Object.fromEntries(share.decks.map((d) => [d.name, d]));
+    return Object.fromEntries(
+      share.decks.map((d) => [d.name, d])
+    ) as Record<string, MetaShareEntry>;
   }, [decksData]);
 
   const latestExpansionId = useMemo(() => {

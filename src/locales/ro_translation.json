@@ -155,7 +155,8 @@
     "matrix": "Matrice de meciuri",
     "rising": "In crestere",
     "falling": "In scadere",
-    "newDecks": "Deck-uri noi"
+    "newDecks": "Deck-uri noi",
+    "metaMovement": "Mișcarea meta"
   },
   "bestDeckFinder": {
     "title": "Găsește-ți cel mai bun deck",
