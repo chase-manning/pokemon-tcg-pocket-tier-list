@@ -12,7 +12,7 @@ import {
     Legend,
 } from "recharts";
 import useIsPremium from "../../app/use-is-premium";
-import { PipelineTrendRow } from "../../types/pipeline-data";
+import { PipelineTrendRow, PipelineMetaShare } from "../../types/pipeline-data";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
@@ -268,6 +268,8 @@ const StatisticsPage = () => {
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
     const [trendData, setTrendData] = useState<PipelineTrendRow[]>([]);
+    const [metaShare, setMetaShare] = useState<PipelineMetaShare | null>(null);
+    const [movementView, setMovementView] = useState<"rising" | "falling" | "new">("rising");
 
     useMarkContentReady(!loading && !!decks);
 
@@ -276,7 +278,29 @@ const StatisticsPage = () => {
             .then((res) => res.json())
             .then((data) => setTrendData(data))
             .catch((err) => console.error("Awaiting pipeline trends data", err));
+        fetch("/data/meta-share.json")
+            .then((res) => (res.ok ? res.json() : null))
+            .then((data) => data && setMetaShare(data))
+            .catch((err) => console.error("Awaiting pipeline share data", err));
     }, []);
+
+    const movementDecks = useMemo(() => {
+        if (!metaShare) return [];
+        const entries = [...metaShare.decks];
+        if (movementView === "new") {
+            return entries.filter((d) => d.isNew).sort((a, b) => b.share - a.share);
+        }
+        if (movementView === "rising") {
+            return entries
+                .filter((d) => d.delta > 0.001)
+                .sort((a, b) => b.delta - a.delta)
+                .slice(0, 15);
+        }
+        return entries
+            .filter((d) => d.delta < -0.001)
+            .sort((a, b) => a.delta - b.delta)
+            .slice(0, 15);
+    }, [metaShare, movementView]);
 
     const sortedDecks = useMemo(() => {
         if (!decks) return [];
@@ -424,6 +448,61 @@ const StatisticsPage = () => {
                         </LineChart>
                     </ResponsiveContainer>
                 </ChartContainer>
+            </Section>
+
+            <AdInContent placement="statistics" />
+
+            <Section>
+                <SectionHeader>
+                    <SectionTitle>{t("statistics.metaMovement")}</SectionTitle>
+                    <ToggleContainer>
+                        {(["rising", "falling", "new"] as const).map((view) => (
+                            <ToggleButton
+                                key={view}
+                                $active={movementView === view}
+                                aria-pressed={movementView === view}
+                                onClick={() => setMovementView(view)}
+                            >
+                                {view === "rising"
+                                    ? t("statistics.rising")
+                                    : view === "falling"
+                                      ? t("statistics.falling")
+                                      : t("statistics.newDecks")}
+                            </ToggleButton>
+                        ))}
+                    </ToggleContainer>
+                </SectionHeader>
+
+                {movementDecks.length > 0 && (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{t("statistics.deckColumn")}</th>
+                                <th>{t("statistics.shareColumn")}</th>
+                                <th>{t("statistics.deltaColumn")}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {movementDecks.map((entry, index) => (
+                                <tr key={entry.name}>
+                                    <td>{index + 1}</td>
+                                    <td>
+                                        <Link to={`/deck/${entry.name}/`}>
+                                            {entry.name}
+                                        </Link>
+                                    </td>
+                                    <td>{(entry.share * 100).toFixed(1)}%</td>
+                                    <td>
+                                        {entry.delta > 0
+                                            ? `+${(entry.delta * 100).toFixed(1)} pp`
+                                            : `${(entry.delta * 100).toFixed(1)} pp`}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </Section>
 
             <AdInContent placement="statistics" />

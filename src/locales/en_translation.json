@@ -123,7 +123,12 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternatives"
+    "alternatives": "Alternatives",
+    "metaShare": "Meta share",
+    "strengthTooltip": "Avg. matchup score vs the field (0–10)",
+    "popularityTooltip": "Share of qualified games in last 7 days (0–10)",
+    "winRateTooltip": "Win % in the current window",
+    "metaShareTooltip": "Share of qualified games ± weekly change"
   },
   "energyDropdown": {
     "all": "All Energy Types",
@@ -151,7 +156,14 @@
   },
   "statistics": {
     "trends": "Meta Trends",
-    "matrix": "Matchup Matrix"
+    "matrix": "Matchup Matrix",
+    "rising": "Rising",
+    "falling": "Falling",
+    "newDecks": "New decks",
+    "metaMovement": "Meta movement",
+    "deckColumn": "Deck",
+    "shareColumn": "Share",
+    "deltaColumn": "Change"
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",
@@ -203,5 +215,8 @@
       "title": "Open Source",
       "description": "This website is open source. You can find the source code on <0>GitHub</0>."
     }
+  },
+  "tierList": {
+    "metaShare": "Meta share"
   }
 }

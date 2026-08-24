@@ -60,7 +60,7 @@ const ROUTE_META = {
   },
   "/statistics": {
     title: "Pokemon TCG Pocket Meta Statistics & Trends | Top Pocket Decks",
-    description: "Pokemon TCG Pocket meta share, win-rate trends and matchup statistics computed from tournament results.",
+    description: "Pokemon TCG Pocket meta share, weekly deck movement and matchup statistics computed from tournament results. See which decks are rising or falling.",
     canonical: "https://pocketdecks.top/statistics/",
   },
   "/deck": {

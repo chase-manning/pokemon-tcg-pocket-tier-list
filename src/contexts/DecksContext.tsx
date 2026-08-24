@@ -12,7 +12,7 @@ import {
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
-import { PipelineMatchupEntry, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
+import { MetaShareEntry, PipelineMatchupEntry, PipelineMetaShare, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
 import {
   cardToCount,
   cardToId,
@@ -57,6 +57,7 @@ export interface FullDeckType {
 
 interface DecksContextType {
   decks: FullDeckType[] | null;
+  metaShareBySlug: Record<string, MetaShareEntry> | null;
   loading: boolean;
   error: Error | null;
 }
@@ -75,6 +76,27 @@ const maxScore = (deck: PartialDeckType): number => {
     if (list.score > curr) return list.score;
     return curr;
   }, 0);
+};
+
+// Share data is optional: any failure (network, 404, malformed JSON, wrong
+// shape) degrades to null so deck pages and statistics keep loading.
+const loadMetaShare = async (): Promise<PipelineMetaShare | null> => {
+  try {
+    const res = await fetch("/data/meta-share.json");
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (
+      data &&
+      typeof data === "object" &&
+      !Array.isArray(data) &&
+      Array.isArray((data as PipelineMetaShare).decks)
+    ) {
+      return data as PipelineMetaShare;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 };
 
 export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -118,9 +140,17 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
           matchupDataResponse.json(),
         ]);
 
-        return { decks: decksData, matchupData };
+        return { decks: decksData, matchupData, metaShare: await loadMetaShare() };
       },
     });
+
+  const metaShareBySlug = useMemo(() => {
+    const share: PipelineMetaShare | null | undefined = decksData?.metaShare;
+    if (!share) return null;
+    return Object.fromEntries(
+      share.decks.map((d) => [d.name, d])
+    ) as Record<string, MetaShareEntry>;
+  }, [decksData]);
 
   const latestExpansionId = useMemo(() => {
     return expansions && expansions.length > 0
@@ -307,6 +337,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const value = {
           decks,
+          metaShareBySlug,
           loading: cardsLoading || decksLoading,
           error: decksError ?? null,
         };

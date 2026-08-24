@@ -91,6 +91,12 @@ describe("DecksProvider with a drifted card id", () => {
       const url = String(input);
       if (url.endsWith("best-decks.json")) return jsonResponse(decks);
       if (url.endsWith("matchup-data.json")) return jsonResponse(matchupData);
+      if (url.endsWith("meta-share.json"))
+        return jsonResponse({
+          generatedAt: "2026-08-24T00:00:00Z",
+          windowDays: 7,
+          decks: [],
+        });
       return jsonResponse(rawCards);
     });
   });
@@ -110,6 +116,52 @@ describe("DecksProvider with a drifted card id", () => {
 
     await screen.findByText(GOOD_DECK);
     expect(screen.queryByText(DRIFTED_DECK)).not.toBeInTheDocument();
+  });
+
+
+  it("keeps decks loading when only the meta-share fetch rejects", async () => {
+    vi.spyOn(global, "fetch").mockImplementation((input) => {
+      const url = String(input);
+      if (url.endsWith("meta-share.json")) return Promise.reject(new Error("network down"));
+      if (url.endsWith("best-decks.json")) return jsonResponse(decks);
+      if (url.endsWith("matchup-data.json")) return jsonResponse(matchupData);
+      return jsonResponse(rawCards);
+    });
+
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <DecksProvider>
+          <DeckNames />
+        </DecksProvider>
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByText(GOOD_DECK)).toBeInTheDocument();
+  });
+
+  it("treats malformed JSON in a 200 meta-share response as absent", async () => {
+    vi.spyOn(global, "fetch").mockImplementation((input) => {
+      const url = String(input);
+      if (url.endsWith("best-decks.json")) return jsonResponse(decks);
+      if (url.endsWith("matchup-data.json")) return jsonResponse(matchupData);
+      if (url.endsWith("meta-share.json"))
+        return jsonResponse({ generatedAt: "nope" }); // missing decks array
+      return jsonResponse(rawCards);
+    });
+
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <DecksProvider>
+          <DeckNames />
+        </DecksProvider>
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByText(GOOD_DECK)).toBeInTheDocument();
   });
 
   it("warns once, naming the id it skipped", async () => {

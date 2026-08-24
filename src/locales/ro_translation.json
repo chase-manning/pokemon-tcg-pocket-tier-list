@@ -123,7 +123,12 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternative"
+    "alternatives": "Alternative",
+    "metaShare": "Cota meta",
+    "strengthTooltip": "Scor mediu matchup vs meta (0–10)",
+    "popularityTooltip": "Pondere meciuri calificată îln ultimele 7 zile (0–10)",
+    "winRateTooltip": "Rata de încâlcări îln fereastra curentă",
+    "metaShareTooltip": "Pondere meciuri calificată ± schimbare săptâmânălă"
   },
   "energyDropdown": {
     "all": "Toate tipurile de energie",
@@ -151,7 +156,14 @@
   },
   "statistics": {
     "trends": "Tendințe meta",
-    "matrix": "Matrice de meciuri"
+    "matrix": "Matrice de meciuri",
+    "rising": "În creștere",
+    "falling": "În scădere",
+    "newDecks": "Deck-uri noi",
+    "metaMovement": "Mișcarea meta",
+    "deckColumn": "Deck",
+    "shareColumn": "Cotă",
+    "deltaColumn": "Schimbare"
   },
   "bestDeckFinder": {
     "title": "Găsește-ți cel mai bun deck",
@@ -203,5 +215,8 @@
       "title": "Open Source",
       "description": "Acest site este open source. Găsești codul sursă pe <0>GitHub</0>."
     }
+  },
+  "tierList": {
+    "metaShare": "Cotă meta"
   }
 }

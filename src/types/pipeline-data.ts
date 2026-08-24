@@ -48,6 +48,28 @@ export interface PipelineMatchupEntry {
 /** matchup-data.json's full shape: deck name maps to its matchup rows. */
 export type PipelineMatchupData = Record<string, PipelineMatchupEntry[]>;
 
+/** One archetype's entry in meta-share.json. */
+export interface MetaShareEntry {
+  name: string;
+  /** 0..1 share of qualified games in the trailing 7-day window. */
+  share: number;
+  /** Same measure for the window ending 7 days earlier. */
+  sharePrev: number;
+  /** share - sharePrev; may be negative. */
+  delta: number;
+  /** ISO date of earliest appearance in the qualified pool. */
+  firstSeen: string;
+  /** True when firstSeen falls inside the current 7-day window. */
+  isNew: boolean;
+}
+
+/** meta-share.json's full shape, written by get-best-decks.ts each run. */
+export interface PipelineMetaShare {
+  generatedAt: string;
+  windowDays: number;
+  decks: MetaShareEntry[];
+}
+
 /** One row in card-scores.json. */
 export interface PipelineCardScore {
   name: string;

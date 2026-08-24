@@ -17,7 +17,12 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "代替案"
+    "alternatives": "代替案",
+    "metaShare": "メタシェア",
+    "strengthTooltip": "メタ相手への平均マッチアップスコア (0–10)",
+    "popularityTooltip": "直近7日間の予選済み試合でのシェア (0–10)",
+    "winRateTooltip": "現在のウィンドウでの勝率",
+    "metaShareTooltip": "予選済み試合でのシェア ± 週次変化"
   },
   "energyDropdown": {
     "all": "すべてのエネルギータイプ",
@@ -45,7 +50,14 @@
   },
   "statistics": {
     "trends": "メタトレンド",
-    "matrix": "対戦マトリクス"
+    "matrix": "対戦マトリクス",
+    "rising": "上昇中",
+    "falling": "下降中",
+    "newDecks": "新しいデッキ",
+    "metaMovement": "メタの動向",
+    "deckColumn": "デッキ",
+    "shareColumn": "シェア",
+    "deltaColumn": "変化"
   },
   "bestDeckFinder": {
     "title": "最適なデッキを見つけよう",
@@ -203,5 +215,8 @@
     "title": "ユーザーアカウント",
     "signOut": "サインアウト"
   },
-  "lastUpdated": "最終更新："
+  "lastUpdated": "最終更新：",
+  "tierList": {
+    "metaShare": "メタシェア"
+  }
 }

@@ -64,6 +64,12 @@ describe("DeckPage head tags", () => {
       const url = String(input);
       if (url.endsWith("best-decks.json")) return jsonResponse(DECKS_JSON);
       if (url.endsWith("matchup-data.json")) return jsonResponse(MATCHUP_JSON);
+      if (url.endsWith("meta-share.json"))
+        return jsonResponse({
+          generatedAt: "2026-08-24T00:00:00Z",
+          windowDays: 7,
+          decks: [],
+        });
       return jsonResponse(rawCards);
     });
   });

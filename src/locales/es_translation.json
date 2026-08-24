@@ -17,7 +17,12 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternativas"
+    "alternatives": "Alternativas",
+    "metaShare": "Cuota del meta",
+    "strengthTooltip": "Puntuación media de enfrentamientos vs el meta (0–10)",
+    "popularityTooltip": "Cuota de partidas cualificadas en los últimos 7 días (0–10)",
+    "winRateTooltip": "% de victorias en la ventana actual",
+    "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal"
   },
   "energyDropdown": {
     "all": "Todos los tipos de Energía",
@@ -45,7 +50,14 @@
   },
   "statistics": {
     "trends": "Tendencias del meta",
-    "matrix": "Matriz de enfrentamientos"
+    "matrix": "Matriz de enfrentamientos",
+    "rising": "En ascenso",
+    "falling": "En descenso",
+    "newDecks": "Mazos nuevos",
+    "metaMovement": "Movimiento del meta",
+    "deckColumn": "Mazo",
+    "shareColumn": "Cuota",
+    "deltaColumn": "Cambio"
   },
   "bestDeckFinder": {
     "title": "Encuentra Tu Mejor Mazo",
@@ -203,5 +215,8 @@
     "title": "Cuenta de Usuario",
     "signOut": "Cerrar sesión"
   },
-  "lastUpdated": "Última actualización:"
+  "lastUpdated": "Última actualización:",
+  "tierList": {
+    "metaShare": "Cuota del meta"
+  }
 }

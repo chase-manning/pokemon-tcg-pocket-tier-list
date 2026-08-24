@@ -17,7 +17,12 @@
     "notEnoughShrug": "¯\\_(ツ)_/¯",
     "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
     "undo": "Undo",
-    "alternatives": "Alternatives"
+    "alternatives": "Alternatives",
+    "metaShare": "Part du méta",
+    "strengthTooltip": "Score moyen de matchups vs le méta (0–10)",
+    "popularityTooltip": "Part de parties qualifiées sur 7 jours (0–10)",
+    "winRateTooltip": "% de victoires dans la fenêtre actuelle",
+    "metaShareTooltip": "Part de parties qualifiées ± variation hebdomadaire"
   },
   "energyDropdown": {
     "all": "Tous les types d'énergie",
@@ -45,7 +50,14 @@
   },
   "statistics": {
     "trends": "Tendances du méta",
-    "matrix": "Matrice des confrontations"
+    "matrix": "Matrice des confrontations",
+    "rising": "En hausse",
+    "falling": "En baisse",
+    "newDecks": "Nouveaux decks",
+    "metaMovement": "Mouvement du méta",
+    "deckColumn": "Deck",
+    "shareColumn": "Part",
+    "deltaColumn": "Changement"
   },
   "bestDeckFinder": {
     "title": "Trouver votre meilleur deck",
@@ -203,5 +215,8 @@
     "title": "Compte utilisateur",
     "signOut": "Se déconnecter"
   },
-  "lastUpdated": "Dernière mise à jour :"
+  "lastUpdated": "Dernière mise à jour :",
+  "tierList": {
+    "metaShare": "Part du méta"
+  }
 }

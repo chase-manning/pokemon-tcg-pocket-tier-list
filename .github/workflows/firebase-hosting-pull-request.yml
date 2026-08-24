@@ -12,10 +12,12 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 24.19.0
+          # 24.19.0 broke the deploy action's preview-link posting; this is
+          # the documented-good build for it.
+          node-version: 24.18.0
           cache: "yarn"
           cache-dependency-path: "yarn.lock"
       - run: yarn install --frozen-lockfile
@@ -29,5 +31,6 @@ jobs:
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_POKEMON_TCG_POCKET_TIER_LIST }}"
           projectId: pokemon-tcg-pocket-tier-list

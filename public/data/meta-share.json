@@ -1,0 +1,630 @@
+{
+  "generatedAt": "2026-08-24T21:03:50.638Z",
+  "windowDays": 7,
+  "decks": [
+    {
+      "name": "mega-lucario-ex-b3-081",
+      "share": 0.13986418322051908,
+      "sharePrev": 0.19687390850912295,
+      "delta": -0.057009725288603874,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "baxcalibur-b2a-036&suicune-ex-a4a-020",
+      "share": 0.09667771782125957,
+      "sharePrev": 0.02788566779653198,
+      "delta": 0.06879205002472759,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "vespiquen-ex-b4-011",
+      "share": 0.09448768497393815,
+      "sharePrev": 0.09089849327872673,
+      "delta": 0.0035891916952114217,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "espeon-b3a-020&swablu-b1-196",
+      "share": 0.081044291025705,
+      "sharePrev": 0.020116427259284742,
+      "delta": 0.06092786376642026,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "hydreigon-b1-157",
+      "share": 0.0724295204007052,
+      "sharePrev": 0.018915700172158524,
+      "delta": 0.05351382022854668,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "hoopa-ex-b4-103",
+      "share": 0.0601617474384563,
+      "sharePrev": 0.11855237877402194,
+      "delta": -0.05839063133556564,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-charizard-y-ex-b1a-014",
+      "share": 0.054730128329816566,
+      "sharePrev": 0.03422961416489499,
+      "delta": 0.020500514164921574,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "greninja-a1-089",
+      "share": 0.03460397165816586,
+      "sharePrev": 0.02181747324747486,
+      "delta": 0.012786498410690999,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "butterfree-b3b-003",
+      "share": 0.03200227328689718,
+      "sharePrev": 0.005052422407191517,
+      "delta": 0.02694985087970566,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "gouging-fire-b3a-054&dragonair-b4-117",
+      "share": 0.02573916196145299,
+      "sharePrev": 0.03758003705809885,
+      "delta": -0.011840875096645859,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "magnezone-b1a-026&miraidon-ex-b3a-019",
+      "share": 0.02540200170092799,
+      "sharePrev": 0.010543602841714118,
+      "delta": 0.014858398859213872,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "indeedee-ex-b1-121&oricorio-a3-066",
+      "share": 0.02375448033268566,
+      "sharePrev": 0.008643619320172834,
+      "delta": 0.015110861012512827,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "mega-sceptile-ex-b3-008",
+      "share": 0.021252694370502423,
+      "sharePrev": 0.01501554439938025,
+      "delta": 0.006237149971122173,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "chandelure-b2-069",
+      "share": 0.01599632017423128,
+      "sharePrev": 0.034078769071626804,
+      "delta": -0.018082448897395523,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "magnezone-ex-b3-054&miraidon-ex-b3a-019",
+      "share": 0.0157000597859891,
+      "sharePrev": 0.007580353786055111,
+      "delta": 0.008119705999933988,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&darkrai-b2b-040",
+      "share": 0.015400004001557511,
+      "sharePrev": 0.014406005815832857,
+      "delta": 0.0009939981857246538,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "hoopa-ex-b4-103&greninja-a1-089",
+      "share": 0.014446548052666963,
+      "sharePrev": 0.01125173834708171,
+      "delta": 0.0031948097055852533,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "magnezone-b1a-026",
+      "share": 0.014087677272256387,
+      "sharePrev": 0.014929509414298188,
+      "delta": -0.0008418321420418009,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "meowscarada-ex-b2a-003",
+      "share": 0.013335290708984707,
+      "sharePrev": 0.037962606628540264,
+      "delta": -0.024627315919555557,
+      "firstSeen": "2026-08-04",
+      "isNew": false
+    },
+    {
+      "name": "magnezone-ex-b3-054",
+      "share": 0.011997959330980952,
+      "sharePrev": 0.0053733319909752735,
+      "delta": 0.006624627340005678,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "suicune-ex-a4a-020&greninja-a1-089",
+      "share": 0.010310562871140341,
+      "sharePrev": 0.006737821955817333,
+      "delta": 0.003572740915323008,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "altaria-a4a-055",
+      "share": 0.009961932482261833,
+      "sharePrev": 0.007832880988841067,
+      "delta": 0.002129051493420766,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "greninja-a1-089&oricorio-a3-066",
+      "share": 0.009844393845402402,
+      "sharePrev": 0.014284336159327962,
+      "delta": -0.00443994231392556,
+      "firstSeen": "2026-08-08",
+      "isNew": false
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036&greninja-a1-089",
+      "share": 0.009390522187878877,
+      "sharePrev": 0.0016158596759562108,
+      "delta": 0.0077746625119226665,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036",
+      "share": 0.009376683940981031,
+      "sharePrev": 0.008174008469941393,
+      "delta": 0.0012026754710396381,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "mega-rayquaza-ex-b4-120&dragonair-b4-117",
+      "share": 0.009193764296448326,
+      "sharePrev": 0.009962240509989426,
+      "delta": -0.0007684762135411003,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "dustox-b4-005&beautifly-b4-003",
+      "share": 0.008354468915814883,
+      "sharePrev": 0.013190204267646582,
+      "delta": -0.0048357353518317,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "mega-swampert-ex-b2-036",
+      "share": 0.006321834966324632,
+      "sharePrev": 0,
+      "delta": 0.006321834966324632,
+      "firstSeen": "2026-08-22",
+      "isNew": true
+    },
+    {
+      "name": "mega-manectric-ex-b2b-027&heliolisk-b4-061",
+      "share": 0.006260348125252586,
+      "sharePrev": 0.00891816019402512,
+      "delta": -0.0026578120687725344,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-kangaskhan-ex-b2-127&oricorio-a3-066",
+      "share": 0.006260348125252585,
+      "sharePrev": 0,
+      "delta": 0.006260348125252585,
+      "firstSeen": "2026-08-22",
+      "isNew": true
+    },
+    {
+      "name": "milotic-ex-b3b-015",
+      "share": 0.005567596382507519,
+      "sharePrev": 0.006420753544550391,
+      "delta": -0.0008531571620428724,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "espeon-ex-a4-083",
+      "share": 0.005496582788725941,
+      "sharePrev": 0,
+      "delta": 0.005496582788725941,
+      "firstSeen": "2026-08-21",
+      "isNew": true
+    },
+    {
+      "name": "oricorio-a3-066",
+      "share": 0.005479366473225768,
+      "sharePrev": 0.0033846761475213715,
+      "delta": 0.0020946903257043964,
+      "firstSeen": "2026-08-06",
+      "isNew": false
+    },
+    {
+      "name": "mega-ampharos-ex-b1-085",
+      "share": 0.0051307360843472595,
+      "sharePrev": 0,
+      "delta": 0.0051307360843472595,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "dragonite-a1-185",
+      "share": 0.005008278500202068,
+      "sharePrev": 0.005971742138928829,
+      "delta": -0.0009634636387267611,
+      "firstSeen": "2026-08-11",
+      "isNew": false
+    },
+    {
+      "name": "greninja-a1-089&mega-absol-ex-b1-151",
+      "share": 0.004870547976200682,
+      "sharePrev": 0,
+      "delta": 0.004870547976200682,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&sylveon-b3b-030",
+      "share": 0.004403247984053124,
+      "sharePrev": 0.0033846761475213715,
+      "delta": 0.001018571836531752,
+      "firstSeen": "2026-08-15",
+      "isNew": false
+    },
+    {
+      "name": "espeon-b3a-020",
+      "share": 0.0036775057185793303,
+      "sharePrev": 0.0018025833256399828,
+      "delta": 0.0018749223929393475,
+      "firstSeen": "2026-08-08",
+      "isNew": false
+    },
+    {
+      "name": "rotom-ex-b4-055",
+      "share": 0.003064588098816109,
+      "sharePrev": 0.002523616655895976,
+      "delta": 0.0005409714429201328,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "mega-sceptile-ex-b3-008&greninja-a1-089",
+      "share": 0.003064588098816109,
+      "sharePrev": 0.002423342347938716,
+      "delta": 0.0006412457508773932,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "iron-bundle-ex-b3a-013&future-booster-energy-capsule-b3a-070",
+      "share": 0.003064588098816109,
+      "sharePrev": 0.0017247434702894531,
+      "delta": 0.0013398446285266558,
+      "firstSeen": "2026-08-11",
+      "isNew": false
+    },
+    {
+      "name": "dragonite-ex-a3b-053",
+      "share": 0.0027837981912537594,
+      "sharePrev": 0,
+      "delta": 0.0027837981912537594,
+      "firstSeen": "2026-08-04",
+      "isNew": false
+    },
+    {
+      "name": "solgaleo-ex-a3-122",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-06",
+      "isNew": false
+    },
+    {
+      "name": "darkrai-ex-a2-110&giratina-ex-a2b-035",
+      "share": 0,
+      "sharePrev": 0.0035381064935811222,
+      "delta": -0.0035381064935811222,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "hisuian-goodra-b3b-050",
+      "share": 0,
+      "sharePrev": 0.005003015538448344,
+      "delta": -0.005003015538448344,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "mega-sharpedo-ex-b4-035&gyarados-a4-045",
+      "share": 0,
+      "sharePrev": 0.017840010363603206,
+      "delta": -0.017840010363603206,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-venusaur-ex-b1a-004",
+      "share": 0,
+      "sharePrev": 0.01962868314475089,
+      "delta": -0.01962868314475089,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "zoroark-ex-b3-106",
+      "share": 0,
+      "sharePrev": 0.011480371211661433,
+      "delta": -0.011480371211661433,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "wailord-ex-b4-037",
+      "share": 0,
+      "sharePrev": 0.006021997680520157,
+      "delta": -0.006021997680520157,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "great-tusk-b3a-034",
+      "share": 0,
+      "sharePrev": 0.017050529033647115,
+      "delta": -0.017050529033647115,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "dedenne-ex-b3b-024",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "flygon-ex-b3-126",
+      "share": 0,
+      "sharePrev": 0.008221330705670413,
+      "delta": -0.008221330705670413,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "mega-lucario-ex-b3-081&greninja-a1-089",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "gyarados-a4-045",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "ho-oh-ex-a4-034",
+      "share": 0,
+      "sharePrev": 0.003032354612124905,
+      "delta": -0.003032354612124905,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "mega-scizor-ex-b2b-047&revavroom-b2b-050",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-04",
+      "isNew": false
+    },
+    {
+      "name": "mega-altaria-ex-b1-102&gourgeist-b2-072",
+      "share": 0,
+      "sharePrev": 0.0017780178960046446,
+      "delta": -0.0017780178960046446,
+      "firstSeen": "2026-08-07",
+      "isNew": false
+    },
+    {
+      "name": "mega-blaziken-ex-b1-036&castform-sunny-form-b3-024",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "jolteon-ex-b1-081",
+      "share": 0,
+      "sharePrev": 0.0017247434702894531,
+      "delta": -0.0017247434702894531,
+      "firstSeen": "2026-08-10",
+      "isNew": false
+    },
+    {
+      "name": "alolan-ninetales-ex-b2-029&crawdaunt-a4-061",
+      "share": 0,
+      "sharePrev": 0.0017247434702894531,
+      "delta": -0.0017247434702894531,
+      "firstSeen": "2026-08-10",
+      "isNew": false
+    },
+    {
+      "name": "indeedee-ex-b1-121",
+      "share": 0,
+      "sharePrev": 0.002069692164347344,
+      "delta": -0.002069692164347344,
+      "firstSeen": "2026-08-10",
+      "isNew": false
+    },
+    {
+      "name": "mega-sharpedo-ex-b4-035",
+      "share": 0,
+      "sharePrev": 0.02057657995029205,
+      "delta": -0.02057657995029205,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "rampardos-a2-089",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "flareon-ex-a3b-009",
+      "share": 0,
+      "sharePrev": 0.014907121305705913,
+      "delta": -0.014907121305705913,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "mega-gardevoir-ex-b2-066",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-sharpedo-ex-b4-035&chien-pao-ex-b2a-037",
+      "share": 0,
+      "sharePrev": 0.0035381064935811222,
+      "delta": -0.0035381064935811222,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-absol-ex-b1-151",
+      "share": 0,
+      "sharePrev": 0.00638746666582232,
+      "delta": -0.00638746666582232,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "mega-charizard-x-ex-b2b-009",
+      "share": 0,
+      "sharePrev": 0.002864717752541103,
+      "delta": -0.002864717752541103,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "name": "mega-steelix-ex-b1a-052",
+      "share": 0,
+      "sharePrev": 0.0018025833256399828,
+      "delta": -0.0018025833256399828,
+      "firstSeen": "2026-08-05",
+      "isNew": false
+    },
+    {
+      "name": "mega-metagross-ex-b4-109&dialga-ex-a2-119",
+      "share": 0,
+      "sharePrev": 0.002069692164347344,
+      "delta": -0.002069692164347344,
+      "firstSeen": "2026-08-10",
+      "isNew": false
+    },
+    {
+      "name": "rotom-ex-b4-055&pachirisu-b4-054",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-03",
+      "isNew": false
+    },
+    {
+      "name": "charizard-ex-a2b-010",
+      "share": 0,
+      "sharePrev": 0,
+      "delta": 0,
+      "firstSeen": "2026-08-04",
+      "isNew": false
+    },
+    {
+      "name": "jolteon-ex-b1-081&jolteon-a3b-025",
+      "share": 0,
+      "sharePrev": 0.0017247434702894531,
+      "delta": -0.0017247434702894531,
+      "firstSeen": "2026-08-10",
+      "isNew": false
+    },
+    {
+      "name": "galarian-obstagoon-b2-100",
+      "share": 0,
+      "sharePrev": 0.0018025833256399828,
+      "delta": -0.0018025833256399828,
+      "firstSeen": "2026-08-06",
+      "isNew": false
+    },
+    {
+      "name": "vaporeon-ex-b3-037",
+      "share": 0,
+      "sharePrev": 0.0022742659590936787,
+      "delta": -0.0022742659590936787,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "mega-houndoom-ex-pb-080",
+      "share": 0,
+      "sharePrev": 0.0092597284162251,
+      "delta": -0.0092597284162251,
+      "firstSeen": "2026-08-13",
+      "isNew": false
+    },
+    {
+      "name": "luxray-b4-053",
+      "share": 0,
+      "sharePrev": 0.001895221632578066,
+      "delta": -0.001895221632578066,
+      "firstSeen": "2026-08-02",
+      "isNew": false
+    },
+    {
+      "name": "juliana-b3a-071",
+      "share": 0,
+      "sharePrev": 0.0017247434702894531,
+      "delta": -0.0017247434702894531,
+      "firstSeen": "2026-08-06",
+      "isNew": false
+    }
+  ]
+}

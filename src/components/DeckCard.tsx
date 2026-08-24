@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router";
 import { FullDeckType } from "../contexts/DecksContext";
-import { DEBUG } from "../app/config";
+import { MetaShareEntry } from "../types/pipeline-data";
 
 const Container = styled.div`
   position: relative;
@@ -52,31 +52,68 @@ const DeckImage = styled.img`
   height: 280%;
 `;
 
-const Percent = styled.div`
-  font-size: 1.6rem;
+const ShareBadge = styled.div<{ $delta: number | null }>`
+  font-size: 1.4rem;
   font-weight: 700;
   position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.7);
+  top: 0.5rem;
+  left: 0.5rem;
+  text-align: left;
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 0.4rem;
+  white-space: nowrap;
+
+  color: ${(props) =>
+    props.$delta === null
+      ? "rgba(255, 255, 255, 0.85)"
+      : props.$delta > 0
+        ? "#7ddb8a"
+        : props.$delta < 0
+          ? "#e58a8a"
+          : "rgba(255, 255, 255, 0.85)"};
+`;
+
+const NewTag = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  background: #f2b64c;
+  color: #1a1a17;
+  border-radius: 0.4rem;
+  pointer-events: none;
 `;
 
 interface Props {
   deck: FullDeckType;
+  metaShare?: MetaShareEntry | null;
+  metaShareLabel?: string;
 }
 
-const round = (num: number, decimals = 2) => {
-    return Math.round(num * 10 ** decimals) / 10 ** decimals;
+const formatShare = (share: number): string => `${(share * 100).toFixed(1)}%`;
+
+const deltaArrow = (delta: number | null): string => {
+  if (delta === null || Math.abs(delta) <= 0.001) return "";
+  return delta > 0 ? " ▲" : " ▼";
 };
 
-const DeckCard = ({ deck }: Props) => {
+const DeckCard = ({ deck, metaShare, metaShareLabel }: Props) => {
+    const share = metaShare?.share ?? null;
+    const delta = metaShare?.delta ?? null;
+
     return (
         <Container>
             <StyledDeckCard to={`/deck/${deck.id}`} $disabled={false}>
                 <DeckImage key={deck.iconPrimary.id} src={deck.iconPrimary.image} alt={deck.iconPrimary.name} />
-                {DEBUG && <Percent>{round(deck.percentOfGames, 5)}%</Percent>}
+                {metaShare && share !== null && (
+                    <ShareBadge $delta={delta} title={metaShareLabel ?? "Meta share"}>
+                        {formatShare(share)}
+                        {deltaArrow(delta)}
+                    </ShareBadge>
+                )}
             </StyledDeckCard>
             {deck.iconSecondary && (
                 <SubCard to={`/deck/${deck.id}`} $disabled={false}>
@@ -87,6 +124,7 @@ const DeckCard = ({ deck }: Props) => {
                     />
                 </SubCard>
             )}
+            {metaShare?.isNew && <NewTag>NEW</NewTag>}
         </Container>
     );
 };
