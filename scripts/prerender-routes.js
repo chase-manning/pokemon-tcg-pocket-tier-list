@@ -24,6 +24,7 @@ const ROUTES = [
   "/cards-list",
   "/expansion-list",
   "/statistics",
+  "/deck",
   "/about",
   "/privacy",
 ];
@@ -55,6 +56,11 @@ const ROUTE_META = {
     title: "Pokemon TCG Pocket Meta Statistics & Trends | Top Pocket Decks",
     description: "Pokemon TCG Pocket meta share, win-rate trends and matchup statistics computed from tournament results.",
     canonical: "https://pocketdecks.top/statistics/",
+  },
+  "/deck": {
+    title: "Browse Pokemon TCG Pocket Deck Profiles | Top Pocket Decks",
+    description: "Every ranked Pokemon TCG Pocket deck with card lists, matchups and win rates. Pick an archetype to see its full profile.",
+    canonical: "https://pocketdecks.top/deck/",
   },
   "/about": {
     title: "About Top Pocket Decks — Methodology & Data Sources",
