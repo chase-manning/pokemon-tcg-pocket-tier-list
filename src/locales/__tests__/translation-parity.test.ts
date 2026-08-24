@@ -25,6 +25,7 @@ describe("translation key parity", () => {
   it.each(Object.entries(locales))(
     "%s has every key that en_translation.json has",
     (_localeName, localeData) => {
+      void _localeName;
       const localeKeys = new Set(flattenKeys(localeData as Record<string, unknown>));
       const missing = englishKeys.filter((key) => !localeKeys.has(key));
       expect(missing).toEqual([]);
@@ -33,7 +34,7 @@ describe("translation key parity", () => {
 
   it("every locale has no keys that en_translation.json lacks", () => {
     const englishSet = new Set(englishKeys);
-    for (const [localeName, localeData] of Object.entries(locales)) {
+    for (const [, localeData] of Object.entries(locales)) {
       const stale = flattenKeys(localeData as Record<string, unknown>).filter(
         (key) => !englishSet.has(key)
       );
