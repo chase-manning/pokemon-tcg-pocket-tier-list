@@ -143,15 +143,20 @@ const main = async () => {
     else req.abort();
   });
 
+  // Only the tier list paints deck anchors; other routes render their own
+  // content without them. Waiting there would burn the full timeout per route,
+  // and letting it fail silently would ship a "Loading..." snapshot if this
+  // route's render ever regressed — so failure propagates instead.
+  const DECK_ANCHOR_ROUTES = new Set(["/tier-list"]);
   for (const route of ROUTES) {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: "networkidle0" });
     await page.waitForSelector("#root > *");
-    // Data-driven routes paint deck anchors only after both queries resolve;
-    // capture too early and the snapshot is a bare "Loading..." shell.
-    await page.waitForFunction(
-      () => document.querySelectorAll('a[href^="/deck/"]').length > 10,
-      { timeout: 20000 }
-    ).catch(() => {});
+    if (DECK_ANCHOR_ROUTES.has(route)) {
+      await page.waitForFunction(
+        () => document.querySelectorAll('a[href^="/deck/"]').length > 10,
+        { timeout: 20000 }
+      );
+    }
     // Vite stamps lazy-chunk hrefs with the preview origin while the page
     // boots; captured markup must stay root-relative.
     let html = (

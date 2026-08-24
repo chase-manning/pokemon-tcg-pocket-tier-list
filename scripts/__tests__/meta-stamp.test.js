@@ -29,6 +29,17 @@ test("injects JSON-LD as single script block", () => {
   assert.ok(out.includes('"@type":"WebSite"'));
 });
 
+test("JSON-LD values cannot close the script tag early", () => {
+  const out = stampHead(TEMPLATE.replace(/<link[^>]*canonical[^>]*>/, ""), {
+    canonical: "https://pocketdecks.top/",
+    jsonLd: { "@type": "Thing", name: 'evil</script><script>alert(1)</script>' },
+  });
+  // The escape sequences are valid JSON string escapes, so the payload still
+  // parses to the original value after decode.
+  assert.ok(!out.includes("</script><script>alert"));
+  assert.ok(out.includes("\\u003c/script\\u003e\\u003cscript\\u003e"));
+});
+
 test("throws when head closing tag missing", () => {
   assert.throws(() => stampHead("<html><body></body></html>", { canonical: "x" }));
 });

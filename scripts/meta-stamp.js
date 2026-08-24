@@ -24,7 +24,13 @@ const stampHead = (html, { title, description, canonical, jsonLd } = {}) => {
   }
   if (jsonLd) {
     // Raw quotes are correct inside a script tag; do not XML-escape JSON.
-    const block = `  <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n  </head>`;
+    // Angle brackets and ampersands ARE escaped so a value containing "</script>"
+    // cannot close the block early.
+    const json = JSON.stringify(jsonLd)
+      .replace(/&/g, "\\u0026")
+      .replace(/</g, "\\u003c")
+      .replace(/>/g, "\\u003e");
+    const block = `  <script type="application/ld+json">${json}</script>\n  </head>`;
     out = out.replace(/<\/head>/i, block);
   }
   return out;

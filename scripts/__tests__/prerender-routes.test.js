@@ -2,8 +2,9 @@ const test = require("node:test");
 const assert = require("node:assert");
 const { ROUTES, ROUTE_META } = require("../prerender-routes");
 
-test("every route has unique title, description and self canonical", () => {
+test("every route has unique title and description, plus self canonical", () => {
   const titles = new Set();
+  const descriptions = new Set();
   for (const route of ROUTES) {
     const meta = ROUTE_META[route];
     assert.ok(meta, `no metadata for ${route}`);
@@ -11,6 +12,8 @@ test("every route has unique title, description and self canonical", () => {
     assert.ok(meta.description.length >= 70 && meta.description.length <= 165, `bad description length for ${route}: ${meta.description.length}`);
     assert.strictEqual(meta.canonical, `https://pocketdecks.top${route === "/" ? "/" : route + "/"}`);
     titles.add(meta.title);
+    descriptions.add(meta.description);
   }
   assert.strictEqual(titles.size, ROUTES.length, "duplicate titles across routes");
+  assert.strictEqual(descriptions.size, ROUTES.length, "duplicate descriptions across routes");
 });
