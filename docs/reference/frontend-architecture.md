@@ -235,3 +235,10 @@ id-to-count map, `diffLists` produces added and removed entries, and
 
 The deck-code format, energy inference rules and fixture regeneration
 procedure are documented separately in [Deck share codes](deck-share-codes.md).
+
+## Related
+
+[Pipeline output contract](pipeline-output-contract.md) documents the JSON
+files under `public/data/` that the query layer fetches.
+[Deploying and hosting](../how-to/deploying-and-hosting.md) covers what
+happens to the built output after `yarn build`.

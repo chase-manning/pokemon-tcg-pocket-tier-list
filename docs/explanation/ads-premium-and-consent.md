@@ -47,3 +47,8 @@ The styling story is a cascade dispute. c15t ships its component styles inside a
 One override is worth knowing about beyond looks: the banner is fixed to the bottom of the viewport, the same strip the sticky anchor bar occupies on mobile, and it is portaled to `document.body` while the anchor lives inside `#root`. The override sheet lifts the banner by `--ad-anchor-h` and pins its z-index to the maximum, so its buttons never hide under the ad bar and stacking-context comparisons between the two trees cannot bury it.
 
 Finally, the prerender guard. The postbuild step renders routes to static HTML with a browser whose user agent is `prerender-routes`. During that run, c15t portals the banner to `document.body`, outside the `#root` mount point. The live client boots with `createRoot`, which does not adopt pre-existing DOM, so a banner baked into the static HTML would survive as a second, handler-less copy frozen on screen; for a returning visitor who had already stored a consent choice, it would be the only copy, and Accept and Reject would silently do nothing. `ConsentProvider` checks the user agent and renders no banner at all while the prerenderer drives the page, keeping dead markup out of the static HTML. Real visitors still get the banner from the live client.
+
+## Related
+
+[Frontend architecture](../reference/frontend-architecture.md#provider-stack)
+describes the provider stack these layers wrap around.
