@@ -2,26 +2,6 @@
   "home": {
     "banner": "O Top Pocket Decks está vivo e bem, com um novo mantenedor mantendo-o atualizado. Os rankings estão atualizados para {{expansion}} a partir de {{date}}."
   },
-  "farewell": {
-    "banner": "O Top Pocket Decks está encerrando suas atividades — leia a nota completa",
-    "title": "Obrigado por dois anos incríveis! 🎉",
-    "intro": "Comecei o Top Pocket Decks em 2 de novembro de 2024 como um projeto pessoal. Eu só queria uma maneira de analisar o meta para mim mesmo. Então o coloquei online e o tenho mantido atualizado desde então. Quase dois anos agora!",
-    "enjoyed": "Foi incrível. Pokemon TCG Pocket é um jogo genuinamente excelente, e as ranqueadas sempre foram a minha parte favorita, me esforçando para conseguir bons decks e descobrindo o que realmente vence. Construir este site me permitiu fazer isso e compartilhar com todo mundo.",
-    "why": "A vida ficou corrida, no entanto. Fiquei noivo, estou no meio do planejamento do casamento e meu emprego principal está ocupando todo o meu tempo. Eu simplesmente não tenho tempo para Pokemon Pocket ou para manter o Top Pocket Decks no momento. Então, em vez de deixá-lo aqui estagnado com todos se perguntando o que aconteceu, eu quis encerrá-lo adequadamente e dizer obrigado.",
-    "thanks": "E obrigado, genuinamente. Fico muito feliz que isso tenha sido útil para tantas pessoas, e sempre alegrava o meu dia ver as pessoas entrando toda semana para conferir o meta. Um agradecimento especial a todos que assinaram o Premium. Nunca pensei que um projeto pessoal e divertido como este conseguiria assinaturas. Nunca passou muito de cobrir os custos de manutenção, mas o fato de que as pessoas se importaram o suficiente para pagar por isso significou muito.",
-    "takeover": {
-      "title": "Quer assumir o projeto? 🚀",
-      "body": "Eu realmente adoraria que isso continuasse. Se você tem experiência em desenvolvimento de software, especificamente React e TypeScript, envie-me um e-mail para <0>chase@manning.dev</0> com um link para o seu perfil do GitHub. Eu ficaria feliz em trabalhar com uma pessoa competente para repassar tudo e manter o projeto vivo. Isso inclui a <1>API de cartas</1> do Pokemon TCG Pocket que mantemos, que ainda é a única API pública de cartas de código aberto disponível."
-    },
-    "premium": {
-      "title": "Para assinantes Premium 💛",
-      "status": "O site continua online e continuará recebendo atualizações! Novas assinaturas Premium estão temporariamente pausadas e os anúncios foram desativados para todos.",
-      "cancel": "As assinaturas existentes continuam sendo renovadas até que você as cancele, então se não quiser ser cobrado novamente, cancele através do <0>portal de cobrança</0>.",
-      "refund": "Se preferir um reembolso, envie-me um e-mail para <0>chase@manning.dev</0> e inclua o endereço de e-mail da sua conta. Cancelarei sua assinatura e reembolsarei seu pagamento mais recente. O Stripe só me permite reembolsar pagamentos feitos nos últimos 180 dias, então se o seu for mais antigo, farei o que puder."
-    },
-    "signOff": "Tudo de bom para todos que continuam jogando, aproveitem o jogo! 😃",
-    "signature": "— Chase"
-  },
   "premium": {
     "title": "Top Pocket Decks Premium",
     "manageSubscription": "Gerenciar Assinatura",
