@@ -7,7 +7,7 @@ import MissingContextProvider from "../../../components/MissingContext";
 import FilterContextProvider from "../../../components/FilterContext";
 import { UIProvider } from "../../../contexts/UIContext";
 import { ContentReadyProvider } from "../../../ads/ContentReadyContext";
-import DeckPage from "../DeckPage";
+import DeckDetailPage from "../DeckDetailPage";
 import rawCards from "../../../app/__fixtures__/cards.json";
 
 vi.mock("../../../app/use-is-premium", () => ({
@@ -92,7 +92,7 @@ describe("DeckPage head tags", () => {
                   <DecksProvider>
                     <MemoryRouter initialEntries={[`/deck/${DECK_ID}`]}>
                       <Routes>
-                        <Route path="/deck/:deckId" element={<DeckPage />} />
+                        <Route path="/deck/:deckId" element={<DeckDetailPage />} />
                       </Routes>
                     </MemoryRouter>
                   </DecksProvider>

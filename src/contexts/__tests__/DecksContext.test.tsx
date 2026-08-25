@@ -71,6 +71,18 @@ const DeckNames = () => {
   );
 };
 
+const DeckPopularities = () => {
+  const { decks, loading } = useDecks();
+  if (loading || !decks) return <p>loading</p>;
+  return (
+    <ul>
+      {decks.map((deck) => (
+        <li key={deck.id}>{deck.popularity}</li>
+      ))}
+    </ul>
+  );
+};
+
 const renderProvider = () =>
   render(
     <QueryClientProvider
@@ -196,5 +208,49 @@ describe("DecksProvider with a failed fetch", () => {
     );
 
     expect(await screen.findByText("Failed to fetch best-decks.json: 500 Internal Server Error")).toBeInTheDocument();
+  });
+});
+
+describe("DecksProvider with every deck at zero popularity", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("exposes popularity 0 instead of NaN", async () => {
+    const zeroPopularityDecks = [
+      {
+        name: GOOD_DECK,
+        lists: [{ cards: ["2:a1-004", "1:a1-219"], score: 10, strength: 5 }],
+        percentOfGames: 50,
+        popularity: 0,
+      },
+    ];
+    vi.spyOn(global, "fetch").mockImplementation((input) => {
+      const url = String(input);
+      if (url.endsWith("best-decks.json"))
+        return jsonResponse(zeroPopularityDecks);
+      if (url.endsWith("matchup-data.json"))
+        return jsonResponse({ [GOOD_DECK]: [] });
+      if (url.endsWith("meta-share.json"))
+        return jsonResponse({
+          generatedAt: "2026-08-24T00:00:00Z",
+          windowDays: 7,
+          decks: [],
+        });
+      return jsonResponse(rawCards);
+    });
+
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <DecksProvider>
+          <DeckPopularities />
+        </DecksProvider>
+      </QueryClientProvider>
+    );
+
+    const item = await screen.findByText("0");
+    expect(item.textContent).not.toBe("NaN");
   });
 });
