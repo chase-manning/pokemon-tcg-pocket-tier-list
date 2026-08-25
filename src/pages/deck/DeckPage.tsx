@@ -611,7 +611,7 @@ const DeckPage = () => {
                       <KeyStatRow>
                         <span>{t("deckPage.popularity")}:</span>
                         <KeyStatValue>
-                          {shareEntry ? shareEntry.games14 : "—"}
+                          {shareEntry ? Math.round(shareEntry.games14).toLocaleString() : "—"}
                         </KeyStatValue>
                         <Tooltip
                           text={t("deckPage.popularityTooltip")}
