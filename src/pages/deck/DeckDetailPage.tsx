@@ -2,7 +2,8 @@ import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { useDecks, MatchupType } from "../../contexts/DecksContext";
-import useMissing from "../../app/use-missing";
+import DeckCardGrid from "./DeckCardGrid";
+import DeckHeadTags from "./DeckHeadTags";
 import DeckCard from "../../components/DeckCard";
 import { MIN_MATCHUP_GAMES, WINRATE_THRESHOLD } from "../../app/config";
 import useIsPremium from "../../app/use-is-premium";
@@ -20,10 +21,6 @@ import {
   AlternativeCard,
   AlternativeContainer,
   ArrowRight,
-  CardContainer,
-  CardImage,
-  CardList,
-  CardNumber,
   CardSection,
   DeckCardContainer,
   KeyStats,
@@ -43,7 +40,6 @@ import {
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
   const { decks, metaShareBySlug, loading, error } = useDecks();
-  const { addMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
@@ -114,55 +110,10 @@ const DeckDetailPage = () => {
 
   return (
     <>
-      <title>{`${displayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
-      <meta
-        name="description"
-        content={`${displayName} ${t(
-          "deckPage.ogDescription",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
-        )}`}
-      />
-      <meta
-        property="og:title"
-        content={`${displayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
-      />
-      <meta
-        property="og:description"
-        content={`${displayName} ${t(
-          "deckPage.ogDescriptionShort",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket."
-        )}`}
-      />
-      <meta
-        property="og:image"
-        content={`https://pocketdecks.top/og/deck/${deck.id}.png`}
-      />
-      <meta
-        property="og:url"
-        content={`https://pocketdecks.top/deck/${deck.id}`}
-      />
+      <DeckHeadTags deck={deck} />
       <StyledDeckPage>
         <CardSection>
-          <CardList>
-            {uniqueCards.map((card) => {
-              const count = cardCounts.get(card.id) ?? 0;
-              return (
-                <CardContainer
-                  key={card.id}
-                  onClick={() => {
-                    if (count === 1) {
-                      addMissing([card.id, card.id]);
-                    } else {
-                      addMissing([card.id]);
-                    }
-                  }}
-                >
-                  <CardImage src={card.image} alt={card.name} />
-                  <CardNumber>{count}</CardNumber>
-                </CardContainer>
-              );
-            })}
-          </CardList>
+          <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
           <AdInContent placement="deck" />
         </CardSection>
         <PannelSection>
@@ -193,7 +144,9 @@ const DeckDetailPage = () => {
                 </KeyStatRow>
                 <KeyStatRow>
                   <span>{t("deckPage.winRate")}:</span>
-                  <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
+                  <KeyStatValue>
+                    {winRatePct !== null ? `${winRatePct}%` : "—"}
+                  </KeyStatValue>
                   <Tooltip
                     text={t("deckPage.winRateTooltip")}
                     ariaLabel={t("deckPage.showTooltip")}
