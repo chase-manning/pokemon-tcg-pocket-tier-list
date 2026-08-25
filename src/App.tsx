@@ -11,7 +11,8 @@ import ErrorBoundary, { LoadingNotice } from "./components/ErrorBoundary";
 
 const LandingPage = lazy(() => import("./pages/landing/LandingPage"));
 const TierListPage = lazy(() => import("./pages/tier-list/TierListPage"));
-const DeckPage = lazy(() => import("./pages/deck/DeckPage"));
+const DeckFinderPage = lazy(() => import("./pages/deck/DeckFinderPage"));
+const DeckDetailPage = lazy(() => import("./pages/deck/DeckDetailPage"));
 const CardsListPage = lazy(() => import("./pages/cards-list/CardsListPage"));
 const ExpansionListPage = lazy(() => import("./pages/expansion-list/ExpansionListPage"));
 const StatisticsPage = lazy(() => import("./pages/stats/StatisticsPage"));
@@ -69,8 +70,8 @@ const App = () => {
                     <Route path="about" element={<AboutPage />} />
                     <Route path="404" element={<NotFoundPage />} />
                     <Route path="deck">
-                      <Route index element={<DeckPage />} />
-                      <Route path=":deckId" element={<DeckPage />} />
+                      <Route index element={<DeckFinderPage />} />
+                      <Route path=":deckId" element={<DeckDetailPage />} />
                     </Route>
                     <Route path="*" element={<NotFoundPage />} />
                   </Route>
