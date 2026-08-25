@@ -20,7 +20,6 @@ describe("filterDecks", () => {
     totalGames: 0,
     date: new Date().toISOString(),
     tournamentExPercent: 0,
-    wigglytuffPercent: 0,
     noTrainerPercent: 0,
     wins: [],
     losses: [],
@@ -55,22 +54,6 @@ describe("filterDecks", () => {
     const result = filterDecks(decks);
     expect(result).toHaveLength(1);
     expect(result[0].tournamentExPercent).toBe(0.1);
-  });
-
-  it("should filter out decks with high wigglytuff percent", () => {
-    const deckWithHighWigglytuff: Deck = {
-      ...mockDeck,
-      wigglytuffPercent: 0.2,
-    };
-    const deckWithLowWigglytuff: Deck = {
-      ...mockDeck,
-      wigglytuffPercent: 0.05,
-      cards: [{ name: "Charizard", count: 1, set: "SVI", number: "1" }],
-    };
-    const decks = [deckWithHighWigglytuff, deckWithLowWigglytuff];
-    const result = filterDecks(decks);
-    expect(result).toHaveLength(1);
-    expect(result[0].wigglytuffPercent).toBe(0.05);
   });
 
   it("should filter out decks with high no trainer percent", () => {

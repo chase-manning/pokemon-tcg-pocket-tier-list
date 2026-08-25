@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CardType, fetchCards } from "./cards-api";
+import { parseScoreRef } from "./card-ref";
 import useFilters from "./use-filters";
 import useMissing from "./use-missing";
 
@@ -9,39 +10,15 @@ export interface CardScoreType extends CardType {
   popularity: number;
 }
 
-export const setCode = (set: string): string => {
-  if (set === "P-A") return "pa";
-  if (set === "P-B") return "pb";
-  return set.toLowerCase();
-};
-
-const cardNameToCount = (name: string): number => {
-  const parts = name.split(" ");
-  const count = parts[0];
-  return parseInt(count ?? "0");
-};
-
-const cardNameToId = (name: string): string => {
-  const parts = name.split(" ");
-  const id = parts[parts.length - 1];
-  const padded = id.padStart(3, "0");
-  const set = parts[parts.length - 2];
-  return `${setCode(set)}-${padded}`;
-};
-
-const cardNameToSet = (name: string): string => {
-  const parts = name.split(" ");
-  return setCode(parts[parts.length - 2]);
-};
-
 const useCards = (amount: number = 30): CardScoreType[] | null => {
   const { expansion } = useFilters();
   const { missing: collected } = useMissing();
 
-  const { data: cardData } = useQuery<CardType[]>({
+  const { data: cardsPayload } = useQuery({
     queryKey: ["cards"],
     queryFn: fetchCards,
   });
+  const cardData = cardsPayload?.cards;
 
   const { data: cards } = useQuery({
     queryKey: ["card-scores"],
@@ -60,10 +37,8 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
 
   const sortedCards = cards
       .filter((card: CardScoreType) => {
-        const id = cardNameToId(card.name);
-        const count = cardNameToCount(card.name);
-        const collectedCount = collectedCounts[id] || 0;
-        return count - collectedCount > 0;
+        const { id, count } = parseScoreRef(card.name);
+        return count - (collectedCounts[id] || 0) > 0;
       })
       .sort((a: CardScoreType, b: CardScoreType) => b.score - a.score);
 
@@ -72,14 +47,12 @@ const useCards = (amount: number = 30): CardScoreType[] | null => {
   const outputCards: CardScoreType[] = [];
 
   for (const card of sortedCards) {
-    const set = cardNameToSet(card.name);
+    const { id, count, set } = parseScoreRef(card.name);
     if (expansion && set !== expansion) continue;
 
-    const id = cardNameToId(card.name);
     if (seenIds.has(id)) continue;
     seenIds.add(id);
 
-    const count = cardNameToCount(card.name);
     const collectedCount = collectedCounts[id] || 0;
     const cardInfo = cardData.find((c: CardType) => c.id === id);
     if (!cardInfo) {

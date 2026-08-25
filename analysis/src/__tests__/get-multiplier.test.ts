@@ -17,7 +17,6 @@ describe("getMultiplier", () => {
     totalGames: 0,
     date: new Date().toISOString(),
     tournamentExPercent: 0,
-    wigglytuffPercent: 0,
     noTrainerPercent: 0,
     wins: [],
     losses: [],

@@ -12,6 +12,9 @@ import {
     Legend,
 } from "recharts";
 import useIsPremium from "../../app/use-is-premium";
+import { useQuery } from "@tanstack/react-query";
+import { fetchCards } from "../../app/cards-api";
+import { deckNameToIconIds } from "../../app/deck-filters";
 import { PipelineTrendRow, PipelineMetaShare } from "../../types/pipeline-data";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
@@ -19,7 +22,9 @@ import AdInContent from "../../ads/AdInContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useDecks } from "../../contexts/DecksContext";
 import { buildTiers } from "../../app/tier-helper";
+import { deckDisplayName, formatArchetypeId } from "../../app/deck-display";
 import { EXPANSION_NAME } from "../../app/constants";
+import crownIcon from "../../assets/crown.webp";
 
 const PageContainer = styled.div`
     width: 100%;
@@ -164,6 +169,52 @@ const MatrixTable = styled.table`
     }
 `;
 
+const MovementTable = styled.table`
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--main);
+
+    th,
+    td {
+        /* The global reset sets every element to 10px, so sizing the table
+           alone leaves the cells unreadable. */
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+        font-weight: 600;
+        opacity: 0.7;
+    }
+
+    td:first-child {
+        opacity: 0.5;
+        width: 4rem;
+    }
+
+    a {
+        font-size: inherit;
+        color: var(--main);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+`;
+
+const Delta = styled.td<{ $rising: boolean }>`
+    color: ${(props) => (props.$rising ? "var(--e)" : "var(--s)")};
+    font-weight: 600;
+    white-space: nowrap;
+`;
+
 const MatrixCell = styled.td<{ $bg?: string; $isPopulated: boolean }>`
   background: ${(props) => props.$bg || "transparent"};
   color: ${(props) => (props.$isPopulated ? "#fff" : "var(--main)")};
@@ -229,6 +280,17 @@ const DeckNameText = styled.span`
     text-overflow: ellipsis;
 `;
 
+const CrownLink = styled(Link)`
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-left: 0.4rem;
+
+    img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+`;
+
 const TierDot = styled.div<{ $color: string }>`
     width: 0.8rem;
     height: 0.8rem;
@@ -284,6 +346,11 @@ const StatisticsPage = () => {
             .catch((err) => console.error("Awaiting pipeline share data", err));
     }, []);
 
+    const { data: cardsPayload } = useQuery({
+        queryKey: ["cards"],
+        queryFn: fetchCards,
+    });
+
     const movementDecks = useMemo(() => {
         if (!metaShare) return [];
         const entries = [...metaShare.decks];
@@ -329,14 +396,6 @@ const StatisticsPage = () => {
         return trendData.filter((d) => new Date(d.date) >= cutoff);
     }, [trendData, range]);
 
-    const getDisplayName = (deck: any) => {
-        return (
-            [deck.iconPrimary?.name, deck.iconSecondary?.name]
-                .filter(Boolean)
-                .join(" / ") || deck.name
-        );
-    };
-
     const getMatrixStyle = (winRate: number | undefined) => {
         if (winRate === undefined) return { bg: "transparent" };
         const wr = Math.max(0, Math.min(1, winRate));
@@ -356,12 +415,6 @@ const StatisticsPage = () => {
         return {
             bg: `color-mix(in srgb, #b71c1c ${pct}%, #fff9c4)`,
         };
-    };
-
-    const formatDeckName = (name: string) => {
-        return name
-            .replace(/-/g, " ")
-            .replace(/\b\w/g, (char) => char.toUpperCase());
     };
 
     const topArchetypeNames =
@@ -435,10 +488,8 @@ const StatisticsPage = () => {
                                     key={name}
                                     type="monotone"
                                     dataKey={name}
-                                    name={getDisplayName(
-                                        decks.find((d) => d.name === name) || {
-                                            name: formatDeckName(name),
-                                        }
+                                    name={deckDisplayName(
+                                        decks.find((d) => d.name === name) ?? { name }
                                     )}
                                     stroke={COLOR_PALETTE[idx % COLOR_PALETTE.length]}
                                     strokeWidth={3}
@@ -474,7 +525,7 @@ const StatisticsPage = () => {
                 </SectionHeader>
 
                 {movementDecks.length > 0 && (
-                    <table>
+                    <MovementTable>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -488,20 +539,44 @@ const StatisticsPage = () => {
                                 <tr key={entry.name}>
                                     <td>{index + 1}</td>
                                     <td>
-                                        <Link to={`/deck/${entry.name}/`}>
-                                            {entry.name}
-                                        </Link>
+                                        {(() => {
+                                            const deck = decks?.find(
+                                                (d) => d.id === entry.name
+                                            );
+                                            const cards = cardsPayload?.cards;
+                                            const iconNames = deck
+                                                ? null
+                                                : cards
+                                                  ? deckNameToIconIds(entry.name)
+                                                        .map((id) => cards.find((c) => c.id === id)?.name)
+                                                        .filter(Boolean)
+                                                        .join(" / ")
+                                                  : null;
+                                            return (
+                                                <Link to={`/deck/${entry.name}/`}>
+                                                    {deck
+                                                        ? deckDisplayName(deck)
+                                                        : iconNames ||
+                                                          formatArchetypeId(entry.name)}
+                                                </Link>
+                                            );
+                                        })()}
+                                        {!decks?.some((d) => d.id === entry.name) && (
+                                            <CrownLink to="/about#premium" aria-label="Premium">
+                                                <img src={crownIcon} alt="" />
+                                            </CrownLink>
+                                        )}
                                     </td>
                                     <td>{(entry.share * 100).toFixed(1)}%</td>
-                                    <td>
+                                    <Delta $rising={entry.delta > 0}>
                                         {entry.delta > 0
                                             ? `+${(entry.delta * 100).toFixed(1)} pp`
                                             : `${(entry.delta * 100).toFixed(1)} pp`}
-                                    </td>
+                                    </Delta>
                                 </tr>
                             ))}
                         </tbody>
-                    </table>
+                    </MovementTable>
                 )}
             </Section>
 
@@ -520,7 +595,7 @@ const StatisticsPage = () => {
                         <tr>
                             <DeckLabelHeader>Deck Archetype</DeckLabelHeader>
                             {matrixDecks.map((colDeck) => (
-                                <th key={colDeck.id}>{getDisplayName(colDeck)}</th>
+                                <th key={colDeck.id}>{deckDisplayName(colDeck)}</th>
                             ))}
                         </tr>
                         </thead>
@@ -532,7 +607,7 @@ const StatisticsPage = () => {
                                         <TierDot
                                             $color={tierMap.get(rowDeck.id) || "transparent"}
                                         />
-                                        <DeckNameText>{getDisplayName(rowDeck)}</DeckNameText>
+                                        <DeckNameText>{deckDisplayName(rowDeck)}</DeckNameText>
                                     </DeckNameWrapper>
                                 </DeckLabelCell>
                                 {matrixDecks.map((colDeck) => {
@@ -555,7 +630,7 @@ const StatisticsPage = () => {
                                         ? `${Math.round(winRate * 100)}%`
                                         : "N/A";
                                     const hoverText = match
-                                        ? `${winRateText} win rate vs. ${formatDeckName(
+                                        ? `${winRateText} win rate vs. ${formatArchetypeId(
                                             colDeck.name
                                         )} (${Math.round(match.totalGames)} total games)`
                                         : undefined;

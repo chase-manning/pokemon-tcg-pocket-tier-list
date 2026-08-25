@@ -32,12 +32,6 @@ const getTournamentDecks = async (tournament: Tournament) => {
     return deck.decklist.pokemon.some((card: any) => card.name.endsWith(" ex"));
   }).length;
   const tournamentExPercent = amountWithEx / decks.length;
-  const amountWithWigglytuff = decks.filter((deck: any) => {
-    return deck.decklist.pokemon.some((card: any) =>
-      card.name.includes("Wigglytuff ex")
-    );
-  });
-  const wigglytuffPercent = amountWithWigglytuff.length / decks.length;
   const noTrainerPercent =
     decks.filter((deck: any) => deck.decklist.trainer.length === 0).length /
     decks.length;
@@ -73,7 +67,6 @@ const getTournamentDecks = async (tournament: Tournament) => {
       totalGames: deck.record.wins + deck.record.losses,
       date: tournament.date,
       tournamentExPercent,
-      wigglytuffPercent,
       noTrainerPercent,
       wins,
       losses,

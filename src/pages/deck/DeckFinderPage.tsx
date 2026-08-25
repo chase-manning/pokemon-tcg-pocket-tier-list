@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDecks } from "../../contexts/DecksContext";
 import useMissing from "../../app/use-missing";
+import DeckCardGrid from "./DeckCardGrid";
+import DeckHeadTags from "./DeckHeadTags";
 import ShareDeckCode from "../../components/ShareDeckCode";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
@@ -10,10 +12,6 @@ import { useQuery } from "@tanstack/react-query";
 import { CardType, fetchCards } from "../../app/cards-api";
 import { countById } from "../../app/deck-diff";
 import {
-  CardContainer,
-  CardImage,
-  CardList,
-  CardNumber,
   CardSection,
   DeckFinderHeader,
   EmptyActions,
@@ -29,19 +27,19 @@ import {
 
 const DeckFinderPage = () => {
   const { decks, loading, error } = useDecks();
-  const { addMissing, undoMissing, canUndo, lastRemovedId } = useMissing();
+  const { undoMissing, canUndo, lastRemovedId } = useMissing();
   const { t } = useTranslation();
   const [bestScore, setBestScore] = useState<number | null>(null);
 
   // Card data for resolving a removed card's name in the empty-deck notice.
   // React Query dedupes this against the same queryKey used elsewhere, so it is
   // a cache read, not a second network fetch.
-  const { data: cardsData } = useQuery<CardType[]>({
+  const { data: cardsPayload } = useQuery({
     queryKey: ["cards"],
     queryFn: fetchCards,
   });
   const cardsById = new Map(
-    (cardsData ?? []).map((card) => [card.id, card] as [string, CardType])
+    (cardsPayload?.cards ?? []).map((card) => [card.id, card] as [string, CardType])
   );
   const lastCutName = lastRemovedId
     ? (cardsById.get(lastRemovedId)?.name ?? null)
@@ -94,40 +92,10 @@ const DeckFinderPage = () => {
   );
   const cardCounts = countById(deck.bestList.cards);
 
-  const deckDisplayName =
-    [deck.iconPrimary?.name, deck.iconSecondary?.name]
-      .filter(Boolean)
-      .join(" / ") || "This deck";
 
   return (
     <>
-      <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
-      <meta
-        name="description"
-        content={`${deckDisplayName} ${t(
-          "deckPage.ogDescription",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
-        )}`}
-      />
-      <meta
-        property="og:title"
-        content={`${deckDisplayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
-      />
-      <meta
-        property="og:description"
-        content={`${deckDisplayName} ${t(
-          "deckPage.ogDescriptionShort",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket."
-        )}`}
-      />
-      <meta
-        property="og:image"
-        content={`https://pocketdecks.top/og/deck/${deck.id}.png`}
-      />
-      <meta
-        property="og:url"
-        content={`https://pocketdecks.top/deck/${deck.id}`}
-      />
+      <DeckHeadTags deck={deck} />
       <StyledDeckPage>
         <CardSection>
           <DeckFinderHeader>{t("deckPage.deckFinderHeader")}</DeckFinderHeader>
@@ -135,26 +103,7 @@ const DeckFinderPage = () => {
             {t("deckPage.relativeStrength")}{" "}
             {`${(relativeScore * 100).toFixed(0)}%`}
           </RelativeStrength>
-          <CardList>
-            {uniqueCards.map((card) => {
-              const count = cardCounts.get(card.id) ?? 0;
-              return (
-                <CardContainer
-                  key={card.id}
-                  onClick={() => {
-                    if (count === 1) {
-                      addMissing([card.id, card.id]);
-                    } else {
-                      addMissing([card.id]);
-                    }
-                  }}
-                >
-                  <CardImage src={card.image} alt={card.name} />
-                  <CardNumber>{count}</CardNumber>
-                </CardContainer>
-              );
-            })}
-          </CardList>
+          <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
           <AdInContent placement="deck" />
           <ShareDeckCode
             deckName={deck.name}

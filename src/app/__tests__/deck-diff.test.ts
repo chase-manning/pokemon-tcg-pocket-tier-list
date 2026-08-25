@@ -81,6 +81,24 @@ describe("oneSwapAlternatives", () => {
     ]);
   });
 
+  it("keeps a swap of both copies of one card for both of another", () => {
+    const twoCopyBest = { cards: [card("a"), card("a"), card("b")], score: 10 };
+    const alternatives = oneSwapAlternatives(
+      twoCopyBest,
+      [list(["c", "c", "b"], 9)],
+      3
+    );
+    expect(alternatives).toEqual([
+      {
+        list: list(["c", "c", "b"], 9),
+        diff: {
+          removed: [card("a"), card("a")],
+          added: [card("c"), card("c")],
+        },
+      },
+    ]);
+  });
+
   it("drops a two-slot difference that is no swap", () => {
     const alternatives = oneSwapAlternatives(best, [list(["b"], 8)], 3);
     expect(alternatives).toEqual([]);

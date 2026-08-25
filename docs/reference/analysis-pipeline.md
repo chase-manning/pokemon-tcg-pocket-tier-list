@@ -4,7 +4,7 @@ The `analysis` module is the data backend for the Pokémon TCG Pocket tier list.
 
 ## Core data flow
 
-The pipeline downloads data from the Limitless API and assigns standardised names to the decklists. The scoring scripts then calculate the tier rankings and write JSON files to the public directory for the frontend application.  
+The pipeline downloads data from the Limitless API and assigns standardised names to the deck lists. The scoring scripts then calculate the tier rankings and write JSON files to the public directory for the frontend application.
 
 ## Data acquisition
 
@@ -17,7 +17,7 @@ The matching logic relies on two passes. Pass 1 checks for at least two copies o
 
 ## Statistical scoring
 
-The math prevents decks with tiny sample sizes from receiving artificially high scores.   
+The maths prevents decks with tiny sample sizes from receiving artificially high scores.
 The `calculate-card-scores.ts` file uses a Wilson-style shrinkage estimator. This lower bound is calculated as:
 $$\frac{\hat{p} + \frac{z^2}{2n} - z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}$$
 where $\hat{p}$ is the observed proportion, $n$ is the sample size, and $z \approx 1.96$.   

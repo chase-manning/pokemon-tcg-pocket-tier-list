@@ -7,7 +7,6 @@ import { getSortValue } from "../app/sorting-helper";
 import {
   CardType,
   fetchCards,
-  getAttacksByDeckBuilderNr,
 } from "../app/cards-api";
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
@@ -107,10 +106,12 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const isPremium = useIsPremium();
   const expansions = useExpansions();
 
-  const { data: cards, isLoading: cardsLoading } = useQuery<CardType[]>({
+  const { data: cardsPayload, isLoading: cardsLoading } = useQuery({
     queryKey: ["cards"],
     queryFn: fetchCards,
   });
+  const cards = cardsPayload?.cards;
+  const attacksByDeckBuilderNr = cardsPayload?.attacksByDeckBuilderNr;
 
   const cardsMapping: Record<string, CardType> = useMemo(() => {
     // `cards` is undefined until the query resolves.
@@ -272,7 +273,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 bestList.cards.map((card) => ({
                   supertype: card.supertype,
                   deckBuilderNr: card.deckBuilderNr as number,
-                  attacks: getAttacksByDeckBuilderNr().get(card.deckBuilderNr as number),
+                  attacks: attacksByDeckBuilderNr?.get(card.deckBuilderNr as number),
                 }))
               );
               return {
@@ -323,6 +324,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     return includedDecks.reverse();
   }, [
     cards,
+    attacksByDeckBuilderNr,
     decksData,
     isPremium,
     missing,

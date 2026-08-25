@@ -28,7 +28,7 @@ const friendlyName = (deckName) => {
   return names.join(" & ");
 };
 
-const { deckSlug } = require("./deck-slug");
+const { deckSlug } = require("./deck-slug.mjs");
 
 const slugFor = deckSlug;
 

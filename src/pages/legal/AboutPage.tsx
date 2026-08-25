@@ -61,7 +61,7 @@ const AboutPage = () => {
               project.
           </p>
 
-          <h2>Premium</h2>
+          <h2 id="premium">Premium</h2>
           <p>
               <strong>The core tools are free.</strong> An optional Premium subscription removes ads
               and adds features such as detailed matchups, advanced filters,

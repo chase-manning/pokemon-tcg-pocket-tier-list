@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import Button from "./Button";
+import styled from "styled-components";
+import { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import Popup from "./Popup";
 import { CONTACT_EMAIL, MANAGE_SUBSCRIPTION_URL } from "../app/constants";
 import useIsPremium from "../app/use-is-premium";
-import { useState } from "react";
-import Popup from "./Popup";
-import { Trans, useTranslation } from "react-i18next";
-import styled from "styled-components";
 import premiumIcon from "../assets/premium.webp";
 
 const ButtonContainer = styled.button`
@@ -59,17 +57,6 @@ const InlineLink = styled.a`
   }
 `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
-
-  @media (max-width: 900px) {
-    gap: 0.8rem;
-  }
-`;
-
 interface Props {
   // "link" renders a compact "Remove ads" text trigger (used by the ad anchor)
   // instead of the default premium icon.
@@ -77,9 +64,8 @@ interface Props {
   linkLabel?: string;
 }
 
-// New signups are closed while the site is wound down, so this is now purely a
-// self-service panel for existing subscribers: what's changing, how to cancel,
-// and how to ask for a refund.
+// Signups are paused during the maintainer transition, so this panel is purely
+// self-service for existing subscribers.
 const Premium = ({ variant = "default", linkLabel }: Props) => {
   const { t } = useTranslation();
   const isPremium = useIsPremium();
@@ -88,6 +74,17 @@ const Premium = ({ variant = "default", linkLabel }: Props) => {
   if (isPremium === null) return null;
 
   const isLink = variant === "link";
+  const mailLink = (
+    <InlineLink href={`mailto:${CONTACT_EMAIL}`} key="email" />
+  );
+  const billingLink = (
+    <InlineLink
+      href={MANAGE_SUBSCRIPTION_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      key="billing"
+    />
+  );
 
   return (
     <>
@@ -100,6 +97,25 @@ const Premium = ({ variant = "default", linkLabel }: Props) => {
         <ButtonContainer onClick={() => setIsOpen(true)}>
           <PremiumIcon src={premiumIcon} alt="Premium" />
         </ButtonContainer>
+      )}
+      {(isPremium || isLink) && (
+        <Popup
+          width="60rem"
+          isOpen={isOpen}
+          header="premium.windDown.headline"
+          close={() => setIsOpen(false)}
+        >
+          <Text>{t("premium.windDown.status")}</Text>
+          <Text>
+            <Trans
+              i18nKey="premium.windDown.active"
+              components={[billingLink]}
+            />
+          </Text>
+          <Text>
+            <Trans i18nKey="premium.windDown.refund" components={[mailLink]} />
+          </Text>
+        </Popup>
       )}
     </>
   );

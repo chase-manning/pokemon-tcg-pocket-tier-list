@@ -49,7 +49,6 @@ describe("getDecks", () => {
     expect(testDeck.totalGames).toBeGreaterThan(0);
     expect(new Date(testDeck.date).toISOString()).toBeDefined();
     expect(testDeck.tournamentExPercent).toBeDefined();
-    expect(testDeck.wigglytuffPercent).toBeDefined();
     expect(testDeck.noTrainerPercent).toBeDefined();
     expect(testDeck.wins).toBeDefined();
     expect(testDeck.wins.length + testDeck.losses.length).toBeGreaterThan(0);

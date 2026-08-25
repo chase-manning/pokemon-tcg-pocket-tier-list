@@ -2,7 +2,8 @@ import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { useDecks, MatchupType } from "../../contexts/DecksContext";
-import useMissing from "../../app/use-missing";
+import DeckCardGrid from "./DeckCardGrid";
+import DeckHeadTags from "./DeckHeadTags";
 import DeckCard from "../../components/DeckCard";
 import { MIN_MATCHUP_GAMES, WINRATE_THRESHOLD } from "../../app/config";
 import useIsPremium from "../../app/use-is-premium";
@@ -15,14 +16,11 @@ import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { countById, oneSwapAlternatives } from "../../app/deck-diff";
+import { deckDisplayName } from "../../app/deck-display";
 import {
   AlternativeCard,
   AlternativeContainer,
   ArrowRight,
-  CardContainer,
-  CardImage,
-  CardList,
-  CardNumber,
   CardSection,
   DeckCardContainer,
   KeyStats,
@@ -34,7 +32,7 @@ import {
   MatchupSection,
   Matchups,
   Overlay,
-  PannelSection,
+  PanelSection,
   StyledDeckPage,
   SubHeader,
 } from "./deck-page.styles";
@@ -42,7 +40,6 @@ import {
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
   const { decks, metaShareBySlug, loading, error } = useDecks();
-  const { addMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
@@ -109,65 +106,17 @@ const DeckDetailPage = () => {
   const totalMatchup = deck.matchups?.find((m) => m.name === "Total");
   const winRatePct = totalMatchup ? Math.round(totalMatchup.winRate * 100) : null;
 
-  const deckDisplayName =
-    [deck.iconPrimary?.name, deck.iconSecondary?.name]
-      .filter(Boolean)
-      .join(" / ") || "This deck";
+  const displayName = deckDisplayName(deck);
 
   return (
     <>
-      <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
-      <meta
-        name="description"
-        content={`${deckDisplayName} ${t(
-          "deckPage.ogDescription",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
-        )}`}
-      />
-      <meta
-        property="og:title"
-        content={`${deckDisplayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
-      />
-      <meta
-        property="og:description"
-        content={`${deckDisplayName} ${t(
-          "deckPage.ogDescriptionShort",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket."
-        )}`}
-      />
-      <meta
-        property="og:image"
-        content={`https://pocketdecks.top/og/deck/${deck.id}.png`}
-      />
-      <meta
-        property="og:url"
-        content={`https://pocketdecks.top/deck/${deck.id}`}
-      />
+      <DeckHeadTags deck={deck} />
       <StyledDeckPage>
         <CardSection>
-          <CardList>
-            {uniqueCards.map((card) => {
-              const count = cardCounts.get(card.id) ?? 0;
-              return (
-                <CardContainer
-                  key={card.id}
-                  onClick={() => {
-                    if (count === 1) {
-                      addMissing([card.id, card.id]);
-                    } else {
-                      addMissing([card.id]);
-                    }
-                  }}
-                >
-                  <CardImage src={card.image} alt={card.name} />
-                  <CardNumber>{count}</CardNumber>
-                </CardContainer>
-              );
-            })}
-          </CardList>
+          <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
           <AdInContent placement="deck" />
         </CardSection>
-        <PannelSection>
+        <PanelSection>
           <UserAccount hideIfPremium />
           <Matchups>
             <MatchupSection>
@@ -195,7 +144,9 @@ const DeckDetailPage = () => {
                 </KeyStatRow>
                 <KeyStatRow>
                   <span>{t("deckPage.winRate")}:</span>
-                  <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
+                  <KeyStatValue>
+                    {winRatePct !== null ? `${winRatePct}%` : "—"}
+                  </KeyStatValue>
                   <Tooltip
                     text={t("deckPage.winRateTooltip")}
                     ariaLabel={t("deckPage.showTooltip")}
@@ -285,13 +236,13 @@ const DeckDetailPage = () => {
               </MatchupList>
             </MatchupSection>
           </Matchups>
-        </PannelSection>
+        </PanelSection>
       </StyledDeckPage>
 
       <SeoContent>
-        <h2>{deckDisplayName} Deck Guide</h2>
+        <h2>{displayName} Deck Guide</h2>
         <p>
-          {deckDisplayName} is a top-rated Pokémon TCG Pocket deck, ranked on our{" "}
+          {displayName} is a top-rated Pokémon TCG Pocket deck, ranked on our{" "}
           <a href="/tier-list">tier list</a> using recent tournament data.
           {winRatePct !== null
             ? ` It currently holds a ${winRatePct}% win rate across tracked matches.`

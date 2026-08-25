@@ -82,7 +82,7 @@ const ENERGY_TYPES = [
   "Colorless",
 ];
 
-const LandingPage = () => {
+const TierListPage = () => {
   const { decks, metaShareBySlug, loading, error } = useDecks();
   const {
     energy,
@@ -255,4 +255,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default TierListPage;

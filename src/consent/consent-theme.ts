@@ -34,6 +34,18 @@ export const consentTheme: UIOptions = {
       xl: "3.2rem",
     },
     radius: { sm: "0.8rem", md: "1.2rem", lg: "1.6rem", full: "9999px" },
+    // Every action defaults to `stroke`, which paints an opaque `surface` fill
+    // and an inset 1px ring in `surfaceHover`. The fill is already flattened by
+    // the app's global `button { background: none }` reset, but the ring is
+    // not — it survives as a hard opaque outline inside each button, which is
+    // the last thing a glass panel wants. `filled` and `ghost` declare no ring
+    // at all, so the accept gradient and the ghost borders below are the only
+    // edges drawn, and c15t's :focus-visible ring is free to show through.
+    consentActions: {
+      accept: { variant: "primary", mode: "filled" },
+      reject: { variant: "neutral", mode: "ghost" },
+      customize: { variant: "neutral", mode: "ghost" },
+    },
     slots: {
       consentBannerCard: {
         style: {
@@ -42,6 +54,18 @@ export const consentTheme: UIOptions = {
           WebkitBackdropFilter: "blur(16px)",
           border: "1px solid rgba(255, 255, 255, 0.12)",
           boxShadow: "0 0.8rem 4rem rgba(0, 0, 0, 0.45)",
+        },
+      },
+      consentBannerFooter: {
+        style: {
+          // The footer ships `background: surfaceHover` — an opaque plate that
+          // sits on the blurred card and reads as a hard-edged rectangle
+          // around the button row. The glass is the background here.
+          background: "transparent",
+          // c15t's own footer padding lives in @layer components and loses the
+          // cascade to the app's unlayered `* { padding: 0 }` reset, which is
+          // why the row otherwise butts straight against the description.
+          paddingTop: "1.6rem",
         },
       },
     },

@@ -8,7 +8,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const { deckSlug } = require("./deck-slug");
+const { deckSlug } = require("./deck-slug.mjs");
 const { escapeXml, SITE_URL } = require("./meta-stamp");
 
 const STATIC_ROUTES = [

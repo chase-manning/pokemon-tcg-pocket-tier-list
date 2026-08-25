@@ -16,7 +16,7 @@ A web application that tracks and displays the current best decks for the Pokém
 
 ### Prerequisites
 
-- Node.js 24.19.0, the version the CI workflows pin. The analysis pipeline needs at least Node 18 for global `fetch`.
+- Node.js 24.18.1, the version the CI workflows pin. The analysis pipeline needs at least Node 18 for global `fetch`.
 - npm or yarn
 
 ### Installation
@@ -48,6 +48,11 @@ Detailed documentation for maintaining the project is available in the `docs/` d
 - **[Reference: Analysis pipeline](docs/reference/analysis-pipeline.md)**: A technical overview of the backend data flow and scripting architecture.
 - **[How-to guide: Running the frontend checks](docs/how-to/running-frontend-checks.md)**: Running the type, lint and test checks locally, and what CI runs on a pull request.
 - **[Reference: Card data](docs/reference/card-data-contract.md)**: How the upstream card payload is normalised, what each field means, and how the app handles ids that fall out of step.
+- **[Reference: Frontend architecture](docs/reference/frontend-architecture.md)**: The provider stack, routing, contexts, query keys and pure helpers behind the React app.
+- **[Reference: Pipeline output contract](docs/reference/pipeline-output-contract.md)**: The five JSON files under `public/data/`, what each field means, and which pipeline scripts write and frontend components read them.
+- **[How-to guide: Deploying and hosting](docs/how-to/deploying-and-hosting.md)**: What `yarn build` runs stage by stage, how Firebase Hosting caches and rewrites requests, and which workflow deploys on a pull request or merge.
+- **[How-to guide: Adding a language](docs/how-to/adding-a-language.md)**: Steps for contributing a new locale, from choosing the BCP 47 code to passing the translation parity test.
+- **[Explanation: Advertising, premium and consent](docs/explanation/ads-premium-and-consent.md)**: Why the site gates content and shows ads, how premium status resolves through Stripe subscription states, and how the ad and consent layers stay inside policy.
 
 ## 🙌 Contributing
 
@@ -66,10 +71,7 @@ Ensure your code follows the existing style and conventions. Add appropriate tes
 
 Accessibility matters. This project supports multiple languages. The translation system uses JSON files to manage localised content.
 
-To contribute a new language translation:
-1. Check the `src/locales/` directory for existing translations
-2. Create a new JSON file for your language following the existing format
-3. Submit a Pull Request with your translation
+To contribute a new language, follow the [how-to guide for adding a language](docs/how-to/adding-a-language.md). A parity test fails `yarn test:ci` when a locale file is missing keys the English file has, or carries keys the English file no longer has.
 
 ## 💾 Data sources
 

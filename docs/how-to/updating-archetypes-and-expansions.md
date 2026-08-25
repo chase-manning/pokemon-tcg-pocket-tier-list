@@ -38,5 +38,5 @@ Open `settings.ts` and update the `EXPANSION_RELEASE_DATE` when a new set drops.
 ## Troubleshooting missing decks
 
 If a popular deck is missing from the frontend after an update, check two things.    
-First, verify the decklists match your defined archetype strings.     
+First, verify the deck lists match your defined archetype strings.
 Second, check the `MIN_ARCHETYPE_QUALIFIED_GAMES` constant in `settings.ts`. If the deck has fewer than `25` qualified games in the Limitless dataset, the pipeline drops it for having too small of a sample size. 
