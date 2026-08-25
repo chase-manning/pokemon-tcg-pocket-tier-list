@@ -282,8 +282,8 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
               };
             })(),
             score: maxScore(oldDeck),
-            popularity: oldDeck.popularity / highestPopularity,
-            strength: maxStrength(oldDeck) / highestStrength,
+            popularity: highestPopularity > 0 ? oldDeck.popularity / highestPopularity : 0,
+            strength: highestStrength > 0 ? maxStrength(oldDeck) / highestStrength : 0,
             percentOfGames: oldDeck.percentOfGames,
             matchups,
             iconPrimary: cardsMapping[cardIds[0]],
