@@ -9,7 +9,7 @@
     "deckFinderHeader": "Cliquez sur les cartes que vous n'avez pas. Le deck se mettra à jour pour montrer le meilleur avec vos cartes disponibles.",
     "relativeStrength": "Force Relative",
     "keyStats": "Statistiques Clés",
-    "popularity": "Popularité",
+    "popularity": "Parties (14 j)",
     "strength": "Force",
     "winRate": "Taux de Victoire",
     "notEnoughCards": "Pas assez de cartes",
@@ -20,7 +20,7 @@
     "alternatives": "Alternatives",
     "metaShare": "Part du méta",
     "strengthTooltip": "Score moyen de matchups vs le méta (0–10)",
-    "popularityTooltip": "Part de parties qualifiées sur 7 jours (%)",
+    "popularityTooltip": "Parties qualifiées sur les 14 derniers jours, plafonnées à la sortie de cette extension",
     "winRateTooltip": "% de victoires dans la fenêtre actuelle",
     "metaShareTooltip": "Part de parties qualifiées ± variation hebdomadaire"
   },

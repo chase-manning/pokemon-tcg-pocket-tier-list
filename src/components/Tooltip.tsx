@@ -55,7 +55,12 @@ const TooltipContent = styled.div<{ $isVisible: boolean }>`
   visibility: ${(props) => (props.$isVisible ? "visible" : "hidden")};
   transition: all 0.2s ease;
   z-index: 1000;
-  width: 30rem;
+  /* Cap against the viewport, not a fixed width: the icon can sit near either
+     screen edge on mobile, and a hard 24rem box centred there overflows the
+     document and forces sideways scrolling. */
+  width: max-content;
+  max-width: min(30rem, calc(100vw - 3.2rem));
+  text-align: left;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   &::after {
@@ -70,7 +75,6 @@ const TooltipContent = styled.div<{ $isVisible: boolean }>`
   }
 
   @media (max-width: 900px) {
-    width: 24rem;
     font-size: 1.4rem;
     padding: 1rem;
     margin-bottom: 0.6rem;

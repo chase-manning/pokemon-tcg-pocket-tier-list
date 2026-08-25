@@ -9,7 +9,7 @@
     "deckFinderHeader": "Klicken Sie auf die Karten, die Sie nicht haben. Das Deck wird aktualisiert, um das Beste mit Ihren verfügbaren Karten zu zeigen.",
     "relativeStrength": "Relative Stärke",
     "keyStats": "Wichtige Statistiken",
-    "popularity": "Beliebtheit",
+    "popularity": "Spiele (14 T.)",
     "strength": "Stärke",
     "winRate": "Gewinnrate",
     "notEnoughCards": "Nicht genug Karten",
@@ -20,7 +20,7 @@
     "alternatives": "Alternativen",
     "metaShare": "Meta-Anteil",
     "strengthTooltip": "Ø. Matchup-Score gegen das Feld (0–10)",
-    "popularityTooltip": "Anteil qualifizierter Spiele in den letzten 7 Tagen (%)",
+    "popularityTooltip": "Qualifizierte Spiele in den letzten 14 Tagen, begrenzt auf das Erscheinungsdatum dieser Erweiterung",
     "winRateTooltip": "Sieg-% im aktuellen Fenster",
     "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung"
   },

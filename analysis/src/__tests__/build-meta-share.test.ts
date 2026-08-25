@@ -104,6 +104,21 @@ describe("buildMetaShare", () => {
       expect(Number.isNaN(d.share)).toBe(false);
       expect(Number.isNaN(d.sharePrev)).toBe(false);
       expect(Number.isNaN(d.delta)).toBe(false);
+      expect(Number.isNaN(d.games14 ?? 0)).toBe(false);
     }
+  });
+
+  it("games14 counts qualified games in the trailing 14 days", () => {
+    const qualifiedDecks: Deck[] = [
+      makeDeck({ name: "Deck A", date: daysAgo(1), totalGames: 30 }),
+      makeDeck({ name: "Deck A", date: daysAgo(10), totalGames: 20 }),
+      // outside the 14-day window: must not count
+      makeDeck({ name: "Deck A", date: daysAgo(20), totalGames: 99 }),
+    ];
+    const bestDecks = [makePartial("Deck A")];
+
+    const ms = buildMetaShare(qualifiedDecks, bestDecks, TODAY);
+
+    expect(ms.decks[0].games14).toBe(50);
   });
 });

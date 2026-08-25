@@ -606,10 +606,12 @@ const DeckPage = () => {
                         <Tooltip text={t("deckPage.strengthTooltip")} />
                       </KeyStatRow>
                       <KeyStatRow>
-                        <span>{t("deckPage.popularity")}:</span>
-                        <KeyStatValue>{(deck.popularity * 100).toFixed(1)}%</KeyStatValue>
-                        <Tooltip text={t("deckPage.popularityTooltip")} />
-                      </KeyStatRow>
+                                              <span>{t("deckPage.popularity")}:</span>
+                                              <KeyStatValue>
+                                                {shareEntry ? shareEntry.games14 : "—"}
+                                              </KeyStatValue>
+                                              <Tooltip text={t("deckPage.popularityTooltip")} />
+                                            </KeyStatRow>
                       <KeyStatRow>
                         <span>{t("deckPage.winRate")}:</span>
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
