@@ -22,7 +22,8 @@
     "strengthTooltip": "对环境平均对战得分 (0–10)",
     "popularityTooltip": "近14天的合格对局数，以当前扩展包发售日为上限",
     "winRateTooltip": "当前窗口胜率",
-    "metaShareTooltip": "合格场次占比 ± 周变化"
+    "metaShareTooltip": "合格场次占比 ± 周变化",
+    "showTooltip": "显示说明"
   },
   "energyDropdown": {
     "all": "所有能量类型",

@@ -22,7 +22,8 @@
     "strengthTooltip": "Score moyen de matchups vs le méta (0–10)",
     "popularityTooltip": "Parties qualifiées sur les 14 derniers jours, plafonnées à la sortie de cette extension",
     "winRateTooltip": "% de victoires dans la fenêtre actuelle",
-    "metaShareTooltip": "Part de parties qualifiées ± variation hebdomadaire"
+    "metaShareTooltip": "Part de parties qualifiées ± variation hebdomadaire",
+    "showTooltip": "Afficher l'explication"
   },
   "energyDropdown": {
     "all": "Tous les types d'énergie",

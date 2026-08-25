@@ -22,7 +22,8 @@
     "strengthTooltip": "Puntuación media de enfrentamientos vs el meta (0–10)",
     "popularityTooltip": "Partidas cualificadas en los últimos 14 días, limitadas al lanzamiento de esta expansión",
     "winRateTooltip": "% de victorias en la ventana actual",
-    "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal"
+    "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal",
+    "showTooltip": "Mostrar explicación"
   },
   "energyDropdown": {
     "all": "Todos los tipos de Energía",

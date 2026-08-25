@@ -128,7 +128,8 @@
     "strengthTooltip": "Avg. matchup score vs the field (0–10)",
     "popularityTooltip": "Qualified games in the last 14 days, capped at this expansion's release",
     "winRateTooltip": "Win % in the current window",
-    "metaShareTooltip": "Share of qualified games ± weekly change"
+    "metaShareTooltip": "Share of qualified games ± weekly change",
+    "showTooltip": "Show explanation"
   },
   "energyDropdown": {
     "all": "All Energy Types",

@@ -83,9 +83,11 @@ const TooltipContent = styled.div<{ $isVisible: boolean }>`
 
 interface Props {
   text: string;
+  /** Localised accessible name for the toggle icon. */
+  ariaLabel?: string;
 }
 
-const Tooltip = ({ text }: Props) => {
+const Tooltip = ({ text, ariaLabel }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -114,8 +116,10 @@ const Tooltip = ({ text }: Props) => {
     };
   }, [isVisible]);
 
-  const handleToggle = () => {
-    setIsVisible(!isVisible);
+  // Clicking an already-hovered icon must keep the tooltip open, not toggle
+  // it closed under the pointer. Outside click and scroll still dismiss.
+  const handleActivate = () => {
+    setIsVisible(true);
   };
 
   return (
@@ -123,14 +127,14 @@ const Tooltip = ({ text }: Props) => {
       <TooltipIcon
         onMouseEnter={() => setIsVisible(true)}
         onMouseLeave={() => setIsVisible(false)}
-        onClick={handleToggle}
+        onClick={handleActivate}
         role="button"
-        aria-label="Show tooltip"
+        aria-label={ariaLabel ?? text}
         tabIndex={0}
         onKeyDown={(e: KeyboardEvent) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            handleToggle();
+            handleActivate();
           }
         }}
       >

@@ -603,19 +603,28 @@ const DeckPage = () => {
                       <KeyStatRow>
                         <span>{t("deckPage.strength")}:</span>
                         <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
-                        <Tooltip text={t("deckPage.strengthTooltip")} />
+                        <Tooltip
+                          text={t("deckPage.strengthTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
                       </KeyStatRow>
                       <KeyStatRow>
-                                              <span>{t("deckPage.popularity")}:</span>
-                                              <KeyStatValue>
-                                                {shareEntry ? shareEntry.games14 : "—"}
-                                              </KeyStatValue>
-                                              <Tooltip text={t("deckPage.popularityTooltip")} />
-                                            </KeyStatRow>
+                        <span>{t("deckPage.popularity")}:</span>
+                        <KeyStatValue>
+                          {shareEntry ? shareEntry.games14 : "—"}
+                        </KeyStatValue>
+                        <Tooltip
+                          text={t("deckPage.popularityTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
+                      </KeyStatRow>
                       <KeyStatRow>
                         <span>{t("deckPage.winRate")}:</span>
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
-                        <Tooltip text={t("deckPage.winRateTooltip")} />
+                        <Tooltip
+                          text={t("deckPage.winRateTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
                       </KeyStatRow>
                       {shareEntry && (
                         <KeyStatRow>
@@ -628,7 +637,10 @@ const DeckPage = () => {
                                 ? ` ▼${(Math.abs(shareEntry.delta) * 100).toFixed(1)}`
                                 : ""}
                           </KeyStatValue>
-                          <Tooltip text={t("deckPage.metaShareTooltip")} />
+                          <Tooltip
+                            text={t("deckPage.metaShareTooltip")}
+                            ariaLabel={t("deckPage.showTooltip")}
+                          />
                         </KeyStatRow>
                       )}
                     </KeyStats>

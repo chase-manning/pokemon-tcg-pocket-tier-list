@@ -22,7 +22,8 @@
     "strengthTooltip": "Ø. Matchup-Score gegen das Feld (0–10)",
     "popularityTooltip": "Qualifizierte Spiele in den letzten 14 Tagen, begrenzt auf das Erscheinungsdatum dieser Erweiterung",
     "winRateTooltip": "Sieg-% im aktuellen Fenster",
-    "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung"
+    "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung",
+    "showTooltip": "Erklärung anzeigen"
   },
   "energyDropdown": {
     "all": "Alle Energietypen",

@@ -127,8 +127,9 @@
     "metaShare": "Cota meta",
     "strengthTooltip": "Scor mediu matchup vs meta (0–10)",
     "popularityTooltip": "Meciuri calificate în ultimele 14 zile, limitate la lansarea acestei extensii",
-    "winRateTooltip": "Rata de încâlcări îln fereastra curentă",
-    "metaShareTooltip": "Pondere meciuri calificată ± schimbare săptâmânălă"
+    "winRateTooltip": "Rata de câștiguri în fereastra curentă",
+    "metaShareTooltip": "Pondere meciuri calificate ± schimbare săptămânală",
+    "showTooltip": "Afișează explicația"
   },
   "energyDropdown": {
     "all": "Toate tipurile de energie",
