@@ -48,6 +48,7 @@ Detailed documentation for maintaining the project is available in the `docs/` d
 - **[Reference: Analysis pipeline](docs/reference/analysis-pipeline.md)**: A technical overview of the backend data flow and scripting architecture.
 - **[How-to guide: Running the frontend checks](docs/how-to/running-frontend-checks.md)**: Running the type, lint and test checks locally, and what CI runs on a pull request.
 - **[Reference: Card data](docs/reference/card-data-contract.md)**: How the upstream card payload is normalised, what each field means, and how the app handles ids that fall out of step.
+- **[Reference: Frontend architecture](docs/reference/frontend-architecture.md)**: The provider stack, routing, contexts, query keys and pure helpers behind the React app.
 
 ## 🙌 Contributing
 
