@@ -10,6 +10,19 @@ import { UIProvider } from "./contexts/UIContext";
 import ConsentProvider from "./consent/ConsentProvider";
 import "./i18n";
 
+// A deploy replaces every hashed chunk, so a tab that was already open asks for
+// a filename the host no longer has. Hosting answers those with index.html, the
+// import fails on the MIME type, and the route dies behind an error boundary.
+// One reload picks up the new manifest; the stamp stops a broken chunk looping.
+const RELOAD_STAMP = "chunk-reload-at";
+window.addEventListener("vite:preloadError", (event) => {
+  event.preventDefault();
+  const last = Number(sessionStorage.getItem(RELOAD_STAMP) ?? 0);
+  if (Date.now() - last < 10000) return;
+  sessionStorage.setItem(RELOAD_STAMP, String(Date.now()));
+  window.location.reload();
+});
+
 const rootElement = document.getElementById("root") as HTMLElement;
 
 const app = (
