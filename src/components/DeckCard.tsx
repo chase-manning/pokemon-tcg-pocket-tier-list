@@ -14,7 +14,7 @@ const Container = styled.div`
   }
 `;
 
-const StyledDeckCard = styled(Link) <{ $disabled: boolean }>`
+const StyledDeckCard = styled(Link)`
   position: relative;
   border-radius: 1.2rem;
   color: var(--bg);
@@ -23,12 +23,9 @@ const StyledDeckCard = styled(Link) <{ $disabled: boolean }>`
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
-
-  filter: ${(props) => (props.$disabled ? "grayscale(1)" : "none")};
-  opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 `;
 
-const SubCard = styled(Link) <{ $disabled: boolean }>`
+const SubCard = styled(Link)`
   position: absolute;
   bottom: -1rem;
   right: -1rem;
@@ -39,9 +36,6 @@ const SubCard = styled(Link) <{ $disabled: boolean }>`
   overflow: hidden;
   border: solid 1px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
-
-  filter: ${(props) => (props.$disabled ? "grayscale(1)" : "none")};
-  opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 `;
 
 const DeckImage = styled.img`
@@ -106,7 +100,7 @@ const DeckCard = ({ deck, metaShare, metaShareLabel }: Props) => {
 
     return (
         <Container>
-            <StyledDeckCard to={`/deck/${deck.id}`} $disabled={false}>
+            <StyledDeckCard to={`/deck/${deck.id}`}>
                 <DeckImage key={deck.iconPrimary.id} src={deck.iconPrimary.image} alt={deck.iconPrimary.name} />
                 {metaShare && share !== null && (
                     <ShareBadge $delta={delta} title={metaShareLabel ?? "Meta share"}>
@@ -116,7 +110,7 @@ const DeckCard = ({ deck, metaShare, metaShareLabel }: Props) => {
                 )}
             </StyledDeckCard>
             {deck.iconSecondary && (
-                <SubCard to={`/deck/${deck.id}`} $disabled={false}>
+                <SubCard to={`/deck/${deck.id}`}>
                     <DeckImage
                         key={deck.iconSecondary.id}
                         src={deck.iconSecondary.image}

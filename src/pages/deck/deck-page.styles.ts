@@ -29,7 +29,7 @@ export const CardSection = styled.div`
   }
 `;
 
-export const PannelSection = styled.div`
+export const PanelSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

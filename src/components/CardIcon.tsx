@@ -13,7 +13,7 @@ const Container = styled.div`
   }
 `;
 
-const StyledCardIcon = styled.button<{ $disabled: boolean }>`
+const StyledCardIcon = styled.button`
   position: relative;
   border-radius: 1.2rem;
   color: var(--bg);
@@ -22,9 +22,6 @@ const StyledCardIcon = styled.button<{ $disabled: boolean }>`
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
-
-  filter: ${(props) => (props.$disabled ? "grayscale(1)" : "none")};
-  opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 `;
 
 const CardImage = styled.img`
@@ -56,7 +53,6 @@ const CardIcon = ({ card }: Props) => {
   return (
     <Container>
       <StyledCardIcon
-        $disabled={false}
         onClick={() => {
           addMissing([card.id]);
         }}

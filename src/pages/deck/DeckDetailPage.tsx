@@ -32,7 +32,7 @@ import {
   MatchupSection,
   Matchups,
   Overlay,
-  PannelSection,
+  PanelSection,
   StyledDeckPage,
   SubHeader,
 } from "./deck-page.styles";
@@ -116,7 +116,7 @@ const DeckDetailPage = () => {
           <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
           <AdInContent placement="deck" />
         </CardSection>
-        <PannelSection>
+        <PanelSection>
           <UserAccount hideIfPremium />
           <Matchups>
             <MatchupSection>
@@ -236,7 +236,7 @@ const DeckDetailPage = () => {
               </MatchupList>
             </MatchupSection>
           </Matchups>
-        </PannelSection>
+        </PanelSection>
       </StyledDeckPage>
 
       <SeoContent>
