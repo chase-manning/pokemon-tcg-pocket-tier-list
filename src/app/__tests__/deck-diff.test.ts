@@ -99,4 +99,18 @@ describe("oneSwapAlternatives", () => {
     );
     expect(alternatives.map(({ list: l }) => l.score)).toEqual([9, 8, 7]);
   });
+
+  it("fills the limit with valid swaps even when an invalid candidate scores higher", () => {
+    const alternatives = oneSwapAlternatives(
+      best,
+      [
+        list(["a", "c", "d"], 12),
+        list(["a", "a", "c"], 9),
+        list(["a", "a", "d"], 8),
+        list(["a", "a", "e"], 7),
+      ],
+      3
+    );
+    expect(alternatives.map(({ list: l }) => l.score)).toEqual([9, 8, 7]);
+  });
 });

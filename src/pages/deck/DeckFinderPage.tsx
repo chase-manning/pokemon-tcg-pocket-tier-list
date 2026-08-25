@@ -78,7 +78,7 @@ const DeckFinderPage = () => {
           <EmptyMessage>{t("deckPage.notEnoughCards")}</EmptyMessage>
         )}
         <EmptyActions>
-          <UndoButton $disabled={!canUndo} onClick={undoMissing}>
+          <UndoButton disabled={!canUndo} $disabled={!canUndo} onClick={undoMissing}>
             {t("deckPage.undo")}
           </UndoButton>
           <Or>or</Or>

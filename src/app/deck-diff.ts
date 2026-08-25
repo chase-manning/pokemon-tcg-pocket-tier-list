@@ -44,9 +44,8 @@ export const oneSwapAlternatives = <L extends { cards: CardType[]; score: number
 ): Array<{ list: L; diff: ListDiff }> =>
   lists
     .map((list) => ({ list, diff: diffLists(bestList.cards, list.cards) }))
-    .filter(({ diff }) => diff.removed.length + diff.added.length === 2)
+    .filter(
+      ({ diff }) => diff.removed.length === 1 && diff.added.length === 1
+    )
     .sort((a, b) => b.list.score - a.list.score)
-    .slice(0, limit)
-    // Sorting and slicing before dropping non-swaps keeps the original
-    // render order and count.
-    .filter(({ diff }) => diff.removed.length === 1 && diff.added.length === 1);
+    .slice(0, limit);
