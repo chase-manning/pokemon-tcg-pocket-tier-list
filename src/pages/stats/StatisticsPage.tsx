@@ -12,6 +12,9 @@ import {
     Legend,
 } from "recharts";
 import useIsPremium from "../../app/use-is-premium";
+import { useQuery } from "@tanstack/react-query";
+import { fetchCards } from "../../app/cards-api";
+import { deckNameToIconIds } from "../../app/deck-filters";
 import { PipelineTrendRow, PipelineMetaShare } from "../../types/pipeline-data";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
@@ -21,6 +24,7 @@ import { useDecks } from "../../contexts/DecksContext";
 import { buildTiers } from "../../app/tier-helper";
 import { deckDisplayName, formatArchetypeId } from "../../app/deck-display";
 import { EXPANSION_NAME } from "../../app/constants";
+import crownIcon from "../../assets/crown.webp";
 
 const PageContainer = styled.div`
     width: 100%;
@@ -276,6 +280,16 @@ const DeckNameText = styled.span`
     text-overflow: ellipsis;
 `;
 
+const CrownLink = styled(Link)`
+    flex-shrink: 0;
+    display: inline-flex;
+
+    img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+`;
+
 const TierDot = styled.div<{ $color: string }>`
     width: 0.8rem;
     height: 0.8rem;
@@ -330,6 +344,11 @@ const StatisticsPage = () => {
             .then((data) => data && setMetaShare(data))
             .catch((err) => console.error("Awaiting pipeline share data", err));
     }, []);
+
+    const { data: cardsPayload } = useQuery({
+        queryKey: ["cards"],
+        queryFn: fetchCards,
+    });
 
     const movementDecks = useMemo(() => {
         if (!metaShare) return [];
@@ -519,13 +538,33 @@ const StatisticsPage = () => {
                                 <tr key={entry.name}>
                                     <td>{index + 1}</td>
                                     <td>
-                                        <Link to={`/deck/${entry.name}/`}>
-                                            {deckDisplayName(
-                                                decks?.find((d) => d.id === entry.name) ?? {
-                                                    name: entry.name,
-                                                }
-                                            )}
-                                        </Link>
+                                        {(() => {
+                                            const deck = decks?.find(
+                                                (d) => d.id === entry.name
+                                            );
+                                            const cards = cardsPayload?.cards;
+                                            const iconNames = deck
+                                                ? null
+                                                : cards
+                                                  ? deckNameToIconIds(entry.name)
+                                                        .map((id) => cards.find((c) => c.id === id)?.name)
+                                                        .filter(Boolean)
+                                                        .join(" / ")
+                                                  : null;
+                                            return (
+                                                <Link to={`/deck/${entry.name}/`}>
+                                                    {deck
+                                                        ? deckDisplayName(deck)
+                                                        : iconNames ||
+                                                          formatArchetypeId(entry.name)}
+                                                </Link>
+                                            );
+                                        })()}
+                                        {!decks?.some((d) => d.id === entry.name) && (
+                                            <CrownLink to="/about#premium" aria-label="Premium">
+                                                <img src={crownIcon} alt="" />
+                                            </CrownLink>
+                                        )}
                                     </td>
                                     <td>{(entry.share * 100).toFixed(1)}%</td>
                                     <Delta $rising={entry.delta > 0}>
