@@ -165,6 +165,52 @@ const MatrixTable = styled.table`
     }
 `;
 
+const MovementTable = styled.table`
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--main);
+
+    th,
+    td {
+        /* The global reset sets every element to 10px, so sizing the table
+           alone leaves the cells unreadable. */
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+        font-weight: 600;
+        opacity: 0.7;
+    }
+
+    td:first-child {
+        opacity: 0.5;
+        width: 4rem;
+    }
+
+    a {
+        font-size: inherit;
+        color: var(--main);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+`;
+
+const Delta = styled.td<{ $rising: boolean }>`
+    color: ${(props) => (props.$rising ? "var(--e)" : "var(--s)")};
+    font-weight: 600;
+    white-space: nowrap;
+`;
+
 const MatrixCell = styled.td<{ $bg?: string; $isPopulated: boolean }>`
   background: ${(props) => props.$bg || "transparent"};
   color: ${(props) => (props.$isPopulated ? "#fff" : "var(--main)")};
@@ -459,7 +505,7 @@ const StatisticsPage = () => {
                 </SectionHeader>
 
                 {movementDecks.length > 0 && (
-                    <table>
+                    <MovementTable>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -474,19 +520,23 @@ const StatisticsPage = () => {
                                     <td>{index + 1}</td>
                                     <td>
                                         <Link to={`/deck/${entry.name}/`}>
-                                            {entry.name}
+                                            {deckDisplayName(
+                                                decks?.find((d) => d.id === entry.name) ?? {
+                                                    name: entry.name,
+                                                }
+                                            )}
                                         </Link>
                                     </td>
                                     <td>{(entry.share * 100).toFixed(1)}%</td>
-                                    <td>
+                                    <Delta $rising={entry.delta > 0}>
                                         {entry.delta > 0
                                             ? `+${(entry.delta * 100).toFixed(1)} pp`
                                             : `${(entry.delta * 100).toFixed(1)} pp`}
-                                    </td>
+                                    </Delta>
                                 </tr>
                             ))}
                         </tbody>
-                    </table>
+                    </MovementTable>
                 )}
             </Section>
 
