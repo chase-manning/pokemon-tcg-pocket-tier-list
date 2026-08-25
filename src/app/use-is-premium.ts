@@ -5,7 +5,7 @@ import { payments } from "../config/firebase";
 import { useAuth } from "../contexts/AuthContext";
 
 const useIsPremium = () => {
-  const [failed, setFailed] = useState(false);
+  const [failedUid, setFailedUid] = useState<string | null>(null);
   const { user, loading } = useAuth();
 
   // Count subscriptions that grant Premium access. "trialing" is essential:
@@ -29,13 +29,13 @@ const useIsPremium = () => {
   });
 
   useEffect(() => {
-    if (query.error) setFailed(true);
-  }, [query.error]);
+    if (query.error) setFailedUid(user?.uid ?? null);
+  }, [query.error, user?.uid]);
 
-  if (query.error && !failed) console.error(query.error);
+  if (query.error && failedUid !== user?.uid) console.error(query.error);
 
   if (loading) return null;
-  if (!user || failed) return false;
+  if (!user || failedUid === user?.uid) return false;
   return query.isPending ? null : (query.data ?? false);
 };
 
