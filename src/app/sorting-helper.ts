@@ -11,11 +11,3 @@ export const getSortValue = (deck: FullDeckType, sortBy: SortBy): number => {
   }
   return 0;
 };
-
-const sortDecks = (decks: FullDeckType[], sortBy: SortBy) => {
-  return decks.sort(
-      (a, b) => getSortValue(a, sortBy) - getSortValue(b, sortBy)
-  );
-};
-
-export default sortDecks;
