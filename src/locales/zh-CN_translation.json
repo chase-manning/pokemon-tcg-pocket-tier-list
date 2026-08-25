@@ -1,28 +1,134 @@
 {
   "home": {
-    "banner": "Top Pocket Decks is alive and well, with a new maintainer keeping it updated. Rankings are current for {{expansion}} as of {{date}}."
+    "banner": "Top Pocket Decks 一切正常，并由新的维护者保持更新。截至 {{date}}，当前排名适用于 {{expansion}}。"
   },
+  "farewell": {
+    "banner": "Top Pocket Decks 即将停止维护 (阅读完整说明)",
+    "title": "感谢这精彩的两年！",
+    "intro": "我在 2024 年 11 月 2 日将 Top Pocket Decks 作为个人项目启动。我只是想要一种自己分析环境的方法。然后我把它放到了网上，从那以后一直在更新。差不多两年了！",
+    "enjoyed": "这段时间真的很开心。宝可梦集换式卡牌 Pocket 是一款真正出色的游戏，排位赛一直是我最喜欢的部分，肝强力卡组，计算出真正能赢的策略。建立这个网站让我能够做到这一点并与大家分享。",
+    "why": "不过生活确实变忙了。我订婚了，正在筹备婚礼，本职工作也很占时间。目前我实在没有时间玩宝可梦 Pocket 或维护 Top Pocket Decks。与其让它停在这里慢慢过时让大家一头雾水，不如好好地结束，并说声谢谢。",
+    "thanks": "真诚地感谢大家。我很高兴这个网站证明对这么多人有用，看到人们每周登录检查环境总是让我很开心。特别感谢每一位订阅高级会员的人。我从没想过像这样有趣的个人项目会获得订阅。虽然这些收入只是勉强覆盖了运营成本，但大家足够关心并愿意为之付费，这对我意义重大。",
+    "takeover": {
+      "title": "有兴趣接手吗？",
+      "body": "我真的很希望这个项目能继续下去。如果您有软件开发经验，特别是 React 和 TypeScript，请发送电子邮件至 <0>chase@manning.dev</0>，并附上您的 GitHub 个人资料链接。我很乐意与有能力的团队合作移交所有内容，以便他们能让它继续运转。这包括我们维护的宝可梦 Pocket <1>卡牌 API</1>，它仍然是唯一可用的开源公共卡牌 API。"
+    },
+    "premium": {
+      "title": "致高级订阅者",
+      "status": "网站将保持在线，并将继续接收更新！新高级会员注册已暂时暂停，所有人的广告也已关闭。",
+      "cancel": "现有订阅将继续续订，直到您取消为止，因此如果您不想再次被计费，请通过<0>计费门户</0>取消。",
+      "refund": "如果您更希望退款，请发送电子邮件至 <0>chase@manning.dev</0>，并包含您帐户上的电子邮件地址。我将取消您的订阅并退还您最近的付款。Stripe 只允许我退还过去 180 天内支付的款项，因此如果您的付款早于该时间，我会尽我所能。"
+    },
+    "signOff": "祝所有仍在玩游戏的人一切顺利，享受游戏吧！",
+    "signature": "签名: Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks 高级会员",
+    "manageSubscription": "管理订阅",
+    "windDown": {
+      "headline": "高级会员已暂时暂停",
+      "status": "Top Pocket Decks 有了新的维护者，并将继续接收更新！在此过渡期间，新高级会员注册已暂时暂停，所有人的广告也已关闭。",
+      "active": "您的订阅将保持活动状态并继续续订，直到您取消为止。您可以随时通过计费门户取消。",
+      "refund": "您更希望退款吗？请发送电子邮件至 <0>chase@manning.dev</0>，并附上您帐户上的电子邮件地址，我将取消您的订阅并退还您最近的付款。Stripe 只允许我退还过去 180 天内支付的款项，因此如果您的付款早于该时间，我会尽我所能。"
+    },
+    "features": {
+      "title": "功能",
+      "free": "免费",
+      "premium": "高级会员",
+      "removeAds": {
+        "title": "去除广告",
+        "description": "在整个网站享受无广告的体验。",
+        "free": "无",
+        "premium": "有"
+      },
+      "bestDeckFinder": {
+        "title": "最佳卡组查找器",
+        "description": "找到您能用您的卡牌组建的最强卡组。它兼作完整的 PTCGP 收藏追踪器。",
+        "free": "有",
+        "premium": "有"
+      },
+      "exclude": {
+        "title": "排除您没有的卡牌",
+        "description": "过滤掉您不拥有的卡牌，以使用您拥有的卡牌实时更新等级列表。",
+        "free": "有",
+        "premium": "有"
+      },
+      "matchups": {
+        "title": "卡组优势和劣势",
+        "description": "查看您的构筑击败和输给哪些卡组，包括胜率百分比。",
+        "free": "无",
+        "premium": "有"
+      },
+      "filters": {
+        "title": "卡组筛选",
+        "description": "按能量筛选卡组，或完全禁用 EX 卡牌以击败单人战斗。",
+        "free": "无",
+        "premium": "有"
+      },
+      "sortBy": {
+        "title": "替代排名",
+        "description": "更改等级列表以按流行度或强度进行排名。",
+        "free": "无",
+        "premium": "有"
+      },
+      "contact": {
+        "title": "联系开发者",
+        "description": "向开发者发送电子邮件以提供有关网站的反馈，请求新功能或报告错误。不保证满足功能请求，但我们会阅读所有请求。",
+        "free": "无",
+        "premium": "有"
+      },
+      "updated": {
+        "title": "等级列表已更新",
+        "description": "等级列表提取新数据的频率。更快的更新可帮助您领先于环境。",
+        "free": "每周",
+        "premium": "每日"
+      },
+      "decks": {
+        "title": "等级列表中的卡组",
+        "description": "等级列表中显示的卡组数量。更多卡组意味着您有更多选择。发现尚未流行起来的强力卡组。",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "广告",
+    "removeAds": "去除广告",
+    "close": "关闭"
+  },
+  "adblocker": {
+    "lead": "您的广告拦截器是否",
+    "respect": "尊重",
+    "middle": "您的隐私？如果您不确定，我和许多其他人可以推荐",
+    "recommend": "Raymond Hill 的 uBlock Origin",
+    "footer": "显然不是赞助。只是来自一位志同道合者的真诚关切。"
+  },
+  "userAccount": {
+    "title": "用户账户",
+    "signOut": "退出登录"
+  },
+  "lastUpdated": "最后更新:",
   "deckPage": {
     "matchups": "对战",
     "strongAgainst": "优势对抗",
     "weakAgainst": "劣势对抗",
-    "deckFinderHeader": "点击你没有的卡牌。卡组将更新以显示你可用卡牌的最佳组合。",
+    "deckFinderHeader": "点击您没有的卡牌。卡组将更新以显示您可用卡牌的最佳选项。",
     "relativeStrength": "相对强度",
     "keyStats": "关键数据",
     "popularity": "对局数 (14天)",
     "strength": "强度",
     "winRate": "胜率",
     "notEnoughCards": "卡牌不足",
-    "tryAnotherDeck": "请尝试其他卡组",
+    "tryAnotherDeck": "尝试其他卡组",
     "notEnoughShrug": "¯\\_(ツ)_/¯",
-    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
-    "undo": "Undo",
+    "notEnoughBody": "缺少的卡牌太多了。我们无法想象没有 {{card}} 的这个卡组。",
+    "undo": "撤销",
     "alternatives": "替代方案",
     "metaShare": "环境占比",
-    "strengthTooltip": "对环境平均对战得分 (0–10)",
-    "popularityTooltip": "近14天的合格对局数，以当前扩展包发售日为上限",
-    "winRateTooltip": "当前窗口胜率",
-    "metaShareTooltip": "合格场次占比 ± 周变化",
+    "strengthTooltip": "对环境平均对战得分 (0至10)",
+    "popularityTooltip": "过去 14 天内的合格对局数，以当前扩展包发布时为上限",
+    "winRateTooltip": "当前窗口的胜率百分比",
+    "metaShareTooltip": "合格对局的份额 ± 每周变化",
     "showTooltip": "显示说明"
   },
   "energyDropdown": {
@@ -39,7 +145,7 @@
     "Colorless": "无色"
   },
   "filter": {
-    "includeEx": "包含EX卡牌",
+    "includeEx": "包含 EX 卡牌",
     "deckAmount": "卡组数量",
     "sortBy": "排序方式",
     "score": "综合最佳",
@@ -50,7 +156,7 @@
     "latestExpansionCardsAny": "任意"
   },
   "statistics": {
-    "trends": "meta 趋势",
+    "trends": "环境趋势",
     "matrix": "对战矩阵",
     "rising": "上升",
     "falling": "下降",
@@ -62,161 +168,55 @@
   },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",
-    "description1": "探索您能用收藏卡牌组建的最强卡组。最佳卡组搜索器首先会显示游戏中最强的卡组，但您可以点击您没有的卡牌。它会随后显示不使用这些卡牌的次佳卡组。",
-    "description2": "持续移除卡牌，直到找到一个您拥有所有卡牌的卡组。相对强度指标会显示您的卡组与游戏中最强卡组相比的强度。",
-    "button": "试用最佳卡组搜索器"
+    "description1": "找到您能用收藏卡牌组建的最强卡组。最佳卡组查找器首先会显示游戏中最强的卡组。点击任何您没有的卡牌，它会向您显示跳过这些卡牌的次佳卡组。",
+    "description2": "持续移除卡牌，直到找到一个您拥有所有卡牌的卡组。相对强度指标会向您显示您的卡组与游戏中最强卡组相比的强度。",
+    "button": "尝试最佳卡组查找器"
   },
   "header": {
-    "tierList": "卡组等级表",
+    "tierList": "等级列表",
     "bestDeckFinder": "最佳卡组查找器",
-    "signIn": "使用谷歌登录",
+    "signIn": "使用 Google 登录",
     "signOut": "退出登录",
     "bestCards": "最佳卡牌",
     "bestExpansions": "最佳扩展包",
-    "statistics": "统计"
+    "statistics": "统计数据"
   },
   "footer": {
     "about": "关于",
     "privacy": "隐私政策"
   },
   "hero": {
-    "title": "宝可梦卡牌游戏 Pocket 最强卡组和等级列表",
-    "subtitle": "通过数据驱动的卡组等级列表，领先宝可梦卡牌游戏 Pocket 的环境。基于比赛结果构建，查找完整列表，标记您缺少的卡牌，并发现您现在可以构建的最强卡组。",
+    "title": "宝可梦卡牌游戏 Pocket 最佳卡组和等级列表",
+    "subtitle": "使用真实的比赛数据寻找最强的宝可梦卡牌游戏 Pocket 卡组。您可以筛选完整列表，标记您缺少的卡牌，并准确了解接下来该构建什么。主宰环境。",
     "button": "查看等级列表"
   },
   "features": {
     "title": "功能",
     "tournamentResults": {
       "title": "比赛结果",
-      "description": "等级列表基于比赛结果，使用算法确定等级和卡组列表"
+      "description": "等级列表依赖于比赛结果。算法确定等级和卡组列表。"
     },
     "weeklyUpdates": {
       "title": "每周更新",
-      "description": "等级列表每周更新，每周一添加新的卡组和对战数据"
+      "description": "等级列表每周更新一次，在每个星期一带来新的卡组和对战。"
     },
     "filters": {
       "title": "筛选",
-      "description": "按能量类型或无EX卡牌筛选卡组，有助于击败单人战斗"
+      "description": "按能量筛选卡组，或没有 EX 卡牌，有助于帮助击败某些单人战斗。"
     },
     "missingCards": {
       "title": "缺失卡牌",
-      "description": "点击您缺少的卡牌，等级列表将根据您拥有的卡牌自动更新"
+      "description": "点击您缺少的任何卡牌，等级列表将根据您拥有的卡牌自动更新。"
     },
     "matchups": {
-      "title": "对战数据",
-      "description": "查看哪些卡组对其他卡组有优势，以及它们的胜率"
+      "title": "对战",
+      "description": "查看哪些卡组击败了其他卡组的对战数据，以及它们的胜率。"
     },
     "openSource": {
-      "title": "开源项目",
-      "description": "本网站是开源的，您可以在<0>GitHub</0>上找到源代码"
+      "title": "开源",
+      "description": "本网站是开源的。您可以在 <0>GitHub</0> 上找到源代码。"
     }
   },
-  "farewell": {
-    "banner": "Top Pocket Decks 即将停止维护 — 阅读完整说明",
-    "title": "感谢这精彩的两年！🎉",
-    "intro": "我在 2024 年 11 月 2 日把 Top Pocket Decks 当作个人项目做了出来，当时只是想有个能自己分析环境的工具。后来我把它放到了网上，从那以后一直在更新。到现在差不多快两年了！",
-    "enjoyed": "这段时间真的很开心。宝可梦集换式卡牌 Pocket 是款很棒的游戏，排位赛一直是我最喜欢的部分，钻研强力卡组、搞清楚到底什么才真的能赢。做这个网站让我可以继续做这件事，还能分享给大家。",
-    "why": "不过生活确实变忙了。我订婚了，正在筹备婚礼，本职工作也很占时间。现在我实在抽不出时间玩宝可梦 Pocket，也没法继续维护 Top Pocket Decks。与其让它停在这里慢慢过时，让大家一头雾水，不如好好地画上句号，并说一声谢谢。",
-    "thanks": "真心地谢谢大家。看到这个网站能帮到这么多人，我特别高兴；每周都有人登录进来看环境变化，这总能让我心情很好。特别感谢所有订阅了高级会员的朋友。我从没想过一个纯粹出于兴趣的个人项目还能有人订阅。这些收入从来没超出运营成本多少，但大家愿意为它付费，说明是真的在乎它，这对我意义很大。",
-    "takeover": {
-      "title": "有兴趣接手吗？🚀",
-      "body": "我真的很希望这个项目能继续下去。如果你有软件开发经验，尤其熟悉 React 和 TypeScript，欢迎发邮件到 <0>chase@manning.dev</0>，并附上你的 GitHub 主页链接。我很乐意把所有东西交接给有能力的人，让它继续运转下去。这也包括我们维护的宝可梦 Pocket <1>卡牌 API</1>，它至今仍是唯一一个开源且公开可用的卡牌 API。"
-    },
-    "premium": {
-      "title": "致高级会员 💛",
-      "status": "网站会继续保留，但不再更新。高级会员已停止新用户订阅，广告也已对所有人关闭。",
-      "cancel": "已有的订阅在你主动取消之前会继续自动续费。如果不想再被扣款，请通过<0>账单门户</0>取消订阅。",
-      "refund": "如果你更希望退款，请发邮件到 <0>chase@manning.dev</0>，并附上你账号所用的邮箱地址。我会为你取消订阅并退还最近一笔款项。Stripe 只允许退还最近 180 天内的付款，如果你的付款早于这个期限，我会尽力想办法。"
-    },
-    "signOff": "祝还在游玩的各位一切顺利，玩得开心！😃",
-    "signature": "— Chase"
-  },
-  "premium": {
-    "title": "Top Pocket Decks Premium",
-    "manageSubscription": "管理订阅",
-    "windDown": {
-      "headline": "高级会员即将结束 💛",
-      "status": "Top Pocket Decks 已不再更新，因此已停止新用户订阅，广告也已对所有人关闭。",
-      "active": "你的订阅仍然有效，在你主动取消之前会继续续费。你可以随时通过账单门户取消。",
-      "refund": "更希望退款？请发邮件到 <0>chase@manning.dev</0>，并附上你账号所用的邮箱地址，我会为你取消订阅并退还最近一笔款项。Stripe 只允许退还最近 180 天内的付款，如果你的付款早于这个期限，我会尽力想办法。"
-    },
-    "features": {
-      "title": "功能",
-      "free": "免费",
-      "premium": "高级会员",
-      "removeAds": {
-        "title": "去除广告",
-        "description": "在整个网站享受完全无广告、更快速的体验。",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "bestDeckFinder": {
-        "title": "最佳卡组查找器",
-        "description": "找到您能用收藏卡牌组建的最强卡组",
-        "free": "✅",
-        "premium": "✅"
-      },
-      "exclude": {
-        "title": "排除未拥有的卡牌",
-        "description": "过滤掉您没有的卡牌，实时更新等级列表以显示您拥有的卡牌",
-        "free": "✅",
-        "premium": "✅"
-      },
-      "matchups": {
-        "title": "卡组优势/劣势",
-        "description": "查看每个卡组对哪些卡组有优势或劣势，包括胜率",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "filters": {
-        "title": "卡组筛选",
-        "description": "按能量类型或无EX卡牌筛选卡组，有助于击败单人战斗",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "sortBy": {
-        "title": "替代排名",
-        "description": "将等级列表更改为按流行度或强度排名",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "contact": {
-        "title": "联系开发者",
-        "description": "通过电子邮件联系开发者，提供网站反馈、请求新功能或报告错误。功能请求不保证完成，但都会得到考虑。",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "updated": {
-        "title": "等级列表更新",
-        "description": "等级列表更新新数据的频率。更快的更新帮助您领先于环境。",
-        "free": "每周",
-        "premium": "每日"
-      },
-      "decks": {
-        "title": "等级列表中的卡组",
-        "description": "等级列表中显示的卡组数量。更多卡组意味着更多选择。发现尚未流行的强力卡组。",
-        "free": "30",
-        "premium": "100"
-      }
-    }
-  },
-  "ads": {
-    "advertisement": "广告",
-    "removeAds": "去除广告",
-    "close": "关闭"
-  },
-  "adblocker": {
-    "lead": "你的广告拦截器",
-    "respect": "尊重",
-    "middle": "你的隐私吗？如果不确定，我和许多其他人都推荐",
-    "recommend": "Raymond Hill 的 uBlock Origin",
-    "footer": "显然这不是赞助。只是志同道合者的一份真心推荐。"
-  },
-  "userAccount": {
-    "title": "用户账户",
-    "signOut": "退出登录"
-  },
-  "lastUpdated": "最后更新：",
   "tierList": {
     "metaShare": "环境占比"
   }
