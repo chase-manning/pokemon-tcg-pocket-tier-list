@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { buildTiers } from "../app/tier-helper";
 import React, { type ReactNode } from "react";
 
-/* ===== Verbatim styled blocks from TierListPage.tsx (lines 18-154) ===== */
-/* Renamed: StyledTierListPage -> Page, DeckRow -> TierRow */
-/* FilterContainer left as-is (page chrome, not tier layout) */
-
 const Page = styled.div`
   width: 100%;
   height: 100dvh;
@@ -46,7 +42,6 @@ const TierRow = styled.div`
   flex: 1;
   border-bottom: 0.4rem solid var(--border);
 
-  /* Gradient on right side */
   @media (min-width: 900px) {
     position: relative;
     &::after {
