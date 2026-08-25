@@ -15,11 +15,18 @@ import "./i18n";
 // import fails on the MIME type, and the route dies behind an error boundary.
 // One reload picks up the new manifest; the stamp stops a broken chunk looping.
 const RELOAD_STAMP = "chunk-reload-at";
+let reloadedAt = 0;
 window.addEventListener("vite:preloadError", (event) => {
   event.preventDefault();
-  const last = Number(sessionStorage.getItem(RELOAD_STAMP) ?? 0);
-  if (Date.now() - last < 10000) return;
-  sessionStorage.setItem(RELOAD_STAMP, String(Date.now()));
+  let last = reloadedAt;
+  try {
+    last = Number(sessionStorage.getItem(RELOAD_STAMP) ?? reloadedAt);
+    if (Date.now() - last < 10000) return;
+    sessionStorage.setItem(RELOAD_STAMP, String(Date.now()));
+  } catch {
+    if (Date.now() - last < 10000) return;
+    reloadedAt = Date.now();
+  }
   window.location.reload();
 });
 
