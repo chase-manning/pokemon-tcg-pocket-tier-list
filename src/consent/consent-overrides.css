@@ -120,3 +120,46 @@
 [data-testid="consent-dialog-card"] {
   margin-inline: auto !important;
 }
+
+/* --- Dialog interior -------------------------------------------------------
+ * c15t sizes the category widget in rem against an assumed 16px root, and the
+ * app's root is 10px, so every switch, icon and gap inside the dialog renders
+ * at 62.5% of its intended size. The global `* { font-size: 10px }` compounds
+ * it: unlayered, so it beats the font sizes c15t declares in @layer components
+ * and flattens the accordion labels to 10px. The banner escaped both because
+ * the rules above already restate its sizes.
+ *
+ * These are c15t's own component variables, restated at the app's scale
+ * (c15t's value x 1.6). The title, description, footer and button rules above
+ * already match the dialog's equivalents, so only the widget needs sizing.
+ */
+[data-testid="consent-dialog-root"] {
+  /* 28rem in c15t's sheet, which is 280px against this app's root and leaves
+     the dialog stranded in the middle of a phone screen. */
+  --consent-dialog-max-width: 44rem;
+  /* The overlay's own gutter is flattened by the global `* { padding: 0 }`,
+     so on a phone the card runs edge to edge. */
+  padding: var(--consent-dialog-card-padding-mobile) !important;
+  --consent-widget-accordion-stack-gap: 1.2rem;
+  --consent-widget-accordion-icon-size: 2.4rem;
+  --accordion-icon-size: 2.4rem;
+}
+
+/* The variables have to land on the switch root itself: c15t declares them
+   there too, and a value set on the element beats one inherited from an
+   ancestor whatever the layer. */
+[data-testid="consent-dialog-root"] [data-testid^="consent-widget-switch-"] {
+  --switch-height: 2.4rem;
+  --switch-width: 4.4rem;
+  --switch-padding: 0.3rem;
+  --switch-thumb-size: 1.8rem;
+  --switch-thumb-size-disabled: 1.4rem;
+}
+
+/* The accordion label and its body text are literal `0.875rem` in c15t's
+   sheet, which the global reset overrides down to 10px either way. */
+[data-testid="consent-dialog-root"] [class*="c15t-ui-accordionTitle"],
+[data-testid="consent-dialog-root"] [class*="c15t-ui-contentInner"] {
+  font-size: 1.5rem !important;
+  line-height: 1.5 !important;
+}
