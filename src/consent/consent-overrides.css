@@ -4,6 +4,9 @@
  * 10px root font size. These unlayered rules win that cascade and restyle the
  * banner to the app's scale and palette. Buttons are targeted by their stable
  * data-testid; text and layout by the stable c15t-ui-* class prefixes.
+ *
+ * Keep this file to what tokens and slots genuinely cannot express — colour,
+ * fill and button treatment belong in consent-theme.ts.
  */
 
 @keyframes c15t-accent-drift {
@@ -47,6 +50,11 @@
   gap: 1rem !important;
 }
 
+/* Sizing and type only. Deliberately no box-shadow here: the buttons are
+   themed as `filled`/`ghost` (see consent-theme.ts), so no ring is shipped to
+   normalise, and leaving the property alone lets c15t's :focus-visible ring
+   render — an !important shadow here would suppress it, and the global
+   `button { outline: none }` reset means it is the only focus indicator left. */
 [class*="c15t-ui-button"] {
   font-size: 1.5rem !important;
   font-weight: 500 !important;
@@ -54,11 +62,6 @@
   border-radius: 1rem !important;
   min-height: 4.2rem !important;
   white-space: nowrap !important;
-  /* Normalise the inset ring c15t ships on every button — we don't want
-     three different colours. One consistent subtle ring for all. */
-  box-shadow:
-    rgba(0, 0, 0, 0.05) 0px 1px 2px 0px,
-    rgba(255, 255, 255, 0.08) 0px 0px 0px 1px inset !important;
 }
 
 /* Give the banner more room on wider screens so the button labels sit on one
@@ -87,9 +90,19 @@
   border: none !important;
 }
 
+/* A single hairline is the whole edge — the ghost treatment draws no fill and
+   no ring behind it, so the glass reads straight through. */
 [data-testid="consent-banner-reject-button"],
 [data-testid="consent-banner-customize-button"] {
-  background: transparent !important;
   color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+/* c15t's own hover tint is a background-color in @layer components, which the
+   global `button { background: none }` reset flattens, leaving these two with
+   no hover feedback at all. Restore it here, where the reset can be beaten. */
+[data-testid="consent-banner-reject-button"]:hover,
+[data-testid="consent-banner-customize-button"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
