@@ -126,7 +126,7 @@
     "alternatives": "Alternatives",
     "metaShare": "Meta share",
     "strengthTooltip": "Avg. matchup score vs the field (0–10)",
-    "popularityTooltip": "Share of qualified games in last 7 days (0–10)",
+    "popularityTooltip": "Share of qualified games in last 7 days (%)",
     "winRateTooltip": "Win % in the current window",
     "metaShareTooltip": "Share of qualified games ± weekly change"
   },

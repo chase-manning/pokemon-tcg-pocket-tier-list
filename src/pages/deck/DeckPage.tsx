@@ -327,15 +327,28 @@ const MatchupLabel = styled.div<{ $winRate: number }>`
 `;
 
 const KeyStats = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 16rem 9rem auto;
   align-items: center;
-  gap: 2rem;
+  justify-items: start;
+  gap: 2rem 1.2rem;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 14rem 8rem auto;
+  }
 `;
 
-const KeyStat = styled.div`
+/* Rows share fixed label/value column widths so the tooltip icons line
+   up in one vertical column regardless of how wide each value is. */
+const KeyStatRow = styled.div`
   font-size: 2.4rem;
   font-weight: 400;
+  display: contents;
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
 const KeyStatValue = styled.span`
@@ -587,26 +600,24 @@ const DeckPage = () => {
                       {t("deckPage.keyStats")}
                     </SubHeader>
                     <KeyStats>
-                      <KeyStat>
-                        {t("deckPage.strength")}:{" "}
+                      <KeyStatRow>
+                        <span>{t("deckPage.strength")}:</span>
                         <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
                         <Tooltip text={t("deckPage.strengthTooltip")} />
-                      </KeyStat>
-                      <KeyStat>
-                        {t("deckPage.popularity")}:{" "}
-                        <KeyStatValue>
-                          {(deck.popularity * 10).toFixed(1)}
-                        </KeyStatValue>
+                      </KeyStatRow>
+                      <KeyStatRow>
+                        <span>{t("deckPage.popularity")}:</span>
+                        <KeyStatValue>{(deck.popularity * 100).toFixed(1)}%</KeyStatValue>
                         <Tooltip text={t("deckPage.popularityTooltip")} />
-                      </KeyStat>
-                      <KeyStat>
-                        {t("deckPage.winRate")}:{" "}
+                      </KeyStatRow>
+                      <KeyStatRow>
+                        <span>{t("deckPage.winRate")}:</span>
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
                         <Tooltip text={t("deckPage.winRateTooltip")} />
-                      </KeyStat>
+                      </KeyStatRow>
                       {shareEntry && (
-                        <KeyStat>
-                          {t("deckPage.metaShare")}:{" "}
+                        <KeyStatRow>
+                          <span>{t("deckPage.metaShare")}:</span>
                           <KeyStatValue>
                             {(shareEntry.share * 100).toFixed(1)}%
                             {shareEntry.delta > 0.001
@@ -616,7 +627,7 @@ const DeckPage = () => {
                                 : ""}
                           </KeyStatValue>
                           <Tooltip text={t("deckPage.metaShareTooltip")} />
-                        </KeyStat>
+                        </KeyStatRow>
                       )}
                     </KeyStats>
                   </MatchupSection>

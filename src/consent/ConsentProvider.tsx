@@ -32,9 +32,9 @@ const scripts = [
 
 const ConsentProvider = ({ children }: { children: ReactNode }) => (
   <ConsentManagerProvider options={{ mode: "offline", scripts, ...consentTheme }}>
-    {children}
-    {isPrerender ? null : <ConsentBanner />}
-  </ConsentManagerProvider>
+      {children}
+      {isPrerender ? null : <ConsentBanner hideBranding={!import.meta.env.DEV} />}
+    </ConsentManagerProvider>
 );
 
 export default ConsentProvider;

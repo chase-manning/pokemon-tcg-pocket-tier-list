@@ -54,6 +54,11 @@
   border-radius: 1rem !important;
   min-height: 4.2rem !important;
   white-space: nowrap !important;
+  /* Normalise the inset ring c15t ships on every button — we don't want
+     three different colours. One consistent subtle ring for all. */
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 1px 2px 0px,
+    rgba(255, 255, 255, 0.08) 0px 0px 0px 1px inset !important;
 }
 
 /* Give the banner more room on wider screens so the button labels sit on one
