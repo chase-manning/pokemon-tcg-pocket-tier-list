@@ -9,7 +9,7 @@
     "deckFinderHeader": "持っていないカードをクリックしてください。デッキは利用可能なカードで最適なデッキを表示するように更新されます。",
     "relativeStrength": "相対的な強さ",
     "keyStats": "主要な統計",
-    "popularity": "人気度",
+    "popularity": "試合数 (14日)",
     "strength": "強さ",
     "winRate": "勝率",
     "notEnoughCards": "カードが足りません",
@@ -20,9 +20,10 @@
     "alternatives": "代替案",
     "metaShare": "メタシェア",
     "strengthTooltip": "メタ相手への平均マッチアップスコア (0–10)",
-    "popularityTooltip": "直近7日間の予選済み試合でのシェア (0–10)",
+    "popularityTooltip": "直近14日間の予選済み試合数（拡張パック発売日以降が上限）",
     "winRateTooltip": "現在のウィンドウでの勝率",
-    "metaShareTooltip": "予選済み試合でのシェア ± 週次変化"
+    "metaShareTooltip": "予選済み試合でのシェア ± 週次変化",
+    "showTooltip": "説明を表示"
   },
   "energyDropdown": {
     "all": "すべてのエネルギータイプ",

@@ -9,7 +9,7 @@
     "deckFinderHeader": "点击你没有的卡牌。卡组将更新以显示你可用卡牌的最佳组合。",
     "relativeStrength": "相对强度",
     "keyStats": "关键数据",
-    "popularity": "流行度",
+    "popularity": "对局数 (14天)",
     "strength": "强度",
     "winRate": "胜率",
     "notEnoughCards": "卡牌不足",
@@ -20,9 +20,10 @@
     "alternatives": "替代方案",
     "metaShare": "环境占比",
     "strengthTooltip": "对环境平均对战得分 (0–10)",
-    "popularityTooltip": "近7天合格场次占比 (0–10)",
+    "popularityTooltip": "近14天的合格对局数，以当前扩展包发售日为上限",
     "winRateTooltip": "当前窗口胜率",
-    "metaShareTooltip": "合格场次占比 ± 周变化"
+    "metaShareTooltip": "合格场次占比 ± 周变化",
+    "showTooltip": "显示说明"
   },
   "energyDropdown": {
     "all": "所有能量类型",

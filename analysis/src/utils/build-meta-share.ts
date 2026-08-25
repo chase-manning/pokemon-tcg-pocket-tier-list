@@ -8,6 +8,7 @@ import {
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 export const WINDOW_DAYS = 7;
+export const GAMES_WINDOW_DAYS = 14;
 
 const dayKey = (iso: string) => iso.split("T")[0];
 
@@ -53,6 +54,14 @@ export const buildMetaShare = (
     );
   }
 
+  // Longer window for the raw games-played count. The dataset is already
+  // filtered to decks dated on/after the expansion release (filter-decks.ts),
+  // so a fresh expansion naturally caps this window.
+  const gamesDays: string[] = [];
+  for (let offset = 0; offset < GAMES_WINDOW_DAYS; offset++) {
+    gamesDays.push(dayKey(new Date(todayMs - offset * DAY_MS).toISOString()));
+  }
+
   const sumWindow = (days: string[], name: string): number =>
     days.reduce((sum, day) => sum + (games[day]?.[name] ?? 0), 0);
 
@@ -70,6 +79,7 @@ export const buildMetaShare = (
     const prevGames = sumWindow(prevDays, name);
     const share = curTotal > 0 ? curGames / curTotal : 0;
     const sharePrev = prevTotal > 0 ? prevGames / prevTotal : 0;
+    const games14 = sumWindow(gamesDays, name);
     const seen = firstSeen.get(name) ?? dayKey(today.toISOString());
 
     entries.push({
@@ -77,6 +87,7 @@ export const buildMetaShare = (
       share,
       sharePrev,
       delta: share - sharePrev,
+      games14,
       firstSeen: seen,
       isNew:
         new Date(`${seen}T00:00:00Z`).getTime() >=

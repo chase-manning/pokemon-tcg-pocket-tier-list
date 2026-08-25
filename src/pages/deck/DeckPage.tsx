@@ -14,6 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 import useIsPremium from "../../app/use-is-premium";
 import UserAccount from "../../components/UserAccount";
 import ShareDeckCode from "../../components/ShareDeckCode";
+import Tooltip from "../../components/Tooltip";
 import { CardType, fetchCards } from "../../app/cards-api";
 import type { MetaShareEntry } from "../../types/pipeline-data";
 import arrowRight from "../../assets/arrow-right.svg";
@@ -326,15 +327,28 @@ const MatchupLabel = styled.div<{ $winRate: number }>`
 `;
 
 const KeyStats = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 16rem 9rem auto;
   align-items: center;
-  gap: 2rem;
+  justify-items: start;
+  gap: 2rem 1.2rem;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 14rem 8rem auto;
+  }
 `;
 
-const KeyStat = styled.div`
+/* Rows share fixed label/value column widths so the tooltip icons line
+   up in one vertical column regardless of how wide each value is. */
+const KeyStatRow = styled.div`
   font-size: 2.4rem;
   font-weight: 400;
+  display: contents;
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
 const KeyStatValue = styled.span`
@@ -586,23 +600,35 @@ const DeckPage = () => {
                       {t("deckPage.keyStats")}
                     </SubHeader>
                     <KeyStats>
-                      <KeyStat title={t("deckPage.strengthTooltip")}>
-                        {t("deckPage.strength")}:{" "}
+                      <KeyStatRow>
+                        <span>{t("deckPage.strength")}:</span>
                         <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
-                      </KeyStat>
-                      <KeyStat title={t("deckPage.popularityTooltip")}>
-                        {t("deckPage.popularity")}:{" "}
+                        <Tooltip
+                          text={t("deckPage.strengthTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
+                      </KeyStatRow>
+                      <KeyStatRow>
+                        <span>{t("deckPage.popularity")}:</span>
                         <KeyStatValue>
-                          {(deck.popularity * 10).toFixed(1)}
+                          {shareEntry ? Math.round(shareEntry.games14).toLocaleString() : "—"}
                         </KeyStatValue>
-                      </KeyStat>
-                      <KeyStat title={t("deckPage.winRateTooltip")}>
-                        {t("deckPage.winRate")}:{" "}
+                        <Tooltip
+                          text={t("deckPage.popularityTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
+                      </KeyStatRow>
+                      <KeyStatRow>
+                        <span>{t("deckPage.winRate")}:</span>
                         <KeyStatValue>{winRatePct ?? 0}%</KeyStatValue>
-                      </KeyStat>
+                        <Tooltip
+                          text={t("deckPage.winRateTooltip")}
+                          ariaLabel={t("deckPage.showTooltip")}
+                        />
+                      </KeyStatRow>
                       {shareEntry && (
-                        <KeyStat title={t("deckPage.metaShareTooltip")}>
-                          {t("deckPage.metaShare")}:{" "}
+                        <KeyStatRow>
+                          <span>{t("deckPage.metaShare")}:</span>
                           <KeyStatValue>
                             {(shareEntry.share * 100).toFixed(1)}%
                             {shareEntry.delta > 0.001
@@ -611,7 +637,11 @@ const DeckPage = () => {
                                 ? ` ▼${(Math.abs(shareEntry.delta) * 100).toFixed(1)}`
                                 : ""}
                           </KeyStatValue>
-                        </KeyStat>
+                          <Tooltip
+                            text={t("deckPage.metaShareTooltip")}
+                            ariaLabel={t("deckPage.showTooltip")}
+                          />
+                        </KeyStatRow>
                       )}
                     </KeyStats>
                   </MatchupSection>

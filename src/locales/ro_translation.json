@@ -115,7 +115,7 @@
     "deckFinderHeader": "Apasă pe cărțile pe care nu le ai. Deck-ul se va schimba pentru a arăta cea mai bună variantă cu cărțile disponibile.",
     "relativeStrength": "Putere relativă",
     "keyStats": "Statistici cheie",
-    "popularity": "Popularitate",
+    "popularity": "Meciuri (14 z)",
     "strength": "Putere",
     "winRate": "Rata de victorie (%)",
     "notEnoughCards": "Nu sunt suficiente cărți",
@@ -126,9 +126,10 @@
     "alternatives": "Alternative",
     "metaShare": "Cota meta",
     "strengthTooltip": "Scor mediu matchup vs meta (0–10)",
-    "popularityTooltip": "Pondere meciuri calificată îln ultimele 7 zile (0–10)",
-    "winRateTooltip": "Rata de încâlcări îln fereastra curentă",
-    "metaShareTooltip": "Pondere meciuri calificată ± schimbare săptâmânălă"
+    "popularityTooltip": "Meciuri calificate în ultimele 14 zile, limitate la lansarea acestei extensii",
+    "winRateTooltip": "Rata de câștiguri în fereastra curentă",
+    "metaShareTooltip": "Pondere meciuri calificate ± schimbare săptămânală",
+    "showTooltip": "Afișează explicația"
   },
   "energyDropdown": {
     "all": "Toate tipurile de energie",

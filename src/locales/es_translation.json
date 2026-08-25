@@ -9,7 +9,7 @@
     "deckFinderHeader": "Haz clic en las cartas que no tienes. El mazo se actualizará para mostrar el mejor con tus cartas disponibles.",
     "relativeStrength": "Fuerza Relativa",
     "keyStats": "Estadísticas Clave",
-    "popularity": "Popularidad",
+    "popularity": "Partidas (14 d)",
     "strength": "Fuerza",
     "winRate": "Tasa de Victoria",
     "notEnoughCards": "No hay suficientes cartas",
@@ -20,9 +20,10 @@
     "alternatives": "Alternativas",
     "metaShare": "Cuota del meta",
     "strengthTooltip": "Puntuación media de enfrentamientos vs el meta (0–10)",
-    "popularityTooltip": "Cuota de partidas cualificadas en los últimos 7 días (0–10)",
+    "popularityTooltip": "Partidas cualificadas en los últimos 14 días, limitadas al lanzamiento de esta expansión",
     "winRateTooltip": "% de victorias en la ventana actual",
-    "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal"
+    "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal",
+    "showTooltip": "Mostrar explicación"
   },
   "energyDropdown": {
     "all": "Todos los tipos de Energía",

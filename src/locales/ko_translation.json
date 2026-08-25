@@ -9,7 +9,7 @@
     "deckFinderHeader": "가지고 있지 않은 카드를 클릭하세요. 덱이 보유한 카드로 최고의 덱을 보여줍니다.",
     "relativeStrength": "상대적 강도",
     "keyStats": "주요 통계",
-    "popularity": "인기도",
+    "popularity": "게임 수 (14일)",
     "strength": "강도",
     "winRate": "승률",
     "notEnoughCards": "카드가 부족합니다",
@@ -20,9 +20,10 @@
     "alternatives": "대안",
     "metaShare": "메타 점유율",
     "strengthTooltip": "필드 대비 평균 매치업 점수 (0–10)",
-    "popularityTooltip": "최근 7일간 예선 통과 게임 점유율 (0–10)",
+    "popularityTooltip": "최근 14일간 예선 통과 게임 수 (확장팩 출시일 이후 기준)",
     "winRateTooltip": "현재 윈도우 승률",
-    "metaShareTooltip": "예선 통과 게임 점유율 ± 주간 변화"
+    "metaShareTooltip": "예선 통과 게임 점유율 ± 주간 변화",
+    "showTooltip": "설명 보기"
   },
   "energyDropdown": {
     "all": "모든 에너지 타입",

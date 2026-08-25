@@ -40,11 +40,13 @@ const TooltipIcon = styled.div`
 `;
 
 const TooltipContent = styled.div<{ $isVisible: boolean }>`
-  position: absolute;
+  /* Fixed and centred on the viewport, not the icon: a box centred on an
+     icon near the screen edge overflows no matter how it is capped. The
+     viewport anchor keeps every part of the box on screen at any width. */
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 100%;
-  margin-bottom: 0.8rem;
+  bottom: 10vh;
   background: var(--bg);
   border: 1px solid var(--main);
   padding: 1.2rem;
@@ -55,33 +57,29 @@ const TooltipContent = styled.div<{ $isVisible: boolean }>`
   visibility: ${(props) => (props.$isVisible ? "visible" : "hidden")};
   transition: all 0.2s ease;
   z-index: 1000;
-  width: 30rem;
+  width: max-content;
+  max-width: calc(100vw - 3.2rem);
+  text-align: left;
+  pointer-events: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   &::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 0.6rem;
-    border-style: solid;
-    border-color: var(--main) transparent transparent transparent;
+    content: none;
   }
 
   @media (max-width: 900px) {
-    width: 24rem;
     font-size: 1.4rem;
     padding: 1rem;
-    margin-bottom: 0.6rem;
   }
 `;
 
 interface Props {
   text: string;
+  /** Localised accessible name for the toggle icon. */
+  ariaLabel?: string;
 }
 
-const Tooltip = ({ text }: Props) => {
+const Tooltip = ({ text, ariaLabel }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -110,8 +108,10 @@ const Tooltip = ({ text }: Props) => {
     };
   }, [isVisible]);
 
-  const handleToggle = () => {
-    setIsVisible(!isVisible);
+  // Clicking an already-hovered icon must keep the tooltip open, not toggle
+  // it closed under the pointer. Outside click and scroll still dismiss.
+  const handleActivate = () => {
+    setIsVisible(true);
   };
 
   return (
@@ -119,14 +119,14 @@ const Tooltip = ({ text }: Props) => {
       <TooltipIcon
         onMouseEnter={() => setIsVisible(true)}
         onMouseLeave={() => setIsVisible(false)}
-        onClick={handleToggle}
+        onClick={handleActivate}
         role="button"
-        aria-label="Show tooltip"
+        aria-label={ariaLabel ?? text}
         tabIndex={0}
         onKeyDown={(e: KeyboardEvent) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            handleToggle();
+            handleActivate();
           }
         }}
       >
