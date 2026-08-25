@@ -22,7 +22,6 @@ describe("calculateDeckScore", () => {
       totalGames: 15,
       date: "2024-01-01",
       tournamentExPercent: 0,
-      wigglytuffPercent: 0,
       noTrainerPercent: 0,
       wins: [],
       losses: [],

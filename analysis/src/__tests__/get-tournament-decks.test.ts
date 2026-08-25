@@ -15,7 +15,7 @@ describe("getDecks", () => {
         decklist: {
           pokemon: [
             { name: "Pikachu ex", count: 2 },
-            { name: "Wigglytuff ex", count: 1 },
+            { name: "Jigglypuff", count: 1 },
           ],
           trainer: [{ name: "Trainer1", count: 1 }],
         },
@@ -57,7 +57,6 @@ describe("getDecks", () => {
         lossCount: 1,
         totalGames: 4,
         tournamentExPercent: 0.5,
-        wigglytuffPercent: 0.5,
         noTrainerPercent: 0.5,
         wins: ["tournament1-player2"],
         losses: [],

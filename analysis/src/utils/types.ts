@@ -13,7 +13,6 @@ export interface Deck {
   totalGames: number;
   date: string;
   tournamentExPercent: number;
-  wigglytuffPercent: number;
   noTrainerPercent: number;
   wins: string[];
   losses: string[];

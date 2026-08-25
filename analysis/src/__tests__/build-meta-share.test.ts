@@ -14,7 +14,6 @@ const makeDeck = (overrides: Partial<Deck>): Deck => ({
   totalGames: 0,
   date: "2026-08-20T00:00:00.000Z",
   tournamentExPercent: 0,
-  wigglytuffPercent: 0,
   noTrainerPercent: 0,
   wins: [],
   losses: [],
