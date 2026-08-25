@@ -1,6 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  getCurrentUserSubscriptions,
+} from "@invertase/firestore-stripe-payments";
 import useIsPremium from "../use-is-premium";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -14,10 +17,6 @@ vi.mock("../../contexts/AuthContext", () => ({
 }));
 
 vi.mock("../config/firebase", () => ({}));
-
-import {
-  getCurrentUserSubscriptions,
-} from "@invertase/firestore-stripe-payments";
 
 const mockSubscriptions = getCurrentUserSubscriptions as ReturnType<typeof vi.fn>;
 const mockAuth = useAuth as ReturnType<typeof vi.fn>;
