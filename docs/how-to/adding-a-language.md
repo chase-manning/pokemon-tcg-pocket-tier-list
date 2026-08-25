@@ -6,6 +6,10 @@ file name as `${language}_${namespace}.json`, so a language called `pt` reads
 JSON itself, `src/i18n.ts`, `src/components/LanguageSwitcher.tsx` and the
 parity test in `src/locales/__tests__/translation-parity.test.ts`.
 
+Improving an existing translation is smaller. If the language is already
+registered, your PR only changes that one JSON file: no registration, no test
+edits. The parity suite still runs on it and confirms you left the keys alone.
+
 ## Choose the code first
 
 Use the exact BCP 47 tag that browsers report, not an invented abbreviation.
