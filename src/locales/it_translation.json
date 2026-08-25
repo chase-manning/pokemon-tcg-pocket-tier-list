@@ -1,0 +1,223 @@
+{
+  "home": {
+    "banner": "Top Pocket Decks è vivo e vegeto, con un nuovo mantainer che lo terrà aggiornato. Le classifiche sono aggiornate all'espansione {{expansion}} al {{date}}."
+  },
+  "farewell": {
+    "banner": "Top Pocket Decks sta per chiudere — leggi l'annuncio completo",
+    "title": "Grazie per due anni fantastici! 🎉",
+    "intro": "Ho iniziato Top Pocket Decks il 2 novembre 2024 come progetto personale. Volevo solo un modo per analizzare il meta per conto mio. Poi l'ho messo online, e l'ho tenuto aggiornato da allora. Sono quasi due anni ormai!",
+    "enjoyed": "È stato un vero spasso. Pokemon TCG Pocket è un gioco davvero fantastico e le partite classificate sono sempre state la mia parte preferita, cercando i mazzi migliori e capendo cosa vince per davvero. Creare questo sito mi ha permesso di farlo e di condividerlo con tutti quanti.",
+    "why": "La vita però si è fatta più impegnativa. Mi sono fidanzato e sono nel bel mezzo dell'organizzazione di un matrimonio, e il mio lavoro principale mi tiene molto occupato. Al momento non ho semplicemente il tempo per Pokemon Pocket o per mantenere Top Pocket Decks. Quindi, invece di lasciarlo qui ad ammuffire con tutti a chiedersi cosa sia successo, volevo chiuderlo adeguatamente e dirvi grazie.",
+    "thanks": "E grazie davvero, dal profondo del cuore. Sono così felice che questo sia stato utile a così tante persone, e mi ha sempre rallegrato la giornata vedere utenti collegarsi ogni settimana per controllare il meta. Un ringraziamento speciale a chi è passato al Premium. Non avrei mai pensato che un progetto personale e divertente come questo avrebbe ottenuto degli abbonamenti. Non ha mai prodotto molto di più della copertura dei costi di gestione, ma il fatto che alla gente importasse abbastanza da pagarlo ha significato molto per me.",
+    "takeover": {
+      "title": "Vuoi prenderne le redini? 🚀",
+      "body": "Mi piacerebbe davvero che questo continuasse. Se hai esperienza nello sviluppo software, in particolare React e TypeScript, mandami un'email a <0>chase@manning.dev</0> con un link al tuo profilo GitHub. Sarei felice di lavorare con una persona competente a cui cedere tutto per mantenere vivo il progetto. Questo include l'<1>API delle carte</1> di Pokemon TCG Pocket che gestiamo, che è ancora l'unica API per le carte open source e pubblica disponibile."
+    },
+    "premium": {
+      "title": "Per gli abbonati Premium 💛",
+      "status": "Il sito resta online e continuerà a ricevere aggiornamenti! Le nuove iscrizioni Premium sono temporaneamente in pausa e le pubblicità sono state disattivate per tutti.",
+      "cancel": "Gli abbonamenti esistenti continueranno a rinnovarsi finché non li annullerai, quindi se non vuoi ricevere nuovi addebiti, cancellati tramite il <0>portale di fatturazione</0>.",
+      "refund": "Se preferisci un rimborso, mandami un'email a <0>chase@manning.dev</0> e includi l'indirizzo email del tuo account. Annullerò il tuo abbonamento e rimborserò il tuo pagamento più recente. Stripe mi consente di rimborsare solo i pagamenti effettuati negli ultimi 180 giorni, quindi se il tuo è più vecchio farò tutto il possibile."
+    },
+    "signOff": "Un caro saluto a tutti coloro che stanno ancora giocando, godetevi il gioco! 😃",
+    "signature": "— Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "manageSubscription": "Gestisci Abbonamento",
+    "windDown": {
+      "headline": "Il Premium è temporaneamente sospeso 💛",
+      "status": "Top Pocket Decks ha un nuovo curatore e continuerà a ricevere aggiornamenti! Durante questa transizione, le nuove iscrizioni Premium sono temporaneamente in pausa e le pubblicità sono state disattivate per tutti.",
+      "active": "Il tuo abbonamento rimane attivo e si rinnoverà finché non lo annulli. Puoi cancellarlo in qualsiasi momento tramite il portale di fatturazione.",
+      "refund": "Preferiresti avere un rimborso? Mandami un'email a <0>chase@manning.dev</0> con l'indirizzo email del tuo account e annullerò il tuo abbonamento rimborsandoti il pagamento più recente. Stripe mi consente di rimborsare solo i pagamenti effettuati negli ultimi 180 giorni, quindi se il tuo è precedente farò il possibile."
+    },
+    "features": {
+      "title": "Funzionalità",
+      "free": "Gratis",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Rimuovi Pubblicità",
+        "description": "Goditi un'esperienza senza pubblicità in tutto il sito.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Trova il Miglior Mazzo",
+        "description": "Trova il mazzo più forte che puoi costruire con le tue carte. Funziona anche come tracker completo per la collezione PTCGP.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Escludi le Carte che Non Hai",
+        "description": "Filtra le carte che non possiedi per aggiornare la tier list in tempo reale con ciò che hai.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Punti di Forza e Debolezza del Mazzo",
+        "description": "Guarda contro quali mazzi il tuo vince o perde, incluse le percentuali di vittoria.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Filtri per i Mazzi",
+        "description": "Filtra i mazzi per Energia o banna completamente le carte EX per vincere le lotte in solitario.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Classifiche Alternative",
+        "description": "Modifica la tier list ordinandola per popolarità o forza.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Contatta gli Sviluppatori",
+        "description": "Manda un'email agli sviluppatori per dare feedback sul sito, richiedere nuove funzionalità o segnalare bug. Le richieste di funzioni non sono garantite, ma le leggiamo tutte.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Tier List Aggiornata",
+        "description": "Quanto spesso la tier list recupera nuovi dati. Aggiornamenti più frequenti ti aiutano a stare al passo con il meta.",
+        "free": "Settimanalmente",
+        "premium": "Quotidianamente"
+      },
+      "decks": {
+        "title": "Mazzi nella Tier List",
+        "description": "Numero di mazzi mostrati nella tier list. Più mazzi significa più opzioni tra cui scegliere. Scopri mazzi forti che non sono ancora diventati popolari.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Pubblicità",
+    "removeAds": "Rimuovi pubblicità",
+    "close": "Chiudi"
+  },
+  "adblocker": {
+    "lead": "Il tuo ad blocker",
+    "respect": "rispetta",
+    "middle": "la tua privacy? Se non ne sei sicuro, io e molti altri possiamo consigliare",
+    "recommend": "uBlock Origin di Raymond Hill",
+    "footer": "Ovviamente non sponsorizzato. Solo una genuina preoccupazione da parte di un individuo affine."
+  },
+  "userAccount": {
+    "title": "Account Utente",
+    "signOut": "Esci"
+  },
+  "lastUpdated": "Ultimo aggiornamento:",
+  "deckPage": {
+    "matchups": "Matchup",
+    "strongAgainst": "Forte Contro",
+    "weakAgainst": "Debole Contro",
+    "deckFinderHeader": "Clicca sulle carte che non hai. Il mazzo si aggiornerà per mostrare le migliori opzioni con le carte a tua disposizione.",
+    "relativeStrength": "Forza Relativa",
+    "keyStats": "Statistiche Chiave",
+    "popularity": "Partite (14g)",
+    "strength": "Forza",
+    "winRate": "Tasso di Vittoria",
+    "notEnoughCards": "Carte non sufficienti",
+    "tryAnotherDeck": "prova un altro mazzo",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "È una carta di troppo. Non riusciamo a immaginare questo mazzo senza {{card}}.",
+    "undo": "Annulla",
+    "alternatives": "Alternative",
+    "metaShare": "Condivisione nel Meta",
+    "strengthTooltip": "Punteggio medio dei matchup contro il totale (0–10)",
+    "popularityTooltip": "Partite qualificate negli ultimi 14 giorni, limitate all'uscita di questa espansione",
+    "winRateTooltip": "% di vittoria nella finestra attuale",
+    "metaShareTooltip": "Quota di partite qualificate ± cambiamento settimanale",
+    "showTooltip": "Mostra spiegazione"
+  },
+  "energyDropdown": {
+    "all": "Tutti i Tipi di Energia",
+    "Grass": "Erba",
+    "Fire": "Fuoco",
+    "Water": "Acqua",
+    "Lightning": "Lampo",
+    "Psychic": "Psiche",
+    "Fighting": "Lotta",
+    "Darkness": "Oscurità",
+    "Metal": "Metallo",
+    "Dragon": "Drago",
+    "Colorless": "Incolore"
+  },
+  "filter": {
+    "includeEx": "Includi carte EX",
+    "deckAmount": "Numero di Mazzi",
+    "sortBy": "Ordina Per",
+    "score": "Migliore in Assoluto",
+    "popularity": "Popolarità",
+    "strength": "Forza",
+    "winRate": "Tasso di Vittoria",
+    "latestExpansionCards": "Carte dall'ultima espansione",
+    "latestExpansionCardsAny": "Qualsiasi"
+  },
+  "statistics": {
+    "trends": "Tendenze del Meta",
+    "matrix": "Matrice dei Matchup",
+    "rising": "In Salita",
+    "falling": "In Discesa",
+    "newDecks": "Nuovi mazzi",
+    "metaMovement": "Movimento del meta",
+    "deckColumn": "Mazzo",
+    "shareColumn": "Quota",
+    "deltaColumn": "Cambiamento"
+  },
+  "bestDeckFinder": {
+    "title": "Trova il Tuo Miglior Mazzo",
+    "description1": "Trova il mazzo più forte che puoi costruire con la tua collezione. Il Trova il Miglior Mazzo inizia mostrandoti il mazzo top nel gioco. Clicca su qualsiasi carta che non hai, e ti mostrerà il prossimo mazzo migliore che salta quelle carte.",
+    "description2": "Continua a rimuovere carte finché non trovi un mazzo di cui hai tutto. L'indicatore di forza relativa ti mostra quanto è potente il tuo mazzo rispetto al miglior mazzo del gioco.",
+    "button": "Prova il Trova il Miglior Mazzo"
+  },
+  "header": {
+    "tierList": "Tier List",
+    "bestDeckFinder": "Trova il Miglior Mazzo",
+    "signIn": "Accedi con Google",
+    "signOut": "Esci",
+    "bestCards": "Migliori Carte",
+    "bestExpansions": "Migliori Espansioni",
+    "statistics": "Statistiche"
+  },
+  "footer": {
+    "about": "Informazioni",
+    "privacy": "Informativa sulla Privacy"
+  },
+  "hero": {
+    "title": "Migliori Mazzi e Tier List di Pokemon TCG Pocket",
+    "subtitle": "Trova i mazzi più forti di Pokemon TCG Pocket usando dati di tornei reali. Puoi filtrare le liste complete, contrassegnare le carte che ti mancano e vedere esattamente cosa costruire in seguito. Domina il meta.",
+    "button": "Visualizza la Tier List"
+  },
+  "features": {
+    "title": "Funzionalità",
+    "tournamentResults": {
+      "title": "Risultati dei Tornei",
+      "description": "La tier list si basa sui risultati dei tornei. Un algoritmo determina il tier e la lista del mazzo."
+    },
+    "weeklyUpdates": {
+      "title": "Aggiornamenti Settimanali",
+      "description": "La tier list si aggiorna settimanalmente, portando nuovi mazzi e matchup ogni lunedì."
+    },
+    "filters": {
+      "title": "Filtri",
+      "description": "Filtra i mazzi per Energia o per nessuna carta EX, utile per aiutarti a battere alcune Lotte in Solitario."
+    },
+    "missingCards": {
+      "title": "Carte Mancanti",
+      "description": "Clicca su qualsiasi carta che ti manca e la tier list si aggiornerà automaticamente in base a ciò che possiedi."
+    },
+    "matchups": {
+      "title": "Matchup",
+      "description": "Visualizza i dati dei matchup per vedere quali mazzi battono gli altri, insieme alle loro percentuali di vittoria."
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Questo sito web è open source. Puoi trovare il codice sorgente su <0>GitHub</0>."
+    }
+  },
+  "tierList": {
+    "metaShare": "Condivisione nel Meta"
+  }
+}

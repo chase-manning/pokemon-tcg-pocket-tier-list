@@ -27,10 +27,13 @@ const LanguageSwitcher = () => {
     { code: "de", name: "Deutsch" },
     { code: "es", name: "Español" },
     { code: "fr", name: "Français" },
+    { code: "it", name: "Italiano" },
     { code: "ja", name: "日本語" },
     { code: "ko", name: "한국어" },
+    { code: "pt", name: "Português" },
     { code: "ro", name: "Română" },
     { code: "zh-CN", name: "简体中文" },
+    { code: "zh-TW", name: "繁體中文" },
   ];
 
   return (

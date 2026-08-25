@@ -1,0 +1,223 @@
+{
+  "home": {
+    "banner": "O Top Pocket Decks está vivo e bem, com um novo mantenedor mantendo-o atualizado. Os rankings estão atualizados para {{expansion}} a partir de {{date}}."
+  },
+  "farewell": {
+    "banner": "O Top Pocket Decks está encerrando suas atividades — leia a nota completa",
+    "title": "Obrigado por dois anos incríveis! 🎉",
+    "intro": "Comecei o Top Pocket Decks em 2 de novembro de 2024 como um projeto pessoal. Eu só queria uma maneira de analisar o meta para mim mesmo. Então o coloquei online e o tenho mantido atualizado desde então. Quase dois anos agora!",
+    "enjoyed": "Foi incrível. Pokemon TCG Pocket é um jogo genuinamente excelente, e as ranqueadas sempre foram a minha parte favorita, me esforçando para conseguir bons decks e descobrindo o que realmente vence. Construir este site me permitiu fazer isso e compartilhar com todo mundo.",
+    "why": "A vida ficou corrida, no entanto. Fiquei noivo, estou no meio do planejamento do casamento e meu emprego principal está ocupando todo o meu tempo. Eu simplesmente não tenho tempo para Pokemon Pocket ou para manter o Top Pocket Decks no momento. Então, em vez de deixá-lo aqui estagnado com todos se perguntando o que aconteceu, eu quis encerrá-lo adequadamente e dizer obrigado.",
+    "thanks": "E obrigado, genuinamente. Fico muito feliz que isso tenha sido útil para tantas pessoas, e sempre alegrava o meu dia ver as pessoas entrando toda semana para conferir o meta. Um agradecimento especial a todos que assinaram o Premium. Nunca pensei que um projeto pessoal e divertido como este conseguiria assinaturas. Nunca passou muito de cobrir os custos de manutenção, mas o fato de que as pessoas se importaram o suficiente para pagar por isso significou muito.",
+    "takeover": {
+      "title": "Quer assumir o projeto? 🚀",
+      "body": "Eu realmente adoraria que isso continuasse. Se você tem experiência em desenvolvimento de software, especificamente React e TypeScript, envie-me um e-mail para <0>chase@manning.dev</0> com um link para o seu perfil do GitHub. Eu ficaria feliz em trabalhar com uma pessoa competente para repassar tudo e manter o projeto vivo. Isso inclui a <1>API de cartas</1> do Pokemon TCG Pocket que mantemos, que ainda é a única API pública de cartas de código aberto disponível."
+    },
+    "premium": {
+      "title": "Para assinantes Premium 💛",
+      "status": "O site continua online e continuará recebendo atualizações! Novas assinaturas Premium estão temporariamente pausadas e os anúncios foram desativados para todos.",
+      "cancel": "As assinaturas existentes continuam sendo renovadas até que você as cancele, então se não quiser ser cobrado novamente, cancele através do <0>portal de cobrança</0>.",
+      "refund": "Se preferir um reembolso, envie-me um e-mail para <0>chase@manning.dev</0> e inclua o endereço de e-mail da sua conta. Cancelarei sua assinatura e reembolsarei seu pagamento mais recente. O Stripe só me permite reembolsar pagamentos feitos nos últimos 180 dias, então se o seu for mais antigo, farei o que puder."
+    },
+    "signOff": "Tudo de bom para todos que continuam jogando, aproveitem o jogo! 😃",
+    "signature": "— Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "manageSubscription": "Gerenciar Assinatura",
+    "windDown": {
+      "headline": "O Premium está temporariamente suspenso 💛",
+      "status": "O Top Pocket Decks tem um novo mantenedor e continuará a receber atualizações! Durante essa transição, novas inscrições Premium estão temporariamente pausadas e os anúncios foram desativados para todos.",
+      "active": "Sua assinatura permanece ativa e continua sendo renovada até você cancelá-la. Você pode cancelar a qualquer momento pelo portal de cobrança.",
+      "refund": "Prefere um reembolso? Envie-me um e-mail para <0>chase@manning.dev</0> com o endereço de e-mail da sua conta e eu cancelarei sua assinatura e reembolsarei o pagamento mais recente. O Stripe só me permite reembolsar pagamentos feitos nos últimos 180 dias, então se o seu for mais antigo, farei o que for possível."
+    },
+    "features": {
+      "title": "Recursos",
+      "free": "Grátis",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Remover Anúncios",
+        "description": "Aproveite uma experiência sem anúncios em todo o site.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Buscador de Melhores Decks",
+        "description": "Encontre o deck mais forte que você pode montar com suas cartas. Também funciona como um rastreador completo de coleção do PTCGP.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Excluir Cartas que Você Não Tem",
+        "description": "Filtre as cartas que você não possui para atualizar a tier list ao vivo apenas com o que você tem.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Pontos Fortes e Fracos do Deck",
+        "description": "Veja quais decks a sua lista vence ou perde, incluindo porcentagens de taxa de vitória.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Filtros de Deck",
+        "description": "Filtre decks por Energia ou bana cartas EX completamente para vencer batalhas solo.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Classificações Alternativas",
+        "description": "Mude a tier list para classificar por popularidade ou força.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Contato com os Desenvolvedores",
+        "description": "Envie e-mail aos desenvolvedores para dar feedback sobre o site, solicitar novos recursos ou relatar bugs. Solicitações de recursos não são garantidas, mas lemos todas.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Tier List Atualizada",
+        "description": "Com que frequência a tier list busca novos dados. Atualizações mais rápidas ajudam você a se manter à frente no meta.",
+        "free": "Semanalmente",
+        "premium": "Diariamente"
+      },
+      "decks": {
+        "title": "Decks na Tier List",
+        "description": "Número de decks mostrados na tier list. Mais decks significam mais opções para você escolher. Descubra decks fortes que ainda não se tornaram populares.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Anúncio",
+    "removeAds": "Remover anúncios",
+    "close": "Fechar"
+  },
+  "adblocker": {
+    "lead": "Seu bloqueador de anúncios",
+    "respect": "respeita",
+    "middle": "sua privacidade? Se você não tem certeza, eu e muitos outros podemos recomendar o",
+    "recommend": "uBlock Origin de Raymond Hill",
+    "footer": "Obviamente não patrocinado. Apenas uma preocupação genuína de um indivíduo com o mesmo pensamento."
+  },
+  "userAccount": {
+    "title": "Conta de Usuário",
+    "signOut": "Sair"
+  },
+  "lastUpdated": "Última atualização:",
+  "deckPage": {
+    "matchups": "Confrontos",
+    "strongAgainst": "Forte Contra",
+    "weakAgainst": "Fraco Contra",
+    "deckFinderHeader": "Clique nas cartas que você não possui. O deck será atualizado para mostrar as melhores opções com as cartas disponíveis.",
+    "relativeStrength": "Força Relativa",
+    "keyStats": "Estatísticas Principais",
+    "popularity": "Partidas (14d)",
+    "strength": "Força",
+    "winRate": "Taxa de Vitória",
+    "notEnoughCards": "Cartas insuficientes",
+    "tryAnotherDeck": "tente outro deck",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "Isso é uma carta a mais. Não conseguimos imaginar este deck sem {{card}}.",
+    "undo": "Desfazer",
+    "alternatives": "Alternativas",
+    "metaShare": "Participação no Meta",
+    "strengthTooltip": "Média de pontuação de confronto contra o campo (0–10)",
+    "popularityTooltip": "Partidas qualificadas nos últimos 14 dias, limitadas ao lançamento desta expansão",
+    "winRateTooltip": "% de vitória no período atual",
+    "metaShareTooltip": "Proporção de partidas qualificadas ± mudança semanal",
+    "showTooltip": "Mostrar explicação"
+  },
+  "energyDropdown": {
+    "all": "Todos os Tipos de Energia",
+    "Grass": "Planta",
+    "Fire": "Fogo",
+    "Water": "Água",
+    "Lightning": "Raios",
+    "Psychic": "Psíquico",
+    "Fighting": "Luta",
+    "Darkness": "Escuridão",
+    "Metal": "Metal",
+    "Dragon": "Dragão",
+    "Colorless": "Incolor"
+  },
+  "filter": {
+    "includeEx": "Incluir cartas EX",
+    "deckAmount": "Número de Decks",
+    "sortBy": "Ordenar Por",
+    "score": "Melhor no Geral",
+    "popularity": "Popularidade",
+    "strength": "Força",
+    "winRate": "Taxa de Vitória",
+    "latestExpansionCards": "Cartas da expansão mais recente",
+    "latestExpansionCardsAny": "Qualquer"
+  },
+  "statistics": {
+    "trends": "Tendências do Meta",
+    "matrix": "Matriz de Confrontos",
+    "rising": "Subindo",
+    "falling": "Caindo",
+    "newDecks": "Novos decks",
+    "metaMovement": "Movimento do meta",
+    "deckColumn": "Deck",
+    "shareColumn": "Participação",
+    "deltaColumn": "Mudança"
+  },
+  "bestDeckFinder": {
+    "title": "Encontre o Seu Melhor Deck",
+    "description1": "Encontre o deck mais forte que você pode construir com sua coleção. O Buscador de Melhores Decks começa mostrando o melhor deck do jogo. Clique em qualquer carta que você não tenha e ele mostrará o próximo melhor deck que ignora essas cartas.",
+    "description2": "Continue removendo cartas até encontrar um deck onde você tem tudo. O indicador de força relativa mostra quão poderoso o seu deck é comparado ao melhor deck do jogo.",
+    "button": "Experimentar o Buscador de Melhores Decks"
+  },
+  "header": {
+    "tierList": "Tier List",
+    "bestDeckFinder": "Buscador de Melhores Decks",
+    "signIn": "Entrar com o Google",
+    "signOut": "Sair",
+    "bestCards": "Melhores Cartas",
+    "bestExpansions": "Melhores Expansões",
+    "statistics": "Estatísticas"
+  },
+  "footer": {
+    "about": "Sobre",
+    "privacy": "Política de Privacidade"
+  },
+  "hero": {
+    "title": "Melhores Decks e Tier List de Pokemon TCG Pocket",
+    "subtitle": "Encontre os decks mais fortes de Pokemon TCG Pocket usando dados reais de torneios. Você pode filtrar listas completas, marcar as cartas que lhe faltam e ver exatamente o que construir a seguir. Domine o meta.",
+    "button": "Ver Tier List"
+  },
+  "features": {
+    "title": "Recursos",
+    "tournamentResults": {
+      "title": "Resultados de Torneios",
+      "description": "A tier list baseia-se em resultados de torneios. Um algoritmo determina o tier e a lista do deck."
+    },
+    "weeklyUpdates": {
+      "title": "Atualizações Semanais",
+      "description": "A tier list é atualizada semanalmente, trazendo novos decks e confrontos todas as segundas-feiras."
+    },
+    "filters": {
+      "title": "Filtros",
+      "description": "Filtre decks por Energia ou sem cartas EX, útil para ajudar a vencer algumas daquelas Batalhas Solo."
+    },
+    "missingCards": {
+      "title": "Cartas Ausentes",
+      "description": "Clique em quaisquer cartas que lhe faltam e a tier list é atualizada automaticamente para o que você possui."
+    },
+    "matchups": {
+      "title": "Confrontos",
+      "description": "Veja os dados de confronto sobre quais decks vencem os outros, juntamente com suas taxas de vitória."
+    },
+    "openSource": {
+      "title": "Código Aberto",
+      "description": "Este site tem código aberto. Você pode encontrar o código-fonte no <0>GitHub</0>."
+    }
+  },
+  "tierList": {
+    "metaShare": "Participação no Meta"
+  }
+}

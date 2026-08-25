@@ -283,6 +283,7 @@ const DeckNameText = styled.span`
 const CrownLink = styled(Link)`
     flex-shrink: 0;
     display: inline-flex;
+    margin-left: 0.4rem;
 
     img {
         width: 1.4rem;

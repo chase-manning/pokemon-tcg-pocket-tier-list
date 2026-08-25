@@ -1,0 +1,223 @@
+{
+  "home": {
+    "banner": "Top Pocket Decks 依然活躍，並由新維護者持續更新。截至 {{date}}，{{expansion}} 的排名為最新狀態。"
+  },
+  "farewell": {
+    "banner": "Top Pocket Decks 即將落幕 — 閱讀完整公告",
+    "title": "感謝這兩個美好的年頭！🎉",
+    "intro": "我在 2024 年 11 月 2 日創立了 Top Pocket Decks，作為一個個人專案。我起初只是想要一個能為自己分析環境（Meta）的方法。然後我將它發布到網路上，並一直更新至今。現在已經差不多兩年了！",
+    "enjoyed": "這是一段很棒的時光。Pokemon TCG Pocket 是一款真正優秀的遊戲，而排名戰一直是我最喜歡的部分，努力尋找最佳牌組並研究什麼才能真正獲勝。建立這個網站讓我能夠做到這一點，並與所有人分享。",
+    "why": "不過生活變得越來越忙碌。我訂婚了，正忙著籌備婚禮，而我的正職工作也讓我分身乏術。我現在真的沒有時間玩 Pokemon Pocket 或維護 Top Pocket Decks 了。與其讓它荒廢在這裡，讓大家猜測發生了什麼事，我更想好好地為它畫上句點，並向大家說聲謝謝。",
+    "thanks": "真的非常感謝你們。我很高興這對這麼多人來說是有用的，看到大家每週登入查看環境（Meta）總能讓我感到開心。特別感謝所有訂閱 Premium 的人。我從沒想過這樣一個有趣的個人專案會獲得訂閱。雖然這筆收入僅勉強涵蓋營運成本，但人們願意付費支持的事實對我意義重大。",
+    "takeover": {
+      "title": "想要接手嗎？ 🚀",
+      "body": "我真的很希望能讓它繼續下去。如果你擁有軟體開發經驗，特別是 React 和 TypeScript，請發送電子郵件至 <0>chase@manning.dev</0>，並附上你的 GitHub 個人檔案連結。我很樂意與有能力的人合作，移交所有事物以維持它的運作。這包含我們維護的 Pokemon TCG Pocket <1>卡牌 API</1>，它仍然是目前唯一可用的開源、公開卡牌 API。"
+    },
+    "premium": {
+      "title": "致 Premium 訂閱者 💛",
+      "status": "網站將保持在線，並會繼續接收更新！新的 Premium 註冊已暫時暫停，且所有人的廣告都已關閉。",
+      "cancel": "現有的訂閱會自動續訂直到你取消，所以如果你不想再次被扣款，請透過<0>帳單系統</0>取消。",
+      "refund": "如果你希望能獲得退款，請發送電子郵件至 <0>chase@manning.dev</0> 並附上你帳號的電子郵件地址。我將取消你的訂閱並退還你最近一次的付款。Stripe 僅允許我退還過去 180 天內的付款，所以如果你的付款超過此期限，我會盡我所能協助。"
+    },
+    "signOff": "祝福所有還在玩的玩家，享受這款遊戲吧！😃",
+    "signature": "— Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "manageSubscription": "管理訂閱",
+    "windDown": {
+      "headline": "Premium 已暫時停止 💛",
+      "status": "Top Pocket Decks 有了新的維護者並將繼續接收更新！在此過渡期間，新的 Premium 註冊已暫停，且所有人的廣告都已關閉。",
+      "active": "你的訂閱將保持活躍並自動續訂直到你取消。你可以隨時透過帳單系統取消。",
+      "refund": "寧願選擇退款？請發電子郵件至 <0>chase@manning.dev</0> 並附上你帳號的電子郵件地址，我將取消你的訂閱並退還最近一次的付款。Stripe 僅允許我退還過去 180 天內的付款，所以如果你的付款超過此期限，我會盡力處理。"
+    },
+    "features": {
+      "title": "功能",
+      "free": "免費版",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "移除廣告",
+        "description": "享受全站無廣告的體驗。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "最佳牌組尋找器",
+        "description": "尋找你能用現有卡牌組建的最強牌組。它同時也是一個完整的 PTCGP 收藏追蹤器。",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "排除你沒有的卡牌",
+        "description": "過濾掉你不擁有的卡牌，根據你擁有的卡牌即時更新強度排行榜。",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "牌組優勢與劣勢",
+        "description": "查看你的牌組能擊敗或輸給哪些牌組，包含勝率百分比。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "牌組過濾",
+        "description": "透過能量過濾牌組或完全禁用 EX 卡牌以在單人對戰中獲勝。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "替代排名",
+        "description": "更改強度排行榜以根據人氣或強度進行排名。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "聯絡開發者",
+        "description": "向開發者發送電子郵件以提供網站反饋、請求新功能或報告錯誤。新功能請求不保證會實現，但我們每一則都會閱讀。",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "排行榜更新頻率",
+        "description": "強度排行榜獲取新數據的頻率。更快的更新幫助你領先於環境（Meta）。",
+        "free": "每週",
+        "premium": "每日"
+      },
+      "decks": {
+        "title": "排行榜牌組數量",
+        "description": "強度排行榜上顯示的牌組數量。更多牌組代表你有更多選擇。發掘尚未普及的強大牌組。",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "廣告",
+    "removeAds": "移除廣告",
+    "close": "關閉"
+  },
+  "adblocker": {
+    "lead": "你的廣告阻擋器",
+    "respect": "尊重",
+    "middle": "你的隱私嗎？如果你不確定，我和許多其他人可以推薦",
+    "recommend": "Raymond Hill 的 uBlock Origin",
+    "footer": "這顯然不是贊助廣告。這只是一位志同道合者的真誠關心。"
+  },
+  "userAccount": {
+    "title": "使用者帳號",
+    "signOut": "登出"
+  },
+  "lastUpdated": "最後更新：",
+  "deckPage": {
+    "matchups": "對戰組合",
+    "strongAgainst": "優勢對抗",
+    "weakAgainst": "劣勢對抗",
+    "deckFinderHeader": "點擊你沒有的卡牌。牌組將會更新並顯示你現有卡牌的最佳選擇。",
+    "relativeStrength": "相對強度",
+    "keyStats": "關鍵數據",
+    "popularity": "對局數 (14天)",
+    "strength": "強度",
+    "winRate": "勝率",
+    "notEnoughCards": "卡牌不足",
+    "tryAnotherDeck": "嘗試另一個牌組",
+    "notEnoughShrug": "¯\\_(ツ)_/¯",
+    "notEnoughBody": "缺少的卡牌太多了。我們無法想像這個牌組沒有 {{card}}。",
+    "undo": "復原",
+    "alternatives": "替代方案",
+    "metaShare": "環境占比",
+    "strengthTooltip": "對抗整體的平均對戰組合分數 (0–10)",
+    "popularityTooltip": "過去 14 天內的合格對局，上限至此擴充包發布",
+    "winRateTooltip": "當前時間窗口的勝率 %",
+    "metaShareTooltip": "合格對局占比 ± 每週變化",
+    "showTooltip": "顯示說明"
+  },
+  "energyDropdown": {
+    "all": "所有能量屬性",
+    "Grass": "草",
+    "Fire": "火",
+    "Water": "水",
+    "Lightning": "雷",
+    "Psychic": "超能力",
+    "Fighting": "鬥",
+    "Darkness": "惡",
+    "Metal": "鋼",
+    "Dragon": "龍",
+    "Colorless": "無色"
+  },
+  "filter": {
+    "includeEx": "包含 EX 卡牌",
+    "deckAmount": "牌組數量",
+    "sortBy": "排序方式",
+    "score": "整體最佳",
+    "popularity": "人氣",
+    "strength": "強度",
+    "winRate": "勝率",
+    "latestExpansionCards": "最新擴充包的卡牌",
+    "latestExpansionCardsAny": "任何"
+  },
+  "statistics": {
+    "trends": "環境趨勢",
+    "matrix": "對戰組合矩陣",
+    "rising": "上升",
+    "falling": "下降",
+    "newDecks": "新牌組",
+    "metaMovement": "環境變動",
+    "deckColumn": "牌組",
+    "shareColumn": "占比",
+    "deltaColumn": "變化"
+  },
+  "bestDeckFinder": {
+    "title": "尋找你的最佳牌組",
+    "description1": "尋找你能用現有收藏組建的最強牌組。最佳牌組尋找器會從遊戲中的最強牌組開始顯示。點擊你沒有的卡牌，它將顯示跳過這些卡牌的次佳牌組。",
+    "description2": "繼續移除卡牌直到找到一個你擁有所有卡牌的牌組。相對強度指標會顯示你的牌組與遊戲中最強牌組的威力差距。",
+    "button": "嘗試最佳牌組尋找器"
+  },
+  "header": {
+    "tierList": "強度排行榜",
+    "bestDeckFinder": "最佳牌組尋找器",
+    "signIn": "使用 Google 登入",
+    "signOut": "登出",
+    "bestCards": "最佳卡牌",
+    "bestExpansions": "最佳擴充包",
+    "statistics": "數據統計"
+  },
+  "footer": {
+    "about": "關於",
+    "privacy": "隱私權政策"
+  },
+  "hero": {
+    "title": "Pokemon TCG Pocket 最佳牌組與強度排行榜",
+    "subtitle": "使用真實賽事數據尋找最強大的 Pokemon TCG Pocket 牌組。你可以過濾完整列表，標記你缺少的卡牌，並確切看到接下來該組建什麼。主宰環境。",
+    "button": "查看排行榜"
+  },
+  "features": {
+    "title": "功能",
+    "tournamentResults": {
+      "title": "賽事結果",
+      "description": "排行榜仰賴賽事結果。演算法決定強度分級與牌組列表。"
+    },
+    "weeklyUpdates": {
+      "title": "每週更新",
+      "description": "排行榜每週更新，每週一帶來新的牌組與對戰組合。"
+    },
+    "filters": {
+      "title": "過濾器",
+      "description": "透過能量過濾牌組或排除 EX 卡牌，這對於擊敗單人對戰非常有用。"
+    },
+    "missingCards": {
+      "title": "缺少卡牌",
+      "description": "點擊任何你缺少的卡牌，排行榜將自動根據你擁有的卡牌更新。"
+    },
+    "matchups": {
+      "title": "對戰組合",
+      "description": "查看哪些牌組能擊敗其他牌組的對戰數據，以及它們的勝率。"
+    },
+    "openSource": {
+      "title": "開源",
+      "description": "這個網站是開源的。你可以在 <0>GitHub</0> 上找到原始碼。"
+    }
+  },
+  "tierList": {
+    "metaShare": "環境占比"
+  }
+}
