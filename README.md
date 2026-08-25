@@ -50,6 +50,7 @@ Detailed documentation for maintaining the project is available in the `docs/` d
 - **[Reference: Card data](docs/reference/card-data-contract.md)**: How the upstream card payload is normalised, what each field means, and how the app handles ids that fall out of step.
 - **[Reference: Frontend architecture](docs/reference/frontend-architecture.md)**: The provider stack, routing, contexts, query keys and pure helpers behind the React app.
 - **[How-to guide: Deploying and hosting](docs/how-to/deploying-and-hosting.md)**: What `yarn build` runs stage by stage, how Firebase Hosting caches and rewrites requests, and which workflow deploys on a pull request or merge.
+- **[Explanation: Advertising, premium and consent](docs/explanation/ads-premium-and-consent.md)**: Why the site gates content and shows ads, how premium status resolves through Stripe subscription states, and how the ad and consent layers stay inside policy.
 
 ## 🙌 Contributing
 
