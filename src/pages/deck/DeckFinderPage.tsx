@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDecks } from "../../contexts/DecksContext";
 import useMissing from "../../app/use-missing";
+import DeckCardGrid from "./DeckCardGrid";
+import DeckHeadTags from "./DeckHeadTags";
 import ShareDeckCode from "../../components/ShareDeckCode";
 import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
@@ -9,12 +11,7 @@ import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useQuery } from "@tanstack/react-query";
 import { CardType, fetchCards } from "../../app/cards-api";
 import { countById } from "../../app/deck-diff";
-import { deckDisplayName } from "../../app/deck-display";
 import {
-  CardContainer,
-  CardImage,
-  CardList,
-  CardNumber,
   CardSection,
   DeckFinderHeader,
   EmptyActions,
@@ -30,7 +27,7 @@ import {
 
 const DeckFinderPage = () => {
   const { decks, loading, error } = useDecks();
-  const { addMissing, undoMissing, canUndo, lastRemovedId } = useMissing();
+  const { undoMissing, canUndo, lastRemovedId } = useMissing();
   const { t } = useTranslation();
   const [bestScore, setBestScore] = useState<number | null>(null);
 
@@ -95,37 +92,10 @@ const DeckFinderPage = () => {
   );
   const cardCounts = countById(deck.bestList.cards);
 
-  const displayName = deckDisplayName(deck);
 
   return (
     <>
-      <title>{`${displayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
-      <meta
-        name="description"
-        content={`${displayName} ${t(
-          "deckPage.ogDescription",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
-        )}`}
-      />
-      <meta
-        property="og:title"
-        content={`${displayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
-      />
-      <meta
-        property="og:description"
-        content={`${displayName} ${t(
-          "deckPage.ogDescriptionShort",
-          "deck list, matchups, and win rate for Pokémon TCG Pocket."
-        )}`}
-      />
-      <meta
-        property="og:image"
-        content={`https://pocketdecks.top/og/deck/${deck.id}.png`}
-      />
-      <meta
-        property="og:url"
-        content={`https://pocketdecks.top/deck/${deck.id}`}
-      />
+      <DeckHeadTags deck={deck} />
       <StyledDeckPage>
         <CardSection>
           <DeckFinderHeader>{t("deckPage.deckFinderHeader")}</DeckFinderHeader>
@@ -133,26 +103,7 @@ const DeckFinderPage = () => {
             {t("deckPage.relativeStrength")}{" "}
             {`${(relativeScore * 100).toFixed(0)}%`}
           </RelativeStrength>
-          <CardList>
-            {uniqueCards.map((card) => {
-              const count = cardCounts.get(card.id) ?? 0;
-              return (
-                <CardContainer
-                  key={card.id}
-                  onClick={() => {
-                    if (count === 1) {
-                      addMissing([card.id, card.id]);
-                    } else {
-                      addMissing([card.id]);
-                    }
-                  }}
-                >
-                  <CardImage src={card.image} alt={card.name} />
-                  <CardNumber>{count}</CardNumber>
-                </CardContainer>
-              );
-            })}
-          </CardList>
+          <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
           <AdInContent placement="deck" />
           <ShareDeckCode
             deckName={deck.name}
