@@ -1,25 +1,131 @@
 {
   "home": {
-    "banner": "Top Pocket Decks is alive and well, with a new maintainer keeping it updated. Rankings are current for {{expansion}} as of {{date}}."
+    "banner": "Top Pocket Decks ist quicklebendig, und ein neuer Maintainer hält es aktuell. Die Ranglisten sind aktuell für {{expansion}} (Stand: {{date}})."
   },
+  "farewell": {
+    "banner": "Top Pocket Decks fährt den Betrieb herunter – lies die vollständige Nachricht",
+    "title": "Danke für zwei großartige Jahre! 🎉",
+    "intro": "Ich habe Top Pocket Decks am 2. November 2024 als privates Projekt gestartet. Ich wollte einfach eine Möglichkeit haben, das Meta für mich selbst zu analysieren. Dann habe ich es online gestellt und seitdem laufend aktualisiert. Inzwischen sind es fast zwei Jahre!",
+    "enjoyed": "Es hat riesigen Spaß gemacht. Pokémon TCG Pocket ist ein wirklich tolles Spiel, und der Ranked-Modus war immer mein Lieblingsteil: nach guten Decks zu grinden und herauszufinden, was tatsächlich gewinnt. Diese Seite zu bauen hat mir ermöglicht, genau das zu tun und es mit allen anderen zu teilen.",
+    "why": "Das Leben ist allerdings voller geworden. Ich habe mich verlobt, stecke mitten in der Hochzeitsplanung, und mein Hauptjob hält mich voll auf Trab. Ich habe im Moment einfach nicht die Zeit für Pokémon Pocket oder für die Pflege von Top Pocket Decks. Anstatt es hier also veralten zu lassen und alle im Unklaren zu lassen, wollte ich es ordentlich herunterfahren und Danke sagen.",
+    "thanks": "Und danke, wirklich von Herzen. Es freut mich sehr, dass die Seite für so viele Leute nützlich war, und es hat mir jedes Mal den Tag versüßt, wenn Leute jede Woche vorbeigeschaut haben, um das Meta zu checken. Ein besonderer Dank geht an alle, die Premium abonniert haben. Ich hätte nie gedacht, dass ein kleines Hobbyprojekt wie dieses Abonnenten bekommt. Es kam zwar nie viel mehr dabei heraus als die laufenden Kosten zu decken, aber dass die Leute sich genug dafür interessierten, um dafür zu bezahlen, hat mir viel bedeutet.",
+    "takeover": {
+      "title": "Willst du es übernehmen? 🚀",
+      "body": "Ich würde mich sehr freuen, wenn es weitergeht. Wenn du Erfahrung in der Softwareentwicklung hast, besonders mit React und TypeScript, schreib mir eine E-Mail an <0>chase@manning.dev</0> mit einem Link zu deinem GitHub-Profil. Ich arbeite gerne mit jemand Kompetentem zusammen, um alles zu übergeben, damit die Seite am Leben bleibt. Dazu gehört auch die Pokémon TCG Pocket <1>Karten-API</1>, die wir pflegen und die nach wie vor die einzige quelloffene, öffentlich verfügbare Karten-API ist."
+    },
+    "premium": {
+      "title": "Für Premium-Abonnenten 💛",
+      "status": "Die Seite bleibt online und wird weiterhin Updates erhalten! Neue Premium-Anmeldungen sind vorübergehend pausiert und die Werbung wurde für alle abgeschaltet.",
+      "cancel": "Bestehende Abonnements verlängern sich weiter, bis du sie kündigst. Wenn du also nicht erneut belastet werden möchtest, kündige über das <0>Abrechnungsportal</0>.",
+      "refund": "Wenn du stattdessen eine Rückerstattung möchtest, schreib mir an <0>chase@manning.dev</0> und gib die E-Mail-Adresse deines Kontos an. Ich kündige dann dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt mir Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
+    },
+    "signOff": "Alles Gute an alle, die weiterspielen, genießt das Spiel! 😃",
+    "signature": "— Chase"
+  },
+  "premium": {
+    "title": "Top Pocket Decks Premium",
+    "manageSubscription": "Abonnement verwalten",
+    "windDown": {
+      "headline": "Premium ist vorübergehend pausiert 💛",
+      "status": "Top Pocket Decks hat einen neuen Maintainer und wird weiterhin Updates erhalten! Während dieses Übergangs sind neue Premium-Anmeldungen vorübergehend pausiert und die Werbung wurde für alle abgeschaltet.",
+      "active": "Dein Abonnement bleibt aktiv und verlängert sich weiter, bis du es kündigst. Du kannst jederzeit über das Abrechnungsportal kündigen.",
+      "refund": "Möchtest du lieber eine Rückerstattung? Schreib mir an <0>chase@manning.dev</0> mit der E-Mail-Adresse deines Kontos, dann kündige ich dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt mir Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
+    },
+    "features": {
+      "title": "Funktionen",
+      "free": "Kostenlos",
+      "premium": "Premium",
+      "removeAds": {
+        "title": "Werbung entfernen",
+        "description": "Genieße ein werbefreies Erlebnis auf der gesamten Website.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "bestDeckFinder": {
+        "title": "Bester Deck-Finder",
+        "description": "Finde das stärkste Deck, das du mit deinen Karten bauen kannst. Es dient gleichzeitig als vollständiger PTCGP-Sammlungs-Tracker.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "exclude": {
+        "title": "Karten ausschließen, die du nicht hast",
+        "description": "Filtere Karten heraus, die du nicht besitzt, um die Tier-Liste live mit deinen vorhandenen Karten zu aktualisieren.",
+        "free": "✅",
+        "premium": "✅"
+      },
+      "matchups": {
+        "title": "Deck-Stärken und -Schwächen",
+        "description": "Sieh, gegen welche Decks dein Build gewinnt und verliert, einschließlich der Gewinnquoten in Prozent.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "filters": {
+        "title": "Deck-Filter",
+        "description": "Filtere Decks nach Energie oder verbanne EX-Karten komplett, um Solo-Kämpfe zu gewinnen.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "sortBy": {
+        "title": "Alternative Ranglisten",
+        "description": "Ändere die Tier-Liste, um nach Beliebtheit oder Stärke zu sortieren.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "contact": {
+        "title": "Entwickler kontaktieren",
+        "description": "Schreibe den Entwicklern eine E-Mail, um Feedback zur Website zu geben, neue Funktionen anzufordern oder Fehler zu melden. Funktionsanfragen werden nicht garantiert, aber wir lesen sie alle.",
+        "free": "🚫",
+        "premium": "✅"
+      },
+      "updated": {
+        "title": "Tier-Liste aktualisiert",
+        "description": "Wie oft die Tier-Liste neue Daten abruft. Schnellere Updates helfen dir, dem Meta voraus zu sein.",
+        "free": "Wöchentlich",
+        "premium": "Täglich"
+      },
+      "decks": {
+        "title": "Decks in der Tier-Liste",
+        "description": "Anzahl der Decks, die in der Tier-Liste angezeigt werden. Mehr Decks bedeuten mehr Auswahlmöglichkeiten für dich. Entdecke starke Decks, die noch nicht populär geworden sind.",
+        "free": "30",
+        "premium": "100"
+      }
+    }
+  },
+  "ads": {
+    "advertisement": "Werbung",
+    "removeAds": "Werbung entfernen",
+    "close": "Schließen"
+  },
+  "adblocker": {
+    "lead": "Respektiert dein Werbeblocker",
+    "respect": "wirklich",
+    "middle": "deine Privatsphäre? Wenn du dir nicht sicher bist, können ich und viele andere",
+    "recommend": "uBlock Origin von Raymond Hill empfehlen",
+    "footer": "Offensichtlich nicht gesponsert. Nur ein echtes Anliegen von einem Gleichgesinnten."
+  },
+  "userAccount": {
+    "title": "Benutzerkonto",
+    "signOut": "Abmelden"
+  },
+  "lastUpdated": "Zuletzt aktualisiert:",
   "deckPage": {
     "matchups": "Matchups",
     "strongAgainst": "Stark Gegen",
     "weakAgainst": "Schwach Gegen",
-    "deckFinderHeader": "Klicken Sie auf die Karten, die Sie nicht haben. Das Deck wird aktualisiert, um das Beste mit Ihren verfügbaren Karten zu zeigen.",
+    "deckFinderHeader": "Klicke auf die Karten, die du nicht hast. Das Deck wird aktualisiert, um die besten Optionen mit deinen verfügbaren Karten anzuzeigen.",
     "relativeStrength": "Relative Stärke",
     "keyStats": "Wichtige Statistiken",
     "popularity": "Spiele (14 T.)",
     "strength": "Stärke",
     "winRate": "Gewinnrate",
     "notEnoughCards": "Nicht genug Karten",
-    "tryAnotherDeck": "versuchen Sie ein anderes Deck",
+    "tryAnotherDeck": "versuche ein anderes Deck",
     "notEnoughShrug": "¯\\_(ツ)_/¯",
-    "notEnoughBody": "That's one card too many. We can't imagine this deck without {{card}}.",
-    "undo": "Undo",
+    "notEnoughBody": "Das ist eine Karte zu viel. Wir können uns dieses Deck ohne {{card}} nicht vorstellen.",
+    "undo": "Rückgängig",
     "alternatives": "Alternativen",
     "metaShare": "Meta-Anteil",
-    "strengthTooltip": "Ø. Matchup-Score gegen das Feld (0–10)",
+    "strengthTooltip": "Ø Matchup-Score gegen das Feld (0–10)",
     "popularityTooltip": "Qualifizierte Spiele in den letzten 14 Tagen, begrenzt auf das Erscheinungsdatum dieser Erweiterung",
     "winRateTooltip": "Sieg-% im aktuellen Fenster",
     "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung",
@@ -61,10 +167,10 @@
     "deltaColumn": "Veränderung"
   },
   "bestDeckFinder": {
-    "title": "Finde Dein Bestes Deck",
-    "description1": "Entdecke das stärkste Deck, das du mit deiner Sammlung bauen kannst. Der Beste Deck Finder zeigt dir zunächst das beste Deck im Spiel, aber du kannst auf Karten klicken, die du nicht hast. Es zeigt dir dann das nächstbeste Deck, das diese Karten nicht verwendet.",
-    "description2": "Entferne weiterhin Karten, bis du ein Deck findest, in dem du alles hast. Der relative Stärke-Indikator zeigt dir, wie mächtig dein Deck im Vergleich zum besten Deck im Spiel ist.",
-    "button": "Beste Deck Finder ausprobieren"
+    "title": "Finde dein bestes Deck",
+    "description1": "Finde das stärkste Deck, das du mit deiner Sammlung bauen kannst. Der Bester-Deck-Finder zeigt dir zunächst das beste Deck im Spiel. Klicke auf alle Karten, die du nicht hast, und er zeigt dir das nächstbeste Deck, das diese Karten weglässt.",
+    "description2": "Entferne weiterhin Karten, bis du ein Deck findest, für das du alles hast. Der Indikator für die relative Stärke zeigt dir, wie mächtig dein Deck im Vergleich zum besten Deck im Spiel ist.",
+    "button": "Bester Deck-Finder ausprobieren"
   },
   "header": {
     "tierList": "Tier-Liste",
@@ -81,142 +187,36 @@
   },
   "hero": {
     "title": "Pokémon TCG Pocket Beste Decks und Tier-Liste",
-    "subtitle": "Bleibe mit einer datengesteuerten Deck-Tier-Liste dem Pokémon TCG Pocket Meta voraus. Basierend auf Turnierergebnissen, finde vollständige Listen, markiere fehlende Karten und entdecke die stärksten Decks, die du jetzt bauen kannst.",
+    "subtitle": "Finde die stärksten Pokémon TCG Pocket Decks anhand echter Turnierdaten. Du kannst vollständige Listen filtern, fehlende Karten markieren und genau sehen, was du als Nächstes bauen solltest. Dominiere das Meta.",
     "button": "Tier-Liste anzeigen"
   },
   "features": {
     "title": "Funktionen",
     "tournamentResults": {
       "title": "Turnierergebnisse",
-      "description": "Die Tier-Liste basiert auf Turnierergebnissen, mit einem Algorithmus zur Bestimmung des Tiers und der Deckliste"
+      "description": "Die Tier-Liste basiert auf Turnierergebnissen. Ein Algorithmus bestimmt das Tier und die Deckliste."
     },
     "weeklyUpdates": {
       "title": "Wöchentliche Updates",
-      "description": "Die Tier-Liste wird wöchentlich aktualisiert, mit neuen Decks und Matchups, die jeden Montag hinzugefügt werden"
+      "description": "Die Tier-Liste wird wöchentlich aktualisiert und bringt jeden Montag neue Decks und Matchups."
     },
     "filters": {
       "title": "Filter",
-      "description": "Filtere Decks nach Energietyp oder ohne Ex-Karten, nützlich um einige dieser Solo-Kämpfe zu gewinnen"
+      "description": "Filtere Decks nach Energie oder ohne EX-Karten, was hilfreich ist, um einige dieser Solo-Kämpfe zu gewinnen."
     },
     "missingCards": {
       "title": "Fehlende Karten",
-      "description": "Klicke auf Karten, die dir fehlen, und die Tier-Liste wird automatisch für deine verfügbaren Karten aktualisiert"
+      "description": "Klicke auf beliebige Karten, die dir fehlen, und die Tier-Liste wird automatisch für deine vorhandenen Karten aktualisiert."
     },
     "matchups": {
-      "title": "Deck-Duelle",
-      "description": "Siehe Matchup-Daten, welche Decks gegen andere stark sind, und ihre Gewinnraten"
+      "title": "Matchups",
+      "description": "Sieh dir Matchup-Daten an, um herauszufinden, welche Decks andere schlagen, zusammen mit ihren Gewinnraten."
     },
     "openSource": {
       "title": "Open Source",
-      "description": "Diese Website ist Open Source, du findest den Quellcode auf <0>GitHub</0>"
+      "description": "Diese Website ist Open Source. Du findest den Quellcode auf <0>GitHub</0>."
     }
   },
-  "farewell": {
-    "banner": "Top Pocket Decks wird eingestellt — die ganze Nachricht lesen",
-    "title": "Danke für zwei großartige Jahre! 🎉",
-    "intro": "Ich habe Top Pocket Decks am 2. November 2024 als privates Projekt gestartet. Ich wollte einfach eine Möglichkeit haben, das Meta für mich selbst zu analysieren. Dann habe ich es online gestellt und seitdem laufend aktualisiert. Inzwischen sind es fast zwei Jahre!",
-    "enjoyed": "Es hat riesigen Spaß gemacht. Pokemon TCG Pocket ist ein richtig gutes Spiel, und der Ranked-Modus war immer mein Lieblingsteil: gute Decks grinden und herausfinden, was tatsächlich gewinnt. Mit dieser Seite konnte ich genau das tun und es mit allen anderen teilen.",
-    "why": "Das Leben ist allerdings voller geworden. Ich habe mich verlobt, plane gerade eine Hochzeit, und mein Hauptjob hält mich auf Trab. Im Moment habe ich einfach keine Zeit mehr für Pokemon Pocket oder für die Pflege von Top Pocket Decks. Statt die Seite hier veralten zu lassen und alle im Unklaren zu lassen, wollte ich sie ordentlich einstellen und Danke sagen.",
-    "thanks": "Und danke, wirklich von Herzen. Es freut mich sehr, dass die Seite für so viele Leute nützlich war, und es hat mir jedes Mal den Tag versüßt, wenn Leute jede Woche vorbeigeschaut haben, um das Meta zu checken. Ein besonderer Dank geht an alle, die Premium abonniert haben. Ich hätte nie gedacht, dass ein kleines Hobbyprojekt wie dieses Abonnenten bekommt. Es kam nie viel mehr dabei heraus als die laufenden Kosten, aber dass Leute die Seite genug schätzten, um dafür zu bezahlen, hat mir viel bedeutet.",
-    "takeover": {
-      "title": "Willst du es übernehmen? 🚀",
-      "body": "Ich würde mich sehr freuen, wenn es weitergeht. Wenn du Erfahrung in der Softwareentwicklung hast, besonders mit React und TypeScript, schreib mir an <0>chase@manning.dev</0> mit einem Link zu deinem GitHub-Profil. Ich übergebe alles gerne an jemanden, der es kann, damit die Seite am Leben bleibt. Dazu gehört auch die Pokemon TCG Pocket <1>Karten-API</1>, die wir pflegen und die nach wie vor die einzige quelloffene, öffentlich verfügbare Karten-API ist."
-    },
-    "premium": {
-      "title": "Für Premium-Abonnenten 💛",
-      "status": "Die Seite bleibt online, wird aber nicht mehr aktualisiert. Neue Premium-Anmeldungen sind geschlossen, und die Werbung ist für alle abgeschaltet.",
-      "cancel": "Bestehende Abonnements verlängern sich weiter, bis du sie kündigst. Wenn du nicht erneut belastet werden möchtest, kündige über das <0>Abrechnungsportal</0>.",
-      "refund": "Wenn du stattdessen eine Rückerstattung möchtest, schreib mir an <0>chase@manning.dev</0> und nenne die E-Mail-Adresse deines Kontos. Ich kündige dann dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
-    },
-    "signOff": "Alles Gute an alle, die weiterspielen, viel Spaß mit dem Spiel! 😃",
-    "signature": "— Chase"
-  },
-  "premium": {
-    "title": "Top Pocket Decks Premium",
-    "manageSubscription": "Abonnement verwalten",
-    "windDown": {
-      "headline": "Premium wird eingestellt 💛",
-      "status": "Top Pocket Decks wird nicht mehr aktualisiert, daher sind neue Anmeldungen geschlossen und die Werbung ist für alle abgeschaltet.",
-      "active": "Dein Abonnement bleibt aktiv und verlängert sich weiter, bis du es kündigst. Du kannst jederzeit über das Abrechnungsportal kündigen.",
-      "refund": "Lieber eine Rückerstattung? Schreib mir an <0>chase@manning.dev</0> mit der E-Mail-Adresse deines Kontos, dann kündige ich dein Abonnement und erstatte deine letzte Zahlung. Stripe erlaubt Rückerstattungen nur für Zahlungen der letzten 180 Tage. Ist deine Zahlung älter, tue ich, was ich kann."
-    },
-    "features": {
-      "title": "Funktionen",
-      "free": "Kostenlos",
-      "premium": "Premium",
-      "removeAds": {
-        "title": "Werbung entfernen",
-        "description": "Genießen Sie ein völlig werbefreies, schnelleres Erlebnis auf der gesamten Website.",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "bestDeckFinder": {
-        "title": "Bester Deck-Finder",
-        "description": "Finden Sie das stärkste Deck, das Sie mit Ihren Karten bauen können",
-        "free": "✅",
-        "premium": "✅"
-      },
-      "exclude": {
-        "title": "Karten ausschließen, die Sie nicht haben",
-        "description": "Filtern Sie Karten aus, die Sie nicht besitzen, um die Tier-Liste live mit Ihren verfügbaren Karten zu aktualisieren",
-        "free": "✅",
-        "premium": "✅"
-      },
-      "matchups": {
-        "title": "Deck-Stärken/Schwächen",
-        "description": "Sehen Sie für jedes Deck, gegen welche Decks es stark oder schwach ist, einschließlich Gewinnraten",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "filters": {
-        "title": "Deck-Filter",
-        "description": "Filtern Sie Decks nach Energie oder ohne Ex-Karten, nützlich für Solo-Kämpfe",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "sortBy": {
-        "title": "Alternative Ranglisten",
-        "description": "Ändern Sie die Tier-Liste, um sie nach Beliebtheit oder Stärke zu sortieren",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "contact": {
-        "title": "Entwickler Kontaktieren",
-        "description": "Kontaktieren Sie die Entwickler per E-Mail, um Feedback zur Website zu geben, neue Funktionen anzufordern oder Fehler zu melden. Funktionsanfragen sind nicht garantiert, werden aber alle berücksichtigt.",
-        "free": "🚫",
-        "premium": "✅"
-      },
-      "updated": {
-        "title": "Tier-Liste aktualisiert",
-        "description": "Wie oft die Tier-Liste mit neuen Daten aktualisiert wird. Schnellere Updates helfen Ihnen, dem Meta voraus zu sein.",
-        "free": "Wöchentlich",
-        "premium": "Täglich"
-      },
-      "decks": {
-        "title": "Decks in der Tier-Liste",
-        "description": "Anzahl der Decks in der Tier-Liste. Mehr Decks bedeutet mehr Auswahlmöglichkeiten. Entdecken Sie starke Decks, die noch nicht populär sind.",
-        "free": "30",
-        "premium": "100"
-      }
-    }
-  },
-  "ads": {
-    "advertisement": "Werbung",
-    "removeAds": "Werbung entfernen",
-    "close": "Schließen"
-  },
-  "adblocker": {
-    "lead": "Blockiert dein Werbeblocker und",
-    "respect": "respektiert er",
-    "middle": "deine Privatsphäre? Falls du unsicher bist, können dir ich und viele andere",
-    "recommend": "uBlock Origin von Raymond Hill empfehlen",
-    "footer": "Offenbar nicht gesponsert. Nur eine echte Empfehlung von einem gleichgesinnten Nutzer."
-  },
-  "userAccount": {
-    "title": "Benutzerkonto",
-    "signOut": "Abmelden"
-  },
-  "lastUpdated": "Zuletzt aktualisiert:",
   "tierList": {
     "metaShare": "Meta-Anteil"
   }

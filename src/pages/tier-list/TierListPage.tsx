@@ -1,11 +1,8 @@
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { useDecks } from "../../contexts/DecksContext";
-import DeckCard from "../../components/DeckCard";
 import useFilters from "../../app/use-filters";
 import useIsPremium from "../../app/use-is-premium";
 import { getSortValue } from "../../app/sorting-helper";
-import { buildTiers } from "../../app/tier-helper";
 import UserAccount from "../../components/UserAccount";
 import { SortBy } from "../../components/FilterContext";
 import LastUpdated from "../../components/LastUpdated";
@@ -14,19 +11,9 @@ import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import React, { type ChangeEvent } from "react";
-
-const StyledTierListPage = styled.div`
-  width: 100%;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-
-  @media (max-width: 900px) {
-    height: auto;
-  }
-`;
+import TierGrid from "../../components/TierGrid";
+import DeckCard from "../../components/DeckCard";
+import styled from "styled-components";
 
 const FilterContainer = styled.div`
   display: flex;
@@ -82,77 +69,6 @@ const IncludeExCheckbox = styled.input.attrs({ type: "checkbox" })`
   cursor: pointer;
 `;
 
-const DeckRow = styled.div`
-  width: 100%;
-  display: flex;
-  flex: 1;
-  border-bottom: 0.4rem solid var(--border);
-
-  /* Gradient on right side */
-  @media (min-width: 900px) {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100px;
-      height: 100%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--bg));
-    }
-  }
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
-`;
-
-const RowHeader = styled.div<{ $backgroundColor: string }>`
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  background: ${(props) => props.$backgroundColor};
-  color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3.3rem;
-  font-weight: 400;
-
-  @media (max-width: 900px) {
-    width: 100%;
-    height: 8rem;
-  }
-`;
-
-const RowContent = styled.div`
-  height: 100%;
-  flex: 1;
-  padding: 1.5rem 2rem;
-  display: flex;
-  gap: 2rem;
-  width: 100%;
-
-  @media (min-width: 900px) {
-    overflow-x: auto;
-  }
-
-  @media (max-width: 900px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 2rem;
-  }
-`;
-
-const Loading = styled.div`
-  height: 100dvh;
-  width: 100dvw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 500;
-`;
-
 const ENERGY_TYPES = [
   "Grass",
   "Fire",
@@ -185,118 +101,107 @@ const LandingPage = () => {
 
   const ready = !loading && !!decks && decks.length > 0;
   useMarkContentReady(ready);
-  
-  if (loading) return <Loading>Loading...</Loading>;
-  if (error) return <Loading>Error loading data: {error.message}</Loading>;
-  if (!decks || decks.length === 0) return <Loading>No decks found</Loading>;
 
-  const renderTiers = () => {
+  if (error) return <div>Error loading data: {error.message}</div>;
 
-    const tiers = buildTiers(decks, (d) => getSortValue(d, sortBy));
-
-    return (
+  const filters = (
+    <FilterContainer>
+      <UserAccount />
+      {isPremium && (
         <>
-          {tiers.map((tier) => (
-              <DeckRow key={tier.label}>
-                <RowHeader $backgroundColor={tier.color}>{tier.label}</RowHeader>
-                <RowContent>
-                  {tier.data.map((deck) => (
-                      <DeckCard
-                        key={deck.id}
-                        deck={deck}
-                        metaShare={metaShareBySlug?.[deck.id] ?? null}
-                        metaShareLabel={t("tierList.metaShare")}
-                      />
-                  ))}
-                </RowContent>
-              </DeckRow>
-          ))}
-          <AdInContent placement="tierList" mobileOnly />
-          <LastUpdated />
+          <Dropdown
+            value={energy ?? ""}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+              const value = e.target.value;
+              setEnergy(value === "" ? null : value);
+            }}
+          >
+            <option value="">{t("energyDropdown.all")}</option>
+            {ENERGY_TYPES.map((type) => (
+              <option key={type} value={type}>
+                {t(`energyDropdown.${type}`)}
+              </option>
+            ))}
+          </Dropdown>
+          <IncludeExContainer>
+            {t("filter.includeEx")}
+            <IncludeExCheckbox
+              type="checkbox"
+              checked={includeEx}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIncludeEx(e.target.checked)}
+            />
+          </IncludeExContainer>
+          <DeckAmountContainer>
+            {t("filter.deckAmount")}
+            <DeckAmountSelect
+              value={deckAmount}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setDeckAmount(Number(e.target.value))}
+            >
+              {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((amount) => (
+                <option key={amount} value={amount}>
+                  {amount}
+                </option>
+              ))}
+            </DeckAmountSelect>
+          </DeckAmountContainer>
+          <DeckAmountContainer>
+            {t("filter.sortBy")}
+            <DeckAmountSelect
+              value={sortBy}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as SortBy)}
+            >
+              {[SortBy.SCORE, SortBy.POPULARITY, SortBy.STRENGTH].map(
+                (sortByOption) => (
+                  <option key={sortByOption} value={sortByOption}>
+                    {t(`filter.${sortByOption}`)}
+                  </option>
+                )
+              )}
+            </DeckAmountSelect>
+          </DeckAmountContainer>
+          <DeckAmountContainer>
+            {t("filter.latestExpansionCards")}
+            <DeckAmountSelect
+              value={latestExpansionCards ?? ""}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                const value = e.target.value;
+                setLatestExpansionCards(value === "" ? null : Number(value));
+              }}
+            >
+              <option value="">{t("filter.latestExpansionCardsAny")}</option>
+              {[2, 6, 12].map((count) => (
+                <option key={count} value={count}>
+                  {count}
+                </option>
+              ))}
+            </DeckAmountSelect>
+          </DeckAmountContainer>
         </>
-    );
-  };
+      )}
+    </FilterContainer>
+  );
 
   return (
     <>
-      <StyledTierListPage>
-        <FilterContainer>
-          <UserAccount />
-          {isPremium && (
-            <>
-              <Dropdown
-                value={energy ?? ""}
-                onChange={(e: ChangeEvent<HTMLSelectElement>) => {
-                  const value = e.target.value;
-                  setEnergy(value === "" ? null : value);
-                }}
-              >
-                <option value="">{t("energyDropdown.all")}</option>
-                {ENERGY_TYPES.map((type) => (
-                  <option key={type} value={type}>
-                    {t(`energyDropdown.${type}`)}
-                  </option>
-                ))}
-              </Dropdown>
-              <IncludeExContainer>
-                {t("filter.includeEx")}
-                <IncludeExCheckbox
-                  type="checkbox"
-                  checked={includeEx}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIncludeEx(e.target.checked)}
-                />
-              </IncludeExContainer>
-              <DeckAmountContainer>
-                {t("filter.deckAmount")}
-                <DeckAmountSelect
-                  value={deckAmount}
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setDeckAmount(Number(e.target.value))}
-                >
-                  {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((amount) => (
-                    <option key={amount} value={amount}>
-                      {amount}
-                    </option>
-                  ))}
-                </DeckAmountSelect>
-              </DeckAmountContainer>
-              <DeckAmountContainer>
-                {t("filter.sortBy")}
-                <DeckAmountSelect
-                  value={sortBy}
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as SortBy)}
-                >
-                  {[SortBy.SCORE, SortBy.POPULARITY, SortBy.STRENGTH].map(
-                    (sortByOption) => (
-                      <option key={sortByOption} value={sortByOption}>
-                        {t(`filter.${sortByOption}`)}
-                      </option>
-                    )
-                  )}
-                </DeckAmountSelect>
-              </DeckAmountContainer>
-              <DeckAmountContainer>
-                {t("filter.latestExpansionCards")}
-                <DeckAmountSelect
-                  value={latestExpansionCards ?? ""}
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-                    const value = e.target.value;
-                    setLatestExpansionCards(value === "" ? null : Number(value));
-                  }}
-                >
-                  <option value="">{t("filter.latestExpansionCardsAny")}</option>
-                  {[2, 6, 12].map((count) => (
-                    <option key={count} value={count}>
-                      {count}
-                    </option>
-                  ))}
-                </DeckAmountSelect>
-              </DeckAmountContainer>
-            </>
-          )}
-        </FilterContainer>
-
-        {renderTiers()}
-      </StyledTierListPage>
+      <TierGrid
+        items={decks}
+        getScore={(d) => getSortValue(d, sortBy)}
+        getKey={(d) => d.id}
+        renderItem={(deck) => (
+          <DeckCard
+            deck={deck}
+            metaShare={metaShareBySlug?.[deck.id] ?? null}
+            metaShareLabel={t("tierList.metaShare")}
+          />
+        )}
+        filters={filters}
+        footer={
+          <>
+            <AdInContent placement="tierList" mobileOnly />
+            <LastUpdated />
+          </>
+        }
+      />
       <SeoContent>
         <h2>Pokémon TCG Pocket | Deck Tier List</h2>
         <p>
