@@ -19,7 +19,7 @@
     "undo": "Undo",
     "alternatives": "Alternativen",
     "metaShare": "Meta-Anteil",
-    "strengthTooltip": "Ø. Matchup-Score gegen das Feld (%)",
+    "strengthTooltip": "Ø. Matchup-Score gegen das Feld (0–10)",
     "popularityTooltip": "Anteil qualifizierter Spiele in den letzten 7 Tagen (%)",
     "winRateTooltip": "Sieg-% im aktuellen Fenster",
     "metaShareTooltip": "Anteil qualifizierter Spiele ± wöchentliche Veränderung"

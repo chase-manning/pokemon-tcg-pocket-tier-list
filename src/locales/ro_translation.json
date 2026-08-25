@@ -125,7 +125,7 @@
     "undo": "Undo",
     "alternatives": "Alternative",
     "metaShare": "Cota meta",
-    "strengthTooltip": "Scor mediu matchup vs meta (%)",
+    "strengthTooltip": "Scor mediu matchup vs meta (0–10)",
     "popularityTooltip": "Pondere meciuri calificată îln ultimele 7 zile (%)",
     "winRateTooltip": "Rata de încâlcări îln fereastra curentă",
     "metaShareTooltip": "Pondere meciuri calificată ± schimbare săptâmânălă"

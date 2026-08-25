@@ -19,7 +19,7 @@
     "undo": "Undo",
     "alternatives": "Alternativas",
     "metaShare": "Cuota del meta",
-    "strengthTooltip": "Puntuación media de enfrentamientos vs el meta (%)",
+    "strengthTooltip": "Puntuación media de enfrentamientos vs el meta (0–10)",
     "popularityTooltip": "Cuota de partidas cualificadas en los últimos 7 días (%)",
     "winRateTooltip": "% de victorias en la ventana actual",
     "metaShareTooltip": "Cuota de partidas cualificadas ± cambio semanal"

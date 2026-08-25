@@ -19,7 +19,7 @@
     "undo": "Undo",
     "alternatives": "替代方案",
     "metaShare": "环境占比",
-    "strengthTooltip": "对环境平均对战得分 (%)",
+    "strengthTooltip": "对环境平均对战得分 (0–10)",
     "popularityTooltip": "近7天合格场次占比 (%)",
     "winRateTooltip": "当前窗口胜率",
     "metaShareTooltip": "合格场次占比 ± 周变化"

@@ -19,7 +19,7 @@
     "undo": "Undo",
     "alternatives": "代替案",
     "metaShare": "メタシェア",
-    "strengthTooltip": "メタ相手への平均マッチアップスコア (%)",
+    "strengthTooltip": "メタ相手への平均マッチアップスコア (0–10)",
     "popularityTooltip": "直近7日間の予選済み試合でのシェア (%)",
     "winRateTooltip": "現在のウィンドウでの勝率",
     "metaShareTooltip": "予選済み試合でのシェア ± 週次変化"
