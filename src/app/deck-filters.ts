@@ -1,15 +1,12 @@
 import { CardType } from "./cards-api";
+import { parseDeckListRef } from "./card-ref";
 
 export type CardsMapping = Record<string, CardType>;
 
-/** Deck lists store cards as "<count>:<id>", e.g. "2:a1-001". */
-export const cardToId = (card: string): string => {
-  return card.split(":")[1];
-};
+export const cardToId = (card: string): string => parseDeckListRef(card).id;
 
-export const cardToCount = (card: string): number => {
-  return parseInt(card.split(":")[0]);
-};
+export const cardToCount = (card: string): number =>
+  parseDeckListRef(card).count;
 
 /** Deck names end in the id of each icon card, e.g. "venusaur-a1-004&bulbasaur-a1-001". */
 export const deckNameToIconIds = (name: string): string[] => {

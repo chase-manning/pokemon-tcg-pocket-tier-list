@@ -3,7 +3,7 @@ const test = require("node:test");
 const assert = require("node:assert");
 
 const { buildSitemap, escapeXml } = require("../generate-sitemap");
-const { deckSlug } = require("../deck-slug");
+const { deckSlug } = require("../deck-slug.mjs");
 
 const FIXTURE_DECKS = [
   { name: "venusaur-ex-a1-004" },

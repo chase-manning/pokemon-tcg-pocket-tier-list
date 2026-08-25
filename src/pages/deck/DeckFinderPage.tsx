@@ -9,6 +9,7 @@ import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useQuery } from "@tanstack/react-query";
 import { CardType, fetchCards } from "../../app/cards-api";
 import { countById } from "../../app/deck-diff";
+import { deckDisplayName } from "../../app/deck-display";
 import {
   CardContainer,
   CardImage,
@@ -36,12 +37,12 @@ const DeckFinderPage = () => {
   // Card data for resolving a removed card's name in the empty-deck notice.
   // React Query dedupes this against the same queryKey used elsewhere, so it is
   // a cache read, not a second network fetch.
-  const { data: cardsData } = useQuery<CardType[]>({
+  const { data: cardsPayload } = useQuery({
     queryKey: ["cards"],
     queryFn: fetchCards,
   });
   const cardsById = new Map(
-    (cardsData ?? []).map((card) => [card.id, card] as [string, CardType])
+    (cardsPayload?.cards ?? []).map((card) => [card.id, card] as [string, CardType])
   );
   const lastCutName = lastRemovedId
     ? (cardsById.get(lastRemovedId)?.name ?? null)
@@ -94,28 +95,25 @@ const DeckFinderPage = () => {
   );
   const cardCounts = countById(deck.bestList.cards);
 
-  const deckDisplayName =
-    [deck.iconPrimary?.name, deck.iconSecondary?.name]
-      .filter(Boolean)
-      .join(" / ") || "This deck";
+  const displayName = deckDisplayName(deck);
 
   return (
     <>
-      <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
+      <title>{`${displayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
       <meta
         name="description"
-        content={`${deckDisplayName} ${t(
+        content={`${displayName} ${t(
           "deckPage.ogDescription",
           "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
         )}`}
       />
       <meta
         property="og:title"
-        content={`${deckDisplayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
+        content={`${displayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
       />
       <meta
         property="og:description"
-        content={`${deckDisplayName} ${t(
+        content={`${displayName} ${t(
           "deckPage.ogDescriptionShort",
           "deck list, matchups, and win rate for Pokémon TCG Pocket."
         )}`}

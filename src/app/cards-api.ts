@@ -50,26 +50,35 @@ export const normaliseCard = (card: RawCardType): CardType => ({
 export const normaliseMultipleCards = (cards: RawCardType[]): CardType[] =>
   cards.map(normaliseCard);
 
-const attacksByDeckBuilderNr = new Map<
+export type AttacksByDeckBuilderNr = Map<
   number,
   Record<string, { cost: string | null }> | undefined
->();
+>;
 
-export const indexCardAttacks = (raw: RawCardType[]): void => {
-  attacksByDeckBuilderNr.clear();
+export interface CardsPayload {
+  cards: CardType[];
+  attacksByDeckBuilderNr: AttacksByDeckBuilderNr;
+}
+
+const indexCardAttacks = (raw: RawCardType[]): AttacksByDeckBuilderNr => {
+  const index: AttacksByDeckBuilderNr = new Map();
   for (const record of raw) {
     if (record.deckBuilderNr != null) {
-      attacksByDeckBuilderNr.set(record.deckBuilderNr, record.attacks);
+      index.set(record.deckBuilderNr, record.attacks);
     }
   }
+  return index;
 };
 
-export const getAttacksByDeckBuilderNr = (): typeof attacksByDeckBuilderNr =>
-  attacksByDeckBuilderNr;
-
-export const fetchCards = async (): Promise<CardType[]> => {
+/**
+ * Resolves the cards and the attack index together so no caller can read the
+ * index before the fetch that fills it.
+ */
+export const fetchCards = async (): Promise<CardsPayload> => {
   const response = await fetch(CARDS_URL);
   const raw = (await response.json()) as RawCardType[];
-  indexCardAttacks(raw);
-  return normaliseMultipleCards(raw);
+  return {
+    cards: normaliseMultipleCards(raw),
+    attacksByDeckBuilderNr: indexCardAttacks(raw),
+  };
 };

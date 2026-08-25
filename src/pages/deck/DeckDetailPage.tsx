@@ -15,6 +15,7 @@ import AdInContent from "../../ads/AdInContent";
 import SeoContent from "../../components/SeoContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { countById, oneSwapAlternatives } from "../../app/deck-diff";
+import { deckDisplayName } from "../../app/deck-display";
 import {
   AlternativeCard,
   AlternativeContainer,
@@ -109,28 +110,25 @@ const DeckDetailPage = () => {
   const totalMatchup = deck.matchups?.find((m) => m.name === "Total");
   const winRatePct = totalMatchup ? Math.round(totalMatchup.winRate * 100) : null;
 
-  const deckDisplayName =
-    [deck.iconPrimary?.name, deck.iconSecondary?.name]
-      .filter(Boolean)
-      .join(" / ") || "This deck";
+  const displayName = deckDisplayName(deck);
 
   return (
     <>
-      <title>{`${deckDisplayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
+      <title>{`${displayName} ${t("deckPage.ogTitleSuffix", "Deck List | Top Pocket Decks")}`}</title>
       <meta
         name="description"
-        content={`${deckDisplayName} ${t(
+        content={`${displayName} ${t(
           "deckPage.ogDescription",
           "deck list, matchups, and win rate for Pokémon TCG Pocket. See the full card list and how it performs against the current meta."
         )}`}
       />
       <meta
         property="og:title"
-        content={`${deckDisplayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
+        content={`${displayName} ${t("deckPage.ogBrand", "| Top Pocket Decks")}`}
       />
       <meta
         property="og:description"
-        content={`${deckDisplayName} ${t(
+        content={`${displayName} ${t(
           "deckPage.ogDescriptionShort",
           "deck list, matchups, and win rate for Pokémon TCG Pocket."
         )}`}
@@ -289,9 +287,9 @@ const DeckDetailPage = () => {
       </StyledDeckPage>
 
       <SeoContent>
-        <h2>{deckDisplayName} Deck Guide</h2>
+        <h2>{displayName} Deck Guide</h2>
         <p>
-          {deckDisplayName} is a top-rated Pokémon TCG Pocket deck, ranked on our{" "}
+          {displayName} is a top-rated Pokémon TCG Pocket deck, ranked on our{" "}
           <a href="/tier-list">tier list</a> using recent tournament data.
           {winRatePct !== null
             ? ` It currently holds a ${winRatePct}% win rate across tracked matches.`

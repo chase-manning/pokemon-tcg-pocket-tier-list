@@ -19,6 +19,7 @@ import AdInContent from "../../ads/AdInContent";
 import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useDecks } from "../../contexts/DecksContext";
 import { buildTiers } from "../../app/tier-helper";
+import { deckDisplayName, formatArchetypeId } from "../../app/deck-display";
 import { EXPANSION_NAME } from "../../app/constants";
 
 const PageContainer = styled.div`
@@ -329,14 +330,6 @@ const StatisticsPage = () => {
         return trendData.filter((d) => new Date(d.date) >= cutoff);
     }, [trendData, range]);
 
-    const getDisplayName = (deck: any) => {
-        return (
-            [deck.iconPrimary?.name, deck.iconSecondary?.name]
-                .filter(Boolean)
-                .join(" / ") || deck.name
-        );
-    };
-
     const getMatrixStyle = (winRate: number | undefined) => {
         if (winRate === undefined) return { bg: "transparent" };
         const wr = Math.max(0, Math.min(1, winRate));
@@ -356,12 +349,6 @@ const StatisticsPage = () => {
         return {
             bg: `color-mix(in srgb, #b71c1c ${pct}%, #fff9c4)`,
         };
-    };
-
-    const formatDeckName = (name: string) => {
-        return name
-            .replace(/-/g, " ")
-            .replace(/\b\w/g, (char) => char.toUpperCase());
     };
 
     const topArchetypeNames =
@@ -435,10 +422,8 @@ const StatisticsPage = () => {
                                     key={name}
                                     type="monotone"
                                     dataKey={name}
-                                    name={getDisplayName(
-                                        decks.find((d) => d.name === name) || {
-                                            name: formatDeckName(name),
-                                        }
+                                    name={deckDisplayName(
+                                        decks.find((d) => d.name === name) ?? { name }
                                     )}
                                     stroke={COLOR_PALETTE[idx % COLOR_PALETTE.length]}
                                     strokeWidth={3}
@@ -520,7 +505,7 @@ const StatisticsPage = () => {
                         <tr>
                             <DeckLabelHeader>Deck Archetype</DeckLabelHeader>
                             {matrixDecks.map((colDeck) => (
-                                <th key={colDeck.id}>{getDisplayName(colDeck)}</th>
+                                <th key={colDeck.id}>{deckDisplayName(colDeck)}</th>
                             ))}
                         </tr>
                         </thead>
@@ -532,7 +517,7 @@ const StatisticsPage = () => {
                                         <TierDot
                                             $color={tierMap.get(rowDeck.id) || "transparent"}
                                         />
-                                        <DeckNameText>{getDisplayName(rowDeck)}</DeckNameText>
+                                        <DeckNameText>{deckDisplayName(rowDeck)}</DeckNameText>
                                     </DeckNameWrapper>
                                 </DeckLabelCell>
                                 {matrixDecks.map((colDeck) => {
@@ -555,7 +540,7 @@ const StatisticsPage = () => {
                                         ? `${Math.round(winRate * 100)}%`
                                         : "N/A";
                                     const hoverText = match
-                                        ? `${winRateText} win rate vs. ${formatDeckName(
+                                        ? `${winRateText} win rate vs. ${formatArchetypeId(
                                             colDeck.name
                                         )} (${Math.round(match.totalGames)} total games)`
                                         : undefined;
