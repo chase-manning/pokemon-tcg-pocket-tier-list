@@ -2,7 +2,6 @@ import { afterEach, beforeEach, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import usePipelineTrends from "../use-pipeline-trends";
-import { queryClientOptions } from "../../App";
 
 const Probe = () => {
   const { rows, isLoading, failed } = usePipelineTrends();
@@ -17,10 +16,7 @@ let queryClient: QueryClient;
 
 beforeEach(() => {
   queryClient = new QueryClient({
-    ...queryClientOptions,
-    defaultOptions: {
-      queries: { ...queryClientOptions.defaultOptions.queries, retry: false },
-    },
+    defaultOptions: { queries: { retry: false } },
   });
   vi.stubGlobal(
     "fetch",
