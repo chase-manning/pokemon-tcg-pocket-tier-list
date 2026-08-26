@@ -6,6 +6,7 @@ import {
 } from "@invertase/firestore-stripe-payments";
 import useIsPremium from "../use-is-premium";
 import { useAuth } from "../../contexts/AuthContext";
+import { queryClientOptions } from "../../App";
 
 vi.mock("@invertase/firestore-stripe-payments", () => ({
   getStripePayments: vi.fn(),
@@ -32,7 +33,10 @@ let queryClient: QueryClient;
 
 beforeEach(() => {
   queryClient = new QueryClient({
-    defaultOptions: { queries: { retry: false } },
+    ...queryClientOptions,
+    defaultOptions: {
+      queries: { ...queryClientOptions.defaultOptions.queries, retry: false },
+    },
   });
 });
 
