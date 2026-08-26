@@ -512,7 +512,7 @@ const StatisticsPage = () => {
                     </ToggleContainer>
                 </SectionHeader>
 
-                {movementDecks.length > 0 && (
+                {movementDecks.length > 0 ? (
                     <MovementTable>
                         <thead>
                             <tr>
@@ -541,7 +541,7 @@ const StatisticsPage = () => {
                                                         .join(" / ")
                                                   : null;
                                             return (
-                                                <Link to={`/deck/${entry.name}/`}>
+                                                <Link to={`/deck/${entry.name}`}>
                                                     {deck
                                                         ? deckDisplayName(deck)
                                                         : iconNames ||
@@ -565,6 +565,8 @@ const StatisticsPage = () => {
                             ))}
                         </tbody>
                     </MovementTable>
+                ) : (
+                    <Loading>{t("statistics.noMovement")}</Loading>
                 )}
             </Section>
 
