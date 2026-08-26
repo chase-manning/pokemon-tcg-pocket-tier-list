@@ -13,7 +13,6 @@ export const handlePreloadError = (
   event: { preventDefault: () => void },
   reload: () => void = () => window.location.reload()
 ): void => {
-  event.preventDefault();
   try {
     const last = Number(sessionStorage.getItem(RELOAD_STAMP) ?? 0);
     if (Date.now() - last < THROTTLE_MS) return;
@@ -21,5 +20,6 @@ export const handlePreloadError = (
   } catch {
     return;
   }
+  event.preventDefault();
   reload();
 };
