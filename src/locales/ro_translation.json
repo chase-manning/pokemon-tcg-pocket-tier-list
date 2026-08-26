@@ -145,7 +145,8 @@
     "deckColumn": "Deck",
     "shareColumn": "Cotă",
     "deltaColumn": "Schimbare",
-    "noTrends": "Datele despre tendințe nu sunt disponibile acum."
+    "noTrends": "Datele despre tendințe nu sunt disponibile acum.",
+    "noMovement": "Nicio mișcare a pachetelor în această perioadă."
   },
   "bestDeckFinder": {
     "title": "Găsește-ți cel mai bun deck",

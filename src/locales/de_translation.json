@@ -145,7 +145,8 @@
     "deckColumn": "Deck",
     "shareColumn": "Anteil",
     "deltaColumn": "Veränderung",
-    "noTrends": "Trenddaten sind derzeit nicht verfügbar."
+    "noTrends": "Trenddaten sind derzeit nicht verfügbar.",
+    "noMovement": "Keine Deck-Bewegung in diesem Zeitraum."
   },
   "bestDeckFinder": {
     "title": "Finde dein bestes Deck",

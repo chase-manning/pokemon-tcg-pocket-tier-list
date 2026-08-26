@@ -80,4 +80,19 @@ describe("usePipelineTrends", () => {
     renderProbe();
     await screen.findByText("failed");
   });
+
+  it.each([[null], [{}], [{ date: 5 }]])(
+    "reports failed on an invalid row (%j)",
+    async (badRow) => {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn().mockResolvedValue(
+          new Response(JSON.stringify([badRow]), { status: 200 })
+        )
+      );
+
+      renderProbe();
+      await screen.findByText("failed");
+    }
+  );
 });

@@ -145,7 +145,8 @@
     "deckColumn": "牌組",
     "shareColumn": "占比",
     "deltaColumn": "變化",
-    "noTrends": "暫時無法取得趨勢資料。"
+    "noTrends": "暫時無法取得趨勢資料。",
+    "noMovement": "此時間範圍內沒有卡組變動。"
   },
   "bestDeckFinder": {
     "title": "尋找你的最佳牌組",

@@ -145,7 +145,8 @@
     "deckColumn": "デッキ",
     "shareColumn": "シェア",
     "deltaColumn": "変化",
-    "noTrends": "トレンドデータは現在利用できません。"
+    "noTrends": "トレンドデータは現在利用できません。",
+    "noMovement": "この期間にデッキの動きはありません。"
   },
   "bestDeckFinder": {
     "title": "最適なデッキを見つけよう",

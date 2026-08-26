@@ -570,9 +570,9 @@ const StatisticsPage = () => {
                             ))}
                         </tbody>
                     </MovementTable>
-                ) : (
+                ) : metaShare !== null ? (
                     <Loading>{t("statistics.noMovement")}</Loading>
-                )}
+                ) : null}
             </Section>
 
             <AdInContent placement="statistics" />

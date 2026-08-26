@@ -8,10 +8,20 @@ const loadTrends = async (): Promise<PipelineTrendRow[]> => {
   const res = await fetch("/data/historical-trends.json");
   if (!res.ok) throw new Error(`historical-trends.json: ${res.status}`);
   const data = await res.json();
-  if (!Array.isArray(data)) {
-    throw new Error("historical-trends.json is not an array");
+  // `date` is the one fixed field; the rest are the dynamic deck-name keys.
+  const rows = data as unknown;
+  if (
+    !Array.isArray(rows) ||
+    rows.some(
+      (row) =>
+        typeof row !== "object" ||
+        row === null ||
+        typeof (row as PipelineTrendRow).date !== "string"
+    )
+  ) {
+    throw new Error("historical-trends.json has an invalid row shape");
   }
-  return data;
+  return rows as PipelineTrendRow[];
 };
 
 const usePipelineTrends = () => {

@@ -145,7 +145,8 @@
     "deckColumn": "Mazzo",
     "shareColumn": "Quota",
     "deltaColumn": "Cambiamento",
-    "noTrends": "I dati sulle tendenze non sono disponibili al momento."
+    "noTrends": "I dati sulle tendenze non sono disponibili al momento.",
+    "noMovement": "Nessun movimento di mazzi in questo periodo."
   },
   "bestDeckFinder": {
     "title": "Trova il Tuo Miglior Mazzo",
