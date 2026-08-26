@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCurrentUserSubscriptions } from "@invertase/firestore-stripe-payments";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { payments } from "../config/firebase";
 import { useAuth } from "../contexts/AuthContext";
 
 const useIsPremium = () => {
-  const [failedUid, setFailedUid] = useState<string | null>(null);
   const { user, loading } = useAuth();
 
   // Count subscriptions that grant Premium access. "trialing" is essential:
@@ -29,13 +28,12 @@ const useIsPremium = () => {
   });
 
   useEffect(() => {
-    if (query.error) setFailedUid(user?.uid ?? null);
-  }, [query.error, user?.uid]);
-
-  if (query.error && failedUid !== user?.uid) console.error(query.error);
+    if (query.error) console.error(query.error);
+  }, [query.error]);
 
   if (loading) return null;
-  if (!user || failedUid === user?.uid) return false;
+  if (!user) return false;
+  if (query.isError) return false;
   return query.isPending ? null : (query.data ?? false);
 };
 

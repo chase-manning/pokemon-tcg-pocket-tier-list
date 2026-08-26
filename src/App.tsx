@@ -20,14 +20,16 @@ const PrivacyPage = lazy(() => import("./pages/legal/PrivacyPage"));
 const AboutPage = lazy(() => import("./pages/legal/AboutPage"));
 const NotFoundPage = lazy(() => import("./pages/not-found/NotFoundPage"));
 
-const queryClient = new QueryClient({
+export const queryClientOptions = {
   defaultOptions: {
     queries: {
       staleTime: 1000 * 60 * 60, // 1 hour
       gcTime: 1000 * 60 * 60 * 24, // 24 hours
     },
   },
-});
+};
+
+const queryClient = new QueryClient(queryClientOptions);
 
 const StyledApp = styled.div`
   width: 100%;

@@ -1,11 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   getCurrentUserSubscriptions,
 } from "@invertase/firestore-stripe-payments";
 import useIsPremium from "../use-is-premium";
 import { useAuth } from "../../contexts/AuthContext";
+import { queryClientOptions } from "../../App";
 
 vi.mock("@invertase/firestore-stripe-payments", () => ({
   getStripePayments: vi.fn(),
@@ -32,7 +33,10 @@ let queryClient: QueryClient;
 
 beforeEach(() => {
   queryClient = new QueryClient({
-    defaultOptions: { queries: { retry: false } },
+    ...queryClientOptions,
+    defaultOptions: {
+      queries: { ...queryClientOptions.defaultOptions.queries, retry: false },
+    },
   });
 });
 
@@ -100,5 +104,23 @@ describe("deduplication across hook instances", () => {
     );
     await screen.findAllByText("false");
     expect(mockSubscriptions).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("recovery after a transient failure", () => {
+  it("reports premium again once a refetch succeeds", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    mockAuth.mockReturnValue({ user: { uid: "u1" }, loading: false });
+    mockSubscriptions.mockRejectedValueOnce(new Error("transient"));
+
+    renderProbe();
+    await screen.findByText("false");
+
+    mockSubscriptions.mockResolvedValue([{ status: "active" }]);
+    await act(async () => {
+      await queryClient.refetchQueries({ queryKey: ["premium", "u1"] });
+    });
+
+    await screen.findByText("true");
   });
 });
