@@ -16,7 +16,9 @@ vi.mock("../../contexts/AuthContext", () => ({
   useAuth: vi.fn(),
 }));
 
-vi.mock("../config/firebase", () => ({}));
+vi.mock("../../config/firebase", () => ({
+  payments: {},
+}));
 
 const mockSubscriptions = getCurrentUserSubscriptions as ReturnType<typeof vi.fn>;
 const mockAuth = useAuth as ReturnType<typeof vi.fn>;
