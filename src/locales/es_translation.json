@@ -144,7 +144,9 @@
     "metaMovement": "Movimiento del meta",
     "deckColumn": "Mazo",
     "shareColumn": "Cuota",
-    "deltaColumn": "Cambio"
+    "deltaColumn": "Cambio",
+    "noTrends": "Los datos de tendencias no están disponibles ahora mismo.",
+    "noMovement": "No hay movimiento de mazos en este periodo."
   },
   "bestDeckFinder": {
     "title": "Encuentra tu mejor mazo",
