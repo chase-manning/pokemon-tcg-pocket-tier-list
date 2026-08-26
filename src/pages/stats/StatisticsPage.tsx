@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import {
@@ -15,7 +15,7 @@ import useIsPremium from "../../app/use-is-premium";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCards } from "../../app/cards-api";
 import { deckNameToIconIds } from "../../app/deck-filters";
-import { PipelineTrendRow, PipelineMetaShare } from "../../types/pipeline-data";
+import usePipelineTrends from "../../app/use-pipeline-trends";
 import Header from "../../components/Header";
 import SeoContent from "../../components/SeoContent";
 import AdInContent from "../../ads/AdInContent";
@@ -326,25 +326,13 @@ const COLOR_PALETTE = [
 
 const StatisticsPage = () => {
     const { t } = useTranslation();
-    const { decks, loading, error } = useDecks();
+    const { decks, metaShare, loading, error } = useDecks();
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
-    const [trendData, setTrendData] = useState<PipelineTrendRow[]>([]);
-    const [metaShare, setMetaShare] = useState<PipelineMetaShare | null>(null);
+    const trendData = usePipelineTrends().rows;
     const [movementView, setMovementView] = useState<"rising" | "falling" | "new">("rising");
 
     useMarkContentReady(!loading && !!decks);
-
-    useEffect(() => {
-        fetch("/data/historical-trends.json")
-            .then((res) => res.json())
-            .then((data) => setTrendData(data))
-            .catch((err) => console.error("Awaiting pipeline trends data", err));
-        fetch("/data/meta-share.json")
-            .then((res) => (res.ok ? res.json() : null))
-            .then((data) => data && setMetaShare(data))
-            .catch((err) => console.error("Awaiting pipeline share data", err));
-    }, []);
 
     const { data: cardsPayload } = useQuery({
         queryKey: ["cards"],
