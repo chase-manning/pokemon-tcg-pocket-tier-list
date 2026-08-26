@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from "react";
 
 interface UIContextType {
   isNavOpen: boolean;
@@ -13,10 +13,12 @@ const UIContext = createContext<UIContextType>({
 const UIProvider = ({ children }: { children: ReactNode }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const toggleNav = () => setIsNavOpen((open) => !open);
+  const toggleNav = useCallback(() => setIsNavOpen((open) => !open), []);
+
+  const value = useMemo(() => ({ isNavOpen, toggleNav }), [isNavOpen, toggleNav]);
 
   return (
-    <UIContext.Provider value={{ isNavOpen, toggleNav }}>
+    <UIContext.Provider value={value}>
       {children}
     </UIContext.Provider>
   );
