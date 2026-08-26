@@ -144,7 +144,8 @@
     "metaMovement": "Meta movement",
     "deckColumn": "Deck",
     "shareColumn": "Share",
-    "deltaColumn": "Change"
+    "deltaColumn": "Change",
+    "noTrends": "Trend data is unavailable right now."
   },
   "bestDeckFinder": {
     "title": "Find Your Best Deck",

@@ -329,7 +329,8 @@ const StatisticsPage = () => {
     const { decks, metaShare, loading, error } = useDecks();
     const isPremium = useIsPremium();
     const [range, setRange] = useState<"14-day" | "all-time">("14-day");
-    const trendData = usePipelineTrends().rows;
+    const trendQuery = usePipelineTrends();
+    const trendData = trendQuery.rows;
     const [movementView, setMovementView] = useState<"rising" | "falling" | "new">("rising");
 
     useMarkContentReady(!loading && !!decks);
@@ -445,6 +446,9 @@ const StatisticsPage = () => {
                 </SectionHeader>
 
                 <ChartContainer>
+                    {trendQuery.failed ? (
+                        <Loading>{t("statistics.noTrends")}</Loading>
+                    ) : (
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={filteredTrendData}>
                             <XAxis
@@ -486,6 +490,7 @@ const StatisticsPage = () => {
                             ))}
                         </LineChart>
                     </ResponsiveContainer>
+                    )}
                 </ChartContainer>
             </Section>
 

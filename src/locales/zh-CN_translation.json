@@ -144,7 +144,8 @@
     "metaMovement": "环境动向",
     "deckColumn": "卡组",
     "shareColumn": "占比",
-    "deltaColumn": "变化"
+    "deltaColumn": "变化",
+    "noTrends": "暂时无法获取趋势数据。"
   },
   "bestDeckFinder": {
     "title": "寻找您的最佳卡组",

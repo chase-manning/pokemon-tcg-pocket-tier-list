@@ -144,7 +144,8 @@
     "metaMovement": "Mișcarea meta",
     "deckColumn": "Deck",
     "shareColumn": "Cotă",
-    "deltaColumn": "Schimbare"
+    "deltaColumn": "Schimbare",
+    "noTrends": "Datele despre tendințe nu sunt disponibile acum."
   },
   "bestDeckFinder": {
     "title": "Găsește-ți cel mai bun deck",
