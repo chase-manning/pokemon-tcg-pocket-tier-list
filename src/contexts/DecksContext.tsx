@@ -111,7 +111,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     queryFn: fetchCards,
   });
   const cards = cardsPayload?.cards;
-  const attacksByDeckBuilderNr = cardsPayload?.attacksByDeckBuilderNr;
 
   const cardsMapping: Record<string, CardType> = useMemo(() => {
     // `cards` is undefined until the query resolves.
@@ -160,7 +159,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [expansions]);
 
   const decks = useMemo(() => {
-    if (!cards || !decksData || isPremium === null) return null;
+    if (!cardsPayload || !decksData || isPremium === null) return null;
 
     const { decks, matchupData } = decksData;
 
@@ -273,7 +272,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                 bestList.cards.map((card) => ({
                   supertype: card.supertype,
                   deckBuilderNr: card.deckBuilderNr as number,
-                  attacks: attacksByDeckBuilderNr?.get(card.deckBuilderNr as number),
+                  attacks: cardsPayload!.attacksByDeckBuilderNr.get(card.deckBuilderNr as number),
                 }))
               );
               return {
@@ -323,8 +322,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
     return includedDecks.reverse();
   }, [
-    cards,
-    attacksByDeckBuilderNr,
+    cardsPayload,
     decksData,
     isPremium,
     missing,
