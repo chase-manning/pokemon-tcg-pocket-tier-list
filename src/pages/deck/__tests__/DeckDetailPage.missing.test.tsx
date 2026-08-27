@@ -7,6 +7,8 @@ import { DecksProvider } from "../../../contexts/DecksContext";
 import MissingContextProvider from "../../../components/MissingContext";
 import i18n from "../../../i18n";
 import { ContentReadyProvider } from "../../../ads/ContentReadyContext";
+import FilterContextProvider from "../../../components/FilterContext";
+import { UIProvider } from "../../../contexts/UIContext";
 import rawCards from "../../../app/__fixtures__/cards.json";
 
 vi.mock("../../../ads/AdInContent", () => ({
@@ -33,7 +35,7 @@ vi.mock("../../../app/use-expansions", () => ({
 
 const GOOD_DECK = "venusaur-a1-004&bulbasaur-a1-001";
 
-const decks = [
+let decks = [
   {
     name: GOOD_DECK,
     lists: [{ cards: ["2:a1-004", "1:a1-219"], score: 10, strength: 5 }],
@@ -53,17 +55,21 @@ const renderDetailPage = () =>
     <QueryClientProvider
       client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
     >
-      <MissingContextProvider>
-        <DecksProvider>
-        <ContentReadyProvider>
-        <MemoryRouter initialEntries={["/deck/venusaur-a1-004&bulbasaur-a1-001"]}>
-          <Routes>
-            <Route path="/deck/:deckId" element={<DeckDetailPage />} />
-          </Routes>
-        </MemoryRouter>
-        </ContentReadyProvider>
-        </DecksProvider>
-      </MissingContextProvider>
+      <UIProvider>
+        <MissingContextProvider>
+          <FilterContextProvider>
+            <DecksProvider>
+              <ContentReadyProvider>
+                <MemoryRouter initialEntries={["/deck/venusaur-a1-004&bulbasaur-a1-001"]}>
+                  <Routes>
+                    <Route path="/deck/:deckId" element={<DeckDetailPage />} />
+                  </Routes>
+                </MemoryRouter>
+              </ContentReadyProvider>
+            </DecksProvider>
+          </FilterContextProvider>
+        </MissingContextProvider>
+      </UIProvider>
     </QueryClientProvider>
   );
 
@@ -75,6 +81,14 @@ describe("DeckDetailPage with a cut card", () => {
   });
 
   beforeEach(() => {
+    decks = [
+      {
+        name: GOOD_DECK,
+        lists: [{ cards: ["2:a1-004", "1:a1-219"], score: 10, strength: 5 }],
+        percentOfGames: 50,
+        popularity: 100,
+      },
+    ];
     vi.spyOn(console, "warn").mockImplementation(() => {});
     vi.spyOn(global, "fetch").mockImplementation((input) => {
       const url = String(input);
@@ -116,6 +130,42 @@ describe("DeckDetailPage with a cut card", () => {
       expect(screen.queryByText("Undo")).not.toBeInTheDocument();
     });
     expect(screen.getByAltText("Venusaur ex")).toBeInTheDocument();
+  });
+
+  // The unfiltered all-decks build would keep a stale Venusaur ex tile after
+  // the cut; only the missing-filtered resolution drops it from the grid.
+  it("removes the cut card from the grid", async () => {
+    renderDetailPage();
+
+    const card = await screen.findByAltText("Venusaur ex");
+    fireEvent.click(card);
+
+    await screen.findByText("Undo");
+    await waitFor(() => {
+      expect(screen.queryByAltText("Venusaur ex")).not.toBeInTheDocument();
+    });
+    expect(screen.queryByText("Deck not found")).not.toBeInTheDocument();
+  });
+
+  it("keeps the page up when the cut kills every list of the deck", async () => {
+    decks = [
+      {
+        name: GOOD_DECK,
+        lists: [{ cards: ["2:a1-004", "2:a1-219"], score: 10, strength: 5 }],
+        percentOfGames: 50,
+        popularity: 100,
+      },
+    ];
+    renderDetailPage();
+
+    const card = await screen.findByAltText("Venusaur ex");
+    fireEvent.click(card);
+
+    expect(await screen.findByText("Undo")).toBeInTheDocument();
+    expect(screen.queryByText("Deck not found")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText("Undo"));
+    expect(await screen.findByAltText("Venusaur ex")).toBeInTheDocument();
   });
 
   it("still reports an unknown deck id as not found", async () => {

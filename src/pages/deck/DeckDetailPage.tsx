@@ -42,12 +42,21 @@ import {
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
   const allDecks = useAllDecks();
-  const { metaShareBySlug, loading, error } = useDecks();
+  const { decks, metaShareBySlug, loading, error } = useDecks();
   const { canUndo, undoMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
-  const deck = allDecks?.find((d) => d.id === deckId);
+  // Missing-filtered build first so a cut re-resolves the best list like the
+  // tier list does; the unfiltered build only covers the case where every
+  // list of the deck died and the filtered one no longer contains it.
+  const deck =
+    decks?.find((d) => d.id === deckId) ??
+    allDecks?.find((d) => d.id === deckId);
+  // Every list of the deck died from cuts: keep the page up with an emptied
+  // grid rather than resurrecting cut cards via the unfiltered build.
+  const extinct =
+    !!deck && !!decks && !decks.some((d) => d.id === deckId);
   const shareEntry: MetaShareEntry | null =
     metaShareBySlug?.[deckId ?? ""] ?? null;
 
@@ -56,14 +65,28 @@ const DeckDetailPage = () => {
   useMarkContentReady(!loading && !!allDecks && !!deck);
 
   const deckMap = useMemo(
-    () => new Map((allDecks ?? []).map((d) => [d.name, d])),
-    [allDecks]
+    () =>
+      new Map(
+        (extinct ? decks ?? [] : allDecks ?? []).map((d) => [d.name, d])
+      ),
+    [allDecks, decks, extinct]
   );
 
   // Everything here depends on the resolved deck, so it is computed once per
   // deck change instead of once per render.
   const derived = useMemo(() => {
     if (!deck) return null;
+    // Total extinction: the resolved (unfiltered) object would resurrect cut
+    // cards, so render an empty grid while the page stays up for Undo.
+    if (extinct) {
+      return {
+        uniqueCards: [],
+        cardCounts: new Map<string, number>(),
+        alternatives: [],
+        strongAgainst: [],
+        weakAgainst: [],
+      };
+    }
     const uniqueCards = deck.bestList.cards.filter(
       (card, index, self) =>
         self.findIndex((c) => c.id === card.id) === index
@@ -97,7 +120,7 @@ const DeckDetailPage = () => {
       strongAgainst,
       weakAgainst,
     };
-  }, [deck, deckMap]);
+  }, [deck, deckMap, extinct]);
 
   if (loading) return <Overlay>Loading...</Overlay>;
   if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
