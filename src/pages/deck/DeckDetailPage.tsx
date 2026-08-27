@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import { useDecks, MatchupType } from "../../contexts/DecksContext";
+import { useDecks, useAllDecks, MatchupType } from "../../contexts/DecksContext";
 import useMissing from "../../app/use-missing";
 import DeckCardGrid from "./DeckCardGrid";
 import DeckHeadTags from "./DeckHeadTags";
@@ -41,7 +41,8 @@ import {
 
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
-  const { allDecks, metaShareBySlug, loading, error } = useDecks();
+  const allDecks = useAllDecks();
+  const { metaShareBySlug, loading, error } = useDecks();
   const { canUndo, undoMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();

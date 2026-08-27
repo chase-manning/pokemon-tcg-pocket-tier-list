@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { DecksProvider, useDecks } from "../DecksContext";
+import { DecksProvider, useDecks, useAllDecks } from "../DecksContext";
 import MissingContextProvider from "../../components/MissingContext";
 import useMissing from "../../app/use-missing";
 import rawCards from "../../app/__fixtures__/cards.json";
@@ -19,7 +19,7 @@ vi.mock("../../app/use-expansions", () => ({
 const SHARED = "a1-004";
 const GOOD_DECK = "venusaur-a1-004&bulbasaur-a1-001";
 
-const decks = [
+const decks0 = [
   {
     name: GOOD_DECK,
     lists: [{ cards: ["2:a1-004", "1:a1-219"], score: 10, strength: 5 }],
@@ -28,7 +28,18 @@ const decks = [
   },
 ];
 
-const matchupData = { [GOOD_DECK]: [] };
+const UNPAIRED_DECK = "bulbasaur-a1-001";
+
+const unpairedDeck = {
+  name: UNPAIRED_DECK,
+  lists: [{ cards: ["1:a1-001", "1:a1-219"], score: 8, strength: 4 }],
+  percentOfGames: 20,
+  popularity: 40,
+};
+
+const decks = [...decks0, unpairedDeck];
+
+const matchupData = { [GOOD_DECK]: [], [UNPAIRED_DECK]: [] };
 
 const jsonResponse = (body: unknown) =>
   Promise.resolve({
@@ -37,7 +48,8 @@ const jsonResponse = (body: unknown) =>
   } as unknown as Response);
 
 const DeckNamesBoth = () => {
-  const { decks, allDecks, loading } = useDecks();
+  const { decks, loading } = useDecks();
+  const allDecks = useAllDecks();
   if (loading || !decks || !allDecks) return <p>loading</p>;
   return (
     <ul>
@@ -90,9 +102,11 @@ describe("DecksProvider exposes a full deck list beside the filtered one", () =>
 
     await screen.findByTestId("filtered");
 
-    // Without cuts both lists agree.
+    // Without cuts the filtered list keeps only one paired deck (the legacy
+    // trim), while allDecks keeps everything including the unpaired deck.
     expect(screen.getByTestId("filtered").textContent).toContain(GOOD_DECK);
     expect(screen.getByTestId("full").textContent).toContain(GOOD_DECK);
+    expect(screen.getByTestId("full").textContent).toContain(UNPAIRED_DECK);
 
     fireEvent.click(screen.getByText("cut"));
 

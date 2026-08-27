@@ -58,7 +58,6 @@ export interface FullDeckType {
 
 interface DecksContextType {
   decks: FullDeckType[] | null;
-  allDecks: FullDeckType[] | null;
   metaShare: PipelineMetaShare | null;
   metaShareBySlug: Record<string, MetaShareEntry> | null;
   loading: boolean;
@@ -110,11 +109,10 @@ interface BuildOptions {
   sortBy: SortBy;
   latestExpansionId: string | null;
   latestExpansionCards: number | null;
+  // The legacy tier list keeps at most one paired ("&") deck. Detail pages
+  // link straight to pairs, so their view of the list must not trim them.
+  trimPairedDecks: boolean;
 }
-
-// Legacy tier-list shape: with no energy filter active the list keeps at most
-// one paired ("&") deck. Detail pages link straight to pairs, so allDecks
-// skips this trim while decks keeps it.
 const trimPairedDecks = (fullDecks: FullDeckType[]): FullDeckType[] => {
   const includedDecks = [];
   let hasOneDouble = false;
@@ -349,19 +347,6 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
         : null;
   }, [expansions]);
 
-  const allDecks = useMemo(() => {
-    if (!cardsPayload || !decksData || isPremium === null) return null;
-    return buildDecks(decksData, cardsPayload, cardsMapping, {
-      missingCounts: {},
-      energy: null,
-      includeEx: true,
-      deckAmount: Infinity,
-      sortBy,
-      latestExpansionId: null,
-      latestExpansionCards: null,
-    });
-  }, [cardsPayload, decksData, isPremium, cardsMapping, sortBy]);
-
   const decks = useMemo(() => {
     if (!cardsPayload || !decksData || isPremium === null) return null;
 
@@ -378,6 +363,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
       sortBy,
       latestExpansionId,
       latestExpansionCards,
+      trimPairedDecks: true,
     });
   }, [
     cardsPayload,
@@ -393,14 +379,16 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     latestExpansionId,
   ]);
 
-  const value = {
-          decks,
-          allDecks,
-          metaShare: decksData?.metaShare ?? null,
-          metaShareBySlug,
-          loading: cardsLoading || decksLoading,
-          error: decksError ?? null,
-        };
+  const value = useMemo(
+    () => ({
+      decks,
+      metaShare: decksData?.metaShare ?? null,
+      metaShareBySlug,
+      loading: cardsLoading || decksLoading,
+      error: decksError ?? null,
+    }),
+    [decks, decksData, metaShareBySlug, cardsLoading, decksLoading, decksError]
+  );
 
   return (
       <DecksContext.Provider value={value}>{children}</DecksContext.Provider>
@@ -413,4 +401,63 @@ export const useDecks = () => {
     throw new Error("useDecks must be used within a DecksProvider");
   }
   return context;
+};
+
+// Detail pages need the list without the missing filter, but building it in
+// the provider would tax every page load. The two queries are cached by key,
+// so this only pays for the second build where a detail page is open.
+export const useAllDecks = (): FullDeckType[] | null => {
+  const { sortBy } = useFilters();
+  const isPremium = useIsPremium();
+
+  const { data: cardsPayload } = useQuery({
+    queryKey: ["cards"],
+    queryFn: fetchCards,
+  });
+  const cards = cardsPayload?.cards;
+
+  const cardsMapping: Record<string, CardType> = useMemo(() => {
+    return (cards ?? []).reduce((acc: Record<string, CardType>, card: CardType) => {
+      acc[card.id] = card;
+      return acc;
+    }, {});
+  }, [cards]);
+
+  const { data: decksData } = useQuery({
+    queryKey: ["decks"],
+    queryFn: async () => {
+      const [decksResponse, matchupDataResponse] = await Promise.all([
+        fetch("/data/best-decks.json"),
+        fetch("/data/matchup-data.json"),
+      ]);
+
+      if (!decksResponse.ok) {
+        throw new Error(`Failed to fetch best-decks.json: ${decksResponse.status} ${decksResponse.statusText}`);
+      }
+      if (!matchupDataResponse.ok) {
+        throw new Error(`Failed to fetch matchup-data.json: ${matchupDataResponse.status} ${matchupDataResponse.statusText}`);
+      }
+
+      const [decksData, matchupData] = await Promise.all([
+        decksResponse.json(),
+        matchupDataResponse.json(),
+      ]);
+
+      return { decks: decksData, matchupData };
+    },
+  });
+
+  return useMemo(() => {
+    if (!cardsPayload || !decksData || isPremium === null) return null;
+    return buildDecks(decksData, cardsPayload, cardsMapping, {
+      missingCounts: {},
+      energy: null,
+      includeEx: true,
+      deckAmount: Infinity,
+      sortBy,
+      latestExpansionId: null,
+      latestExpansionCards: null,
+      trimPairedDecks: false,
+    });
+  }, [cardsPayload, decksData, isPremium, cardsMapping, sortBy]);
 };
