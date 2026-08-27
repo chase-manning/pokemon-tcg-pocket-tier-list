@@ -144,7 +144,9 @@
     "metaMovement": "메타 동향",
     "deckColumn": "덱",
     "shareColumn": "점유율",
-    "deltaColumn": "변화"
+    "deltaColumn": "변화",
+    "noTrends": "트렌드 데이터를 현재 사용할 수 없습니다.",
+    "noMovement": "이 기간에 덱 변동이 없습니다."
   },
   "bestDeckFinder": {
     "title": "최고의 덱 찾기",

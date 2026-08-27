@@ -144,7 +144,9 @@
     "metaMovement": "Movimento do meta",
     "deckColumn": "Deck",
     "shareColumn": "Participação",
-    "deltaColumn": "Mudança"
+    "deltaColumn": "Mudança",
+    "noTrends": "Os dados de tendências não estão disponíveis neste momento.",
+    "noMovement": "Sem movimento de baralhos neste período."
   },
   "bestDeckFinder": {
     "title": "Encontre o Seu Melhor Deck",

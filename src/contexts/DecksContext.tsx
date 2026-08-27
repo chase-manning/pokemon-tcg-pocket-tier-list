@@ -56,6 +56,7 @@ export interface FullDeckType {
 
 interface DecksContextType {
   decks: FullDeckType[] | null;
+  metaShare: PipelineMetaShare | null;
   metaShareBySlug: Record<string, MetaShareEntry> | null;
   loading: boolean;
   error: Error | null;
@@ -337,6 +338,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const value = {
           decks,
+          metaShare: decksData?.metaShare ?? null,
           metaShareBySlug,
           loading: cardsLoading || decksLoading,
           error: decksError ?? null,
