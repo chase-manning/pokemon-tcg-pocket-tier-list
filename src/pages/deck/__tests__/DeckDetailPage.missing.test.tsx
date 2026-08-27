@@ -8,6 +8,7 @@ import MissingContextProvider from "../../../components/MissingContext";
 import i18n from "../../../i18n";
 import { ContentReadyProvider } from "../../../ads/ContentReadyContext";
 import FilterContextProvider from "../../../components/FilterContext";
+import useFilters from "../../../app/use-filters";
 import { UIProvider } from "../../../contexts/UIContext";
 import rawCards from "../../../app/__fixtures__/cards.json";
 
@@ -166,6 +167,45 @@ describe("DeckDetailPage with a cut card", () => {
 
     fireEvent.click(screen.getByText("Undo"));
     expect(await screen.findByAltText("Venusaur ex")).toBeInTheDocument();
+  });
+
+  // An unrelated active filter (e.g. energy) drops the deck from the filtered
+  // build without any cuts; extinction must not trigger from that.
+  it("renders a valid deck normally while an unrelated filter is active", async () => {
+    const EnergyToggle = () => {
+      const { setEnergy } = useFilters();
+      return <button onClick={() => setEnergy("Lightning")}>filter</button>;
+    };
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <UIProvider>
+          <MissingContextProvider>
+            <FilterContextProvider>
+              <DecksProvider>
+                <ContentReadyProvider>
+                  <MemoryRouter initialEntries={["/deck/venusaur-a1-004&bulbasaur-a1-001"]}>
+                    <Routes>
+                      <Route path="/deck/:deckId" element={<><DeckDetailPage /><EnergyToggle /></>} />
+                    </Routes>
+                  </MemoryRouter>
+                </ContentReadyProvider>
+              </DecksProvider>
+            </FilterContextProvider>
+          </MissingContextProvider>
+        </UIProvider>
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByAltText("Venusaur ex")).toBeInTheDocument();
+
+    // Lightning energy excludes every Pokémon card in this fixture deck, so
+    // the filtered build drops it entirely; the page must still render.
+    fireEvent.click(screen.getByText("filter"));
+
+    expect(screen.getByAltText("Venusaur ex")).toBeInTheDocument();
+    expect(screen.queryByText("Deck not found")).not.toBeInTheDocument();
   });
 
   it("still reports an unknown deck id as not found", async () => {

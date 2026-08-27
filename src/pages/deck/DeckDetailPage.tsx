@@ -43,7 +43,7 @@ const DeckDetailPage = () => {
   const deckId = useParams().deckId;
   const allDecks = useAllDecks();
   const { decks, metaShareBySlug, loading, error } = useDecks();
-  const { canUndo, undoMissing } = useMissing();
+  const { missing, canUndo, undoMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
@@ -53,10 +53,28 @@ const DeckDetailPage = () => {
   const deck =
     decks?.find((d) => d.id === deckId) ??
     allDecks?.find((d) => d.id === deckId);
-  // Every list of the deck died from cuts: keep the page up with an emptied
-  // grid rather than resurrecting cut cards via the unfiltered build.
-  const extinct =
-    !!deck && !!decks && !decks.some((d) => d.id === deckId);
+  // The `decks` build also drops decks for reasons unrelated to cuts (energy,
+  // EX, expansion, deck-count filters), so extinction is judged by the
+  // missing-card rule alone: no list of the resolved deck survives it. The
+  // same cap as isAffordable ("at most 2 copies less what is missing"), applied
+  // to expanded card arrays where copy count = number of entries per id.
+  const missingCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const id of missing) counts[id] = (counts[id] || 0) + 1;
+    return counts;
+  }, [missing]);
+  const extinct = useMemo(
+    () =>
+      !!deck &&
+      !deck.lists.some((list) => {
+        const inList = countById(list.cards);
+        for (const [id, copies] of inList) {
+          if (missingCounts[id] && copies > 2 - missingCounts[id]) return false;
+        }
+        return true;
+      }),
+    [deck, missingCounts]
+  );
   const shareEntry: MetaShareEntry | null =
     metaShareBySlug?.[deckId ?? ""] ?? null;
 
