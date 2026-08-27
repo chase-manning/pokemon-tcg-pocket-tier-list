@@ -6,12 +6,14 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import {
   CardType,
+  CardsPayload,
   fetchCards,
 } from "../app/cards-api";
 import { createDeckCode } from "../app/deck-code";
 import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
 import { MetaShareEntry, PipelineMatchupEntry, PipelineMetaShare, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
+import { SortBy } from "../components/FilterContext";
 import {
   cardToCount,
   cardToId,
@@ -56,6 +58,7 @@ export interface FullDeckType {
 
 interface DecksContextType {
   decks: FullDeckType[] | null;
+  allDecks: FullDeckType[] | null;
   metaShare: PipelineMetaShare | null;
   metaShareBySlug: Record<string, MetaShareEntry> | null;
   loading: boolean;
@@ -97,6 +100,193 @@ const loadMetaShare = async (): Promise<PipelineMetaShare | null> => {
   } catch {
     return null;
   }
+};
+
+interface BuildOptions {
+  missingCounts: Record<string, number>;
+  energy: string | null;
+  includeEx: boolean;
+  deckAmount: number;
+  sortBy: SortBy;
+  latestExpansionId: string | null;
+  latestExpansionCards: number | null;
+}
+
+// Legacy tier-list shape: with no energy filter active the list keeps at most
+// one paired ("&") deck. Detail pages link straight to pairs, so allDecks
+// skips this trim while decks keeps it.
+const trimPairedDecks = (fullDecks: FullDeckType[]): FullDeckType[] => {
+  const includedDecks = [];
+  let hasOneDouble = false;
+  for (let i = fullDecks.length - 1; i >= 0; i--) {
+    const deck = fullDecks[i];
+    if (!hasOneDouble) {
+      if (!deck.name.includes("&")) {
+        continue;
+      } else {
+        hasOneDouble = true;
+      }
+    }
+    includedDecks.push(deck);
+  }
+  return includedDecks.reverse();
+};
+
+const buildDecks = (
+  decksData: { decks: PartialDeckType[]; matchupData: Record<string, PipelineMatchupEntry[]> },
+  cardsPayload: CardsPayload,
+  cardsMapping: Record<string, CardType>,
+  options: BuildOptions
+): FullDeckType[] => {
+  const { decks, matchupData } = decksData;
+  const {
+    missingCounts,
+    energy,
+    includeEx,
+    deckAmount,
+    sortBy,
+    latestExpansionId,
+    latestExpansionCards,
+  } = options;
+
+  const unresolvedCardIds = new Set<string>();
+  const canResolveIcon = (id: string): boolean => {
+    if (cardsMapping[id]) return true;
+    unresolvedCardIds.add(id);
+    return false;
+  };
+
+  const decksFiltered = decks
+      .map((deck: PartialDeckType) => {
+        const filteredLists = deck.lists
+            .filter((list: PartialList) => {
+              const unresolved = findUnresolvedCardIds(
+                  list.cards,
+                  cardsMapping
+              );
+              unresolved.forEach((id: string) => unresolvedCardIds.add(id));
+              return unresolved.length === 0;
+            })
+            .filter((list: PartialList) =>
+                isAffordable(list.cards, missingCounts)
+            )
+            .filter((list: PartialList) =>
+                matchesEnergy(list.cards, cardsMapping, energy)
+            )
+            .filter((list: PartialList) =>
+                matchesExFilter(list.cards, cardsMapping, includeEx)
+            )
+            .filter((list: PartialList) =>
+                hasEnoughLatestExpansionCards(
+                    list.cards,
+                    cardsMapping,
+                    latestExpansionId,
+                    latestExpansionCards
+                )
+            );
+
+        return { ...deck, lists: filteredLists };
+      })
+      .filter((deck: PartialDeckType) => deck.lists.length > 0)
+      .filter((deck: PartialDeckType) =>
+          canResolveIcon(deckNameToIconIds(deck.name)[0])
+      )
+      .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
+      .slice(0, deckAmount);
+
+  const highestPopularity =
+      decksFiltered.length > 0
+          ? decksFiltered.sort(
+              (a: PartialDeckType, b: PartialDeckType) =>
+                  b.popularity - a.popularity
+          )[0].popularity
+          : 0;
+
+  const highestStrength =
+      decksFiltered.length > 0
+          ? decksFiltered
+              .map((deck: PartialDeckType) => maxStrength(deck))
+              .sort((a: number, b: number) => b - a)[0]
+          : 0;
+
+  const fullDecks = decksFiltered
+      .map((oldDeck: PartialDeckType) => {
+        const matchups = matchupData[oldDeck.name];
+
+        const lists: FullList[] = oldDeck.lists.map((oldList: PartialList) => {
+          const newCards: CardType[] = [];
+          for (const oldCard of oldList.cards) {
+            const amount = cardToCount(oldCard);
+            const id = cardToId(oldCard);
+            const card = cardsMapping[id];
+            for (let i = 0; i < amount; i++) {
+              newCards.push(card);
+            }
+          }
+          return {
+            score: oldList.score,
+            strength: oldList.strength,
+            cards: newCards,
+            energyIds: [],
+            deckCode: null,
+          };
+        });
+
+        const cardIds = deckNameToIconIds(oldDeck.name);
+        const iconSecondary = cardIds[1]
+          ? cardsMapping[cardIds[1]] ?? null
+          : null;
+
+        const deck: FullDeckType = {
+          id: deckSlug(oldDeck.name),
+          name: oldDeck.name,
+          lists,
+          // sort reorders the array in place; pick before augmenting.
+          bestList: (() => {
+            const bestList = lists.sort((a: FullList, b: FullList) => b.score - a.score)[0];
+            const deckBuilderNrs = bestList.cards.map((card) => card.deckBuilderNr);
+            if (deckBuilderNrs.some((nr) => nr == null)) {
+              return { ...bestList, energyIds: [], deckCode: null };
+            }
+            const energyIds = inferEnergyIds(
+              bestList.cards.map((card) => ({
+                supertype: card.supertype,
+                deckBuilderNr: card.deckBuilderNr as number,
+                attacks: cardsPayload.attacksByDeckBuilderNr.get(card.deckBuilderNr as number),
+              }))
+            );
+            return {
+              ...bestList,
+              energyIds,
+              deckCode: createDeckCode(deckBuilderNrs as number[], energyIds),
+            };
+          })(),
+          score: maxScore(oldDeck),
+          popularity: highestPopularity > 0 ? oldDeck.popularity / highestPopularity : 0,
+          strength: highestStrength > 0 ? maxStrength(oldDeck) / highestStrength : 0,
+          percentOfGames: oldDeck.percentOfGames,
+          matchups,
+          iconPrimary: cardsMapping[cardIds[0]],
+          iconSecondary,
+        };
+        return deck;
+      })
+      .sort(
+          (a: FullDeckType, b: FullDeckType) =>
+              getSortValue(b, sortBy) - getSortValue(a, sortBy)
+      );
+
+  if (unresolvedCardIds.size > 0) {
+    console.warn(
+        `Skipped decks referencing ${unresolvedCardIds.size} card id(s) missing from the card data: ${Array.from(
+            unresolvedCardIds
+        ).join(", ")}`
+    );
+  }
+
+  if (energy !== null) return fullDecks;
+
+  return trimPairedDecks(fullDecks);
 };
 
 export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -159,169 +349,36 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
         : null;
   }, [expansions]);
 
+  const allDecks = useMemo(() => {
+    if (!cardsPayload || !decksData || isPremium === null) return null;
+    return buildDecks(decksData, cardsPayload, cardsMapping, {
+      missingCounts: {},
+      energy: null,
+      includeEx: true,
+      deckAmount: Infinity,
+      sortBy,
+      latestExpansionId: null,
+      latestExpansionCards: null,
+    });
+  }, [cardsPayload, decksData, isPremium, cardsMapping, sortBy]);
+
   const decks = useMemo(() => {
     if (!cardsPayload || !decksData || isPremium === null) return null;
 
-    const { decks, matchupData } = decksData;
-
-    const unresolvedCardIds = new Set<string>();
-    const canResolveIcon = (id: string): boolean => {
-      if (cardsMapping[id]) return true;
-      unresolvedCardIds.add(id);
-      return false;
-    };
-
-    // Pre-calculate missing cards map for O(1) lookups
     const missingCounts: Record<string, number> = {};
     for (const id of missing) {
       missingCounts[id] = (missingCounts[id] || 0) + 1;
     }
 
-    const decksFiltered = decks
-        .map((deck: PartialDeckType) => {
-          const filteredLists = deck.lists
-              .filter((list: PartialList) => {
-                const unresolved = findUnresolvedCardIds(
-                    list.cards,
-                    cardsMapping
-                );
-                unresolved.forEach((id: string) => unresolvedCardIds.add(id));
-                return unresolved.length === 0;
-              })
-              .filter((list: PartialList) =>
-                  isAffordable(list.cards, missingCounts)
-              )
-              .filter((list: PartialList) =>
-                  matchesEnergy(list.cards, cardsMapping, energy)
-              )
-              .filter((list: PartialList) =>
-                  matchesExFilter(list.cards, cardsMapping, includeEx)
-              )
-              .filter((list: PartialList) =>
-                  hasEnoughLatestExpansionCards(
-                      list.cards,
-                      cardsMapping,
-                      latestExpansionId,
-                      latestExpansionCards
-                  )
-              );
-
-          return { ...deck, lists: filteredLists };
-        })
-        .filter((deck: PartialDeckType) => deck.lists.length > 0)
-        .filter((deck: PartialDeckType) =>
-            canResolveIcon(deckNameToIconIds(deck.name)[0])
-        )
-        .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
-        .slice(0, deckAmount);
-
-    const highestPopularity =
-        decksFiltered.length > 0
-            ? decksFiltered.sort(
-                (a: PartialDeckType, b: PartialDeckType) =>
-                    b.popularity - a.popularity
-            )[0].popularity
-            : 0;
-
-    const highestStrength =
-        decksFiltered.length > 0
-            ? decksFiltered
-                .map((deck: PartialDeckType) => maxStrength(deck))
-                .sort((a: number, b: number) => b - a)[0]
-            : 0;
-
-    const fullDecks = decksFiltered
-        .map((oldDeck: PartialDeckType) => {
-          const matchups = matchupData[oldDeck.name];
-
-          const lists: FullList[] = oldDeck.lists.map((oldList: PartialList) => {
-            const newCards: CardType[] = [];
-            for (const oldCard of oldList.cards) {
-              const amount = cardToCount(oldCard);
-              const id = cardToId(oldCard);
-              const card = cardsMapping[id];
-              for (let i = 0; i < amount; i++) {
-                newCards.push(card);
-              }
-            }
-            return {
-              score: oldList.score,
-              strength: oldList.strength,
-              cards: newCards,
-              energyIds: [],
-              deckCode: null,
-            };
-          });
-
-          const cardIds = deckNameToIconIds(oldDeck.name);
-          const iconSecondary = cardIds[1]
-            ? cardsMapping[cardIds[1]] ?? null
-            : null;
-
-          const deck: FullDeckType = {
-            id: deckSlug(oldDeck.name),
-            name: oldDeck.name,
-            lists,
-            // sort reorders the array in place; pick before augmenting.
-            bestList: (() => {
-              const bestList = lists.sort((a: FullList, b: FullList) => b.score - a.score)[0];
-              const deckBuilderNrs = bestList.cards.map((card) => card.deckBuilderNr);
-              if (deckBuilderNrs.some((nr) => nr == null)) {
-                return { ...bestList, energyIds: [], deckCode: null };
-              }
-              const energyIds = inferEnergyIds(
-                bestList.cards.map((card) => ({
-                  supertype: card.supertype,
-                  deckBuilderNr: card.deckBuilderNr as number,
-                  attacks: cardsPayload!.attacksByDeckBuilderNr.get(card.deckBuilderNr as number),
-                }))
-              );
-              return {
-                ...bestList,
-                energyIds,
-                deckCode: createDeckCode(deckBuilderNrs as number[], energyIds),
-              };
-            })(),
-            score: maxScore(oldDeck),
-            popularity: highestPopularity > 0 ? oldDeck.popularity / highestPopularity : 0,
-            strength: highestStrength > 0 ? maxStrength(oldDeck) / highestStrength : 0,
-            percentOfGames: oldDeck.percentOfGames,
-            matchups,
-            iconPrimary: cardsMapping[cardIds[0]],
-            iconSecondary,
-              };
-          return deck;
-        })
-        .sort(
-            (a: FullDeckType, b: FullDeckType) =>
-                getSortValue(b, sortBy) - getSortValue(a, sortBy)
-        );
-
-    if (unresolvedCardIds.size > 0) {
-      console.warn(
-          `Skipped decks referencing ${unresolvedCardIds.size} card id(s) missing from the card data: ${Array.from(
-              unresolvedCardIds
-          ).join(", ")}`
-      );
-    }
-
-    if (energy !== null) return fullDecks;
-
-    const includedDecks = [];
-    let hasOneDouble = false;
-    for (let i = fullDecks.length - 1; i >= 0; i--) {
-      const deck = fullDecks[i];
-      if (!hasOneDouble) {
-        if (!deck.name.includes("&")) {
-          continue;
-        } else {
-          hasOneDouble = true;
-        }
-      }
-      includedDecks.push(deck);
-    }
-
-    return includedDecks.reverse();
+    return buildDecks(decksData, cardsPayload, cardsMapping, {
+      missingCounts,
+      energy,
+      includeEx,
+      deckAmount,
+      sortBy,
+      latestExpansionId,
+      latestExpansionCards,
+    });
   }, [
     cardsPayload,
     decksData,
@@ -338,6 +395,7 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const value = {
           decks,
+          allDecks,
           metaShare: decksData?.metaShare ?? null,
           metaShareBySlug,
           loading: cardsLoading || decksLoading,
