@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { useDecks, MatchupType } from "../../contexts/DecksContext";
+import useMissing from "../../app/use-missing";
 import DeckCardGrid from "./DeckCardGrid";
 import DeckHeadTags from "./DeckHeadTags";
 import DeckCard from "../../components/DeckCard";
@@ -35,25 +36,27 @@ import {
   PanelSection,
   StyledDeckPage,
   SubHeader,
+  UndoButton,
 } from "./deck-page.styles";
 
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
-  const { decks, metaShareBySlug, loading, error } = useDecks();
+  const { allDecks, metaShareBySlug, loading, error } = useDecks();
+  const { canUndo, undoMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
-  const deck = decks?.find((d) => d.id === deckId);
+  const deck = allDecks?.find((d) => d.id === deckId);
   const shareEntry: MetaShareEntry | null =
     metaShareBySlug?.[deckId ?? ""] ?? null;
 
   // Ready (for showing ads) only once a real deck is resolved, never on the
   // loading or "not enough cards" screens.
-  useMarkContentReady(!loading && !!decks && !!deck);
+  useMarkContentReady(!loading && !!allDecks && !!deck);
 
   const deckMap = useMemo(
-    () => new Map((decks ?? []).map((d) => [d.name, d])),
-    [decks]
+    () => new Map((allDecks ?? []).map((d) => [d.name, d])),
+    [allDecks]
   );
 
   // Everything here depends on the resolved deck, so it is computed once per
@@ -97,7 +100,7 @@ const DeckDetailPage = () => {
 
   if (loading) return <Overlay>Loading...</Overlay>;
   if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
-  if (!decks) return <Overlay>Loading...</Overlay>;
+  if (!allDecks) return <Overlay>Loading...</Overlay>;
   if (!derived || !deck) return <Overlay>Deck not found</Overlay>;
 
   const { uniqueCards, cardCounts, alternatives, strongAgainst, weakAgainst } =
@@ -114,6 +117,9 @@ const DeckDetailPage = () => {
       <StyledDeckPage>
         <CardSection>
           <DeckCardGrid cards={uniqueCards} counts={cardCounts} />
+          {canUndo && (
+            <UndoButton onClick={undoMissing}>{t("deckPage.undo")}</UndoButton>
+          )}
           <AdInContent placement="deck" />
         </CardSection>
         <PanelSection>
