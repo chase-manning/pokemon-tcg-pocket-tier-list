@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import { useDecks, useAllDecks, MatchupType } from "../../contexts/DecksContext";
+import { useDecks, useDeckDetail, MatchupType } from "../../contexts/DecksContext";
 import useMissing from "../../app/use-missing";
 import DeckCardGrid from "./DeckCardGrid";
 import DeckHeadTags from "./DeckHeadTags";
@@ -41,53 +41,31 @@ import {
 
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
-  const allDecks = useAllDecks();
   const { decks, metaShareBySlug, loading, error } = useDecks();
   const { missing, canUndo, undoMissing } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
-  // Missing-filtered build first so a cut re-resolves the best list like the
-  // tier list does; the unfiltered build only covers the case where every
-  // list of the deck died and the filtered one no longer contains it.
-  const deck =
-    decks?.find((d) => d.id === deckId) ??
-    allDecks?.find((d) => d.id === deckId);
-  // The `decks` build also drops decks for reasons unrelated to cuts (energy,
-  // EX, expansion, deck-count filters), so extinction is judged by the
-  // missing-card rule alone: no list of the resolved deck survives it. The
-  // same cap as isAffordable ("at most 2 copies less what is missing"), applied
-  // to expanded card arrays where copy count = number of entries per id.
   const missingCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const id of missing) counts[id] = (counts[id] || 0) + 1;
     return counts;
   }, [missing]);
-  const extinct = useMemo(
-    () =>
-      !!deck &&
-      !deck.lists.some((list) => {
-        const inList = countById(list.cards);
-        for (const [id, copies] of inList) {
-          if (missingCounts[id] && copies > 2 - missingCounts[id]) return false;
-        }
-        return true;
-      }),
-    [deck, missingCounts]
-  );
+
+  const { deck, extinct, highestStrength } = useDeckDetail(deckId, missingCounts);
   const shareEntry: MetaShareEntry | null =
     metaShareBySlug?.[deckId ?? ""] ?? null;
 
   // Ready (for showing ads) only once a real deck is resolved, never on the
   // loading or "not enough cards" screens.
-  useMarkContentReady(!loading && !!allDecks && !!deck);
+  useMarkContentReady(!loading && !!deck);
 
+  // Opponent tiles only; the viewed deck resolves through useDeckDetail. A
+  // filter or the paired trim can drop an opponent from `decks`, which
+  // validMatchups then filters out rather than crashing on.
   const deckMap = useMemo(
-    () =>
-      new Map(
-        (extinct ? decks ?? [] : allDecks ?? []).map((d) => [d.name, d])
-      ),
-    [allDecks, decks, extinct]
+    () => new Map((decks ?? []).map((d) => [d.name, d])),
+    [decks]
   );
 
   // Everything here depends on the resolved deck, so it is computed once per
@@ -142,7 +120,6 @@ const DeckDetailPage = () => {
 
   if (loading) return <Overlay>Loading...</Overlay>;
   if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
-  if (!allDecks) return <Overlay>Loading...</Overlay>;
   if (!derived || !deck) return <Overlay>Deck not found</Overlay>;
 
   const { uniqueCards, cardCounts, alternatives, strongAgainst, weakAgainst } =
@@ -174,7 +151,9 @@ const DeckDetailPage = () => {
               <KeyStats>
                 <KeyStatRow>
                   <span>{t("deckPage.strength")}:</span>
-                  <KeyStatValue>{(deck.strength * 10).toFixed(1)}</KeyStatValue>
+                  <KeyStatValue>
+                    {((deck.strength / (highestStrength || 1)) * 10).toFixed(1)}
+                  </KeyStatValue>
                   <Tooltip
                     text={t("deckPage.strengthTooltip")}
                     ariaLabel={t("deckPage.showTooltip")}
