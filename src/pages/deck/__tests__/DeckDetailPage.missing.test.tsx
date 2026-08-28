@@ -169,6 +169,35 @@ describe("DeckDetailPage with a cut card", () => {
     expect(await screen.findByAltText("Venusaur ex")).toBeInTheDocument();
   });
 
+  it("shows the extinct notice and a tier-list link when no list survives", async () => {
+    decks = [
+      {
+        name: GOOD_DECK,
+        lists: [{ cards: ["2:a1-004", "2:a1-219"], score: 10, strength: 5 }],
+        percentOfGames: 50,
+        popularity: 100,
+      },
+    ];
+    renderDetailPage();
+
+    const card = await screen.findByAltText("Venusaur ex");
+    fireEvent.click(card);
+
+    expect(
+      await screen.findByText(
+        "That was the last copy of Venusaur ex. There is no version of this deck left to build."
+      )
+    ).toBeInTheDocument();
+    expect(screen.getByText("or")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "try another deck" })
+    ).toHaveAttribute("href", "/tier-list");
+
+    // Undo still restores the deck from the extinct state.
+    fireEvent.click(screen.getByText("Undo"));
+    expect(await screen.findByAltText("Venusaur ex")).toBeInTheDocument();
+  });
+
   // An unrelated active filter (e.g. energy) drops the deck from the filtered
   // build without any cuts; extinction must not trigger from that.
   it("renders a valid deck normally while an unrelated filter is active", async () => {

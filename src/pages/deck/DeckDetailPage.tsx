@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { useDecks, useDeckDetail, MatchupType } from "../../contexts/DecksContext";
 import useMissing from "../../app/use-missing";
+import { useQuery } from "@tanstack/react-query";
+import { CardType, fetchCards } from "../../app/cards-api";
 import DeckCardGrid from "./DeckCardGrid";
 import DeckHeadTags from "./DeckHeadTags";
 import DeckCard from "../../components/DeckCard";
@@ -24,6 +26,8 @@ import {
   ArrowRight,
   CardSection,
   DeckCardContainer,
+  EmptyActions,
+  EmptyMessage,
   KeyStats,
   KeyStatRow,
   KeyStatValue,
@@ -32,9 +36,12 @@ import {
   MatchupList,
   MatchupSection,
   Matchups,
+  Or,
   Overlay,
   PanelSection,
+  Shrug,
   StyledDeckPage,
+  StyledLink,
   SubHeader,
   UndoButton,
 } from "./deck-page.styles";
@@ -42,7 +49,7 @@ import {
 const DeckDetailPage = () => {
   const deckId = useParams().deckId;
   const { decks, metaShareBySlug, loading, error } = useDecks();
-  const { missing, canUndo, undoMissing } = useMissing();
+  const { missing, canUndo, undoMissing, lastRemovedId } = useMissing();
   const { t } = useTranslation();
   const isPremium = useIsPremium();
 
@@ -53,6 +60,19 @@ const DeckDetailPage = () => {
   }, [missing]);
 
   const { deck, extinct, highestStrength } = useDeckDetail(deckId, missingCounts);
+  // Card data for resolving the removed card's name in the extinct notice.
+  // React Query dedupes this against the same queryKey used elsewhere, so it is
+  // a cache read, not a second network fetch.
+  const { data: cardsPayload } = useQuery({
+    queryKey: ["cards"],
+    queryFn: fetchCards,
+  });
+  const cardsById = new Map(
+    (cardsPayload?.cards ?? []).map((card) => [card.id, card] as [string, CardType])
+  );
+  const lastCutName = lastRemovedId
+    ? (cardsById.get(lastRemovedId)?.name ?? null)
+    : null;
   const shareEntry: MetaShareEntry | null =
     metaShareBySlug?.[deckId ?? ""] ?? null;
 
@@ -121,6 +141,34 @@ const DeckDetailPage = () => {
   if (loading) return <Overlay>Loading...</Overlay>;
   if (error) return <Overlay>Error loading data: {error.message}</Overlay>;
   if (!derived || !deck) return <Overlay>Deck not found</Overlay>;
+
+  if (extinct) {
+    return (
+      <Overlay>
+        <Shrug>{t("deckPage.extinctShrug")}</Shrug>
+        {lastCutName ? (
+          <EmptyMessage>
+            {t("deckPage.extinctBody", {
+              card: lastCutName,
+              defaultValue: `That was the last copy of ${lastCutName}. There is no version of this deck left to build.`,
+            })}
+          </EmptyMessage>
+        ) : (
+          <EmptyMessage>
+            {t(
+              "deckPage.extinctBodyNoCard",
+              "Every version of this deck needs a card you have marked as missing. There is nothing left to build."
+            )}
+          </EmptyMessage>
+        )}
+        <EmptyActions>
+          <UndoButton onClick={undoMissing}>{t("deckPage.undo")}</UndoButton>
+          <Or>or</Or>
+          <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
+        </EmptyActions>
+      </Overlay>
+    );
+  }
 
   const { uniqueCards, cardCounts, alternatives, strongAgainst, weakAgainst } =
     derived;
