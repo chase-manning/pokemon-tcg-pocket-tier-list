@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router";
 import DeckDetailPage from "../DeckDetailPage";
@@ -13,6 +13,7 @@ import rawCards from "../../../app/__fixtures__/cards-full-v510.json";
 import realDecks from "../../../../public/data/best-decks.json";
 import { deckSlug } from "../../../app/deck-slug";
 import { cardToId } from "../../../app/deck-filters";
+import type { RawCardType } from "../../../app/cards-api";
 
 vi.mock("../../../ads/AdInContent", () => ({
   __esModule: true,
@@ -96,33 +97,56 @@ const renderDeck = (deckId: string) =>
 // the cut card must not stay on screen. Hand-picked fixtures need a lucky
 // guess to hit the deck/card combination that trips the trim; every deck's
 // lead card sweeps the whole space.
+const imageUrlOf = (cards: RawCardType[], id: string): string | null =>
+  cards.find((card) => card.id === id)?.image ?? null;
+
 describe.each(
   (realDecks as { name: string; lists: { cards: string[]; score: number }[] }[]).map(
-    (d) => ({
-      deckId: deckSlug(d.name),
-      name: d.name,
-      cutCardId: cardToId(
+    (d) => {
+      const cutCardId = cardToId(
         d.lists.reduce((a, b) => (b.score > a.score ? b : a)).cards[0]
-      ),
-    })
+      );
+      return {
+        deckId: deckSlug(d.name),
+        name: d.name,
+        cutCardId,
+        cutCardImage: imageUrlOf(rawCards, cutCardId),
+      };
+    }
   )
-)("$name", ({ deckId, cutCardId }) => {
+)("$name", ({ deckId, cutCardId, cutCardImage }) => {
   it(`cutting ${cutCardId} removes it from the grid`, async () => {
     renderDeck(deckId);
 
-    const cardImg = await screen.findAllByRole("img");
-    const target = cardImg.find(
-      (img) => (img as HTMLImageElement).src?.includes(cutCardId)
-    );
-    if (!target) return;
-
-    fireEvent.click(target);
-
-    await screen.findByText("Undo");
-    expect(
+    // Card names repeat across printings, so the tile is located by its
+    // image URL, which is unique per id. The tile is the button holding the
+    // img, with the copy count as its text.
+    const tileOf = () =>
       screen
-        .queryAllByRole("img")
-        .some((img) => (img as HTMLImageElement).src.includes(cutCardId))
-    ).toBe(false);
+        .getAllByRole("button")
+        .find((b) =>
+          within(b)
+            .queryAllByRole("img")
+            .some((img) => img.getAttribute("src") === cutCardImage)
+        );
+    const tile = await waitFor(() => {
+      const found = tileOf();
+      expect(found).toBeDefined();
+      return found!;
+    });
+    const before = Number(tile.textContent);
+    expect(before).toBeGreaterThan(0);
+
+    fireEvent.click(tile);
+
+    // A cut can drop the deck to a list still carrying one copy of the card
+    // (affordable at 1 <= 2 - missing), so visibility alone is not the
+    // invariant. The copy count on the tile must strictly decrease.
+    await screen.findByText("Undo");
+    await waitFor(() => {
+      const after = tileOf();
+      if (!after) return;
+      expect(Number(after.textContent)).toBeLessThan(before);
+    });
   }, 10000);
 });

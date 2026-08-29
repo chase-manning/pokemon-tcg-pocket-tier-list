@@ -105,6 +105,7 @@
     "extinctShrug": "¯\\_(ツ)_/¯",
     "extinctBody": "Das war die letzte Kopie von {{card}}. Es gibt keine Version dieses Decks mehr, die sich bauen lässt.",
     "extinctBodyNoCard": "Jede Version dieses Decks braucht eine Karte, die du als fehlend markiert hast. Es bleibt nichts zum Bauen übrig.",
+    "or": "oder",
     "undo": "Rückgängig",
     "alternatives": "Alternativen",
     "metaShare": "Meta-Anteil",

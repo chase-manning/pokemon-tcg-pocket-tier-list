@@ -105,6 +105,7 @@
     "extinctShrug": "¯\\_(ツ)_/¯",
     "extinctBody": "Esa era la última copia de {{card}}. No queda ninguna versión de este mazo por construir.",
     "extinctBodyNoCard": "Todas las versiones de este mazo necesitan una carta que has marcado como falta. No queda nada por construir.",
+    "or": "o",
     "undo": "Deshacer",
     "alternatives": "Alternativas",
     "metaShare": "Cuota del meta",

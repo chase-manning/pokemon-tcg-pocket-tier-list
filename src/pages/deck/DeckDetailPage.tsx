@@ -163,7 +163,7 @@ const DeckDetailPage = () => {
         )}
         <EmptyActions>
           <UndoButton onClick={undoMissing}>{t("deckPage.undo")}</UndoButton>
-          <Or>or</Or>
+          <Or>{t("deckPage.or")}</Or>
           <StyledLink to="/tier-list">{t("deckPage.tryAnotherDeck")}</StyledLink>
         </EmptyActions>
       </Overlay>
