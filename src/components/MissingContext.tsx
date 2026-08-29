@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useCallback, useMemo, useState, ReactNode } from "react";
 
 interface MissingContextType {
   missing: string[];
@@ -26,13 +26,13 @@ const MissingContextProvider = ({ children }: Props) => {
   // copies of a card were cut). Undo pops the most recent batch.
   const [history, setHistory] = useState<string[][]>([]);
 
-  const addMissing = (ids: string[]) => {
+  const addMissing = useCallback((ids: string[]) => {
     if (ids.length === 0) return;
     setMissing((prev) => [...prev, ...ids]);
     setHistory((prev) => [...prev, ids]);
-  };
+  }, []);
 
-  const undoMissing = () => {
+  const undoMissing = useCallback(() => {
     if (history.length === 0) return;
     const lastBatch = history[history.length - 1];
     setMissing((prev) => {
@@ -44,21 +44,24 @@ const MissingContextProvider = ({ children }: Props) => {
       return next;
     });
     setHistory((prev) => prev.slice(0, -1));
-  };
+  }, [history]);
 
   const lastBatch = history[history.length - 1];
   const lastRemovedId = lastBatch ? lastBatch[0] : null;
 
+  const value = useMemo(
+    () => ({
+      missing,
+      addMissing,
+      canUndo: history.length > 0,
+      undoMissing,
+      lastRemovedId,
+    }),
+    [missing, history, addMissing, undoMissing, lastRemovedId]
+  );
+
   return (
-    <MissingContext.Provider
-      value={{
-        missing,
-        addMissing,
-        canUndo: history.length > 0,
-        undoMissing,
-        lastRemovedId,
-      }}
-    >
+    <MissingContext.Provider value={value}>
       {children}
     </MissingContext.Provider>
   );

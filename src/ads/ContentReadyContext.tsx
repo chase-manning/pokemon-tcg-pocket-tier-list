@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import { useLocation } from "react-router";
@@ -31,8 +32,10 @@ export const ContentReadyProvider: React.FC<{ children: React.ReactNode }> = ({
   const [readyPath, setReadyPath] = useState<string | null>(null);
   const markReady = useCallback((path: string) => setReadyPath(path), []);
 
+  const value = useMemo(() => ({ readyPath, markReady }), [readyPath, markReady]);
+
   return (
-    <ContentReadyContext.Provider value={{ readyPath, markReady }}>
+    <ContentReadyContext.Provider value={value}>
       {children}
     </ContentReadyContext.Provider>
   );

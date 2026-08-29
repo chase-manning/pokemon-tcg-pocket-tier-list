@@ -6,15 +6,13 @@ import useIsPremium from "../app/use-is-premium";
 import { getSortValue } from "../app/sorting-helper";
 import {
   CardType,
+  CardsPayload,
   fetchCards,
 } from "../app/cards-api";
-import { createDeckCode } from "../app/deck-code";
-import { inferEnergyIds } from "../app/deck-energy";
 import useExpansions from "../app/use-expansions";
 import { MetaShareEntry, PipelineMatchupEntry, PipelineMetaShare, PipelinePartialDeck, PipelineDeckList } from "../types/pipeline-data";
+import { SortBy } from "../components/FilterContext";
 import {
-  cardToCount,
-  cardToId,
   deckNameToIconIds,
   findUnresolvedCardIds,
   hasEnoughLatestExpansionCards,
@@ -23,6 +21,13 @@ import {
   matchesExFilter,
 } from "../app/deck-filters";
 import { deckSlug } from "../app/deck-slug";
+import {
+  buildFullLists,
+  pickBestList,
+  resolveDeckDetail,
+  highestScoreAndStrength,
+  type FullList,
+} from "../app/deck-resolution";
 
 export type { CardType };
 
@@ -31,14 +36,6 @@ export type MatchupType = PipelineMatchupEntry;
 type PartialList = PipelineDeckList;
 
 type PartialDeckType = PipelinePartialDeck;
-
-interface FullList {
-  cards: CardType[];
-  score: number;
-  strength: number;
-  energyIds: number[];
-  deckCode: string | null;
-}
 
 export interface FullDeckType {
   id: string;
@@ -99,6 +96,157 @@ const loadMetaShare = async (): Promise<PipelineMetaShare | null> => {
   }
 };
 
+interface BuildOptions {
+  missingCounts: Record<string, number>;
+  energy: string | null;
+  includeEx: boolean;
+  deckAmount: number;
+  sortBy: SortBy;
+  latestExpansionId: string | null;
+  latestExpansionCards: number | null;
+  // The legacy tier list keeps at most one paired ("&") deck. Detail pages
+  // link straight to pairs, so their view of the list must not trim them.
+  trimPairedDecks: boolean;
+}
+const trimPairedDecks = (fullDecks: FullDeckType[]): FullDeckType[] => {
+  const includedDecks = [];
+  let hasOneDouble = false;
+  for (let i = fullDecks.length - 1; i >= 0; i--) {
+    const deck = fullDecks[i];
+    if (!hasOneDouble) {
+      if (!deck.name.includes("&")) {
+        continue;
+      } else {
+        hasOneDouble = true;
+      }
+    }
+    includedDecks.push(deck);
+  }
+  return includedDecks.reverse();
+};
+
+const buildDecks = (
+  decksData: { decks: PartialDeckType[]; matchupData: Record<string, PipelineMatchupEntry[]> },
+  cardsPayload: CardsPayload,
+  cardsMapping: Record<string, CardType>,
+  options: BuildOptions
+): FullDeckType[] => {
+  const { decks, matchupData } = decksData;
+  const {
+    missingCounts,
+    energy,
+    includeEx,
+    deckAmount,
+    sortBy,
+    latestExpansionId,
+    latestExpansionCards,
+  } = options;
+
+  const unresolvedCardIds = new Set<string>();
+  const canResolveIcon = (id: string): boolean => {
+    if (cardsMapping[id]) return true;
+    unresolvedCardIds.add(id);
+    return false;
+  };
+
+  const decksFiltered = decks
+      .map((deck: PartialDeckType) => {
+        const filteredLists = deck.lists
+            .filter((list: PartialList) => {
+              const unresolved = findUnresolvedCardIds(
+                  list.cards,
+                  cardsMapping
+              );
+              unresolved.forEach((id: string) => unresolvedCardIds.add(id));
+              return unresolved.length === 0;
+            })
+            .filter((list: PartialList) =>
+                isAffordable(list.cards, missingCounts)
+            )
+            .filter((list: PartialList) =>
+                matchesEnergy(list.cards, cardsMapping, energy)
+            )
+            .filter((list: PartialList) =>
+                matchesExFilter(list.cards, cardsMapping, includeEx)
+            )
+            .filter((list: PartialList) =>
+                hasEnoughLatestExpansionCards(
+                    list.cards,
+                    cardsMapping,
+                    latestExpansionId,
+                    latestExpansionCards
+                )
+            );
+
+        return { ...deck, lists: filteredLists };
+      })
+      .filter((deck: PartialDeckType) => deck.lists.length > 0)
+      .filter((deck: PartialDeckType) =>
+          canResolveIcon(deckNameToIconIds(deck.name)[0])
+      )
+      .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
+      .slice(0, deckAmount);
+
+  const highestPopularity =
+      decksFiltered.length > 0
+          ? decksFiltered.sort(
+              (a: PartialDeckType, b: PartialDeckType) =>
+                  b.popularity - a.popularity
+          )[0].popularity
+          : 0;
+
+  const highestStrength =
+      decksFiltered.length > 0
+          ? decksFiltered
+              .map((deck: PartialDeckType) => maxStrength(deck))
+              .sort((a: number, b: number) => b - a)[0]
+          : 0;
+
+  const fullDecks = decksFiltered
+      .map((oldDeck: PartialDeckType) => {
+        const matchups = matchupData[oldDeck.name];
+
+        const lists = buildFullLists(oldDeck.lists, cardsMapping, cardsPayload);
+        const bestList = pickBestList(lists, cardsPayload);
+
+        const cardIds = deckNameToIconIds(oldDeck.name);
+        const iconSecondary = cardIds[1]
+          ? cardsMapping[cardIds[1]] ?? null
+          : null;
+
+        const deck: FullDeckType = {
+          id: deckSlug(oldDeck.name),
+          name: oldDeck.name,
+          lists,
+          bestList,
+          score: maxScore(oldDeck),
+          popularity: highestPopularity > 0 ? oldDeck.popularity / highestPopularity : 0,
+          strength: highestStrength > 0 ? maxStrength(oldDeck) / highestStrength : 0,
+          percentOfGames: oldDeck.percentOfGames,
+          matchups,
+          iconPrimary: cardsMapping[cardIds[0]],
+          iconSecondary,
+        };
+        return deck;
+      })
+      .sort(
+          (a: FullDeckType, b: FullDeckType) =>
+              getSortValue(b, sortBy) - getSortValue(a, sortBy)
+      );
+
+  if (unresolvedCardIds.size > 0) {
+    console.warn(
+        `Skipped decks referencing ${unresolvedCardIds.size} card id(s) missing from the card data: ${Array.from(
+            unresolvedCardIds
+        ).join(", ")}`
+    );
+  }
+
+  if (energy !== null) return fullDecks;
+
+  return trimPairedDecks(fullDecks);
+};
+
 export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
                                                                          children,
                                                                        }) => {
@@ -107,43 +255,9 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const isPremium = useIsPremium();
   const expansions = useExpansions();
 
-  const { data: cardsPayload, isLoading: cardsLoading } = useQuery({
-    queryKey: ["cards"],
-    queryFn: fetchCards,
-  });
-  const cards = cardsPayload?.cards;
+  const { cardsPayload, cardsMapping, isLoading: cardsLoading } = useCardsData();
 
-  const cardsMapping: Record<string, CardType> = useMemo(() => {
-    // `cards` is undefined until the query resolves.
-    return (cards ?? []).reduce((acc: Record<string, CardType>, card: CardType) => {
-      acc[card.id] = card;
-      return acc;
-    }, {});
-  }, [cards]);
-
-  const { data: decksData, isLoading: decksLoading, error: decksError } = useQuery({
-      queryKey: ["decks"],
-      queryFn: async () => {
-        const [decksResponse, matchupDataResponse] = await Promise.all([
-          fetch("/data/best-decks.json"),
-          fetch("/data/matchup-data.json"),
-        ]);
-
-        if (!decksResponse.ok) {
-          throw new Error(`Failed to fetch best-decks.json: ${decksResponse.status} ${decksResponse.statusText}`);
-        }
-        if (!matchupDataResponse.ok) {
-          throw new Error(`Failed to fetch matchup-data.json: ${matchupDataResponse.status} ${matchupDataResponse.statusText}`);
-        }
-
-        const [decksData, matchupData] = await Promise.all([
-          decksResponse.json(),
-          matchupDataResponse.json(),
-        ]);
-
-        return { decks: decksData, matchupData, metaShare: await loadMetaShare() };
-      },
-    });
+  const { data: decksData, isLoading: decksLoading, error: decksError } = useDecksData();
 
   const metaShareBySlug = useMemo(() => {
     const share: PipelineMetaShare | null | undefined = decksData?.metaShare;
@@ -162,166 +276,21 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
   const decks = useMemo(() => {
     if (!cardsPayload || !decksData || isPremium === null) return null;
 
-    const { decks, matchupData } = decksData;
-
-    const unresolvedCardIds = new Set<string>();
-    const canResolveIcon = (id: string): boolean => {
-      if (cardsMapping[id]) return true;
-      unresolvedCardIds.add(id);
-      return false;
-    };
-
-    // Pre-calculate missing cards map for O(1) lookups
     const missingCounts: Record<string, number> = {};
     for (const id of missing) {
       missingCounts[id] = (missingCounts[id] || 0) + 1;
     }
 
-    const decksFiltered = decks
-        .map((deck: PartialDeckType) => {
-          const filteredLists = deck.lists
-              .filter((list: PartialList) => {
-                const unresolved = findUnresolvedCardIds(
-                    list.cards,
-                    cardsMapping
-                );
-                unresolved.forEach((id: string) => unresolvedCardIds.add(id));
-                return unresolved.length === 0;
-              })
-              .filter((list: PartialList) =>
-                  isAffordable(list.cards, missingCounts)
-              )
-              .filter((list: PartialList) =>
-                  matchesEnergy(list.cards, cardsMapping, energy)
-              )
-              .filter((list: PartialList) =>
-                  matchesExFilter(list.cards, cardsMapping, includeEx)
-              )
-              .filter((list: PartialList) =>
-                  hasEnoughLatestExpansionCards(
-                      list.cards,
-                      cardsMapping,
-                      latestExpansionId,
-                      latestExpansionCards
-                  )
-              );
-
-          return { ...deck, lists: filteredLists };
-        })
-        .filter((deck: PartialDeckType) => deck.lists.length > 0)
-        .filter((deck: PartialDeckType) =>
-            canResolveIcon(deckNameToIconIds(deck.name)[0])
-        )
-        .sort((a: PartialDeckType, b: PartialDeckType) => b.percentOfGames - a.percentOfGames)
-        .slice(0, deckAmount);
-
-    const highestPopularity =
-        decksFiltered.length > 0
-            ? decksFiltered.sort(
-                (a: PartialDeckType, b: PartialDeckType) =>
-                    b.popularity - a.popularity
-            )[0].popularity
-            : 0;
-
-    const highestStrength =
-        decksFiltered.length > 0
-            ? decksFiltered
-                .map((deck: PartialDeckType) => maxStrength(deck))
-                .sort((a: number, b: number) => b - a)[0]
-            : 0;
-
-    const fullDecks = decksFiltered
-        .map((oldDeck: PartialDeckType) => {
-          const matchups = matchupData[oldDeck.name];
-
-          const lists: FullList[] = oldDeck.lists.map((oldList: PartialList) => {
-            const newCards: CardType[] = [];
-            for (const oldCard of oldList.cards) {
-              const amount = cardToCount(oldCard);
-              const id = cardToId(oldCard);
-              const card = cardsMapping[id];
-              for (let i = 0; i < amount; i++) {
-                newCards.push(card);
-              }
-            }
-            return {
-              score: oldList.score,
-              strength: oldList.strength,
-              cards: newCards,
-              energyIds: [],
-              deckCode: null,
-            };
-          });
-
-          const cardIds = deckNameToIconIds(oldDeck.name);
-          const iconSecondary = cardIds[1]
-            ? cardsMapping[cardIds[1]] ?? null
-            : null;
-
-          const deck: FullDeckType = {
-            id: deckSlug(oldDeck.name),
-            name: oldDeck.name,
-            lists,
-            // sort reorders the array in place; pick before augmenting.
-            bestList: (() => {
-              const bestList = lists.sort((a: FullList, b: FullList) => b.score - a.score)[0];
-              const deckBuilderNrs = bestList.cards.map((card) => card.deckBuilderNr);
-              if (deckBuilderNrs.some((nr) => nr == null)) {
-                return { ...bestList, energyIds: [], deckCode: null };
-              }
-              const energyIds = inferEnergyIds(
-                bestList.cards.map((card) => ({
-                  supertype: card.supertype,
-                  deckBuilderNr: card.deckBuilderNr as number,
-                  attacks: cardsPayload!.attacksByDeckBuilderNr.get(card.deckBuilderNr as number),
-                }))
-              );
-              return {
-                ...bestList,
-                energyIds,
-                deckCode: createDeckCode(deckBuilderNrs as number[], energyIds),
-              };
-            })(),
-            score: maxScore(oldDeck),
-            popularity: highestPopularity > 0 ? oldDeck.popularity / highestPopularity : 0,
-            strength: highestStrength > 0 ? maxStrength(oldDeck) / highestStrength : 0,
-            percentOfGames: oldDeck.percentOfGames,
-            matchups,
-            iconPrimary: cardsMapping[cardIds[0]],
-            iconSecondary,
-              };
-          return deck;
-        })
-        .sort(
-            (a: FullDeckType, b: FullDeckType) =>
-                getSortValue(b, sortBy) - getSortValue(a, sortBy)
-        );
-
-    if (unresolvedCardIds.size > 0) {
-      console.warn(
-          `Skipped decks referencing ${unresolvedCardIds.size} card id(s) missing from the card data: ${Array.from(
-              unresolvedCardIds
-          ).join(", ")}`
-      );
-    }
-
-    if (energy !== null) return fullDecks;
-
-    const includedDecks = [];
-    let hasOneDouble = false;
-    for (let i = fullDecks.length - 1; i >= 0; i--) {
-      const deck = fullDecks[i];
-      if (!hasOneDouble) {
-        if (!deck.name.includes("&")) {
-          continue;
-        } else {
-          hasOneDouble = true;
-        }
-      }
-      includedDecks.push(deck);
-    }
-
-    return includedDecks.reverse();
+    return buildDecks(decksData, cardsPayload, cardsMapping, {
+      missingCounts,
+      energy,
+      includeEx,
+      deckAmount,
+      sortBy,
+      latestExpansionId,
+      latestExpansionCards,
+      trimPairedDecks: true,
+    });
   }, [
     cardsPayload,
     decksData,
@@ -336,13 +305,16 @@ export const DecksProvider: React.FC<{ children: React.ReactNode }> = ({
     latestExpansionId,
   ]);
 
-  const value = {
-          decks,
-          metaShare: decksData?.metaShare ?? null,
-          metaShareBySlug,
-          loading: cardsLoading || decksLoading,
-          error: decksError ?? null,
-        };
+  const value = useMemo(
+    () => ({
+      decks,
+      metaShare: decksData?.metaShare ?? null,
+      metaShareBySlug,
+      loading: cardsLoading || decksLoading,
+      error: decksError ?? null,
+    }),
+    [decks, decksData, metaShareBySlug, cardsLoading, decksLoading, decksError]
+  );
 
   return (
       <DecksContext.Provider value={value}>{children}</DecksContext.Provider>
@@ -355,4 +327,78 @@ export const useDecks = () => {
     throw new Error("useDecks must be used within a DecksProvider");
   }
   return context;
+};
+
+/// Shared between DecksProvider and useDeckDetail: one React Query cache
+/// entry per key, so a detail page pays no second fetch.
+const useCardsData = () => {
+  const { data: cardsPayload, isLoading } = useQuery({
+    queryKey: ["cards"],
+    queryFn: fetchCards,
+  });
+  const cards = cardsPayload?.cards;
+  const cardsMapping: Record<string, CardType> = useMemo(() => {
+    return (cards ?? []).reduce((acc: Record<string, CardType>, card: CardType) => {
+      acc[card.id] = card;
+      return acc;
+    }, {});
+  }, [cards]);
+  return { cardsPayload, cardsMapping, isLoading };
+};
+
+const useDecksData = () => {
+  return useQuery({
+    queryKey: ["decks"],
+    queryFn: async () => {
+      const [decksResponse, matchupDataResponse] = await Promise.all([
+        fetch("/data/best-decks.json"),
+        fetch("/data/matchup-data.json"),
+      ]);
+
+      if (!decksResponse.ok) {
+        throw new Error(`Failed to fetch best-decks.json: ${decksResponse.status} ${decksResponse.statusText}`);
+      }
+      if (!matchupDataResponse.ok) {
+        throw new Error(`Failed to fetch matchup-data.json: ${matchupDataResponse.status} ${matchupDataResponse.statusText}`);
+      }
+
+      const [decksData, matchupData] = await Promise.all([
+        decksResponse.json(),
+        matchupDataResponse.json(),
+      ]);
+
+      return { decks: decksData, matchupData, metaShare: await loadMetaShare() };
+    },
+  });
+};
+
+/// Detail-page deck resolution. Kept out of the provider so only deck pages
+/// pay for it, but sharing the provider's query keys means no extra fetches.
+export const useDeckDetail = (
+  deckId: string | undefined,
+  missingCounts: Record<string, number>
+) => {
+  const { cardsPayload, cardsMapping } = useCardsData();
+  const { data: decksData } = useDecksData();
+
+  return useMemo(() => {
+    if (!cardsPayload || !decksData || !deckId) {
+      return { deck: null, extinct: false, highestScore: 0, highestStrength: 0 };
+    }
+    const { highestScore, highestStrength } = highestScoreAndStrength(decksData.decks);
+    const resolved = resolveDeckDetail(
+      decksData.decks,
+      decksData.matchupData,
+      cardsPayload,
+      cardsMapping,
+      deckId,
+      missingCounts
+    );
+    return {
+      deck: resolved?.deck ?? null,
+      extinct: resolved?.extinct ?? false,
+      highestScore,
+      highestStrength,
+    };
+  }, [cardsPayload, decksData, cardsMapping, deckId, missingCounts]);
 };

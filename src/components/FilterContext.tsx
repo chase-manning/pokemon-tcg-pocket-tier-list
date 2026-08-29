@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useMemo, useState, ReactNode } from "react";
 import { FREE_DECK_AMOUNT } from "../app/constants";
 
 export enum SortBy {
@@ -50,35 +50,39 @@ const FilterContextProvider = ({ children }: Props) => {
   const [expansion, setExpansion] = useState<string | null>(null);
   const [latestExpansionCards, setLatestExpansionCards] = useState<number | null>(null);
 
+  const value = useMemo(
+    () => ({
+      energy,
+      setEnergy,
+      includeEx,
+      setIncludeEx,
+      deckAmount,
+      setDeckAmount,
+      sortBy,
+      setSortBy,
+      expansion,
+      setExpansion,
+      latestExpansionCards,
+      setLatestExpansionCards,
+    }),
+    [
+      energy,
+      setEnergy,
+      includeEx,
+      setIncludeEx,
+      deckAmount,
+      setDeckAmount,
+      sortBy,
+      setSortBy,
+      expansion,
+      setExpansion,
+      latestExpansionCards,
+      setLatestExpansionCards,
+    ]
+  );
+
   return (
-    <FilterContext.Provider
-      value={{
-        energy,
-        setEnergy: (energy) => {
-          setEnergy(energy);
-        },
-        includeEx,
-        setIncludeEx: (include) => {
-          setIncludeEx(include);
-        },
-        deckAmount,
-        setDeckAmount: (deckAmount) => {
-          setDeckAmount(deckAmount);
-        },
-        sortBy,
-        setSortBy: (sortBy: SortBy) => {
-          setSortBy(sortBy);
-        },
-        expansion,
-        setExpansion: (expansion) => {
-          setExpansion(expansion);
-        },
-        latestExpansionCards,
-        setLatestExpansionCards: (count) => {
-          setLatestExpansionCards(count);
-        },
-      }}
-    >
+    <FilterContext.Provider value={value}>
       {children}
     </FilterContext.Provider>
   );
