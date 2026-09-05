@@ -17,8 +17,7 @@ const useExpansions = (): ExpansionType[] | null => {
   const { data: expansions } = useQuery({
     queryKey: ["expansions"],
     queryFn: async () => {
-      const response = await fetch(EXPANSIONS_URL);
-      return (await response.json()) as ExpansionType[];
+      return EXPANSIONS_URL as unknown as ExpansionType[];
     },
   });
 

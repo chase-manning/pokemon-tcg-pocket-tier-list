@@ -2116,6 +2116,11 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+pokemon-tcg-pocket-cards@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/pokemon-tcg-pocket-cards/-/pokemon-tcg-pocket-cards-5.2.0.tgz#32df24de2384028a768aa2c03b4b9a954b5ce25b"
+  integrity sha512-xIvWtIsyXIqNT5NIIGVT7J1KYieJ+uJHpf7Hre5zQkg/+96Aq1IqwcWAf2TMoz1fUTGsRr3mshlT8NiF7ic9lQ==
+
 prebuild-install@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-7.1.3.tgz#d630abad2b147443f20a212917beae68b8092eec"

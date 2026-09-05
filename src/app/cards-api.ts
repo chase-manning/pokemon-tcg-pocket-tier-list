@@ -75,8 +75,7 @@ const indexCardAttacks = (raw: RawCardType[]): AttacksByDeckBuilderNr => {
  * index before the fetch that fills it.
  */
 export const fetchCards = async (): Promise<CardsPayload> => {
-  const response = await fetch(CARDS_URL);
-  const raw = (await response.json()) as RawCardType[];
+  const raw = CARDS_URL as unknown as RawCardType[];
   return {
     cards: normaliseMultipleCards(raw),
     attacksByDeckBuilderNr: indexCardAttacks(raw),

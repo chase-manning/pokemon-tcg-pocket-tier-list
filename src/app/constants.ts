@@ -1,13 +1,13 @@
 import github from "../assets/github.svg";
 import twitter from "../assets/twitter.svg";
+import cardsPayload from "pokemon-tcg-pocket-cards/data/v5/cards.min.json";
+import expansionsPayload from "pokemon-tcg-pocket-cards/data/v5/expansions.min.json";
 
 export const EXPANSION_NAME = "Ruler of the Skies (B4)"
 
 export const FREE_DECK_AMOUNT = 30;
-export const CARDS_URL =
-  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/cards.min.json";
-export const EXPANSIONS_URL =
-  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/expansions.min.json";
+export const CARDS_URL = cardsPayload;
+export const EXPANSIONS_URL = expansionsPayload;
 export const GITHUB_URL =
   "https://github.com/chase-manning/pokemon-tcg-pocket-tier-list";
 export const CARDS_REPO_URL =

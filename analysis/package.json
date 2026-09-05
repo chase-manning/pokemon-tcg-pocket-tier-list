@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "canvas": "^3.2.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "pokemon-tcg-pocket-cards": "5.2.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
