@@ -1,227 +1,326 @@
 [
   {
     "date": "2026-08-01",
-    "mega-lucario-ex-b3-081": 2.54720972781695,
-    "vespiquen-ex-b4-011": 10.19104731983662,
-    "hoopa-ex-b4-103": 3.890713852112135,
-    "espeon-b3a-020&swablu-b1-196": 3.1853512260621213,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 1.9802406537460964
+    "butterfree-b3b-003": 0.5672391191174339,
+    "espeon-b3a-020&swablu-b1-196": 3.185368442715445,
+    "vespiquen-ex-b4-011": 10.191042216613292,
+    "mega-lucario-ex-b3-081": 2.547224433708332,
+    "hydreigon-b1-157": 1.980252894706904,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-02",
-    "mega-lucario-ex-b3-081": 9.711780040047973,
-    "vespiquen-ex-b4-011": 12.70325517736269,
-    "hoopa-ex-b4-103": 0,
-    "espeon-b3a-020&swablu-b1-196": 2.6272048543261133,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 2.823662806186158
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 2.6271724586456697,
+    "vespiquen-ex-b4-011": 12.70320155664997,
+    "mega-lucario-ex-b3-081": 9.711731584954915,
+    "hydreigon-b1-157": 2.82371277096177,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-03",
-    "mega-lucario-ex-b3-081": 8.691481645375669,
-    "vespiquen-ex-b4-011": 9.999145383811161,
-    "hoopa-ex-b4-103": 14.782249856450406,
+    "butterfree-b3b-003": 0,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 3.294650996386587
+    "vespiquen-ex-b4-011": 9.999066993655108,
+    "mega-lucario-ex-b3-081": 8.691394570911704,
+    "hydreigon-b1-157": 3.2946536187483346,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-04",
-    "mega-lucario-ex-b3-081": 9.452622867987131,
-    "vespiquen-ex-b4-011": 14.11510689655581,
-    "hoopa-ex-b4-103": 21.584327100090174,
-    "espeon-b3a-020&swablu-b1-196": 0.9427946490380031,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 0.9428197337899202,
+    "vespiquen-ex-b4-011": 14.115079866923322,
+    "mega-lucario-ex-b3-081": 9.45260364082205,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-05",
-    "mega-lucario-ex-b3-081": 13.629862585411063,
-    "vespiquen-ex-b4-011": 16.156266541329337,
-    "hoopa-ex-b4-103": 14.028509764582475,
-    "espeon-b3a-020&swablu-b1-196": 2.3091114208243777,
-    "indeedee-ex-b1-121&oricorio-a3-066": 2.144100585003874,
-    "hydreigon-b1-157": 1.154555710412189
+    "butterfree-b3b-003": 0.7299430988255681,
+    "espeon-b3a-020&swablu-b1-196": 2.433143662751893,
+    "vespiquen-ex-b4-011": 15.830368720614855,
+    "mega-lucario-ex-b3-081": 13.168175070626905,
+    "hydreigon-b1-157": 1.2165718313759466,
+    "mega-blaziken-ex-b1-036": 1.1717794983858887
   },
   {
     "date": "2026-08-06",
-    "mega-lucario-ex-b3-081": 23.477240173737478,
-    "vespiquen-ex-b4-011": 10.179782538775273,
-    "hoopa-ex-b4-103": 4.381218402383311,
-    "espeon-b3a-020&swablu-b1-196": 3.0425375189476136,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0.742898184578111
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 2.811362406107688,
+    "vespiquen-ex-b4-011": 10.09954178065236,
+    "mega-lucario-ex-b3-081": 22.386609922722496,
+    "hydreigon-b1-157": 0.6864619827816367,
+    "mega-blaziken-ex-b1-036": 2.071554678219456
   },
   {
     "date": "2026-08-07",
-    "mega-lucario-ex-b3-081": 18.891840885234508,
-    "vespiquen-ex-b4-011": 10.450139763630345,
-    "hoopa-ex-b4-103": 11.758680213663744,
-    "espeon-b3a-020&swablu-b1-196": 1.7154623150592407,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "butterfree-b3b-003": 1.0071981744008618,
+    "espeon-b3a-020&swablu-b1-196": 1.7154607472236485,
+    "vespiquen-ex-b4-011": 10.450166565103384,
+    "mega-lucario-ex-b3-081": 18.891842698679998,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 2.266545421868732
   },
   {
     "date": "2026-08-08",
-    "mega-lucario-ex-b3-081": 17.327492361098642,
-    "vespiquen-ex-b4-011": 3.9028212713636696,
-    "hoopa-ex-b4-103": 13.190307194107268,
-    "espeon-b3a-020&swablu-b1-196": 6.827344777101533,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 2.0353483570778694
+    "butterfree-b3b-003": 0.6298401850301325,
+    "espeon-b3a-020&swablu-b1-196": 6.946799901534383,
+    "vespiquen-ex-b4-011": 3.621189884939169,
+    "mega-lucario-ex-b3-081": 17.28076051196371,
+    "hydreigon-b1-157": 1.7210558126293833,
+    "mega-blaziken-ex-b1-036": 1.5330365031098174
   },
   {
     "date": "2026-08-09",
-    "mega-lucario-ex-b3-081": 6.136982324356277,
-    "vespiquen-ex-b4-011": 4.968425816507803,
-    "hoopa-ex-b4-103": 16.045826925816023,
-    "espeon-b3a-020&swablu-b1-196": 1.1105809555886528,
-    "indeedee-ex-b1-121&oricorio-a3-066": 1.1105809555886528,
-    "hydreigon-b1-157": 0
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 1.1105773392165783,
+    "vespiquen-ex-b4-011": 4.968424341818026,
+    "mega-lucario-ex-b3-081": 6.137017771883588,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 1.4739276155653036
   },
   {
     "date": "2026-08-10",
-    "mega-lucario-ex-b3-081": 17.786465329625987,
-    "vespiquen-ex-b4-011": 6.419865014126606,
-    "hoopa-ex-b4-103": 15.862748800041675,
+    "butterfree-b3b-003": 1.6748511740179168,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 1.6629397024129122
+    "vespiquen-ex-b4-011": 6.419861836273187,
+    "mega-lucario-ex-b3-081": 17.78644067749885,
+    "hydreigon-b1-157": 1.6629395901486816,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-11",
-    "mega-lucario-ex-b3-081": 18.524698480900025,
-    "vespiquen-ex-b4-011": 7.898487666808333,
-    "hoopa-ex-b4-103": 11.701779401117255,
-    "espeon-b3a-020&swablu-b1-196": 3.217613393335186,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0.6144767737559285,
-    "hydreigon-b1-157": 2.30150825350484
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 3.2176126875923936,
+    "vespiquen-ex-b4-011": 7.898460370711008,
+    "mega-lucario-ex-b3-081": 18.52463737203015,
+    "hydreigon-b1-157": 2.3015128800066567,
+    "mega-blaziken-ex-b1-036": 1.0172970561706522
   },
   {
     "date": "2026-08-13",
-    "mega-lucario-ex-b3-081": 14.247774045971266,
-    "vespiquen-ex-b4-011": 4.018602936043178,
-    "hoopa-ex-b4-103": 15.507933619051306,
-    "espeon-b3a-020&swablu-b1-196": 4.018602936043178,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 4.01858290932609,
+    "vespiquen-ex-b4-011": 4.01858290932609,
+    "mega-lucario-ex-b3-081": 14.247703042156138,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-14",
-    "mega-lucario-ex-b3-081": 15.568868286471291,
-    "vespiquen-ex-b4-011": 15.623623219356137,
-    "hoopa-ex-b4-103": 13.315259988243069,
-    "espeon-b3a-020&swablu-b1-196": 1.9401974919179346,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 1.940200649582447,
+    "vespiquen-ex-b4-011": 15.623607457022596,
+    "mega-lucario-ex-b3-081": 15.568874536827803,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-15",
-    "mega-lucario-ex-b3-081": 17.835975175903382,
-    "vespiquen-ex-b4-011": 7.624026528796592,
-    "hoopa-ex-b4-103": 13.948413209725729,
-    "espeon-b3a-020&swablu-b1-196": 0.7933456092092891,
-    "indeedee-ex-b1-121&oricorio-a3-066": 1.299639847867458,
-    "hydreigon-b1-157": 1.7756472133930314
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 0.7933521897838401,
+    "vespiquen-ex-b4-011": 7.624024008021538,
+    "mega-lucario-ex-b3-081": 17.83597217136715,
+    "hydreigon-b1-157": 1.7756499855341648,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-16",
-    "mega-lucario-ex-b3-081": 31.914893617021278,
-    "vespiquen-ex-b4-011": 4.25531914893617,
-    "hoopa-ex-b4-103": 0,
+    "butterfree-b3b-003": 0,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 3.723404255319149,
-    "hydreigon-b1-157": 7.446808510638298
+    "vespiquen-ex-b4-011": 4.255319148936168,
+    "mega-lucario-ex-b3-081": 31.914893617021274,
+    "hydreigon-b1-157": 7.446808510638296,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-17",
-    "mega-lucario-ex-b3-081": 18.7299298097333,
-    "vespiquen-ex-b4-011": 12.404479892125092,
-    "hoopa-ex-b4-103": 6.097741766021483,
+    "butterfree-b3b-003": 3.945581475992049,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "vespiquen-ex-b4-011": 12.404482361027089,
+    "mega-lucario-ex-b3-081": 18.72995296016219,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 3.586892250901863
   },
   {
     "date": "2026-08-18",
-    "mega-lucario-ex-b3-081": 21.969696969696972,
+    "butterfree-b3b-003": 8.333333333333332,
+    "espeon-b3a-020&swablu-b1-196": 11.363636363636363,
     "vespiquen-ex-b4-011": 0,
-    "hoopa-ex-b4-103": 0,
-    "espeon-b3a-020&swablu-b1-196": 11.363636363636365,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 11.363636363636365
+    "mega-lucario-ex-b3-081": 21.96969696969697,
+    "hydreigon-b1-157": 11.363636363636363,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-19",
-    "mega-lucario-ex-b3-081": 12.00750769531184,
-    "vespiquen-ex-b4-011": 10.431785549627532,
-    "hoopa-ex-b4-103": 0,
-    "espeon-b3a-020&swablu-b1-196": 3.4577105600012494,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 4.445627862858749
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 3.5452863037707623,
+    "vespiquen-ex-b4-011": 10.695977987350437,
+    "mega-lucario-ex-b3-081": 12.31157692491323,
+    "hydreigon-b1-157": 4.558225247705266,
+    "mega-blaziken-ex-b1-036": 3.5452863037707623
   },
   {
     "date": "2026-08-20",
-    "mega-lucario-ex-b3-081": 26.086956521739125,
-    "vespiquen-ex-b4-011": 27.536231884057965,
-    "hoopa-ex-b4-103": 0,
+    "butterfree-b3b-003": 0,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "vespiquen-ex-b4-011": 27.536231884057973,
+    "mega-lucario-ex-b3-081": 26.086956521739125,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-21",
-    "mega-lucario-ex-b3-081": 12.893081761006286,
-    "vespiquen-ex-b4-011": 8.805031446540879,
-    "hoopa-ex-b4-103": 11.006289308176099,
+    "butterfree-b3b-003": 2.515723270440252,
     "espeon-b3a-020&swablu-b1-196": 4.088050314465408,
-    "indeedee-ex-b1-121&oricorio-a3-066": 3.459119496855345,
-    "hydreigon-b1-157": 9.11949685534591
+    "vespiquen-ex-b4-011": 8.80503144654088,
+    "mega-lucario-ex-b3-081": 12.89308176100629,
+    "hydreigon-b1-157": 9.119496855345911,
+    "mega-blaziken-ex-b1-036": 2.8301886792452833
   },
   {
     "date": "2026-08-22",
-    "mega-lucario-ex-b3-081": 11.049033292823825,
-    "vespiquen-ex-b4-011": 7.451742522456291,
-    "hoopa-ex-b4-103": 8.167160499982804,
-    "espeon-b3a-020&swablu-b1-196": 11.58055775794157,
-    "indeedee-ex-b1-121&oricorio-a3-066": 3.0357237699454327,
-    "hydreigon-b1-157": 8.037703034450303
+    "butterfree-b3b-003": 2.368749411890941,
+    "espeon-b3a-020&swablu-b1-196": 11.580552680355712,
+    "vespiquen-ex-b4-011": 7.451754111163485,
+    "mega-lucario-ex-b3-081": 11.04902999578712,
+    "hydreigon-b1-157": 8.037696415260516,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-23",
-    "mega-lucario-ex-b3-081": 17.14285714285714,
-    "vespiquen-ex-b4-011": 4.285714285714285,
-    "hoopa-ex-b4-103": 0,
-    "espeon-b3a-020&swablu-b1-196": 4.285714285714285,
-    "indeedee-ex-b1-121&oricorio-a3-066": 2.1428571428571423,
-    "hydreigon-b1-157": 9.999999999999998
+    "butterfree-b3b-003": 4.285714285714287,
+    "espeon-b3a-020&swablu-b1-196": 4.285714285714287,
+    "vespiquen-ex-b4-011": 4.285714285714287,
+    "mega-lucario-ex-b3-081": 17.14285714285715,
+    "hydreigon-b1-157": 10.000000000000004,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-24",
-    "mega-lucario-ex-b3-081": 17.625078772289466,
-    "vespiquen-ex-b4-011": 8.802706205326869,
-    "hoopa-ex-b4-103": 4.4603521875706305,
-    "espeon-b3a-020&swablu-b1-196": 7.841016372764771,
-    "indeedee-ex-b1-121&oricorio-a3-066": 5.412208839314863,
-    "hydreigon-b1-157": 10.358322533575476
+    "butterfree-b3b-003": 7.28644162240311,
+    "espeon-b3a-020&swablu-b1-196": 7.84101697926503,
+    "vespiquen-ex-b4-011": 8.802712160056629,
+    "mega-lucario-ex-b3-081": 17.625085057837552,
+    "hydreigon-b1-157": 10.358304173158745,
+    "mega-blaziken-ex-b1-036": 0
   },
   {
     "date": "2026-08-25",
-    "mega-lucario-ex-b3-081": 6.976744186046514,
+    "butterfree-b3b-003": 5.426356589147285,
+    "espeon-b3a-020&swablu-b1-196": 6.201550387596898,
     "vespiquen-ex-b4-011": 0,
-    "hoopa-ex-b4-103": 0,
-    "espeon-b3a-020&swablu-b1-196": 6.201550387596902,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 9.302325581395351
+    "mega-lucario-ex-b3-081": 6.97674418604651,
+    "hydreigon-b1-157": 9.302325581395346,
+    "mega-blaziken-ex-b1-036": 4.651162790697673
   },
   {
     "date": "2026-08-26",
+    "butterfree-b3b-003": 15.409917145638975,
+    "espeon-b3a-020&swablu-b1-196": 2.504806786800182,
+    "vespiquen-ex-b4-011": 2.998089530409684,
+    "mega-lucario-ex-b3-081": 9.424614819925049,
+    "hydreigon-b1-157": 6.38597746085021,
+    "mega-blaziken-ex-b1-036": 1.9078751557152533
+  },
+  {
+    "date": "2026-08-27",
+    "butterfree-b3b-003": 0,
+    "espeon-b3a-020&swablu-b1-196": 50,
+    "vespiquen-ex-b4-011": 0,
     "mega-lucario-ex-b3-081": 0,
-    "vespiquen-ex-b4-011": 12.08791208791209,
-    "hoopa-ex-b4-103": 9.89010989010989,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
+  },
+  {
+    "date": "2026-08-28",
+    "butterfree-b3b-003": 5.934485420216016,
+    "espeon-b3a-020&swablu-b1-196": 8.84731187011793,
+    "vespiquen-ex-b4-011": 16.264349910138236,
+    "mega-lucario-ex-b3-081": 7.922568887826123,
+    "hydreigon-b1-157": 0.8303652953905798,
+    "mega-blaziken-ex-b1-036": 1.258320655931853
+  },
+  {
+    "date": "2026-08-29",
+    "butterfree-b3b-003": 2.6446777042133043,
+    "espeon-b3a-020&swablu-b1-196": 1.8994367403326669,
+    "vespiquen-ex-b4-011": 7.341533078096896,
+    "mega-lucario-ex-b3-081": 12.816416817462981,
+    "hydreigon-b1-157": 4.87841748688736,
+    "mega-blaziken-ex-b1-036": 6.947649893681194
+  },
+  {
+    "date": "2026-08-30",
+    "butterfree-b3b-003": 5.005900641596004,
+    "espeon-b3a-020&swablu-b1-196": 3.213924506801522,
+    "vespiquen-ex-b4-011": 5.1875342339859625,
+    "mega-lucario-ex-b3-081": 10.570130180899769,
+    "hydreigon-b1-157": 3.9370940932704532,
+    "mega-blaziken-ex-b1-036": 10.525566187336397
+  },
+  {
+    "date": "2026-08-31",
+    "butterfree-b3b-003": 3.517803792645697,
+    "espeon-b3a-020&swablu-b1-196": 2.079964782936051,
+    "vespiquen-ex-b4-011": 5.983662555994647,
+    "mega-lucario-ex-b3-081": 15.66206449874174,
+    "hydreigon-b1-157": 0,
+    "mega-blaziken-ex-b1-036": 0
+  },
+  {
+    "date": "2026-09-01",
+    "butterfree-b3b-003": 2.8807770836672035,
+    "espeon-b3a-020&swablu-b1-196": 1.6338757634364345,
+    "vespiquen-ex-b4-011": 3.3844464406263723,
+    "mega-lucario-ex-b3-081": 16.432977477717692,
+    "hydreigon-b1-157": 4.154550122685423,
+    "mega-blaziken-ex-b1-036": 5.411675513403265
+  },
+  {
+    "date": "2026-09-02",
+    "butterfree-b3b-003": 9.404733747731822,
+    "espeon-b3a-020&swablu-b1-196": 4.816011141553317,
+    "vespiquen-ex-b4-011": 6.561416148035332,
+    "mega-lucario-ex-b3-081": 17.521287445320578,
+    "hydreigon-b1-157": 1.0267033843300468,
+    "mega-blaziken-ex-b1-036": 6.879654825036437
+  },
+  {
+    "date": "2026-09-03",
+    "butterfree-b3b-003": 13.666562489103793,
+    "espeon-b3a-020&swablu-b1-196": 5.726890592445354,
+    "vespiquen-ex-b4-011": 8.753245836569041,
+    "mega-lucario-ex-b3-081": 10.760819126152018,
+    "hydreigon-b1-157": 6.502031671542001,
+    "mega-blaziken-ex-b1-036": 10.189587255329249
+  },
+  {
+    "date": "2026-09-04",
+    "butterfree-b3b-003": 3.7753543355222754,
+    "espeon-b3a-020&swablu-b1-196": 5.924186828047097,
+    "vespiquen-ex-b4-011": 6.3954951809328335,
+    "mega-lucario-ex-b3-081": 12.953841948425168,
+    "hydreigon-b1-157": 13.276680524338438,
+    "mega-blaziken-ex-b1-036": 10.380483139194698
+  },
+  {
+    "date": "2026-09-05",
+    "butterfree-b3b-003": 4.1824023677985736,
+    "espeon-b3a-020&swablu-b1-196": 9.961486512985449,
+    "vespiquen-ex-b4-011": 4.359149912901043,
+    "mega-lucario-ex-b3-081": 7.48305163390682,
+    "hydreigon-b1-157": 3.495258425608929,
+    "mega-blaziken-ex-b1-036": 3.4555659491684563
+  },
+  {
+    "date": "2026-09-06",
+    "butterfree-b3b-003": 8.79120879120879,
     "espeon-b3a-020&swablu-b1-196": 0,
-    "indeedee-ex-b1-121&oricorio-a3-066": 0,
-    "hydreigon-b1-157": 0
+    "vespiquen-ex-b4-011": 3.296703296703297,
+    "mega-lucario-ex-b3-081": 15.934065934065933,
+    "hydreigon-b1-157": 6.043956043956043,
+    "mega-blaziken-ex-b1-036": 0
   }
 ]
