@@ -55,6 +55,25 @@ describe("normaliseCard", () => {
     expect(normaliseCard(erika).deckBuilderNr).toBe(1000011);
     expect(normaliseCard(venusaurEx).deckBuilderNr).toBe(4);
   });
+
+  it("coerces sparse core-payload fields to their old-payload values", () => {
+    const coreTrainer: RawCardType = {
+      id: "a1-219",
+      name: "Erika",
+      set_code: "a1",
+      pack: "Charizard",
+      type: "Trainer",
+      subtype: "Supporter",
+      rarity: "\u25CA\u25CA",
+      image: "https://example.com/a1-219.webp",
+      deckBuilderNr: 1000011,
+    } as unknown as RawCardType;
+    const card = normaliseCard(coreTrainer);
+    expect(card.ex).toBe(false);
+    expect(card.health).toBeNull();
+    expect(card.stage).toBeNull();
+    expect(card.deckBuilderNr).toBe(1000011);
+  });
 });
 
 describe("filter predicates against normalised cards", () => {
