@@ -5,7 +5,7 @@ import { CARDS_URL } from "./constants";
 export interface RawCardType {
   id: string;
   name: string;
-  rarity: string;
+  rarity: string | null;
   pack: string;
   type: string;
   subtype: string;
@@ -36,7 +36,7 @@ export interface CardType {
 export const normaliseCard = (card: RawCardType): CardType => ({
   id: card.id,
   name: card.name,
-  rarity: card.rarity,
+  rarity: card.rarity ?? "Unknown",
   pack: card.pack,
   type: card.subtype,
   supertype: card.type,
