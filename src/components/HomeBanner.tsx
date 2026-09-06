@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import dateformat from "dateformat";
 import { useTranslation } from "react-i18next";
-import { EXPANSION_NAME } from "../app/constants";
+import { latestExpansionName } from "../app/use-expansions";
 import { LAST_UPDATED } from "../app/last-updated";
 
 const drift = keyframes`
@@ -40,7 +40,7 @@ const HomeBanner = () => {
         "home.banner",
         "Top Pocket Decks is alive and well, with a new maintainer keeping it updated. Rankings are current for {{expansion}} as of {{date}}.",
         {
-          expansion: EXPANSION_NAME,
+          expansion: latestExpansionName() ?? "",
           date: dateformat(LAST_UPDATED, "d mmmm yyyy"),
         }
       )}

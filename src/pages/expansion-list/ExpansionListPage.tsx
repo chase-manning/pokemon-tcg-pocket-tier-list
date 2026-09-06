@@ -39,7 +39,7 @@ const ExpansionListPage = () => {
             expansionId: expansion.id,
             packId: pack.id,
             packName: pack.name,
-            packImage: pack.image,
+            packImage: pack.image ?? "",
             totalScore:
                 (packScores.get(`${expansion.id}-${pack.name}`) || 0) +
                 (sharedScores.get(expansion.id) || 0),

@@ -15,16 +15,10 @@ import {
   MIN_WINRATE_THRESHOLD,
   MIN_ARCHETYPE_QUALIFIED_GAMES,
 } from "./settings";
-
-const CARDS_API =
-  "https://raw.githubusercontent.com/chase-mew/pokemon-tcg-pocket-cards/refs/tags/v5.1.0/data/v5/cards.min.json";
+import cards from "pokemon-tcg-pocket-cards/data/v5/cards.min.json";
 
 const run = async () => {
   try {
-    const cardsPromise = fetch(CARDS_API);
-    if (!(await cardsPromise).ok) {
-      throw new Error(`Failed to fetch cards API: ${(await cardsPromise).status} ${(await cardsPromise).statusText}`);
-    }
     const allDecks = getDecks();
 
     const qualifiedDecks = allDecks.filter(
@@ -172,8 +166,6 @@ const run = async () => {
       }));
     cardScoresList.sort((a, b) => b.score - a.score);
 
-    const cardsRequest = await cardsPromise;
-    const cards = (await cardsRequest.json()) as any[];
     const cardIds = cards.map((card: any) => card.id);
     const idExistsInApi: Record<string, boolean> = cardIds.reduce(
       (acc: Record<string, boolean>, id: string) => {

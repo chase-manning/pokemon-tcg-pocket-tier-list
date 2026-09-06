@@ -16,6 +16,7 @@
     "firebase": "^11.9.0",
     "i18next": "^25.0.2",
     "i18next-browser-languagedetector": "^8.0.5",
+    "pokemon-tcg-pocket-cards": "^5.3.0",
     "qrcode.react": "4.2.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "start": "vite",
-    "prebuild": "node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/generate-sitemap.js && node scripts/generate-attack-costs.mjs",
     "build": "yarn typecheck && yarn lint && vite build",
     "postbuild": "node scripts/prerender-routes.js && node scripts/prerender-decks.js && node scripts/verify-dist-html.js",
     "test": "vitest",

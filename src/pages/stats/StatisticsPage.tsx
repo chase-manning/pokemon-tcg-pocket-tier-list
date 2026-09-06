@@ -23,7 +23,7 @@ import { useMarkContentReady } from "../../ads/ContentReadyContext";
 import { useDecks } from "../../contexts/DecksContext";
 import { buildTiers } from "../../app/tier-helper";
 import { deckDisplayName, formatArchetypeId } from "../../app/deck-display";
-import { EXPANSION_NAME } from "../../app/constants";
+import { latestExpansionName } from "../../app/use-expansions";
 import crownIcon from "../../assets/crown.webp";
 
 const PageContainer = styled.div`
@@ -665,7 +665,7 @@ const StatisticsPage = () => {
                     Analyse the current Pokémon TCG Pocket metagame using live historical
                     data and archetype matchup heatmaps. This tracking data maps exactly
                     how deck popularity and win rates shift over time within the{" "}
-                    {EXPANSION_NAME} format. We pull results straight from recent
+                    {latestExpansionName() ?? ""} format. We pull results straight from recent
                     competitive events, giving you a statistical edge over players
                     relying on gut feeling alone.
                 </p>
