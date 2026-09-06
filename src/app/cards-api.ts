@@ -39,10 +39,10 @@ export const normaliseCard = (card: RawCardType): CardType => ({
   pack: card.pack,
   type: card.subtype,
   supertype: card.type,
-  health: card.health,
-  stage: card.stage,
+  health: card.health ?? null,
+  stage: card.stage ?? null,
   image: card.image,
-  ex: card.ex,
+  ex: card.ex ?? false,
   set: card.set_code,
   deckBuilderNr: card.deckBuilderNr ?? null,
 });

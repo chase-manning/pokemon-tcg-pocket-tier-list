@@ -1,6 +1,6 @@
 import github from "../assets/github.svg";
 import twitter from "../assets/twitter.svg";
-import cardsPayload from "pokemon-tcg-pocket-cards/data/v5/cards.min.json";
+import cardsPayload from "pokemon-tcg-pocket-cards/data/v5/cards.core.min.json";
 import expansionsPayload from "pokemon-tcg-pocket-cards/data/v5/expansions.min.json";
 
 export const EXPANSION_NAME = "Ruler of the Skies (B4)"
