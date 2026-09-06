@@ -1,16 +1,21 @@
 # Card data reference
 
 The frontend reads card data from the `pokemon-tcg-pocket-cards` npm package,
-resolved through the `data/v5/cards.min.json` export. The field names in that
-payload differ from the ones the app uses, so everything passes through a
-normalisation layer first.
+resolved through the `data/v5/cards.core.min.json` export. That file is a sparse
+projection: Trainers omit `ex`, `health` and `stage`, and `normaliseCard` coerces
+those fields back. Attack costs instead come from `src/data/attack-costs.json`,
+which `scripts/generate-attack-costs.mjs` builds at prebuild from
+`data/v5/cards.gameplay.no-image`. The field names in the payload differ from the
+ones the app uses, so everything passes through a normalisation layer first.
 
 ## Where normalisation happens
 
 `src/app/cards-api.ts` owns the contract. `fetchCards()` is the only function
 that should read the card payload. It maps each record through
 `normaliseCard` and returns `CardType[]`. Both `DecksContext` and `useCards`
-call it under the same `["cards"]` query key.
+call it under the same `["cards"]` query key. The attack index consumed by
+`fetchCards` is generated from the gameplay projection at prebuild, so the
+frontend never imports the 1.19 MiB payload.
 
 ## Field mapping
 
