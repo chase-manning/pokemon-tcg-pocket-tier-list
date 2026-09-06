@@ -1,6 +1,7 @@
 import cardToString from "./card-to-string";
 import { Deck } from "./types";
 import formatName from "./format-name";
+import pairings from "../data/limitless-pairings.json";
 
 type CardNameType = string | string[];
 
@@ -243,6 +244,58 @@ const getMatchedCard = (cards: Deck["cards"], match: CardNameType): string => {
   return matchArray[0];
 };
 
+interface PairingEntry {
+  primary: string;
+  secondary: string[];
+}
+const PAIRINGS = (pairings as { pairings?: Record<string, PairingEntry> }).pairings ?? {};
+
+/** Lets ARCHITYPES order a pair, since the scraped primary is just slug order. */
+const orderLikeArchitypes = (match: string[]): string[] | null => {
+  if (match.length < 2) return null;
+  for (const criteria of ARCHITYPES) {
+    const primary = match.find((name) => matchesCriteria(name, criteria.primary));
+    const secondary = match.find((name) =>
+      criteria.secondary.some((option) => matchesCriteria(name, option))
+    );
+    if (primary && secondary && primary !== secondary) return [primary, secondary];
+  }
+  return null;
+};
+
+const matchesCriteria = (card: string, criteria: CardNameType): boolean =>
+  (Array.isArray(criteria) ? criteria : [criteria]).includes(card);
+
+const matchPairing = (cards: Deck["cards"]): string[] | null => {
+  const cardStrings = new Set(cards.map((card) => cardToString(card)));
+  const countOf = (name: string) => {
+    if (cardStrings.has(`2 ${name}`)) return 2;
+    return cardStrings.has(`1 ${name}`) ? 1 : 0;
+  };
+
+  let best: string[] | null = null;
+  let bestScore = 0;
+
+  for (const entry of Object.values(PAIRINGS)) {
+    if (!countOf(entry.primary)) continue;
+
+    const candidates: string[][] = [[entry.primary]];
+    for (const partner of entry.secondary) {
+      if (countOf(partner)) candidates.push([entry.primary, partner]);
+    }
+
+    for (const match of candidates) {
+      const score = match.reduce((acc, name) => acc + countOf(name), 0);
+      if (score <= bestScore) continue;
+      bestScore = score;
+      best = match;
+    }
+  }
+
+  if (!best) return null;
+  return orderLikeArchitypes(best) ?? best;
+};
+
 /**
  * Attempts to find a matching deck name based on the deck's cards
  * @param deck The deck to find a name for
@@ -250,6 +303,10 @@ const getMatchedCard = (cards: Deck["cards"], match: CardNameType): string => {
  */
 const getDeckName = (deck: Deck): string | null => {
   const { cards } = deck;
+
+  // The scraped pairings are the source of truth, so they get first refusal.
+  const scraped = matchPairing(cards);
+  if (scraped) return formatName(cards, scraped);
 
 // Pass 1a: Try 2 copies primary + 2 copies secondary across all archetypes
   for (const criteria of ARCHITYPES) {
