@@ -145,7 +145,6 @@ const mergeDeck = (store, deck) => {
 
   if (!seen) {
     store.pairings[primary] = {
-      primary,
       secondary: [],
       peakCountBySet: {},
       names: {},
@@ -173,6 +172,7 @@ const main = async () => {
 
   const tally = { added: 0, merged: 0, unresolved: 0 };
   const unresolved = [];
+  const failures = [];
 
   for (const set of [...SETS, ...NON_STANDARD_SETS]) {
     let decks = [];
@@ -203,6 +203,7 @@ const main = async () => {
       `${tally.unresolved} unresolved, ${Object.keys(store.pairings).length} archetypes total`
   );
   if (unresolved.length) console.log(`unresolved: ${unresolved.join(", ")}`);
+  if (failures.length) console.log(`set pages skipped: ${failures.join(", ")}`);
 };
 
 main().catch((err) => {

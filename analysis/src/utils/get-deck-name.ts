@@ -245,8 +245,9 @@ const getMatchedCard = (cards: Deck["cards"], match: CardNameType): string => {
 };
 
 interface PairingEntry {
-  primary: string;
   secondary: string[];
+  peakCountBySet?: Record<string, number>;
+  names?: Record<string, number>;
 }
 const PAIRINGS = (pairings as { pairings?: Record<string, PairingEntry> }).pairings ?? {};
 
@@ -276,12 +277,12 @@ const matchPairing = (cards: Deck["cards"]): string[] | null => {
   let best: string[] | null = null;
   let bestScore = 0;
 
-  for (const entry of Object.values(PAIRINGS)) {
-    if (!countOf(entry.primary)) continue;
+  for (const [key, entry] of Object.entries(PAIRINGS)) {
+    if (!countOf(key)) continue;
 
-    const candidates: string[][] = [[entry.primary]];
+    const candidates: string[][] = [[key]];
     for (const partner of entry.secondary) {
-      if (countOf(partner)) candidates.push([entry.primary, partner]);
+      if (countOf(partner)) candidates.push([key, partner]);
     }
 
     for (const match of candidates) {
