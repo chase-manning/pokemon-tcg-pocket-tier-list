@@ -1,3 +1,4 @@
+import attackCosts from "../data/attack-costs.json";
 import { CARDS_URL } from "./constants";
 
 /** The field names the v5 dataset ships. Only what the app reads is declared. */
@@ -60,24 +61,20 @@ export interface CardsPayload {
   attacksByDeckBuilderNr: AttacksByDeckBuilderNr;
 }
 
-const indexCardAttacks = (raw: RawCardType[]): AttacksByDeckBuilderNr => {
-  const index: AttacksByDeckBuilderNr = new Map();
-  for (const record of raw) {
-    if (record.deckBuilderNr != null) {
-      index.set(record.deckBuilderNr, record.attacks);
-    }
-  }
-  return index;
-};
-
 /**
  * Resolves the cards and the attack index together so no caller can read the
  * index before the fetch that fills it.
  */
 export const fetchCards = async (): Promise<CardsPayload> => {
   const raw = CARDS_URL as unknown as RawCardType[];
+  const attacksByDeckBuilderNr = new Map(
+    Object.entries(attackCosts).map(([nr, costs]) => [
+      Number(nr),
+      costs as unknown as Record<string, { cost: string | null }>,
+    ])
+  );
   return {
     cards: normaliseMultipleCards(raw),
-    attacksByDeckBuilderNr: indexCardAttacks(raw),
+    attacksByDeckBuilderNr,
   };
 };
