@@ -3,8 +3,6 @@ import twitter from "../assets/twitter.svg";
 import cardsPayload from "pokemon-tcg-pocket-cards/data/v5/cards.core.min.json";
 import expansionsPayload from "pokemon-tcg-pocket-cards/data/v5/expansions.min.json";
 
-export const EXPANSION_NAME = "Ruler of the Skies (B4)"
-
 export const FREE_DECK_AMOUNT = 30;
 export const CARDS_URL = cardsPayload;
 export const EXPANSIONS_URL = expansionsPayload;
