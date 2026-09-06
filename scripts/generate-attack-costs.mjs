@@ -30,7 +30,7 @@ const buildTable = (records) => {
     let hasCost = false;
     for (const [key, attack] of Object.entries(attacks)) {
       if (attack && typeof attack.cost === "string" && attack.cost.length > 0) {
-        costs[key] = attack.cost;
+        costs[key] = { cost: attack.cost };
         hasCost = true;
       }
     }
